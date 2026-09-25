@@ -1,0 +1,15 @@
+{
+  "schema": "echelon.system/v1",
+  "id": "praxis",
+  "repository": "kemiller2002/praxis",
+  "version": "1",
+  "executable": "praxis",
+  "provides": [
+    { "id": "agent.identity", "contractVersion": 1 },
+    { "id": "engineering.metrics", "contractVersion": 1 }
+  ],
+  "optionalConsumes": [
+    "followup.create",
+    "workitem.query"
+  ]
+}
