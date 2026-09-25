@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/contracts/followup.create.v1.json",
+  "title": "followup.create v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "reason", "requestedAction", "priority"],
+  "properties": {
+    "title": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "reason": { "type": "string", "minLength": 1 },
+    "requestedAction": {
+      "enum": ["review", "decide", "approve", "provide-information", "investigate", "other"]
+    },
+    "priority": { "enum": ["low", "normal", "high", "urgent"] },
+    "reviewAfter": { "type": ["string", "null"], "format": "date-time" },
+    "dueAt": { "type": ["string", "null"], "format": "date-time" },
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "context": { "type": ["object", "null"] }
+  }
+}
