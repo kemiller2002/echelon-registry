@@ -1,0 +1,13 @@
+{
+  "schema": "echelon.system/v1",
+  "id": "summa",
+  "repository": "kemiller2002/summa",
+  "version": "1",
+  "executable": "summa",
+  "provides": [
+    { "id": "billing.record", "contractVersion": 1 },
+    { "id": "invoice.create", "contractVersion": 1 },
+    { "id": "payment.record", "contractVersion": 1 }
+  ],
+  "optionalConsumes": []
+}
