@@ -1,0 +1,15 @@
+{
+  "schema": "echelon.system/v1",
+  "id": "chrona",
+  "repository": "kemiller2002/chrona",
+  "version": "1",
+  "executable": "chrona",
+  "provides": [
+    { "id": "time.record", "contractVersion": 1 },
+    { "id": "time.query", "contractVersion": 1 },
+    { "id": "time.approve", "contractVersion": 1 }
+  ],
+  "optionalConsumes": [
+    "billing.record"
+  ]
+}
