@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.execution-envelope.v1.json",
+  "title": "Echelon Integration Execution Envelope v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "operationId", "correlationId", "timestamp", "actor"],
+  "properties": {
+    "schema": { "const": "echelon.execution-envelope/v1" },
+    "operationId": { "type": "string", "minLength": 1 },
+    "correlationId": { "type": "string", "minLength": 1 },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "actor": { "$ref": "#/$defs/actor" },
+    "source": { "$ref": "#/$defs/source" }
+  },
+  "$defs": {
+    "knownValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state"],
+      "properties": {
+        "state": { "enum": ["known", "unknown", "not-applicable"] },
+        "value": { "type": "string" }
+      }
+    },
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "provider", "identity"],
+      "properties": {
+        "kind": { "enum": ["agent", "human", "automation", "system"] },
+        "provider": { "$ref": "#/$defs/knownValue" },
+        "identity": { "$ref": "#/$defs/knownValue" },
+        "runId": { "$ref": "#/$defs/knownValue" },
+        "sessionId": { "$ref": "#/$defs/knownValue" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "repository": { "$ref": "#/$defs/knownValue" },
+        "branch": { "$ref": "#/$defs/knownValue" },
+        "commit": { "$ref": "#/$defs/knownValue" },
+        "workItem": { "$ref": "#/$defs/knownValue" }
+      }
+    }
+  }
+}
