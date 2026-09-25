@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.system.v1.json",
+  "title": "Echelon System Manifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "id", "repository", "version", "provides", "optionalConsumes"],
+  "properties": {
+    "schema": { "const": "echelon.system/v1" },
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+    "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
+    "version": { "type": "string", "minLength": 1 },
+    "executable": { "type": ["string", "null"] },
+    "provides": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/capability" }
+    },
+    "optionalConsumes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*(\\.[a-z][a-z0-9-]*)+$" }
+    }
+  },
+  "$defs": {
+    "capability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "contractVersion"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*(\\.[a-z][a-z0-9-]*)+$" },
+        "contractVersion": { "type": "integer", "minimum": 1 }
+      }
+    }
+  }
+}
