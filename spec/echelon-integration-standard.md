@@ -65,3 +65,15 @@ At minimum every consumer MUST be tested:
 - with the full supported ecosystem.
 
 The standalone case is permanently required for conformance.
+
+## Shared Echelon capability boundaries
+
+Registry resolution states are domain outcomes. A provider being `unavailable`, or a known provider declaration being `misconfigured`, MUST remain explicit registry/integration outcomes and MUST NOT be disguised as Aegis faults.
+
+An implementation that owns a .NET/F# provider-discovery or provider-invocation boundary MUST use Aegis for **unexpected operational failure** such as network failure, filesystem failure, process-launch failure, unreadable external data, or an integration transport failure not already represented by the registry contract.
+
+Aegis MUST NOT change the registry invariant that optional-provider absence is normal and cannot disable unrelated core behavior.
+
+The Registry itself does not require Forma or Folio merely for being a registry specification. If a registry administration UI is implemented, it MUST use Forma. If printable/PDF/paginated registry diagnostics, topology reports, or interoperability evidence are implemented, they MUST use Folio.
+
+Shared capability versions used by implementations MUST be pinned to releases or immutable artifacts, and implementations MUST NOT fork shared Aegis/Forma/Folio capability locally without a recorded gap.
