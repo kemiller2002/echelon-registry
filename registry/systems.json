@@ -1,0 +1,45 @@
+{
+  "schema": "echelon.registry/v1",
+  "systems": [
+    {
+      "id": "praxis",
+      "repository": "kemiller2002/praxis",
+      "executable": "praxis",
+      "provides": [
+        { "id": "agent.identity", "contractVersion": 1 },
+        { "id": "engineering.metrics", "contractVersion": 1 }
+      ]
+    },
+    {
+      "id": "vigila",
+      "repository": "kemiller2002/vigila",
+      "executable": "vigila",
+      "provides": [
+        { "id": "followup.create", "contractVersion": 1 },
+        { "id": "followup.update", "contractVersion": 1 },
+        { "id": "followup.resolve", "contractVersion": 1 },
+        { "id": "followup.query", "contractVersion": 1 }
+      ]
+    },
+    {
+      "id": "chrona",
+      "repository": "kemiller2002/chrona",
+      "executable": "chrona",
+      "provides": [
+        { "id": "time.record", "contractVersion": 1 },
+        { "id": "time.query", "contractVersion": 1 },
+        { "id": "time.approve", "contractVersion": 1 }
+      ]
+    },
+    {
+      "id": "summa",
+      "repository": "kemiller2002/summa",
+      "executable": "summa",
+      "provides": [
+        { "id": "billing.record", "contractVersion": 1 },
+        { "id": "invoice.create", "contractVersion": 1 },
+        { "id": "payment.record", "contractVersion": 1 }
+      ]
+    }
+  ]
+}
