@@ -1,0 +1,20 @@
+{
+  "schema": "echelon.system/v2",
+  "id": "vigila",
+  "repository": "kemiller2002/vigila",
+  "version": "1",
+  "executable": "vigila",
+  "provides": [
+    { "id": "followup.create", "contractVersion": 1 },
+    { "id": "followup.update", "contractVersion": 1 },
+    { "id": "followup.resolve", "contractVersion": 1 },
+    { "id": "followup.query", "contractVersion": 1 }
+  ],
+  "optionalConsumes": [],
+  "provenance": {
+    "interchange": ["praxis.provenance/1"],
+    "roles": ["consumer"],
+    "propagation": { "actor": true, "execution": true, "contributions": true, "lineage": true },
+    "unknownFields": "preserve"
+  }
+}

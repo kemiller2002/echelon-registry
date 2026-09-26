@@ -1,0 +1,22 @@
+{
+  "schema": "echelon.system/v2",
+  "id": "praxis",
+  "repository": "kemiller2002/praxis",
+  "version": "1",
+  "executable": "praxis",
+  "provides": [
+    { "id": "agent.identity", "contractVersion": 1 },
+    { "id": "engineering.metrics", "contractVersion": 1 }
+  ],
+  "optionalConsumes": [
+    "followup.create",
+    "workitem.query"
+  ],
+  "provenance": {
+    "interchange": ["praxis.provenance/1"],
+    "roles": ["producer", "consumer"],
+    "propagation": { "actor": true, "execution": true, "contributions": true, "lineage": true },
+    "unknownFields": "preserve",
+    "recordsTransformation": false
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.system.v2.json",
+  "title": "Echelon System Manifest v2",
+  "description": "Manifest v1 plus an optional provenance descriptor (spec/provenance-propagation.md, REG-PROV-012..REG-PROV-014). The descriptor declares transport support for the Praxis interchange contract; it does not define identity semantics. An absent descriptor means `undeclared`, which MUST NOT be read as preserving provenance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "id", "repository", "version", "provides", "optionalConsumes"],
+  "properties": {
+    "schema": { "const": "echelon.system/v2" },
+    "id": { "$ref": "#/$defs/systemId" },
+    "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
+    "version": { "type": "string", "minLength": 1 },
+    "executable": { "type": ["string", "null"] },
+    "provides": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "https://echelonfoundry.com/schemas/echelon.system.v1.json#/$defs/capability" }
+    },
+    "optionalConsumes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*(\\.[a-z][a-z0-9-]*)+$" }
+    },
+    "provenance": { "$ref": "#/$defs/provenanceDescriptor" }
+  },
+  "$defs": {
+    "systemId": {
+      "description": "Registry id. It is also the <system> segment of Praxis EXT-<system>.<run-id> keys, so it has no dots. `run` and `op` are reserved pseudo-systems used by the envelope v1 mapping (EXT-run.<runId>, EXT-op.<operationId>) and can never be registered (REG-PROV-011).",
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$",
+      "not": { "enum": ["run", "op"] }
+    },
+    "provenanceDescriptor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["interchange", "roles", "propagation", "unknownFields"],
+      "properties": {
+        "interchange": {
+          "description": "Praxis interchange majors the system understands (verdict `supported`). Any other major is carried verbatim by a conforming consumer or transport.",
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^praxis\\.provenance/[1-9][0-9]*$" }
+        },
+        "envelopes": {
+          "description": "Execution envelope versions the system accepts. Absent means only echelon.execution-envelope/v1 may be assumed.",
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["echelon.execution-envelope/v1", "echelon.execution-envelope/v2"] }
+        },
+        "roles": {
+          "description": "producer: emits blocks for records it owns; consumer: receives blocks and stores them with its records; transport: forwards blocks to other systems.",
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["producer", "consumer", "transport"] }
+        },
+        "propagation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["actor", "execution", "contributions", "lineage"],
+          "properties": {
+            "actor": { "description": "Keeps the invoking actor of a request.", "type": "boolean" },
+            "execution": { "description": "Keeps the invoking execution key.", "type": "boolean" },
+            "contributions": { "description": "Keeps every received contribution.", "type": "boolean" },
+            "lineage": { "description": "Keeps received derivedFrom references.", "type": "boolean" }
+          }
+        },
+        "unknownFields": {
+          "description": "`preserve` is required for conformance with praxis.provenance/1; `discard` declares a lossy receiver that callers MUST treat as not preserving provenance.",
+          "enum": ["preserve", "discard"]
+        },
+        "recordsTransformation": {
+          "description": "Whether the system appends its own `transformed` contribution (automation echelon/<id>, key EXT-<id>.<operationId>) when it changes a record's representation. Absent means not declared.",
+          "type": "boolean"
+        }
+      },
+      "patternProperties": {
+        "^x-[a-z0-9][a-z0-9-]*$": {}
+      }
+    }
+  }
+}

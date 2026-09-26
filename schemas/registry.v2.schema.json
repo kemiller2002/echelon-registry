@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.registry.v2.json",
+  "title": "Echelon Registry Index v2",
+  "description": "Registry index whose entries may carry the manifest v2 provenance descriptor (spec/provenance-propagation.md, REG-PROV-012..REG-PROV-014). A v2 index entry without a descriptor reads as provenance `undeclared`. Readers MUST continue to accept echelon.registry/v1.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "systems"],
+  "properties": {
+    "schema": { "const": "echelon.registry/v2" },
+    "systems": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/system" }
+    }
+  },
+  "$defs": {
+    "system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "repository", "provides"],
+      "properties": {
+        "id": { "$ref": "https://echelonfoundry.com/schemas/echelon.system.v2.json#/$defs/systemId" },
+        "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
+        "version": { "type": "string", "minLength": 1 },
+        "executable": { "type": ["string", "null"] },
+        "provides": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "https://echelonfoundry.com/schemas/echelon.system.v1.json#/$defs/capability" }
+        },
+        "optionalConsumes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*(\\.[a-z][a-z0-9-]*)+$" }
+        },
+        "provenance": { "$ref": "https://echelonfoundry.com/schemas/echelon.system.v2.json#/$defs/provenanceDescriptor" }
+      }
+    }
+  }
+}

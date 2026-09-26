@@ -1,0 +1,17 @@
+{
+  "name": "echelon-registry-conformance",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Conformance harness for the Echelon Registry specification: schemas, examples, and the provenance propagation reference receiver.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1"
+  }
+}

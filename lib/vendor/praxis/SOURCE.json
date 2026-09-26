@@ -1,0 +1,10 @@
+{
+  "repository": "kemiller2002/praxis",
+  "commit": "b0037183389c8b9392919f58521b9487d1b4d5c6",
+  "files": {
+    "provenance-interchange.mjs": "e8f55323282084b62a0dac5a70a7e6a99ba33037d0bd2353488411310a06ca9d"
+  },
+  "sourcePaths": {
+    "provenance-interchange.mjs": "lib/provenance-interchange.mjs"
+  }
+}

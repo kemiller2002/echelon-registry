@@ -36,6 +36,14 @@ summa billing record
 
 Cross-system writes MUST use the receiving system's integration boundary when one exists. Consumers MUST NOT depend on another system's internal storage layout.
 
+## Provenance
+
+Agent identity and provenance are owned by Praxis. The registry carries them in execution envelope v2 and lets manifests declare provenance support; see `spec/provenance-propagation.md`.
+
 ## Bootstrap
 
-See `spec/` for normative requirements, `schemas/` for machine-readable contracts, and `examples/` for reference manifests.
+See `spec/` for normative requirements, `schemas/` for machine-readable contracts, and `examples/` for reference manifests and envelopes. `schemas/vendor/praxis/` holds unchanged copies of the Praxis provenance schemas.
+
+## Conformance harness
+
+`npm ci && npm test` (Node.js 22) compiles every schema, validates every example against the schema version it declares, verifies the vendored Praxis files against their recorded SHA-256, and runs the provenance conformance scenarios against the reference receiver in `lib/echelon-provenance.mjs`.
