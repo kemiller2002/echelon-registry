@@ -34,7 +34,9 @@ Systems that send, relay, or receive provenance (`spec/provenance-propagation.md
 | update/relay of an existing record whose block has an originator | PASS | available | block preserved; originator unchanged; invoker recorded once as `transformed` |
 | update with an unsupported major | PASS | available | block stored verbatim; nothing appended |
 | v2 envelope with a malformed block or a credential | PASS | request rejected with a structured error | nothing stored |
-| v1 envelope | PASS | available | actor and key mapped by REG-PROV-008 |
+| v1 envelope | PASS | available | actor and key mapped by REG-PROV-008; runs namespaced by a known `source.repository` |
+| update where an `unknown` invoker reuses a known actor's execution key | PASS | request rejected (`provenance-conflict`) | nothing stored |
+| dispatch on behalf of another actor | PASS | available | every inherited identity variable removed before the actor's declared values are set (REG-PROV-017) |
 | replay of the same `operationId` (create or update) | PASS | available | same record; no duplicate record or contribution |
 | relay through a transport | PASS | available | original actor and block unchanged |
 

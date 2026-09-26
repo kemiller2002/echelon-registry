@@ -7,7 +7,7 @@ import { createHash } from "node:crypto";
 import { root, readJson, praxisCases } from "./support.mjs";
 import { classify } from "../lib/vendor/praxis/provenance-interchange.mjs";
 
-const CONTRACT_COMMIT = "a42c44e8ae0e6e16fdd513141460b700e5fa6648";
+const CONTRACT_COMMIT = "c2657efb4d54f11d0fd0617cc1bcd5b8418601d5";
 const vendorDirs = ["schemas/vendor/praxis/", "lib/vendor/praxis/", "tests/fixtures/praxis-provenance/"];
 
 for (const dir of vendorDirs) {
@@ -23,8 +23,8 @@ for (const dir of vendorDirs) {
   });
 }
 
-test("all 40 Praxis conformance cases are present", () => {
-  assert.equal(praxisCases().length, 40);
+test("all 56 Praxis conformance cases (contract revision 1.1) are present", () => {
+  assert.equal(praxisCases().length, 56);
 });
 
 for (const item of praxisCases()) {

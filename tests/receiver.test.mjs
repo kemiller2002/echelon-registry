@@ -7,10 +7,10 @@ import assert from "node:assert/strict";
 import { createAjv, readJson, validator, praxisCases, echelonChain } from "./support.mjs";
 import {
   receive, emptyState, invocation, upgradeEnvelopeV1, relay, envelopeProblems, provenanceExpectation,
-  systemActor, V1_ACTOR_EXTENSION, capabilityKind,
+  systemActor, V1_ACTOR_EXTENSION, capabilityKind, keyFromEnvelopeV1Namespaced, escapeKeySegment,
 } from "../lib/echelon-provenance.mjs";
 import {
-  actorFromEnvelopeV1, keyFromEnvelopeV1, preservationViolations, originator, withRole, addLineage, emptyBlock,
+  actorFromEnvelopeV1, keyFromEnvelopeV1, preservationViolations, IDENTITY_ENVIRONMENT_VARIABLES, identityEnvironment, originator, withRole, addLineage, emptyBlock,
 } from "../lib/vendor/praxis/provenance-interchange.mjs";
 
 const ajv = createAjv();
@@ -67,8 +67,8 @@ test("v1 mapping: unknown and not-applicable identity map to the literal unknown
 });
 
 test("v1 mapping: runId known keys EXT-run.<runId>; unknown keys EXT-op.<operationId> (reserved pseudo-systems)", () => {
-  assert.equal(keyFromEnvelopeV1({ operationId: "op-1", actor: { runId: known("gh/99") } }), "EXT-run.gh-99");
-  assert.equal(keyFromEnvelopeV1({ operationId: "op 1", actor: { runId: { state: "unknown" } } }), "EXT-op.op-1");
+  assert.equal(keyFromEnvelopeV1({ operationId: "op-1", actor: { runId: known("gh/99") } }), "EXT-run.gh_2f99");
+  assert.equal(keyFromEnvelopeV1({ operationId: "op 1", actor: { runId: { state: "unknown" } } }), "EXT-op.op_201");
   assert.equal(keyFromEnvelopeV1({ operationId: "op-2", actor: {} }), "EXT-op.op-2");
 });
 
@@ -84,17 +84,17 @@ test("v1 envelope upgrade is lossless and yields a valid v2 envelope with the sa
     assert.equal(invocation(upgraded).key, invocation(v1).key);
     assert.deepEqual(upgraded.source, v1.source);
   }
-  assert.equal(upgradeEnvelopeV1(readJson("examples/envelopes/v1-agent.envelope.json")).execution, "EXT-run.gh-99");
+  assert.equal(upgradeEnvelopeV1(readJson("examples/envelopes/v1-agent.envelope.json")).execution, "EXT-run.kemiller2002_2faegis.gh_2f99");
 });
 
-test("a v1 envelope is received: the mapped actor originates the follow-up under its EXT-run key", () => {
+test("a v1 envelope is received: the mapped actor originates the follow-up under its repository-namespaced EXT-run key", () => {
   const v1 = readJson("examples/envelopes/v1-agent.envelope.json");
   const received = receive(emptyState(), { envelope: v1, payload }, vigila);
   assert.ok(received.ok, JSON.stringify(received.error));
   const { record } = received.result;
   assert.equal(record.envelopeSchema, "echelon.execution-envelope/v1");
   assert.deepEqual(originator(record.provenance.block).actor, { kind: "agent", id: "openai/codex", provider: "openai", model: "unknown", runtime: "unknown" });
-  assert.equal(originator(record.provenance.block).key, "EXT-run.gh-99");
+  assert.equal(originator(record.provenance.block).key, "EXT-run.kemiller2002_2faegis.gh_2f99");
   assert.equal(originator(record.provenance.block).at, "2026-09-26T09:05:00.000Z");
 });
 
@@ -117,6 +117,11 @@ test("a v1 envelope cannot carry provenance (it needs v2)", () => {
 for (const item of praxisCases().filter((c) => c.expect === "supported")) {
   test(`update keeps the record's own supported block '${item.name}' intact (${item.warnings} warnings)`, () => {
     const received = receive(emptyState(), { envelope: envelope({ provenance: item.block }), payload }, update);
+    const invokedAt = Date.parse("2026-09-26T09:05:00.000Z");
+    if (Object.values(item.block.contributions).some((entry) => Date.parse(entry.at.slice(0, 23) + "Z") > invokedAt && entry.operations.includes("created"))) {
+      assert.equal(received.error.code, "provenance-conflict", "an invocation before the recorded creation is refused, never recorded out of order");
+      return;
+    }
     assert.ok(received.ok, JSON.stringify(received.error));
     const { record } = received.result;
     assert.equal(record.provenance.verdict, "supported");
@@ -299,7 +304,7 @@ test("an execution key already attributed to another actor is a conflict, never 
 test("an optional transformed contribution is the receiving system's automation actor, keyed EXT-<system>.<operationId>", () => {
   const received = receive(emptyState(), { envelope: envelope({ operationId: "op/7", provenance: blockBy("EXE-A1", A) }), payload }, { ...update, recordsTransformation: true });
   const block = received.result.record.provenance.block;
-  assert.deepEqual(block.contributions["EXT-vigila.op-7"], { operations: ["transformed"], at: "2026-09-26T09:05:00.000Z", actor: systemActor("vigila") });
+  assert.deepEqual(block.contributions["EXT-vigila.op_2f7"], { operations: ["transformed"], at: "2026-09-26T09:05:00.000Z", actor: systemActor("vigila") });
   assert.deepEqual(originator(block).actor, A);
   assert.deepEqual(preservationViolations(blockBy("EXE-A1", A), block), []);
 });
@@ -457,6 +462,92 @@ test("the receiver's outcome does not depend on who the actor claims to be", () 
     assert.ok(received.ok, JSON.stringify(received.error));
     assert.deepEqual(Object.keys(received.result.record).sort(), ["capability", "correlationId", "envelopeSchema", "fingerprint", "invokedBy", "invoker", "kind", "operationId", "payload", "provenance", "receivedProvenance"]);
   }
+});
+
+// ---- contract revision 1.1 (REG-PROV-006, REG-PROV-008, REG-PROV-017) --------------
+
+test("finding: an unknown invoker cannot extend a carried entry held by a known actor (provenance-conflict)", () => {
+  const claude = { kind: "agent", id: "anthropic/claude-code", provider: "anthropic", model: "unknown", runtime: "claude-code" };
+  const unknownAgent = { kind: "agent", id: "unknown", provider: "unknown", model: "unknown", runtime: "unknown" };
+  const carried = { schema: "praxis.provenance/1", contributions: { "EXT-run.7": { operations: ["created"], at: "2026-09-26T08:00:00.000Z", actor: claude } } };
+  const before = JSON.stringify(carried);
+  const state = emptyState();
+  const received = receive(state, { envelope: envelope({ actor: unknownAgent, execution: "EXT-run.7", provenance: carried }), payload }, update);
+  assert.equal(received.ok, false);
+  assert.equal(received.error.code, "provenance-conflict");
+  assert.match(received.error.problems.join(" "), /unknown identity/);
+  assert.equal(received.state, state);
+  assert.equal(JSON.stringify(carried), before);
+  const unknownKind = receive(state, { envelope: envelope({ actor: { kind: "unknown", id: "anthropic/claude-code" }, execution: "EXT-run.7", provenance: carried }), payload }, update);
+  assert.equal(unknownKind.error.code, "provenance-conflict");
+});
+
+test("v1 keys use the injective escaping: distinct ids never share a key", () => {
+  const ids = ["op 1", "op-1", "op_1", "op_201", "op/1", "op.1", "\u00e9"];
+  const keys = ids.map((operationId) => keyFromEnvelopeV1({ operationId, actor: {} }));
+  assert.equal(new Set(keys).size, ids.length, keys.join(" "));
+  for (const key of keys) assert.match(key, /^EXT-op\.[A-Za-z0-9._-]+$/);
+  for (const id of ids) assert.equal(keyFromEnvelopeV1({ operationId: id, actor: {} }), `EXT-op.${escapeKeySegment(id)}`, "local escaping mirrors the Praxis reference");
+});
+
+const v1With = (repository, runId, operationId = "op-1") => ({
+  schema: "echelon.execution-envelope/v1", operationId, correlationId: "c", timestamp: "2026-09-26T09:00:00Z",
+  actor: { kind: "agent", provider: known("openai"), identity: known("openai/codex"), ...(runId === undefined ? {} : { runId: runId === null ? { state: "unknown" } : known(runId) }) },
+  ...(repository === undefined ? {} : { source: { repository: repository === null ? { state: "unknown" } : known(repository) } }),
+});
+
+test("v1 runs are namespaced by a known source.repository", () => {
+  assert.equal(keyFromEnvelopeV1Namespaced(v1With("kemiller2002/aegis", "7")), "EXT-run.kemiller2002_2faegis.7");
+  assert.equal(keyFromEnvelopeV1Namespaced(v1With("kemiller2002/vigila", "7")), "EXT-run.kemiller2002_2fvigila.7");
+  assert.notEqual(keyFromEnvelopeV1Namespaced(v1With("kemiller2002/aegis", "7")), keyFromEnvelopeV1Namespaced(v1With("kemiller2002/vigila", "7")), "same run id, different senders");
+  assert.equal(keyFromEnvelopeV1Namespaced(v1With("octo/repo.js", "gh/99")), "EXT-run.octo_2frepo_2ejs.gh_2f99");
+});
+
+test("v1 runs without a known repository keep the Praxis key; unknown runs stay EXT-op", () => {
+  for (const repository of [undefined, null]) {
+    assert.equal(keyFromEnvelopeV1Namespaced(v1With(repository, "gh/99")), "EXT-run.gh_2f99");
+    assert.equal(keyFromEnvelopeV1Namespaced(v1With(repository, "gh/99")), keyFromEnvelopeV1(v1With(repository, "gh/99")));
+  }
+  assert.equal(keyFromEnvelopeV1Namespaced(v1With("kemiller2002/aegis", null, "op 1")), "EXT-op.op_201");
+  assert.equal(keyFromEnvelopeV1Namespaced(v1With("kemiller2002/aegis", undefined)), "EXT-op.op-1");
+});
+
+test("namespaced v1 run keys are injective across repositories containing dots", () => {
+  const pairs = [["a/b.c", "5"], ["a/b", "c.5"], ["a.b/c", "5"], ["a/b_2ec", "5"]];
+  const keys = pairs.map(([repository, run]) => keyFromEnvelopeV1Namespaced(v1With(repository, run)));
+  assert.equal(new Set(keys).size, pairs.length, keys.join(" "));
+  for (const key of keys) assert.match(key, /^EXT-run\.[A-Za-z0-9._-]+$/);
+});
+
+test("received v1 runs from two repositories with the same run id stay separate executions", () => {
+  const first = receive(emptyState(), { envelope: v1With("kemiller2002/aegis", "7", "op-a"), payload }, update);
+  const second = receive(first.state, { envelope: v1With("kemiller2002/vigila", "7", "op-b"), payload }, update);
+  assert.equal(first.result.record.invokedBy.key, "EXT-run.kemiller2002_2faegis.7");
+  assert.equal(second.result.record.invokedBy.key, "EXT-run.kemiller2002_2fvigila.7");
+  const upgraded = upgradeEnvelopeV1(v1With("kemiller2002/aegis", "7"));
+  assert.equal(upgraded.execution, "EXT-run.kemiller2002_2faegis.7");
+  assert.ok(envelopeV2(upgraded), ajv.errorsText(envelopeV2.errors));
+});
+
+test("exact matching and null: an execution with a trailing newline or null is rejected", () => {
+  assert.equal(receive(emptyState(), { envelope: envelope({ execution: "EXE-1\n" }), payload }, update).error.code, "envelope-invalid");
+  assert.equal(receive(emptyState(), { envelope: envelope({ execution: null }), payload }, update).error.code, "envelope-invalid");
+  assert.equal(envelopeV2(envelope({ execution: "EXE-1\n" })), false);
+  assert.equal(receive(emptyState(), { envelope: envelope({ provenance: { schema: null, contributions: {} } }), payload }, vigila).error.code, "provenance-malformed");
+});
+
+test("identity environment: the vendored list is the one identityEnvironment strips", () => {
+  const pinned = readJson("tests/fixtures/praxis-provenance/identity-environment.json").variables;
+  assert.deepEqual([...IDENTITY_ENVIRONMENT_VARIABLES].sort(), [...pinned].sort());
+  for (const name of ["ROS_ACTOR", "ROS_ACTOR_KIND", "ROS_EXECUTION_ID", "CLAUDE_CODE_SESSION_ID", "GITHUB_RUN_ID", "OLLAMA_HOST"]) assert.ok(pinned.includes(name), name);
+});
+
+test("identity environment: dispatching for another actor removes every inherited identity variable", () => {
+  const inherited = { PATH: "/usr/bin", HOME: "/home/x", ...Object.fromEntries(readJson("tests/fixtures/praxis-provenance/identity-environment.json").variables.map((name) => [name, `parent-${name}`])) };
+  const child = identityEnvironment(inherited, { ROS_ACTOR_KIND: "agent", ROS_ACTOR: "openai/codex", ROS_TELEMETRY_PROVIDER: "openai", ROS_TELEMETRY_MODEL: undefined, ROS_EXECUTION_ID: "" });
+  assert.deepEqual(child, { PATH: "/usr/bin", HOME: "/home/x", ROS_ACTOR_KIND: "agent", ROS_ACTOR: "openai/codex", ROS_TELEMETRY_PROVIDER: "openai" });
+  assert.ok(!Object.values(child).some((value) => String(value).startsWith("parent-")), "no parent identity, session, or run leaks");
+  assert.equal(inherited.ROS_ACTOR, "parent-ROS_ACTOR", "input not mutated");
 });
 
 // ---- the Praxis end-to-end chain carried through registry envelopes (REG-PROV-015) --
