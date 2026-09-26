@@ -1,0 +1,16 @@
+{
+  "name": "echelon-registry-conformance",
+  "private": true,
+  "description": "Executable conformance checks for the Echelon Registry specification (schemas, examples, registry, fixtures).",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node conformance/run.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}

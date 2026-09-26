@@ -1,0 +1,58 @@
+{
+  "why": "identity->id; unknown->\"unknown\"; model/runtime (absent in v1) become \"unknown\", never guessed",
+  "roundTrip": true,
+  "v1": {
+    "schema": "echelon.execution-envelope/v1",
+    "operationId": "op-7f3c",
+    "correlationId": "corr-19a2",
+    "timestamp": "2026-09-26T14:00:00Z",
+    "actor": {
+      "kind": "agent",
+      "provider": {
+        "state": "known",
+        "value": "openai"
+      },
+      "identity": {
+        "state": "known",
+        "value": "openai/codex"
+      },
+      "runId": {
+        "state": "unknown"
+      },
+      "sessionId": {
+        "state": "known",
+        "value": "s-1"
+      }
+    },
+    "source": {
+      "repository": {
+        "state": "known",
+        "value": "kemiller2002/app"
+      },
+      "commit": {
+        "state": "unknown"
+      }
+    }
+  },
+  "v2": {
+    "schema": "echelon.execution-envelope/v2",
+    "operationId": "op-7f3c",
+    "correlationId": "corr-19a2",
+    "timestamp": "2026-09-26T14:00:00Z",
+    "actor": {
+      "kind": "agent",
+      "id": "openai/codex",
+      "provider": "openai",
+      "model": "unknown",
+      "runtime": "unknown"
+    },
+    "runIdentifiers": {
+      "sessionId": "s-1",
+      "runId": "unknown"
+    },
+    "source": {
+      "repository": "kemiller2002/app",
+      "commit": "unknown"
+    }
+  }
+}

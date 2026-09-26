@@ -39,3 +39,5 @@ Cross-system writes MUST use the receiving system's integration boundary when on
 ## Bootstrap
 
 See `spec/` for normative requirements, `schemas/` for machine-readable contracts, and `examples/` for reference manifests.
+
+Agent identity and provenance (execution envelope v2, provenance capability in system manifest v2) adopt the Praxis provenance contract: see `spec/echelon-integration-standard.md` §5.1–§5.9 and `docs/decisions/`. Run the executable conformance checks with `npm ci && npm test` (see `conformance/README.md`).

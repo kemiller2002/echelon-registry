@@ -1,0 +1,35 @@
+{
+  "why": "a not-applicable source field is omitted; v1 cannot distinguish that from an absent field on the way back",
+  "roundTrip": false,
+  "v1": {
+    "schema": "echelon.execution-envelope/v1",
+    "operationId": "op-7f3c",
+    "correlationId": "corr-19a2",
+    "timestamp": "2026-09-26T14:00:00Z",
+    "actor": {
+      "kind": "human",
+      "provider": {
+        "state": "not-applicable"
+      },
+      "identity": {
+        "state": "known",
+        "value": "kevin"
+      }
+    },
+    "source": {
+      "workItem": {
+        "state": "not-applicable"
+      }
+    }
+  },
+  "v2": {
+    "schema": "echelon.execution-envelope/v2",
+    "operationId": "op-7f3c",
+    "correlationId": "corr-19a2",
+    "timestamp": "2026-09-26T14:00:00Z",
+    "actor": {
+      "kind": "human",
+      "id": "kevin"
+    }
+  }
+}

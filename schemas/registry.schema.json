@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.registry.v1.json",
+  "title": "Echelon Registry v1",
+  "description": "An owner/organization registry (spec/echelon-integration-standard.md §3). Each entry is a registry entry, not a system manifest: it carries only what the registry knows. A field the registry does not know is omitted (absence means not declared by the registry; consult the system's own manifest), never filled with a guess. The optional envelopes/provenance fields have exactly the system-manifest v2 meaning.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "systems"],
+  "properties": {
+    "schema": { "const": "echelon.registry/v1" },
+    "systems": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entry" }
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "repository", "provides"],
+      "properties": {
+        "id": { "$ref": "https://echelonfoundry.com/schemas/echelon.system.v2.json#/$defs/systemId" },
+        "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
+        "version": { "type": "string", "minLength": 1 },
+        "executable": { "type": ["string", "null"] },
+        "provides": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "https://echelonfoundry.com/schemas/echelon.system.v2.json#/$defs/capability" }
+        },
+        "optionalConsumes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "https://echelonfoundry.com/schemas/echelon.system.v2.json#/$defs/consumption" }
+        },
+        "envelopes": { "$ref": "https://echelonfoundry.com/schemas/echelon.system.v2.json#/$defs/envelopes" },
+        "provenance": { "$ref": "https://echelonfoundry.com/schemas/echelon.system.v2.json#/$defs/provenanceCapability" }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "repository": "kemiller2002/praxis",
+  "commit": "58cf46a",
+  "path": "schemas",
+  "files": {
+    "artifact-provenance.schema.json": "a9fe95c265f8ecf7ce6e50f20524ba68d452c0b536c9bba571096dbaaa356b38",
+    "provenance-actor.schema.json": "f64a7f1c61c0c5b5c46a2d2ae8aebc78e177dc03e4b7c1f3e800e82bcb02b845",
+    "provenance-record.schema.json": "64c2f319ba99dc3be6a177c3d0d11740e81990dd970432ceee4baa112cf7352f"
+  }
+}

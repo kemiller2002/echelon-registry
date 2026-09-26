@@ -1,0 +1,31 @@
+{
+  "schema": "echelon.execution-envelope/v2",
+  "operationId": "op-7f3c",
+  "correlationId": "corr-19a2",
+  "timestamp": "2026-09-26T14:00:00Z",
+  "actor": {
+    "kind": "agent",
+    "id": "anthropic/claude-code",
+    "provider": "anthropic",
+    "model": "unknown",
+    "runtime": "claude-code"
+  },
+  "execution": "EXE-20260926T150000000Z-f6f6f6f6",
+  "provenance": {
+    "contributions": {
+      "EXE-20260926T080000000Z-a1a1a1a1": {
+        "operations": [
+          "created"
+        ],
+        "at": "2026-09-26T08:00:00.000Z",
+        "actor": {
+          "kind": "agent",
+          "id": "anthropic/claude-code",
+          "provider": "anthropic",
+          "model": "unknown",
+          "runtime": "claude-code"
+        }
+      }
+    }
+  }
+}

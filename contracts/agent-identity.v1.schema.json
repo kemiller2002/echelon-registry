@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/contracts/agent.identity.v1.json",
+  "title": "agent.identity v1",
+  "description": "Result of the agent.identity capability: who the calling process will be recorded as, how that was determined, and which executions are active. Describes the JSON printed by Praxis `ros provenance identity --json` (kemiller2002/praxis src/Ros.Cli/ProvenanceCommands.fs, commit 58cf46a). The actor is the Praxis actor. Self-reported provenance: it is not authentication, authorization, or evidence (RQ-ROS-2026-A010, spec §5.5). Values Praxis does not know are null here (identity) or the literal \"unknown\" (actor); consumers MUST NOT substitute guesses. Additional fields added by later minor releases MUST be preserved or ignored, never rejected.",
+  "type": "object",
+  "required": ["actor", "identity", "discovery", "activeExecutions", "assurance"],
+  "properties": {
+    "actor": { "$ref": "https://github.com/kemiller2002/praxis/schemas/provenance-actor.schema.json" },
+    "identity": {
+      "description": "The resolved runtime identity behind the actor. null: not known.",
+      "type": "object",
+      "required": ["provider", "model", "modelVersion", "runtime", "runtimeVersion", "sessionId", "conversationId", "runId", "agentId", "subagentId"],
+      "properties": {
+        "provider": { "type": "string" },
+        "model": { "type": ["string", "null"] },
+        "modelVersion": { "type": ["string", "null"] },
+        "runtime": { "type": "string" },
+        "runtimeVersion": { "type": ["string", "null"] },
+        "sessionId": { "type": ["string", "null"] },
+        "conversationId": { "type": ["string", "null"] },
+        "runId": { "type": ["string", "null"] },
+        "agentId": { "type": ["string", "null"] },
+        "subagentId": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "discovery": {
+      "type": "object",
+      "required": ["mechanism", "actorKindSource"],
+      "properties": {
+        "mechanism": { "description": "The discovery mechanism that determined the identity, e.g. whitelisted-claude-environment.", "type": "string", "minLength": 1 },
+        "actorKindSource": { "enum": ["flag", "environment", "discovery-mechanism"] }
+      },
+      "additionalProperties": true
+    },
+    "activeExecutions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["executionId", "workItemId", "startedAt", "actor"],
+        "properties": {
+          "executionId": { "type": "string", "pattern": "^EXE-[A-Za-z0-9._-]+$" },
+          "workItemId": { "type": "string" },
+          "startedAt": { "type": "string" },
+          "actor": { "$ref": "https://github.com/kemiller2002/praxis/schemas/provenance-actor.schema.json" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "assurance": {
+      "description": "Always self-reported: the result is provenance, never authentication.",
+      "const": "self-reported"
+    }
+  },
+  "additionalProperties": true
+}

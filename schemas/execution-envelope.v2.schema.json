@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.execution-envelope.v2.json",
+  "title": "Echelon Integration Execution Envelope v2",
+  "description": "Execution envelope v2 (spec/echelon-integration-standard.md §5.1-§5.9). The actor IS the Praxis provenance actor and the optional provenance IS a praxis.provenance-record; both are referenced from the vendored Praxis schemas (schemas/vendor/praxis/SOURCE.json), never redefined. v1 (execution-envelope.schema.json) is frozen and remains valid.",
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^x-[a-z0-9][a-z0-9-]*$": true
+  },
+  "required": ["schema", "operationId", "correlationId", "timestamp", "actor"],
+  "properties": {
+    "schema": { "const": "echelon.execution-envelope/v2" },
+    "operationId": { "type": "string", "minLength": 1 },
+    "correlationId": { "type": "string", "minLength": 1 },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "actor": {
+      "description": "The actor performing THIS invocation (the current actor). Exactly the Praxis actor.",
+      "$ref": "https://github.com/kemiller2002/praxis/schemas/provenance-actor.schema.json"
+    },
+    "execution": {
+      "description": "The run performing this invocation: a propagated Praxis execution (ROS_EXECUTION_ID) or the caller's own namespaced run EXE-<system>.<run>. Absent means not known; never minted.",
+      "type": "string",
+      "pattern": "^EXE-[A-Za-z0-9._-]+$"
+    },
+    "runIdentifiers": {
+      "description": "Session, conversation, and run identifiers of the current actor's runtime, when known. Literal \"unknown\" when applicable but not known; omitted when not applicable.",
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^x-[a-z0-9][a-z0-9-]*$": { "type": "string", "minLength": 1 }
+      },
+      "properties": {
+        "sessionId": { "type": "string", "minLength": 1 },
+        "conversationId": { "type": "string", "minLength": 1 },
+        "runId": { "type": "string", "minLength": 1 }
+      }
+    },
+    "provenance": {
+      "description": "Provenance of the subject the invocation acts upon, carried verbatim. Its contributors (including the original actor) are distinct from the current `actor`.",
+      "$ref": "#/$defs/carriedProvenance"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^x-[a-z0-9][a-z0-9-]*$": { "type": "string", "minLength": 1 }
+      },
+      "properties": {
+        "repository": { "type": "string", "minLength": 1 },
+        "branch": { "type": "string", "minLength": 1 },
+        "commit": { "type": "string", "minLength": 1 },
+        "workItem": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
+  "$defs": {
+    "carriedProvenance": {
+      "description": "A praxis.provenance-record of supported major 1 (validated against the contract), a record of any other major (carried verbatim, only the discriminator and version are checked), or a legacy unversioned {\"contributions\": ...} block read as version 1 (RQ-ROS-2026-A013).",
+      "type": "object",
+      "if": { "required": ["contract"] },
+      "then": {
+        "required": ["contract", "version"],
+        "properties": { "contract": { "const": "praxis.provenance-record" } },
+        "if": { "properties": { "version": { "pattern": "^1\\." } } },
+        "then": { "$ref": "https://github.com/kemiller2002/praxis/schemas/provenance-record.schema.json" },
+        "else": {
+          "properties": {
+            "version": {
+              "type": "string",
+              "pattern": "^(0|[2-9]|[1-9][0-9]+)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+            }
+          }
+        }
+      },
+      "else": { "$ref": "https://github.com/kemiller2002/praxis/schemas/artifact-provenance.schema.json" }
+    }
+  },
+  "examples": [
+    {
+      "schema": "echelon.execution-envelope/v2",
+      "operationId": "op-7f3c",
+      "correlationId": "corr-19a2",
+      "timestamp": "2026-09-26T14:00:00Z",
+      "actor": { "kind": "agent", "id": "openai/codex", "provider": "openai", "model": "gpt-5-codex", "runtime": "codex" },
+      "execution": "EXE-20260926T140000000Z-e5e5e5e5",
+      "source": { "repository": "kemiller2002/app", "branch": "main", "commit": "abc123", "workItem": "unknown" }
+    }
+  ]
+}

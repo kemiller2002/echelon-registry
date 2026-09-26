@@ -1,0 +1,34 @@
+{
+  "why": "kind system maps to automation (documented collapse)",
+  "roundTrip": false,
+  "v1": {
+    "schema": "echelon.execution-envelope/v1",
+    "operationId": "op-7f3c",
+    "correlationId": "corr-19a2",
+    "timestamp": "2026-09-26T14:00:00Z",
+    "actor": {
+      "kind": "system",
+      "provider": {
+        "state": "known",
+        "value": "echelon"
+      },
+      "identity": {
+        "state": "known",
+        "value": "echelon/vigila"
+      }
+    }
+  },
+  "v2": {
+    "schema": "echelon.execution-envelope/v2",
+    "operationId": "op-7f3c",
+    "correlationId": "corr-19a2",
+    "timestamp": "2026-09-26T14:00:00Z",
+    "actor": {
+      "kind": "automation",
+      "id": "echelon/vigila",
+      "provider": "echelon",
+      "model": "unknown",
+      "runtime": "unknown"
+    }
+  }
+}
