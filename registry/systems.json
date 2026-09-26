@@ -8,7 +8,13 @@
       "provides": [
         { "id": "agent.identity", "contractVersion": 1 },
         { "id": "engineering.metrics", "contractVersion": 1 }
-      ]
+      ],
+      "provenance": {
+        "contract": "praxis.provenance-record",
+        "versions": { "accepts": ["1"], "emits": ["1"] },
+        "preserves": true,
+        "propagates": { "actor": true, "execution": true, "lineage": true }
+      }
     },
     {
       "id": "vigila",

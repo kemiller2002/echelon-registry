@@ -1,0 +1,17 @@
+{
+  "schema": "echelon.execution-envelope/v2",
+  "operationId": "op-7f3c",
+  "correlationId": "corr-19a2",
+  "timestamp": "2026-09-26T14:00:00Z",
+  "actor": {
+    "kind": "agent",
+    "id": "anthropic/claude-code",
+    "provider": "anthropic",
+    "model": "unknown",
+    "runtime": "claude-code"
+  },
+  "identity": {
+    "state": "known",
+    "value": "x"
+  }
+}

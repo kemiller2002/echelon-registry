@@ -1,0 +1,24 @@
+{
+  "actor": {
+    "kind": "human",
+    "id": "kevin"
+  },
+  "identity": {
+    "provider": "unknown",
+    "model": null,
+    "modelVersion": null,
+    "runtime": "unknown",
+    "runtimeVersion": null,
+    "sessionId": null,
+    "conversationId": null,
+    "runId": null,
+    "agentId": null,
+    "subagentId": null
+  },
+  "discovery": {
+    "mechanism": "explicit",
+    "actorKindSource": "environment"
+  },
+  "activeExecutions": [],
+  "assurance": "self-reported"
+}

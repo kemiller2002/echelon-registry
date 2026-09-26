@@ -1,0 +1,233 @@
+{
+  "description": "Provenance-aware resolution scenarios (spec \u00a75.8, conformance/README.md). Core result is PASS in every scenario.",
+  "scenarios": [
+    {
+      "name": "component alone",
+      "request": {
+        "capability": "followup.create",
+        "contractVersion": 1,
+        "requiresProvenance": false
+      },
+      "provider": null,
+      "expect": {
+        "state": "unavailable",
+        "core": "PASS"
+      }
+    },
+    {
+      "name": "component alone, caller requires provenance",
+      "request": {
+        "capability": "followup.create",
+        "contractVersion": 1,
+        "requiresProvenance": true
+      },
+      "provider": null,
+      "expect": {
+        "state": "unavailable",
+        "core": "PASS"
+      }
+    },
+    {
+      "name": "compatible v2 provider, provenance required",
+      "request": {
+        "capability": "followup.create",
+        "contractVersion": 1,
+        "requiresProvenance": true
+      },
+      "provider": {
+        "accessible": true,
+        "manifest": "examples/vigila.system.v2.json"
+      },
+      "expect": {
+        "state": "available",
+        "envelope": "echelon.execution-envelope/v2",
+        "core": "PASS"
+      }
+    },
+    {
+      "name": "compatible v2 provider, provenance not required",
+      "request": {
+        "capability": "followup.create",
+        "contractVersion": 1,
+        "requiresProvenance": false
+      },
+      "provider": {
+        "accessible": true,
+        "manifest": "examples/vigila.system.v2.json"
+      },
+      "expect": {
+        "state": "available",
+        "envelope": "echelon.execution-envelope/v2",
+        "core": "PASS"
+      }
+    },
+    {
+      "name": "v1-only provider, provenance required: misconfigured, never a stripped envelope",
+      "request": {
+        "capability": "followup.create",
+        "contractVersion": 1,
+        "requiresProvenance": true
+      },
+      "provider": {
+        "accessible": true,
+        "manifest": "examples/vigila.system.json"
+      },
+      "expect": {
+        "state": "misconfigured",
+        "core": "PASS"
+      }
+    },
+    {
+      "name": "v1-only provider, provenance not required",
+      "request": {
+        "capability": "followup.create",
+        "contractVersion": 1,
+        "requiresProvenance": false
+      },
+      "provider": {
+        "accessible": true,
+        "manifest": "examples/vigila.system.json"
+      },
+      "expect": {
+        "state": "available",
+        "envelope": "echelon.execution-envelope/v1",
+        "core": "PASS"
+      }
+    },
+    {
+      "name": "registry v1 entry without provenance capability, provenance required",
+      "request": {
+        "capability": "followup.create",
+        "contractVersion": 1,
+        "requiresProvenance": true
+      },
+      "provider": {
+        "accessible": true,
+        "registryEntry": "vigila"
+      },
+      "expect": {
+        "state": "misconfigured",
+        "core": "PASS"
+      }
+    },
+    {
+      "name": "provider declared but inaccessible",
+      "request": {
+        "capability": "followup.create",
+        "contractVersion": 1,
+        "requiresProvenance": true
+      },
+      "provider": {
+        "accessible": false,
+        "manifest": "examples/vigila.system.v2.json"
+      },
+      "expect": {
+        "state": "misconfigured",
+        "core": "PASS"
+      }
+    },
+    {
+      "name": "provider contract incompatible",
+      "request": {
+        "capability": "followup.create",
+        "contractVersion": 2,
+        "requiresProvenance": false
+      },
+      "provider": {
+        "accessible": true,
+        "manifest": "examples/vigila.system.v2.json"
+      },
+      "expect": {
+        "state": "misconfigured",
+        "core": "PASS"
+      }
+    },
+    {
+      "name": "v2 provider that does not preserve provenance, provenance required",
+      "request": {
+        "capability": "followup.create",
+        "contractVersion": 1,
+        "requiresProvenance": true
+      },
+      "provider": {
+        "accessible": true,
+        "manifest": {
+          "schema": "echelon.system/v2",
+          "id": "vigila",
+          "repository": "kemiller2002/vigila",
+          "version": "1",
+          "executable": "vigila",
+          "provides": [
+            {
+              "id": "followup.create",
+              "contractVersion": 1
+            }
+          ],
+          "optionalConsumes": [],
+          "envelopes": {
+            "accepts": [
+              "echelon.execution-envelope/v1",
+              "echelon.execution-envelope/v2"
+            ]
+          },
+          "provenance": {
+            "contract": "praxis.provenance-record",
+            "versions": {
+              "accepts": [
+                "1"
+              ],
+              "emits": [
+                "1"
+              ]
+            },
+            "preserves": false,
+            "propagates": {
+              "actor": true,
+              "execution": true,
+              "lineage": true
+            }
+          }
+        }
+      },
+      "expect": {
+        "state": "misconfigured",
+        "core": "PASS"
+      }
+    },
+    {
+      "name": "v2 envelope without provenance capability, provenance required",
+      "request": {
+        "capability": "followup.create",
+        "contractVersion": 1,
+        "requiresProvenance": true
+      },
+      "provider": {
+        "accessible": true,
+        "manifest": {
+          "schema": "echelon.system/v2",
+          "id": "vigila",
+          "repository": "kemiller2002/vigila",
+          "version": "1",
+          "executable": "vigila",
+          "provides": [
+            {
+              "id": "followup.create",
+              "contractVersion": 1
+            }
+          ],
+          "optionalConsumes": [],
+          "envelopes": {
+            "accepts": [
+              "echelon.execution-envelope/v1",
+              "echelon.execution-envelope/v2"
+            ]
+          }
+        }
+      },
+      "expect": {
+        "state": "misconfigured",
+        "core": "PASS"
+      }
+    }
+  ]
+}

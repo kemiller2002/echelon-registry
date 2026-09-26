@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.system.v2.json",
+  "title": "Echelon System Manifest v2",
+  "description": "System manifest v2 (spec/echelon-integration-standard.md §5.8). Adds, all OPTIONAL: the execution-envelope versions a system accepts, a provenance capability descriptor, and consumer-side provenance requirements. A v1 manifest (system-manifest.schema.json) is frozen, remains valid, and is read as accepting envelope v1 only with no provenance capability.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "id", "repository", "version", "provides", "optionalConsumes"],
+  "properties": {
+    "schema": { "const": "echelon.system/v2" },
+    "id": { "$ref": "#/$defs/systemId" },
+    "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
+    "version": { "type": "string", "minLength": 1 },
+    "executable": { "type": ["string", "null"] },
+    "provides": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/capability" }
+    },
+    "optionalConsumes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/consumption" }
+    },
+    "envelopes": { "$ref": "#/$defs/envelopes" },
+    "provenance": { "$ref": "#/$defs/provenanceCapability" }
+  },
+  "$defs": {
+    "systemId": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+    "capabilityId": { "type": "string", "pattern": "^[a-z][a-z0-9-]*(\\.[a-z][a-z0-9-]*)+$" },
+    "capability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "contractVersion"],
+      "properties": {
+        "id": { "$ref": "#/$defs/capabilityId" },
+        "contractVersion": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "consumption": {
+      "description": "A consumed capability: its id (v1 form), or an object that additionally states that this consumer requires provenance from the provider (§5.8.4).",
+      "oneOf": [
+        { "$ref": "#/$defs/capabilityId" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id"],
+          "properties": {
+            "id": { "$ref": "#/$defs/capabilityId" },
+            "requiresProvenance": { "type": "boolean" }
+          }
+        }
+      ]
+    },
+    "envelopeSchema": { "enum": ["echelon.execution-envelope/v1", "echelon.execution-envelope/v2"] },
+    "envelopes": {
+      "description": "Execution-envelope versions the system's integration executable accepts. Absent: envelope v1 only.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["accepts"],
+      "properties": {
+        "accepts": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/envelopeSchema" }
+        }
+      }
+    },
+    "major": { "type": "string", "pattern": "^[1-9][0-9]*$" },
+    "provenanceCapability": {
+      "description": "How the system handles praxis.provenance-record (RQ-ROS-2026-A013..A015). Absent: the system declares no provenance capability.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract", "versions", "preserves", "propagates"],
+      "properties": {
+        "contract": { "const": "praxis.provenance-record" },
+        "versions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["accepts", "emits"],
+          "properties": {
+            "accepts": {
+              "description": "Contract MAJOR versions the system interprets (any minor/patch of each).",
+              "type": "array",
+              "uniqueItems": true,
+              "items": { "$ref": "#/$defs/major" }
+            },
+            "emits": {
+              "description": "Contract MAJOR versions the system writes.",
+              "type": "array",
+              "uniqueItems": true,
+              "items": { "$ref": "#/$defs/major" }
+            }
+          }
+        },
+        "preserves": {
+          "description": "true: received records (including unsupported majors and unknown fields) are stored and returned verbatim, never stripped (RQ-ROS-2026-A015).",
+          "type": "boolean"
+        },
+        "propagates": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["actor", "execution", "lineage"],
+          "properties": {
+            "actor": { "type": "boolean" },
+            "execution": { "type": "boolean" },
+            "lineage": { "type": "boolean" }
+          }
+        }
+      }
+    }
+  }
+}

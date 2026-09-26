@@ -1,0 +1,32 @@
+{
+  "why": "an unknown actor is never fabricated",
+  "roundTrip": true,
+  "v1": {
+    "schema": "echelon.execution-envelope/v1",
+    "operationId": "op-7f3c",
+    "correlationId": "corr-19a2",
+    "timestamp": "2026-09-26T14:00:00Z",
+    "actor": {
+      "kind": "agent",
+      "provider": {
+        "state": "unknown"
+      },
+      "identity": {
+        "state": "unknown"
+      }
+    }
+  },
+  "v2": {
+    "schema": "echelon.execution-envelope/v2",
+    "operationId": "op-7f3c",
+    "correlationId": "corr-19a2",
+    "timestamp": "2026-09-26T14:00:00Z",
+    "actor": {
+      "kind": "agent",
+      "id": "unknown",
+      "provider": "unknown",
+      "model": "unknown",
+      "runtime": "unknown"
+    }
+  }
+}
