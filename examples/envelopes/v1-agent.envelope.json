@@ -1,0 +1,19 @@
+{
+  "schema": "echelon.execution-envelope/v1",
+  "operationId": "op-followup-0001",
+  "correlationId": "corr-2026-09-26-01",
+  "timestamp": "2026-09-26T09:05:00Z",
+  "actor": {
+    "kind": "agent",
+    "provider": { "state": "known", "value": "openai" },
+    "identity": { "state": "known", "value": "openai/codex" },
+    "runId": { "state": "known", "value": "gh/99" },
+    "sessionId": { "state": "unknown" }
+  },
+  "source": {
+    "repository": { "state": "known", "value": "kemiller2002/aegis" },
+    "branch": { "state": "known", "value": "main" },
+    "commit": { "state": "unknown" },
+    "workItem": { "state": "not-applicable" }
+  }
+}

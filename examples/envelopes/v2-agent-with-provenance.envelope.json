@@ -1,0 +1,18 @@
+{
+  "schema": "echelon.execution-envelope/v2",
+  "operationId": "op-followup-0003",
+  "correlationId": "corr-2026-09-26-03",
+  "timestamp": "2026-09-26T09:05:00.000Z",
+  "actor": { "kind": "agent", "id": "google/gemini-cli", "provider": "google", "model": "unknown", "runtime": "gemini-cli" },
+  "execution": "EXE-20260926T090000000Z-c1c1c1c1",
+  "source": {
+    "repository": { "state": "known", "value": "kemiller2002/aegis" },
+    "commit": { "state": "known", "value": "5e1f0c2" }
+  },
+  "provenance": {
+    "schema": "praxis.provenance/1",
+    "contributions": {},
+    "derivedFrom": ["aegis:finding/SF-0001"]
+  },
+  "x-aegis-review": { "finding": "SF-0001" }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.registry.v1.json",
+  "title": "Echelon Registry Index v1",
+  "description": "Formalizes the existing echelon.registry/v1 index (registry/systems.json) without changing it. Entries are system manifest v1 summaries; `version` and `optionalConsumes` are optional here because published v1 entries omit them. v1 entries cannot carry a provenance descriptor, so every v1 entry reads as provenance `undeclared` (REG-PROV-013).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "systems"],
+  "properties": {
+    "schema": { "const": "echelon.registry/v1" },
+    "systems": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/system" }
+    }
+  },
+  "$defs": {
+    "system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "repository", "provides"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+        "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
+        "version": { "type": "string", "minLength": 1 },
+        "executable": { "type": ["string", "null"] },
+        "provides": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "https://echelonfoundry.com/schemas/echelon.system.v1.json#/$defs/capability" }
+        },
+        "optionalConsumes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*(\\.[a-z][a-z0-9-]*)+$" }
+        }
+      }
+    }
+  }
+}
