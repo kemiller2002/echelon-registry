@@ -1,4 +1,4 @@
-// REG-PROV-005..REG-PROV-010, REG-PROV-014, REG-PROV-016: the reference receiver in
+// REG-PROV-005..REG-PROV-010, REG-PROV-014, REG-PROV-016 (revision 1.2): the reference receiver in
 // lib/echelon-provenance.mjs classifies carried provenance, appends the invoking actor's
 // contribution idempotently, never re-attributes or overwrites, maps v1 losslessly,
 // rejects credentials, and treats identity as provenance only.
@@ -8,6 +8,7 @@ import { createAjv, readJson, validator, praxisCases, echelonChain } from "./sup
 import {
   receive, emptyState, invocation, upgradeEnvelopeV1, relay, envelopeProblems, provenanceExpectation,
   systemActor, V1_ACTOR_EXTENSION, capabilityKind, keyFromEnvelopeV1Namespaced, escapeKeySegment,
+  updateOperations, followupSourceReference, contributionTime, receiveText, parseJsonText,
 } from "../lib/echelon-provenance.mjs";
 import {
   actorFromEnvelopeV1, keyFromEnvelopeV1, preservationViolations, IDENTITY_ENVIRONMENT_VARIABLES, identityEnvironment, originator, withRole, addLineage, emptyBlock,
@@ -180,11 +181,12 @@ test("an unsupported major is stored verbatim; no contribution is merged into it
 test("no silent stripping: an absent block yields a record whose provenance names the invoker", () => {
   const received = receive(emptyState(), { envelope: envelope(), payload }, vigila);
   assert.equal(received.result.record.provenance.verdict, "created");
-  assert.equal(received.result.record.receivedProvenance, null);
+  assert.deepEqual(received.result.record.receivedProvenance, { verdict: "absent" }, "absence is explicit, never null");
   assert.deepEqual(originator(received.result.record.provenance.block).actor, B);
   const updated = receive(emptyState(), { envelope: envelope(), payload }, update);
   assert.equal(updated.result.record.provenance.verdict, "absent");
-  assert.deepEqual(originator(updated.result.record.provenance.block).actor, B);
+  assert.deepEqual(updated.result.record.provenance.block.contributions["EXE-20260926T090500000Z-bbbb0005"].actor, B, "the updater is recorded");
+  assert.equal(originator(updated.result.record.provenance.block), undefined, "but never as the creator");
 });
 
 // ---- appending, replay, and never overwriting (REG-PROV-009, REG-PROV-010) --------
@@ -235,13 +237,30 @@ test("appending the identical contribution for the invoking execution is a no-op
   assert.deepEqual(received.result.record.provenance.block, carried);
 });
 
-test("update of a record without history: the invoker is recorded as created", () => {
+test("finding 4: updating an unattributed record never makes the updater its creator; the origin stays unknown", () => {
   for (const provenance of [undefined, emptyBlock(), { contributions: {} }]) {
-    const received = receive(emptyState(), { envelope: envelope(provenance === undefined ? {} : { provenance }), payload }, update);
-    assert.ok(received.ok, JSON.stringify(received.error));
-    assert.deepEqual(received.result.record.invoker.operations, ["created"]);
-    assert.deepEqual(originator(received.result.record.provenance.block).actor, B);
+    for (const [binding, operations] of [[update, ["transformed"]], [{ system: "vigila", capability: "followup.resolve" }, ["resolved"]]]) {
+      const received = receive(emptyState(), { envelope: envelope(provenance === undefined ? {} : { provenance }), payload }, binding);
+      assert.ok(received.ok, JSON.stringify(received.error));
+      assert.deepEqual(received.result.record.invoker.operations, operations, binding.capability);
+      assert.equal(originator(received.result.record.provenance.block), undefined, "no authorship is invented");
+      assert.deepEqual(withRole(received.result.record.provenance.block, "created"), []);
+    }
   }
+});
+
+test("finding 4: only create capabilities record created; an update binding naming created is refused", () => {
+  assert.deepEqual(updateOperations("followup.update"), ["transformed"]);
+  assert.deepEqual(updateOperations("followup.resolve"), ["resolved"]);
+  const state = emptyState();
+  const refused = receive(state, { envelope: envelope(), payload }, { ...update, operations: () => ["created"] });
+  assert.equal(refused.ok, false);
+  assert.equal(refused.error.code, "binding-invalid");
+  assert.equal(refused.state, state);
+  const noCreated = receive(state, { envelope: envelope(), payload }, { ...vigila, operations: () => ["discovered"] });
+  assert.equal(noCreated.error.code, "binding-invalid");
+  const withRoles = receive(state, { envelope: envelope(), payload }, { ...vigila, operations: () => ["created", "discovered"] });
+  assert.deepEqual(withRoles.result.record.invoker.operations, ["created", "discovered"]);
 });
 
 test("update of an existing record: when an originator exists the invoker is recorded as transformed, never as author, and the creator is unchanged", () => {
@@ -351,7 +370,7 @@ const sourceBlock = () => ({
   derivedFrom: ["git:commit/5e1f0c2", "dokimos:observation/OBS-2026-0001"],
   "x-aegis": { severity: "high" },
 });
-const sourcedPayload = { ...payload, context: { source: "aegis:finding/SF-0001" } };
+const sourcedPayload = { ...payload, context: { source: { ref: "aegis:finding/SF-0001" } } };
 
 test("create: the source block is stored byte-identical and never merged into the new record", () => {
   const source = sourceBlock();
@@ -556,7 +575,11 @@ const replayChain = () => {
   const chain = echelonChain();
   return chain.steps.reduce((acc, step, index) => {
     const current = acc.blocks[step.record] ?? emptyBlock();
-    if (step.lineage) return { ...acc, blocks: { ...acc.blocks, [step.record]: addLineage(current, step.lineage) } };
+    if (step.lineage) {
+      const added = addLineage(current, step.lineage);
+      assert.ok(added.ok, added.error);
+      return { ...acc, blocks: { ...acc.blocks, [step.record]: added.block } };
+    }
     const { key, contribution } = step.append;
     const carried = relay({
       schema: "echelon.execution-envelope/v2",
@@ -568,7 +591,9 @@ const replayChain = () => {
       provenance: current,
     });
     const env = Object.fromEntries(Object.entries(carried).filter(([, value]) => value !== undefined));
-    const received = receive(acc.state, { envelope: env, payload: { record: step.record } }, { system: "vigila", capability: "followup.update", operations: () => contribution.operations });
+    // A step that creates a record goes through a create capability; every other step is an update.
+    const capability = contribution.operations.includes("created") ? "followup.create" : "followup.update";
+    const received = receive(acc.state, { envelope: env, payload: { record: step.record } }, { system: "vigila", capability, operations: () => contribution.operations });
     assert.ok(received.ok, JSON.stringify(received.error));
     const block = received.result.record.provenance.block;
     const expectedKey = key.startsWith("CTB-") ? `EXT-op.chain-${index}` : key;
@@ -659,4 +684,183 @@ test("provenance expectations from descriptors", () => {
   assert.equal(provenanceExpectation(d, "praxis.provenance/2"), "carried-verbatim");
   assert.equal(provenanceExpectation({ ...d, unknownFields: "discard" }), "lossy");
   assert.equal(provenanceExpectation({ ...d, propagation: { ...d.propagation, lineage: false } }), "lossy");
+});
+
+// ---- contract revision 1.2 (REG-PROV-005, -006, -008, -016; second review findings) ----------
+
+const GHP = `ghp_${"A".repeat(36)}`;
+const envelopeKeyCases = () => readJson("tests/fixtures/praxis-provenance/envelope-key-cases.json").cases;
+const lineageCases = () => readJson("tests/fixtures/praxis-provenance/lineage-cases.json").cases;
+const textCases = () => readJson("tests/fixtures/praxis-provenance/text-cases.json").cases;
+
+test("finding 2: a credential in the payload's source reference is refused as lineage and nothing is stored", () => {
+  const state = emptyState();
+  for (const source of [GHP, { ref: GHP }, { ref: `aegis:finding/${GHP}` }]) {
+    const received = receive(state, { envelope: envelope(), payload: { ...payload, context: { source } } }, vigila);
+    assert.equal(received.ok, false, JSON.stringify(source));
+    assert.equal(received.error.code, "lineage-refused");
+    assert.match(received.error.problems.join(" "), /credential-like/);
+    assert.equal(received.state, state);
+    assert.deepEqual(received.state.records, {});
+  }
+});
+
+test("finding 2: the stored block is always re-classified, with or without the receiver's own transformed entry", () => {
+  for (const recordsTransformation of [false, true]) {
+    const received = receive(emptyState(), { envelope: envelope({ provenance: sourceBlock() }), payload: sourcedPayload }, { ...vigila, recordsTransformation });
+    assert.ok(received.ok, JSON.stringify(received.error));
+    assert.equal(received.result.record.provenance.block.derivedFrom.at(-1), "aegis:finding/SF-0001");
+  }
+});
+
+test("finding 3: context.source.ref (Vigila's canonical shape) is read; a string is read for compatibility", () => {
+  const canonical = receive(emptyState(), { envelope: envelope(), payload: { ...payload, context: { source: { ref: "aegis:finding/SF-0001", url: "https://example.invalid/f/1", displayName: "SF-0001" } } } }, vigila);
+  assert.deepEqual(canonical.result.record.provenance.block.derivedFrom, ["aegis:finding/SF-0001"]);
+  assert.ok(followupContract(canonical.result.record.payload), "the canonical payload is a valid followup.create payload");
+  const legacy = receive(emptyState(), { envelope: envelope(), payload: { ...payload, context: { source: "aegis:finding/SF-0001" } } }, vigila);
+  assert.deepEqual(legacy.result.record.provenance.block.derivedFrom, ["aegis:finding/SF-0001"]);
+  for (const context of [undefined, null, {}, { source: null }, { note: "no source" }]) {
+    assert.deepEqual(followupSourceReference({ ...payload, context }), { ok: true, reference: undefined }, JSON.stringify(context));
+  }
+  assert.deepEqual(followupSourceReference({ context: { source: { ref: " \taegis:finding/SF-1\n" } } }), { ok: true, reference: "aegis:finding/SF-1" });
+});
+
+test("finding 3: a malformed source rejects the request; lineage is never lost silently", () => {
+  const state = emptyState();
+  for (const context of ["aegis:finding/SF-0001", 7, { source: {} }, { source: { ref: "" } }, { source: { ref: " \t" } }, { source: { ref: 7 } }, { source: 7 }, { source: [] }, { source: "" }]) {
+    const received = receive(state, { envelope: envelope(), payload: { ...payload, context } }, vigila);
+    assert.equal(received.ok, false, JSON.stringify(context));
+    assert.equal(received.error.code, "payload-invalid", JSON.stringify(context));
+    assert.equal(received.state, state);
+  }
+  const nel = followupSourceReference({ context: { source: { ref: "\u0085" } } });
+  assert.deepEqual(nel, { ok: true, reference: "\u0085" }, "U+0085 is content, not whitespace (contract 1.2 rule 2)");
+});
+
+test("rule 3: a surrogate in the source reference is refused by the checked addLineage", () => {
+  const received = receive(emptyState(), { envelope: envelope(), payload: { ...payload, context: { source: { ref: "aegis:\ud800" } } } }, vigila);
+  assert.equal(received.error.code, "lineage-refused");
+});
+
+for (const item of lineageCases()) {
+  test(`lineage fixture: ${item.name} is ${item.ok ? "added" : "refused"} by the addLineage the receiver uses`, () => {
+    const result = addLineage(item.block, item.references);
+    assert.equal(result.ok, item.ok, JSON.stringify(result));
+    if (item.ok) assert.deepEqual(result.block.derivedFrom, item.derivedFrom);
+  });
+}
+
+test("finding 6 and rule 4: key segments escape per code point, so astral ids never collide", () => {
+  assert.equal(escapeKeySegment("😀"), "_f0_9f_98_80");
+  assert.equal(escapeKeySegment("."), "_2e");
+  const keys = ["op-😀", "op-😁", "op-�"].map((id) => invocation(envelope({ operationId: id, execution: undefined })).key);
+  assert.equal(new Set(keys).size, 3, keys.join(" "));
+});
+
+for (const item of envelopeKeyCases()) {
+  test(`envelope-key fixture: ${item.name} ${item.error ? "cannot form a key and is rejected" : `keys ${item.key}`}`, () => {
+    const fields = item.envelope ?? JSON.parse(item.envelopeText);
+    const v1 = { schema: "echelon.execution-envelope/v1", operationId: fields.operationId, correlationId: "c", timestamp: "2026-09-26T09:00:00Z", actor: { kind: "agent", provider: known("openai"), identity: known("openai/codex"), ...fields.actor } };
+    if (item.error) {
+      assert.throws(() => keyFromEnvelopeV1(fields));
+      assert.throws(() => keyFromEnvelopeV1Namespaced(v1));
+      const received = receive(emptyState(), { envelope: v1, payload }, update);
+      assert.equal(received.ok, false);
+      assert.equal(received.error.code, "envelope-invalid");
+      return;
+    }
+    assert.equal(keyFromEnvelopeV1(fields), item.key);
+    assert.equal(keyFromEnvelopeV1Namespaced(v1), item.key, "without a repository the registry key is the Praxis key");
+    assert.equal(receive(emptyState(), { envelope: v1, payload }, update).result.record.invokedBy.key, item.key);
+  });
+}
+
+test("rule 4: a v2 envelope whose operationId cannot form a key (no execution) is rejected", () => {
+  const own = envelope({ operationId: "op-\ud83d" });
+  delete own.execution;
+  const received = receive(emptyState(), { envelope: own, payload }, update);
+  assert.equal(received.error.code, "envelope-invalid");
+});
+
+test("finding 14: a namespaced run key can never equal an un-namespaced one", () => {
+  const namespaced = keyFromEnvelopeV1Namespaced(v1With("vigila", "7"));
+  const plain = keyFromEnvelopeV1Namespaced(v1With(undefined, "vigila.7"));
+  assert.equal(namespaced, "EXT-run.vigila.7");
+  assert.equal(plain, "EXT-run.vigila_2e7");
+  assert.notEqual(namespaced, plain);
+  assert.equal(keyFromEnvelopeV1Namespaced(v1With("a/b", "c.5")), "EXT-run.a_2fb.c_2e5", "both segments escape '.'");
+  assert.equal(keyFromEnvelopeV1Namespaced(v1With("😀", "😀")), "EXT-run._f0_9f_98_80._f0_9f_98_80");
+  assert.equal(receive(emptyState(), { envelope: v1With("kemiller2002/aegis", "run\ud800"), payload }, update).error.code, "envelope-invalid");
+  assert.equal(receive(emptyState(), { envelope: v1With("octo/\udc00", "7"), payload }, update).error.code, "envelope-invalid");
+});
+
+test("finding 15: envelope timestamps are strict RFC 3339, independent of the host", () => {
+  for (const [text, utc] of [
+    ["2026-09-26T09:05:00Z", "2026-09-26T09:05:00.000Z"],
+    ["2026-09-26t09:05:00.123456789z", "2026-09-26T09:05:00.123Z"],
+    ["2026-09-26T11:00:00+02:00", "2026-09-26T09:00:00.000Z"],
+    ["2026-09-26T00:30:00-01:00", "2026-09-26T01:30:00.000Z"],
+    ["2024-02-29T23:59:59.999Z", "2024-02-29T23:59:59.999Z"],
+  ]) assert.equal(contributionTime(text), utc, text);
+  for (const text of ["2026-09-26T09:05:00", "2026-09-26 09:05:00Z", "2026-09-26", "2026-09-26T09:05Z", "2026-02-30T00:00:00Z",
+    "2026-09-26T24:00:00Z", "0000-01-01T00:00:00Z", "2026-09-26T09:05:00+2:00", "2026-09-26T09:05:00+24:00", "2026-09-26T09:05:00Z\n",
+    "Sat, 26 Sep 2026 09:05:00 GMT", "0001-01-01T00:30:00+01:00", 20260926, null]) {
+    assert.equal(contributionTime(text), undefined, String(text));
+    assert.equal(receive(emptyState(), { envelope: envelope({ timestamp: text }), payload }, vigila).error.code, "envelope-invalid", String(text));
+  }
+});
+
+test("rule 1: a request read as text with a repeated member name is rejected before anything is read", () => {
+  const smuggled = `{"envelope":{"schema":"echelon.execution-envelope/v2","operationId":"op-1","correlationId":"c","timestamp":"2026-09-26T09:05:00Z","actor":${JSON.stringify(B)},"provenance":{"schema":"praxis.provenance/1","contributions":{"EXE-A":{"operations":["created"],"at":"2026-09-26T08:00:00.000Z","actor":{"kind":"human","id":"mallory"}},"EXE-A":{"operations":["modified"],"at":"2026-09-26T08:30:00.000Z","actor":{"kind":"human","id":"alice"}}}}},"payload":${JSON.stringify(payload)}}`;
+  const state = emptyState();
+  const received = receiveText(state, smuggled, update);
+  assert.equal(received.error.code, "request-malformed");
+  assert.match(received.error.problems.join(" "), /repeated/);
+  assert.equal(received.state, state);
+  for (const text of ['{"envelope":{},"envelope":{}}', "{", "[]", '{"envelope":{"x-a":"\\ud800"}}', 7]) {
+    assert.equal(receiveText(state, text, update).error.code, "request-malformed", String(text));
+  }
+  const clean = receiveText(state, JSON.stringify({ envelope: envelope({ provenance: blockBy("EXE-A1", A) }), payload }), update);
+  assert.ok(clean.ok, JSON.stringify(clean.error));
+  assert.deepEqual(clean.result.record, receive(state, { envelope: envelope({ provenance: blockBy("EXE-A1", A) }), payload }, update).result.record);
+});
+
+for (const item of textCases()) {
+  test(`text fixture: ${item.name} carried as envelope text is ${item.expect === "malformed" ? "rejected" : "accepted"} by receiveText`, () => {
+    const head = JSON.stringify(envelope()).slice(0, -1);
+    const text = `{"envelope":${head},"provenance":${item.text}},"payload":${JSON.stringify(payload)}}`;
+    const state = emptyState();
+    const received = receiveText(state, text, update);
+    if (item.expect === "malformed") {
+      assert.equal(received.ok, false);
+      assert.ok(["request-malformed", "provenance-malformed"].includes(received.error.code), received.error.code);
+      assert.equal(received.state, state);
+      return;
+    }
+    assert.ok(received.ok, JSON.stringify(received.error));
+    assert.equal(received.result.record.provenance.verdict, item.expect);
+  });
+}
+
+test("parseJsonText: a clean request parses to the same value as JSON.parse", () => {
+  const text = JSON.stringify({ envelope: envelope(), payload });
+  assert.deepEqual(parseJsonText(text), { ok: true, value: JSON.parse(text) });
+});
+
+test("rule 6: a carried \"provenance\": null is malformed, never absent", () => {
+  for (const binding of [vigila, update]) {
+    const received = receive(emptyState(), { envelope: envelope({ provenance: null }), payload }, binding);
+    assert.equal(received.error.code, "provenance-malformed");
+  }
+});
+
+test("rule 1: an unpaired surrogate anywhere in the envelope is rejected", () => {
+  assert.equal(receive(emptyState(), { envelope: envelope({ actor: { ...B, id: "a\ud800" } }), payload }, update).error.code, "envelope-invalid");
+  assert.equal(receive(emptyState(), { envelope: envelope({ "x-note": "\udc00" }), payload }, update).error.code, "envelope-invalid");
+  assert.equal(receive(emptyState(), { envelope: envelope({ provenance: { ...blockBy("EXE-A1", A), "x-a": "\ud800" } }), payload }, update).error.code, "provenance-malformed");
+});
+
+test("rule 2: blank means ASCII whitespace only; a U+0085 correlation id is content", () => {
+  assert.deepEqual(envelopeProblems(envelope({ correlationId: "\u0085" })), []);
+  assert.ok(envelopeProblems(envelope({ correlationId: " \t\v\f\r\n" })).length > 0);
 });

@@ -5,9 +5,9 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { root, readJson, praxisCases } from "./support.mjs";
-import { classify } from "../lib/vendor/praxis/provenance-interchange.mjs";
+import { classify, classifyText } from "../lib/vendor/praxis/provenance-interchange.mjs";
 
-const CONTRACT_COMMIT = "c2657efb4d54f11d0fd0617cc1bcd5b8418601d5";
+const CONTRACT_COMMIT = "b0037183389c8b9392919f58521b9487d1b4d5c6";
 const vendorDirs = ["schemas/vendor/praxis/", "lib/vendor/praxis/", "tests/fixtures/praxis-provenance/"];
 
 for (const dir of vendorDirs) {
@@ -23,8 +23,9 @@ for (const dir of vendorDirs) {
   });
 }
 
-test("all 56 Praxis conformance cases (contract revision 1.1) are present", () => {
-  assert.equal(praxisCases().length, 56);
+test("all 70 Praxis conformance cases (contract revision 1.2) are present", () => {
+  assert.equal(readJson("tests/fixtures/praxis-provenance/cases.json").contractRevision, "1.2");
+  assert.equal(praxisCases().length, 70);
 });
 
 for (const item of praxisCases()) {
@@ -32,5 +33,11 @@ for (const item of praxisCases()) {
     const result = classify(item.block);
     assert.equal(result.verdict, item.expect, JSON.stringify(result.problems));
     assert.equal(result.warnings.length, item.warnings);
+  });
+}
+
+for (const item of readJson("tests/fixtures/praxis-provenance/text-cases.json").cases) {
+  test(`praxis text conformance: ${item.name} is ${item.expect}`, () => {
+    assert.equal(classifyText(item.text).verdict, item.expect);
   });
 }
