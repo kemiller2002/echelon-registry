@@ -1,4 +1,6 @@
-# Echelon Integration Standard v1
+# Echelon Integration Standard v1.1
+
+Revision 1.1 replaces the locally defined identity model of section 5 with a reference to the Praxis provenance contract (see `spec/provenance-propagation.md`). All other sections are unchanged from v1, and everything valid under v1 remains valid.
 
 ## 1. Independence
 
@@ -41,9 +43,15 @@ Consumers MUST NOT manipulate another system's internal persistence representati
 
 ## 5. Identity and provenance
 
-Every integration invocation MUST carry an execution envelope. Actor identity MUST distinguish known, unknown, and not-applicable values. Agents MUST provide a stable identifying mechanism when available and MUST NOT fabricate unavailable identity fields.
+The registry does not define agent identity or provenance. Actor, execution, contribution, operation, lineage, and unknown values have the meaning given by Praxis (`RQ-ROS-2026-A013`..`RQ-ROS-2026-A019`, `DF-ROS-2026-A037`); the registry only routes and transports them. The normative rules are in `spec/provenance-propagation.md` (`REG-PROV-001`..`REG-PROV-017`). In summary:
 
-The envelope SHOULD include correlation ID, operation ID, actor kind/provider/identity, run/session identifiers, source repository, branch, commit, work item, and timestamp.
+1. Every integration invocation MUST carry an execution envelope. Invocations that carry provenance use `echelon.execution-envelope/v2`, whose `actor` is a Praxis provenance actor (the current invoking actor), whose optional `execution` is the invoking `EXE-...` or `EXT-<system>.<run-id>` key, and whose optional `provenance` is a Praxis interchange block describing the payload (REG-PROV-004).
+2. `echelon.execution-envelope/v1` remains accepted and is mapped to Praxis losslessly by the rules of `actorFromEnvelopeV1` and `keyFromEnvelopeV1` (REG-PROV-008). Its tri-state `knownValue` actor is a legacy transport form, not a second identity model (REG-PROV-002).
+3. Receivers classify carried provenance as `supported`, `unsupported`, or `malformed`, preserve what they receive, never strip it silently, never overwrite the original actor, and append the invoker's contribution idempotently (REG-PROV-005..REG-PROV-010).
+4. Identity values come from explicit declarations only. Unknown values are the literal `unknown`; nothing is fabricated or guessed (REG-PROV-004). An executable acting for another actor clears every inherited identity variable first (REG-PROV-017).
+5. Identity is self-reported provenance. It is not authentication or authorization (REG-PROV-003), and it never carries credentials (REG-PROV-016).
+
+The envelope SHOULD include correlation ID, operation ID, actor, execution, source repository, branch, commit, work item, and timestamp.
 
 ## 6. Authentication
 
@@ -64,7 +72,7 @@ At minimum every consumer MUST be tested:
 - with incompatible provider contract;
 - with the full supported ecosystem.
 
-The standalone case is permanently required for conformance.
+The standalone case is permanently required for conformance. A system that carries provenance MUST additionally pass the provenance scenarios in `conformance/README.md` (REG-PROV-014, REG-PROV-015).
 
 ## Shared Echelon capability boundaries
 

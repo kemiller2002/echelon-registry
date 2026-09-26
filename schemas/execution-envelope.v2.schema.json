@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.execution-envelope.v2.json",
+  "title": "Echelon Integration Execution Envelope v2",
+  "description": "Carries an integration invocation across a system boundary (spec/provenance-propagation.md, REG-PROV-004..REG-PROV-008). Identity semantics are owned by Praxis (RQ-ROS-2026-A013..A019, DF-ROS-2026-A037): `actor` is a Praxis provenance actor and `provenance` a Praxis interchange block, referenced from the unchanged vendored Praxis schemas in schemas/vendor/praxis/. The registry defines routing and transport fields only. This schema is the structural floor; the full receiving verdicts (supported/unsupported/malformed, credential tripwire, at-most-one-created) are defined by the Praxis conformance fixtures and the reference classifier.",
+  "type": "object",
+  "required": ["schema", "operationId", "correlationId", "timestamp", "actor"],
+  "properties": {
+    "schema": { "const": "echelon.execution-envelope/v2" },
+    "operationId": {
+      "description": "Idempotency key of the invocation. Replaying the same operationId MUST NOT duplicate domain records or contributions (REG-PROV-010).",
+      "type": "string",
+      "minLength": 1
+    },
+    "correlationId": { "type": "string", "minLength": 1 },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "actor": {
+      "description": "The CURRENT invoking actor, as a Praxis provenance actor. Never the originator of the carried payload unless it is the same actor (REG-PROV-009).",
+      "$ref": "https://github.com/kemiller2002/praxis/schemas/provenance-actor.schema.json"
+    },
+    "execution": {
+      "description": "The execution the invoking actor is running in: a Praxis execution (EXE-...) or another Echelon system's execution (EXT-<system>.<run-id>). Absent means unknown; receivers then key the invoker's contribution EXT-op.<operationId> (REG-PROV-006). Never fabricated.",
+      "type": "string",
+      "pattern": "^(EXE-[A-Za-z0-9._-]+|EXT-[a-z][a-z0-9-]*\\.[A-Za-z0-9._-]+)$"
+    },
+    "source": {
+      "description": "Source repository/branch/commit/work item, unchanged from v1.",
+      "$ref": "https://echelonfoundry.com/schemas/echelon.execution-envelope.v1.json#/$defs/source"
+    },
+    "provenance": {
+      "description": "Praxis interchange block describing the payload being carried. A praxis.provenance/1 block (or an untagged block, read as major 1) must meet the Praxis structural floor; a block of another praxis.provenance major is carried verbatim and is only required to be tagged (REG-PROV-007).",
+      "type": "object",
+      "properties": {
+        "schema": { "type": "string", "pattern": "^praxis\\.provenance/[1-9][0-9]*$" }
+      },
+      "if": {
+        "anyOf": [
+          { "not": { "required": ["schema"] } },
+          { "properties": { "schema": { "const": "praxis.provenance/1" } }, "required": ["schema"] }
+        ]
+      },
+      "then": { "$ref": "https://github.com/kemiller2002/praxis/schemas/provenance-interchange.schema.json" },
+      "else": { "required": ["schema"] }
+    }
+  },
+  "patternProperties": {
+    "^x-[a-z0-9][a-z0-9-]*$": {}
+  },
+  "additionalProperties": false
+}
