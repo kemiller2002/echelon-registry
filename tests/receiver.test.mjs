@@ -7,7 +7,7 @@ import assert from "node:assert/strict";
 import { createAjv, readJson, validator, praxisCases, echelonChain } from "./support.mjs";
 import {
   receive, emptyState, invocation, upgradeEnvelopeV1, relay, envelopeProblems, provenanceExpectation,
-  systemActor, V1_ACTOR_EXTENSION,
+  systemActor, V1_ACTOR_EXTENSION, capabilityKind,
 } from "../lib/echelon-provenance.mjs";
 import {
   actorFromEnvelopeV1, keyFromEnvelopeV1, preservationViolations, originator, withRole, addLineage, emptyBlock,
@@ -16,7 +16,8 @@ import {
 const ajv = createAjv();
 const envelopeV2 = validator(ajv, "echelon.execution-envelope/v2");
 const followupContract = ajv.getSchema("https://echelonfoundry.com/contracts/followup.create.v1.json");
-const vigila = { system: "vigila", capability: "followup.create" };
+const vigila = { system: "vigila", capability: "followup.create" }; // create: a new record from a source
+const update = { system: "vigila", capability: "followup.update" }; // update: an existing record's own block
 const payload = { title: "Review injection finding SF-0001", reason: "Aegis review found an injection risk", requestedAction: "review", priority: "high" };
 
 const A = { kind: "agent", id: "openai/codex", provider: "openai", model: "gpt-5-codex", runtime: "codex" };
@@ -114,13 +115,27 @@ test("a v1 envelope cannot carry provenance (it needs v2)", () => {
 // ---- classification at the boundary (REG-PROV-005..REG-PROV-007) -------------------
 
 for (const item of praxisCases().filter((c) => c.expect === "supported")) {
-  test(`receiver keeps supported block '${item.name}' intact (${item.warnings} warnings)`, () => {
-    const received = receive(emptyState(), { envelope: envelope({ provenance: item.block }), payload }, vigila);
+  test(`update keeps the record's own supported block '${item.name}' intact (${item.warnings} warnings)`, () => {
+    const received = receive(emptyState(), { envelope: envelope({ provenance: item.block }), payload }, update);
     assert.ok(received.ok, JSON.stringify(received.error));
     const { record } = received.result;
     assert.equal(record.provenance.verdict, "supported");
     assert.equal(record.provenance.warnings.length, item.warnings);
     assert.deepEqual(preservationViolations(item.block, record.provenance.block), []);
+  });
+
+  test(`create stores source block '${item.name}' verbatim and gives the new record its own block`, () => {
+    const before = JSON.stringify(item.block);
+    const received = receive(emptyState(), { envelope: envelope({ provenance: item.block }), payload }, vigila);
+    assert.ok(received.ok, JSON.stringify(received.error));
+    const { record } = received.result;
+    assert.equal(JSON.stringify(record.receivedProvenance.block), before, "source block byte-identical");
+    assert.equal(record.receivedProvenance.verdict, "supported");
+    assert.equal(record.receivedProvenance.warnings.length, item.warnings);
+    assert.equal(record.provenance.block.schema, "praxis.provenance/1");
+    assert.deepEqual(Object.keys(record.provenance.block.contributions), ["EXE-20260926T090500000Z-bbbb0005"]);
+    assert.deepEqual(withRole(record.provenance.block, "created").map((entry) => entry.actor), [B]);
+    assert.deepEqual(record.provenance.block.derivedFrom ?? [], item.block.derivedFrom ?? []);
   });
 }
 
@@ -136,23 +151,35 @@ for (const item of praxisCases().filter((c) => c.expect === "malformed")) {
   });
 }
 
-test("an unsupported major is stored verbatim; no contribution is merged into it", () => {
+test("an unsupported major is stored verbatim; no contribution is merged into it (both kinds)", () => {
   for (const block of [readJson("examples/envelopes/v2-unsupported-major.envelope.json").provenance,
     ...praxisCases().filter((c) => c.expect === "unsupported").map((c) => c.block)]) {
-    const received = receive(emptyState(), { envelope: envelope({ provenance: block }), payload }, { ...vigila, recordsTransformation: true });
-    assert.ok(received.ok, JSON.stringify(received.error));
-    const { record } = received.result;
-    assert.equal(record.provenance.verdict, "unsupported");
-    assert.deepEqual(record.provenance.block, block);
-    assert.deepEqual(record.invoker, { recorded: false, reason: "unsupported-major" });
-    assert.deepEqual(preservationViolations(block, record.provenance.block), []);
+    const before = JSON.stringify(block);
+    const updated = receive(emptyState(), { envelope: envelope({ provenance: block }), payload }, { ...update, recordsTransformation: true });
+    assert.ok(updated.ok, JSON.stringify(updated.error));
+    assert.equal(updated.result.record.provenance.verdict, "unsupported");
+    assert.equal(JSON.stringify(updated.result.record.provenance.block), before);
+    assert.deepEqual(updated.result.record.invoker, { recorded: false, reason: "unsupported-major" });
+
+    const created = receive(emptyState(), { envelope: envelope({ provenance: block }), payload }, { ...vigila, recordsTransformation: true });
+    assert.ok(created.ok, JSON.stringify(created.error));
+    const { record } = created.result;
+    assert.equal(record.receivedProvenance.verdict, "unsupported");
+    assert.equal(record.receivedProvenance.schema, block.schema);
+    assert.equal(JSON.stringify(record.receivedProvenance.block), before, "carried verbatim beside the new record");
+    assert.deepEqual(originator(record.provenance.block).actor, B, "the new record still has its own creator");
+    assert.equal(record.provenance.block.derivedFrom, undefined, "another major is never interpreted for lineage");
   }
 });
 
 test("no silent stripping: an absent block yields a record whose provenance names the invoker", () => {
   const received = receive(emptyState(), { envelope: envelope(), payload }, vigila);
-  assert.equal(received.result.record.provenance.verdict, "absent");
+  assert.equal(received.result.record.provenance.verdict, "created");
+  assert.equal(received.result.record.receivedProvenance, null);
   assert.deepEqual(originator(received.result.record.provenance.block).actor, B);
+  const updated = receive(emptyState(), { envelope: envelope(), payload }, update);
+  assert.equal(updated.result.record.provenance.verdict, "absent");
+  assert.deepEqual(originator(updated.result.record.provenance.block).actor, B);
 });
 
 // ---- appending, replay, and never overwriting (REG-PROV-009, REG-PROV-010) --------
@@ -197,24 +224,24 @@ test("reusing an operationId for a different request is refused, not merged", ()
 test("appending the identical contribution for the invoking execution is a no-op merge", () => {
   const key = "EXE-20260926T090500000Z-bbbb0005";
   const carried = { ...blockBy("EXE-A1", A), contributions: { ...blockBy("EXE-A1", A).contributions, [key]: { operations: ["transformed"], at: "2026-09-26T09:05:00.000Z", actor: B } } };
-  const received = receive(emptyState(), { envelope: envelope({ provenance: carried }), payload }, vigila);
+  const received = receive(emptyState(), { envelope: envelope({ provenance: carried }), payload }, update);
   assert.ok(received.ok, JSON.stringify(received.error));
   assert.deepEqual(received.result.record.invoker, { recorded: true, key, operations: ["transformed"], changed: false });
   assert.deepEqual(received.result.record.provenance.block, carried);
 });
 
-test("the invoker is recorded as created only when materialising a brand-new record", () => {
+test("update of a record without history: the invoker is recorded as created", () => {
   for (const provenance of [undefined, emptyBlock(), { contributions: {} }]) {
-    const received = receive(emptyState(), { envelope: envelope(provenance === undefined ? {} : { provenance }), payload }, vigila);
+    const received = receive(emptyState(), { envelope: envelope(provenance === undefined ? {} : { provenance }), payload }, update);
     assert.ok(received.ok, JSON.stringify(received.error));
     assert.deepEqual(received.result.record.invoker.operations, ["created"]);
     assert.deepEqual(originator(received.result.record.provenance.block).actor, B);
   }
 });
 
-test("when an originator exists the invoker is recorded as transformed, never as author, and the creator is unchanged", () => {
+test("update of an existing record: when an originator exists the invoker is recorded as transformed, never as author, and the creator is unchanged", () => {
   const carried = blockBy("EXE-A1", A);
-  const received = receive(emptyState(), { envelope: envelope({ actor: CI, execution: "EXT-github-actions.run-9", provenance: carried }), payload }, vigila);
+  const received = receive(emptyState(), { envelope: envelope({ actor: CI, execution: "EXT-github-actions.run-9", provenance: carried }), payload }, update);
   assert.ok(received.ok, JSON.stringify(received.error));
   const { record } = received.result;
   assert.deepEqual(preservationViolations(carried, record.provenance.block), []);
@@ -229,14 +256,14 @@ test("an invoker without an execution transforming an existing payload is keyed 
   const carried = blockBy("EXE-A1", A);
   const own = envelope({ actor: CI, provenance: carried });
   delete own.execution;
-  const received = receive(emptyState(), { envelope: own, payload }, vigila);
+  const received = receive(emptyState(), { envelope: own, payload }, update);
   assert.deepEqual(received.result.record.provenance.block.contributions["EXT-op.op-1"].operations, ["transformed"]);
   assert.deepEqual(preservationViolations(carried, received.result.record.provenance.block), []);
 });
 
 test("earlier non-authorship contributions without an originator: the invoker is transformed, not a late creator", () => {
   const carried = { schema: "praxis.provenance/1", contributions: { "EXE-A1": { operations: ["discovered"], at: "2026-09-26T08:00:00.000Z", actor: A } } };
-  const received = receive(emptyState(), { envelope: envelope({ provenance: carried }), payload }, vigila);
+  const received = receive(emptyState(), { envelope: envelope({ provenance: carried }), payload }, update);
   assert.ok(received.ok, JSON.stringify(received.error));
   assert.deepEqual(received.result.record.invoker.operations, ["transformed"]);
   assert.equal(originator(received.result.record.provenance.block), undefined, "no authorship is invented");
@@ -244,9 +271,9 @@ test("earlier non-authorship contributions without an originator: the invoker is
 
 test("replay stays idempotent when the invoker is recorded as transformed", () => {
   const request = { envelope: envelope({ actor: CI, execution: "EXT-github-actions.run-9", provenance: blockBy("EXE-A1", A) }), payload };
-  const first = receive(emptyState(), request, { ...vigila, recordsTransformation: true });
-  const second = receive(first.state, request, { ...vigila, recordsTransformation: true });
-  const retried = receive(second.state, { ...request, envelope: { ...request.envelope, timestamp: "2026-09-26T09:07:00.000Z" } }, { ...vigila, recordsTransformation: true });
+  const first = receive(emptyState(), request, { ...update, recordsTransformation: true });
+  const second = receive(first.state, request, { ...update, recordsTransformation: true });
+  const retried = receive(second.state, { ...request, envelope: { ...request.envelope, timestamp: "2026-09-26T09:07:00.000Z" } }, { ...update, recordsTransformation: true });
   assert.ok(first.ok && second.ok && retried.ok);
   assert.equal(second.result.replayed, true);
   assert.equal(retried.result.replayed, true);
@@ -256,7 +283,7 @@ test("replay stays idempotent when the invoker is recorded as transformed", () =
 
 test("an invocation that would precede the recorded creation is rejected, never recorded out of order", () => {
   const carried = blockBy("EXE-A1", A, "2026-09-26T10:00:00.000Z");
-  const received = receive(emptyState(), { envelope: envelope({ provenance: carried }), payload }, vigila);
+  const received = receive(emptyState(), { envelope: envelope({ provenance: carried }), payload }, update);
   assert.equal(received.ok, false);
   assert.equal(received.error.code, "provenance-conflict");
   assert.deepEqual(received.state.records, {});
@@ -264,13 +291,13 @@ test("an invocation that would precede the recorded creation is rejected, never 
 
 test("an execution key already attributed to another actor is a conflict, never re-attributed", () => {
   const carried = blockBy("EXE-20260926T090500000Z-bbbb0005", A);
-  const received = receive(emptyState(), { envelope: envelope({ provenance: carried }), payload }, vigila);
+  const received = receive(emptyState(), { envelope: envelope({ provenance: carried }), payload }, update);
   assert.equal(received.ok, false);
   assert.equal(received.error.code, "provenance-conflict");
 });
 
 test("an optional transformed contribution is the receiving system's automation actor, keyed EXT-<system>.<operationId>", () => {
-  const received = receive(emptyState(), { envelope: envelope({ operationId: "op/7", provenance: blockBy("EXE-A1", A) }), payload }, { ...vigila, recordsTransformation: true });
+  const received = receive(emptyState(), { envelope: envelope({ operationId: "op/7", provenance: blockBy("EXE-A1", A) }), payload }, { ...update, recordsTransformation: true });
   const block = received.result.record.provenance.block;
   assert.deepEqual(block.contributions["EXT-vigila.op-7"], { operations: ["transformed"], at: "2026-09-26T09:05:00.000Z", actor: systemActor("vigila") });
   assert.deepEqual(originator(block).actor, A);
@@ -285,12 +312,12 @@ test("an unknown actor without an execution is recorded as unknown under EXT-op.
   assert.deepEqual(origin.actor, example.actor);
 });
 
-test("a relaying transport never becomes the actor and carries provenance verbatim", () => {
+test("update: a relaying transport never becomes the actor and carries provenance verbatim", () => {
   const original = envelope({ provenance: blockBy("EXE-A1", A), "x-hop": 1 });
   const forwarded = relay(relay(original));
   assert.deepEqual(forwarded, original);
   assert.ok(envelopeV2(forwarded));
-  const received = receive(emptyState(), { envelope: forwarded, payload }, vigila);
+  const received = receive(emptyState(), { envelope: forwarded, payload }, update);
   assert.deepEqual(received.result.record.invokedBy.actor, B);
   assert.deepEqual(originator(received.result.record.provenance.block).actor, A);
 });
@@ -298,9 +325,96 @@ test("a relaying transport never becomes the actor and carries provenance verbat
 test("a transport invoking on its own behalf still carries the upstream block unmodified", () => {
   const upstream = blockBy("EXE-A1", A);
   const own = { ...envelope({ actor: CI, execution: "EXT-github-actions.run-10" }), provenance: relay(envelope({ provenance: upstream })).provenance };
-  const received = receive(emptyState(), { envelope: own, payload }, vigila);
+  const received = receive(emptyState(), { envelope: own, payload }, update);
   assert.deepEqual(preservationViolations(upstream, received.result.record.provenance.block), []);
   assert.deepEqual(originator(received.result.record.provenance.block).actor, A);
+});
+
+// ---- create vs update (REG-PROV-006) -------------------------------------------------
+
+test("capability kind: *.create and *.record create new records; others update existing ones", () => {
+  for (const capability of ["followup.create", "time.record", "billing.record", "invoice.create", "payment.record"]) assert.equal(capabilityKind(capability), "create", capability);
+  for (const capability of ["followup.update", "followup.resolve", "time.approve", "followup.query"]) assert.equal(capabilityKind(capability), "update", capability);
+});
+
+const sourceBlock = () => ({
+  schema: "praxis.provenance/1",
+  contributions: {
+    "EXE-20260926T090000000Z-c1c1c1c1": { operations: ["created", "discovered"], at: "2026-09-26T09:00:00.000Z", actor: { kind: "agent", id: "google/gemini-cli", provider: "google", model: "unknown", runtime: "gemini-cli" }, evidence: ["aegis:evidence/EVD-0001"] },
+    "EXT-github-actions.run-777-1": { operations: ["validated"], at: "2026-09-26T09:02:00.000Z", actor: CI },
+  },
+  derivedFrom: ["git:commit/5e1f0c2", "dokimos:observation/OBS-2026-0001"],
+  "x-aegis": { severity: "high" },
+});
+const sourcedPayload = { ...payload, context: { source: "aegis:finding/SF-0001" } };
+
+test("create: the source block is stored byte-identical and never merged into the new record", () => {
+  const source = sourceBlock();
+  const before = JSON.stringify(source);
+  const received = receive(emptyState(), { envelope: envelope({ provenance: source }), payload: sourcedPayload }, { ...vigila, recordsTransformation: true });
+  assert.ok(received.ok, JSON.stringify(received.error));
+  const { record } = received.result;
+  assert.equal(JSON.stringify(source), before, "input not mutated");
+  assert.equal(JSON.stringify(record.receivedProvenance.block), before, "source block byte-identical");
+  assert.equal(record.kind, "create");
+  assert.deepEqual(Object.keys(record.provenance.block.contributions).sort(), ["EXE-20260926T090500000Z-bbbb0005", "EXT-vigila.op-1"]);
+  assert.equal(record.provenance.block.contributions["EXE-20260926T090000000Z-c1c1c1c1"], undefined, "the source's creator is not the new record's contributor");
+});
+
+test("create: the new record has exactly one creator, the invoker, and the receiver's own transformed", () => {
+  const received = receive(emptyState(), { envelope: envelope({ provenance: sourceBlock() }), payload: sourcedPayload }, { ...vigila, recordsTransformation: true });
+  const block = received.result.record.provenance.block;
+  assert.deepEqual(withRole(block, "created").map((entry) => [entry.key, entry.actor]), [["EXE-20260926T090500000Z-bbbb0005", B]]);
+  assert.deepEqual(withRole(block, "transformed").map((entry) => [entry.key, entry.actor]), [["EXT-vigila.op-1", systemActor("vigila")]]);
+  assert.deepEqual(received.result.record.invoker, { recorded: true, key: "EXE-20260926T090500000Z-bbbb0005", operations: ["created"], changed: true });
+});
+
+test("create: lineage is the source's derivedFrom plus the source record the payload names", () => {
+  const received = receive(emptyState(), { envelope: envelope({ provenance: sourceBlock() }), payload: sourcedPayload }, vigila);
+  assert.deepEqual(received.result.record.provenance.block.derivedFrom, ["git:commit/5e1f0c2", "dokimos:observation/OBS-2026-0001", "aegis:finding/SF-0001"]);
+  const unnamed = receive(emptyState(), { envelope: envelope({ provenance: sourceBlock() }), payload }, vigila);
+  assert.deepEqual(unnamed.result.record.provenance.block.derivedFrom, ["git:commit/5e1f0c2", "dokimos:observation/OBS-2026-0001"]);
+  const noBlock = receive(emptyState(), { envelope: envelope(), payload: sourcedPayload }, vigila);
+  assert.deepEqual(noBlock.result.record.provenance.block.derivedFrom, ["aegis:finding/SF-0001"]);
+});
+
+test("create: a key in the source attributed to another actor is not a conflict for the new record", () => {
+  const source = blockBy("EXE-20260926T090500000Z-bbbb0005", A);
+  const received = receive(emptyState(), { envelope: envelope({ provenance: source }), payload }, vigila);
+  assert.ok(received.ok, JSON.stringify(received.error));
+  assert.deepEqual(originator(received.result.record.provenance.block).actor, B);
+  assert.deepEqual(received.result.record.receivedProvenance.block, source);
+});
+
+test("create: replay is idempotent (no second record, block unchanged)", () => {
+  const request = { envelope: envelope({ provenance: sourceBlock() }), payload: sourcedPayload };
+  const first = receive(emptyState(), request, { ...vigila, recordsTransformation: true });
+  const second = receive(first.state, request, { ...vigila, recordsTransformation: true });
+  const retried = receive(second.state, { ...request, envelope: { ...request.envelope, timestamp: "2026-09-26T09:09:00.000Z" } }, { ...vigila, recordsTransformation: true });
+  assert.equal(second.result.replayed, true);
+  assert.equal(retried.result.replayed, true);
+  assert.equal(retried.state, first.state);
+  assert.equal(Object.keys(retried.state.records).length, 1);
+  assert.deepEqual(retried.result.record, first.result.record);
+});
+
+test("a capability contract can declare its kind explicitly", () => {
+  const asUpdate = receive(emptyState(), { envelope: envelope({ provenance: sourceBlock() }), payload }, { ...vigila, kind: "update" });
+  assert.deepEqual(asUpdate.result.record.invoker.operations, ["transformed"]);
+  assert.equal(asUpdate.result.record.receivedProvenance, undefined);
+  const asCreate = receive(emptyState(), { envelope: envelope({ provenance: sourceBlock() }), payload }, { ...update, kind: "create" });
+  assert.deepEqual(asCreate.result.record.invoker.operations, ["created"]);
+});
+
+test("the Chrona and Summa create capabilities follow the same rule", () => {
+  for (const binding of [{ system: "chrona", capability: "time.record" }, { system: "summa", capability: "billing.record" }, { system: "summa", capability: "invoice.create" }]) {
+    const received = receive(emptyState(), { envelope: envelope({ provenance: sourceBlock() }), payload: { hours: 1 } }, { ...binding, recordsTransformation: true });
+    assert.ok(received.ok, JSON.stringify(received.error));
+    const { record } = received.result;
+    assert.deepEqual(withRole(record.provenance.block, "created").map((entry) => entry.actor), [B]);
+    assert.ok(record.provenance.block.contributions[`EXT-${binding.system}.op-1`]);
+    assert.deepEqual(record.receivedProvenance.block, sourceBlock());
+  }
 });
 
 // ---- secrets and envelope structure (REG-PROV-004, REG-PROV-016) -------------------
@@ -341,7 +455,7 @@ test("the receiver's outcome does not depend on who the actor claims to be", () 
   for (const actor of actors) {
     const received = receive(emptyState(), { envelope: envelope({ actor, execution: "EXT-ci.run-1" }), payload }, vigila);
     assert.ok(received.ok, JSON.stringify(received.error));
-    assert.deepEqual(Object.keys(received.result.record).sort(), ["capability", "correlationId", "envelopeSchema", "fingerprint", "invokedBy", "invoker", "operationId", "payload", "provenance"]);
+    assert.deepEqual(Object.keys(received.result.record).sort(), ["capability", "correlationId", "envelopeSchema", "fingerprint", "invokedBy", "invoker", "kind", "operationId", "payload", "provenance", "receivedProvenance"]);
   }
 });
 
@@ -363,7 +477,7 @@ const replayChain = () => {
       provenance: current,
     });
     const env = Object.fromEntries(Object.entries(carried).filter(([, value]) => value !== undefined));
-    const received = receive(acc.state, { envelope: env, payload: { record: step.record } }, { system: "vigila", capability: "followup.create", operations: () => contribution.operations });
+    const received = receive(acc.state, { envelope: env, payload: { record: step.record } }, { system: "vigila", capability: "followup.update", operations: () => contribution.operations });
     assert.ok(received.ok, JSON.stringify(received.error));
     const block = received.result.record.provenance.block;
     const expectedKey = key.startsWith("CTB-") ? `EXT-op.chain-${index}` : key;

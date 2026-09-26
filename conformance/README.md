@@ -28,12 +28,14 @@ Systems that send, relay, or receive provenance (`spec/provenance-propagation.md
 | provider available, provenance undeclared (v1 manifest or index) | PASS | available | `undeclared`; caller reports it may not be preserved |
 | provider declares `praxis.provenance/1`, `unknownFields: preserve` | PASS | available | `preserved` |
 | provider declares a lossy descriptor | PASS | available | `lossy`; caller reports it |
-| v2 envelope with an absent or empty block | PASS | available | invoker recorded once as `created` |
-| v2 envelope with a supported block that has an originator | PASS | available | block preserved; originator unchanged; invoker recorded once as `transformed` |
-| v2 envelope with an unsupported major | PASS | available | block stored verbatim; nothing appended |
+| create (`*.create`, `*.record`) with a supported source block | PASS | available | new record gets its own block: invoker is the only creator; lineage = source `derivedFrom` + named source; source block stored byte-identical as `receivedProvenance` |
+| create with an absent block | PASS | available | new block; invoker recorded once as `created` |
+| create with an unsupported-major source block | PASS | available | new block for the record; source stored verbatim, never interpreted |
+| update/relay of an existing record whose block has an originator | PASS | available | block preserved; originator unchanged; invoker recorded once as `transformed` |
+| update with an unsupported major | PASS | available | block stored verbatim; nothing appended |
 | v2 envelope with a malformed block or a credential | PASS | request rejected with a structured error | nothing stored |
 | v1 envelope | PASS | available | actor and key mapped by REG-PROV-008 |
-| replay of the same `operationId` | PASS | available | same record; no duplicate record or contribution |
+| replay of the same `operationId` (create or update) | PASS | available | same record; no duplicate record or contribution |
 | relay through a transport | PASS | available | original actor and block unchanged |
 
 The registry's own harness runs these rows against the reference receiver: `npm ci && npm test`.

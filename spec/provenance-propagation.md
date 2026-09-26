@@ -64,21 +64,30 @@ A receiver MUST classify `envelope.provenance` with the Praxis receiving rules a
 
 Traces to: RQ-ROS-2026-A015.
 
-### REG-PROV-006 Supported blocks are preserved and the invoking actor is always recorded
+### REG-PROV-006 The invoking actor is always recorded; a new record gets its own block
 
-For a `supported` block (or an absent block, read as an empty `praxis.provenance/1` block), the receiver MUST preserve every contribution, operation, evidence item, lineage reference, and unknown field, and MUST append the invoking actor's contribution by the Praxis appending rules:
+Every capability contract declares whether it is a **create** capability (it materialises a new domain record) or an **update** capability (it transports, relays, or changes an existing record). Unless the contract says otherwise, capabilities named `*.create` or `*.record` (for example `followup.create`, `time.record`, `billing.record`, `invoice.create`) are create capabilities and all others are update capabilities. In both kinds the invoking actor's contribution uses:
 
 - key: `envelope.execution` when present, otherwise `EXT-op.<operationId>` (characters a key cannot carry replaced with `-`);
-- `at`: the envelope `timestamp` normalized to UTC;
-- operations: `created` only when the receiver materialises a brand-new record, that is, the carried block is absent or records no contributions; otherwise `transformed`. A capability contract MAY name a more specific non-authorship operation from the Praxis vocabulary, but MUST NOT name `created` when the block already records contributions.
+- `at`: the envelope `timestamp` normalized to UTC.
 
-The current actor performing a transport or transformation is therefore always recorded, and never as author when an originator (or any earlier contribution) exists: `transformed` is not authorship and never conflicts with the existing `created`, which stays the only originator. Appending to a key the invoker already holds merges operations (an identical operation is a no-op). The request MUST be rejected with a structured error (reference code `provenance-conflict`), never accepted with the invoker unrecorded, when the invoking key is already attributed to a different actor (a contribution is never re-attributed) or when the append would leave the history malformed (for example an invocation timestamp earlier than the recorded creation).
+**Create.** The carried `provenance` describes the **source** of the request (for example an Aegis finding), not the new record. The receiver MUST:
+
+1. give the new record a **new** `praxis.provenance/1` block in which the invoking actor is the only `created` contribution;
+2. set that block's `derivedFrom` to the received block's `derivedFrom` (only when the received block is `supported`; another major is never interpreted) followed by a reference to the source record when the payload names one, without duplicates;
+3. store the received block verbatim beside the new record as source provenance (reference field `receivedProvenance`, with its verdict), whether it is `supported` or an `unsupported` major, and never append to, merge into, or rewrite it.
+
+The source's contributors are never copied into the new record's block: lineage links the records without merging their authors.
+
+**Update.** The carried `provenance` is the existing record's **own** history (an absent block reads as an empty `praxis.provenance/1` block). The receiver MUST preserve every contribution, operation, evidence item, lineage reference, and unknown field, and MUST append the invoking actor by the Praxis appending rules with `created` only when the block records no contributions, and otherwise `transformed` (a capability contract MAY name a more specific non-authorship operation, but never `created` when the block already records contributions).
+
+The current actor performing a creation, transport, or transformation is therefore always recorded, and never as author of a record that already has an originator: `transformed` is not authorship and never conflicts with the existing `created`. Appending to a key the invoker already holds merges operations (an identical operation is a no-op). The request MUST be rejected with a structured error (reference code `provenance-conflict`), never accepted with the invoker unrecorded, when on update the invoking key is already attributed to a different actor (a contribution is never re-attributed) or the append would leave the history malformed (for example an invocation timestamp earlier than the recorded creation).
 
 Traces to: RQ-ROS-2026-A015, RQ-ROS-2026-A014, RQ-ROS-2026-A013, DF-ROS-2026-A037 (decisions 2 and 4).
 
 ### REG-PROV-007 Unsupported majors are carried verbatim; nothing is stripped silently
 
-A block tagged with another `praxis.provenance/<major>` MUST be stored or forwarded byte-for-byte equivalent (as JSON) and MUST NOT be interpreted, merged into, or have contributions appended. A receiver or transport MUST NOT silently strip a block of any verdict: it either keeps it, or rejects the request with a structured error. A system that cannot keep provenance at all MUST declare so (REG-PROV-012) and MUST NOT claim preservation.
+A block tagged with another `praxis.provenance/<major>` MUST be stored (on create, as the source provenance beside the new record) or forwarded byte-for-byte equivalent (as JSON) and MUST NOT be interpreted, merged into, or have contributions appended. A receiver or transport MUST NOT silently strip a block of any verdict: it either keeps it, or rejects the request with a structured error. A system that cannot keep provenance at all MUST declare so (REG-PROV-012) and MUST NOT claim preservation.
 
 Traces to: RQ-ROS-2026-A015, DF-ROS-2026-A037 (decision 2).
 
@@ -105,7 +114,7 @@ Traces to: RQ-ROS-2026-A016, RQ-ROS-2026-A013, DF-ROS-2026-A037 (why).
 
 ### REG-PROV-009 Transport never overwrites the original actor
 
-A system that relays a request it did not originate MUST forward the envelope's `actor`, `execution`, `provenance`, and extensions unchanged; it MUST NOT substitute itself as the actor. A system that invokes on its own behalf sets itself as the envelope actor but MUST carry any upstream block verbatim in `provenance`, where the upstream originator and contributors remain; the receiver then records that system as the current actor with `transformed` (REG-PROV-006), never as the author. A receiver MAY add its own `transformed` contribution when it changes the record's representation, as the automation actor `{kind: automation, id: echelon/<system>, provider: echelon, model: unknown, runtime: <system>}` keyed `EXT-<system>.<operationId>`; it MUST NOT attribute that transformation to the invoker or change any other contribution.
+A system that relays a request it did not originate MUST forward the envelope's `actor`, `execution`, `provenance`, and extensions unchanged; it MUST NOT substitute itself as the actor. A system that invokes on its own behalf sets itself as the envelope actor but MUST carry any upstream block verbatim in `provenance`, where the upstream originator and contributors remain; the receiver then records that system as the current actor: as `transformed` when the carried block is the existing record's own history, or as the creator of the new record's own block on a create, where the upstream block is kept as source provenance (REG-PROV-006). A receiver MAY add its own `transformed` contribution to the record's block when it changes the record's representation, as the automation actor `{kind: automation, id: echelon/<system>, provider: echelon, model: unknown, runtime: <system>}` keyed `EXT-<system>.<operationId>`; it MUST NOT attribute that transformation to the invoker or change any other contribution.
 
 Traces to: RQ-ROS-2026-A014, RQ-ROS-2026-A015.
 
@@ -164,11 +173,11 @@ Traces to: RQ-ROS-2026-A017, Integration Standard section 6.
 
 ## 3. Capability contracts
 
-`followup.create` v1 (`contracts/followup-create.v1.schema.json`) is unchanged: provenance travels in the envelope, never in the payload. For `followup.create` the invoking actor is recorded as `created` when the envelope carries no (or an empty) block, since the follow-up is new, and as `transformed` when the carried block already records contributions (REG-PROV-006); the follow-up's lineage is whatever the carried block's `derivedFrom` names (for example `aegis:finding/SF-0001`).
+`followup.create` v1 (`contracts/followup-create.v1.schema.json`) is unchanged: provenance travels in the envelope, never in the payload. `followup.create` is a create capability (REG-PROV-006): the carried block describes the source the follow-up came from. The follow-up gets its own new block whose only creator is the invoking actor; the source block is stored verbatim beside it as `receivedProvenance`. The follow-up's `derivedFrom` is the source block's `derivedFrom` plus the source record the payload names in its free-form `context.source` (a namespaced reference such as `aegis:finding/SF-0001`), when present. `followup.update` and `followup.resolve` are update capabilities. The same rule makes `time.record` (Chrona) and `billing.record`, `invoice.create`, and `payment.record` (Summa) create capabilities.
 
 ## 4. Reference implementation
 
-`lib/echelon-provenance.mjs` is a dependency-free, pure reference receiver built on the vendored Praxis library: `envelopeProblems`, `invocation`, `upgradeEnvelopeV1`, `relay`, `receive`, `systemActor`, and `provenanceExpectation`. It is conformance tooling, not a runtime dependency: systems implement the rules in their own language and may use it as an oracle.
+`lib/echelon-provenance.mjs` is a dependency-free, pure reference receiver built on the vendored Praxis library: `envelopeProblems`, `invocation`, `upgradeEnvelopeV1`, `relay`, `capabilityKind`, `receive`, `systemActor`, and `provenanceExpectation`. It is conformance tooling, not a runtime dependency: systems implement the rules in their own language and may use it as an oracle.
 
 ## 5. Traceability
 
@@ -179,7 +188,7 @@ Traces to: RQ-ROS-2026-A017, Integration Standard section 6.
 | REG-PROV-003 | `lib/echelon-provenance.mjs` `receive` (no actor-dependent branch) | `tests/receiver.test.mjs` (outcome does not depend on the actor) |
 | REG-PROV-004 | `schemas/execution-envelope.v2.schema.json`, `envelopeProblems` | `tests/schemas.test.mjs` (extra properties, execution keys), `tests/receiver.test.mjs` (structural problems) |
 | REG-PROV-005 | `receive` | `tests/receiver.test.mjs` (malformed fixture cases), `tests/vendored.test.mjs` (40 cases) |
-| REG-PROV-006 | `receive` | `tests/receiver.test.mjs` (supported cases, created only for a new record, transformed when an originator exists, no-op merge, conflict, out-of-order rejection) |
+| REG-PROV-006 | `capabilityKind`, `receive` (create and update paths) | `tests/receiver.test.mjs` (capability kind; create: source byte-identical, one creator, lineage from source, replay; update: supported cases, transformed when an originator exists, no-op merge, conflict, out-of-order rejection, replay) |
 | REG-PROV-007 | `receive`, envelope v2 `provenance` if/then/else | `tests/receiver.test.mjs` (unsupported verbatim, absent block), `tests/schemas.test.mjs` |
 | REG-PROV-008 | `invocation`, `upgradeEnvelopeV1`, vendored `actorFromEnvelopeV1`/`keyFromEnvelopeV1` | `tests/receiver.test.mjs` (v1 mapping, upgrade), `tests/schemas.test.mjs` (v1 examples) |
 | REG-PROV-009 | `relay`, `systemActor`, `receive` | `tests/receiver.test.mjs` (never overwritten, relay, transformed) |
