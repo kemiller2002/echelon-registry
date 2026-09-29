@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/contracts/installation.remove.v1.json",
+  "title": "installation.remove v1",
+  "description": "Semantic payload for recording that an installed Echelon system was removed from a target. History is retained; removal is itself an event. Record removal only after the uninstall receipt matched.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["systemId", "systemVersion", "target", "occurredAt"],
+  "properties": {
+    "systemId": { "$ref": "installation-register.v1.schema.json#/properties/systemId" },
+    "systemVersion": { "$ref": "installation-register.v1.schema.json#/properties/systemVersion" },
+    "occurredAt": { "type": "string", "format": "date-time" },
+    "target": { "$ref": "installation-register.v1.schema.json#/$defs/target" },
+    "evidence": { "type": "array", "items": { "$ref": "installation-register.v1.schema.json#/$defs/evidence" } },
+    "execution": { "$ref": "installation-register.v1.schema.json#/$defs/execution" }
+  }
+}

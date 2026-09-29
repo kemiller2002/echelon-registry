@@ -40,6 +40,28 @@
         { "id": "invoice.create", "contractVersion": 1 },
         { "id": "payment.record", "contractVersion": 1 }
       ]
+    },
+    {
+      "id": "ordo",
+      "repository": "kemiller2002/ordo",
+      "executable": "ordo",
+      "provides": []
+    },
+    {
+      "id": "conditor",
+      "repository": "kemiller2002/conditor",
+      "executable": "conditor",
+      "provides": []
+    },
+    {
+      "id": "project-administration",
+      "repository": "kemiller2002/project-administration",
+      "executable": "administration",
+      "provides": [
+        { "id": "installation.register", "contractVersion": 1 },
+        { "id": "installation.query", "contractVersion": 1 },
+        { "id": "installation.remove", "contractVersion": 1 }
+      ]
     }
   ]
 }

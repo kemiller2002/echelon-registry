@@ -1,0 +1,12 @@
+{
+  "schema": "echelon.system/v1",
+  "id": "conditor",
+  "repository": "kemiller2002/conditor",
+  "version": "1",
+  "executable": "conditor",
+  "provides": [],
+  "optionalConsumes": [
+    "installation.register",
+    "installation.remove"
+  ]
+}

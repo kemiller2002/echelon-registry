@@ -1,0 +1,11 @@
+{
+  "schema": "echelon.system/v1",
+  "id": "ordo",
+  "repository": "kemiller2002/ordo",
+  "version": "1",
+  "executable": "ordo",
+  "provides": [],
+  "optionalConsumes": [
+    "installation.register"
+  ]
+}

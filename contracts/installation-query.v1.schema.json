@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/contracts/installation.query.v1.json",
+  "title": "installation.query v1",
+  "description": "Semantic query over the installation inventory's current state. Every criterion is optional; staleness is computed at query time.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "target": { "$ref": "installation-register.v1.schema.json#/$defs/target" },
+    "systemId": { "$ref": "installation-register.v1.schema.json#/properties/systemId" },
+    "version": { "$ref": "installation-register.v1.schema.json#/properties/systemVersion" },
+    "olderThan": { "$ref": "installation-register.v1.schema.json#/properties/systemVersion" },
+    "state": { "enum": ["installed", "removed", "indeterminate"] },
+    "staleAfterDays": { "type": "integer", "minimum": 1 }
+  }
+}
