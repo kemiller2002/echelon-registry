@@ -62,6 +62,17 @@
         { "id": "installation.query", "contractVersion": 1 },
         { "id": "installation.remove", "contractVersion": 1 }
       ]
+    },
+    {
+      "id": "dokimos",
+      "repository": "kemiller2002/dokimos",
+      "executable": "dokimos",
+      "provides": [
+        { "id": "quality.snapshot", "contractVersion": 2 },
+        { "id": "quality.compare", "contractVersion": 1 },
+        { "id": "quality.evaluate", "contractVersion": 1 },
+        { "id": "quality.history", "contractVersion": 1 }
+      ]
     }
   ]
 }
