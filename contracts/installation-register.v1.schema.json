@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/contracts/installation.register.v1.json",
+  "title": "installation.register v1",
+  "description": "Semantic payload for recording that an Echelon system is installed (or upgraded) on a target. Provider: project-administration. The caller supplies this payload plus the Echelon execution envelope (operationId is the idempotency key). The provider owns event identity, persistence layout and serialization.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["systemId", "systemVersion", "target", "occurredAt"],
+  "properties": {
+    "systemId": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+    "systemVersion": {
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+    },
+    "occurredAt": { "type": "string", "format": "date-time" },
+    "target": { "$ref": "#/$defs/target" },
+    "source": { "$ref": "#/$defs/source" },
+    "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } },
+    "execution": { "$ref": "#/$defs/execution" }
+  },
+  "$defs": {
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id"],
+      "description": "repository: stable owner/repository identity. environment: an explicitly configured logical id; never a hostname, username, path, serial or MAC address.",
+      "oneOf": [
+        { "properties": { "kind": { "const": "repository" }, "id": { "type": "string", "pattern": "^[A-Za-z0-9-]+/[A-Za-z0-9._-]+$" } } },
+        { "properties": { "kind": { "const": "environment" }, "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,63}$" } } }
+      ]
+    },
+    "source": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "repository": { "type": ["string", "null"] },
+        "distribution": { "type": ["string", "null"], "description": "Distribution channel, e.g. npm, github-release, nuget." },
+        "release": { "type": ["string", "null"], "description": "Release or tag, e.g. v3.6.0." },
+        "artifact": { "type": ["string", "null"] },
+        "digest": { "type": ["string", "null"], "description": "Artifact digest, e.g. sha256:<hex> or an npm integrity string." }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "reference"],
+      "properties": {
+        "kind": { "type": "string" },
+        "reference": { "type": "string", "description": "Relative path, URL or identifier. Never an absolute local path." },
+        "digest": { "type": ["string", "null"] }
+      }
+    },
+    "execution": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["id"],
+      "properties": {
+        "id": { "type": "string" },
+        "workItem": { "type": ["string", "null"] },
+        "repository": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

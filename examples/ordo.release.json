@@ -1,0 +1,52 @@
+{
+  "schema": "echelon.release/v1",
+  "systemId": "ordo",
+  "version": "1.4.0",
+  "repository": "kemiller2002/ordo",
+  "tag": "v1.4.0",
+  "commit": null,
+  "executable": "ordo",
+  "compatibilityAliases": [
+    "sde"
+  ],
+  "provides": [],
+  "distributions": [
+    {
+      "channel": "github-release",
+      "package": null,
+      "url": "https://github.com/kemiller2002/ordo/releases/tag/v1.4.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "ordo-linux-arm64.tar.gz",
+      "platform": "linux-arm64",
+      "sha256": "6198ec70f8882851bbbf2e5b13fd4328822b0d828d183ca76addfa115936e197"
+    },
+    {
+      "name": "ordo-linux-musl-x64.tar.gz",
+      "platform": "linux-musl-x64",
+      "sha256": "1130a6783325d86ef884b392354133adcbc40a2c4b163d7b84ebb71b8a7f691a"
+    },
+    {
+      "name": "ordo-linux-x64.tar.gz",
+      "platform": "linux-x64",
+      "sha256": "26389b98c713d4107dbf344bb8a229a97e72658e286863a5d55ebab81d6330ba"
+    },
+    {
+      "name": "ordo-osx-arm64.tar.gz",
+      "platform": "osx-arm64",
+      "sha256": "8c4407e419682c838cda013292f5dc2dddec95eb151cbf75e95f21f579ac5e87"
+    },
+    {
+      "name": "ordo-osx-x64.tar.gz",
+      "platform": "osx-x64",
+      "sha256": "659507e89e4019339a01fcbb786601190b6e5e051d1e0406c5b6e554b4649676"
+    },
+    {
+      "name": "ordo-win-x64.zip",
+      "platform": "win-x64",
+      "sha256": "a306b850635fb2d1333b7dadfcf6156031b0dbcdedfc0500154b07c695541e4c"
+    }
+  ]
+}

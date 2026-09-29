@@ -1,0 +1,13 @@
+{
+  "schema": "echelon.system/v1",
+  "id": "project-administration",
+  "repository": "kemiller2002/project-administration",
+  "version": "1",
+  "executable": "administration",
+  "provides": [
+    { "id": "installation.register", "contractVersion": 1 },
+    { "id": "installation.query", "contractVersion": 1 },
+    { "id": "installation.remove", "contractVersion": 1 }
+  ],
+  "optionalConsumes": []
+}

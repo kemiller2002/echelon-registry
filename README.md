@@ -39,3 +39,17 @@ Cross-system writes MUST use the receiving system's integration boundary when on
 ## Bootstrap
 
 See `spec/` for normative requirements, `schemas/` for machine-readable contracts, and `examples/` for reference manifests.
+
+## Installation inventory and release metadata
+
+The registry describes what systems exist and what they provide. It never
+records where a system is installed: `project-administration` owns that
+history through `installation.register`, `installation.query` and
+`installation.remove` (see `spec/installation-protocol.md` and
+`contracts/installation-*.v1.schema.json`).
+
+Each release of a system may publish an `echelon.release/v1` document
+(`schemas/release-manifest.schema.json`) carrying the version, tag,
+distribution channels, executable and artifact digests.
+`examples/ordo.release.json` uses the published Ordo v1.4.0
+`native-checksums.txt` digests.
