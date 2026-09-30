@@ -130,7 +130,7 @@ let artifactNames =
 if artifactNames.Length <> (artifactNames |> List.distinct |> List.length) then
     fail "release input contains duplicate artifact names"
 
-let resolveArtifact name =
+let resolveArtifact (name: string) =
     if Path.GetFileName name <> name || name.Contains("/") || name.Contains("\\") then
         fail $"artifact '{name}' must be a file name, not a path"
 
