@@ -1,0 +1,26 @@
+{
+  "schema": "echelon.catalog-snapshot/v1",
+  "systems": [
+    {
+      "id": "ordo",
+      "repository": "kemiller2002/ordo",
+      "manifest": "examples/ordo.system.json"
+    }
+  ],
+  "releases": [
+    {
+      "systemId": "ordo",
+      "version": "1.4.0",
+      "manifest": "examples/distribution-proof/ordo.release.v2.json",
+      "sha256": "79a813b1f04fc4ec964be11e2a304caf5d87bb527da0b4b1779be6fc6a112659"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "registry-proof",
+      "version": "1.0.0",
+      "manifest": "examples/distribution-proof/registry-proof.profile.json",
+      "sha256": "005d23052402093e1c942a389a3dc488d1eab9742c37879900d00dcfc585057d"
+    }
+  ]
+}
