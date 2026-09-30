@@ -46,7 +46,8 @@
           "platform": null,
           "sha256": "f534fb295eca6f89303cd1b812e6da6d456b75683dcd077b811ee5ae8558aef2"
         }
-      ]
+      ],
+      "executable": "praxis"
     },
     {
       "systemId": "ordo",
@@ -80,7 +81,8 @@
           "platform": null,
           "sha256": "61a4bf5d2a36aba58328172ac571b2daf140dd66c624c4b094bff146738ff310"
         }
-      ]
+      ],
+      "executable": "ordo"
     }
   ]
 }
