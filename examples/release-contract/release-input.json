@@ -1,0 +1,38 @@
+{
+  "schema": "echelon.release-input/v1",
+  "systemId": "release-contract-fixture",
+  "distributionClass": "self-contained-native-cli",
+  "executable": "fixture",
+  "compatibilityAliases": [],
+  "provides": [
+    {
+      "id": "release.fixture",
+      "contractVersion": 1
+    }
+  ],
+  "distribution": {
+    "mechanism": "github-release",
+    "package": null,
+    "url": null
+  },
+  "artifacts": [
+    {
+      "name": "fixture-linux-x64.bin",
+      "purpose": "executable",
+      "platform": "linux-x64",
+      "mediaType": "application/octet-stream"
+    },
+    {
+      "name": "fixture.spdx.json",
+      "purpose": "sbom",
+      "platform": null,
+      "mediaType": "application/spdx+json"
+    },
+    {
+      "name": "THIRD-PARTY-NOTICES.txt",
+      "purpose": "licenses",
+      "platform": null,
+      "mediaType": "text/plain"
+    }
+  ]
+}
