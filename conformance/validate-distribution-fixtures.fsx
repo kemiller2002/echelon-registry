@@ -210,11 +210,17 @@ validateResolution
         "ordo", "examples/distribution-proof/ordo.release.v2.json"
     ])
 
+let engineeringResolved =
+    Environment.GetEnvironmentVariable("ECHELON_ENGINEERING_RESOLVED")
+    |> Option.ofObj
+    |> Option.filter (String.IsNullOrWhiteSpace >> not)
+    |> Option.defaultValue "resolved/echelon-engineering/0.1.0/linux-x64.json"
+
 validateResolution
     "Echelon engineering"
     "profiles/echelon-engineering.profile.json"
     "snapshots/echelon-engineering-0.1.0.catalog.json"
-    "resolved/echelon-engineering/0.1.0/linux-x64.json"
+    engineeringResolved
     (Map.ofList [
         "praxis", "releases/praxis/3.6.0.release.json"
         "ordo", "releases/ordo/1.4.0.release.json"
