@@ -156,6 +156,12 @@ let validateResolution
         require (stringProperty "lifecycleState" resolvedComponent = "active") (sprintf "%s resolved release must be active for %s" name systemId)
         require (stringProperty "distributionClass" resolvedComponent = stringProperty "distributionClass" release) (sprintf "%s distribution class mismatch for %s" name systemId)
 
+        let releaseExecutable = property "executable" release
+        let resolvedExecutable = property "executable" resolvedComponent
+        require (releaseExecutable.ValueKind = resolvedExecutable.ValueKind) (sprintf "%s executable shape mismatch for %s" name systemId)
+        if releaseExecutable.ValueKind = JsonValueKind.String then
+            require (releaseExecutable.GetString() = resolvedExecutable.GetString()) (sprintf "%s executable mismatch for %s" name systemId)
+
         let resolvedReleaseManifest = property "releaseManifest" resolvedComponent
         require (stringProperty "sha256" resolvedReleaseManifest = releaseHash) (sprintf "%s release manifest digest mismatch for %s" name systemId)
 
