@@ -11,9 +11,8 @@ let parse path =
 
 let sha256 path =
     let bytes = File.ReadAllBytes path
-    SHA256.HashData bytes
-    |> Convert.ToHexString
-    |> fun value -> value.ToLowerInvariant()
+    let hash = SHA256.HashData bytes
+    Convert.ToHexString(hash).ToLowerInvariant()
 
 let property name (element: JsonElement) =
     element.GetProperty name
@@ -120,10 +119,12 @@ for selected in resolvedArtifacts do
 let executableForPlatform =
     releaseArtifacts
     |> Array.exists (fun artifact ->
-        stringProperty "purpose" artifact = "executable" &&
-        let p = property "platform" artifact
-        p.ValueKind = JsonValueKind.String &&
-        p.GetString() = platform)
+        if stringProperty "purpose" artifact <> "executable" then
+            false
+        else
+            let artifactPlatform = property "platform" artifact
+            artifactPlatform.ValueKind = JsonValueKind.String &&
+            artifactPlatform.GetString() = platform)
 
 require executableForPlatform (sprintf "release has no executable artifact for %s" platform)
 
