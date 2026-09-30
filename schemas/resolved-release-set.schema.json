@@ -126,6 +126,7 @@
         "releaseStage",
         "lifecycleState",
         "distributionClass",
+        "executable",
         "releaseManifest",
         "distribution",
         "artifacts"
@@ -237,6 +238,12 @@
           "items": {
             "$ref": "#/$defs/artifact"
           }
+        },
+        "executable": {
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     }
