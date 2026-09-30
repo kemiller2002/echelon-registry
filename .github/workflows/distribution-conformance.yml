@@ -1,0 +1,25 @@
+name: Registry distribution conformance
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - requirements/indy-init-distribution
+      - implementation/distribution-registry-foundation
+
+permissions:
+  contents: read
+
+jobs:
+  distribution-conformance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Validate Registry distribution fixtures
+        run: dotnet fsi conformance/validate-distribution-fixtures.fsx
