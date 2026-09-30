@@ -220,4 +220,78 @@ validateResolution
         "ordo", "releases/ordo/1.4.0.release.json"
     ])
 
+
+
+let validatePreFreezeIndyInit () =
+    let profilePath = "profiles/indy-init.profile.json"
+    use profileDoc = parse profilePath
+    let profile = profileDoc.RootElement
+
+    require (stringProperty "schema" profile = "echelon.profile/v1") "Indy Init profile schema mismatch"
+    require (stringProperty "id" profile = "indy-init") "Indy Init profile id mismatch"
+    require (stringProperty "version" profile = "0.1.0") "Indy Init profile version mismatch"
+
+    let platforms =
+        arrayProperty "supportedPlatforms" profile
+        |> Array.map (fun item -> item.GetString())
+
+    require (platforms |> Array.contains "osx-arm64") "Indy Init must support its primary osx-arm64 platform"
+    require (platforms |> Array.contains "linux-x64") "Indy Init must support the Linux rehearsal platform"
+
+    let stages =
+        arrayProperty "allowedReleaseStages" profile
+        |> Array.map (fun item -> item.GetString())
+
+    require (stages = [| "stable" |]) "Indy Init pre-freeze profile accepts stable releases only"
+
+    let components = arrayProperty "components" profile
+    let ids = components |> Array.map (stringProperty "systemId")
+    require (ids |> Array.distinct |> Array.length = ids.Length) "Indy Init profile contains duplicate system ids"
+
+    let expectedRoles =
+        Map.ofList [
+            "praxis", "host-tool"
+            "ordo", "host-tool"
+            "percepta", "repository-lifecycle"
+            "aegis", "project-binding"
+            "limen", "project-binding"
+            "forma", "project-binding"
+            "folio", "project-binding"
+        ]
+
+    require (Set.ofArray ids = (expectedRoles |> Map.keys |> Set.ofSeq)) "Indy Init required system set drifted from the competition contract"
+
+    for component in components do
+        let id = stringProperty "systemId" component
+        require ((property "required" component).GetBoolean()) (sprintf "Indy Init component %s must remain required before freeze" id)
+        require (stringProperty "role" component = expectedRoles.[id]) (sprintf "Indy Init role mismatch for %s" id)
+
+        let version = property "version" component
+        let mutable exactValue = Unchecked.defaultof<JsonElement>
+        let mutable rangeValue = Unchecked.defaultof<JsonElement>
+        let hasExact = version.TryGetProperty("exact", &exactValue)
+        let hasRange = version.TryGetProperty("range", &rangeValue)
+
+        match id with
+        | "praxis" ->
+            require hasExact "Praxis must remain exact in the pre-freeze profile"
+            require (exactValue.GetString() = "3.6.0") "Praxis exact version drifted"
+            require (not hasRange) "Praxis must not carry a range alongside its exact version"
+        | "ordo" ->
+            require hasExact "Ordo must remain exact in the pre-freeze profile"
+            require (exactValue.GetString() = "1.4.0") "Ordo exact version drifted"
+            require (not hasRange) "Ordo must not carry a range alongside its exact version"
+        | _ ->
+            require hasRange (sprintf "%s must remain a pre-freeze range until a Registry release is cataloged" id)
+            require (not hasExact) (sprintf "%s must not be pinned before its release is cataloged" id)
+            require (not (String.IsNullOrWhiteSpace(rangeValue.GetString()))) (sprintf "%s range is empty" id)
+
+    require (not (Directory.Exists "resolved/indy-init")) "Indy Init must not publish a resolved release set before every required release is cataloged and pinned"
+
+    printfn "Indy Init pre-freeze PASS"
+    printfn "  required systems: %s" (ids |> Array.sort |> String.concat ", ")
+    printfn "  resolution: intentionally absent"
+
+validatePreFreezeIndyInit ()
+
 printfn "Distribution conformance PASS"
