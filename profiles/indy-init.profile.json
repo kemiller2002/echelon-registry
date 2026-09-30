@@ -1,0 +1,71 @@
+{
+  "schema": "echelon.profile/v1",
+  "id": "indy-init",
+  "version": "0.1.0",
+  "description": "Pre-freeze Indy Init 2026 environment profile. Required systems are declared now; no resolved release set is valid until every required release is cataloged and pinned.",
+  "supportedPlatforms": [
+    "osx-arm64",
+    "linux-x64"
+  ],
+  "allowedReleaseStages": [
+    "stable"
+  ],
+  "components": [
+    {
+      "systemId": "praxis",
+      "role": "host-tool",
+      "required": true,
+      "version": {
+        "exact": "3.6.0"
+      }
+    },
+    {
+      "systemId": "ordo",
+      "role": "host-tool",
+      "required": true,
+      "version": {
+        "exact": "1.4.0"
+      }
+    },
+    {
+      "systemId": "percepta",
+      "role": "repository-lifecycle",
+      "required": true,
+      "version": {
+        "range": ">=0.1.0 <1.0.0"
+      }
+    },
+    {
+      "systemId": "aegis",
+      "role": "project-binding",
+      "required": true,
+      "version": {
+        "range": ">=1.0.0 <2.0.0"
+      }
+    },
+    {
+      "systemId": "limen",
+      "role": "project-binding",
+      "required": true,
+      "version": {
+        "range": ">=0.6.2 <1.0.0"
+      }
+    },
+    {
+      "systemId": "forma",
+      "role": "project-binding",
+      "required": true,
+      "version": {
+        "range": ">=0.3.0 <1.0.0"
+      }
+    },
+    {
+      "systemId": "folio",
+      "role": "project-binding",
+      "required": true,
+      "version": {
+        "range": ">=0.3.0 <1.0.0"
+      }
+    }
+  ]
+}
