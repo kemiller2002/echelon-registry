@@ -257,7 +257,7 @@ let outputDirectory = Path.GetDirectoryName outputPath
 if not (String.IsNullOrWhiteSpace outputDirectory) then Directory.CreateDirectory outputDirectory |> ignore
 
 let options = JsonSerializerOptions(WriteIndented = true)
-File.WriteAllText(outputPath, output.ToJsonString options) + "\n" |> ignore
+File.WriteAllText(outputPath, output.ToJsonString(options) + "\n")
 
 printfn "Generated %s for %s %s" outputPath systemId version
 for artifact in generated do
