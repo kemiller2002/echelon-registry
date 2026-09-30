@@ -51,6 +51,7 @@ These are not global workstation packages merely because they are common Echelon
 | Forma | `kemiller2002/forma` | zero-runtime design-system package | pinned package consumption and release tarball workflow are documented | partial | bind to explicit web project; never global-install or copy source/CSS into consumer |
 | Folio | `kemiller2002/folio` | print/web-component package | public package/component surface exists | partial | bind to explicit project; renderer capabilities are separate explicit prerequisites |
 | Iter | `kemiller2002/iter` | optional .NET/NuGet application library | F# routing library exists; release contract not proven | not-ready | bind only to an explicit requesting .NET target; Limen must never depend on Iter |
+| Framework Templates | `kemiller2002/Framework-templates` | reusable framework scaffolding/template bundle | framework-agnostic starter artifacts exist; no immutable distribution contract observed | not-ready | publish a versioned template bundle and bind it only when explicitly scaffolding a framework repository; do not global-install it |
 
 ## C. Echelon applications and developer products
 
@@ -94,6 +95,9 @@ The repositories below must **not** become normal Conditor install targets in th
 | `kemiller2002/time-entry-state-machine` | Limen/F# consumer/proof | not-installable as core infrastructure |
 | `kemiller2002/time-tracking-application` | trial/application predecessor | not part of core distribution unless explicitly promoted |
 | `kemiller2002/time-tracking-data` | trial/data repository | not-installable |
+| `kemiller2002/software-engineering` | methodology/research pilot | not-installable unless a future separately named operational capability is promoted |
+| `kemiller2002/clarity-framework-training` | training/marketing content site | not-installable |
+| `kemiller2002/echelon-consulting-rik-dryfoos` | project-specific consulting/evaluation workspace | not-installable; project evidence is not an ecosystem product |
 
 ## E. Canonical identity rules discovered by this inventory
 
@@ -137,3 +141,47 @@ Expected categories are:
 - application implementation: generated at kickoff, not shipped inside Conditor or the Indy Init planning repository.
 
 The exact competition release set is frozen by resolved-release-set digest and may be reproduced online or from an offline bundle.
+
+
+## H. Omission-audit coverage
+
+The 2026 repository audit compared this matrix against every repository created under the owner account during 2026 and then widened the search to older repositories whose names or contents indicate Echelon/framework/engineering responsibilities.
+
+The following recent repositories were explicitly reviewed and are intentionally outside the Echelon distribution catalog unless a later owner decision promotes them:
+
+| Repository | Reason excluded from distribution |
+|---|---|
+| `kemiller2002/-kevin-m-miller` | personal writing/voice material, not a software capability |
+| `kemiller2002/catering-events` | event/catering content |
+| `kemiller2002/culinary-arts-2026-state-fair` | competition/content workspace |
+| `kemiller2002/ewing-house-construction-data` | project data/application material, not Echelon infrastructure |
+| `kemiller2002/Games` | unrelated application workspace |
+| `kemiller2002/hackney-power` | unrelated/project-specific repository; no Echelon product contract observed |
+| `kemiller2002/health-samantha` | private-domain data-processing project, not an Echelon distributable system |
+| `kemiller2002/highschool` | educational/personal site |
+| `kemiller2002/house-design` | personal design content |
+| `kemiller2002/HVAC` | personal/project data |
+| `kemiller2002/learning-programming` | learning material |
+| `kemiller2002/personal-administration` | personal workspace; no Echelon product contract observed |
+| `kemiller2002/scratch` | scratch repository |
+| `kemiller2002/travel` | personal travel workspace |
+| `kemiller2002/travel-itineraries` | personal travel data/content |
+
+An excluded repository must not become installable merely because it later adopts Praxis/Ordo, Forma, Folio, Limen, or another Echelon capability. Promotion into the catalog requires an explicit canonical identity, distribution class, owner decision, and stable-profile eligibility review.
+
+## I. Remaining cross-cutting gaps found by the omission audit
+
+The repository inventory exposed requirements that are not owned by one application repository:
+
+1. **Stable Registry publication surface.** Registry needs a versioned, digest-bound catalog/profile snapshot that Conditor can discover without reading Registry source layout.
+2. **Reusable release workflow.** Distributable repositories need one versioned shared release workflow or generator for release manifests, artifact digests, clean-consumer tests, provenance and readiness evidence.
+3. **Release withdrawal/revocation.** Immutable release records need a non-destructive way to mark a release deprecated, withdrawn or security-revoked so new resolution refuses it while historical evidence remains intact.
+4. **Software bill of materials.** Stable distributable releases need an SBOM/dependency inventory appropriate to their distribution class, plus third-party-license evidence when applicable.
+5. **Platform trust.** Native public releases should carry platform-appropriate signing/notarization when practical, separately from SHA-256 integrity and CI provenance attestations.
+6. **Bootstrap current-session usability.** A successful first bootstrap must leave Conditor invocable immediately, without requiring a manual PATH edit/relogin before the documented next command.
+7. **Conditor version lifecycle.** There must be an explicit, atomic way to install an exact Conditor version and move between approved Conditor releases; rerunning an unpinned latest installer is not a reproducibility contract.
+8. **Platform discrimination.** Runtime/platform resolution must distinguish materially incompatible Linux/runtime variants such as glibc vs musl instead of mapping all machines to a filename by OS/CPU alone.
+9. **Concurrent mutation exclusion.** Two Conditor mutating operations against the same host or target must not execute concurrently without a deterministic lock/reconciliation protocol.
+10. **Preflight capacity.** Before irreversible mutation, Conditor should establish required disk space, artifact/source reachability where online, authentication prerequisites, and write permissions to the extent they can be known.
+11. **Canonical standard profiles.** Registry must own/version the definitions for standard environment roles, while resolved release sets freeze exact artifacts by platform.
+12. **Indy Init competition profile.** The Indy Init repository must own a machine-readable event profile that names the exact capabilities/contracts and the clean-host baseline; Conditor executes that profile rather than inventing competition scope.
