@@ -32,7 +32,7 @@ jobs:
           output: examples/release-contract/generated.release.json
           version: 1.2.3
           tag: v1.2.3
-          commit: 1111111111111111111111111111111111111111
+          commit: '1111111111111111111111111111111111111111'
           release-stage: preview
 
       - name: Validate generated release contract
