@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.release-input.v1.json",
+  "title": "Echelon Release Input v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "systemId",
+    "distributionClass",
+    "executable",
+    "compatibilityAliases",
+    "provides",
+    "distribution",
+    "artifacts"
+  ],
+  "properties": {
+    "schema": {
+      "const": "echelon.release-input/v1"
+    },
+    "systemId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "distributionClass": {
+      "enum": [
+        "self-contained-native-cli",
+        "self-contained-native-daemon",
+        "repository-lifecycle",
+        "nuget-library",
+        "web-package",
+        "contract-bundle",
+        "application-artifact"
+      ]
+    },
+    "executable": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "compatibilityAliases": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "provides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "contractVersion"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "contractVersion": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "distribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mechanism"
+      ],
+      "properties": {
+        "mechanism": {
+          "enum": [
+            "github-release",
+            "npm",
+            "nuget",
+            "static-bundle",
+            "github-pages",
+            "container"
+          ]
+        },
+        "package": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "purpose"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "purpose": {
+            "enum": [
+              "executable",
+              "package",
+              "bundle",
+              "checksums",
+              "sbom",
+              "licenses",
+              "provenance",
+              "signature",
+              "application"
+            ]
+          },
+          "platform": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "mediaType": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
