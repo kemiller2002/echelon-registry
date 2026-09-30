@@ -1,0 +1,22 @@
+{
+  "schema": "echelon.profile/v1",
+  "id": "registry-proof",
+  "version": "1.0.0",
+  "description": "Minimal proof profile used to validate Registry profile and resolved-release-set contracts.",
+  "supportedPlatforms": [
+    "linux-x64"
+  ],
+  "allowedReleaseStages": [
+    "stable"
+  ],
+  "components": [
+    {
+      "systemId": "ordo",
+      "role": "host-tool",
+      "required": true,
+      "version": {
+        "exact": "1.4.0"
+      }
+    }
+  ]
+}
