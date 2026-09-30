@@ -16,7 +16,7 @@ let arguments =
     |> Array.filter ((<>) "--")
     |> Array.toList
 
-let rec parseArgs acc remaining =
+let rec parseArgs (acc: Map<string, string>) (remaining: string list) =
     match remaining with
     | flag :: value :: tail when flag.StartsWith("--", StringComparison.Ordinal) ->
         parseArgs (Map.add flag value acc) tail
@@ -75,7 +75,7 @@ let sha256File path =
     |> Convert.ToHexString
     |> fun value -> value.ToLowerInvariant()
 
-use input = parse inputPath
+let input = parse inputPath
 let root = input.RootElement
 
 if str "schema" root <> Some "echelon.release-input/v1" then
