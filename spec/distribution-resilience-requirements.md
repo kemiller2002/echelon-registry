@@ -79,3 +79,28 @@ Owner: Echelon Registry
 ## Pass 2 acceptance criteria
 
 A conforming release workflow can publish one immutable release document, profiles can resolve against compatibility and release-stage policy, consumers can audit the exact selected set, and the metadata required to install or verify that set can be exported for offline use.
+
+
+## Release lifecycle, SBOM, and platform trust
+
+**REG-DIST-160** Registry SHALL model release lifecycle state separately from release stage/channel. At minimum it SHALL distinguish active, deprecated, withdrawn, and security-revoked releases.
+
+**REG-DIST-161** Withdrawal or revocation SHALL NOT delete or mutate the historical release identity, artifact digests, or provenance record. The state change itself SHALL be durable and attributable.
+
+**REG-DIST-162** Normal stable resolution SHALL exclude withdrawn and security-revoked releases even when they otherwise satisfy semantic-version constraints.
+
+**REG-DIST-163** A deprecated release MAY remain resolvable according to profile policy, but consumers SHALL be able to report the deprecation reason and successor when one is declared.
+
+**REG-DIST-164** Registry release metadata SHALL support references/digests for an SBOM or equivalent dependency inventory appropriate to the distribution class.
+
+**REG-DIST-165** Registry release metadata SHALL support third-party-license/notice evidence where the released artifact contains distributable third-party material.
+
+**REG-DIST-166** Native release metadata SHALL support platform code-signing/notarization evidence independently from SHA-256 integrity and CI provenance.
+
+**REG-DIST-167** Registry SHALL define a stable publication/discovery surface for catalog snapshots, profiles, and resolved release sets so consumers do not depend on Registry repository source layout.
+
+**REG-DIST-168** Published catalog/profile snapshots SHALL be versioned and digest-bound, and the publication process SHALL preserve prior snapshots needed for reproducibility.
+
+**REG-DIST-169** The reusable Echelon release workflow/template SHALL itself be versioned. Every generated release document SHALL identify the release-contract/workflow version that produced or validated it.
+
+**REG-DIST-170** Registry validation SHALL fail when a stable-profile-eligible native release claims required signing, provenance, SBOM, or license evidence but the referenced evidence is missing or digest-mismatched.
