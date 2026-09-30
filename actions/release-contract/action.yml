@@ -1,0 +1,43 @@
+name: Echelon release contract
+description: Generate an immutable echelon.release/v2 manifest from built release artifacts.
+inputs:
+  release-input:
+    description: Path to echelon.release-input/v1 JSON in the caller workspace.
+    required: true
+  artifact-dir:
+    description: Directory containing the exact artifacts that will be published.
+    required: true
+  output:
+    description: Output path for echelon.release/v2 JSON.
+    required: false
+    default: echelon.release.json
+  version:
+    description: Semantic version without an optional leading v.
+    required: true
+  tag:
+    description: Immutable release tag.
+    required: true
+  commit:
+    description: Full 40-character source commit SHA.
+    required: true
+  release-stage:
+    description: stable, preview, or nightly.
+    required: false
+    default: stable
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: '10.0.x'
+    - shell: bash
+      run: >-
+        dotnet fsi "$GITHUB_ACTION_PATH/generate-release-manifest.fsx" --
+        --input "${{ inputs.release-input }}"
+        --artifact-dir "${{ inputs.artifact-dir }}"
+        --output "${{ inputs.output }}"
+        --repository "${{ github.repository }}"
+        --version "${{ inputs.version }}"
+        --tag "${{ inputs.tag }}"
+        --commit "${{ inputs.commit }}"
+        --stage "${{ inputs.release-stage }}"
