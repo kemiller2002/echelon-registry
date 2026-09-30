@@ -131,7 +131,7 @@ require executableForPlatform (sprintf "release has no executable artifact for %
 let resolvedReleaseManifest = property "releaseManifest" resolvedComponent
 require (stringProperty "sha256" resolvedReleaseManifest = releaseHash) "resolved release manifest digest does not match release bytes"
 
-let systems = arrayProperty "systems" systemsDoc
+let systems = arrayProperty "systems" systemsDoc.RootElement
 let canonicalIds = systems |> Array.map (stringProperty "id")
 require (canonicalIds |> Array.distinct |> Array.length = canonicalIds.Length) "canonical system ids must be unique"
 
