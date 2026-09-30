@@ -14,7 +14,7 @@ let sha256 path =
     let hash = SHA256.HashData bytes
     Convert.ToHexString(hash).ToLowerInvariant()
 
-let property name (element: JsonElement) =
+let property (name: string) (element: JsonElement) =
     element.GetProperty name
 
 let stringProperty name element =
@@ -44,11 +44,11 @@ let profilePath = "examples/distribution-proof/registry-proof.profile.json"
 let snapshotPath = "examples/distribution-proof/catalog-snapshot.json"
 let resolvedPath = "examples/distribution-proof/registry-proof.linux-x64.resolved.json"
 
-use releaseDoc = parse releasePath
-use profileDoc = parse profilePath
-use snapshotDoc = parse snapshotPath
-use resolvedDoc = parse resolvedPath
-use systemsDoc = parse "registry/systems-v2.json"
+let releaseDoc = parse releasePath
+let profileDoc = parse profilePath
+let snapshotDoc = parse snapshotPath
+let resolvedDoc = parse resolvedPath
+let systemsDoc = parse "registry/systems-v2.json"
 
 let release = releaseDoc.RootElement
 let profile = profileDoc.RootElement
