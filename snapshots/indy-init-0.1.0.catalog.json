@@ -73,6 +73,12 @@
       "version": "1.0.0",
       "manifest": "releases/aegis/1.0.0.release.json",
       "sha256": "4530cfa3396c1e57d3e1a6500c661cd2d520236e852d1d9e88aa44c385d0bd6b"
+    },
+    {
+      "systemId": "folio",
+      "version": "0.3.0",
+      "manifest": "releases/folio/0.3.0.release.json",
+      "sha256": "a7c446787aafd6433932c247734249b4f01f8b78da4bbee3dcb6f743145f8d21"
     }
   ],
   "profiles": [
@@ -80,7 +86,7 @@
       "id": "indy-init",
       "version": "0.1.0",
       "manifest": "profiles/indy-init.profile.json",
-      "sha256": "821c1d97567ec6e57afc9d0dfbf308551b533579e0cadd5a65d299bdf629c0ee"
+      "sha256": "bf7cee38be869394358390abd29a056329eae70211b30668516425bcc9f268cd"
     }
   ]
 }
