@@ -8,6 +8,7 @@ on:
       - requirements/indy-init-distribution
       - implementation/distribution-registry-foundation
       - implementation/indy-init-release-catalog
+      - implementation/indy-init-freeze
 
 permissions:
   contents: read
@@ -24,7 +25,7 @@ jobs:
 
       - name: Report Indy Init catalog hashes
         run: |
-          for path in profiles/indy-init.profile.json releases/limen/0.6.2.release.json releases/aegis/1.0.0.release.json; do
+          for path in profiles/indy-init.profile.json releases/limen/0.6.2.release.json releases/aegis/1.0.0.release.json releases/folio/0.3.0.release.json; do
             if [ -f "$path" ]; then
               printf 'CATALOG_HASH|%s|%s\n' "$path" "$(sha256sum "$path" | awk '{print $1}')"
             fi
@@ -53,10 +54,29 @@ jobs:
       - name: Validate Indy Init catalog progress
         run: dotnet fsi conformance/validate-indy-init-catalog.fsx
 
-      - name: Observe exact remaining Indy Init package releases
-        if: always()
-        run: bash tools/observe-indy-init-external-releases.sh
+      - name: Resolve frozen Indy Init profile twice on supported platforms
+        run: |
+          mkdir -p "$RUNNER_TEMP/indy-init-a" "$RUNNER_TEMP/indy-init-b"
+          for platform in linux-x64 osx-arm64; do
+            dotnet fsi tools/resolve-profile.fsx -- \
+              --profile profiles/indy-init.profile.json \
+              --snapshot snapshots/indy-init-0.1.0.catalog.json \
+              --platform "$platform" \
+              --output "$RUNNER_TEMP/indy-init-a/$platform.json"
+            dotnet fsi tools/resolve-profile.fsx -- \
+              --profile profiles/indy-init.profile.json \
+              --snapshot snapshots/indy-init-0.1.0.catalog.json \
+              --platform "$platform" \
+              --output "$RUNNER_TEMP/indy-init-b/$platform.json"
+            cmp "$RUNNER_TEMP/indy-init-a/$platform.json" "$RUNNER_TEMP/indy-init-b/$platform.json"
+          done
 
+      - name: Publish frozen Indy Init resolved sets
+        uses: actions/upload-artifact@v4
+        with:
+          name: indy-init-0.1.0-resolved-sets
+          path: ${{ runner.temp }}/indy-init-a/*.json
+          if-no-files-found: error
 
       - name: Generate release contract fixture
         uses: ./actions/release-contract

@@ -1,0 +1,37 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "folio",
+  "version": "0.3.0",
+  "repository": "kemiller2002/folio",
+  "tag": "v0.3.0",
+  "commit": "330fc480b8f5a977801bc82bdf65ee736e526681",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "web-package",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "package": "@echelon-foundry/print-components",
+      "url": "https://github.com/kemiller2002/folio/releases/tag/v0.3.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "echelon-foundry-print-components-0.3.0.tgz",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "472d4b8d6e9848b596bf6094590006de706e4ed953d3eab6768f7555051c4720",
+      "mediaType": "application/gzip"
+    },
+    {
+      "name": "checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "0553679e83ec6498171f005031afbe0d2274e73a4439cad6ca23fba19933613d",
+      "mediaType": "text/plain"
+    }
+  ]
+}
