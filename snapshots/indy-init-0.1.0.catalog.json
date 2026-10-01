@@ -67,6 +67,12 @@
       "version": "0.6.2",
       "manifest": "releases/limen/0.6.2.release.json",
       "sha256": "c597068533397406942a229c633adf2631bfb840e666bd02c900051695df8aac"
+    },
+    {
+      "systemId": "aegis",
+      "version": "1.0.0",
+      "manifest": "releases/aegis/1.0.0.release.json",
+      "sha256": "4530cfa3396c1e57d3e1a6500c661cd2d520236e852d1d9e88aa44c385d0bd6b"
     }
   ],
   "profiles": [
@@ -74,7 +80,7 @@
       "id": "indy-init",
       "version": "0.1.0",
       "manifest": "profiles/indy-init.profile.json",
-      "sha256": "5ab23918b5103095702c40e85576c26ecaa5e890db27a109061f8fa939e89a7b"
+      "sha256": "821c1d97567ec6e57afc9d0dfbf308551b533579e0cadd5a65d299bdf629c0ee"
     }
   ]
 }
