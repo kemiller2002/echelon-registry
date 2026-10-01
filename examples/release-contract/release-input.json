@@ -17,7 +17,7 @@
   },
   "artifacts": [
     {
-      "name": "fixture-linux-x64.bin",
+      "name": "fixture-{version}-linux-x64.bin",
       "purpose": "executable",
       "platform": "linux-x64",
       "mediaType": "application/octet-stream"
