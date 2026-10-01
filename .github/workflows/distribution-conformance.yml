@@ -7,6 +7,7 @@ on:
       - main
       - requirements/indy-init-distribution
       - implementation/distribution-registry-foundation
+      - implementation/indy-init-release-catalog
 
 permissions:
   contents: read
