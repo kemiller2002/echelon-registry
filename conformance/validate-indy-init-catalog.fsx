@@ -58,6 +58,7 @@ let expectedCataloged =
         "ordo", ("1.4.0", "releases/ordo/1.4.0.release.json")
         "percepta", ("0.1.0", "releases/percepta/0.1.0.release.json")
         "forma", ("0.3.0", "releases/forma/0.3.0.release.json")
+        "limen", ("0.6.2", "releases/limen/0.6.2.release.json")
     ]
 
 for KeyValue(systemId, (version, path)) in expectedCataloged do
@@ -77,15 +78,16 @@ let exactVersion systemId =
 
 require (exactVersion "percepta" = "0.1.0") "Percepta must be pinned to cataloged 0.1.0"
 require (exactVersion "forma" = "0.3.0") "Forma must be pinned to cataloged 0.3.0"
+require (exactVersion "limen" = "0.6.2") "Limen must be pinned to cataloged 0.6.2"
 
 let catalogedIds = releases |> Array.map (str "systemId") |> Set.ofArray
 let unresolved = Set.difference requiredIds catalogedIds
-let expectedUnresolved = Set.ofList [ "aegis"; "limen"; "folio" ]
+let expectedUnresolved = Set.ofList [ "aegis"; "folio" ]
 
 let unresolvedText = unresolved |> Set.toList |> String.concat ","
 
 require (unresolved = expectedUnresolved)
-    $"Unexpected Indy Init unresolved set. Expected aegis/limen/folio; observed {unresolvedText}"
+    $"Unexpected Indy Init unresolved set. Expected aegis/folio; observed {unresolvedText}"
 
 printfn "Indy Init catalog progress PASS"
 printfn "  cataloged: %s" (catalogedIds |> Set.toList |> List.sort |> String.concat ", ")
