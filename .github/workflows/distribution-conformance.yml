@@ -9,6 +9,7 @@ on:
       - implementation/distribution-registry-foundation
       - implementation/indy-init-release-catalog
       - implementation/indy-init-freeze
+      - implementation/indy-init-freeze-receipt
 
 permissions:
   contents: read
@@ -77,6 +78,11 @@ jobs:
           name: indy-init-0.1.0-resolved-sets
           path: ${{ runner.temp }}/indy-init-a/*.json
           if-no-files-found: error
+
+      - name: Validate durable Indy Init freeze receipt
+        env:
+          INDY_INIT_RESOLVED_DIR: ${{ runner.temp }}/indy-init-a
+        run: dotnet fsi conformance/validate-indy-init-freeze.fsx
 
       - name: Generate release contract fixture
         uses: ./actions/release-contract
