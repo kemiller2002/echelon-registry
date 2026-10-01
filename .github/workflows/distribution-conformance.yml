@@ -24,7 +24,7 @@ jobs:
 
       - name: Report Indy Init catalog hashes
         run: |
-          for path in profiles/indy-init.profile.json releases/limen/0.6.2.release.json; do
+          for path in profiles/indy-init.profile.json releases/limen/0.6.2.release.json releases/aegis/1.0.0.release.json; do
             if [ -f "$path" ]; then
               printf 'CATALOG_HASH|%s|%s\n' "$path" "$(sha256sum "$path" | awk '{print $1}')"
             fi
