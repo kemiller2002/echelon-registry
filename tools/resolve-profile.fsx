@@ -215,7 +215,9 @@ let chooseDistribution distributionClass release =
         available |> List.tryFind (fun distribution -> str "mechanism" distribution = mechanism))
     |> Option.defaultWith (fun () ->
         let found = available |> List.map (str "mechanism") |> String.concat ", "
-        fail $"release {str "systemId" release} {str "version" release} has no supported distribution for {distributionClass}; found [{found}]")
+        let systemId = str "systemId" release
+        let version = str "version" release
+        fail $"release {systemId} {version} has no supported distribution for {distributionClass}; found [{found}]")
 
 let isSupportArtifact purpose =
     Set.ofList [ "checksums"; "sbom"; "licenses"; "provenance"; "signature" ]
@@ -244,7 +246,9 @@ let selectArtifacts distributionClass selectedDistribution release =
         | _ -> false
 
     let primaries = artifacts |> List.filter primary
-    require (primaries.Length = 1) $"release {str "systemId" release} {str "version" release} must expose exactly one primary artifact for {distributionClass}/{mechanism}/{platform}; found {primaries.Length}"
+    let releaseSystemId = str "systemId" release
+    let releaseVersion = str "version" release
+    require (primaries.Length = 1) $"release {releaseSystemId} {releaseVersion} must expose exactly one primary artifact for {distributionClass}/{mechanism}/{platform}; found {primaries.Length}"
 
     let support =
         artifacts
@@ -353,7 +357,8 @@ let resolveComponent (component: JsonElement) =
                 fail $"snapshot release manifest for {systemId} not found: {releasePath}"
 
             let releaseHash = sha256 releasePath
-            require (releaseHash = str "sha256" row) $"snapshot release digest mismatch for {systemId} {str "version" row}"
+            let rowVersion = str "version" row
+            require (releaseHash = str "sha256" row) $"snapshot release digest mismatch for {systemId} {rowVersion}"
 
             use releaseDoc = parse releasePath
             let release = releaseDoc.RootElement.Clone()
