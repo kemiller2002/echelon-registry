@@ -110,8 +110,8 @@ let parseSemVer raw =
         else []
       Original = raw }
 
-let compareIdentifier left right =
-    let numeric value =
+let compareIdentifier (left: string) (right: string) =
+    let numeric (value: string) =
         match Int32.TryParse value with
         | true, n -> Some n
         | _ -> None
