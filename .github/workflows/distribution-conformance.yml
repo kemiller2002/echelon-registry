@@ -56,3 +56,18 @@ jobs:
       - name: Observe exact remaining Indy Init package releases
         if: always()
         run: bash tools/observe-indy-init-external-releases.sh
+
+
+      - name: Generate release contract fixture
+        uses: ./actions/release-contract
+        with:
+          release-input: examples/release-contract/release-input.json
+          artifact-dir: examples/release-contract/artifacts
+          output: examples/release-contract/generated.release.json
+          version: 1.2.3
+          tag: v1.2.3
+          commit: '1111111111111111111111111111111111111111'
+          release-stage: preview
+
+      - name: Validate generated release contract
+        run: dotnet fsi conformance/validate-release-generation.fsx examples/release-contract/generated.release.json
