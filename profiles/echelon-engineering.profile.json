@@ -1,0 +1,35 @@
+{
+  "schema": "echelon.profile/v1",
+  "id": "echelon-engineering",
+  "version": "0.1.0",
+  "description": "Initial Registry-owned Echelon engineering host profile. Project-bound libraries and applications are intentionally excluded.",
+  "supportedPlatforms": [
+    "linux-arm64",
+    "linux-musl-x64",
+    "linux-x64",
+    "osx-arm64",
+    "osx-x64",
+    "win-x64"
+  ],
+  "allowedReleaseStages": [
+    "stable"
+  ],
+  "components": [
+    {
+      "systemId": "praxis",
+      "role": "host-tool",
+      "required": true,
+      "version": {
+        "exact": "3.6.0"
+      }
+    },
+    {
+      "systemId": "ordo",
+      "role": "host-tool",
+      "required": true,
+      "version": {
+        "exact": "1.4.0"
+      }
+    }
+  ]
+}

@@ -1,0 +1,474 @@
+{
+  "schema": "echelon.registry/v2",
+  "systems": [
+    {
+      "id": "conditor",
+      "displayName": "Conditor",
+      "repository": "kemiller2002/conditor",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [
+        "conditor"
+      ],
+      "distributionClasses": [
+        "self-contained-native-cli"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "praxis",
+      "displayName": "Praxis",
+      "repository": "kemiller2002/praxis",
+      "status": "active",
+      "aliases": [
+        "ros"
+      ],
+      "executableAliases": [
+        "praxis",
+        "ros"
+      ],
+      "distributionClasses": [
+        "self-contained-native-cli",
+        "repository-lifecycle"
+      ],
+      "provides": [
+        {
+          "id": "agent.identity",
+          "contractVersion": 1
+        },
+        {
+          "id": "engineering.metrics",
+          "contractVersion": 1
+        }
+      ],
+      "optionalConsumes": []
+    },
+    {
+      "id": "ordo",
+      "displayName": "Ordo",
+      "repository": "kemiller2002/ordo",
+      "status": "active",
+      "aliases": [
+        "sde"
+      ],
+      "executableAliases": [
+        "ordo"
+      ],
+      "distributionClasses": [
+        "self-contained-native-cli",
+        "repository-lifecycle"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "project-administration",
+      "displayName": "Project Administration",
+      "repository": "kemiller2002/project-administration",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [
+        "administration"
+      ],
+      "distributionClasses": [
+        "self-contained-native-cli",
+        "application-artifact"
+      ],
+      "provides": [
+        {
+          "id": "installation.register",
+          "contractVersion": 1
+        },
+        {
+          "id": "installation.query",
+          "contractVersion": 1
+        },
+        {
+          "id": "installation.remove",
+          "contractVersion": 1
+        }
+      ],
+      "optionalConsumes": []
+    },
+    {
+      "id": "dokimos",
+      "displayName": "Dokimos",
+      "repository": "kemiller2002/dokimos",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [
+        "dokimos"
+      ],
+      "distributionClasses": [
+        "self-contained-native-cli",
+        "repository-lifecycle"
+      ],
+      "provides": [
+        {
+          "id": "quality.snapshot",
+          "contractVersion": 2
+        },
+        {
+          "id": "quality.compare",
+          "contractVersion": 1
+        },
+        {
+          "id": "quality.evaluate",
+          "contractVersion": 1
+        },
+        {
+          "id": "quality.history",
+          "contractVersion": 1
+        }
+      ],
+      "optionalConsumes": []
+    },
+    {
+      "id": "tutela",
+      "displayName": "Tutela",
+      "repository": "kemiller2002/tutela",
+      "status": "active",
+      "aliases": [
+        "tutors"
+      ],
+      "executableAliases": [
+        "tutela"
+      ],
+      "distributionClasses": [
+        "self-contained-native-cli",
+        "repository-lifecycle"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "vigila",
+      "displayName": "Vigila",
+      "repository": "kemiller2002/vigila",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [
+        "vigila"
+      ],
+      "distributionClasses": [
+        "self-contained-native-cli",
+        "application-artifact"
+      ],
+      "provides": [
+        {
+          "id": "followup.create",
+          "contractVersion": 1
+        },
+        {
+          "id": "followup.update",
+          "contractVersion": 1
+        },
+        {
+          "id": "followup.resolve",
+          "contractVersion": 1
+        },
+        {
+          "id": "followup.query",
+          "contractVersion": 1
+        }
+      ],
+      "optionalConsumes": []
+    },
+    {
+      "id": "tekmerion",
+      "displayName": "Tekmerion",
+      "repository": "kemiller2002/tekmerion",
+      "status": "active",
+      "aliases": [
+        "research-publisher"
+      ],
+      "executableAliases": [
+        "tekmerion",
+        "research-publisher"
+      ],
+      "distributionClasses": [
+        "repository-lifecycle",
+        "application-artifact"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "visual-engineering",
+      "displayName": "Visual Engineering",
+      "repository": "kemiller2002/visual-engineering",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "repository-lifecycle"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "communication-engineering",
+      "displayName": "Communication Engineering",
+      "repository": "kemiller2002/communication-engineering",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "repository-lifecycle"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "percepta",
+      "displayName": "Percepta",
+      "repository": "kemiller2002/percepta",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [
+        "percepta",
+        "percepta-repo"
+      ],
+      "distributionClasses": [
+        "self-contained-native-cli",
+        "repository-lifecycle"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "aegis",
+      "displayName": "Aegis",
+      "repository": "kemiller2002/aegis",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "nuget-library"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "limen",
+      "displayName": "Limen",
+      "repository": "kemiller2002/limen",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "web-package",
+        "repository-lifecycle"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "forma",
+      "displayName": "Forma",
+      "repository": "kemiller2002/forma",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "web-package"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "folio",
+      "displayName": "Folio",
+      "repository": "kemiller2002/folio",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "web-package"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "iter",
+      "displayName": "Iter",
+      "repository": "kemiller2002/iter",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "nuget-library"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "framework-templates",
+      "displayName": "Framework Templates",
+      "repository": "kemiller2002/Framework-templates",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "contract-bundle"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "chrona",
+      "displayName": "Chrona",
+      "repository": "kemiller2002/chrona",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [
+        "chrona"
+      ],
+      "distributionClasses": [
+        "application-artifact"
+      ],
+      "provides": [
+        {
+          "id": "time.record",
+          "contractVersion": 1
+        },
+        {
+          "id": "time.query",
+          "contractVersion": 1
+        },
+        {
+          "id": "time.approve",
+          "contractVersion": 1
+        }
+      ],
+      "optionalConsumes": []
+    },
+    {
+      "id": "summa",
+      "displayName": "Summa",
+      "repository": "kemiller2002/summa",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [
+        "summa"
+      ],
+      "distributionClasses": [
+        "application-artifact"
+      ],
+      "provides": [
+        {
+          "id": "billing.record",
+          "contractVersion": 1
+        },
+        {
+          "id": "invoice.create",
+          "contractVersion": 1
+        },
+        {
+          "id": "payment.record",
+          "contractVersion": 1
+        }
+      ],
+      "optionalConsumes": []
+    },
+    {
+      "id": "strata",
+      "displayName": "Strata",
+      "repository": "kemiller2002/strata",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [
+        "strata"
+      ],
+      "distributionClasses": [
+        "self-contained-native-cli",
+        "nuget-library"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "forma-studio",
+      "displayName": "Forma Studio",
+      "repository": "kemiller2002/forma-studio",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "application-artifact"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "mercatus",
+      "displayName": "Mercatus",
+      "repository": "kemiller2002/mercatus",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "application-artifact"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "signal",
+      "displayName": "Signal",
+      "repository": "kemiller2002/signal",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "application-artifact"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "helix-note",
+      "displayName": "HelixNote",
+      "repository": "kemiller2002/helix-note-application",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "application-artifact"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "clarity-service",
+      "displayName": "Clarity Service",
+      "repository": "kemiller2002/clarity-service",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "self-contained-native-cli",
+        "application-artifact"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "ros-worker-daemon",
+      "displayName": "ROS Worker Daemon",
+      "repository": "kemiller2002/ROS-WorkerDaemon",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [
+        "ros-worker",
+        "ros-worker-once"
+      ],
+      "distributionClasses": [
+        "self-contained-native-daemon"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    }
+  ]
+}

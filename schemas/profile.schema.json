@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.profile.v1.json",
+  "title": "Echelon Environment Profile v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "id",
+    "version",
+    "supportedPlatforms",
+    "allowedReleaseStages",
+    "components"
+  ],
+  "properties": {
+    "schema": {
+      "const": "echelon.profile/v1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9]\\\\d*)\\\\.(0|[1-9]\\\\d*)\\\\.(0|[1-9]\\\\d*)(?:-[0-9A-Za-z-]+(?:\\\\.[0-9A-Za-z-]+)*)?(?:\\\\+[0-9A-Za-z-]+(?:\\\\.[0-9A-Za-z-]+)*)?$"
+    },
+    "description": {
+      "type": "string"
+    },
+    "extends": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "version"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^(0|[1-9]\\\\d*)\\\\.(0|[1-9]\\\\d*)\\\\.(0|[1-9]\\\\d*)(?:-[0-9A-Za-z-]+(?:\\\\.[0-9A-Za-z-]+)*)?(?:\\\\+[0-9A-Za-z-]+(?:\\\\.[0-9A-Za-z-]+)*)?$"
+          }
+        }
+      }
+    },
+    "supportedPlatforms": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "allowedReleaseStages": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "stable",
+          "preview",
+          "nightly"
+        ]
+      }
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/component"
+      }
+    }
+  },
+  "$defs": {
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "systemId",
+        "role",
+        "required",
+        "version"
+      ],
+      "properties": {
+        "systemId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "role": {
+          "enum": [
+            "host-tool",
+            "host-daemon",
+            "repository-lifecycle",
+            "project-binding",
+            "contract-bundle",
+            "application"
+          ]
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "version": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "maxProperties": 1,
+          "properties": {
+            "exact": {
+              "type": "string",
+              "pattern": "^(0|[1-9]\\\\d*)\\\\.(0|[1-9]\\\\d*)\\\\.(0|[1-9]\\\\d*)(?:-[0-9A-Za-z-]+(?:\\\\.[0-9A-Za-z-]+)*)?(?:\\\\+[0-9A-Za-z-]+(?:\\\\.[0-9A-Za-z-]+)*)?$"
+            },
+            "range": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "allowedReleaseStages": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "stable",
+              "preview",
+              "nightly"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

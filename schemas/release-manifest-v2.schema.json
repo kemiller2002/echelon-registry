@@ -1,0 +1,289 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.release.v2.json",
+  "title": "Echelon Release Manifest v2",
+  "description": "Immutable release facts. Release stage is intentionally separate from distribution mechanism.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "systemId",
+    "version",
+    "repository",
+    "tag",
+    "commit",
+    "releaseStage",
+    "lifecycleState",
+    "distributionClass",
+    "executable",
+    "compatibilityAliases",
+    "provides",
+    "distributions",
+    "artifacts"
+  ],
+  "properties": {
+    "schema": {
+      "const": "echelon.release/v2"
+    },
+    "systemId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9]\\\\d*)\\\\.(0|[1-9]\\\\d*)\\\\.(0|[1-9]\\\\d*)(?:-[0-9A-Za-z-]+(?:\\\\.[0-9A-Za-z-]+)*)?(?:\\\\+[0-9A-Za-z-]+(?:\\\\.[0-9A-Za-z-]+)*)?$"
+    },
+    "repository": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9._-]+$"
+    },
+    "tag": {
+      "type": "string",
+      "minLength": 1
+    },
+    "commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "releaseStage": {
+      "enum": [
+        "stable",
+        "preview",
+        "nightly"
+      ]
+    },
+    "lifecycleState": {
+      "enum": [
+        "active",
+        "deprecated",
+        "withdrawn",
+        "security-revoked"
+      ]
+    },
+    "distributionClass": {
+      "enum": [
+        "self-contained-native-cli",
+        "self-contained-native-daemon",
+        "repository-lifecycle",
+        "nuget-library",
+        "web-package",
+        "contract-bundle",
+        "application-artifact"
+      ]
+    },
+    "executable": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "compatibilityAliases": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "provides": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/capability"
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "supportedPlatforms": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "requiresSystems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "systemId",
+              "versionRange"
+            ],
+            "properties": {
+              "systemId": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]*$"
+              },
+              "versionRange": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "requiresCapabilities": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*(\\\\.[a-z][a-z0-9-]*)+$"
+          }
+        }
+      }
+    },
+    "distributions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "mechanism"
+        ],
+        "properties": {
+          "mechanism": {
+            "enum": [
+              "github-release",
+              "npm",
+              "nuget",
+              "static-bundle",
+              "github-pages",
+              "container"
+            ]
+          },
+          "package": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/artifact"
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sbom": {
+          "$ref": "#/$defs/evidenceRef"
+        },
+        "licenses": {
+          "$ref": "#/$defs/evidenceRef"
+        },
+        "provenance": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidenceRef"
+          }
+        },
+        "platformTrust": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidenceRef"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "capability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "contractVersion"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*(\\\\.[a-z][a-z0-9-]*)+$"
+        },
+        "contractVersion": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "purpose",
+        "platform",
+        "sha256"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "purpose": {
+          "enum": [
+            "executable",
+            "package",
+            "bundle",
+            "checksums",
+            "sbom",
+            "licenses",
+            "provenance",
+            "signature",
+            "application"
+          ]
+        },
+        "platform": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "mediaType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "evidenceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifactName",
+        "sha256"
+      ],
+      "properties": {
+        "artifactName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  }
+}
