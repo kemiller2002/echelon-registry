@@ -40,7 +40,7 @@ let artifacts = array "artifacts" root
 require (artifacts.Length = 3) "generated artifact count mismatch"
 
 let expected =
-    [ "fixture-linux-x64.bin", sha256 "examples/release-contract/artifacts/fixture-linux-x64.bin"
+    [ "fixture-1.2.3-linux-x64.bin", sha256 "examples/release-contract/artifacts/fixture-1.2.3-linux-x64.bin"
       "fixture.spdx.json", sha256 "examples/release-contract/artifacts/fixture.spdx.json"
       "THIRD-PARTY-NOTICES.txt", sha256 "examples/release-contract/artifacts/THIRD-PARTY-NOTICES.txt" ]
     |> Map.ofList
