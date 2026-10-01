@@ -228,7 +228,7 @@ validateResolution
 
 
 
-let validatePreFreezeIndyInit () =
+let validateFrozenIndyInit () =
     let profilePath = "profiles/indy-init.profile.json"
     use profileDoc = parse profilePath
     let profile = profileDoc.RootElement
@@ -248,7 +248,7 @@ let validatePreFreezeIndyInit () =
         arrayProperty "allowedReleaseStages" profile
         |> Array.map (fun item -> item.GetString())
 
-    require (stages = [| "stable" |]) "Indy Init pre-freeze profile accepts stable releases only"
+    require (stages = [| "stable" |]) "Frozen Indy Init profile accepts stable releases only"
 
     let components = arrayProperty "components" profile
     let ids = components |> Array.map (stringProperty "systemId")
@@ -269,7 +269,7 @@ let validatePreFreezeIndyInit () =
 
     for component in components do
         let id = stringProperty "systemId" component
-        require ((property "required" component).GetBoolean()) (sprintf "Indy Init component %s must remain required before freeze" id)
+        require ((property "required" component).GetBoolean()) (sprintf "Frozen Indy Init component %s must remain required" id)
         require (stringProperty "role" component = expectedRoles.[id]) (sprintf "Indy Init role mismatch for %s" id)
 
         let version = property "version" component
@@ -280,11 +280,11 @@ let validatePreFreezeIndyInit () =
 
         match id with
         | "praxis" ->
-            require hasExact "Praxis must remain exact in the pre-freeze profile"
+            require hasExact "Praxis must remain exact in the frozen profile"
             require (exactValue.GetString() = "3.6.0") "Praxis exact version drifted"
             require (not hasRange) "Praxis must not carry a range alongside its exact version"
         | "ordo" ->
-            require hasExact "Ordo must remain exact in the pre-freeze profile"
+            require hasExact "Ordo must remain exact in the frozen profile"
             require (exactValue.GetString() = "1.4.0") "Ordo exact version drifted"
             require (not hasRange) "Ordo must not carry a range alongside its exact version"
         | "percepta" ->
@@ -304,18 +304,16 @@ let validatePreFreezeIndyInit () =
             require (exactValue.GetString() = "1.0.0") "Aegis exact version drifted"
             require (not hasRange) "Aegis must not carry a range alongside its cataloged exact version"
         | "folio" ->
-            require hasRange (sprintf "%s must remain a pre-freeze range until a Registry release is cataloged" id)
-            require (not hasExact) (sprintf "%s must not be pinned before its release is cataloged" id)
-            require (not (String.IsNullOrWhiteSpace(rangeValue.GetString()))) (sprintf "%s range is empty" id)
+            require hasExact "Folio must be exact once its Registry release is cataloged"
+            require (exactValue.GetString() = "0.3.0") "Folio exact version drifted"
+            require (not hasRange) "Folio must not carry a range alongside its cataloged exact version"
         | _ ->
             failwithf "Unexpected Indy Init component %s" id
 
-    require (not (Directory.Exists "resolved/indy-init")) "Indy Init must not publish a resolved release set before every required release is cataloged and pinned"
-
-    printfn "Indy Init pre-freeze PASS"
+    printfn "Indy Init frozen profile PASS"
     printfn "  required systems: %s" (ids |> Array.sort |> String.concat ", ")
-    printfn "  resolution: intentionally absent"
+    printfn "  resolution: exact release set required"
 
-validatePreFreezeIndyInit ()
+validateFrozenIndyInit ()
 
 printfn "Distribution conformance PASS"
