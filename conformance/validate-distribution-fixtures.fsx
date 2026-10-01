@@ -299,7 +299,10 @@ let validatePreFreezeIndyInit () =
             require hasExact "Limen must be exact once its Registry release is cataloged"
             require (exactValue.GetString() = "0.6.2") "Limen exact version drifted"
             require (not hasRange) "Limen must not carry a range alongside its cataloged exact version"
-        | "aegis"
+        | "aegis" ->
+            require hasExact "Aegis must be exact once its Registry release is cataloged"
+            require (exactValue.GetString() = "1.0.0") "Aegis exact version drifted"
+            require (not hasRange) "Aegis must not carry a range alongside its cataloged exact version"
         | "folio" ->
             require hasRange (sprintf "%s must remain a pre-freeze range until a Registry release is cataloged" id)
             require (not hasExact) (sprintf "%s must not be pinned before its release is cataloged" id)
