@@ -1,0 +1,64 @@
+{
+  "schema": "echelon.environment-freeze/v1",
+  "id": "indy-init",
+  "version": "0.1.0",
+  "profile": {
+    "path": "profiles/indy-init.profile.json",
+    "sha256": "bf7cee38be869394358390abd29a056329eae70211b30668516425bcc9f268cd"
+  },
+  "catalogSnapshot": {
+    "path": "snapshots/indy-init-0.1.0.catalog.json",
+    "sha256": "6e501d59dcfb6e9c6a44bfff9403d08883ca9b0f49da3d9b7e18e4c499ebecd8"
+  },
+  "resolver": {
+    "name": "echelon-registry-resolver",
+    "version": "0.1.0"
+  },
+  "resolvedSets": [
+    {
+      "platform": "linux-x64",
+      "sha256": "3ac237804c546244499619aa88803fd280de6bb3a5daec205ccf730f61be5b40"
+    },
+    {
+      "platform": "osx-arm64",
+      "sha256": "a91e5c5ab66d0b1917ec748b7b6f0fb64a9a02ac07d3fc042af27b54252475e5"
+    }
+  ],
+  "components": [
+    {
+      "systemId": "praxis",
+      "version": "3.6.0",
+      "releaseManifestSha256": "992e276ae0098b5c9b65cdd06f8c783aec95942c850e60d4bf06a28df22e6543"
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.4.0",
+      "releaseManifestSha256": "79a813b1f04fc4ec964be11e2a304caf5d87bb527da0b4b1779be6fc6a112659"
+    },
+    {
+      "systemId": "percepta",
+      "version": "0.1.0",
+      "releaseManifestSha256": "07b6291c63ff25e6b669edb8c845e48ba76831b6a6133efa4ad3a390439b1b2b"
+    },
+    {
+      "systemId": "aegis",
+      "version": "1.0.0",
+      "releaseManifestSha256": "4530cfa3396c1e57d3e1a6500c661cd2d520236e852d1d9e88aa44c385d0bd6b"
+    },
+    {
+      "systemId": "limen",
+      "version": "0.6.2",
+      "releaseManifestSha256": "c597068533397406942a229c633adf2631bfb840e666bd02c900051695df8aac"
+    },
+    {
+      "systemId": "forma",
+      "version": "0.3.0",
+      "releaseManifestSha256": "02bd9eae35cf3384a5f5a1913c50594407f6fd937df1ef4e9e697520e96af6f0"
+    },
+    {
+      "systemId": "folio",
+      "version": "0.3.0",
+      "releaseManifestSha256": "a7c446787aafd6433932c247734249b4f01f8b78da4bbee3dcb6f743145f8d21"
+    }
+  ]
+}
