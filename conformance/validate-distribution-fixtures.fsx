@@ -287,10 +287,22 @@ let validatePreFreezeIndyInit () =
             require hasExact "Ordo must remain exact in the pre-freeze profile"
             require (exactValue.GetString() = "1.4.0") "Ordo exact version drifted"
             require (not hasRange) "Ordo must not carry a range alongside its exact version"
-        | _ ->
+        | "percepta" ->
+            require hasExact "Percepta must be exact once its Registry release is cataloged"
+            require (exactValue.GetString() = "0.1.0") "Percepta exact version drifted"
+            require (not hasRange) "Percepta must not carry a range alongside its cataloged exact version"
+        | "forma" ->
+            require hasExact "Forma must be exact once its Registry release is cataloged"
+            require (exactValue.GetString() = "0.3.0") "Forma exact version drifted"
+            require (not hasRange) "Forma must not carry a range alongside its cataloged exact version"
+        | "aegis"
+        | "limen"
+        | "folio" ->
             require hasRange (sprintf "%s must remain a pre-freeze range until a Registry release is cataloged" id)
             require (not hasExact) (sprintf "%s must not be pinned before its release is cataloged" id)
             require (not (String.IsNullOrWhiteSpace(rangeValue.GetString()))) (sprintf "%s range is empty" id)
+        | _ ->
+            failwithf "Unexpected Indy Init component %s" id
 
     require (not (Directory.Exists "resolved/indy-init")) "Indy Init must not publish a resolved release set before every required release is cataloged and pinned"
 
