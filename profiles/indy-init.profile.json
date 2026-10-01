@@ -2,7 +2,7 @@
   "schema": "echelon.profile/v1",
   "id": "indy-init",
   "version": "0.1.0",
-  "description": "Pre-freeze Indy Init 2026 environment profile. Percepta and Forma are now pinned to cataloged stable releases; Aegis, Limen, and Folio remain unresolved until immutable stable package releases are cataloged.",
+  "description": "Pre-freeze Indy Init 2026 environment profile. Percepta, Limen, and Forma are pinned to cataloged stable releases; Aegis and Folio remain unresolved until immutable stable package releases are cataloged.",
   "supportedPlatforms": [
     "osx-arm64",
     "linux-x64"
@@ -48,7 +48,7 @@
       "role": "project-binding",
       "required": true,
       "version": {
-        "range": ">=0.6.2 <1.0.0"
+        "exact": "0.6.2"
       }
     },
     {
