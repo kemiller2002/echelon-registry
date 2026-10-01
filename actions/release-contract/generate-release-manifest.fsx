@@ -130,11 +130,16 @@ let artifactNames =
 if artifactNames.Length <> (artifactNames |> List.distinct |> List.length) then
     fail "release input contains duplicate artifact names"
 
-let resolveArtifact (name: string) =
-    if Path.GetFileName name <> name || name.Contains("/") || name.Contains("\\") then
-        fail $"artifact '{name}' must be a file name, not a path"
+let expandArtifactName (name: string) =
+    name.Replace("{version}", version, StringComparison.Ordinal)
 
-    let path = Path.Combine(artifactDir, name)
+let resolveArtifact (name: string) =
+    let expanded = expandArtifactName name
+
+    if Path.GetFileName expanded <> expanded || expanded.Contains("/") || expanded.Contains("\\") then
+        fail $"artifact '{expanded}' must be a file name, not a path"
+
+    let path = Path.Combine(artifactDir, expanded)
     if not (File.Exists path) then fail $"declared artifact is missing: {name}"
     path
 
@@ -148,9 +153,10 @@ type GeneratedArtifact =
 let generated =
     artifactSpecs
     |> List.map (fun artifact ->
-        let name = str "name" artifact |> Option.get
+        let declaredName = str "name" artifact |> Option.get
+        let name = expandArtifactName declaredName
         let purpose = str "purpose" artifact |> Option.defaultWith (fun () -> fail $"artifact '{name}' needs purpose")
-        let path = resolveArtifact name
+        let path = resolveArtifact declaredName
 
         { Name = name
           Purpose = purpose
