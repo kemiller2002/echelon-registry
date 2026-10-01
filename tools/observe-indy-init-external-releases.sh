@@ -23,13 +23,23 @@ observe_npm() {
   git_head="$(npm view "$package@$version" gitHead --json 2>/dev/null | tr -d '"' || true)"
   local tarball
   tarball="$(npm view "$package@$version" dist.tarball --json | tr -d '"')"
+  local attestations
+  attestations="$(npm view "$package@$version" dist.attestations --json 2>/dev/null || true)"
+  local integrity
+  integrity="$(npm view "$package@$version" dist.integrity --json 2>/dev/null | tr -d '"' || true)"
 
   if [[ ! "$git_head" =~ ^[0-9a-f]{40}$ ]]; then
-    echo "::error::$package@$version did not expose a 40-character gitHead (observed '$git_head')"
-    exit 1
+    git_head="unavailable"
   fi
 
-  printf 'EVIDENCE|%s|version=%s|commit=%s|artifact=%s|sha256=%s|url=%s\n'     "$system" "$version" "$git_head" "$filename" "$sha" "$tarball"
+  printf 'EVIDENCE|%s|version=%s|commit=%s|artifact=%s|sha256=%s|url=%s|integrity=%s\n' \
+    "$system" "$version" "$git_head" "$filename" "$sha" "$tarball" "$integrity"
+
+  if [[ -n "$attestations" && "$attestations" != "null" ]]; then
+    printf 'NPM_ATTESTATIONS|%s|%s\n' "$system" "$(printf '%s' "$attestations" | tr '\n' ' ')"
+  else
+    printf 'NPM_ATTESTATIONS|%s|unavailable\n' "$system"
+  fi
 }
 
 observe_nuget() {
@@ -61,12 +71,17 @@ PY
 )"
 
   if [[ ! "$commit" =~ ^[0-9a-f]{40}$ ]]; then
-    echo "::error::$package $version nuspec did not expose a 40-character repository commit (observed '$commit')"
-    cat "$nuspec"
-    exit 1
+    commit="unavailable"
   fi
 
-  printf 'EVIDENCE|%s|version=%s|commit=%s|artifact=%s|sha256=%s|url=%s\n'     "$system" "$version" "$commit" "$filename" "$sha" "$url"
+  printf 'EVIDENCE|%s|version=%s|commit=%s|artifact=%s|sha256=%s|url=%s\n' \
+    "$system" "$version" "$commit" "$filename" "$sha" "$url"
+
+  if [[ "$commit" == "unavailable" ]]; then
+    printf 'NUGET_NUSPEC|%s|' "$system"
+    tr '\n' ' ' < "$nuspec"
+    printf '\n'
+  fi
 }
 
 observe_npm "limen" "@echelon-foundry/typescript-wasm-kernel" "0.6.2"
