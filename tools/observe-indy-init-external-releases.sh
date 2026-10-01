@@ -139,3 +139,6 @@ PY
 observe_npm "limen" "@echelon-foundry/typescript-wasm-kernel" "0.6.2"
 observe_npm "folio" "@echelon-foundry/print-components" "0.3.0"
 observe_nuget "aegis" "EchelonFoundry.Aegis.Core" "1.2.0"
+
+
+echo "NUGET_VERSIONS|aegis|$(curl -fsSL https://api.nuget.org/v3-flatcontainer/echelonfoundry.aegis.core/index.json | tr -d '\n')"
