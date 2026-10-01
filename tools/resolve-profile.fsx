@@ -191,7 +191,7 @@ let allowedClasses role =
     match role with
     | "host-tool" -> Set.ofList [ "self-contained-native-cli" ]
     | "host-daemon" -> Set.ofList [ "self-contained-native-daemon" ]
-    | "repository-lifecycle" -> Set.ofList [ "repository-lifecycle" ]
+    | "repository-lifecycle" -> Set.ofList [ "repository-lifecycle"; "self-contained-native-cli"; "web-package"; "nuget-library" ]
     | "project-binding" -> Set.ofList [ "nuget-library"; "web-package" ]
     | "contract-bundle" -> Set.ofList [ "contract-bundle" ]
     | "application" -> Set.ofList [ "application-artifact" ]
