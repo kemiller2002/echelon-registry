@@ -210,14 +210,112 @@ validateResolution
         "ordo", "examples/distribution-proof/ordo.release.v2.json"
     ])
 
+let engineeringResolved =
+    Environment.GetEnvironmentVariable("ECHELON_ENGINEERING_RESOLVED")
+    |> Option.ofObj
+    |> Option.filter (String.IsNullOrWhiteSpace >> not)
+    |> Option.defaultValue "resolved/echelon-engineering/0.1.0/linux-x64.json"
+
 validateResolution
     "Echelon engineering"
     "profiles/echelon-engineering.profile.json"
     "snapshots/echelon-engineering-0.1.0.catalog.json"
-    "resolved/echelon-engineering/0.1.0/linux-x64.json"
+    engineeringResolved
     (Map.ofList [
         "praxis", "releases/praxis/3.6.0.release.json"
         "ordo", "releases/ordo/1.4.0.release.json"
     ])
+
+
+
+let validatePreFreezeIndyInit () =
+    let profilePath = "profiles/indy-init.profile.json"
+    use profileDoc = parse profilePath
+    let profile = profileDoc.RootElement
+
+    require (stringProperty "schema" profile = "echelon.profile/v1") "Indy Init profile schema mismatch"
+    require (stringProperty "id" profile = "indy-init") "Indy Init profile id mismatch"
+    require (stringProperty "version" profile = "0.1.0") "Indy Init profile version mismatch"
+
+    let platforms =
+        arrayProperty "supportedPlatforms" profile
+        |> Array.map (fun item -> item.GetString())
+
+    require (platforms |> Array.contains "osx-arm64") "Indy Init must support its primary osx-arm64 platform"
+    require (platforms |> Array.contains "linux-x64") "Indy Init must support the Linux rehearsal platform"
+
+    let stages =
+        arrayProperty "allowedReleaseStages" profile
+        |> Array.map (fun item -> item.GetString())
+
+    require (stages = [| "stable" |]) "Indy Init pre-freeze profile accepts stable releases only"
+
+    let components = arrayProperty "components" profile
+    let ids = components |> Array.map (stringProperty "systemId")
+    require (ids |> Array.distinct |> Array.length = ids.Length) "Indy Init profile contains duplicate system ids"
+
+    let expectedRoles =
+        Map.ofList [
+            "praxis", "host-tool"
+            "ordo", "host-tool"
+            "percepta", "repository-lifecycle"
+            "aegis", "project-binding"
+            "limen", "project-binding"
+            "forma", "project-binding"
+            "folio", "project-binding"
+        ]
+
+    require (Set.ofArray ids = (expectedRoles |> Map.keys |> Set.ofSeq)) "Indy Init required system set drifted from the competition contract"
+
+    for component in components do
+        let id = stringProperty "systemId" component
+        require ((property "required" component).GetBoolean()) (sprintf "Indy Init component %s must remain required before freeze" id)
+        require (stringProperty "role" component = expectedRoles.[id]) (sprintf "Indy Init role mismatch for %s" id)
+
+        let version = property "version" component
+        let mutable exactValue = Unchecked.defaultof<JsonElement>
+        let mutable rangeValue = Unchecked.defaultof<JsonElement>
+        let hasExact = version.TryGetProperty("exact", &exactValue)
+        let hasRange = version.TryGetProperty("range", &rangeValue)
+
+        match id with
+        | "praxis" ->
+            require hasExact "Praxis must remain exact in the pre-freeze profile"
+            require (exactValue.GetString() = "3.6.0") "Praxis exact version drifted"
+            require (not hasRange) "Praxis must not carry a range alongside its exact version"
+        | "ordo" ->
+            require hasExact "Ordo must remain exact in the pre-freeze profile"
+            require (exactValue.GetString() = "1.4.0") "Ordo exact version drifted"
+            require (not hasRange) "Ordo must not carry a range alongside its exact version"
+        | "percepta" ->
+            require hasExact "Percepta must be exact once its Registry release is cataloged"
+            require (exactValue.GetString() = "0.1.0") "Percepta exact version drifted"
+            require (not hasRange) "Percepta must not carry a range alongside its cataloged exact version"
+        | "forma" ->
+            require hasExact "Forma must be exact once its Registry release is cataloged"
+            require (exactValue.GetString() = "0.3.0") "Forma exact version drifted"
+            require (not hasRange) "Forma must not carry a range alongside its cataloged exact version"
+        | "limen" ->
+            require hasExact "Limen must be exact once its Registry release is cataloged"
+            require (exactValue.GetString() = "0.6.2") "Limen exact version drifted"
+            require (not hasRange) "Limen must not carry a range alongside its cataloged exact version"
+        | "aegis" ->
+            require hasExact "Aegis must be exact once its Registry release is cataloged"
+            require (exactValue.GetString() = "1.0.0") "Aegis exact version drifted"
+            require (not hasRange) "Aegis must not carry a range alongside its cataloged exact version"
+        | "folio" ->
+            require hasRange (sprintf "%s must remain a pre-freeze range until a Registry release is cataloged" id)
+            require (not hasExact) (sprintf "%s must not be pinned before its release is cataloged" id)
+            require (not (String.IsNullOrWhiteSpace(rangeValue.GetString()))) (sprintf "%s range is empty" id)
+        | _ ->
+            failwithf "Unexpected Indy Init component %s" id
+
+    require (not (Directory.Exists "resolved/indy-init")) "Indy Init must not publish a resolved release set before every required release is cataloged and pinned"
+
+    printfn "Indy Init pre-freeze PASS"
+    printfn "  required systems: %s" (ids |> Array.sort |> String.concat ", ")
+    printfn "  resolution: intentionally absent"
+
+validatePreFreezeIndyInit ()
 
 printfn "Distribution conformance PASS"

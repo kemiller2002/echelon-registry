@@ -1,0 +1,65 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "forma",
+  "version": "0.3.0",
+  "repository": "kemiller2002/forma",
+  "tag": "v0.3.0",
+  "commit": "7329f5ca343caf35c0f0089acc5654d6f8befd3e",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "web-package",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "package": "@echelon-foundry/design-system",
+      "url": "https://github.com/kemiller2002/forma/releases/tag/v0.3.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "echelon-foundry-design-system-0.3.0.tgz",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "df0c161952d012972009f4fb97062a8c19c045820b6ef6c2b74a5314e2e78be5"
+    },
+    {
+      "name": "forma-all.css",
+      "purpose": "bundle",
+      "platform": null,
+      "sha256": "fe0c4cf4049044de802267b60ae2f81ef2bf1900e8c28be0bfd9226492aba6c0"
+    },
+    {
+      "name": "forma-echelon-marketing.css",
+      "purpose": "bundle",
+      "platform": null,
+      "sha256": "8fa8d8987d2858bfd5cdebf5b71ec96d859727deb83293bfa1cf6ffe4f0508bb"
+    },
+    {
+      "name": "forma-marketing-theme-echelon.css",
+      "purpose": "bundle",
+      "platform": null,
+      "sha256": "f1ca37f4062a43ca57ad71c8371af001b0f594546cdff84c0cac69024b090b5e"
+    },
+    {
+      "name": "forma-marketing.css",
+      "purpose": "bundle",
+      "platform": null,
+      "sha256": "60720991fdad352e008dd7d893abc0f5c8fb9efa9dd51ba09991850e8b34408e"
+    },
+    {
+      "name": "forma-marketing.manifest.json",
+      "purpose": "bundle",
+      "platform": null,
+      "sha256": "ed5a555af9e7f9357436eee24670fc9bd6deb91be95a1d746afefbd4e72f6967"
+    },
+    {
+      "name": "forma-marketing.sha256",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "15d5743618b00fe86154bcc7efd1488e8a49800b437bf81d99eb697e96a0c52d"
+    }
+  ]
+}

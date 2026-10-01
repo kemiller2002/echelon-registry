@@ -1,0 +1,59 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "percepta",
+  "version": "0.1.0",
+  "repository": "kemiller2002/percepta",
+  "tag": "percepta-repo-v0.1.0",
+  "commit": "3027983f20b91d6856a27c1cf8ee2582108ef6be",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "self-contained-native-cli",
+  "executable": "percepta-repo",
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "package": null,
+      "url": "https://github.com/kemiller2002/percepta/releases/tag/percepta-repo-v0.1.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "ff99817e48d4ae09307b2e313a0e6facc645dc952566de1391e510d95a2093d3"
+    },
+    {
+      "name": "percepta-repo-linux-arm64",
+      "purpose": "executable",
+      "platform": "linux-arm64",
+      "sha256": "ab335f6edda6b69815434ccd16c80e59abc5ab27bd3d280b7adc8ba597c80d87"
+    },
+    {
+      "name": "percepta-repo-linux-x64",
+      "purpose": "executable",
+      "platform": "linux-x64",
+      "sha256": "e46113aa08c9d2a97dfb1f75ca65c986946e1601c5f2c5cdcc9e8c25841d6039"
+    },
+    {
+      "name": "percepta-repo-osx-arm64",
+      "purpose": "executable",
+      "platform": "osx-arm64",
+      "sha256": "5492754f4fc04551bdd3a595fa87a947875a59835f870cc4558a25b001e3ddbe"
+    },
+    {
+      "name": "percepta-repo-osx-x64",
+      "purpose": "executable",
+      "platform": "osx-x64",
+      "sha256": "3bc9d7ba49444db4f6e5a2965d2f42223872cd57d8d59cb5ea8d5cfec8c7989e"
+    },
+    {
+      "name": "percepta-repo-win-x64.exe",
+      "purpose": "executable",
+      "platform": "win-x64",
+      "sha256": "1325e8dca03b94a52189b2a67d193016ebd200a95ead6e342b17b61a889ac6bc"
+    }
+  ]
+}
