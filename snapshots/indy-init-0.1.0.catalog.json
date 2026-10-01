@@ -61,6 +61,12 @@
       "version": "0.3.0",
       "manifest": "releases/forma/0.3.0.release.json",
       "sha256": "02bd9eae35cf3384a5f5a1913c50594407f6fd937df1ef4e9e697520e96af6f0"
+    },
+    {
+      "systemId": "limen",
+      "version": "0.6.2",
+      "manifest": "releases/limen/0.6.2.release.json",
+      "sha256": "c597068533397406942a229c633adf2631bfb840e666bd02c900051695df8aac"
     }
   ],
   "profiles": [
@@ -68,7 +74,7 @@
       "id": "indy-init",
       "version": "0.1.0",
       "manifest": "profiles/indy-init.profile.json",
-      "sha256": "7ce226a76e74cea1192e0e1760d3eddf30f30ee0a3249ef322064e32a524a545"
+      "sha256": "5ab23918b5103095702c40e85576c26ecaa5e890db27a109061f8fa939e89a7b"
     }
   ]
 }
