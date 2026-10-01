@@ -236,9 +236,19 @@ let selectArtifacts distributionClass selectedDistribution release =
         | "self-contained-native-daemon" ->
             purpose = "executable" && artifactPlatform = Some platform
         | "repository-lifecycle"
-        | "nuget-library"
         | "web-package" ->
             purpose = "package" && artifactPlatform.IsNone
+        | "nuget-library" ->
+            if purpose <> "package" || artifactPlatform.IsSome then
+                false
+            else
+                match optStr "package" selectedDistribution with
+                | None -> true
+                | Some packageId ->
+                    let artifactName = str "name" artifact
+                    artifactName.StartsWith(packageId + ".", StringComparison.OrdinalIgnoreCase)
+                    && artifactName.EndsWith(".nupkg", StringComparison.OrdinalIgnoreCase)
+                    && not (artifactName.EndsWith(".snupkg", StringComparison.OrdinalIgnoreCase))
         | "contract-bundle" ->
             purpose = "bundle" && artifactPlatform.IsNone
         | "application-artifact" ->
