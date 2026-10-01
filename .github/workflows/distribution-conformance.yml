@@ -22,6 +22,14 @@ jobs:
         with:
           dotnet-version: '10.0.x'
 
+      - name: Report Indy Init catalog hashes
+        run: |
+          for path in profiles/indy-init.profile.json releases/limen/0.6.2.release.json; do
+            if [ -f "$path" ]; then
+              printf 'CATALOG_HASH|%s|%s\n' "$path" "$(sha256sum "$path" | awk '{print $1}')"
+            fi
+          done
+
       - name: Resolve Echelon engineering profile twice
         run: |
           mkdir -p "$RUNNER_TEMP/resolver-a" "$RUNNER_TEMP/resolver-b"
