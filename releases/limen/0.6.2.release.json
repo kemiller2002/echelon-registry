@@ -1,0 +1,30 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "limen",
+  "version": "0.6.2",
+  "repository": "kemiller2002/limen",
+  "tag": "npm:@echelon-foundry/typescript-wasm-kernel@0.6.2",
+  "commit": "fe009d50d8612bd0a911740611e58e795d217f49",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "web-package",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "npm",
+      "package": "@echelon-foundry/typescript-wasm-kernel",
+      "url": "https://registry.npmjs.org/@echelon-foundry/typescript-wasm-kernel/-/typescript-wasm-kernel-0.6.2.tgz"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "echelon-foundry-typescript-wasm-kernel-0.6.2.tgz",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "0164bb45e8b2b334b7c87bfcc071458fd24cda6d3bec942a1298601a89d238be",
+      "mediaType": "application/gzip"
+    }
+  ]
+}
