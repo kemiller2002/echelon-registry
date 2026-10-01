@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.readiness.v1.json",
+  "title": "Echelon Distribution Readiness Projection v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "systems"
+  ],
+  "properties": {
+    "schema": {
+      "const": "echelon.readiness/v1"
+    },
+    "catalogSnapshotSha256": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "systems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "systemId",
+          "repository",
+          "distributionClasses",
+          "readiness",
+          "stableProfileEligible",
+          "aliases",
+          "supportedPlatforms",
+          "blockers"
+        ],
+        "properties": {
+          "systemId": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "repository": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9._-]+$"
+          },
+          "distributionClasses": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "self-contained-native-cli",
+                "self-contained-native-daemon",
+                "repository-lifecycle",
+                "nuget-library",
+                "web-package",
+                "contract-bundle",
+                "application-artifact"
+              ]
+            }
+          },
+          "readiness": {
+            "enum": [
+              "eligible",
+              "partial",
+              "not-ready",
+              "predecessor"
+            ]
+          },
+          "stableProfileEligible": {
+            "type": "boolean"
+          },
+          "aliases": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]*$"
+            }
+          },
+          "successorSystemId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "supportedPlatforms": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "blockers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "code",
+                "message"
+              ],
+              "properties": {
+                "code": {
+                  "type": "string",
+                  "pattern": "^[A-Z0-9-]+$"
+                },
+                "message": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

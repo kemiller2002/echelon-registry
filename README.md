@@ -53,3 +53,32 @@ Each release of a system may publish an `echelon.release/v1` document
 distribution channels, executable and artifact digests.
 `examples/ordo.release.json` uses the published Ordo v1.4.0
 `native-checksums.txt` digests.
+
+
+## Distribution catalog foundation
+
+The distribution catalog is evolving without breaking the original integration contracts.
+
+Current compatibility contracts remain available:
+
+- `echelon.system/v1`
+- `echelon.release/v1`
+
+The distribution foundation adds:
+
+- `echelon.system/v2` — canonical product identity, aliases and distribution classes without embedding a release version;
+- `echelon.release/v2` — immutable release facts with release stage separated from transport mechanism;
+- `echelon.profile/v1` — versioned desired environment composition;
+- `echelon.catalog-snapshot/v1` — bounded digest-addressable catalog input;
+- `echelon.resolved-release-set/v1` — exact platform-specific release/artifact selection;
+- `echelon.readiness/v1` — machine-readable distribution-readiness projection.
+
+`registry/systems-v2.json` is the canonical-identity seed for the currently identified Echelon products.
+
+The first Registry-owned host profile is `profiles/echelon-engineering.profile.json`. Version `0.1.0` pins the real published native releases Praxis `3.6.0` and Ordo `1.4.0`. The checked-in Linux x64 resolved release set is a conformance fixture and the seed for Conditor's Registry-consumption implementation.
+
+Run the dependency-free distribution proof with:
+
+```bash
+dotnet fsi conformance/validate-distribution-fixtures.fsx
+```

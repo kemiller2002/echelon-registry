@@ -1,0 +1,71 @@
+{
+  "schema": "echelon.profile/v1",
+  "id": "indy-init",
+  "version": "0.1.0",
+  "description": "Pre-freeze Indy Init 2026 environment profile. Aegis, Percepta, Limen, and Forma are pinned to cataloged stable releases; Folio remains unresolved until its immutable stable package release is published and cataloged.",
+  "supportedPlatforms": [
+    "osx-arm64",
+    "linux-x64"
+  ],
+  "allowedReleaseStages": [
+    "stable"
+  ],
+  "components": [
+    {
+      "systemId": "praxis",
+      "role": "host-tool",
+      "required": true,
+      "version": {
+        "exact": "3.6.0"
+      }
+    },
+    {
+      "systemId": "ordo",
+      "role": "host-tool",
+      "required": true,
+      "version": {
+        "exact": "1.4.0"
+      }
+    },
+    {
+      "systemId": "percepta",
+      "role": "repository-lifecycle",
+      "required": true,
+      "version": {
+        "exact": "0.1.0"
+      }
+    },
+    {
+      "systemId": "aegis",
+      "role": "project-binding",
+      "required": true,
+      "version": {
+        "exact": "1.0.0"
+      }
+    },
+    {
+      "systemId": "limen",
+      "role": "project-binding",
+      "required": true,
+      "version": {
+        "exact": "0.6.2"
+      }
+    },
+    {
+      "systemId": "forma",
+      "role": "project-binding",
+      "required": true,
+      "version": {
+        "exact": "0.3.0"
+      }
+    },
+    {
+      "systemId": "folio",
+      "role": "project-binding",
+      "required": true,
+      "version": {
+        "range": ">=0.3.0 <1.0.0"
+      }
+    }
+  ]
+}

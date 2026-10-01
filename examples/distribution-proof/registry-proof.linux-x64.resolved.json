@@ -1,0 +1,53 @@
+{
+  "schema": "echelon.resolved-release-set/v1",
+  "profile": {
+    "id": "registry-proof",
+    "version": "1.0.0",
+    "sha256": "005d23052402093e1c942a389a3dc488d1eab9742c37879900d00dcfc585057d"
+  },
+  "platform": "linux-x64",
+  "resolver": {
+    "name": "registry-proof-fixture",
+    "version": "1.0.0"
+  },
+  "catalogSnapshot": {
+    "sha256": "9816212db54737e761c042c46c445e1c9710ccaf3bf78f4c3f2ac7db370b213f"
+  },
+  "components": [
+    {
+      "systemId": "ordo",
+      "role": "host-tool",
+      "required": true,
+      "version": "1.4.0",
+      "repository": "kemiller2002/ordo",
+      "tag": "v1.4.0",
+      "commit": "17467fb34ed66a51f4d2eac55ae3d65447155696",
+      "releaseStage": "stable",
+      "lifecycleState": "active",
+      "distributionClass": "self-contained-native-cli",
+      "releaseManifest": {
+        "schema": "echelon.release/v2",
+        "sha256": "79a813b1f04fc4ec964be11e2a304caf5d87bb527da0b4b1779be6fc6a112659"
+      },
+      "distribution": {
+        "mechanism": "github-release",
+        "url": "https://github.com/kemiller2002/ordo/releases/tag/v1.4.0"
+      },
+      "artifacts": [
+        {
+          "name": "ordo-linux-x64.tar.gz",
+          "purpose": "executable",
+          "platform": "linux-x64",
+          "sha256": "26389b98c713d4107dbf344bb8a229a97e72658e286863a5d55ebab81d6330ba"
+        },
+        {
+          "name": "native-checksums.txt",
+          "purpose": "checksums",
+          "platform": null,
+          "sha256": "61a4bf5d2a36aba58328172ac571b2daf140dd66c624c4b094bff146738ff310"
+        }
+      ],
+      "executable": "ordo"
+    }
+  ]
+}

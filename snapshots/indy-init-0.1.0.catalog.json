@@ -1,0 +1,86 @@
+{
+  "schema": "echelon.catalog-snapshot/v1",
+  "systems": [
+    {
+      "id": "praxis",
+      "repository": "kemiller2002/praxis",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "ordo",
+      "repository": "kemiller2002/ordo",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "percepta",
+      "repository": "kemiller2002/percepta",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "aegis",
+      "repository": "kemiller2002/aegis",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "limen",
+      "repository": "kemiller2002/limen",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "forma",
+      "repository": "kemiller2002/forma",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "folio",
+      "repository": "kemiller2002/folio",
+      "manifest": "registry/systems-v2.json"
+    }
+  ],
+  "releases": [
+    {
+      "systemId": "praxis",
+      "version": "3.6.0",
+      "manifest": "releases/praxis/3.6.0.release.json",
+      "sha256": "992e276ae0098b5c9b65cdd06f8c783aec95942c850e60d4bf06a28df22e6543"
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.4.0",
+      "manifest": "releases/ordo/1.4.0.release.json",
+      "sha256": "79a813b1f04fc4ec964be11e2a304caf5d87bb527da0b4b1779be6fc6a112659"
+    },
+    {
+      "systemId": "percepta",
+      "version": "0.1.0",
+      "manifest": "releases/percepta/0.1.0.release.json",
+      "sha256": "07b6291c63ff25e6b669edb8c845e48ba76831b6a6133efa4ad3a390439b1b2b"
+    },
+    {
+      "systemId": "forma",
+      "version": "0.3.0",
+      "manifest": "releases/forma/0.3.0.release.json",
+      "sha256": "02bd9eae35cf3384a5f5a1913c50594407f6fd937df1ef4e9e697520e96af6f0"
+    },
+    {
+      "systemId": "limen",
+      "version": "0.6.2",
+      "manifest": "releases/limen/0.6.2.release.json",
+      "sha256": "c597068533397406942a229c633adf2631bfb840e666bd02c900051695df8aac"
+    },
+    {
+      "systemId": "aegis",
+      "version": "1.0.0",
+      "manifest": "releases/aegis/1.0.0.release.json",
+      "sha256": "4530cfa3396c1e57d3e1a6500c661cd2d520236e852d1d9e88aa44c385d0bd6b"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "indy-init",
+      "version": "0.1.0",
+      "manifest": "profiles/indy-init.profile.json",
+      "sha256": "821c1d97567ec6e57afc9d0dfbf308551b533579e0cadd5a65d299bdf629c0ee"
+    }
+  ]
+}
