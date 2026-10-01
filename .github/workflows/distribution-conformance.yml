@@ -43,3 +43,6 @@ jobs:
 
       - name: Validate Indy Init catalog progress
         run: dotnet fsi conformance/validate-indy-init-catalog.fsx
+
+      - name: Observe exact remaining Indy Init package releases
+        run: bash tools/observe-indy-init-external-releases.sh
