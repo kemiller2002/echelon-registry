@@ -40,3 +40,6 @@ jobs:
         env:
           ECHELON_ENGINEERING_RESOLVED: ${{ runner.temp }}/resolver-a/linux-x64.json
         run: dotnet fsi conformance/validate-distribution-fixtures.fsx
+
+      - name: Validate Indy Init catalog progress
+        run: dotnet fsi conformance/validate-indy-init-catalog.fsx
