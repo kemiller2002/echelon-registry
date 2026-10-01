@@ -7,6 +7,7 @@ on:
       - main
       - requirements/indy-init-distribution
       - implementation/distribution-registry-foundation
+      - implementation/indy-init-release-catalog
 
 permissions:
   contents: read
@@ -20,6 +21,14 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
+
+      - name: Report Indy Init catalog hashes
+        run: |
+          for path in profiles/indy-init.profile.json releases/limen/0.6.2.release.json releases/aegis/1.0.0.release.json; do
+            if [ -f "$path" ]; then
+              printf 'CATALOG_HASH|%s|%s\n' "$path" "$(sha256sum "$path" | awk '{print $1}')"
+            fi
+          done
 
       - name: Resolve Echelon engineering profile twice
         run: |
@@ -40,3 +49,10 @@ jobs:
         env:
           ECHELON_ENGINEERING_RESOLVED: ${{ runner.temp }}/resolver-a/linux-x64.json
         run: dotnet fsi conformance/validate-distribution-fixtures.fsx
+
+      - name: Validate Indy Init catalog progress
+        run: dotnet fsi conformance/validate-indy-init-catalog.fsx
+
+      - name: Observe exact remaining Indy Init package releases
+        if: always()
+        run: bash tools/observe-indy-init-external-releases.sh
