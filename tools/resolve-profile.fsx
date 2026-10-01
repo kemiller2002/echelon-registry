@@ -20,7 +20,7 @@ let args =
         |> Array.filter ((<>) "--")
         |> Array.toList
 
-    let rec loop (state: Map<string,string>) remaining =
+    let rec loop (state: Map<string,string>) (remaining: string list) =
         match remaining with
         | flag :: value :: tail when flag.StartsWith("--", StringComparison.Ordinal) ->
             loop (state.Add(flag, value)) tail
@@ -288,8 +288,8 @@ type Candidate =
       Release: JsonElement
       Version: SemVer }
 
-use profileDoc = parse profilePath
-use snapshotDoc = parse snapshotPath
+let profileDoc = parse profilePath
+let snapshotDoc = parse snapshotPath
 let profile = profileDoc.RootElement
 let snapshot = snapshotDoc.RootElement
 
@@ -316,14 +316,14 @@ let releaseRows = objects "releases" snapshot
 let systemRows = objects "systems" snapshot
 let profileAllowedStages = strings "allowedReleaseStages" profile |> Set.ofList
 
-let resolveComponent (component: JsonElement) =
-    let systemId = str "systemId" component
-    let role = str "role" component
-    let required = boolValue "required" component
-    let rule = property "version" component
+let resolveComponent (profileComponent: JsonElement) =
+    let systemId = str "systemId" profileComponent
+    let role = str "role" profileComponent
+    let required = boolValue "required" profileComponent
+    let rule = property "version" profileComponent
 
     let allowedStages =
-        match tryProperty "allowedReleaseStages" component with
+        match tryProperty "allowedReleaseStages" profileComponent with
         | Some value when value.ValueKind = JsonValueKind.Array ->
             value.EnumerateArray()
             |> Seq.map (fun item -> item.GetString())
