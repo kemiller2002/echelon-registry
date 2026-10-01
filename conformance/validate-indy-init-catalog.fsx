@@ -21,8 +21,8 @@ let sha256 path =
 let profilePath = "profiles/indy-init.profile.json"
 let snapshotPath = "snapshots/indy-init-0.1.0.catalog.json"
 
-use profileDoc = parse profilePath
-use snapshotDoc = parse snapshotPath
+let profileDoc = parse profilePath
+let snapshotDoc = parse snapshotPath
 
 let profile = profileDoc.RootElement
 let snapshot = snapshotDoc.RootElement
@@ -82,8 +82,10 @@ let catalogedIds = releases |> Array.map (str "systemId") |> Set.ofArray
 let unresolved = Set.difference requiredIds catalogedIds
 let expectedUnresolved = Set.ofList [ "aegis"; "limen"; "folio" ]
 
+let unresolvedText = unresolved |> Set.toList |> String.concat ","
+
 require (unresolved = expectedUnresolved)
-    $"Unexpected Indy Init unresolved set. Expected aegis/limen/folio; observed {String.concat "," (Set.toList unresolved)}"
+    $"Unexpected Indy Init unresolved set. Expected aegis/limen/folio; observed {unresolvedText}"
 
 printfn "Indy Init catalog progress PASS"
 printfn "  cataloged: %s" (catalogedIds |> Set.toList |> List.sort |> String.concat ", ")
