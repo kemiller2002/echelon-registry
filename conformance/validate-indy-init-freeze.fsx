@@ -19,12 +19,12 @@ let sha256 path =
 
 let parse path = JsonDocument.Parse(File.ReadAllBytes path)
 
-let property name (element: JsonElement) = element.GetProperty name
+let property (name: string) (element: JsonElement) = element.GetProperty name
 let str name element = (property name element).GetString()
 let array name element = (property name element).EnumerateArray() |> Seq.toArray
 
 let receiptPath = "freezes/indy-init-0.1.0.freeze.json"
-use receiptDoc = parse receiptPath
+let receiptDoc = parse receiptPath
 let receipt = receiptDoc.RootElement
 
 require (str "schema" receipt = "echelon.environment-freeze/v1") "freeze schema mismatch"
@@ -39,13 +39,13 @@ let catalog = property "catalogSnapshot" receipt
 let catalogPath = str "path" catalog
 require (sha256 catalogPath = str "sha256" catalog) "frozen catalog snapshot digest mismatch"
 
-for component in array "components" receipt do
-    let systemId = str "systemId" component
-    let version = str "version" component
+for releaseRef in array "components" receipt do
+    let systemId = str "systemId" releaseRef
+    let version = str "version" releaseRef
     let releasePath = $"releases/{systemId}/{version}.release.json"
     require (File.Exists releasePath) $"frozen release manifest missing: {releasePath}"
     require
-        (sha256 releasePath = str "releaseManifestSha256" component)
+        (sha256 releasePath = str "releaseManifestSha256" releaseRef)
         $"frozen release manifest digest mismatch: {systemId}@{version}"
 
 match Environment.GetEnvironmentVariable "INDY_INIT_RESOLVED_DIR" |> Option.ofObj with
