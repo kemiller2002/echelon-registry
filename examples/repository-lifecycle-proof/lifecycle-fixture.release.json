@@ -1,0 +1,22 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "lifecycle-fixture",
+  "version": "1.0.0",
+  "repository": "example/lifecycle-fixture",
+  "tag": "lifecycle-fixture-v1.0.0",
+  "commit": "b6ff8b6c85b2bc153de63838add9979dfe428815",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "self-contained-native-cli",
+  "executable": "lifecycle-fixture",
+  "compatibilityAliases": [],
+  "provides": [ { "id": "echelon.repository-lifecycle", "contractVersion": 1 } ],
+  "distributions": [
+    { "mechanism": "github-release", "package": null, "url": "https://github.com/example/lifecycle-fixture/releases/tag/lifecycle-fixture-v1.0.0" }
+  ],
+  "artifacts": [
+    { "name": "lifecycle-fixture-linux-x64.tar.gz", "purpose": "executable", "platform": "linux-x64", "sha256": "88315e3070c44254a256a76bc2507cbf843913a2f161032832f8a32ac0f92911", "mediaType": "application/gzip" },
+    { "name": "lifecycle-fixture-osx-arm64.tar.gz", "purpose": "executable", "platform": "osx-arm64", "sha256": "923f2badedce6065422e3d14df0958051938ee5e54f87f29d5507b6fac2a9955", "mediaType": "application/gzip" },
+    { "name": "lifecycle-fixture-checksums.txt", "purpose": "checksums", "platform": null, "sha256": "2f7a65c84b27061756cc11d18aa626b589db292f75a67c785de98e5966f4e70c", "mediaType": "text/plain" }
+  ]
+}

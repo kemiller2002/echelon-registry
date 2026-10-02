@@ -1,0 +1,17 @@
+{
+  "schema": "echelon.catalog-snapshot/v1",
+  "systems": [
+    { "id": "lifecycle-fixture", "repository": "example/lifecycle-fixture", "manifest": "repository-lifecycle-proof/lifecycle-fixture.release.json" },
+    { "id": "legacy-fixture", "repository": "example/legacy-fixture", "manifest": "repository-lifecycle-proof/legacy-fixture.release.json" },
+    { "id": "invalid-lifecycle-fixture", "repository": "example/invalid-lifecycle-fixture", "manifest": "repository-lifecycle-proof/invalid-lifecycle-fixture.release.json" }
+  ],
+  "releases": [
+    { "systemId": "lifecycle-fixture", "version": "1.0.0", "manifest": "repository-lifecycle-proof/lifecycle-fixture.release.json", "sha256": "a5f277c742ed555cbc56278896d80f980760812ae1ad8d756f220d3eca69d98b" },
+    { "systemId": "legacy-fixture", "version": "1.0.0", "manifest": "repository-lifecycle-proof/legacy-fixture.release.json", "sha256": "6a658c169b11d0419df6fef8952e9329691816cde4a10020c4cd291f59bbb21f" },
+    { "systemId": "invalid-lifecycle-fixture", "version": "1.0.0", "manifest": "repository-lifecycle-proof/invalid-lifecycle-fixture.release.json", "sha256": "88a930460a0a9aa7d1c373980ff48217fa10558f48ffc580216d922e9a845275" }
+  ],
+  "profiles": [
+    { "id": "repository-lifecycle-proof", "version": "1.0.0", "manifest": "repository-lifecycle-proof/repository-lifecycle-proof.profile.json", "sha256": "3aab38e8b5057da479e61949ef3130a623f7d69bd092e751a97d5a69f4959b5a" },
+    { "id": "repository-lifecycle-invalid", "version": "1.0.0", "manifest": "repository-lifecycle-proof/repository-lifecycle-invalid.profile.json", "sha256": "57b998dd0177d4f1d5f25debcfbd5bae705ca79ae58ad3a453102e8548f0b5fc" }
+  ]
+}

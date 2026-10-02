@@ -1,0 +1,22 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "legacy-fixture",
+  "version": "1.0.0",
+  "repository": "example/legacy-fixture",
+  "tag": "legacy-fixture-v1.0.0",
+  "commit": "45052c8168100ff3c486e73aaed1037dd4cd9fbf",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "self-contained-native-cli",
+  "executable": "legacy-fixture",
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    { "mechanism": "github-release", "package": null, "url": "https://github.com/example/legacy-fixture/releases/tag/legacy-fixture-v1.0.0" }
+  ],
+  "artifacts": [
+    { "name": "legacy-fixture-linux-x64.tar.gz", "purpose": "executable", "platform": "linux-x64", "sha256": "d1bab1d6793c473ea298e723d3f2d6585a037305533b688becb5462c39f897c3", "mediaType": "application/gzip" },
+    { "name": "legacy-fixture-osx-arm64.tar.gz", "purpose": "executable", "platform": "osx-arm64", "sha256": "ca09b8f6baefd1e7a65fb3aa2804c7c9085451623261b4949e37e8f82ad08ede", "mediaType": "application/gzip" },
+    { "name": "legacy-fixture-checksums.txt", "purpose": "checksums", "platform": null, "sha256": "857260646a4bf9fb41d83b769b8351a504f7f9c8e65701217f1cfc934653e7d2", "mediaType": "text/plain" }
+  ]
+}

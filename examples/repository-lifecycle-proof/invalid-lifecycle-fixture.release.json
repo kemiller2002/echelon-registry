@@ -1,0 +1,18 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "invalid-lifecycle-fixture",
+  "version": "1.0.0",
+  "repository": "example/invalid-lifecycle-fixture",
+  "tag": "invalid-lifecycle-fixture-v1.0.0",
+  "commit": "6d1410348dffa26f11f48e067051d1640058f669",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "web-package",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [ { "id": "echelon.repository-lifecycle", "contractVersion": 1 } ],
+  "distributions": [
+    { "mechanism": "npm", "package": null, "url": "https://github.com/example/invalid-lifecycle-fixture/releases/tag/invalid-lifecycle-fixture-v1.0.0" }
+  ],
+  "artifacts": [ { "name": "invalid-lifecycle-fixture-1.0.0.tgz", "purpose": "package", "platform": null, "sha256": "6ff6608947fc7da87006dc01c33dd13e46710b91c81ef54c67c18313e8b1fb04", "mediaType": "application/gzip" } ]
+}

@@ -292,6 +292,24 @@ let copyDistribution (distribution: JsonElement) =
         | None -> null
     node
 
+let repositoryLifecycleCapability = "echelon.repository-lifecycle"
+
+/// The declared repository lifecycle contract version, if the release
+/// provides the capability.
+let repositoryLifecycle (release: JsonElement) =
+    objects "provides" release
+    |> List.filter (fun capability -> str "id" capability = repositoryLifecycleCapability)
+    |> function
+        | [] -> None
+        | [ capability ] ->
+            match tryProperty "contractVersion" capability with
+            | Some value when value.ValueKind = JsonValueKind.Number ->
+                match value.TryGetInt32() with
+                | true, version when version >= 1 -> Some version
+                | _ -> fail $"{repositoryLifecycleCapability} contractVersion must be a positive integer"
+            | _ -> fail $"{repositoryLifecycleCapability} needs an integer contractVersion"
+        | _ -> fail $"release declares {repositoryLifecycleCapability} more than once"
+
 type Candidate =
     { ReleasePath: string
       ReleaseHash: string
@@ -422,6 +440,19 @@ let resolveComponent (profileComponent: JsonElement) =
         match optStr "executable" release with
         | Some value -> JsonValue.Create(value) :> JsonNode
         | None -> null
+
+    // spec/repository-lifecycle-contract.md: the lifecycle contract is a
+    // declared release capability, copied only when declared so resolved sets
+    // of non-declaring releases stay byte-identical.
+    match repositoryLifecycle release with
+    | None -> ()
+    | Some contractVersion ->
+        require (distributionClass = "self-contained-native-cli") $"release {systemId} declares {repositoryLifecycleCapability} but has distribution class {distributionClass}"
+        require ((optStr "executable" release).IsSome) $"release {systemId} declares {repositoryLifecycleCapability} without an executable"
+        let lifecycle = JsonObject()
+        lifecycle["contract"] <- JsonValue.Create repositoryLifecycleCapability
+        lifecycle["contractVersion"] <- JsonValue.Create contractVersion
+        node["repositoryLifecycle"] <- lifecycle
 
     let releaseRef = JsonObject()
     releaseRef["schema"] <- JsonValue.Create(str "schema" release)

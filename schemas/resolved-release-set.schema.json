@@ -244,6 +244,24 @@
             "string",
             "null"
           ]
+        },
+        "repositoryLifecycle": {
+          "description": "Present only when the selected release provides the echelon.repository-lifecycle capability. See spec/repository-lifecycle-contract.md.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "contract",
+            "contractVersion"
+          ],
+          "properties": {
+            "contract": {
+              "const": "echelon.repository-lifecycle"
+            },
+            "contractVersion": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
         }
       }
     }
