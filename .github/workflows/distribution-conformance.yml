@@ -47,9 +47,22 @@ jobs:
             --output "$RUNNER_TEMP/resolver-b/linux-x64.json"
           cmp "$RUNNER_TEMP/resolver-a/linux-x64.json" "$RUNNER_TEMP/resolver-b/linux-x64.json"
 
+      - name: Resolve Dokimos distribution proof profile twice
+        run: |
+          mkdir -p "$RUNNER_TEMP/dokimos-proof-a" "$RUNNER_TEMP/dokimos-proof-b"
+          for out in dokimos-proof-a dokimos-proof-b; do
+            dotnet fsi tools/resolve-profile.fsx -- \
+              --profile profiles/dokimos-proof.profile.json \
+              --snapshot snapshots/dokimos-proof-0.1.0.catalog.json \
+              --platform linux-x64 \
+              --output "$RUNNER_TEMP/$out/linux-x64.json"
+          done
+          cmp "$RUNNER_TEMP/dokimos-proof-a/linux-x64.json" "$RUNNER_TEMP/dokimos-proof-b/linux-x64.json"
+
       - name: Validate Registry distribution fixtures and generated resolution
         env:
           ECHELON_ENGINEERING_RESOLVED: ${{ runner.temp }}/resolver-a/linux-x64.json
+          DOKIMOS_PROOF_RESOLVED: ${{ runner.temp }}/dokimos-proof-a/linux-x64.json
         run: dotnet fsi conformance/validate-distribution-fixtures.fsx
 
       - name: Resolve repository lifecycle contract fixtures

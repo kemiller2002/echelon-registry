@@ -1,0 +1,26 @@
+{
+  "schema": "echelon.catalog-snapshot/v1",
+  "systems": [
+    {
+      "id": "dokimos",
+      "repository": "kemiller2002/dokimos",
+      "manifest": "examples/dokimos.system.json"
+    }
+  ],
+  "releases": [
+    {
+      "systemId": "dokimos",
+      "version": "0.2.0",
+      "manifest": "releases/dokimos/0.2.0.release.json",
+      "sha256": "1c75d80b9eb76a47239f2db7163c8e9e2f10e4ad303cd487284afd14c5a56737"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "dokimos-proof",
+      "version": "0.1.0",
+      "manifest": "profiles/dokimos-proof.profile.json",
+      "sha256": "cc738238d126c35ec847badf56f58a507380f4b52a51a528ffb2dd240aa0a71b"
+    }
+  ]
+}

@@ -39,6 +39,31 @@ for path in schemaFiles do
     use parsed = parse path
     require (parsed.RootElement.ValueKind = JsonValueKind.Object) (sprintf "%s is not a JSON object" path)
 
+// Schema regexes must be single-escaped JSON so standard validators accept
+// real values (a doubled escape matches a literal backslash instead).
+let rec patterns (element: JsonElement) =
+    match element.ValueKind with
+    | JsonValueKind.Object ->
+        element.EnumerateObject()
+        |> Seq.collect (fun p ->
+            if p.Name = "pattern" && p.Value.ValueKind = JsonValueKind.String then [ p.Value.GetString() ]
+            else patterns p.Value)
+        |> Seq.toList
+    | JsonValueKind.Array -> element.EnumerateArray() |> Seq.collect patterns |> Seq.toList
+    | _ -> []
+
+for path in schemaFiles do
+    use parsed = parse path
+    for pattern in patterns parsed.RootElement do
+        require (not (pattern.Contains "\\\\")) (sprintf "%s has a double-escaped pattern %s" path pattern)
+        Text.RegularExpressions.Regex(pattern) |> ignore
+
+let releaseSchema = parse "schemas/release-manifest-v2.schema.json"
+let versionPattern = (((property "properties" releaseSchema.RootElement) |> property "version") |> property "pattern").GetString()
+require (Text.RegularExpressions.Regex.IsMatch("0.2.0", versionPattern)) "release v2 version pattern rejects a real semantic version"
+require (Text.RegularExpressions.Regex.IsMatch("1.2.3-preview.1", versionPattern)) "release v2 version pattern rejects a prerelease version"
+require (not (Text.RegularExpressions.Regex.IsMatch("1.2", versionPattern))) "release v2 version pattern accepts an incomplete version"
+
 let systemsDoc = parse "registry/systems-v2.json"
 let systems = arrayProperty "systems" systemsDoc.RootElement
 let canonicalIds = systems |> Array.map (stringProperty "id")
@@ -227,6 +252,22 @@ validateResolution
     ])
 
 
+let dokimosProofResolved =
+    Environment.GetEnvironmentVariable("DOKIMOS_PROOF_RESOLVED")
+    |> Option.ofObj
+    |> Option.filter (String.IsNullOrWhiteSpace >> not)
+    |> Option.defaultValue "resolved/dokimos-proof/0.1.0/linux-x64.json"
+
+require (File.ReadAllBytes dokimosProofResolved = File.ReadAllBytes "resolved/dokimos-proof/0.1.0/linux-x64.json") "generated Dokimos proof resolution differs from the checked-in resolved set"
+
+validateResolution
+    "Dokimos distribution proof"
+    "profiles/dokimos-proof.profile.json"
+    "snapshots/dokimos-proof-0.1.0.catalog.json"
+    dokimosProofResolved
+    (Map.ofList [
+        "dokimos", "releases/dokimos/0.2.0.release.json"
+    ])
 
 let validateFrozenIndyInit () =
     let profilePath = "profiles/indy-init.profile.json"
