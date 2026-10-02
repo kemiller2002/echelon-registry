@@ -36,7 +36,7 @@ let tryProperty (name: string) (element: JsonElement) =
 let text name element =
     tryProperty name element |> Option.map (fun v -> v.GetString()) |> Option.bind Option.ofObj
 
-use schemaDoc = JsonDocument.Parse(File.ReadAllText "schemas/resolved-release-set.schema.json")
+let schemaDoc = JsonDocument.Parse(File.ReadAllText "schemas/resolved-release-set.schema.json")
 let lifecycleSchema =
     schemaDoc.RootElement
     |> tryProperty "$defs"
@@ -64,7 +64,7 @@ let contractConst =
 
 require (contractConst = Some "echelon.repository-lifecycle") "repositoryLifecycle.contract must be the echelon.repository-lifecycle constant"
 
-use resolvedDoc = JsonDocument.Parse(File.ReadAllText generated)
+let resolvedDoc = JsonDocument.Parse(File.ReadAllText generated)
 let components =
     resolvedDoc.RootElement
     |> tryProperty "components"
