@@ -77,6 +77,17 @@ The distribution foundation adds:
 
 The first Registry-owned host profile is `profiles/echelon-engineering.profile.json`. Version `0.1.0` pins the real published native releases Praxis `3.6.0` and Ordo `1.4.0`. The checked-in Linux x64 resolved release set is a conformance fixture and the seed for Conditor's Registry-consumption implementation.
 
+## Repository lifecycle contract
+
+`spec/repository-lifecycle-contract.md` defines `echelon.repository-lifecycle`
+v1: the standard `version`/`status`/`init`/`verify`/`doctor`/`upgrade
+--root <repository>` boundary between a Registry-driven installer and a
+component that owns its own repository state. A release opts in by declaring
+the capability in `provides`; the resolver copies it into the resolved
+component as `repositoryLifecycle`. Releases that do not declare it resolve
+exactly as before. `conformance/validate-repository-lifecycle.fsx` proves the
+contract with synthetic fixtures.
+
 Run the dependency-free distribution proof with:
 
 ```bash

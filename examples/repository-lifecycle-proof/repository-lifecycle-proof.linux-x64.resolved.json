@@ -1,0 +1,94 @@
+{
+  "schema": "echelon.resolved-release-set/v1",
+  "profile": {
+    "id": "repository-lifecycle-proof",
+    "version": "1.0.0",
+    "sha256": "3aab38e8b5057da479e61949ef3130a623f7d69bd092e751a97d5a69f4959b5a"
+  },
+  "platform": "linux-x64",
+  "resolver": {
+    "name": "echelon-registry-resolver",
+    "version": "0.1.0"
+  },
+  "catalogSnapshot": {
+    "sha256": "a6af88b5d67821e67e93a313cb2a4b97993ffa783fe9a9dc66e18be142990e61"
+  },
+  "components": [
+    {
+      "systemId": "lifecycle-fixture",
+      "role": "repository-lifecycle",
+      "required": true,
+      "version": "1.0.0",
+      "repository": "example/lifecycle-fixture",
+      "tag": "lifecycle-fixture-v1.0.0",
+      "commit": "b6ff8b6c85b2bc153de63838add9979dfe428815",
+      "releaseStage": "stable",
+      "lifecycleState": "active",
+      "distributionClass": "self-contained-native-cli",
+      "executable": "lifecycle-fixture",
+      "repositoryLifecycle": {
+        "contract": "echelon.repository-lifecycle",
+        "contractVersion": 1
+      },
+      "releaseManifest": {
+        "schema": "echelon.release/v2",
+        "sha256": "a5f277c742ed555cbc56278896d80f980760812ae1ad8d756f220d3eca69d98b"
+      },
+      "distribution": {
+        "mechanism": "github-release",
+        "package": null,
+        "url": "https://github.com/example/lifecycle-fixture/releases/tag/lifecycle-fixture-v1.0.0"
+      },
+      "artifacts": [
+        {
+          "name": "lifecycle-fixture-linux-x64.tar.gz",
+          "purpose": "executable",
+          "platform": "linux-x64",
+          "sha256": "88315e3070c44254a256a76bc2507cbf843913a2f161032832f8a32ac0f92911"
+        },
+        {
+          "name": "lifecycle-fixture-checksums.txt",
+          "purpose": "checksums",
+          "platform": null,
+          "sha256": "2f7a65c84b27061756cc11d18aa626b589db292f75a67c785de98e5966f4e70c"
+        }
+      ]
+    },
+    {
+      "systemId": "legacy-fixture",
+      "role": "host-tool",
+      "required": true,
+      "version": "1.0.0",
+      "repository": "example/legacy-fixture",
+      "tag": "legacy-fixture-v1.0.0",
+      "commit": "45052c8168100ff3c486e73aaed1037dd4cd9fbf",
+      "releaseStage": "stable",
+      "lifecycleState": "active",
+      "distributionClass": "self-contained-native-cli",
+      "executable": "legacy-fixture",
+      "releaseManifest": {
+        "schema": "echelon.release/v2",
+        "sha256": "6a658c169b11d0419df6fef8952e9329691816cde4a10020c4cd291f59bbb21f"
+      },
+      "distribution": {
+        "mechanism": "github-release",
+        "package": null,
+        "url": "https://github.com/example/legacy-fixture/releases/tag/legacy-fixture-v1.0.0"
+      },
+      "artifacts": [
+        {
+          "name": "legacy-fixture-linux-x64.tar.gz",
+          "purpose": "executable",
+          "platform": "linux-x64",
+          "sha256": "d1bab1d6793c473ea298e723d3f2d6585a037305533b688becb5462c39f897c3"
+        },
+        {
+          "name": "legacy-fixture-checksums.txt",
+          "purpose": "checksums",
+          "platform": null,
+          "sha256": "857260646a4bf9fb41d83b769b8351a504f7f9c8e65701217f1cfc934653e7d2"
+        }
+      ]
+    }
+  ]
+}

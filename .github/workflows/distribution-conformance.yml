@@ -52,6 +52,26 @@ jobs:
           ECHELON_ENGINEERING_RESOLVED: ${{ runner.temp }}/resolver-a/linux-x64.json
         run: dotnet fsi conformance/validate-distribution-fixtures.fsx
 
+      - name: Resolve repository lifecycle contract fixtures
+        run: |
+          mkdir -p "$RUNNER_TEMP/lifecycle"
+          dotnet fsi tools/resolve-profile.fsx -- \
+            --profile examples/repository-lifecycle-proof/repository-lifecycle-proof.profile.json \
+            --snapshot examples/repository-lifecycle-proof/catalog-snapshot.json \
+            --platform linux-x64 \
+            --output "$RUNNER_TEMP/lifecycle/linux-x64.json"
+          if dotnet fsi tools/resolve-profile.fsx -- \
+            --profile examples/repository-lifecycle-proof/repository-lifecycle-invalid.profile.json \
+            --snapshot examples/repository-lifecycle-proof/catalog-snapshot.json \
+            --platform linux-x64 \
+            --output "$RUNNER_TEMP/lifecycle/invalid.json"; then
+            echo "::error::resolver accepted a repository lifecycle declaration on a non-native release"
+            exit 1
+          fi
+
+      - name: Validate repository lifecycle contract
+        run: dotnet fsi conformance/validate-repository-lifecycle.fsx "$RUNNER_TEMP/lifecycle/linux-x64.json"
+
       - name: Validate Indy Init catalog progress
         run: dotnet fsi conformance/validate-indy-init-catalog.fsx
 

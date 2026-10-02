@@ -1,0 +1,11 @@
+{
+  "schema": "echelon.profile/v1",
+  "id": "repository-lifecycle-invalid",
+  "version": "1.0.0",
+  "description": "Synthetic proof profile for spec/repository-lifecycle-contract.md.",
+  "supportedPlatforms": [ "linux-x64", "osx-arm64" ],
+  "allowedReleaseStages": [ "stable" ],
+  "components": [
+    { "systemId": "invalid-lifecycle-fixture", "role": "repository-lifecycle", "required": true, "version": { "exact": "1.0.0" } }
+  ]
+}
