@@ -1,0 +1,27 @@
+{
+  "schema": "echelon.profile/v1",
+  "id": "dokimos-proof",
+  "version": "0.1.0",
+  "description": "Distribution proof profile: selects exactly the published Dokimos 0.2.0 release as a repository-lifecycle component so Conditor's generic Registry lifecycle path can be proven on a clean host. Not a normal engineering profile.",
+  "supportedPlatforms": [
+    "linux-arm64",
+    "linux-musl-x64",
+    "linux-x64",
+    "osx-arm64",
+    "osx-x64",
+    "win-x64"
+  ],
+  "allowedReleaseStages": [
+    "stable"
+  ],
+  "components": [
+    {
+      "systemId": "dokimos",
+      "role": "repository-lifecycle",
+      "required": true,
+      "version": {
+        "exact": "0.2.0"
+      }
+    }
+  ]
+}
