@@ -59,8 +59,20 @@ jobs:
           done
           cmp "$RUNNER_TEMP/dokimos-proof-a/linux-x64.json" "$RUNNER_TEMP/dokimos-proof-b/linux-x64.json"
 
+      - name: Resolve Echelon engineering 0.2.0 on every supported platform
+        run: |
+          mkdir -p "$RUNNER_TEMP/engineering-020"
+          for platform in linux-arm64 linux-musl-x64 linux-x64 osx-arm64 osx-x64 win-x64; do
+            dotnet fsi tools/resolve-profile.fsx -- \
+              --profile profiles/echelon-engineering-0.2.0.profile.json \
+              --snapshot snapshots/echelon-engineering-0.2.0.catalog.json \
+              --platform "$platform" \
+              --output "$RUNNER_TEMP/engineering-020/$platform.json"
+          done
+
       - name: Validate Registry distribution fixtures and generated resolution
         env:
+          ECHELON_ENGINEERING_020_RESOLVED_DIR: ${{ runner.temp }}/engineering-020
           ECHELON_ENGINEERING_RESOLVED: ${{ runner.temp }}/resolver-a/linux-x64.json
           DOKIMOS_PROOF_RESOLVED: ${{ runner.temp }}/dokimos-proof-a/linux-x64.json
         run: dotnet fsi conformance/validate-distribution-fixtures.fsx

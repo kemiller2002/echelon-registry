@@ -269,6 +269,30 @@ validateResolution
         "dokimos", "releases/dokimos/0.2.0.release.json"
     ])
 
+// echelon-engineering 0.2.0 adds Dokimos; every supported platform's
+// checked-in resolved set must equal the resolver output and validate.
+let engineering020Generated =
+    Environment.GetEnvironmentVariable("ECHELON_ENGINEERING_020_RESOLVED_DIR")
+    |> Option.ofObj
+    |> Option.filter (String.IsNullOrWhiteSpace >> not)
+    |> Option.defaultValue "resolved/echelon-engineering/0.2.0"
+
+for platform in [ "linux-arm64"; "linux-musl-x64"; "linux-x64"; "osx-arm64"; "osx-x64"; "win-x64" ] do
+    let checkedIn = $"resolved/echelon-engineering/0.2.0/{platform}.json"
+    let generated = Path.Combine(engineering020Generated, $"{platform}.json")
+    require (File.ReadAllBytes generated = File.ReadAllBytes checkedIn) $"generated echelon-engineering 0.2.0 {platform} resolution differs from {checkedIn}"
+
+    validateResolution
+        $"Echelon engineering 0.2.0 ({platform})"
+        "profiles/echelon-engineering-0.2.0.profile.json"
+        "snapshots/echelon-engineering-0.2.0.catalog.json"
+        checkedIn
+        (Map.ofList [
+            "praxis", "releases/praxis/3.6.0.release.json"
+            "ordo", "releases/ordo/1.4.0.release.json"
+            "dokimos", "releases/dokimos/0.2.0.release.json"
+        ])
+
 let validateFrozenIndyInit () =
     let profilePath = "profiles/indy-init.profile.json"
     use profileDoc = parse profilePath

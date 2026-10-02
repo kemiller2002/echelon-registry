@@ -75,7 +75,7 @@ The distribution foundation adds:
 
 `registry/systems-v2.json` is the canonical-identity seed for the currently identified Echelon products.
 
-The first Registry-owned host profile is `profiles/echelon-engineering.profile.json`. Version `0.1.0` pins the real published native releases Praxis `3.6.0` and Ordo `1.4.0`. The checked-in Linux x64 resolved release set is a conformance fixture and the seed for Conditor's Registry-consumption implementation.
+The first Registry-owned host profile is `profiles/echelon-engineering.profile.json`. Version `0.1.0` pins the real published native releases Praxis `3.6.0` and Ordo `1.4.0`. Version `0.2.0` (`profiles/echelon-engineering-0.2.0.profile.json`) adds Dokimos `0.2.0` as a `repository-lifecycle` component that declares `echelon.repository-lifecycle` v1; its resolved sets for all six supported platforms are under `resolved/echelon-engineering/0.2.0/`. Profile versions are immutable: 0.1.0 is unchanged. The checked-in Linux x64 resolved release set is a conformance fixture and the seed for Conditor's Registry-consumption implementation.
 
 ## Repository lifecycle contract
 

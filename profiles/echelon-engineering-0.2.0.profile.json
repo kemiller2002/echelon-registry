@@ -1,0 +1,43 @@
+{
+  "schema": "echelon.profile/v1",
+  "id": "echelon-engineering",
+  "version": "0.2.0",
+  "description": "Registry-owned Echelon engineering host profile. 0.2.0 adds Dokimos as a repository-lifecycle component (echelon.repository-lifecycle v1). Project-bound libraries and applications are intentionally excluded.",
+  "supportedPlatforms": [
+    "linux-arm64",
+    "linux-musl-x64",
+    "linux-x64",
+    "osx-arm64",
+    "osx-x64",
+    "win-x64"
+  ],
+  "allowedReleaseStages": [
+    "stable"
+  ],
+  "components": [
+    {
+      "systemId": "praxis",
+      "role": "host-tool",
+      "required": true,
+      "version": {
+        "exact": "3.6.0"
+      }
+    },
+    {
+      "systemId": "ordo",
+      "role": "host-tool",
+      "required": true,
+      "version": {
+        "exact": "1.4.0"
+      }
+    },
+    {
+      "systemId": "dokimos",
+      "role": "repository-lifecycle",
+      "required": true,
+      "version": {
+        "exact": "0.2.0"
+      }
+    }
+  ]
+}
