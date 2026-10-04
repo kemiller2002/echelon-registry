@@ -59,6 +59,19 @@ jobs:
           done
           cmp "$RUNNER_TEMP/dokimos-proof-a/linux-x64.json" "$RUNNER_TEMP/dokimos-proof-b/linux-x64.json"
 
+      - name: Regenerate and validate Echelon current channel
+        run: |
+          mkdir -p "$RUNNER_TEMP/echelon-current"
+          for platform in linux-x64 linux-arm64 osx-x64 osx-arm64 win-x64; do
+            dotnet fsi tools/resolve-profile.fsx -- \
+              --profile profiles/echelon-current.profile.json \
+              --snapshot snapshots/echelon-current.catalog.json \
+              --platform "$platform" \
+              --output "$RUNNER_TEMP/echelon-current/$platform.json"
+            cmp "$RUNNER_TEMP/echelon-current/$platform.json" "channels/echelon-current/$platform.json"
+          done
+          dotnet fsi conformance/validate-current-channel.fsx
+
       - name: Validate Registry distribution fixtures and generated resolution
         env:
           ECHELON_ENGINEERING_RESOLVED: ${{ runner.temp }}/resolver-a/linux-x64.json
