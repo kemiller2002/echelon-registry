@@ -15,13 +15,13 @@ let sha256 path =
     |> Convert.ToHexString
     |> fun value -> value.ToLowerInvariant()
 
-let property name (element: JsonElement) =
+let property (name: string) (element: JsonElement) =
     element.GetProperty name
 
-let stringProperty name element =
+let stringProperty (name: string) (element: JsonElement) =
     (property name element).GetString()
 
-let arrayProperty name element =
+let arrayProperty (name: string) (element: JsonElement) =
     (property name element).EnumerateArray() |> Seq.toArray
 
 let channelPath = "channels/echelon-current/channel.json"
