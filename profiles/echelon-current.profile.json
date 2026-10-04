@@ -1,0 +1,82 @@
+{
+  "schema": "echelon.profile/v1",
+  "id": "echelon-current",
+  "version": "1.0.0",
+  "description": "Moving stable channel for the current Registry-approved Echelon repository environment. Version ranges select the newest compatible active stable releases from the channel catalog snapshot.",
+  "supportedPlatforms": [
+    "linux-x64",
+    "linux-arm64",
+    "osx-x64",
+    "osx-arm64",
+    "win-x64"
+  ],
+  "allowedReleaseStages": [
+    "stable"
+  ],
+  "components": [
+    {
+      "systemId": "praxis",
+      "role": "host-tool",
+      "required": true,
+      "version": {
+        "range": ">=3.0.0 <4.0.0"
+      }
+    },
+    {
+      "systemId": "ordo",
+      "role": "host-tool",
+      "required": true,
+      "version": {
+        "range": ">=1.0.0 <2.0.0"
+      }
+    },
+    {
+      "systemId": "percepta",
+      "role": "repository-lifecycle",
+      "required": true,
+      "version": {
+        "range": ">=0.1.0 <1.0.0"
+      }
+    },
+    {
+      "systemId": "dokimos",
+      "role": "repository-lifecycle",
+      "required": true,
+      "version": {
+        "range": ">=0.2.0 <1.0.0"
+      }
+    },
+    {
+      "systemId": "aegis",
+      "role": "project-binding",
+      "required": true,
+      "version": {
+        "range": ">=1.0.0 <2.0.0"
+      }
+    },
+    {
+      "systemId": "limen",
+      "role": "project-binding",
+      "required": true,
+      "version": {
+        "range": ">=0.6.0 <1.0.0"
+      }
+    },
+    {
+      "systemId": "forma",
+      "role": "project-binding",
+      "required": true,
+      "version": {
+        "range": ">=0.3.0 <1.0.0"
+      }
+    },
+    {
+      "systemId": "folio",
+      "role": "project-binding",
+      "required": true,
+      "version": {
+        "range": ">=0.3.0 <1.0.0"
+      }
+    }
+  ]
+}
