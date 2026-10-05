@@ -76,6 +76,40 @@ The distribution foundation adds:
 
 The first Registry-owned host profile is `profiles/echelon-engineering.profile.json`. Version `0.1.0` pins the real published native releases Praxis `3.6.0` and Ordo `1.4.0`. The checked-in Linux x64 resolved release set is a conformance fixture and the seed for Conditor's Registry-consumption implementation.
 
+## Moving the echelon-current channel
+
+`channels/echelon-current/` is generated, never hand-edited. To move the
+channel (for example to pick up a newly recorded release):
+
+1. Edit `snapshots/echelon-current.catalog.json` (add or retire release rows).
+2. Regenerate every platform's resolved set:
+
+   ```bash
+   for platform in linux-x64 linux-arm64 osx-x64 osx-arm64 win-x64; do
+     dotnet fsi tools/resolve-profile.fsx -- \
+       --profile profiles/echelon-current.profile.json \
+       --snapshot snapshots/echelon-current.catalog.json \
+       --platform "$platform" \
+       --output "channels/echelon-current/$platform.json"
+   done
+   ```
+
+3. Regenerate the channel index (`channel.json`: profile, snapshot and
+   resolved-set digests):
+
+   ```bash
+   dotnet fsi tools/generate-channel-index.fsx -- \
+     --channel channels/echelon-current \
+     --profile profiles/echelon-current.profile.json \
+     --snapshot snapshots/echelon-current.catalog.json
+   ```
+
+   The generator refuses resolved sets that were not produced from that
+   profile and snapshot, so a skipped step 2 fails here.
+
+CI regenerates the resolved sets and the index and fails on any byte
+difference, then runs `conformance/validate-current-channel.fsx`.
+
 ## Repository lifecycle contract
 
 `spec/repository-lifecycle-contract.md` defines `echelon.repository-lifecycle`
