@@ -360,20 +360,7 @@
       "distributionClasses": [
         "application-artifact"
       ],
-      "provides": [
-        {
-          "id": "billing.record",
-          "contractVersion": 1
-        },
-        {
-          "id": "invoice.create",
-          "contractVersion": 1
-        },
-        {
-          "id": "payment.record",
-          "contractVersion": 1
-        }
-      ],
+      "provides": [],
       "optionalConsumes": []
     },
     {
@@ -473,6 +460,32 @@
       ],
       "provides": [],
       "optionalConsumes": []
+    }
+  ],
+  "unownedCapabilities": [
+    {
+      "id": "time-primitives",
+      "displayName": "Canonical time primitives",
+      "description": "Shared Instant, Clock and date-only/calendar semantics for Echelon systems. No library or contract exists. Chrona is the time-entry/time-tracking application and does not provide it; Vigila defines its own local Instant/Clock.",
+      "capabilities": [],
+      "owner": null,
+      "previouslyAssumedOwner": "chrona",
+      "decision": "kemiller2002/echelon-organization-administration QDI-079",
+      "nextAction": "Owner to decide whether canonical time primitives are built in chrona or elsewhere."
+    },
+    {
+      "id": "ledger-receivables-payments",
+      "displayName": "Ledger, invoicing, receivables and payments",
+      "description": "Financial ledger, billing, invoicing, receivables and payment recording. Requirements exist only as Summa input documents; no implementation or provider exists. Summa is a project-administration hub.",
+      "capabilities": [
+        "billing.record",
+        "invoice.create",
+        "payment.record"
+      ],
+      "owner": null,
+      "previouslyAssumedOwner": "summa",
+      "decision": "kemiller2002/echelon-organization-administration QDI-079",
+      "nextAction": "Owner to decide whether ledger/receivables/payments are built in summa or elsewhere."
     }
   ]
 }

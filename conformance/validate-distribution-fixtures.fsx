@@ -82,6 +82,33 @@ require (aliases |> Array.distinct |> Array.length = aliases.Length) "system ali
 for alias in aliases do
     require (not (canonicalIds |> Array.contains alias)) (sprintf "alias %s collides with a canonical system id" alias)
 
+// Capabilities the portfolio has explicitly recorded as having no current owner
+// (owner decision QDI-079 in echelon-organization-administration) must not be
+// claimed by any system until an owner decision assigns them.
+let providedCapabilities =
+    systems
+    |> Array.collect (fun system ->
+        arrayProperty "provides" system
+        |> Array.map (fun capability -> stringProperty "id" capability, stringProperty "id" system))
+
+let unownedCapabilities = arrayProperty "unownedCapabilities" systemsDoc.RootElement
+let unownedIds = unownedCapabilities |> Array.map (stringProperty "id")
+
+require (unownedIds |> Array.distinct |> Array.length = unownedIds.Length) "unowned capability ids must be unique"
+
+for entry in unownedCapabilities do
+    let id = stringProperty "id" entry
+    require ((property "owner" entry).ValueKind = JsonValueKind.Null) (sprintf "unowned capability %s must have a null owner" id)
+    require (not (String.IsNullOrWhiteSpace(stringProperty "decision" entry))) (sprintf "unowned capability %s must cite a decision" id)
+    require (not (String.IsNullOrWhiteSpace(stringProperty "nextAction" entry))) (sprintf "unowned capability %s must name a next action" id)
+    let assumed = stringProperty "previouslyAssumedOwner" entry
+    require (canonicalIds |> Array.contains assumed) (sprintf "unowned capability %s names unknown previouslyAssumedOwner %s" id assumed)
+    for capability in arrayProperty "capabilities" entry do
+        let capabilityId = capability.GetString()
+        match providedCapabilities |> Array.tryFind (fun (provided, _) -> provided = capabilityId) with
+        | Some (_, systemId) -> failwithf "unowned capability %s (%s) is provided by %s" capabilityId id systemId
+        | None -> ()
+
 let validateResolution
     (name: string)
     (profilePath: string)

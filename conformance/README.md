@@ -27,6 +27,7 @@ It proves that:
 
 - all distribution schema documents are parseable JSON;
 - canonical system ids and aliases in `registry/systems-v2.json` do not collide;
+- every `unownedCapabilities` entry in `registry/systems-v2.json` has no owner, names a decision and next action, and none of its capability ids is provided by any system;
 - the proof profile selects the real Ordo `v1.4.0` release;
 - profile, release and catalog snapshot SHA-256 identities match the exact checked-in bytes;
 - the resolved release set matches the selected release version, repository, tag, commit, stage and distribution class;

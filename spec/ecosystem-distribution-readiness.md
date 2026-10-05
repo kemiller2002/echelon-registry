@@ -59,8 +59,8 @@ Applications are not automatically members of an "all tools on PATH" profile. Th
 
 | Canonical system | Repository | Role | Readiness | Distribution requirement |
 |---|---|---|---|---|
-| Chrona | `kemiller2002/chrona` | time-entry application | not-ready | declare application artifact/deployment class and separate dev profile from end-user deployment |
-| Summa | `kemiller2002/summa` | ledger/invoicing/receivables/payments application/service | not-ready | publish explicit application/service artifacts; never infer payment/database credentials or silently deploy live services |
+| Chrona | `kemiller2002/chrona` | time-entry/time-tracking application (pre-implementation); **not** a canonical time-primitives library — that capability is unowned (see "Unowned portfolio capabilities") | not-ready | declare application artifact/deployment class and separate dev profile from end-user deployment |
+| Summa | `kemiller2002/summa` | project-administration hub (cross-repository work coordination); **not** a ledger/invoicing/receivables/payments service — that capability is unowned (see "Unowned portfolio capabilities") | not-ready | declare application artifact/deployment class; must not advertise billing, invoice or payment capabilities unless an owner decision assigns them |
 | Strata | `kemiller2002/strata` | SQL/schema developer tool/library | not-ready | explicitly separate native CLI from any reusable .NET library and database-provider prerequisites |
 | Forma Studio | `kemiller2002/forma-studio` | design/workflow application | not-ready | declare runtime/deployment class and separate development from end-user installation |
 | Mercatus | `kemiller2002/mercatus` | sales/marketing application | not-ready | publish application/developer distribution contract; predecessor `sales-and-marketing` must not be independently installable |
@@ -69,6 +69,17 @@ Applications are not automatically members of an "all tools on PATH" profile. Th
 | Clarity Service | `kemiller2002/clarity-service` | repository-analysis CLI/service | not-ready | publish self-contained native CLI and Registry metadata; consuming users should not need the .NET SDK |
 | Echelon Culinary | `kemiller2002/echelon-culinary` | static web application/site | partial | treat GitHub Pages/static build as deployment, not workstation installation; only add to Conditor if an explicit developer/deploy profile needs it |
 | Recipe Formatter | `kemiller2002/recipe-formatter` | standalone static application/pilot | partial | keep outside core Echelon profiles unless promoted to a canonical Echelon application with an explicit release identity |
+
+### Unowned portfolio capabilities
+
+Two capabilities the portfolio previously assumed were owned have **no current owner**. They are recorded in `registry/systems-v2.json` under `unownedCapabilities` (owner decision: `kemiller2002/echelon-organization-administration` QDI-079). Nothing was moved or created.
+
+| Capability | Previously assumed owner | Actual state | Next action |
+|---|---|---|---|
+| Canonical time primitives (Instant, Clock, date-only/calendar semantics) | Chrona | no library or contract exists; Chrona is the time-entry application; Vigila defines its own local time types | owner decides whether to build them in Chrona or elsewhere |
+| Ledger, invoicing, receivables and payments (`billing.record`, `invoice.create`, `payment.record`) | Summa | requirements exist only as Summa input documents; no implementation | owner decides whether to build them in Summa or elsewhere |
+
+Until an owner exists, no system may list these capabilities under `provides`. A consumer may still declare them in `optionalConsumes`; resolution returns `unavailable`, which MUST NOT fail the consumer's core behavior.
 
 ## D. Research, methodology, planning, website, and data repositories
 
