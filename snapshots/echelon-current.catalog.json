@@ -80,6 +80,12 @@
       "sha256": "c597068533397406942a229c633adf2631bfb840e666bd02c900051695df8aac"
     },
     {
+      "systemId": "limen",
+      "version": "0.7.0",
+      "manifest": "releases/limen/0.7.0.release.json",
+      "sha256": "3d1ba4b65fe533615f0fbd50cc422912a9eab94f9a1223ebd450067df8655d34"
+    },
+    {
       "systemId": "forma",
       "version": "0.3.0",
       "manifest": "releases/forma/0.3.0.release.json",
