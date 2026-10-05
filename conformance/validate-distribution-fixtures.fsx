@@ -82,32 +82,58 @@ require (aliases |> Array.distinct |> Array.length = aliases.Length) "system ali
 for alias in aliases do
     require (not (canonicalIds |> Array.contains alias)) (sprintf "alias %s collides with a canonical system id" alias)
 
-// Capabilities the portfolio has explicitly recorded as having no current owner
-// (owner decision QDI-079 in echelon-organization-administration) must not be
-// claimed by any system until an owner decision assigns them.
+// Capabilities with a planned owner (owner decision QDI-079, amended
+// 2026-10-05, in echelon-organization-administration) are commitments, not
+// implementations. No system, including the planned owner, may provide one of
+// their capability ids until it is implemented and the entry is retired.
 let providedCapabilities =
     systems
     |> Array.collect (fun system ->
         arrayProperty "provides" system
         |> Array.map (fun capability -> stringProperty "id" capability, stringProperty "id" system))
 
-let unownedCapabilities = arrayProperty "unownedCapabilities" systemsDoc.RootElement
-let unownedIds = unownedCapabilities |> Array.map (stringProperty "id")
+let plannedCapabilities = arrayProperty "plannedCapabilities" systemsDoc.RootElement
+let plannedIds = plannedCapabilities |> Array.map (stringProperty "id")
 
-require (unownedIds |> Array.distinct |> Array.length = unownedIds.Length) "unowned capability ids must be unique"
+let tryStringProperty (name: string) (element: JsonElement) =
+    match element.TryGetProperty name with
+    | true, value when value.ValueKind = JsonValueKind.String -> Some (value.GetString())
+    | _ -> None
 
-for entry in unownedCapabilities do
+let isBlank = Option.forall String.IsNullOrWhiteSpace
+
+let plannedEntryViolations (entry: JsonElement) =
     let id = stringProperty "id" entry
-    require ((property "owner" entry).ValueKind = JsonValueKind.Null) (sprintf "unowned capability %s must have a null owner" id)
-    require (not (String.IsNullOrWhiteSpace(stringProperty "decision" entry))) (sprintf "unowned capability %s must cite a decision" id)
-    require (not (String.IsNullOrWhiteSpace(stringProperty "nextAction" entry))) (sprintf "unowned capability %s must name a next action" id)
-    let assumed = stringProperty "previouslyAssumedOwner" entry
-    require (canonicalIds |> Array.contains assumed) (sprintf "unowned capability %s names unknown previouslyAssumedOwner %s" id assumed)
-    for capability in arrayProperty "capabilities" entry do
-        let capabilityId = capability.GetString()
-        match providedCapabilities |> Array.tryFind (fun (provided, _) -> provided = capabilityId) with
-        | Some (_, systemId) -> failwithf "unowned capability %s (%s) is provided by %s" capabilityId id systemId
-        | None -> ()
+    let plannedOwner = tryStringProperty "plannedOwner" entry
+    let ownerViolations =
+        match plannedOwner with
+        | Some owner when canonicalIds |> Array.contains owner -> []
+        | Some owner -> [ sprintf "planned capability %s names unknown plannedOwner %s" id owner ]
+        | None -> [ sprintf "planned capability %s must name a plannedOwner" id ]
+    let fieldViolations =
+        [ if tryStringProperty "status" entry <> Some "planned" then
+              sprintf "planned capability %s must have status planned" id
+          if isBlank (tryStringProperty "decision" entry) then
+              sprintf "planned capability %s must cite a decision" id
+          if isBlank (tryStringProperty "nextAction" entry) then
+              sprintf "planned capability %s must name a next action" id ]
+    let providerViolations =
+        arrayProperty "capabilities" entry
+        |> Array.map (fun capability -> capability.GetString())
+        |> Array.collect (fun capabilityId ->
+            providedCapabilities
+            |> Array.filter (fun (provided, _) -> provided = capabilityId)
+            |> Array.map (fun (_, systemId) ->
+                sprintf "planned capability %s (%s) is provided by %s; planned capabilities must not be provided until implemented" capabilityId id systemId))
+        |> Array.toList
+    ownerViolations @ fieldViolations @ providerViolations
+
+let plannedViolations =
+    [ if plannedIds |> Array.distinct |> Array.length <> plannedIds.Length then
+          "planned capability ids must be unique"
+      yield! plannedCapabilities |> Seq.collect plannedEntryViolations ]
+
+require (List.isEmpty plannedViolations) (String.Join(Environment.NewLine, plannedViolations))
 
 let validateResolution
     (name: string)
