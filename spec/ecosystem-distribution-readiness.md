@@ -47,7 +47,7 @@ These are not global workstation packages merely because they are common Echelon
 | Canonical system | Repository | Distribution role | Observed state | Readiness | Conditor rule |
 |---|---|---|---|---|---|
 | Aegis | `kemiller2002/aegis` | .NET/NuGet library family | NuGet packages are documented and MIT licensed | partial | bind exact packages only to an explicit .NET project/scaffold; publish Registry release metadata for the package family |
-| Limen | `kemiller2002/limen` | browser/runtime package + repository lifecycle capability | npm browser package and F# lifecycle exist; product/package naming differs | partial | explicit web target only; canonical id `limen`; historical package name is distribution identity, not system identity |
+| Limen | `kemiller2002/limen` | browser/runtime package + repository lifecycle capability | npm browser package `@echelon-foundry/limen` (from 0.7.0) and F# lifecycle exist; product and package names now agree | partial | explicit web target only; canonical id `limen`; current npm distribution identity is `@echelon-foundry/limen`; the deprecated `@echelon-foundry/typescript-wasm-kernel` (last 0.6.2) is a historical distribution identity, not system identity |
 | Forma | `kemiller2002/forma` | zero-runtime design-system package | pinned package consumption and release tarball workflow are documented | partial | bind to explicit web project; never global-install or copy source/CSS into consumer |
 | Folio | `kemiller2002/folio` | print/web-component package | public package/component surface exists | partial | bind to explicit project; renderer capabilities are separate explicit prerequisites |
 | Iter | `kemiller2002/iter` | optional .NET/NuGet application library | F# routing library exists; release contract not proven | not-ready | bind only to an explicit requesting .NET target; Limen must never depend on Iter |
@@ -118,6 +118,7 @@ The repositories below must **not** become normal Conditor install targets in th
 4. `forma` is the canonical reusable design-system product. `web-component-engineering` must not appear as a second installable component unless a future decision establishes a separate responsibility.
 5. `praxis` is canonical for the repository operating system CLI. `ros` remains a compatibility executable/legacy identity, not an independently installable system.
 6. Project Administration is the canonical installation-instance inventory owner. Echelon Registry remains the catalog owner.
+7. `limen` is canonical. The repository was formerly `typescript-wasm-kernel`, which remains a compatibility alias of `limen`, not a second system. From 0.7.0 the npm distribution identity is `@echelon-foundry/limen`. `@echelon-foundry/typescript-wasm-kernel` is deprecated; its releases through 0.6.2 keep that package name as the historical distribution identity valid for those releases (REG-DIST-152).
 
 ## F. Stable-profile eligibility gate
 

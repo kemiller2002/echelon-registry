@@ -259,7 +259,9 @@
       "displayName": "Limen",
       "repository": "kemiller2002/limen",
       "status": "active",
-      "aliases": [],
+      "aliases": [
+        "typescript-wasm-kernel"
+      ],
       "executableAliases": [],
       "distributionClasses": [
         "web-package",
