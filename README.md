@@ -31,7 +31,6 @@ Examples:
 ```text
 vigila follow-up add
 chrona time record
-summa billing record
 ```
 
 Cross-system writes MUST use the receiving system's integration boundary when one exists. Consumers MUST NOT depend on another system's internal storage layout.
@@ -73,7 +72,7 @@ The distribution foundation adds:
 - `echelon.resolved-release-set/v1` — exact platform-specific release/artifact selection;
 - `echelon.readiness/v1` — machine-readable distribution-readiness projection.
 
-`registry/systems-v2.json` is the canonical-identity seed for the currently identified Echelon products.
+`registry/systems-v2.json` is the canonical-identity seed for the currently identified Echelon products. Its `unownedCapabilities` list names portfolio capabilities that have no current owning system (canonical time primitives; ledger/invoicing/receivables/payments). Their capability ids MUST NOT appear in any system's `provides` until an owner decision assigns them.
 
 The first Registry-owned host profile is `profiles/echelon-engineering.profile.json`. Version `0.1.0` pins the real published native releases Praxis `3.6.0` and Ordo `1.4.0`. The checked-in Linux x64 resolved release set is a conformance fixture and the seed for Conditor's Registry-consumption implementation.
 
