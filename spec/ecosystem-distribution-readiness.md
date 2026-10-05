@@ -59,8 +59,8 @@ Applications are not automatically members of an "all tools on PATH" profile. Th
 
 | Canonical system | Repository | Role | Readiness | Distribution requirement |
 |---|---|---|---|---|
-| Chrona | `kemiller2002/chrona` | time-entry/time-tracking application (pre-implementation); **not** a canonical time-primitives library — that capability is unowned (see "Unowned portfolio capabilities") | not-ready | declare application artifact/deployment class and separate dev profile from end-user deployment |
-| Summa | `kemiller2002/summa` | project-administration hub (cross-repository work coordination); **not** a ledger/invoicing/receivables/payments service — that capability is unowned (see "Unowned portfolio capabilities") | not-ready | declare application artifact/deployment class; must not advertise billing, invoice or payment capabilities unless an owner decision assigns them |
+| Chrona | `kemiller2002/chrona` | time-entry/time-tracking application (pre-implementation); also the **planned owner** of canonical time primitives, to be built as a separately packaged library in the chrona repository (working name `Chrona.Time`), not inside the time-entry application; Vigila is the first consumer. Not implemented (see "Planned portfolio capabilities") | not-ready | declare application artifact/deployment class and separate dev profile from end-user deployment |
+| Summa | `kemiller2002/summa` | project-administration hub (cross-repository work coordination); also the **planned owner** of ledger/invoicing/receivables/payments, gated on Summa replacing its copied Node-era tooling with a real foundation (QDI-071). Not implemented (see "Planned portfolio capabilities") | not-ready | declare application artifact/deployment class; must not advertise billing, invoice or payment capabilities until they are implemented |
 | Strata | `kemiller2002/strata` | SQL/schema developer tool/library | not-ready | explicitly separate native CLI from any reusable .NET library and database-provider prerequisites |
 | Forma Studio | `kemiller2002/forma-studio` | design/workflow application | not-ready | declare runtime/deployment class and separate development from end-user installation |
 | Mercatus | `kemiller2002/mercatus` | sales/marketing application | not-ready | publish application/developer distribution contract; predecessor `sales-and-marketing` must not be independently installable |
@@ -70,16 +70,16 @@ Applications are not automatically members of an "all tools on PATH" profile. Th
 | Echelon Culinary | `kemiller2002/echelon-culinary` | static web application/site | partial | treat GitHub Pages/static build as deployment, not workstation installation; only add to Conditor if an explicit developer/deploy profile needs it |
 | Recipe Formatter | `kemiller2002/recipe-formatter` | standalone static application/pilot | partial | keep outside core Echelon profiles unless promoted to a canonical Echelon application with an explicit release identity |
 
-### Unowned portfolio capabilities
+### Planned portfolio capabilities
 
-Two capabilities the portfolio previously assumed were owned have **no current owner**. They are recorded in `registry/systems-v2.json` under `unownedCapabilities` (owner decision: `kemiller2002/echelon-organization-administration` QDI-079). Nothing was moved or created.
+Two portfolio capabilities have a **planned owner** but **no implementation**. They are recorded in `registry/systems-v2.json` under `plannedCapabilities` with `status: "planned"` (owner decision: `kemiller2002/echelon-organization-administration` QDI-079, amended 2026-10-05; the original QDI-079 had recorded both as unowned). Ownership is a commitment, not a capability.
 
-| Capability | Previously assumed owner | Actual state | Next action |
-|---|---|---|---|
-| Canonical time primitives (Instant, Clock, date-only/calendar semantics) | Chrona | no library or contract exists; Chrona is the time-entry application; Vigila defines its own local time types | owner decides whether to build them in Chrona or elsewhere |
-| Ledger, invoicing, receivables and payments (`billing.record`, `invoice.create`, `payment.record`) | Summa | requirements exist only as Summa input documents; no implementation | owner decides whether to build them in Summa or elsewhere |
+| Capability | Planned owner | Prerequisites | Actual state | Next action |
+|---|---|---|---|---|
+| Canonical time primitives (Instant, Clock, date-only/calendar semantics) | Chrona | separately packaged library in chrona (working name `Chrona.Time`); Vigila first consumer | no library or contract exists; Chrona's time-entry application does not provide it; Vigila defines its own local time types | Chrona builds `Chrona.Time` as a separately packaged library; Vigila adopts it first |
+| Ledger, invoicing, receivables and payments (`billing.record`, `invoice.create`, `payment.record`) | Summa | Summa foundation replaces copied Node tooling (QDI-071) | requirements exist only as Summa input documents; no implementation | Summa completes QDI-071, then implements the capability |
 
-Until an owner exists, no system may list these capabilities under `provides`. A consumer may still declare them in `optionalConsumes`; resolution returns `unavailable`, which MUST NOT fail the consumer's core behavior.
+Until a planned capability is implemented, no system — including its planned owner — may list its capability ids under `provides`. A consumer may still declare them in `optionalConsumes`; resolution returns `unavailable`, which MUST NOT fail the consumer's core behavior.
 
 ## D. Research, methodology, planning, website, and data repositories
 

@@ -462,30 +462,40 @@
       "optionalConsumes": []
     }
   ],
-  "unownedCapabilities": [
+  "plannedCapabilities": [
     {
       "id": "time-primitives",
       "displayName": "Canonical time primitives",
-      "description": "Shared Instant, Clock and date-only/calendar semantics for Echelon systems. No library or contract exists. Chrona is the time-entry/time-tracking application and does not provide it; Vigila defines its own local Instant/Clock.",
+      "description": "Shared Instant, Clock and date-only/calendar semantics for Echelon systems. Not implemented: no library or contract exists yet. Chrona owns it as a separately packaged library inside the chrona repository, not inside the time-entry application; Vigila defines its own local Instant/Clock until then.",
       "capabilities": [],
-      "owner": null,
+      "plannedOwner": "chrona",
+      "status": "planned",
+      "decision": "QDI-079 (amended 2026-10-05)",
+      "prerequisites": [
+        "separately packaged library in chrona (working name Chrona.Time); Vigila first consumer"
+      ],
+      "previouslyUnownedSince": "QDI-079",
       "previouslyAssumedOwner": "chrona",
-      "decision": "kemiller2002/echelon-organization-administration QDI-079",
-      "nextAction": "Owner to decide whether canonical time primitives are built in chrona or elsewhere."
+      "nextAction": "Chrona builds Chrona.Time as a separately packaged library in the chrona repository; Vigila adopts it as the first consumer. No system provides this capability until it is implemented."
     },
     {
       "id": "ledger-receivables-payments",
       "displayName": "Ledger, invoicing, receivables and payments",
-      "description": "Financial ledger, billing, invoicing, receivables and payment recording. Requirements exist only as Summa input documents; no implementation or provider exists. Summa is a project-administration hub.",
+      "description": "Financial ledger, billing, invoicing, receivables and payment recording. Not implemented: requirements exist only as Summa input documents. Summa owns it, gated on Summa's foundation.",
       "capabilities": [
         "billing.record",
         "invoice.create",
         "payment.record"
       ],
-      "owner": null,
+      "plannedOwner": "summa",
+      "status": "planned",
+      "decision": "QDI-079 (amended 2026-10-05)",
+      "prerequisites": [
+        "Summa foundation replaces copied Node tooling (QDI-071)"
+      ],
+      "previouslyUnownedSince": "QDI-079",
       "previouslyAssumedOwner": "summa",
-      "decision": "kemiller2002/echelon-organization-administration QDI-079",
-      "nextAction": "Owner to decide whether ledger/receivables/payments are built in summa or elsewhere."
+      "nextAction": "Summa replaces its copied Node-era tooling with a real foundation (QDI-071), then implements ledger/invoicing/receivables/payments. Summa must not list billing.record, invoice.create or payment.record in provides until they are implemented."
     }
   ]
 }
