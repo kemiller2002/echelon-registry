@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "protocolVersion": "1.0.0",
+  "repository": "echelon-registry",
+  "actor": "anthropic/claude-code",
+  "startedAt": "2026-10-06T12:28:34.761Z",
+  "updatedAt": "2026-10-06T12:30:08.000Z",
+  "baselineDirtyPaths": [],
+  "workItems": [
+    {
+      "id": "ROS-INSTALL-3-7-1",
+      "type": "mechanical",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "installation",
+          "path": ".ros/installation.json"
+        }
+      ],
+      "updatedAt": "2026-10-06T12:28:34.761Z",
+      "completedAt": "2026-10-06T12:28:34.761Z"
+    },
+    {
+      "id": "WI-0001",
+      "type": "mechanical",
+      "state": "active",
+      "semanticState": "active",
+      "evidence": [],
+      "updatedAt": "2026-10-06T12:30:08.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261006T123008854Z-5ef1095b"
+      ]
+    }
+  ]
+}
