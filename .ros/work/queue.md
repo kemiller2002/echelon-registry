@@ -8,3 +8,4 @@
 | WI-0003 | Move echelon-registry to Ordo 1.4.1 | complete | ordo, toolchain | medium |
 | WI-0004 | WI-0004 | complete |  |  |
 | WI-0005 | Record Praxis 3.7.2 and select it in echelon-current | complete |  | high |
+| WI-0006 | Record Visual Engineering 1.0.1 and select it in echelon-current | complete |  | medium |

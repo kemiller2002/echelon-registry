@@ -11,7 +11,7 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "93ad904d38deb0986bd932b3f2e5201fdb4d9d36003255d2fb6255dbdd836f16"
+    "sha256": "2a4abb1efb8a20f5b36cae7ed3b5bde0a99e3e182f9bc9349770e9905f109f67"
   },
   "components": [
     {
@@ -172,29 +172,29 @@
       "systemId": "visual-engineering",
       "role": "repository-lifecycle",
       "required": true,
-      "version": "1.0.0",
+      "version": "1.0.1",
       "repository": "kemiller2002/visual-engineering",
-      "tag": "visual-engineering-v1.0.0",
-      "commit": "0be73c83d8c257794d53cb9ddc9a6db69f843fbf",
+      "tag": "visual-engineering-v1.0.1",
+      "commit": "b648cdef291d39c443ccb10215529ad69afe8b32",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "repository-lifecycle",
       "executable": null,
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "36635703cd975c2627ab18fec4c27a8b5129864e223af1fa3644a5d19bb82540"
+        "sha256": "23ab4fdb38d3fc7827519cc3c29df88c950211db1d53d114c53f36a662a0dbda"
       },
       "distribution": {
         "mechanism": "npm",
         "package": "@echelon-foundry/visual-engineering",
-        "url": "https://registry.npmjs.org/@echelon-foundry/visual-engineering/-/visual-engineering-1.0.0.tgz"
+        "url": "https://registry.npmjs.org/@echelon-foundry/visual-engineering/-/visual-engineering-1.0.1.tgz"
       },
       "artifacts": [
         {
-          "name": "echelon-foundry-visual-engineering-1.0.0.tgz",
+          "name": "echelon-foundry-visual-engineering-1.0.1.tgz",
           "purpose": "package",
           "platform": null,
-          "sha256": "2e9f5ac9e88d4d0b1e55cb01ac4483be73a498cf7e24d10e492ebf2c8f7071e0"
+          "sha256": "32347d5c134f724cb35f9c33d882c2ed51f860381f0d5802634da3da74fb3f2f"
         }
       ]
     },
