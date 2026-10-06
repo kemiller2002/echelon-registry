@@ -1,7 +1,7 @@
 # Echelon Distribution Readiness Matrix
 
 Status: draft
-Observed: 2026-09-30
+Observed: 2026-10-06 (first observed 2026-09-30)
 Owner: Echelon Registry
 Related: `distribution-catalog-requirements.md`, `distribution-resilience-requirements.md`, `ecosystem-release-workflow-requirements.md`
 Consumer: Conditor
@@ -14,6 +14,7 @@ It is intentionally broader than "what has a repository." A repository is not au
 
 Readiness states:
 
+- **current**: a stable `echelon.release/v2` record exists under `releases/` and the `echelon-current` channel selects that release (see "Current channel" below).
 - **eligible**: the observed release/lifecycle shape is already close enough to the standard contract that integration work, rather than a redesign, is the main remaining step.
 - **partial**: a usable package or lifecycle exists, but Registry release metadata, immutable artifact publication, platform coverage, or Conditor semantics remain incomplete.
 - **not-ready**: the repository does not yet expose a stable distributable artifact/lifecycle appropriate to its role.
@@ -22,23 +23,45 @@ Readiness states:
 
 The readiness state is not a product-quality judgment. It is only distribution-contract readiness.
 
+## Current channel
+
+`profiles/echelon-current.profile.json` **1.1.0** is the moving stable channel. Resolved against `snapshots/echelon-current.catalog.json`, `channels/echelon-current/` selects the same release set on all five supported platforms (linux-x64, linux-arm64, osx-x64, osx-arm64, win-x64):
+
+| System | Role | Selected release | Source | Distribution |
+|---|---|---|---|---|
+| Praxis | host-tool | **3.7.1** | `kemiller2002/praxis` `v3.7.1` (`26a0a5ff`) | GitHub release, self-contained native CLI `praxis` (alias `ros`) |
+| Ordo | host-tool | **1.4.0** | `kemiller2002/ordo` `v1.4.0` (`17467fb3`) | GitHub release, self-contained native CLI `ordo` (alias `sde`) |
+| Percepta | repository-lifecycle | **0.1.0** | `kemiller2002/percepta` `percepta-repo-v0.1.0` | GitHub release, self-contained native CLI `percepta-repo` |
+| Dokimos | repository-lifecycle | **0.2.0** | `kemiller2002/dokimos` `dokimos-v0.2.0` | GitHub release, self-contained native CLI `dokimos` |
+| Visual Engineering | repository-lifecycle | **1.0.0** | `kemiller2002/visual-engineering` `visual-engineering-v1.0.0` | npm `@echelon-foundry/visual-engineering` |
+| Communication Engineering | repository-lifecycle | **1.0.0** | `kemiller2002/communication-engineering` `v1.0.0` | GitHub release package `@echelon-foundry/communication-engineering` |
+| Tutela | repository-lifecycle | **0.1.0** | `kemiller2002/tutela` `v0.1.0` | GitHub release package `@echelon-foundry/tutela` |
+| Aegis | project-binding | **1.0.0** | NuGet `EchelonFoundry.Aegis.Core` 1.0.0 | NuGet library family |
+| Limen | project-binding | **0.7.1** | `kemiller2002/limen` `v0.7.1` | npm `@echelon-foundry/limen` |
+| Forma | project-binding | **0.4.1** | `kemiller2002/forma` `v0.4.1` | GitHub release package `@echelon-foundry/design-system` |
+| Folio | project-binding | **0.3.0** | `kemiller2002/folio` `v0.3.0` | GitHub release package `@echelon-foundry/print-components` |
+
+Older stable records remain for history and pinned profiles: Praxis 3.6.0, Forma 0.3.0, Limen 0.6.2 (historical package `@echelon-foundry/typescript-wasm-kernel`) and 0.7.0. The frozen Indy Init release set (`freezes/indy-init-0.1.0.freeze.json`) is unchanged by channel moves.
+
+Governed repositories pin the host tools they expect in `.echelon/toolchain.json` (`"praxis": "3.7.1"`, `"ordo": "1.4.0"` for this channel).
+
 ## A. Establishment, governance, and host tooling
 
 | Canonical system | Repository | Distribution role | Observed state | Readiness | Required next step |
 |---|---|---|---|---|---|
 | Conditor | `kemiller2002/conditor` | self-contained host/bootstrap CLI | native multi-platform releases, SHA verification, attestations, workstation profiles, receipts, rollback, Indy Init preset | eligible | consume external Registry catalog/profile release sets; finish offline bundle/all-supported profile |
-| Echelon Registry | `kemiller2002/echelon-registry` | catalog/specification, not a host tool | system/release schema and installation protocol exist | eligible | add profile, resolved-release-set, channel/stage, offline snapshot and readiness projection contracts |
-| Praxis | `kemiller2002/praxis` | self-contained native governance CLI | native release distribution, side-by-side activation, doctor/inventory, repository lifecycle | eligible | publish/verify standard Registry release metadata and complete canonical `praxis` identity migration while retaining `ros` alias |
-| Ordo | `kemiller2002/ordo` | self-contained native methodology/lifecycle CLI | native artifacts and `echelon.release/v1` publication are documented | eligible | register standard release/profile compatibility and use canonical release metadata from Conditor |
+| Echelon Registry | `kemiller2002/echelon-registry` | catalog/specification, not a host tool | system/release schemas, profiles, resolved-release sets, catalog snapshots, the `echelon-current` channel and the Indy Init freeze exist; governed by Praxis 3.7.1 / Ordo 1.4.0 | eligible | publish a versioned offline snapshot bundle and a machine-readable readiness projection |
+| Praxis | `kemiller2002/praxis` | self-contained native governance CLI | `releases/praxis/3.7.1.release.json`: native artifacts for linux-x64, linux-musl-x64, linux-arm64, osx-x64, osx-arm64 and win-x64 with checksums and attestations; canonical `praxis` executable with `ros` compatibility alias; `praxis upgrade` installs `./praxis` launchers and keeps `./ros` as an alias | current | keep the `ros` alias as a compatibility surface; move channel only through new release records |
+| Ordo | `kemiller2002/ordo` | self-contained native methodology/lifecycle CLI | `releases/ordo/1.4.0.release.json`: native artifacts for six platforms; canonical `ordo` executable with `sde` compatibility alias | current | have `ordo init`/`upgrade` own the `ordo` key of `.echelon/toolchain.json` (Praxis no longer writes it) |
 | Project Administration | `kemiller2002/project-administration` | installation-inventory provider + administration CLI/application | canonical installation inventory, typed `administration` capability, local executable and GitHub workflow transports | partial | publish immutable executable/application release metadata; distinguish remote provider deployment from optional local CLI installation |
 | ROS Worker Daemon | `kemiller2002/ROS-WorkerDaemon` | host daemon/execution supervisor | npm launcher currently requires Node 20 + .NET 10; standalone build exists locally | partial | publish self-contained native artifacts, standard release manifest, machine-readable health/version contract; keep npm as optional compatibility transport |
-| Dokimos | `kemiller2002/dokimos` | engineering executable/repository capability | `dokimos-v0.2.0` (commit `e641048`) publishes self-contained native artifacts for six platforms and a shared-contract `echelon.release/v2` manifest; declares `echelon.repository-lifecycle` v1; cataloged as `releases/dokimos/0.2.0.release.json`; Conditor clean-host proof (linux-x64, `dokimos-proof` 0.1.0) installed, initialized, verified and re-applied with zero drift — kemiller2002/conditor Actions run 37003356848 (2026-10-02) | eligible | decide stable-profile membership (`echelon-engineering` successor version); add macOS clean-host proof when infrastructure is available |
-| Tutela | `kemiller2002/tutela` | security lifecycle/tooling capability | F# security authority exists; standard distributable release not proven | not-ready | self-contained/lifecycle release + Registry metadata; canonical id is `tutela`, with historical Tutors naming only as alias if needed |
+| Dokimos | `kemiller2002/dokimos` | engineering executable/repository capability | `dokimos-v0.2.0` (commit `e641048`) publishes self-contained native artifacts for six platforms and a shared-contract `echelon.release/v2` manifest; declares `echelon.repository-lifecycle` v1; cataloged as `releases/dokimos/0.2.0.release.json`; Conditor clean-host proof (linux-x64, `dokimos-proof` 0.1.0) installed, initialized, verified and re-applied with zero drift — kemiller2002/conditor Actions run 37003356848 (2026-10-02) | current | add macOS clean-host proof when infrastructure is available |
+| Tutela | `kemiller2002/tutela` | security lifecycle/tooling capability | `releases/tutela/0.1.0.release.json`: GitHub release package `@echelon-foundry/tutela` with checksums | current | canonical id is `tutela`, with historical Tutors naming only as alias if needed; prove a self-contained lifecycle distribution |
 | Vigila | `kemiller2002/vigila` | application/tool + integration executable | durable integration work exists; host release contract not proven | not-ready | publish executable distribution and separate receiving-system integration contract from application installation |
 | Tekmerion | `kemiller2002/tekmerion` | research lifecycle/publishing capability | F# self-contained lifecycle binaries are bundled behind npm; mature init/status/verify/doctor/upgrade contract | partial | canonicalize Tekmerion package/release identity, publish Registry metadata, separate lifecycle artifact from legacy publishing-runtime prerequisites |
-| Visual Engineering | `kemiller2002/visual-engineering` | repository lifecycle/evidence-context capability | install/verify lifecycle via npm is established | partial | immutable standard release metadata; preferably self-contained lifecycle distribution so Node is not a universal bootstrap prerequisite |
-| Communication Engineering | `kemiller2002/communication-engineering` | repository lifecycle/evidence-context capability | lifecycle CLI exists; Conditor currently supports pinned Git commit transport | partial | publish immutable standard release artifact/metadata and retire pinned-commit fallback from stable profiles |
-| Percepta | `kemiller2002/percepta` | semantic verifier/compiler + separate repository lifecycle | repository lifecycle launcher downloads immutable self-contained binary; semantic verifier is separate | partial | publish one Registry release describing both surfaces and explicit optional browser prerequisite for semantic verification |
+| Visual Engineering | `kemiller2002/visual-engineering` | repository lifecycle/evidence-context capability | `releases/visual-engineering/1.0.0.release.json`: npm `@echelon-foundry/visual-engineering` 1.0.0 | current | preferably a self-contained lifecycle distribution so Node is not a universal bootstrap prerequisite |
+| Communication Engineering | `kemiller2002/communication-engineering` | repository lifecycle/evidence-context capability | `releases/communication-engineering/1.0.0.release.json`: GitHub release package `@echelon-foundry/communication-engineering` 1.0.0 | current | retire the pinned-commit fallback from Conditor's stable paths |
+| Percepta | `kemiller2002/percepta` | semantic verifier/compiler + separate repository lifecycle | `releases/percepta/0.1.0.release.json`: self-contained native repository lifecycle `percepta-repo` for five platforms; semantic verifier is separate | current (repository lifecycle) | describe the semantic verifier surface and its optional browser prerequisite in a later release |
 
 ## B. Project-bound reusable capabilities
 
@@ -46,10 +69,10 @@ These are not global workstation packages merely because they are common Echelon
 
 | Canonical system | Repository | Distribution role | Observed state | Readiness | Conditor rule |
 |---|---|---|---|---|---|
-| Aegis | `kemiller2002/aegis` | .NET/NuGet library family | NuGet packages are documented and MIT licensed | partial | bind exact packages only to an explicit .NET project/scaffold; publish Registry release metadata for the package family |
-| Limen | `kemiller2002/limen` | browser/runtime package + repository lifecycle capability | npm browser package `@echelon-foundry/limen` (from 0.7.0) and F# lifecycle exist; product and package names now agree | partial | explicit web target only; canonical id `limen`; current npm distribution identity is `@echelon-foundry/limen`; the deprecated `@echelon-foundry/typescript-wasm-kernel` (last 0.6.2) is a historical distribution identity, not system identity |
-| Forma | `kemiller2002/forma` | zero-runtime design-system package | pinned package consumption and release tarball workflow are documented | partial | bind to explicit web project; never global-install or copy source/CSS into consumer |
-| Folio | `kemiller2002/folio` | print/web-component package | public package/component surface exists | partial | bind to explicit project; renderer capabilities are separate explicit prerequisites |
+| Aegis | `kemiller2002/aegis` | .NET/NuGet library family | `releases/aegis/1.0.0.release.json`: NuGet `EchelonFoundry.Aegis.Core` 1.0.0, MIT licensed | current | bind exact packages only to an explicit .NET project/scaffold |
+| Limen | `kemiller2002/limen` | browser/runtime package + repository lifecycle capability | `releases/limen/0.7.1.release.json`: npm `@echelon-foundry/limen` 0.7.1 (0.7.0 and historical 0.6.2 also recorded); F# lifecycle exists; product and package names agree | current | explicit web target only; canonical id `limen`; current npm distribution identity is `@echelon-foundry/limen`; the deprecated `@echelon-foundry/typescript-wasm-kernel` (last 0.6.2) is a historical distribution identity, not system identity |
+| Forma | `kemiller2002/forma` | zero-runtime design-system package | `releases/forma/0.4.1.release.json`: GitHub release package `@echelon-foundry/design-system` 0.4.1 (0.3.0 also recorded) | current | bind to explicit web project; never global-install or copy source/CSS into consumer |
+| Folio | `kemiller2002/folio` | print/web-component package | `releases/folio/0.3.0.release.json`: GitHub release package `@echelon-foundry/print-components` 0.3.0 | current | bind to explicit project; renderer capabilities are separate explicit prerequisites |
 | Iter | `kemiller2002/iter` | optional .NET/NuGet application library | F# routing library exists; release contract not proven | not-ready | bind only to an explicit requesting .NET target; Limen must never depend on Iter |
 | Framework Templates | `kemiller2002/Framework-templates` | reusable framework scaffolding/template bundle | framework-agnostic starter artifacts exist; no immutable distribution contract observed | not-ready | publish a versioned template bundle and bind it only when explicitly scaffolding a framework repository; do not global-install it |
 
@@ -185,7 +208,7 @@ An excluded repository must not become installable merely because it later adopt
 
 The repository inventory exposed requirements that are not owned by one application repository:
 
-1. **Stable Registry publication surface.** Registry needs a versioned, digest-bound catalog/profile snapshot that Conditor can discover without reading Registry source layout.
+1. **Stable Registry publication surface.** Partly met: `channels/echelon-current/` publishes digest-bound resolved sets and a channel index over a catalog snapshot. A versioned offline snapshot bundle that Conditor can discover without reading Registry source layout is still open.
 2. **Reusable release workflow.** Distributable repositories need one versioned shared release workflow or generator for release manifests, artifact digests, clean-consumer tests, provenance and readiness evidence.
 3. **Release withdrawal/revocation.** Immutable release records need a non-destructive way to mark a release deprecated, withdrawn or security-revoked so new resolution refuses it while historical evidence remains intact.
 4. **Software bill of materials.** Stable distributable releases need an SBOM/dependency inventory appropriate to their distribution class, plus third-party-license evidence when applicable.
