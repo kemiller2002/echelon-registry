@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-06T14:54:19.000Z",
+  "updatedAt": "2026-10-06T14:54:56.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -159,13 +159,43 @@
     {
       "id": "WI-0004",
       "type": "task",
-      "state": "active",
-      "semanticState": "active",
-      "evidence": [],
-      "updatedAt": "2026-10-06T14:54:19.000Z",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/ordo/1.4.2.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-06T14:54:56.000Z",
       "telemetryExecutionIds": [
         "EXE-20261006T145419687Z-c61eb962"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "928c1b31ce3eeb9f786f14d7",
+        "recordedAt": "2026-10-06T14:54:54.000Z",
+        "executionId": "EXE-20261006T145419687Z-c61eb962",
+        "repository": "echelon-registry",
+        "branch": "chore/ordo-1.4.2",
+        "commit": "38e9638da2f426de1bfa1e9210b094659a3b7219",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/ordo-1.4.2",
+        "remoteCommit": "38e9638da2f426de1bfa1e9210b094659a3b7219",
+        "summary": "record Ordo 1.4.2 and select it in echelon-current: implemented, tested, pushed",
+        "nextAction": "complete, PR, merge when green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-06T14:54:56.000Z"
     }
   ]
 }
