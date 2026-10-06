@@ -1,0 +1,37 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "communication-engineering",
+  "version": "1.0.0",
+  "repository": "kemiller2002/communication-engineering",
+  "tag": "v1.0.0",
+  "commit": "707396de512065fe35aff6fcf82cd28118df14b3",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "repository-lifecycle",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "package": "@echelon-foundry/communication-engineering",
+      "url": "https://github.com/kemiller2002/communication-engineering/releases/tag/v1.0.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "echelon-foundry-communication-engineering-1.0.0.tgz",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "d808867e4af59363673e991153ff788146b5a277e0b01c2d84e0f86d98347437",
+      "mediaType": "application/gzip"
+    },
+    {
+      "name": "SHA256SUMS",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "fd4b48a2c7173675ec7a15f44766b8a5b50fde6bcf4813267b234d25eaf5aa1d",
+      "mediaType": "text/plain"
+    }
+  ]
+}

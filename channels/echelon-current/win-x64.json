@@ -2,8 +2,8 @@
   "schema": "echelon.resolved-release-set/v1",
   "profile": {
     "id": "echelon-current",
-    "version": "1.0.0",
-    "sha256": "9281ec1a6ac7da4f80d0922e5539e275b5bcc37f8e6c154d51e084811e2ccff5"
+    "version": "1.1.0",
+    "sha256": "786a6336fbb4b940e5666ad45e0ed93d6e06c3aeafc1b35573c97343b0523156"
   },
   "platform": "win-x64",
   "resolver": {
@@ -11,7 +11,7 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "041eac6c2cb79cdb65512ec52afd7588f776e7ca2544eb867a5d957e4239b9ae"
+    "sha256": "ff5f9de510a4b7eca8cab513a8e9b0243b717a4339f50c7c3be9b455d4601a80"
   },
   "components": [
     {
@@ -165,6 +165,108 @@
           "purpose": "licenses",
           "platform": null,
           "sha256": "e26da7c631b207a3ea65b0eb4761774fa246183e2855c52001d080b41577e9f2"
+        }
+      ]
+    },
+    {
+      "systemId": "visual-engineering",
+      "role": "repository-lifecycle",
+      "required": true,
+      "version": "1.0.0",
+      "repository": "kemiller2002/visual-engineering",
+      "tag": "visual-engineering-v1.0.0",
+      "commit": "0be73c83d8c257794d53cb9ddc9a6db69f843fbf",
+      "releaseStage": "stable",
+      "lifecycleState": "active",
+      "distributionClass": "repository-lifecycle",
+      "executable": null,
+      "releaseManifest": {
+        "schema": "echelon.release/v2",
+        "sha256": "36635703cd975c2627ab18fec4c27a8b5129864e223af1fa3644a5d19bb82540"
+      },
+      "distribution": {
+        "mechanism": "npm",
+        "package": "@echelon-foundry/visual-engineering",
+        "url": "https://registry.npmjs.org/@echelon-foundry/visual-engineering/-/visual-engineering-1.0.0.tgz"
+      },
+      "artifacts": [
+        {
+          "name": "echelon-foundry-visual-engineering-1.0.0.tgz",
+          "purpose": "package",
+          "platform": null,
+          "sha256": "2e9f5ac9e88d4d0b1e55cb01ac4483be73a498cf7e24d10e492ebf2c8f7071e0"
+        }
+      ]
+    },
+    {
+      "systemId": "communication-engineering",
+      "role": "repository-lifecycle",
+      "required": true,
+      "version": "1.0.0",
+      "repository": "kemiller2002/communication-engineering",
+      "tag": "v1.0.0",
+      "commit": "707396de512065fe35aff6fcf82cd28118df14b3",
+      "releaseStage": "stable",
+      "lifecycleState": "active",
+      "distributionClass": "repository-lifecycle",
+      "executable": null,
+      "releaseManifest": {
+        "schema": "echelon.release/v2",
+        "sha256": "d4b79053301635b6335caf81c2ca28b0721cca4a78967501be820a8eb7118296"
+      },
+      "distribution": {
+        "mechanism": "github-release",
+        "package": "@echelon-foundry/communication-engineering",
+        "url": "https://github.com/kemiller2002/communication-engineering/releases/tag/v1.0.0"
+      },
+      "artifacts": [
+        {
+          "name": "echelon-foundry-communication-engineering-1.0.0.tgz",
+          "purpose": "package",
+          "platform": null,
+          "sha256": "d808867e4af59363673e991153ff788146b5a277e0b01c2d84e0f86d98347437"
+        },
+        {
+          "name": "SHA256SUMS",
+          "purpose": "checksums",
+          "platform": null,
+          "sha256": "fd4b48a2c7173675ec7a15f44766b8a5b50fde6bcf4813267b234d25eaf5aa1d"
+        }
+      ]
+    },
+    {
+      "systemId": "tutela",
+      "role": "repository-lifecycle",
+      "required": true,
+      "version": "0.1.0",
+      "repository": "kemiller2002/tutela",
+      "tag": "v0.1.0",
+      "commit": "94afcc91a84bd3b94a4ee639f169d0727eaac727",
+      "releaseStage": "stable",
+      "lifecycleState": "active",
+      "distributionClass": "repository-lifecycle",
+      "executable": null,
+      "releaseManifest": {
+        "schema": "echelon.release/v2",
+        "sha256": "5db1e8a1f039ae88b2b9426c7cbeec1783b40e29d58b0dfd40dfa90104a3c4ba"
+      },
+      "distribution": {
+        "mechanism": "github-release",
+        "package": "@echelon-foundry/tutela",
+        "url": "https://github.com/kemiller2002/tutela/releases/tag/v0.1.0"
+      },
+      "artifacts": [
+        {
+          "name": "echelon-foundry-tutela-0.1.0.tgz",
+          "purpose": "package",
+          "platform": null,
+          "sha256": "222fdaafa88b3798363fb4664682b409a05cdecf9b23178f028749898b40a861"
+        },
+        {
+          "name": "SHA256SUMS",
+          "purpose": "checksums",
+          "platform": null,
+          "sha256": "bf75418b013c735a6e240ed9b0519f69a2d811c33c7755c4c1a026481b66a02d"
         }
       ]
     },

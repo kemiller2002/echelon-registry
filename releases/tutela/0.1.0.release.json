@@ -1,0 +1,37 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "tutela",
+  "version": "0.1.0",
+  "repository": "kemiller2002/tutela",
+  "tag": "v0.1.0",
+  "commit": "94afcc91a84bd3b94a4ee639f169d0727eaac727",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "repository-lifecycle",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "package": "@echelon-foundry/tutela",
+      "url": "https://github.com/kemiller2002/tutela/releases/tag/v0.1.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "echelon-foundry-tutela-0.1.0.tgz",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "222fdaafa88b3798363fb4664682b409a05cdecf9b23178f028749898b40a861",
+      "mediaType": "application/gzip"
+    },
+    {
+      "name": "SHA256SUMS",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "bf75418b013c735a6e240ed9b0519f69a2d811c33c7755c4c1a026481b66a02d",
+      "mediaType": "text/plain"
+    }
+  ]
+}
