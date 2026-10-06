@@ -11,42 +11,42 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "ff5f9de510a4b7eca8cab513a8e9b0243b717a4339f50c7c3be9b455d4601a80"
+    "sha256": "6ed88bc2e5187520bb8f9e05570fd87d61aa6d05ba3cb27a59c8e3a3d3edf1d4"
   },
   "components": [
     {
       "systemId": "praxis",
       "role": "host-tool",
       "required": true,
-      "version": "3.6.0",
+      "version": "3.7.1",
       "repository": "kemiller2002/praxis",
-      "tag": "v3.6.0",
-      "commit": "2d80783536f129a2314f86d8e5919c0bb6e7b511",
+      "tag": "v3.7.1",
+      "commit": "26a0a5ff32225c75226b696ebdc68e50dc878f11",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "self-contained-native-cli",
       "executable": "praxis",
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "992e276ae0098b5c9b65cdd06f8c783aec95942c850e60d4bf06a28df22e6543"
+        "sha256": "c032e3233c17c14b4b7c90896625a5e04b99ff27d5f26fa2230805af918970e8"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": null,
-        "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.6.0"
+        "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.7.1"
       },
       "artifacts": [
         {
           "name": "praxis-osx-x64.tar.gz",
           "purpose": "executable",
           "platform": "osx-x64",
-          "sha256": "423641b5d733c1f679d628d2fc13143ba3744eaef2ba286c0867a28bcd1dade0"
+          "sha256": "c4dbba669c2a7763fdc99cb524e761929dc4c0e43f4f1b0da5799224379ebc85"
         },
         {
           "name": "native-checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "f534fb295eca6f89303cd1b812e6da6d456b75683dcd077b811ee5ae8558aef2"
+          "sha256": "8730a18c6f688e996777c119f16d22903e9e0d78ea5e79f4048ca9677754303e"
         }
       ]
     },
