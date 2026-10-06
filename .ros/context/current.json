@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-06T16:34:53.000Z",
+  "updatedAt": "2026-10-06T16:36:49.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -283,13 +283,51 @@
     {
       "id": "WI-0007",
       "type": "mechanical",
-      "state": "active",
-      "semanticState": "active",
-      "evidence": [],
-      "updatedAt": "2026-10-06T16:34:53.000Z",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": ".echelon/toolchain.json"
+        },
+        {
+          "type": "implementation",
+          "path": ".echelon/ros.json"
+        },
+        {
+          "type": "implementation",
+          "path": ".echelon/sde.json"
+        },
+        {
+          "type": "implementation",
+          "path": "conditor.json"
+        }
+      ],
+      "updatedAt": "2026-10-06T16:36:49.000Z",
       "telemetryExecutionIds": [
         "EXE-20261006T163454001Z-addcf904"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "713309b8961e027b53235cd3",
+        "recordedAt": "2026-10-06T16:36:48.000Z",
+        "executionId": "EXE-20261006T163454001Z-addcf904",
+        "repository": "echelon-registry",
+        "branch": "chore/praxis-3.7.2-final",
+        "commit": "e1209bd315aec7be7aceeaa08fa14b1785ae208e",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/praxis-3.7.2-final",
+        "remoteCommit": "e1209bd315aec7be7aceeaa08fa14b1785ae208e",
+        "summary": "toolchain upgrade applied, verified, pushed",
+        "nextAction": "complete, PR",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-06T16:36:49.000Z"
     }
   ]
 }
