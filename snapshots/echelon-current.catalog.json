@@ -71,6 +71,12 @@
       "sha256": "c032e3233c17c14b4b7c90896625a5e04b99ff27d5f26fa2230805af918970e8"
     },
     {
+      "systemId": "praxis",
+      "version": "3.7.2",
+      "manifest": "releases/praxis/3.7.2.release.json",
+      "sha256": "05b86ca8f09b0a95e82fc94b23778747d0cbae5a26433b16ab83a64a87c4a0f2"
+    },
+    {
       "systemId": "ordo",
       "version": "1.4.0",
       "manifest": "releases/ordo/1.4.0.release.json",
