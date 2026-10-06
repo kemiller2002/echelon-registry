@@ -86,10 +86,22 @@
       "sha256": "3d1ba4b65fe533615f0fbd50cc422912a9eab94f9a1223ebd450067df8655d34"
     },
     {
+      "systemId": "limen",
+      "version": "0.7.1",
+      "manifest": "releases/limen/0.7.1.release.json",
+      "sha256": "8343bff92bb9387c8702fdbf73b5fe84c5155854541906af903f9fc2cf487c61"
+    },
+    {
       "systemId": "forma",
       "version": "0.3.0",
       "manifest": "releases/forma/0.3.0.release.json",
       "sha256": "02bd9eae35cf3384a5f5a1913c50594407f6fd937df1ef4e9e697520e96af6f0"
+    },
+    {
+      "systemId": "forma",
+      "version": "0.4.1",
+      "manifest": "releases/forma/0.4.1.release.json",
+      "sha256": "a406c48bbff4576d363ab0f48888a9b1739466d63ec2471166988e85a3204c38"
     },
     {
       "systemId": "folio",

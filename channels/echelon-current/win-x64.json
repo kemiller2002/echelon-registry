@@ -11,7 +11,7 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "d38e84fe6d2b3161509b4a23b6711dbc5e99b689d0eea70a3c35f74492814b3c"
+    "sha256": "041eac6c2cb79cdb65512ec52afd7588f776e7ca2544eb867a5d957e4239b9ae"
   },
   "components": [
     {
@@ -202,29 +202,29 @@
       "systemId": "limen",
       "role": "project-binding",
       "required": true,
-      "version": "0.7.0",
+      "version": "0.7.1",
       "repository": "kemiller2002/limen",
-      "tag": "v0.7.0",
-      "commit": "a1b9a704af998fe486acba7b98e8b763b7dae0ce",
+      "tag": "v0.7.1",
+      "commit": "5cb87560c54b5514bbd94037ff56c6875a9eeb83",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "web-package",
       "executable": null,
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "3d1ba4b65fe533615f0fbd50cc422912a9eab94f9a1223ebd450067df8655d34"
+        "sha256": "8343bff92bb9387c8702fdbf73b5fe84c5155854541906af903f9fc2cf487c61"
       },
       "distribution": {
         "mechanism": "npm",
         "package": "@echelon-foundry/limen",
-        "url": "https://registry.npmjs.org/@echelon-foundry/limen/-/limen-0.7.0.tgz"
+        "url": "https://registry.npmjs.org/@echelon-foundry/limen/-/limen-0.7.1.tgz"
       },
       "artifacts": [
         {
-          "name": "echelon-foundry-limen-0.7.0.tgz",
+          "name": "echelon-foundry-limen-0.7.1.tgz",
           "purpose": "package",
           "platform": null,
-          "sha256": "da7dbe4905cf7003712726e6f049ff2aae9389e2699805f0d5725986c33e9825"
+          "sha256": "1b03900faa3f1db8e79046548bc504170fa7cd97edc952143a31ba9661de57bb"
         }
       ]
     },
@@ -232,35 +232,35 @@
       "systemId": "forma",
       "role": "project-binding",
       "required": true,
-      "version": "0.3.0",
+      "version": "0.4.1",
       "repository": "kemiller2002/forma",
-      "tag": "v0.3.0",
-      "commit": "7329f5ca343caf35c0f0089acc5654d6f8befd3e",
+      "tag": "v0.4.1",
+      "commit": "7a9b2ffc5ceee8eb96bf4015f0e62501fb8f78d9",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "web-package",
       "executable": null,
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "02bd9eae35cf3384a5f5a1913c50594407f6fd937df1ef4e9e697520e96af6f0"
+        "sha256": "a406c48bbff4576d363ab0f48888a9b1739466d63ec2471166988e85a3204c38"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": "@echelon-foundry/design-system",
-        "url": "https://github.com/kemiller2002/forma/releases/tag/v0.3.0"
+        "url": "https://github.com/kemiller2002/forma/releases/tag/v0.4.1"
       },
       "artifacts": [
         {
-          "name": "echelon-foundry-design-system-0.3.0.tgz",
+          "name": "echelon-foundry-design-system-0.4.1.tgz",
           "purpose": "package",
           "platform": null,
-          "sha256": "df0c161952d012972009f4fb97062a8c19c045820b6ef6c2b74a5314e2e78be5"
+          "sha256": "32685421a759bdacf48943c8906ba2b2f57ae0218ea0a3c4f4de5d780a72ed76"
         },
         {
           "name": "forma-marketing.sha256",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "15d5743618b00fe86154bcc7efd1488e8a49800b437bf81d99eb697e96a0c52d"
+          "sha256": "0101d551cbcc53539fe5bf692d962c57a7bf64c5e0db80b0fac65c0c9a2fb79f"
         }
       ]
     },
