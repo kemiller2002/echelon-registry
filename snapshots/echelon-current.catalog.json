@@ -22,6 +22,21 @@
       "manifest": "registry/systems-v2.json"
     },
     {
+      "id": "visual-engineering",
+      "repository": "kemiller2002/visual-engineering",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "communication-engineering",
+      "repository": "kemiller2002/communication-engineering",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "tutela",
+      "repository": "kemiller2002/tutela",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
       "id": "aegis",
       "repository": "kemiller2002/aegis",
       "manifest": "registry/systems-v2.json"
@@ -66,6 +81,24 @@
       "version": "0.2.0",
       "manifest": "releases/dokimos/0.2.0.release.json",
       "sha256": "1c75d80b9eb76a47239f2db7163c8e9e2f10e4ad303cd487284afd14c5a56737"
+    },
+    {
+      "systemId": "visual-engineering",
+      "version": "1.0.0",
+      "manifest": "releases/visual-engineering/1.0.0.release.json",
+      "sha256": "36635703cd975c2627ab18fec4c27a8b5129864e223af1fa3644a5d19bb82540"
+    },
+    {
+      "systemId": "communication-engineering",
+      "version": "1.0.0",
+      "manifest": "releases/communication-engineering/1.0.0.release.json",
+      "sha256": "d4b79053301635b6335caf81c2ca28b0721cca4a78967501be820a8eb7118296"
+    },
+    {
+      "systemId": "tutela",
+      "version": "0.1.0",
+      "manifest": "releases/tutela/0.1.0.release.json",
+      "sha256": "5db1e8a1f039ae88b2b9426c7cbeec1783b40e29d58b0dfd40dfa90104a3c4ba"
     },
     {
       "systemId": "aegis",
@@ -113,9 +146,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "9281ec1a6ac7da4f80d0922e5539e275b5bcc37f8e6c154d51e084811e2ccff5"
+      "sha256": "786a6336fbb4b940e5666ad45e0ed93d6e06c3aeafc1b35573c97343b0523156"
     }
   ]
 }
