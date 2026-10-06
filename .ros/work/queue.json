@@ -75,6 +75,27 @@
       },
       "source": "manual",
       "sourceReference": null
+    },
+    {
+      "id": "WI-0005",
+      "title": "Record Praxis 3.7.2 and select it in echelon-current",
+      "description": null,
+      "tags": [],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-06T15:26:45.642Z",
+      "updatedAt": "2026-10-06T15:28:49.553Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": "https://github.com/kemiller2002/praxis/releases/tag/v3.7.2"
     }
   ]
 }
