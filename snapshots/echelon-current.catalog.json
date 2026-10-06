@@ -113,6 +113,12 @@
       "sha256": "36635703cd975c2627ab18fec4c27a8b5129864e223af1fa3644a5d19bb82540"
     },
     {
+      "systemId": "visual-engineering",
+      "version": "1.0.1",
+      "manifest": "releases/visual-engineering/1.0.1.release.json",
+      "sha256": "23ab4fdb38d3fc7827519cc3c29df88c950211db1d53d114c53f36a662a0dbda"
+    },
+    {
       "systemId": "communication-engineering",
       "version": "1.0.0",
       "manifest": "releases/communication-engineering/1.0.0.release.json",
