@@ -37,10 +37,10 @@
         "registry"
       ],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-06T12:56:50.090Z",
-      "updatedAt": "2026-10-06T12:56:50.000Z",
+      "updatedAt": "2026-10-06T12:58:00.000Z",
       "createdBy": "anthropic/claude-code",
       "createdByActor": {
         "kind": "agent",
