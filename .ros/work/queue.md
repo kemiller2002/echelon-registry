@@ -24,4 +24,4 @@
 | WI-0019 | Record Limen 0.9.0 and limen-fsharp 0.9.0 (the routing module and EchelonFoundry.Limen.Routing) and select both in echelon-current 1.11.0 | complete |  | medium |
 | WI-0020 | Record Arca 0.3.0 (Core, GitHub and the new Limen bridge package) and select it in echelon-current 1.11.0 | complete | arca, release, channel | high |
 | WI-0021 | Record Forma 0.5.0 and select it in echelon-current 1.13.0 | complete | registry, forma | high |
-| WI-0022 | Record Praxis 3.9.1 (URL-addressable state foundations, Limen routes schema vendored) and select it in echelon-current 1.14.0 | ready | praxis, echelon-current | high |
+| WI-0022 | Record Praxis 3.9.1 (URL-addressable state foundations, Limen routes schema vendored) and select it in echelon-current 1.14.0 | complete | praxis, echelon-current | high |
