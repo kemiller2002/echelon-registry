@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-08T18:19:35.000Z",
+  "updatedAt": "2026-10-08T18:44:31.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -785,13 +785,47 @@
     {
       "id": "WI-0018",
       "type": "task",
-      "state": "active",
-      "semanticState": "active",
-      "evidence": [],
-      "updatedAt": "2026-10-08T18:19:35.000Z",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/limen-fsharp/0.8.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "tests",
+          "path": "channels/echelon-current/linux-x64.json"
+        }
+      ],
+      "updatedAt": "2026-10-08T18:44:31.000Z",
       "telemetryExecutionIds": [
         "EXE-20261008T181936337Z-ae5dad3b"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "210d51a91632d8887c3fbf95",
+        "recordedAt": "2026-10-08T18:44:25.000Z",
+        "executionId": "EXE-20261008T181936337Z-ae5dad3b",
+        "repository": "echelon-registry",
+        "branch": "chore/limen-0.8.0-registry",
+        "commit": "4f0068e51a1bd0254a64aed3f30a5ae354e1f04c",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry.git"
+        },
+        "remoteBranch": "chore/limen-0.8.0-registry",
+        "remoteCommit": "4f0068e51a1bd0254a64aed3f30a5ae354e1f04c",
+        "summary": "Recorded limen 0.8.0 and limen-fsharp 0.8.0, registered limen-fsharp, echelon-current 1.10.0 regenerated and validated; Conditor install, verify and upgrade --check proven in scratch consumers.",
+        "nextAction": "Open the PR and merge when every check is green.",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T18:44:31.000Z"
     }
   ]
 }

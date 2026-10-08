@@ -381,10 +381,10 @@
       "description": "Limen 0.8.0 (kemiller2002/limen v0.8.0) ships the IndexedDB store pack's limen.store version 2 on npm and three attested NuGet release assets (EchelonFoundry.Limen.Contract, .Guest, .Store). Conditor's NuGet feed installs only nuget-library releases, so, as with summa-contracts, the .nupkg files are recorded as a second system, limen-fsharp, at the same repository, tag and version, and selected as an optional project binding so Arca and Chrona can declare it (Limen WI-0166, LCP-080).",
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-08T18:19:31.000Z",
-      "updatedAt": "2026-10-08T18:19:35.000Z",
+      "updatedAt": "2026-10-08T18:44:31.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
