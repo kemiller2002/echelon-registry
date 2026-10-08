@@ -19,4 +19,4 @@
 | WI-0014 | Record Arca 0.2.0 and select it in echelon-current 1.6.0 | complete |  | medium |
 | WI-0015 | Record Fides 0.2.0 and select it in echelon-current 1.7.0 | complete | registry, fides | high |
 | WI-0016 | Record summa-contracts 0.1.0 (EchelonFoundry.Summa.Contracts, the Chrona-to-Summa contract), register summa-contracts, select it as an optional project binding in echelon-current 1.8.0 | complete | registry, summa, chrona | high |
-| WI-0017 | Record Arca 0.2.1 (multi-tab offline-queue fix) and select it in echelon-current 1.9.0 | ready | arca, release | high |
+| WI-0017 | Record Arca 0.2.1 (multi-tab offline-queue fix) and select it in echelon-current 1.9.0 | complete | arca, release | high |

@@ -360,10 +360,10 @@
         "release"
       ],
       "priority": "high",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-08T16:29:21.330Z",
-      "updatedAt": "2026-10-08T16:29:28.000Z",
+      "updatedAt": "2026-10-08T16:30:52.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
