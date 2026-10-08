@@ -2,8 +2,8 @@
   "schema": "echelon.resolved-release-set/v1",
   "profile": {
     "id": "echelon-current",
-    "version": "1.10.0",
-    "sha256": "1c8a0498db77968c64f3a207c50aa91371e5d6450c88f10de6dd09977e15e0a7"
+    "version": "1.11.0",
+    "sha256": "a115fed9396998179897036e3b0d6e79fa97c914429e96488909b9e47e7afe21"
   },
   "platform": "osx-arm64",
   "resolver": {
@@ -11,42 +11,42 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "328daf354db2ebe350c3f46a97cdd4f4150cf3296a959872dba9a6ca3b8a1966"
+    "sha256": "d89b0ca747d2ddd4612222bfc5da10c8dd1c3f49662404b8218c16d48bd9de91"
   },
   "components": [
     {
       "systemId": "praxis",
       "role": "host-tool",
       "required": true,
-      "version": "3.7.2",
+      "version": "3.9.0",
       "repository": "kemiller2002/praxis",
-      "tag": "v3.7.2",
-      "commit": "709bd98e533e783aef9fa78880570de5fb751520",
+      "tag": "v3.9.0",
+      "commit": "e7727b04b38cdb196964c84bd83a9c2d72cd8e3f",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "self-contained-native-cli",
       "executable": "praxis",
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "05b86ca8f09b0a95e82fc94b23778747d0cbae5a26433b16ab83a64a87c4a0f2"
+        "sha256": "2d87469c890e9fcc111452f8469cf71732897021c9a425f66575471a554509e4"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": null,
-        "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.7.2"
+        "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.9.0"
       },
       "artifacts": [
         {
           "name": "praxis-osx-arm64.tar.gz",
           "purpose": "executable",
           "platform": "osx-arm64",
-          "sha256": "3358cd99663c8e48af10825b9e527dbcf868d772e3c5442361af998270c90d09"
+          "sha256": "0ecc3d040f1b70ccdb9e9ecb7a24cee81459d6f4df29d50de01a12fa10796e0d"
         },
         {
           "name": "native-checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "745047814eb62c9245c534b7d96dec541a416514a87cc055b078fb231154633e"
+          "sha256": "5830b0ab3519045115f79f35214dd69baf264a60436b214f7b63a87d82fe47b5"
         }
       ]
     },

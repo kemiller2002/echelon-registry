@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 19,
+  "nextSeq": 20,
   "items": [
     {
       "id": "WI-0001",
@@ -391,6 +391,30 @@
         "id": "anthropic/claude-code",
         "provider": "anthropic",
         "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0019",
+      "title": "Record Praxis 3.9.0 (URL-addressable state foundations) and select it in echelon-current 1.11.0",
+      "description": "Praxis 3.9.0 (tag v3.9.0 at e7727b04, native-release.yml run 37842486119) adds the SAF-URL-1..10 deep-linking standard and the routing foundation check. Record it from the verified assets, add it to the catalog snapshot, and regenerate the channel.",
+      "tags": [
+        "praxis",
+        "echelon-current"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-08T21:20:40.091Z",
+      "updatedAt": "2026-10-08T21:20:49.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
         "runtime": "claude-code"
       },
       "source": "manual",
