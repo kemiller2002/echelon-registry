@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-08T21:33:40.000Z",
+  "updatedAt": "2026-10-08T21:40:37.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -879,10 +879,23 @@
     {
       "id": "WI-0020",
       "type": "task",
-      "state": "active",
-      "semanticState": "active",
-      "evidence": [],
-      "updatedAt": "2026-10-08T21:33:40.000Z",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/arca/0.3.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-08T21:40:37.000Z",
       "telemetryExecutionIds": [
         "EXE-20261008T213340706Z-22fd1475"
       ],
@@ -905,7 +918,8 @@
           "status": "verified",
           "mechanism": "git-remote-observation"
         }
-      }
+      },
+      "completedAt": "2026-10-08T21:40:37.000Z"
     }
   ]
 }

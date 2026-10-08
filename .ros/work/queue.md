@@ -22,4 +22,4 @@
 | WI-0017 | Record Arca 0.2.1 (multi-tab offline-queue fix) and select it in echelon-current 1.9.0 | complete | arca, release | high |
 | WI-0018 | Record Limen 0.8.0 and limen-fsharp 0.8.0 (the F# store packages), register limen-fsharp, select both in echelon-current 1.10.0 | complete |  | medium |
 | WI-0019 | Record Limen 0.9.0 and limen-fsharp 0.9.0 (the routing module and EchelonFoundry.Limen.Routing) and select both in echelon-current 1.11.0 | complete |  | medium |
-| WI-0020 | Record Arca 0.3.0 (Core, GitHub and the new Limen bridge package) and select it in echelon-current 1.11.0 | ready | arca, release, channel | high |
+| WI-0020 | Record Arca 0.3.0 (Core, GitHub and the new Limen bridge package) and select it in echelon-current 1.11.0 | complete | arca, release, channel | high |
