@@ -17,3 +17,4 @@
 | WI-0012 | Record Arca 0.1.0 (NuGet package family as attested GitHub release assets), register the arca system, select it as an optional project binding in echelon-current 1.4.0, and let the resolver select a NuGet package family (REG-REL-014) | complete | release, arca, channel, resolver | high |
 | WI-0013 | Record Fides 0.1.0, register fides, and select it as an optional project binding in echelon-current 1.5.0 | complete | registry, fides | high |
 | WI-0014 | Record Arca 0.2.0 and select it in echelon-current 1.6.0 | complete |  | medium |
+| WI-0015 | Record Fides 0.2.0 and select it in echelon-current 1.7.0 | ready | registry, fides | high |

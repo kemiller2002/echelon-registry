@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 15,
+  "nextSeq": 16,
   "items": [
     {
       "id": "WI-0001",
@@ -291,6 +291,30 @@
       "attachments": [],
       "createdAt": "2026-10-08T10:34:43.000Z",
       "updatedAt": "2026-10-08T10:34:52.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0015",
+      "title": "Record Fides 0.2.0 and select it in echelon-current 1.7.0",
+      "description": "Fides 0.2.0 (kemiller2002/fides, tag v0.2.0 at dea13cef62b0bd34e2d4295659b4965da87f2698) adds EchelonFoundry.Fides.Arca and the Aegis binding. Record the release, add it to the catalog snapshot, move echelon-current to 1.6.0 so fides resolves to 0.2.0, regenerate the channels.",
+      "tags": [
+        "registry",
+        "fides"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-08T11:00:36.000Z",
+      "updatedAt": "2026-10-08T11:00:52.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
