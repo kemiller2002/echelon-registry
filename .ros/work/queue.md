@@ -10,4 +10,4 @@
 | WI-0005 | Record Praxis 3.7.2 and select it in echelon-current | complete |  | high |
 | WI-0006 | Record Visual Engineering 1.0.1 and select it in echelon-current | complete |  | medium |
 | WI-0007 | Move echelon-registry to Praxis 3.7.2, Ordo 1.4.2; adopt Conditor | complete | praxis, ordo, toolchain, conditor | medium |
-| WI-0008 | Record Strata 0.1.0 and select it in echelon-current; let optional components skip platforms their release does not ship | ready |  | medium |
+| WI-0008 | Record Strata 0.1.0 and select it in echelon-current; let optional components skip platforms their release does not ship | complete |  | medium |
