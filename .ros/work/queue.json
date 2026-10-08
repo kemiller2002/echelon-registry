@@ -171,10 +171,10 @@
       "description": null,
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-08T06:46:01.071Z",
-      "updatedAt": "2026-10-08T06:46:09.212Z",
+      "updatedAt": "2026-10-08T06:48:50.282Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

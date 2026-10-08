@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-08T06:46:09.475Z",
+  "updatedAt": "2026-10-08T06:48:50.282Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -377,10 +377,23 @@
     {
       "id": "WI-0009",
       "type": "task",
-      "state": "active",
-      "semanticState": "active",
-      "evidence": [],
-      "updatedAt": "2026-10-08T06:46:09.475Z",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/ordo/1.5.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "snapshots/echelon-current.catalog.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-08T06:48:50.282Z",
       "telemetryExecutionIds": [
         "EXE-20261008T064609736Z-09c7af0b"
       ],
@@ -403,7 +416,9 @@
           "status": "verified",
           "mechanism": "git-remote-observation"
         }
-      }
+      },
+      "completedAt": "2026-10-08T06:48:50.282Z",
+      "conclusion": "Ordo 1.5.0 recorded and selected in echelon-current (profile 1.2.0 unchanged)"
     }
   ]
 }
