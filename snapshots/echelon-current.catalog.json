@@ -75,6 +75,11 @@
       "id": "summa-contracts",
       "repository": "kemiller2002/summa",
       "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "limen-fsharp",
+      "repository": "kemiller2002/limen",
+      "manifest": "registry/systems-v2.json"
     }
   ],
   "releases": [
@@ -245,14 +250,26 @@
       "version": "0.1.0",
       "manifest": "releases/summa-contracts/0.1.0.release.json",
       "sha256": "b952e4c667bc83aae23092397e8de3bcd75ecd2a6d59ef7d1047f2f5d094bcfe"
+    },
+    {
+      "systemId": "limen",
+      "version": "0.8.0",
+      "manifest": "releases/limen/0.8.0.release.json",
+      "sha256": "8ce5c4dee1630750cf8303310041bebefdce943adae2a97b14e429e007d7d302"
+    },
+    {
+      "systemId": "limen-fsharp",
+      "version": "0.8.0",
+      "manifest": "releases/limen-fsharp/0.8.0.release.json",
+      "sha256": "c59cf3e1ff8e4f4dd0eaa52db4488c7ad910b6ba05511121514eab0e79a77a2b"
     }
   ],
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.9.0",
+      "version": "1.10.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "c5350d0ba2eacb73263c91c5405c89ce5ef2828b5f9bfa57332b7e5a4ba5dc38"
+      "sha256": "1c8a0498db77968c64f3a207c50aa91371e5d6450c88f10de6dd09977e15e0a7"
     }
   ]
 }
