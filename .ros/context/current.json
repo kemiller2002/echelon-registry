@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-08T10:34:43.000Z",
+  "updatedAt": "2026-10-08T10:34:52.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -613,13 +613,43 @@
     {
       "id": "WI-0014",
       "type": "task",
-      "state": "active",
-      "semanticState": "active",
-      "evidence": [],
-      "updatedAt": "2026-10-08T10:34:43.000Z",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/arca/0.2.0.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "channels/echelon-current/channel.json"
+        }
+      ],
+      "updatedAt": "2026-10-08T10:34:52.000Z",
       "telemetryExecutionIds": [
         "EXE-20261008T103444435Z-df0a5c58"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "3f3f9de978f0698f766662b9",
+        "recordedAt": "2026-10-08T10:34:46.000Z",
+        "executionId": "EXE-20261008T103444435Z-df0a5c58",
+        "repository": "echelon-registry",
+        "branch": "main",
+        "commit": "61a81f0fd52461aabfe4e0d95d1b2e4348b47805",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "main",
+        "remoteCommit": "61a81f0fd52461aabfe4e0d95d1b2e4348b47805",
+        "summary": "Arca 0.2.0 recorded; echelon-current 1.6.0 channels regenerated and validated",
+        "nextAction": "None",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T10:34:52.000Z"
     }
   ]
 }
