@@ -1487,6 +1487,23 @@
         "name": "step",
         "mechanism": "step-lifecycle"
       }
+    },
+    {
+      "type": "step.completed",
+      "occurredAt": "2026-10-08T06:48:47.083Z",
+      "stepId": "STEP-20261008T064609876Z-d4515d1f",
+      "actor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": {
+        "type": "ros-cli",
+        "name": "step",
+        "mechanism": "step-lifecycle"
+      }
     }
   ],
   "repository": {
@@ -1535,12 +1552,12 @@
       "name": "Record Ordo 1.5.0 release and regenerate echelon-current",
       "description": null,
       "classification": [],
-      "status": "active",
+      "status": "completed",
       "plannedAt": "2026-10-08T06:46:09.876Z",
       "startedAt": "2026-10-08T06:46:09.876Z",
-      "completedAt": null,
-      "endedAt": null,
-      "updatedAt": "2026-10-08T06:46:09.876Z",
+      "completedAt": "2026-10-08T06:48:47.083Z",
+      "endedAt": "2026-10-08T06:48:47.083Z",
+      "updatedAt": "2026-10-08T06:48:47.083Z",
       "actor": {
         "kind": "agent",
         "id": "anthropic/claude-code",
@@ -1839,6 +1856,19 @@
           "from": null,
           "to": "active",
           "occurredAt": "2026-10-08T06:46:09.876Z",
+          "reason": null,
+          "actor": {
+            "kind": "agent",
+            "id": "anthropic/claude-code",
+            "provider": "anthropic",
+            "model": "unknown",
+            "runtime": "claude-code"
+          }
+        },
+        {
+          "from": "active",
+          "to": "completed",
+          "occurredAt": "2026-10-08T06:48:47.083Z",
           "reason": null,
           "actor": {
             "kind": "agent",
