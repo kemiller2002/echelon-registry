@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-08T22:16:21.573Z",
+  "updatedAt": "2026-10-08T22:29:37.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -961,6 +961,51 @@
         }
       },
       "completedAt": "2026-10-08T22:16:21.573Z"
+    },
+    {
+      "id": "WI-0022",
+      "type": "release",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/praxis/3.9.1.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-08T22:29:37.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T222846812Z-0187a41d"
+      ],
+      "latestCheckpoint": {
+        "id": "98b503e7c31b3c6d9c597399",
+        "recordedAt": "2026-10-08T22:29:36.000Z",
+        "executionId": "EXE-20261008T222846812Z-0187a41d",
+        "repository": "echelon-registry",
+        "branch": "chore/praxis-3.9.1",
+        "commit": "49b4832948b70c402023a569d1da78468f98c28b",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/praxis-3.9.1",
+        "remoteCommit": "49b4832948b70c402023a569d1da78468f98c28b",
+        "summary": "Praxis 3.9.1 recorded from verified assets; echelon-current 1.14.0 selects it; channel regenerated and validated",
+        "nextAction": "Merge on green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T22:29:37.000Z"
     }
   ]
 }
