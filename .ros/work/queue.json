@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 23,
+  "nextSeq": 24,
   "items": [
     {
       "id": "WI-0001",
@@ -479,6 +479,29 @@
       "attachments": [],
       "createdAt": "2026-10-08T22:28:45.885Z",
       "updatedAt": "2026-10-08T22:29:37.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0023",
+      "title": "Record Conditor 0.8.0 (Limen.Routing web scaffold; deep-linking Indy preset)",
+      "description": "Conditor 0.8.0 (tag v0.8.0 at 9185bba7, release.yml): Limen 0.9.0 qualified and default, fsharp-limen-web routes through EchelonFoundry.Limen.Routing with limen-fsharp >= 0.9.0, indy-init preset on Indy-init 2eee2d5. First Conditor release record; Conditor is not a component of echelon-current, so no profile or channel changes.",
+      "tags": [
+        "conditor"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T23:36:00.542Z",
+      "updatedAt": "2026-10-08T23:36:41.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

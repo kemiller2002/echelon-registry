@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-08T22:29:37.000Z",
+  "updatedAt": "2026-10-08T23:36:41.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -1006,6 +1006,47 @@
         }
       },
       "completedAt": "2026-10-08T22:29:37.000Z"
+    },
+    {
+      "id": "WI-0023",
+      "type": "release",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/conditor/0.8.0.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-08T23:36:41.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T233601616Z-98051a88"
+      ],
+      "latestCheckpoint": {
+        "id": "f71c2adfdf58378f912f5282",
+        "recordedAt": "2026-10-08T23:36:40.000Z",
+        "executionId": "EXE-20261008T233601616Z-98051a88",
+        "repository": "echelon-registry",
+        "branch": "chore/conditor-0.8.0",
+        "commit": "da1e2e937ad2ffc1e1273e45737c852e0c002ead",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/conditor-0.8.0",
+        "remoteCommit": "da1e2e937ad2ffc1e1273e45737c852e0c002ead",
+        "summary": "Conditor 0.8.0 recorded from its verified release manifest",
+        "nextAction": "Merge on green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T23:36:41.000Z"
     }
   ]
 }
