@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 16,
+  "nextSeq": 17,
   "items": [
     {
       "id": "WI-0001",
@@ -315,6 +315,30 @@
       "attachments": [],
       "createdAt": "2026-10-08T11:00:36.000Z",
       "updatedAt": "2026-10-08T11:02:11.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0016",
+      "title": "Record Forma 0.5.0 and select it in echelon-current 1.8.0",
+      "description": "Forma 0.5.0 (kemiller2002/forma, tag v0.5.0 at 8a5a5993421fbfd808582f735dedcf2adea07010) adds the static icon system and the icons/* package exports. Record the release, add it to the catalog snapshot, move echelon-current to 1.8.0 so forma resolves to 0.5.0, regenerate the channels.",
+      "tags": [
+        "registry",
+        "forma"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-08T14:23:59.423Z",
+      "updatedAt": "2026-10-08T14:23:59.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
