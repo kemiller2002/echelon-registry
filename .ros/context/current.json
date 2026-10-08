@@ -746,7 +746,27 @@
       "updatedAt": "2026-10-08T16:29:29.000Z",
       "telemetryExecutionIds": [
         "EXE-20261008T162929403Z-3747eb62"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "41204ce7ca85611a56873711",
+        "recordedAt": "2026-10-08T16:30:37.000Z",
+        "executionId": "EXE-20261008T162929403Z-3747eb62",
+        "repository": "echelon-registry",
+        "branch": "chore/arca-0.2.1-registry",
+        "commit": "906ee74ea152d5672c18aa354528aa59bd68c302",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/arca-0.2.1-registry",
+        "remoteCommit": "906ee74ea152d5672c18aa354528aa59bd68c302",
+        "summary": "Arca 0.2.1 recorded; echelon-current 1.9.0 regenerated; channel conformance passes",
+        "nextAction": "Merge the registry PR",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      }
     }
   ]
 }
