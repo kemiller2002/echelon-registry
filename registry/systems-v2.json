@@ -467,6 +467,19 @@
       ],
       "provides": [],
       "optionalConsumes": []
+    },
+    {
+      "id": "arca",
+      "displayName": "Arca",
+      "repository": "kemiller2002/arca",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "nuget-library"
+      ],
+      "provides": [],
+      "optionalConsumes": []
     }
   ],
   "plannedCapabilities": [
