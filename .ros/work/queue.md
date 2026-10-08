@@ -18,4 +18,4 @@
 | WI-0013 | Record Fides 0.1.0, register fides, and select it as an optional project binding in echelon-current 1.5.0 | complete | registry, fides | high |
 | WI-0014 | Record Arca 0.2.0 and select it in echelon-current 1.6.0 | complete |  | medium |
 | WI-0015 | Record Fides 0.2.0 and select it in echelon-current 1.7.0 | complete | registry, fides | high |
-| WI-0016 | Record summa-contracts 0.1.0 (EchelonFoundry.Summa.Contracts, the Chrona-to-Summa contract), register summa-contracts, select it as an optional project binding in echelon-current 1.8.0 | ready | registry, summa, chrona | high |
+| WI-0016 | Record summa-contracts 0.1.0 (EchelonFoundry.Summa.Contracts, the Chrona-to-Summa contract), register summa-contracts, select it as an optional project binding in echelon-current 1.8.0 | complete | registry, summa, chrona | high |
