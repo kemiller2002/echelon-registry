@@ -335,10 +335,10 @@
         "forma"
       ],
       "priority": "high",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-08T14:23:59.423Z",
-      "updatedAt": "2026-10-08T14:23:59.000Z",
+      "updatedAt": "2026-10-08T14:28:34.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
