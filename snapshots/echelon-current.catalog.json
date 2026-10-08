@@ -55,6 +55,11 @@
       "id": "folio",
       "repository": "kemiller2002/folio",
       "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "strata",
+      "repository": "kemiller2002/strata",
+      "manifest": "registry/systems-v2.json"
     }
   ],
   "releases": [
@@ -171,14 +176,20 @@
       "version": "0.3.0",
       "manifest": "releases/folio/0.3.0.release.json",
       "sha256": "a7c446787aafd6433932c247734249b4f01f8b78da4bbee3dcb6f743145f8d21"
+    },
+    {
+      "systemId": "strata",
+      "version": "0.1.0",
+      "manifest": "releases/strata/0.1.0.release.json",
+      "sha256": "e5e33a9738f1e3ca7855fdba4174e955ff03881b5e4c7738fd6b92080f277e96"
     }
   ],
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "786a6336fbb4b940e5666ad45e0ed93d6e06c3aeafc1b35573c97343b0523156"
+      "sha256": "703de3a300be873ff8a3eb09a290d46f1c1ebe336d45471d325927df4eae4891"
     }
   ]
 }

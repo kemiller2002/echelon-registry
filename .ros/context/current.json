@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-06T16:36:49.000Z",
+  "updatedAt": "2026-10-08T01:43:26.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -328,6 +328,51 @@
         }
       },
       "completedAt": "2026-10-06T16:36:49.000Z"
+    },
+    {
+      "id": "WI-0008",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/strata/0.1.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "tools/resolve-profile.fsx"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-08T01:43:26.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T013251418Z-331f1338"
+      ],
+      "latestCheckpoint": {
+        "id": "5b6b2b564aaa713b7d056e41",
+        "recordedAt": "2026-10-08T01:43:25.000Z",
+        "executionId": "EXE-20261008T013251418Z-331f1338",
+        "repository": "echelon-registry",
+        "branch": "registry/strata-0.1.0",
+        "commit": "a95fc3069254fdffc5adc90268fcbc8f1f46af6e",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "registry/strata-0.1.0",
+        "remoteCommit": "a95fc3069254fdffc5adc90268fcbc8f1f46af6e",
+        "summary": "Strata 0.1.0 recorded and selected (optional) in echelon-current 1.2.0; conformance passes locally; pushed",
+        "nextAction": "record completion, PR, merge when green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T01:43:26.000Z"
     }
   ]
 }
