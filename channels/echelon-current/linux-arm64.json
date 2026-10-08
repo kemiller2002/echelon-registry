@@ -2,8 +2,8 @@
   "schema": "echelon.resolved-release-set/v1",
   "profile": {
     "id": "echelon-current",
-    "version": "1.4.0",
-    "sha256": "8c1850584f19a9560b51375108a41bdb78b726e1507e4bbfe6103de6ec4dc6b8"
+    "version": "1.5.0",
+    "sha256": "610fed14a775720409818ca1a405c35b8117e3a1707d125de66af1e727ea5080"
   },
   "platform": "linux-arm64",
   "resolver": {
@@ -11,7 +11,7 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "f1d0d5fca6214a4ad4417859cd0203d43e54a1a3c76caf9e418aa10e6eb8d981"
+    "sha256": "6673dacd75fb95f17823510979b711fe7d5fd5a5f16e9c790e4c566dff6e441e"
   },
   "components": [
     {
@@ -441,6 +441,54 @@
           "purpose": "checksums",
           "platform": null,
           "sha256": "aebffe39da9c5637f1c67da8638cf6b2ad74129887c06c0b11c38d9acf22d400"
+        }
+      ]
+    },
+    {
+      "systemId": "fides",
+      "role": "project-binding",
+      "required": false,
+      "version": "0.1.0",
+      "repository": "kemiller2002/fides",
+      "tag": "v0.1.0",
+      "commit": "d2bd908d3db1cdfc48ddb163594a56fcd29404e0",
+      "releaseStage": "stable",
+      "lifecycleState": "active",
+      "distributionClass": "nuget-library",
+      "executable": null,
+      "releaseManifest": {
+        "schema": "echelon.release/v2",
+        "sha256": "79d80d2aa43769441683a22de916aa8284944f98edcf23eae9844a86cf1b8021"
+      },
+      "distribution": {
+        "mechanism": "github-release",
+        "package": null,
+        "url": "https://github.com/kemiller2002/fides/releases/tag/v0.1.0"
+      },
+      "artifacts": [
+        {
+          "name": "EchelonFoundry.Fides.0.1.0.nupkg",
+          "purpose": "package",
+          "platform": null,
+          "sha256": "39919ad99f8180670a40b6571d7188c992b05a0072f14ec07b0db6266ddcda88"
+        },
+        {
+          "name": "EchelonFoundry.Fides.Client.0.1.0.nupkg",
+          "purpose": "package",
+          "platform": null,
+          "sha256": "90a1dd1404d11cebb7a6a822f5352356c10985e1cf3c415ac2b1547ccb0904ba"
+        },
+        {
+          "name": "EchelonFoundry.Fides.Hosting.0.1.0.nupkg",
+          "purpose": "package",
+          "platform": null,
+          "sha256": "07598d34003aab1fb13d8f375c8500894c2507c5e353ac94495113ac2897c359"
+        },
+        {
+          "name": "checksums.txt",
+          "purpose": "checksums",
+          "platform": null,
+          "sha256": "15ae52891c40cfae0b159d2ef8880604f8ea910fd6b299b2225e582a97c69a0e"
         }
       ]
     }
