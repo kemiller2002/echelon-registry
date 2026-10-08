@@ -18,4 +18,9 @@
 | WI-0013 | Record Fides 0.1.0, register fides, and select it as an optional project binding in echelon-current 1.5.0 | complete | registry, fides | high |
 | WI-0014 | Record Arca 0.2.0 and select it in echelon-current 1.6.0 | complete |  | medium |
 | WI-0015 | Record Fides 0.2.0 and select it in echelon-current 1.7.0 | complete | registry, fides | high |
-| WI-0016 | Record Forma 0.5.0 and select it in echelon-current 1.8.0 | complete | registry, forma | high |
+| WI-0016 | Record summa-contracts 0.1.0 (EchelonFoundry.Summa.Contracts, the Chrona-to-Summa contract), register summa-contracts, select it as an optional project binding in echelon-current 1.8.0 | complete | registry, summa, chrona | high |
+| WI-0017 | Record Arca 0.2.1 (multi-tab offline-queue fix) and select it in echelon-current 1.9.0 | complete | arca, release | high |
+| WI-0018 | Record Limen 0.8.0 and limen-fsharp 0.8.0 (the F# store packages), register limen-fsharp, select both in echelon-current 1.10.0 | complete |  | medium |
+| WI-0019 | Record Limen 0.9.0 and limen-fsharp 0.9.0 (the routing module and EchelonFoundry.Limen.Routing) and select both in echelon-current 1.11.0 | complete |  | medium |
+| WI-0020 | Record Arca 0.3.0 (Core, GitHub and the new Limen bridge package) and select it in echelon-current 1.11.0 | complete | arca, release, channel | high |
+| WI-0021 | Record Forma 0.5.0 and select it in echelon-current 1.13.0 | ready | registry, forma | high |

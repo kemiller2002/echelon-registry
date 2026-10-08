@@ -1,7 +1,7 @@
 {
   "schema": "echelon.profile/v1",
   "id": "echelon-current",
-  "version": "1.8.0",
+  "version": "1.13.0",
   "description": "Moving stable channel for the current Registry-approved Echelon repository environment. Version ranges select the newest compatible active stable releases from the channel catalog snapshot.",
   "supportedPlatforms": [
     "linux-x64",
@@ -115,7 +115,7 @@
       "role": "project-binding",
       "required": false,
       "version": {
-        "range": ">=0.2.0 <1.0.0"
+        "range": ">=0.3.0 <1.0.0"
       }
     },
     {
@@ -124,6 +124,22 @@
       "required": false,
       "version": {
         "range": ">=0.1.0 <1.0.0"
+      }
+    },
+    {
+      "systemId": "summa-contracts",
+      "role": "project-binding",
+      "required": false,
+      "version": {
+        "range": ">=0.1.0 <1.0.0"
+      }
+    },
+    {
+      "systemId": "limen-fsharp",
+      "role": "project-binding",
+      "required": false,
+      "version": {
+        "range": ">=0.8.0 <1.0.0"
       }
     }
   ]

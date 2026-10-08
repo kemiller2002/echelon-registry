@@ -1,0 +1,52 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "limen-fsharp",
+  "version": "0.9.0",
+  "repository": "kemiller2002/limen",
+  "tag": "v0.9.0",
+  "commit": "96eb75fb5c5aeea41f59e7476d76e143dc35a759",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "nuget-library",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "url": "https://github.com/kemiller2002/limen/releases/tag/v0.9.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "EchelonFoundry.Limen.Contract.0.9.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "1db1ec2c19f45331b31fc0d13a876259e12efa4de7509f6ee4939567984c2817"
+    },
+    {
+      "name": "EchelonFoundry.Limen.Guest.0.9.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "8d626c5c63d4695b866bcddc7893c7661fc495f307519d597f0e7199196be388"
+    },
+    {
+      "name": "EchelonFoundry.Limen.Routing.0.9.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "278e3f221cd98aaec3bf0b3069bc222a1554eababaf66931e8baa6c2fb7561a0"
+    },
+    {
+      "name": "EchelonFoundry.Limen.Store.0.9.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "ce71b5bbdc38704615c212b4a5955467598ed97c8d9982a9b8bac0b6b4b7bc8d"
+    },
+    {
+      "name": "checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "91983b9587c4fdafc0aef079db8690ae0f31d9cde025fff0483b1c4515f44e35"
+    }
+  ]
+}

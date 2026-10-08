@@ -493,6 +493,32 @@
       ],
       "provides": [],
       "optionalConsumes": []
+    },
+    {
+      "id": "summa-contracts",
+      "displayName": "Summa Contracts",
+      "repository": "kemiller2002/summa",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "nuget-library"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "limen-fsharp",
+      "displayName": "Limen F# packages",
+      "repository": "kemiller2002/limen",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "nuget-library"
+      ],
+      "provides": [],
+      "optionalConsumes": []
     }
   ],
   "plannedCapabilities": [
