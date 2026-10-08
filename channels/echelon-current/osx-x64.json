@@ -11,7 +11,7 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "3dc32deea23082318e4e7b9c4d5e94dcdc297bd337234401aed107f95bc4565f"
+    "sha256": "bffd0e5a542400cebbee4a15f8d33c9d27db3088ef1c4d0e6676a834d1f50ed3"
   },
   "components": [
     {
@@ -54,35 +54,35 @@
       "systemId": "ordo",
       "role": "host-tool",
       "required": true,
-      "version": "1.4.2",
+      "version": "1.5.0",
       "repository": "kemiller2002/ordo",
-      "tag": "v1.4.2",
-      "commit": "6637b22f67d7e972d7b209ba649f476a77af996b",
+      "tag": "v1.5.0",
+      "commit": "869bc4840382a2b1bbeedad4a06dba6c15067d52",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "self-contained-native-cli",
       "executable": "ordo",
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "cfb7c8064c000f6054782cf6aaccd091ae51b4af2a3bc6470613be3a66626db0"
+        "sha256": "077bead5ca780ee638ce836e320e1650c16d1361e558aa6a9e1f2634035134be"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": null,
-        "url": "https://github.com/kemiller2002/ordo/releases/tag/v1.4.2"
+        "url": "https://github.com/kemiller2002/ordo/releases/tag/v1.5.0"
       },
       "artifacts": [
         {
           "name": "ordo-osx-x64.tar.gz",
           "purpose": "executable",
           "platform": "osx-x64",
-          "sha256": "7b6aebc354cf103825096eea191dcbad487b3d7a82235dad5b8048a2eee24df3"
+          "sha256": "02518d4f95ee6b3a6d42fa4a0889b1d1172f438a938c9f955e68f0f2e02cd977"
         },
         {
           "name": "native-checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "9bbed2363fb2754f841162f505fd4a8330d33f88d4cd9695cd3bdd12ec119071"
+          "sha256": "e9057525fa71da5411272c973ab4a4313f1397b217589c5c7fa7d0646d247a62"
         }
       ]
     },
