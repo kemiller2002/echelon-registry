@@ -1,0 +1,58 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "fides",
+  "version": "0.2.0",
+  "repository": "kemiller2002/fides",
+  "tag": "v0.2.0",
+  "commit": "dea13cef62b0bd34e2d4295659b4965da87f2698",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "nuget-library",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "url": "https://github.com/kemiller2002/fides/releases/tag/v0.2.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "EchelonFoundry.Fides.0.2.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "ee557e9285894d898f6a727b8ced968fc08c6f73bc8b3cc86bc5f5c669a31863"
+    },
+    {
+      "name": "EchelonFoundry.Fides.Arca.0.2.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "c7c8df26a47d49f0385d39f1614d03837671e7b6c071baa399cab910bb42b84b"
+    },
+    {
+      "name": "EchelonFoundry.Fides.Client.0.2.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "b65efb1357cd10fcf2d9a2e2080e24cb2f488c470ba8802e6d4a578628936e95"
+    },
+    {
+      "name": "EchelonFoundry.Fides.Hosting.0.2.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "53f8126e8b74002d71bd2ae539640951c5a103bcf2c6e17d33a527d75128f944"
+    },
+    {
+      "name": "checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "a32e49303d650afa60cd51f860732216afb633c103f0c4ce0cbf76c93592378d"
+    },
+    {
+      "name": "fides-exchange-linux-arm64.zip",
+      "purpose": "application",
+      "platform": "linux-arm64",
+      "sha256": "53285f23322210d3ccd841dabfbaf236503a13b84639134727e1f2d869918d73"
+    }
+  ]
+}

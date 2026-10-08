@@ -2,8 +2,8 @@
   "schema": "echelon.resolved-release-set/v1",
   "profile": {
     "id": "echelon-current",
-    "version": "1.6.0",
-    "sha256": "f98b7f87bc1d1df6de18c41ae0249712dda9cc2ccaf6835832108eeef57262fa"
+    "version": "1.7.0",
+    "sha256": "fa152de99edcf8bbc25372673a1fa05adfc9ad67e0f2fb0c860eefe1313719a6"
   },
   "platform": "linux-arm64",
   "resolver": {
@@ -11,7 +11,7 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "0aa17413830994c49aafde522d0a54e00dace610ce0dd0fba2eaceeee35a4686"
+    "sha256": "e2f5d6787046a5b79adfa9bd0698fa4506f4781fcb6789edc70ab71be08118be"
   },
   "components": [
     {
@@ -448,47 +448,53 @@
       "systemId": "fides",
       "role": "project-binding",
       "required": false,
-      "version": "0.1.0",
+      "version": "0.2.0",
       "repository": "kemiller2002/fides",
-      "tag": "v0.1.0",
-      "commit": "d2bd908d3db1cdfc48ddb163594a56fcd29404e0",
+      "tag": "v0.2.0",
+      "commit": "dea13cef62b0bd34e2d4295659b4965da87f2698",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "nuget-library",
       "executable": null,
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "79d80d2aa43769441683a22de916aa8284944f98edcf23eae9844a86cf1b8021"
+        "sha256": "0ef2204d8ec298e6d930ce11d66629794486a5e31367959d7f9dbd39468b6a2a"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": null,
-        "url": "https://github.com/kemiller2002/fides/releases/tag/v0.1.0"
+        "url": "https://github.com/kemiller2002/fides/releases/tag/v0.2.0"
       },
       "artifacts": [
         {
-          "name": "EchelonFoundry.Fides.0.1.0.nupkg",
+          "name": "EchelonFoundry.Fides.0.2.0.nupkg",
           "purpose": "package",
           "platform": null,
-          "sha256": "39919ad99f8180670a40b6571d7188c992b05a0072f14ec07b0db6266ddcda88"
+          "sha256": "ee557e9285894d898f6a727b8ced968fc08c6f73bc8b3cc86bc5f5c669a31863"
         },
         {
-          "name": "EchelonFoundry.Fides.Client.0.1.0.nupkg",
+          "name": "EchelonFoundry.Fides.Arca.0.2.0.nupkg",
           "purpose": "package",
           "platform": null,
-          "sha256": "90a1dd1404d11cebb7a6a822f5352356c10985e1cf3c415ac2b1547ccb0904ba"
+          "sha256": "c7c8df26a47d49f0385d39f1614d03837671e7b6c071baa399cab910bb42b84b"
         },
         {
-          "name": "EchelonFoundry.Fides.Hosting.0.1.0.nupkg",
+          "name": "EchelonFoundry.Fides.Client.0.2.0.nupkg",
           "purpose": "package",
           "platform": null,
-          "sha256": "07598d34003aab1fb13d8f375c8500894c2507c5e353ac94495113ac2897c359"
+          "sha256": "b65efb1357cd10fcf2d9a2e2080e24cb2f488c470ba8802e6d4a578628936e95"
+        },
+        {
+          "name": "EchelonFoundry.Fides.Hosting.0.2.0.nupkg",
+          "purpose": "package",
+          "platform": null,
+          "sha256": "53f8126e8b74002d71bd2ae539640951c5a103bcf2c6e17d33a527d75128f944"
         },
         {
           "name": "checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "15ae52891c40cfae0b159d2ef8880604f8ea910fd6b299b2225e582a97c69a0e"
+          "sha256": "a32e49303d650afa60cd51f860732216afb633c103f0c4ce0cbf76c93592378d"
         }
       ]
     }

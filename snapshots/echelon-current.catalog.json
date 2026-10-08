@@ -222,14 +222,20 @@
       "version": "0.1.0",
       "manifest": "releases/fides/0.1.0.release.json",
       "sha256": "79d80d2aa43769441683a22de916aa8284944f98edcf23eae9844a86cf1b8021"
+    },
+    {
+      "systemId": "fides",
+      "version": "0.2.0",
+      "manifest": "releases/fides/0.2.0.release.json",
+      "sha256": "0ef2204d8ec298e6d930ce11d66629794486a5e31367959d7f9dbd39468b6a2a"
     }
   ],
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.6.0",
+      "version": "1.7.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "f98b7f87bc1d1df6de18c41ae0249712dda9cc2ccaf6835832108eeef57262fa"
+      "sha256": "fa152de99edcf8bbc25372673a1fa05adfc9ad67e0f2fb0c860eefe1313719a6"
     }
   ]
 }
