@@ -100,6 +100,12 @@
       "sha256": "cfb7c8064c000f6054782cf6aaccd091ae51b4af2a3bc6470613be3a66626db0"
     },
     {
+      "systemId": "ordo",
+      "version": "1.5.0",
+      "manifest": "releases/ordo/1.5.0.release.json",
+      "sha256": "077bead5ca780ee638ce836e320e1650c16d1361e558aa6a9e1f2634035134be"
+    },
+    {
       "systemId": "percepta",
       "version": "0.1.0",
       "manifest": "releases/percepta/0.1.0.release.json",
