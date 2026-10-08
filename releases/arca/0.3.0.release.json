@@ -1,0 +1,46 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "arca",
+  "version": "0.3.0",
+  "repository": "kemiller2002/arca",
+  "tag": "v0.3.0",
+  "commit": "6f3acc7b18f7a3810a2a0c7d591842310e96514e",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "nuget-library",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "url": "https://github.com/kemiller2002/arca/releases/tag/v0.3.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "EchelonFoundry.Arca.Core.0.3.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "7c33d539219de08e404b6b83d148fc5398acdd502818b37eb0c6bc7a640c9601"
+    },
+    {
+      "name": "EchelonFoundry.Arca.GitHub.0.3.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "778290b4eb76dc33453003b0fc0995cce84fa57e6a6a66d1d2b2bdaee68bdba0"
+    },
+    {
+      "name": "EchelonFoundry.Arca.Limen.0.3.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "75d4610922999b0ddd94dc415631f7f5c8435edc6a1aa9993a8f9bb0575138f9"
+    },
+    {
+      "name": "checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "c9cbda29cbf4f1a222b49e7ab031fffba89362e490c0845ee20c77807af418a5"
+    }
+  ]
+}
