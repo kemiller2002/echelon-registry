@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 17,
+  "nextSeq": 18,
   "items": [
     {
       "id": "WI-0001",
@@ -340,6 +340,30 @@
       "attachments": [],
       "createdAt": "2026-10-08T15:21:01.000Z",
       "updatedAt": "2026-10-08T15:23:23.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0017",
+      "title": "Record Arca 0.2.1 (multi-tab offline-queue fix) and select it in echelon-current 1.9.0",
+      "description": null,
+      "tags": [
+        "arca",
+        "release"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T16:29:21.330Z",
+      "updatedAt": "2026-10-08T16:30:52.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
