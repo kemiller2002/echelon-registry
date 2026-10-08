@@ -480,6 +480,19 @@
       ],
       "provides": [],
       "optionalConsumes": []
+    },
+    {
+      "id": "fides",
+      "displayName": "Fides",
+      "repository": "kemiller2002/fides",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "nuget-library"
+      ],
+      "provides": [],
+      "optionalConsumes": []
     }
   ],
   "plannedCapabilities": [

@@ -15,3 +15,4 @@
 | WI-0010 | Move echelon-registry to Ordo 1.5.0 via echelon-current 1.2.0 (conditor upgrade --current) | complete |  | medium |
 | WI-0011 | Record Strata 0.1.1 and select it in echelon-current | complete | release, strata | high |
 | WI-0012 | Record Arca 0.1.0 (NuGet package family as attested GitHub release assets), register the arca system, select it as an optional project binding in echelon-current 1.4.0, and let the resolver select a NuGet package family (REG-REL-014) | complete | release, arca, channel, resolver | high |
+| WI-0013 | Record Fides 0.1.0, register fides, and select it as an optional project binding in echelon-current 1.5.0 | ready | registry, fides | high |

@@ -65,6 +65,11 @@
       "id": "arca",
       "repository": "kemiller2002/arca",
       "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "fides",
+      "repository": "kemiller2002/fides",
+      "manifest": "registry/systems-v2.json"
     }
   ],
   "releases": [
@@ -205,14 +210,20 @@
       "version": "0.1.0",
       "manifest": "releases/arca/0.1.0.release.json",
       "sha256": "5cf084ee76ad2e4897796d5569212b0e7c1aaba8a28a8e24ce45f78687fe65a8"
+    },
+    {
+      "systemId": "fides",
+      "version": "0.1.0",
+      "manifest": "releases/fides/0.1.0.release.json",
+      "sha256": "79d80d2aa43769441683a22de916aa8284944f98edcf23eae9844a86cf1b8021"
     }
   ],
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.4.0",
+      "version": "1.5.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "8c1850584f19a9560b51375108a41bdb78b726e1507e4bbfe6103de6ec4dc6b8"
+      "sha256": "610fed14a775720409818ca1a405c35b8117e3a1707d125de66af1e727ea5080"
     }
   ]
 }

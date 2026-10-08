@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 13,
+  "nextSeq": 14,
   "items": [
     {
       "id": "WI-0001",
@@ -246,6 +246,30 @@
       "attachments": [],
       "createdAt": "2026-10-08T09:38:57.000Z",
       "updatedAt": "2026-10-08T09:40:01.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0013",
+      "title": "Record Fides 0.1.0, register fides, and select it as an optional project binding in echelon-current 1.5.0",
+      "description": "Fides 0.1.0 (kemiller2002/fides, tag v0.1.0 at d2bd908d3db1cdfc48ddb163594a56fcd29404e0) ships EchelonFoundry.Fides, .Fides.Client and .Fides.Hosting plus the AWS Lambda package as Sigstore-attested GitHub release assets. Record the release, the fides system, and offer fides as an optional project binding the way arca 0.1.0 was (WI-0012 here).",
+      "tags": [
+        "registry",
+        "fides"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-08T10:20:54.000Z",
+      "updatedAt": "2026-10-08T10:20:59.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
