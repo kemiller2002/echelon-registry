@@ -70,6 +70,11 @@
       "id": "fides",
       "repository": "kemiller2002/fides",
       "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "summa-contracts",
+      "repository": "kemiller2002/summa",
+      "manifest": "registry/systems-v2.json"
     }
   ],
   "releases": [
@@ -228,14 +233,20 @@
       "version": "0.2.0",
       "manifest": "releases/fides/0.2.0.release.json",
       "sha256": "0ef2204d8ec298e6d930ce11d66629794486a5e31367959d7f9dbd39468b6a2a"
+    },
+    {
+      "systemId": "summa-contracts",
+      "version": "0.1.0",
+      "manifest": "releases/summa-contracts/0.1.0.release.json",
+      "sha256": "b952e4c667bc83aae23092397e8de3bcd75ecd2a6d59ef7d1047f2f5d094bcfe"
     }
   ],
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "fa152de99edcf8bbc25372673a1fa05adfc9ad67e0f2fb0c860eefe1313719a6"
+      "sha256": "dae7b241ce1cd4d965fae8a2dd2f4979a428ce5881620ccb7f12c2289f837fad"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 16,
+  "nextSeq": 17,
   "items": [
     {
       "id": "WI-0001",
@@ -315,6 +315,31 @@
       "attachments": [],
       "createdAt": "2026-10-08T11:00:36.000Z",
       "updatedAt": "2026-10-08T11:02:11.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0016",
+      "title": "Record summa-contracts 0.1.0 (EchelonFoundry.Summa.Contracts, the Chrona-to-Summa contract), register summa-contracts, select it as an optional project binding in echelon-current 1.8.0",
+      "description": "Summa released contracts-v0.1.0 (kemiller2002/summa, commit e888cfb, run 37799394989) with the release-contract manifest and Sigstore attestations. Record it, register the nuget-library system summa-contracts, and add it to echelon-current as an optional project binding so Chrona can declare it in conditor.json (Chrona WI-0037, Summa WI-0017).",
+      "tags": [
+        "registry",
+        "summa",
+        "chrona"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T15:21:01.000Z",
+      "updatedAt": "2026-10-08T15:23:23.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
