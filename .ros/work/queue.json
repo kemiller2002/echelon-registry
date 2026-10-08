@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 18,
+  "nextSeq": 19,
   "items": [
     {
       "id": "WI-0001",
@@ -364,6 +364,27 @@
       "attachments": [],
       "createdAt": "2026-10-08T16:29:21.330Z",
       "updatedAt": "2026-10-08T16:30:52.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0018",
+      "title": "Record Limen 0.8.0 and limen-fsharp 0.8.0 (the F# store packages), register limen-fsharp, select both in echelon-current 1.10.0",
+      "description": "Limen 0.8.0 (kemiller2002/limen v0.8.0) ships the IndexedDB store pack's limen.store version 2 on npm and three attested NuGet release assets (EchelonFoundry.Limen.Contract, .Guest, .Store). Conditor's NuGet feed installs only nuget-library releases, so, as with summa-contracts, the .nupkg files are recorded as a second system, limen-fsharp, at the same repository, tag and version, and selected as an optional project binding so Arca and Chrona can declare it (Limen WI-0166, LCP-080).",
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T18:19:31.000Z",
+      "updatedAt": "2026-10-08T18:44:31.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

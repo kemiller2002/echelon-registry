@@ -506,6 +506,19 @@
       ],
       "provides": [],
       "optionalConsumes": []
+    },
+    {
+      "id": "limen-fsharp",
+      "displayName": "Limen F# packages",
+      "repository": "kemiller2002/limen",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "nuget-library"
+      ],
+      "provides": [],
+      "optionalConsumes": []
     }
   ],
   "plannedCapabilities": [

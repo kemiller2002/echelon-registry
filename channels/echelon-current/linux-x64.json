@@ -2,8 +2,8 @@
   "schema": "echelon.resolved-release-set/v1",
   "profile": {
     "id": "echelon-current",
-    "version": "1.9.0",
-    "sha256": "c5350d0ba2eacb73263c91c5405c89ce5ef2828b5f9bfa57332b7e5a4ba5dc38"
+    "version": "1.10.0",
+    "sha256": "1c8a0498db77968c64f3a207c50aa91371e5d6450c88f10de6dd09977e15e0a7"
   },
   "platform": "linux-x64",
   "resolver": {
@@ -11,7 +11,7 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "9fdf32b111151f7384882b45eda25598b8b3c040aa84d5e4d52281745804f524"
+    "sha256": "328daf354db2ebe350c3f46a97cdd4f4150cf3296a959872dba9a6ca3b8a1966"
   },
   "components": [
     {
@@ -304,29 +304,29 @@
       "systemId": "limen",
       "role": "project-binding",
       "required": true,
-      "version": "0.7.1",
+      "version": "0.8.0",
       "repository": "kemiller2002/limen",
-      "tag": "v0.7.1",
-      "commit": "5cb87560c54b5514bbd94037ff56c6875a9eeb83",
+      "tag": "v0.8.0",
+      "commit": "509ef4f53c06fd6eed103170934cb58ec2b21bfc",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "web-package",
       "executable": null,
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "8343bff92bb9387c8702fdbf73b5fe84c5155854541906af903f9fc2cf487c61"
+        "sha256": "8ce5c4dee1630750cf8303310041bebefdce943adae2a97b14e429e007d7d302"
       },
       "distribution": {
         "mechanism": "npm",
         "package": "@echelon-foundry/limen",
-        "url": "https://registry.npmjs.org/@echelon-foundry/limen/-/limen-0.7.1.tgz"
+        "url": "https://registry.npmjs.org/@echelon-foundry/limen/-/limen-0.8.0.tgz"
       },
       "artifacts": [
         {
-          "name": "echelon-foundry-limen-0.7.1.tgz",
+          "name": "echelon-foundry-limen-0.8.0.tgz",
           "purpose": "package",
           "platform": null,
-          "sha256": "1b03900faa3f1db8e79046548bc504170fa7cd97edc952143a31ba9661de57bb"
+          "sha256": "c3225894b75a9916fca11e85a52625288edf60b08a7de2d49b8b76bc01f8fec7"
         }
       ]
     },
@@ -571,6 +571,54 @@
           "purpose": "checksums",
           "platform": null,
           "sha256": "526dc765ac6736de9043a0cc08b4f9932b4b79518c4bff0b049d5366df7f6776"
+        }
+      ]
+    },
+    {
+      "systemId": "limen-fsharp",
+      "role": "project-binding",
+      "required": false,
+      "version": "0.8.0",
+      "repository": "kemiller2002/limen",
+      "tag": "v0.8.0",
+      "commit": "509ef4f53c06fd6eed103170934cb58ec2b21bfc",
+      "releaseStage": "stable",
+      "lifecycleState": "active",
+      "distributionClass": "nuget-library",
+      "executable": null,
+      "releaseManifest": {
+        "schema": "echelon.release/v2",
+        "sha256": "c59cf3e1ff8e4f4dd0eaa52db4488c7ad910b6ba05511121514eab0e79a77a2b"
+      },
+      "distribution": {
+        "mechanism": "github-release",
+        "package": null,
+        "url": "https://github.com/kemiller2002/limen/releases/tag/v0.8.0"
+      },
+      "artifacts": [
+        {
+          "name": "EchelonFoundry.Limen.Contract.0.8.0.nupkg",
+          "purpose": "package",
+          "platform": null,
+          "sha256": "1fc4d5ed688ed7f835a62083bab01399e5adc6db0d837673ef3b88be9efca0e2"
+        },
+        {
+          "name": "EchelonFoundry.Limen.Guest.0.8.0.nupkg",
+          "purpose": "package",
+          "platform": null,
+          "sha256": "53abdf3f7b0e04c152b4d584080d615df3746d4c616bc4259b12254ae537bd4e"
+        },
+        {
+          "name": "EchelonFoundry.Limen.Store.0.8.0.nupkg",
+          "purpose": "package",
+          "platform": null,
+          "sha256": "0dae1d77b84c2ececab9f1f3f1198a937289d2fde52b1a96889f4a41df862c92"
+        },
+        {
+          "name": "checksums.txt",
+          "purpose": "checksums",
+          "platform": null,
+          "sha256": "45287206147922ab92ac3cb753bb36b16efd74295f4a5969472452719fd13db0"
         }
       ]
     }
