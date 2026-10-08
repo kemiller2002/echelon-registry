@@ -185,6 +185,30 @@
       },
       "source": "manual",
       "sourceReference": null
+    },
+    {
+      "id": "WI-0011",
+      "title": "Record Strata 0.1.1 and select it in echelon-current",
+      "description": null,
+      "tags": [
+        "release",
+        "strata"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-08T07:27:32.000Z",
+      "updatedAt": "2026-10-08T07:27:36.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "unknown",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
     }
   ]
 }
