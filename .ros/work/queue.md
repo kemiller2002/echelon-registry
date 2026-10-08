@@ -13,4 +13,4 @@
 | WI-0008 | Record Strata 0.1.0 and select it in echelon-current; let optional components skip platforms their release does not ship | complete |  | medium |
 | WI-0009 | Record Ordo 1.5.0 and select it in echelon-current | complete |  | medium |
 | WI-0010 | Move echelon-registry to Ordo 1.5.0 via echelon-current 1.2.0 (conditor upgrade --current) | complete |  | medium |
-| WI-0011 | Record Strata 0.1.1 and select it in echelon-current | ready | release, strata | high |
+| WI-0011 | Record Strata 0.1.1 and select it in echelon-current | complete | release, strata | high |

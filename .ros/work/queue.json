@@ -216,10 +216,10 @@
         "strata"
       ],
       "priority": "high",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-08T07:27:32.000Z",
-      "updatedAt": "2026-10-08T07:27:36.000Z",
+      "updatedAt": "2026-10-08T07:36:32.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "unknown",
