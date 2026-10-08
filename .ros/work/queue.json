@@ -311,10 +311,10 @@
         "fides"
       ],
       "priority": "high",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-08T11:00:36.000Z",
-      "updatedAt": "2026-10-08T11:00:52.000Z",
+      "updatedAt": "2026-10-08T11:02:11.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
