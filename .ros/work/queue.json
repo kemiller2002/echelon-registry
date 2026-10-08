@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 20,
+  "nextSeq": 21,
   "items": [
     {
       "id": "WI-0001",
@@ -406,6 +406,31 @@
       "attachments": [],
       "createdAt": "2026-10-08T21:14:18.200Z",
       "updatedAt": "2026-10-08T21:19:35.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0020",
+      "title": "Record Arca 0.3.0 (Core, GitHub and the new Limen bridge package) and select it in echelon-current 1.11.0",
+      "description": "kemiller2002/arca v0.3.0: EchelonFoundry.Arca.Core, .GitHub and .Limen 0.3.0. EchelonFoundry.Arca.Limen depends on EchelonFoundry.Limen.Store 0.8.0 (limen-fsharp, already selected in 1.10.0 by #52).",
+      "tags": [
+        "arca",
+        "release",
+        "channel"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-08T21:33:35.000Z",
+      "updatedAt": "2026-10-08T21:33:39.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

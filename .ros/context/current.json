@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-08T21:19:35.000Z",
+  "updatedAt": "2026-10-08T21:33:40.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -875,6 +875,37 @@
         }
       },
       "completedAt": "2026-10-08T21:19:35.000Z"
+    },
+    {
+      "id": "WI-0020",
+      "type": "task",
+      "state": "active",
+      "semanticState": "active",
+      "evidence": [],
+      "updatedAt": "2026-10-08T21:33:40.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T213340706Z-22fd1475"
+      ],
+      "latestCheckpoint": {
+        "id": "4e5596c00801e20748f50a75",
+        "recordedAt": "2026-10-08T21:40:26.000Z",
+        "executionId": "EXE-20261008T213340706Z-22fd1475",
+        "repository": "echelon-registry",
+        "branch": "arca/0.3.0",
+        "commit": "63c67aac91c36e14710ecc9767dd6d7b80c49139",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "arca/0.3.0",
+        "remoteCommit": "63c67aac91c36e14710ecc9767dd6d7b80c49139",
+        "summary": "Arca 0.3.0 recorded; echelon-current 1.12.0 regenerated; conformance passes locally",
+        "nextAction": "Merge on green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      }
     }
   ]
 }
