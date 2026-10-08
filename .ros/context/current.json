@@ -421,6 +421,60 @@
       "conclusion": "Ordo 1.5.0 recorded and selected in echelon-current (profile 1.2.0 unchanged)"
     },
     {
+      "id": "WI-0010",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "conditor.json"
+        },
+        {
+          "type": "implementation",
+          "path": ".conditor/lock.json"
+        },
+        {
+          "type": "implementation",
+          "path": ".conditor/authority/resolved-release-set.json"
+        },
+        {
+          "type": "implementation",
+          "path": ".echelon/toolchain.json"
+        },
+        {
+          "type": "tests",
+          "path": ".github/workflows/praxis-validation.yml"
+        }
+      ],
+      "updatedAt": "2026-10-08T07:14:52.992Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T071442466Z-244b5a73"
+      ],
+      "latestCheckpoint": {
+        "id": "a364aebf569f43ced205790d",
+        "recordedAt": "2026-10-08T07:14:51.960Z",
+        "executionId": "EXE-20261008T071442466Z-244b5a73",
+        "repository": "echelon-registry",
+        "branch": "chore/ordo-1.5.0",
+        "commit": "e943a753a72c2c5311c6c2a5db14c7578f546501",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/ordo-1.5.0",
+        "remoteCommit": "e943a753a72c2c5311c6c2a5db14c7578f546501",
+        "summary": "conditor upgrade --current to echelon-current 1.2.0 (Ordo 1.4.2 -> 1.5.0) committed and pushed; local checks passed",
+        "nextAction": "Open the PR, get CI green and merge",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T07:14:52.992Z",
+      "conclusion": "Ordo 1.5.0 through echelon-current 1.2.0; local checks passed (log: /tmp/claude-0/-home-user-praxis/7bcb3038-90cc-534e-8e5b-9be62aa1de8c/scratchpad/sweep/logs/echelon-registry.log)"
+    },
+    {
       "id": "WI-0011",
       "type": "chore",
       "state": "active",
