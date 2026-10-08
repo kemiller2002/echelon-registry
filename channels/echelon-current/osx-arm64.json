@@ -2,8 +2,8 @@
   "schema": "echelon.resolved-release-set/v1",
   "profile": {
     "id": "echelon-current",
-    "version": "1.3.0",
-    "sha256": "0af894fc8b847b2e92a0f6b1e7581590c416bbfaa24da4358fe012a5ea577a41"
+    "version": "1.4.0",
+    "sha256": "8c1850584f19a9560b51375108a41bdb78b726e1507e4bbfe6103de6ec4dc6b8"
   },
   "platform": "osx-arm64",
   "resolver": {
@@ -11,7 +11,7 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "781ab642add87e591aff28b6b8442dd285a63929330485a174a7c3e7d3851564"
+    "sha256": "f1d0d5fca6214a4ad4417859cd0203d43e54a1a3c76caf9e418aa10e6eb8d981"
   },
   "components": [
     {
@@ -439,6 +439,48 @@
           "purpose": "checksums",
           "platform": null,
           "sha256": "fc42113dfbeb48f361cd2b402c1a3a5dbdcd3c38c35034e2856544f7d618a1fe"
+        }
+      ]
+    },
+    {
+      "systemId": "arca",
+      "role": "project-binding",
+      "required": false,
+      "version": "0.1.0",
+      "repository": "kemiller2002/arca",
+      "tag": "v0.1.0",
+      "commit": "a3143fc71448bc4f61b46189b3b4e847eec4e1b1",
+      "releaseStage": "stable",
+      "lifecycleState": "active",
+      "distributionClass": "nuget-library",
+      "executable": null,
+      "releaseManifest": {
+        "schema": "echelon.release/v2",
+        "sha256": "5cf084ee76ad2e4897796d5569212b0e7c1aaba8a28a8e24ce45f78687fe65a8"
+      },
+      "distribution": {
+        "mechanism": "github-release",
+        "package": null,
+        "url": "https://github.com/kemiller2002/arca/releases/tag/v0.1.0"
+      },
+      "artifacts": [
+        {
+          "name": "EchelonFoundry.Arca.Core.0.1.0.nupkg",
+          "purpose": "package",
+          "platform": null,
+          "sha256": "9a7de8d442b44557e44bf9f057b293e5f2ab44c95561ef548b1aea80c0293e37"
+        },
+        {
+          "name": "EchelonFoundry.Arca.GitHub.0.1.0.nupkg",
+          "purpose": "package",
+          "platform": null,
+          "sha256": "867382ac9b4e88d235bb1816fb08cb0c6f8aea0e74246d4d3c20aa9051081e8f"
+        },
+        {
+          "name": "checksums.txt",
+          "purpose": "checksums",
+          "platform": null,
+          "sha256": "aebffe39da9c5637f1c67da8638cf6b2ad74129887c06c0b11c38d9acf22d400"
         }
       ]
     }

@@ -264,7 +264,22 @@ let selectArtifacts distributionClass selectedDistribution release =
     let primaries = primaryArtifacts distributionClass selectedDistribution release
     let releaseSystemId = str "systemId" release
     let releaseVersion = str "version" release
-    require (primaries.Length = 1) $"release {releaseSystemId} {releaseVersion} must expose exactly one primary artifact for {distributionClass}/{mechanism}/{platform}; found {primaries.Length}"
+    // A NuGet library that names no single distribution package ships a
+    // package family from one release (for example a core package and its
+    // adapter): every platform-neutral .nupkg it publishes installs it, so all
+    // are primary. Every other release installs from exactly one artifact.
+    let family =
+        distributionClass = "nuget-library" && (optStr "package" selectedDistribution).IsNone
+
+    if family then
+        require (not primaries.IsEmpty) $"release {releaseSystemId} {releaseVersion} must expose at least one package artifact for {distributionClass}/{mechanism}/{platform}"
+
+        primaries
+        |> List.iter (fun artifact ->
+            let name = str "name" artifact
+            require (name.EndsWith(".nupkg", StringComparison.OrdinalIgnoreCase) && not (name.EndsWith(".snupkg", StringComparison.OrdinalIgnoreCase))) $"release {releaseSystemId} {releaseVersion} package artifact {name} is not a .nupkg")
+    else
+        require (primaries.Length = 1) $"release {releaseSystemId} {releaseVersion} must expose exactly one primary artifact for {distributionClass}/{mechanism}/{platform}; found {primaries.Length}"
 
     let support =
         artifacts

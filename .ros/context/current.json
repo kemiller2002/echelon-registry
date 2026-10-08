@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-08T07:36:32.000Z",
+  "updatedAt": "2026-10-08T09:39:56.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -527,6 +527,17 @@
       },
       "completedAt": "2026-10-08T07:36:32.000Z",
       "conclusion": "Strata 0.1.1 recorded (digests and Sigstore build provenance verified against release.yml@main, f650d91) and selected by echelon-current 1.3.0, whose strata range is now >=0.1.1. distribution-conformance green on PR #44."
+    },
+    {
+      "id": "WI-0012",
+      "type": "task",
+      "state": "active",
+      "semanticState": "active",
+      "evidence": [],
+      "updatedAt": "2026-10-08T09:39:56.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T093957097Z-26416832"
+      ]
     }
   ]
 }
