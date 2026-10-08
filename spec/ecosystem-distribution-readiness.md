@@ -25,7 +25,7 @@ The readiness state is not a product-quality judgment. It is only distribution-c
 
 ## Current channel
 
-`profiles/echelon-current.profile.json` **1.2.0** is the moving stable channel. Resolved against `snapshots/echelon-current.catalog.json`, `channels/echelon-current/` selects the same release set of required components on all five supported platforms (linux-x64, linux-arm64, osx-x64, osx-arm64, win-x64). An optional component (`required: false`) appears only on the platforms its selected release ships for (REG-REL-031): Strata has no linux-arm64 build, so linux-arm64's set omits it.
+`profiles/echelon-current.profile.json` **1.3.0** is the moving stable channel. Resolved against `snapshots/echelon-current.catalog.json`, `channels/echelon-current/` selects the same release set of required components on all five supported platforms (linux-x64, linux-arm64, osx-x64, osx-arm64, win-x64). An optional component (`required: false`) appears only on the platforms its selected release ships for (REG-REL-031): Strata has no linux-arm64 build, so linux-arm64's set omits it.
 
 | System | Role | Selected release | Source | Distribution |
 |---|---|---|---|---|
@@ -40,7 +40,7 @@ The readiness state is not a product-quality judgment. It is only distribution-c
 | Limen | project-binding | **0.7.1** | `kemiller2002/limen` `v0.7.1` | npm `@echelon-foundry/limen` |
 | Forma | project-binding | **0.4.1** | `kemiller2002/forma` `v0.4.1` | GitHub release package `@echelon-foundry/design-system` |
 | Folio | project-binding | **0.3.0** | `kemiller2002/folio` `v0.3.0` | GitHub release package `@echelon-foundry/print-components` |
-| Strata | repository-lifecycle (optional) | **0.1.0** | `kemiller2002/strata` `v0.1.0` (`10b25ec4`) | GitHub release, self-contained native CLI `strata`; linux-x64, osx-x64, osx-arm64, win-x64 |
+| Strata | repository-lifecycle (optional, `>=0.1.1`) | **0.1.1** | `kemiller2002/strata` `v0.1.1` (`f650d91e`) | GitHub release, self-contained native CLI `strata`; linux-x64, osx-x64, osx-arm64, win-x64 |
 
 Older stable records remain for history and pinned profiles: Praxis 3.6.0, Forma 0.3.0, Limen 0.6.2 (historical package `@echelon-foundry/typescript-wasm-kernel`) and 0.7.0. The frozen Indy Init release set (`freezes/indy-init-0.1.0.freeze.json`) is unchanged by channel moves.
 
@@ -85,7 +85,7 @@ Applications are not automatically members of an "all tools on PATH" profile. Th
 |---|---|---|---|---|
 | Chrona | `kemiller2002/chrona` | time-entry/time-tracking application (pre-implementation); also the **planned owner** of canonical time primitives, to be built as a separately packaged library in the chrona repository (working name `Chrona.Time`), not inside the time-entry application; Vigila is the first consumer. Not implemented (see "Planned portfolio capabilities") | not-ready | declare application artifact/deployment class and separate dev profile from end-user deployment |
 | Summa | `kemiller2002/summa` | project-administration hub (cross-repository work coordination); also the **planned owner** of ledger/invoicing/receivables/payments, gated on Summa replacing its copied Node-era tooling with a real foundation (QDI-071). Not implemented (see "Planned portfolio capabilities") | not-ready | declare application artifact/deployment class; must not advertise billing, invoice or payment capabilities until they are implemented |
-| Strata | `kemiller2002/strata` | SQL/schema developer tool | current | `releases/strata/0.1.0.release.json`: self-contained native CLI (no .NET runtime) for linux-x64, osx-x64, osx-arm64 and win-x64 with checksums and attestations; declares `echelon.repository-lifecycle` v1; no linux-arm64/musl build until its PostgreSQL parser ships one. A reusable .NET library is not distributed |
+| Strata | `kemiller2002/strata` | SQL/schema developer tool | current | `releases/strata/0.1.1.release.json` (0.1.0 kept): self-contained native CLI (no .NET runtime) for linux-x64, osx-x64, osx-arm64 and win-x64 with checksums and attestations; declares `echelon.repository-lifecycle` v1; no linux-arm64/musl build until its PostgreSQL parser ships one. A reusable .NET library is not distributed |
 | Forma Studio | `kemiller2002/forma-studio` | design/workflow application | not-ready | declare runtime/deployment class and separate development from end-user installation |
 | Mercatus | `kemiller2002/mercatus` | sales/marketing application | not-ready | publish application/developer distribution contract; predecessor `sales-and-marketing` must not be independently installable |
 | Signal | `kemiller2002/signal` | F#/WASM survey and assessment application | not-ready | publish immutable application/static-deployment artifact and developer profile; preserve no-PII constraints in release evidence |

@@ -188,14 +188,20 @@
       "version": "0.1.0",
       "manifest": "releases/strata/0.1.0.release.json",
       "sha256": "e5e33a9738f1e3ca7855fdba4174e955ff03881b5e4c7738fd6b92080f277e96"
+    },
+    {
+      "systemId": "strata",
+      "version": "0.1.1",
+      "manifest": "releases/strata/0.1.1.release.json",
+      "sha256": "262bf735e8af934a5d104cad910e34d55e8ffcf310696f8604560bc73eb8ab04"
     }
   ],
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "703de3a300be873ff8a3eb09a290d46f1c1ebe336d45471d325927df4eae4891"
+      "sha256": "0af894fc8b847b2e92a0f6b1e7581590c416bbfaa24da4358fe012a5ea577a41"
     }
   ]
 }
