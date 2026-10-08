@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-08T21:14:21.000Z",
+  "updatedAt": "2026-10-08T21:19:35.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -830,10 +830,27 @@
     {
       "id": "WI-0019",
       "type": "task",
-      "state": "active",
-      "semanticState": "active",
-      "evidence": [],
-      "updatedAt": "2026-10-08T21:14:21.000Z",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/limen/0.9.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "releases/limen-fsharp/0.9.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "tests",
+          "path": "channels/echelon-current/linux-x64.json"
+        }
+      ],
+      "updatedAt": "2026-10-08T21:19:35.000Z",
       "telemetryExecutionIds": [
         "EXE-20261008T211422256Z-20bae3b9"
       ],
@@ -856,7 +873,8 @@
           "status": "verified",
           "mechanism": "git-remote-observation"
         }
-      }
+      },
+      "completedAt": "2026-10-08T21:19:35.000Z"
     }
   ]
 }
