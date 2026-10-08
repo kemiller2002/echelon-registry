@@ -52,6 +52,12 @@ let profileIds =
     |> Array.map (stringProperty "systemId")
     |> Set.ofArray
 
+let requiredIds =
+    arrayProperty "components" profile
+    |> Array.filter (fun c -> c.GetProperty("required").GetBoolean())
+    |> Array.map (stringProperty "systemId")
+    |> Set.ofArray
+
 let supported =
     arrayProperty "supportedPlatforms" profile
     |> Array.map (fun item -> item.GetString())
@@ -89,7 +95,9 @@ for entry in entries do
         |> Array.map (stringProperty "systemId")
         |> Set.ofArray
 
-    require (resolvedIds = profileIds) $"resolved component set mismatch for {platform}"
+    // Every required component on every platform (REG-REL-031); an optional
+    // one only where its release ships for the platform.
+    require (Set.isSubset requiredIds resolvedIds && Set.isSubset resolvedIds profileIds) $"resolved component set mismatch for {platform}"
 
 printfn "Echelon current channel PASS"
 printfn "  profile: %s@%s" (stringProperty "id" profileRef) (stringProperty "version" profileRef)

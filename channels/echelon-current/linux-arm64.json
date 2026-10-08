@@ -2,8 +2,8 @@
   "schema": "echelon.resolved-release-set/v1",
   "profile": {
     "id": "echelon-current",
-    "version": "1.1.0",
-    "sha256": "786a6336fbb4b940e5666ad45e0ed93d6e06c3aeafc1b35573c97343b0523156"
+    "version": "1.2.0",
+    "sha256": "703de3a300be873ff8a3eb09a290d46f1c1ebe336d45471d325927df4eae4891"
   },
   "platform": "linux-arm64",
   "resolver": {
@@ -11,7 +11,7 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "2a4abb1efb8a20f5b36cae7ed3b5bde0a99e3e182f9bc9349770e9905f109f67"
+    "sha256": "3dc32deea23082318e4e7b9c4d5e94dcdc297bd337234401aed107f95bc4565f"
   },
   "components": [
     {

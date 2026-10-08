@@ -378,7 +378,12 @@
         "self-contained-native-cli",
         "nuget-library"
       ],
-      "provides": [],
+      "provides": [
+        {
+          "id": "echelon.repository-lifecycle",
+          "contractVersion": 1
+        }
+      ],
       "optionalConsumes": []
     },
     {

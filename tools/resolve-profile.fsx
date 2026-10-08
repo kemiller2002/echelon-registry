@@ -223,8 +223,9 @@ let isSupportArtifact purpose =
     Set.ofList [ "checksums"; "sbom"; "licenses"; "provenance"; "signature" ]
     |> Set.contains purpose
 
-let selectArtifacts distributionClass selectedDistribution release =
-    let mechanism = str "mechanism" selectedDistribution
+/// The artifacts that install the release on this platform: one, for a
+/// release that supports the platform; none, for one that does not.
+let primaryArtifacts distributionClass selectedDistribution release =
     let artifacts = objects "artifacts" release
 
     let primary artifact =
@@ -255,7 +256,12 @@ let selectArtifacts distributionClass selectedDistribution release =
             (purpose = "application" || purpose = "bundle") && artifactPlatform.IsNone
         | _ -> false
 
-    let primaries = artifacts |> List.filter primary
+    artifacts |> List.filter primary
+
+let selectArtifacts distributionClass selectedDistribution release =
+    let mechanism = str "mechanism" selectedDistribution
+    let artifacts = objects "artifacts" release
+    let primaries = primaryArtifacts distributionClass selectedDistribution release
     let releaseSystemId = str "systemId" release
     let releaseVersion = str "version" release
     require (primaries.Length = 1) $"release {releaseSystemId} {releaseVersion} must expose exactly one primary artifact for {distributionClass}/{mechanism}/{platform}; found {primaries.Length}"
@@ -423,6 +429,16 @@ let resolveComponent (profileComponent: JsonElement) =
     let release = selected.Release
     let distributionClass = str "distributionClass" release
     let distribution = chooseDistribution distributionClass release
+
+    // REG-REL-031: every REQUIRED component resolves on every platform the
+    // profile supports. An OPTIONAL component whose selected release ships
+    // nothing for this platform is omitted from this platform's set rather
+    // than failing it — a component that cannot run here is not offered here.
+    // A required one still fails below, as before.
+    if not required && List.isEmpty (primaryArtifacts distributionClass distribution release) then
+        None
+    else
+
     let selectedArtifacts = selectArtifacts distributionClass distribution release
 
     let node = JsonObject()
@@ -463,11 +479,11 @@ let resolveComponent (profileComponent: JsonElement) =
     let artifacts = JsonArray()
     selectedArtifacts |> List.iter (copyArtifact >> artifacts.Add)
     node["artifacts"] <- artifacts
-    node
+    Some node
 
 let resolvedComponents =
     objects "components" profile
-    |> List.map resolveComponent
+    |> List.choose resolveComponent
 
 let output = JsonObject()
 output["schema"] <- JsonValue.Create "echelon.resolved-release-set/v1"
