@@ -262,14 +262,26 @@
       "version": "0.8.0",
       "manifest": "releases/limen-fsharp/0.8.0.release.json",
       "sha256": "c59cf3e1ff8e4f4dd0eaa52db4488c7ad910b6ba05511121514eab0e79a77a2b"
+    },
+    {
+      "systemId": "limen",
+      "version": "0.9.0",
+      "manifest": "releases/limen/0.9.0.release.json",
+      "sha256": "5ffc580705cb612f9a5c99ee7ee0f81c7f18904947336a6e14a9be19393a74db"
+    },
+    {
+      "systemId": "limen-fsharp",
+      "version": "0.9.0",
+      "manifest": "releases/limen-fsharp/0.9.0.release.json",
+      "sha256": "d8aec120fdaff6bb2a9dcd6e4d79b8a92d69f8cc0227de1c6b7166c6c3b8ce3a"
     }
   ],
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.10.0",
+      "version": "1.11.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "1c8a0498db77968c64f3a207c50aa91371e5d6450c88f10de6dd09977e15e0a7"
+      "sha256": "a115fed9396998179897036e3b0d6e79fa97c914429e96488909b9e47e7afe21"
     }
   ]
 }

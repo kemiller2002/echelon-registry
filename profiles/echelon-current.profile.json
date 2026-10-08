@@ -1,7 +1,7 @@
 {
   "schema": "echelon.profile/v1",
   "id": "echelon-current",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "description": "Moving stable channel for the current Registry-approved Echelon repository environment. Version ranges select the newest compatible active stable releases from the channel catalog snapshot.",
   "supportedPlatforms": [
     "linux-x64",
