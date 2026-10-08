@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 14,
+  "nextSeq": 15,
   "items": [
     {
       "id": "WI-0001",
@@ -270,6 +270,27 @@
       "attachments": [],
       "createdAt": "2026-10-08T10:20:54.000Z",
       "updatedAt": "2026-10-08T10:23:11.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0014",
+      "title": "Record Arca 0.2.0 and select it in echelon-current 1.6.0",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-08T10:34:43.000Z",
+      "updatedAt": "2026-10-08T10:34:43.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
