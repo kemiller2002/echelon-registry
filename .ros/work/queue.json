@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 24,
+  "nextSeq": 25,
   "items": [
     {
       "id": "WI-0001",
@@ -502,6 +502,30 @@
       "attachments": [],
       "createdAt": "2026-10-08T23:36:00.542Z",
       "updatedAt": "2026-10-08T23:36:41.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0024",
+      "title": "Record Praxis 3.10.0 (web and hub URL state through Limen.Routing) and select it in echelon-current 1.15.0",
+      "description": "Praxis 3.10.0 (tag v3.10.0 at 3185e368, native-release.yml run 37866320297): Praxis's own web and hub UIs route through the vendored EchelonFoundry.Limen.Routing (praxis#214). Record it from the verified assets and select it.",
+      "tags": [
+        "praxis",
+        "echelon-current"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-09T01:08:31.900Z",
+      "updatedAt": "2026-10-09T01:09:37.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

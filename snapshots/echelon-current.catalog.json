@@ -108,6 +108,12 @@
       "sha256": "c6a2e91229ad7c262d6a2f0443a74d233176254e3619b4d10b8d8f2c39c625f7"
     },
     {
+      "systemId": "praxis",
+      "version": "3.10.0",
+      "manifest": "releases/praxis/3.10.0.release.json",
+      "sha256": "390587c2386c1e07748155dea1c68b46e06404999962e1baa437d8a3aa1de256"
+    },
+    {
       "systemId": "ordo",
       "version": "1.4.0",
       "manifest": "releases/ordo/1.4.0.release.json",
@@ -297,9 +303,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.14.0",
+      "version": "1.15.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "adee395845193b7b67bd58f3a960ae68b76244e09eae406425a990ef425157e3"
+      "sha256": "c83ecae45664b2d5ad07d125051c94f714806032921987b72220afe3c616e7ce"
     }
   ]
 }
