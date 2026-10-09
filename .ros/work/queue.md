@@ -29,4 +29,4 @@
 | WI-0024 | Record Praxis 3.10.0 (web and hub URL state through Limen.Routing) and select it in echelon-current 1.15.0 | complete | praxis, echelon-current | high |
 | WI-0025 | Record Arca 0.4.0 (namespace-scoped change tokens, explicit erasure, stable account ids at sign-out) and select it in echelon-current 1.16.0 | complete |  | high |
 | WI-0026 | Record Praxis 3.11.0 and select it in echelon-current 1.17.0 | complete |  | high |
-| WI-0027 | Record Conditor 0.8.2 (Praxis 3.10.0 and 3.11.0 qualified for upgrade --current) | ready |  | high |
+| WI-0027 | Record Conditor 0.8.2 (Praxis 3.10.0 and 3.11.0 qualified for upgrade --current) | complete |  | high |
