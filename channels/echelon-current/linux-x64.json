@@ -2,8 +2,8 @@
   "schema": "echelon.resolved-release-set/v1",
   "profile": {
     "id": "echelon-current",
-    "version": "1.16.0",
-    "sha256": "cc3b08376b95cf374cf7dd6404b606a4adb7a8eb8299133d0230ab8bdab3fa51"
+    "version": "1.17.0",
+    "sha256": "a6b54740c7d47f3840ef792d2601c081d08dda8b5b4d96d53acd88d4cbc32cda"
   },
   "platform": "linux-x64",
   "resolver": {
@@ -11,42 +11,42 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "5565ff3b83abc9b8a3c62f8b332a41bba9f5085fcacb7412ca06eba6d2ff22c6"
+    "sha256": "b1c3e173a1191a4653c02226f7b7bf2bffb942b2fdaf2ae13bb6fa69150d5618"
   },
   "components": [
     {
       "systemId": "praxis",
       "role": "host-tool",
       "required": true,
-      "version": "3.10.0",
+      "version": "3.11.0",
       "repository": "kemiller2002/praxis",
-      "tag": "v3.10.0",
-      "commit": "3185e368399178677b048cad5be3a50bb055aa7a",
+      "tag": "v3.11.0",
+      "commit": "5673d6ab07aad07b51ceadaeb4230b1591800886",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "self-contained-native-cli",
       "executable": "praxis",
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "390587c2386c1e07748155dea1c68b46e06404999962e1baa437d8a3aa1de256"
+        "sha256": "c535097a24754f58dac21947d822cbfdbb78277ff2e41cd72e320f86eb65b58e"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": null,
-        "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.10.0"
+        "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.11.0"
       },
       "artifacts": [
         {
           "name": "praxis-linux-x64.tar.gz",
           "purpose": "executable",
           "platform": "linux-x64",
-          "sha256": "0ffbdd19ac01f9c13e72484507a808b6f1b7e1af72797b85e7db7f8abb122562"
+          "sha256": "b107557ec0a33556c5c97abeddabd676a81afbcfd30a735d9e2fdd3d052038c2"
         },
         {
           "name": "native-checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "0bedbda0cf1dd1e15932d6f0c468ebca8dec50d88b57de920d6c0fe6e136bdb5"
+          "sha256": "05ffa0f06a2ce5fb85e8f8b026b70c9724dd20d6a5a4d02a8e16b415daf19378"
         }
       ]
     },
