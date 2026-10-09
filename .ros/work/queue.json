@@ -522,10 +522,10 @@
         "echelon-current"
       ],
       "priority": "high",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-09T01:08:31.900Z",
-      "updatedAt": "2026-10-09T01:08:32.000Z",
+      "updatedAt": "2026-10-09T01:09:37.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
