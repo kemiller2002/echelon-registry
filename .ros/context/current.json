@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-08T23:36:41.000Z",
+  "updatedAt": "2026-10-09T01:08:32.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -1047,6 +1047,17 @@
         }
       },
       "completedAt": "2026-10-08T23:36:41.000Z"
+    },
+    {
+      "id": "WI-0024",
+      "type": "release",
+      "state": "active",
+      "semanticState": "active",
+      "evidence": [],
+      "updatedAt": "2026-10-09T01:08:32.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261009T010832907Z-3d8948d0"
+      ]
     }
   ]
 }
