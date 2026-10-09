@@ -258,6 +258,12 @@
       "sha256": "d3b73d5f4ca76b04f9b581e5fb7b138f724b4642f18361cbaf6f60b45a64f803"
     },
     {
+      "systemId": "arca",
+      "version": "0.4.0",
+      "manifest": "releases/arca/0.4.0.release.json",
+      "sha256": "f1ec5078b5c003a8200d3e13f3f840242bde065fe4ce0aeb61aecdb358237a37"
+    },
+    {
       "systemId": "fides",
       "version": "0.1.0",
       "manifest": "releases/fides/0.1.0.release.json",
@@ -303,9 +309,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.15.0",
+      "version": "1.16.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "c83ecae45664b2d5ad07d125051c94f714806032921987b72220afe3c616e7ce"
+      "sha256": "cc3b08376b95cf374cf7dd6404b606a4adb7a8eb8299133d0230ab8bdab3fa51"
     }
   ]
 }
