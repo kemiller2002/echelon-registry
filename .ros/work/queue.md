@@ -27,3 +27,4 @@
 | WI-0022 | Record Praxis 3.9.1 (URL-addressable state foundations, Limen routes schema vendored) and select it in echelon-current 1.14.0 | complete | praxis, echelon-current | high |
 | WI-0023 | Record Conditor 0.8.0 (Limen.Routing web scaffold; deep-linking Indy preset) | complete | conditor | high |
 | WI-0024 | Record Praxis 3.10.0 (web and hub URL state through Limen.Routing) and select it in echelon-current 1.15.0 | complete | praxis, echelon-current | high |
+| WI-0025 | Record Arca 0.4.0 (namespace-scoped change tokens, explicit erasure, stable account ids at sign-out) and select it in echelon-current 1.16.0 | ready |  | high |

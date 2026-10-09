@@ -536,6 +536,27 @@
       },
       "source": "manual",
       "sourceReference": null
+    },
+    {
+      "id": "WI-0025",
+      "title": "Record Arca 0.4.0 (namespace-scoped change tokens, explicit erasure, stable account ids at sign-out) and select it in echelon-current 1.16.0",
+      "description": "kemiller2002/arca v0.4.0 at a252caf9142f283d8442fb8a5e1ebc2c5212d1d1, published by release.yml run 37873327778. Add releases/arca/0.4.0.release.json (the release's echelon-release.json in the record shape), the catalog row, echelon-current 1.15.0 -> 1.16.0 with Arca >=0.4.0 <1.0.0, regenerate every platform's resolved set and the channel index with the registry tools, update the readiness spec, and run the conformance validators.",
+      "tags": [],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-09T02:14:15.000Z",
+      "updatedAt": "2026-10-09T02:14:16.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
     }
   ]
 }
