@@ -627,10 +627,10 @@
       "description": "kemiller2002/arca v0.4.1 at 82745430f209a06807b786d422b56d890f76bd68, published by release.yml run 37882697760: OfflineQueue.revise no longer drops AccountId (ARCA-OFF-007). Add releases/arca/0.4.1.release.json, the catalog row, echelon-current 1.17.0 -> 1.18.0 with Arca >=0.4.1 <1.0.0 so the affected 0.4.0 is no longer selected, regenerate every resolved set and the channel index with the registry tools, update the readiness spec, run the validators.",
       "tags": [],
       "priority": "high",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-09T04:14:40.000Z",
-      "updatedAt": "2026-10-09T04:14:40.000Z",
+      "updatedAt": "2026-10-09T04:17:23.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
