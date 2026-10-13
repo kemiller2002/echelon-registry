@@ -1118,10 +1118,10 @@
       "description": null,
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-13T23:35:21Z",
-      "updatedAt": "2026-10-13T23:35:24Z",
+      "updatedAt": "2026-10-13T23:36:02Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
