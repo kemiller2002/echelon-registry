@@ -39,3 +39,4 @@
 | WI-0035 | Record Conditor 0.9.0 and correct the 0.8.3 mentions in REG-RU-007 | complete |  | high |
 | WI-0036 | Register Ordo 1.6.0 and select it in echelon-current 1.21.0 on current main (supersedes the conflicted WI-0032 branch, PR #66) | complete |  | high |
 | WI-0037 | Register Ordo 1.7.0 and select it in echelon-current 1.22.0 | complete |  | high |
+| WI-0038 | REG-SIG-001..008: requirements for signed release attestations (DF-CON-2026-A004 decision 2 precondition) | ready |  | medium |
