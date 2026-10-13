@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-13T15:40:54Z",
+  "updatedAt": "2026-10-13T15:42:56Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -1454,13 +1454,47 @@
     {
       "id": "WI-0035",
       "type": "task",
-      "state": "active",
-      "semanticState": "active",
-      "evidence": [],
-      "updatedAt": "2026-10-13T15:40:54Z",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/conditor/0.9.0.release.json"
+        },
+        {
+          "type": "documentation",
+          "path": "spec/rolling-upgrade-requirements.md"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T15:42:56Z",
       "telemetryExecutionIds": [
         "EXE-20261013T154059599Z-1332ebae"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "ec3446be8e9542e7fcbfb046",
+        "recordedAt": "2026-10-13T15:42:39Z",
+        "executionId": "EXE-20261013T154059599Z-1332ebae",
+        "repository": "echelon-registry",
+        "branch": "chore/conditor-0.9.0",
+        "commit": "e2155f2bbd572f27f8151964e8bdaed82716de17",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/conditor-0.9.0",
+        "remoteCommit": "e2155f2bbd572f27f8151964e8bdaed82716de17",
+        "summary": "Conditor 0.9.0 recorded; 0.8.3 mentions corrected; conformance passes; branch pushed",
+        "nextAction": "complete, open PR, merge through the gate; then #66",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T15:42:56Z"
     }
   ]
 }
