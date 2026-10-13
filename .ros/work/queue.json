@@ -710,14 +710,35 @@
     },
     {
       "id": "WI-0034",
-      "title": "When apps declare forma/folio in conditor.json (Conditor 0.8.3 opt-in), add them to conformance/conditor-declared-components.json in the same cycle (REG-RU-007 pending item)",
+      "title": "When apps declare forma/folio in conditor.json (Conditor 0.9.0 opt-in), add them to conformance/conditor-declared-components.json in the same cycle (REG-RU-007 pending item)",
       "description": null,
       "tags": [],
       "priority": "medium",
       "status": "captured",
       "attachments": [],
       "createdAt": "2026-10-13T15:23:30.483Z",
-      "updatedAt": "2026-10-13T15:23:30.483Z",
+      "updatedAt": "2026-10-13T15:41:18Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0035",
+      "title": "Record Conditor 0.9.0 and correct the 0.8.3 mentions in REG-RU-007",
+      "description": null,
+      "tags": [],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T15:40:48Z",
+      "updatedAt": "2026-10-13T15:40:48Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
