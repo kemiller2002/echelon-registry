@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-13T18:14:27.000Z",
+  "updatedAt": "2026-10-13T22:02:38Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -1858,6 +1858,48 @@
         }
       },
       "completedAt": "2026-10-13T18:14:27.000Z"
+    },
+    {
+      "id": "WI-0049",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/praxis/3.12.0.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T22:02:38Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T220111627Z-58c17520"
+      ],
+      "latestCheckpoint": {
+        "id": "4f44098331a3a718ee51d416",
+        "recordedAt": "2026-10-13T22:02:34Z",
+        "executionId": "EXE-20261013T220111627Z-58c17520",
+        "repository": "echelon-registry",
+        "branch": "wi-0049-record-praxis-3.12.0",
+        "commit": "1f3f4c7fb3d1b039646911a30e8377570cfa5c96",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "wi-0049-record-praxis-3.12.0",
+        "remoteCommit": "1f3f4c7fb3d1b039646911a30e8377570cfa5c96",
+        "summary": "Recorded releases/praxis/3.12.0.release.json via the conversion that reproduces 3.11.0 byte-for-byte; REG-RU-007 and conformance validators pass locally; pushed 1f3f4c7f",
+        "nextAction": "Open PR, gate-merge on green exact head SHA",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T22:02:38Z",
+      "conclusion": "Praxis 3.12.0 recorded; no channel change; REG-RU-007 passes"
     }
   ]
 }

@@ -50,3 +50,4 @@
 | WI-0046 | Implement REG-RU-006: consumerContracts claims checked at registration and backfilled on active web-package and NuGet-library releases; depends on the REG-SIG implementation (WI-0042) | ready | depends-on-WI-0042 | medium |
 | WI-0047 | Record Conditor 0.10.1 | complete |  | medium |
 | WI-0048 | Record Conditor 0.10.2 (workstation host tools from the Registry; downgrade refusal) | complete |  | medium |
+| WI-0049 | Record Praxis 3.12.0 | complete |  | medium |
