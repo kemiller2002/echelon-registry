@@ -609,14 +609,30 @@
     },
     {
       "metricId": "agent.interruptions",
-      "status": "unknown",
-      "reason": "runtime capability not reported or mapped",
-      "discoveredAt": "2026-10-13T16:17:57.090Z",
+      "status": "derived",
+      "reason": "normalized measurement recorded",
+      "discoveredAt": "2026-10-13T16:19:03Z",
       "source": {
-        "type": "environment",
-        "name": "runtime-identity",
-        "mechanism": "explicit-or-unmapped-environment"
-      }
+        "type": "calculated",
+        "name": "ros-work-protocol",
+        "mechanism": "blocked-transition"
+      },
+      "lastAssessedAt": "2026-10-13T16:19:03Z",
+      "recordedAt": "2026-10-13T16:19:03Z",
+      "history": [
+        {
+          "status": "unknown",
+          "reason": "runtime capability not reported or mapped",
+          "source": {
+            "type": "environment",
+            "name": "runtime-identity",
+            "mechanism": "explicit-or-unmapped-environment"
+          },
+          "discoveredAt": "2026-10-13T16:17:57.090Z",
+          "lastAssessedAt": "2026-10-13T16:17:57.090Z",
+          "recordedAt": "2026-10-13T16:17:57.090Z"
+        }
+      ]
     },
     {
       "metricId": "agent.resumes",
@@ -1458,6 +1474,26 @@
       },
       "collectedAt": "2026-10-13T16:17:57.090Z",
       "schemaVersion": "1.0.0"
+    },
+    {
+      "measurementId": "MEAS-5cadbc1fb8a036ba2ee7927b",
+      "id": "agent.interruptions",
+      "value": 1,
+      "unit": "count",
+      "currency": null,
+      "quality": "derived",
+      "confidence": null,
+      "scope": "execution",
+      "aggregation": "sum",
+      "dimensions": {},
+      "pricing": null,
+      "source": {
+        "type": "calculated",
+        "name": "ros-work-protocol",
+        "mechanism": "blocked-transition"
+      },
+      "collectedAt": "2026-10-13T16:19:03Z",
+      "schemaVersion": "1.0.0"
     }
   ],
   "rawTelemetry": [],
@@ -1470,6 +1506,17 @@
         "name": "ros",
         "mechanism": "work-lifecycle"
       }
+    },
+    {
+      "type": "work.blocked",
+      "occurredAt": "2026-10-13T16:19:03Z",
+      "reason": "Requirements-only capture is done and pushed (checkpoint ab8b7ab9). Completion needs implementation and tests evidence (completionEvidence.default for type task), which a spec-only item does not have; recording the spec as implementation or reclassifying as mechanical would misstate it. Awaiting a program-lead decision on the evidence policy for requirements-only items (same condition as WI-0039).",
+      "source": {
+        "type": "ros-clock",
+        "name": "ros",
+        "mechanism": "work-lifecycle"
+      },
+      "eventId": "TEVT-d8d8b9890bfabc5a9b603711"
     }
   ],
   "repository": {
