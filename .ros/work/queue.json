@@ -1097,10 +1097,10 @@
       "description": null,
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-13T23:13:00Z",
-      "updatedAt": "2026-10-13T23:13:03Z",
+      "updatedAt": "2026-10-13T23:15:15Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
