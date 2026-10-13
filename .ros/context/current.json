@@ -1952,7 +1952,27 @@
       "updatedAt": "2026-10-13T22:31:42Z",
       "telemetryExecutionIds": [
         "EXE-20261013T223143089Z-0dc2efca"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "811aab50000101c17f8ee407",
+        "recordedAt": "2026-10-13T22:34:02Z",
+        "executionId": "EXE-20261013T223143089Z-0dc2efca",
+        "repository": "echelon-registry",
+        "branch": "wi-0051-echelon-current-1.23.0",
+        "commit": "b63907e445194013ea9c31e01d1c31e0749ed818",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "wi-0051-echelon-current-1.23.0",
+        "remoteCommit": "b63907e445194013ea9c31e01d1c31e0749ed818",
+        "summary": "echelon-current 1.23.0 prepared (only praxis 3.11.0->3.12.0; sets reproduced) and pushed without a PR; REG-RU-007 fails: Conditor 0.10.3 does not qualify Praxis 3.12.0",
+        "nextAction": "Coordinator decision: release a Conditor that qualifies Praxis 3.12.0 (WI-0034 pattern) before proposing 1.23.0",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      }
     }
   ]
 }
