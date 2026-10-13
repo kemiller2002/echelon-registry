@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 25,
+  "nextSeq": 32,
   "items": [
     {
       "id": "WI-0001",
@@ -665,6 +665,27 @@
       },
       "source": "github",
       "sourceReference": "kemiller2002/arca#42"
+    },
+    {
+      "id": "WI-0031",
+      "title": "Register Forma 0.6.1 and Folio 0.4.0 and select them in echelon-current 1.20.0",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T14:57:49.369Z",
+      "updatedAt": "2026-10-13T14:57:55Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
     }
   ]
 }

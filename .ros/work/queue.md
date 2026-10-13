@@ -33,3 +33,4 @@
 | WI-0028 | Record Conditor 0.8.1 so the Conditor release history has no gap | complete |  | medium |
 | WI-0029 | Record Arca 0.4.1 (revise keeps the entry's account id at sign-out) and select it in echelon-current 1.18.0 | complete |  | high |
 | WI-0030 | Record Arca 0.5.0 (batched read-cache save, pinned GitHub reads; arca#38, arca#39) and select it in echelon-current 1.19.0 | complete | arca, release | high |
+| WI-0031 | Register Forma 0.6.1 and Folio 0.4.0 and select them in echelon-current 1.20.0 | ready |  | medium |
