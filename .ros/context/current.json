@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-13T15:45:31Z",
+  "updatedAt": "2026-10-13T15:47:45Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -1499,13 +1499,47 @@
     {
       "id": "WI-0036",
       "type": "task",
-      "state": "active",
-      "semanticState": "active",
-      "evidence": [],
-      "updatedAt": "2026-10-13T15:45:31Z",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/ordo/1.6.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "channels/echelon-current/channel.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T15:47:45Z",
       "telemetryExecutionIds": [
         "EXE-20261013T154536611Z-d3dcc2c1"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "d7dfab36262bd7f55450f4ed",
+        "recordedAt": "2026-10-13T15:47:39Z",
+        "executionId": "EXE-20261013T154536611Z-d3dcc2c1",
+        "repository": "echelon-registry",
+        "branch": "ordo/1.6.0-on-main",
+        "commit": "b33ff44c24cb0402b6622ac114f9b629e3b6f827",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "ordo/1.6.0-on-main",
+        "remoteCommit": "b33ff44c24cb0402b6622ac114f9b629e3b6f827",
+        "summary": "Ordo 1.6.0 regenerated on current main (byte-identical to #66), echelon-current 1.21.0; conformance and REG-RU-007 with Conditor 0.9.0 pass; pushed",
+        "nextAction": "complete, open PR superseding #66, merge through the gate",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T15:47:45Z"
     }
   ]
 }
