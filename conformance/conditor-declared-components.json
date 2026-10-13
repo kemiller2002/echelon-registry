@@ -10,6 +10,8 @@
   "components": [
     "arca",
     "fides",
+    "folio",
+    "forma",
     "limen-fsharp",
     "ordo",
     "praxis",
