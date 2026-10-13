@@ -641,6 +641,30 @@
       },
       "source": "manual",
       "sourceReference": null
+    },
+    {
+      "id": "WI-0030",
+      "title": "Record Arca 0.5.0 (batched read-cache save, pinned GitHub reads; arca#38, arca#39) and select it in echelon-current 1.19.0",
+      "description": null,
+      "tags": [
+        "arca",
+        "release"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T12:45:42.000Z",
+      "updatedAt": "2026-10-13T12:47:31.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "github",
+      "sourceReference": "kemiller2002/arca#42"
     }
   ]
 }
