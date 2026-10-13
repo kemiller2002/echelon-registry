@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-13T16:11:43Z",
+  "updatedAt": "2026-10-13T16:15:16.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -1671,6 +1671,38 @@
         }
       },
       "completedAt": "2026-10-13T16:11:43Z"
+    },
+    {
+      "id": "WI-0039",
+      "type": "task",
+      "state": "blocked",
+      "semanticState": "blocked",
+      "evidence": [],
+      "updatedAt": "2026-10-13T16:15:16.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T161453795Z-08f8ba1e"
+      ],
+      "latestCheckpoint": {
+        "id": "e8a8a800ec0d9e76ca90dfe6",
+        "recordedAt": "2026-10-13T16:15:10.000Z",
+        "executionId": "EXE-20261013T161453795Z-08f8ba1e",
+        "repository": "echelon-registry",
+        "branch": "spec/reg-sig-release-attestations-v2",
+        "commit": "ccbb8b7419c76a328a0823242fa8c7fdf24f4605",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry.git"
+        },
+        "remoteBranch": "spec/reg-sig-release-attestations-v2",
+        "remoteCommit": "ccbb8b7419c76a328a0823242fa8c7fdf24f4605",
+        "summary": "REG-SIG-001..008 and REG-SIG-CT-001..008 spec pushed (regenerated from #73)",
+        "nextAction": "Registry agent implements signed attestations and completes this item with implementation and tests evidence",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "blockReason": "Requirements captured (spec/release-attestation-requirements.md, REG-SIG-001..008, REG-SIG-CT-001..008). This repository's completion policy needs implementation and tests evidence, which only the Registry agent's implementation of signed attestations and conformance/validate-release-attestations.fsx can truthfully provide; resume and complete it with that work."
     }
   ]
 }
