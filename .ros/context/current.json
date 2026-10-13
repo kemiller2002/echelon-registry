@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-13T16:19:03Z",
+  "updatedAt": "2026-10-13T16:29:55Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -1735,6 +1735,17 @@
         }
       },
       "blockReason": "Requirements-only capture is done and pushed (checkpoint ab8b7ab9). Completion needs implementation and tests evidence (completionEvidence.default for type task), which a spec-only item does not have; recording the spec as implementation or reclassifying as mechanical would misstate it. Awaiting a program-lead decision on the evidence policy for requirements-only items (same condition as WI-0039)."
+    },
+    {
+      "id": "WI-0041",
+      "type": "task",
+      "state": "active",
+      "semanticState": "active",
+      "evidence": [],
+      "updatedAt": "2026-10-13T16:29:55Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T163000542Z-5b50234b"
+      ]
     }
   ]
 }

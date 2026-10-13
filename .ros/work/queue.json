@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 41,
+  "nextSeq": 47,
   "items": [
     {
       "id": "WI-0001",
@@ -844,6 +844,137 @@
       "attachments": [],
       "createdAt": "2026-10-13T16:17:46.298Z",
       "updatedAt": "2026-10-13T16:17:48Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0041",
+      "title": "Add a requirements work type to workProtocol.completionEvidence and capture the REG-SIG/REG-RU implementation items",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T16:29:50.788Z",
+      "updatedAt": "2026-10-13T16:29:52Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0042",
+      "title": "PROPOSAL-REQUIRED: implement REG-SIG-001..008 and REG-SIG-CT-001..008 (signing key and protected signing workflow, releaseAttestation in resolved sets, conformance checks). Key custody and workflow design go to the program lead as a proposal before any build.",
+      "description": null,
+      "tags": [
+        "proposal-required",
+        "reg-sig"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T16:30:11.611Z",
+      "updatedAt": "2026-10-13T16:30:18Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0043",
+      "title": "Implement REG-RU-001: library release workflows open the Registry registration PR automatically (needs coordination with each library repository)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T16:30:12.537Z",
+      "updatedAt": "2026-10-13T16:30:18Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0044",
+      "title": "Implement REG-RU-002: releasedAt and migrationNotes in the release manifest schema (echelon.release/v2 or successor)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T16:30:13.442Z",
+      "updatedAt": "2026-10-13T16:30:18Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0045",
+      "title": "Implement REG-RU-004: stalenessPolicy in echelon-current resolved sets, in the shape Conditor reads",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T16:30:14.351Z",
+      "updatedAt": "2026-10-13T16:30:18Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0046",
+      "title": "Implement REG-RU-006: consumerContracts claims checked at registration and backfilled on active web-package and NuGet-library releases; depends on the REG-SIG implementation (WI-0042)",
+      "description": null,
+      "tags": [
+        "depends-on-WI-0042"
+      ],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T16:30:15.380Z",
+      "updatedAt": "2026-10-13T16:30:18Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

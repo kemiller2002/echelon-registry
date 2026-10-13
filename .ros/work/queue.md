@@ -41,4 +41,10 @@
 | WI-0037 | Register Ordo 1.7.0 and select it in echelon-current 1.22.0 | complete |  | high |
 | WI-0038 | Record Conditor 0.10.0 | complete |  | high |
 | WI-0039 | REG-SIG-001..008: requirements for signed release attestations (DF-CON-2026-A004 decision 2 precondition) | blocked |  | medium |
-| WI-0040 | Capture REG-RU-001..006 from Conditor's rolling-upgrade notes (b61c3d9e) as Registry requirements (spec only) | ready |  | medium |
+| WI-0040 | Capture REG-RU-001..006 from Conditor's rolling-upgrade notes (b61c3d9e) as Registry requirements (spec only) | blocked |  | medium |
+| WI-0041 | Add a requirements work type to workProtocol.completionEvidence and capture the REG-SIG/REG-RU implementation items | active |  | medium |
+| WI-0042 | PROPOSAL-REQUIRED: implement REG-SIG-001..008 and REG-SIG-CT-001..008 (signing key and protected signing workflow, releaseAttestation in resolved sets, conformance checks). Key custody and workflow design go to the program lead as a proposal before any build. | ready | proposal-required, reg-sig | high |
+| WI-0043 | Implement REG-RU-001: library release workflows open the Registry registration PR automatically (needs coordination with each library repository) | ready |  | medium |
+| WI-0044 | Implement REG-RU-002: releasedAt and migrationNotes in the release manifest schema (echelon.release/v2 or successor) | ready |  | medium |
+| WI-0045 | Implement REG-RU-004: stalenessPolicy in echelon-current resolved sets, in the shape Conditor reads | ready |  | medium |
+| WI-0046 | Implement REG-RU-006: consumerContracts claims checked at registration and backfilled on active web-package and NuGet-library releases; depends on the REG-SIG implementation (WI-0042) | ready | depends-on-WI-0042 | medium |
