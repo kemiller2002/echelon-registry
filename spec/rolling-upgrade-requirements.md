@@ -59,3 +59,11 @@ Forma and Folio joined the list on 2026-10-13. Summa was the first app to
 declare them, through Conditor 0.9.0's opt-in (summa#86). Every later Forma
 or Folio selection in `echelon-current` must therefore be qualified by the
 latest released Conditor first.
+
+## Signed release attestations
+
+Contract-and-line qualification of project bindings, which removes the need
+for a Conditor release per library release, depends on the Registry signing
+release attestations. Those requirements are REG-SIG-001..008 and the
+conformance checks REG-SIG-CT-001..008, in
+`spec/release-attestation-requirements.md`.
