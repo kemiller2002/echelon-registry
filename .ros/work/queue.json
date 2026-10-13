@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 50,
+  "nextSeq": 51,
   "items": [
     {
       "id": "WI-0001",
@@ -1038,6 +1038,27 @@
       "attachments": [],
       "createdAt": "2026-10-13T22:00:56.155Z",
       "updatedAt": "2026-10-13T22:02:38Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0050",
+      "title": "Record Conditor 0.10.3",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T22:28:18.086Z",
+      "updatedAt": "2026-10-13T22:29:13Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

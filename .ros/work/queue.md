@@ -51,3 +51,4 @@
 | WI-0047 | Record Conditor 0.10.1 | complete |  | medium |
 | WI-0048 | Record Conditor 0.10.2 (workstation host tools from the Registry; downgrade refusal) | complete |  | medium |
 | WI-0049 | Record Praxis 3.12.0 | complete |  | medium |
+| WI-0050 | Record Conditor 0.10.3 | complete |  | medium |
