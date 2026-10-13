@@ -1034,10 +1034,10 @@
       "description": null,
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-13T22:00:56.155Z",
-      "updatedAt": "2026-10-13T22:01:06Z",
+      "updatedAt": "2026-10-13T22:02:38Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
