@@ -43,3 +43,18 @@ dotnet fsi conformance/validate-distribution-fixtures.fsx
 ```
 
 The proof fixture intentionally uses one real published Ordo release. It is a contract/conformance seed, not the final Echelon engineering or Indy Init profile.
+
+## Released Conditor qualification (REG-RU-007)
+
+`validate-conditor-qualification.fsx` fails when `echelon-current` selects a
+version of a consumer-declared component (`conditor-declared-components.json`)
+that the latest released Conditor refuses. Its input is
+`conditor compatibility --json` from that release's binary. CI downloads the
+binary, checks it against `checksums.txt` and its attestation, and runs the
+check after the channel is regenerated. The rule is in
+`spec/rolling-upgrade-requirements.md`.
+
+```bash
+conditor compatibility --json > /tmp/compatibility.json
+dotnet fsi conformance/validate-conditor-qualification.fsx /tmp/compatibility.json
+```
