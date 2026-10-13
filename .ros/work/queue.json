@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 32,
+  "nextSeq": 35,
   "items": [
     {
       "id": "WI-0001",
@@ -676,6 +676,48 @@
       "attachments": [],
       "createdAt": "2026-10-13T14:57:49.369Z",
       "updatedAt": "2026-10-13T15:06:16Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0033",
+      "title": "REG-RU-007: never select in echelon-current a version the latest released Conditor refuses for a consumer-declared component; enforce in distribution conformance",
+      "description": null,
+      "tags": [],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T15:19:54Z",
+      "updatedAt": "2026-10-13T15:22:22Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0034",
+      "title": "When apps declare forma/folio in conditor.json (Conditor 0.8.3 opt-in), add them to conformance/conditor-declared-components.json in the same cycle (REG-RU-007 pending item)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "captured",
+      "attachments": [],
+      "createdAt": "2026-10-13T15:23:30.483Z",
+      "updatedAt": "2026-10-13T15:23:30.483Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

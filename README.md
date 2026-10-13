@@ -37,7 +37,7 @@ Cross-system writes MUST use the receiving system's integration boundary when on
 
 ## Bootstrap
 
-See `spec/` for normative requirements, `schemas/` for machine-readable contracts, and `examples/` for reference manifests.
+See `spec/` for normative requirements (channel-move ordering: `spec/rolling-upgrade-requirements.md`, REG-RU-007), `schemas/` for machine-readable contracts, and `examples/` for reference manifests.
 
 ## Installation inventory and release metadata
 
@@ -81,6 +81,10 @@ The first Registry-owned host profile is `profiles/echelon-engineering.profile.j
 `channels/echelon-current/` is generated, never hand-edited. To move the
 channel (for example to pick up a newly recorded release):
 
+0. Confirm that the latest released Conditor qualifies every new version of a
+   component consumers declare in `conditor.json` (REG-RU-007,
+   `spec/rolling-upgrade-requirements.md`). Otherwise wait for that Conditor
+   release; CI refuses the move until it exists.
 1. Edit `snapshots/echelon-current.catalog.json` (add or retire release rows).
 2. Regenerate every platform's resolved set:
 

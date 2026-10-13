@@ -34,3 +34,5 @@
 | WI-0029 | Record Arca 0.4.1 (revise keeps the entry's account id at sign-out) and select it in echelon-current 1.18.0 | complete |  | high |
 | WI-0030 | Record Arca 0.5.0 (batched read-cache save, pinned GitHub reads; arca#38, arca#39) and select it in echelon-current 1.19.0 | complete | arca, release | high |
 | WI-0031 | Register Forma 0.6.1 and Folio 0.4.0 and select them in echelon-current 1.20.0 | complete |  | medium |
+| WI-0033 | REG-RU-007: never select in echelon-current a version the latest released Conditor refuses for a consumer-declared component; enforce in distribution conformance | complete |  | high |
+| WI-0034 | When apps declare forma/folio in conditor.json (Conditor 0.8.3 opt-in), add them to conformance/conditor-declared-components.json in the same cycle (REG-RU-007 pending item) | captured |  | medium |
