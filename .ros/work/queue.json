@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 49,
+  "nextSeq": 50,
   "items": [
     {
       "id": "WI-0001",
@@ -1017,6 +1017,27 @@
       "attachments": [],
       "createdAt": "2026-10-13T18:13:31.599Z",
       "updatedAt": "2026-10-13T18:14:27.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0049",
+      "title": "Record Praxis 3.12.0",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T22:00:56.155Z",
+      "updatedAt": "2026-10-13T22:01:06Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
