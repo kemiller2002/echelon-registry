@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-13T16:15:16.000Z",
+  "updatedAt": "2026-10-13T16:17:51Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -1703,6 +1703,17 @@
         }
       },
       "blockReason": "Requirements captured (spec/release-attestation-requirements.md, REG-SIG-001..008, REG-SIG-CT-001..008). This repository's completion policy needs implementation and tests evidence, which only the Registry agent's implementation of signed attestations and conformance/validate-release-attestations.fsx can truthfully provide; resume and complete it with that work."
+    },
+    {
+      "id": "WI-0040",
+      "type": "task",
+      "state": "active",
+      "semanticState": "active",
+      "evidence": [],
+      "updatedAt": "2026-10-13T16:17:51Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T161757090Z-00f22b0c"
+      ]
     }
   ]
 }
