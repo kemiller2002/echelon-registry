@@ -49,16 +49,13 @@ intended signal.
 Maintaining the declared list: add a component when any consumer's
 `conditor.json` starts declaring it, and remove one only when no consumer
 declares it. Components that consumers pin outside Conditor are not on the
-list. Today these are Forma, Folio and Limen, which are pinned through
-`package.json` and `.echelon/foundations.json`. For them the channel may move
-before Conditor qualifies a version, and the apps adopt by changing their own
-pins.
+list. Today that is Limen, which is pinned through `package.json` and
+`.echelon/foundations.json`. For it the channel may move before Conditor
+qualifies a version, and the apps adopt by changing their own pins. If the
+apps declare Limen in `conditor.json`, add `limen` to the list in the same
+cycle.
 
-### Pending
-
-- **Forma and Folio join the declared list when the apps declare them.**
-  Conditor 0.9.0 lets applications opt Forma and Folio into `conditor.json`.
-  When the apps declare them, add `forma` and `folio` to
-  `conformance/conditor-declared-components.json` in the same cycle, so that
-  REG-RU-007 covers them from the first declaration. Do the same for Limen if
-  the apps declare it.
+Forma and Folio joined the list on 2026-10-13. Summa was the first app to
+declare them, through Conditor 0.9.0's opt-in (summa#86). Every later Forma
+or Folio selection in `echelon-current` must therefore be qualified by the
+latest released Conditor first.
