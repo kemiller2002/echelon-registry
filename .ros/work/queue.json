@@ -749,6 +749,27 @@
       },
       "source": "manual",
       "sourceReference": null
+    },
+    {
+      "id": "WI-0036",
+      "title": "Register Ordo 1.6.0 and select it in echelon-current 1.21.0 on current main (supersedes the conflicted WI-0032 branch, PR #66)",
+      "description": null,
+      "tags": [],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T15:45:25Z",
+      "updatedAt": "2026-10-13T15:45:25Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
     }
   ]
 }
