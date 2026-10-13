@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-13T16:19:03Z",
+  "updatedAt": "2026-10-13T16:30:48Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -1735,6 +1735,47 @@
         }
       },
       "blockReason": "Requirements-only capture is done and pushed (checkpoint ab8b7ab9). Completion needs implementation and tests evidence (completionEvidence.default for type task), which a spec-only item does not have; recording the spec as implementation or reclassifying as mechanical would misstate it. Awaiting a program-lead decision on the evidence policy for requirements-only items (same condition as WI-0039)."
+    },
+    {
+      "id": "WI-0041",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "ros.json"
+        },
+        {
+          "type": "tests",
+          "path": ".github/workflows/praxis-validation.yml"
+        }
+      ],
+      "updatedAt": "2026-10-13T16:30:48Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T163000542Z-5b50234b"
+      ],
+      "latestCheckpoint": {
+        "id": "6413626b8b4f629780923092",
+        "recordedAt": "2026-10-13T16:30:42Z",
+        "executionId": "EXE-20261013T163000542Z-5b50234b",
+        "repository": "echelon-registry",
+        "branch": "chore/requirements-work-type",
+        "commit": "d33d898025a6fac6933cbdb7bfb663dd8e48d39c",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/requirements-work-type",
+        "remoteCommit": "d33d898025a6fac6933cbdb7bfb663dd8e48d39c",
+        "summary": "requirements work type added to completionEvidence; WI-0042..WI-0046 captured and ready; pushed",
+        "nextAction": "complete, open PR, merge through the gate",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T16:30:48Z"
     }
   ]
 }
