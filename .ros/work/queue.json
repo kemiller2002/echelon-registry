@@ -693,10 +693,10 @@
       "description": null,
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-13T15:14:49.083Z",
-      "updatedAt": "2026-10-13T15:14:50Z",
+      "updatedAt": "2026-10-13T15:17:36Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
