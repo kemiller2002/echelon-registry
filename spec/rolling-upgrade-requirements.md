@@ -53,3 +53,12 @@ list. Today these are Forma, Folio and Limen, which are pinned through
 `package.json` and `.echelon/foundations.json`. For them the channel may move
 before Conditor qualifies a version, and the apps adopt by changing their own
 pins.
+
+### Pending
+
+- **Forma and Folio join the declared list when the apps declare them.**
+  Conditor 0.8.3 lets applications opt Forma and Folio into `conditor.json`.
+  When the apps declare them, add `forma` and `folio` to
+  `conformance/conditor-declared-components.json` in the same cycle, so that
+  REG-RU-007 covers them from the first declaration. Do the same for Limen if
+  the apps declare it.
