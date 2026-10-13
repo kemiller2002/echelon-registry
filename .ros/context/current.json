@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-13T12:47:31.000Z",
+  "updatedAt": "2026-10-13T15:06:16Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -1356,6 +1356,55 @@
         }
       },
       "completedAt": "2026-10-13T12:47:31.000Z"
+    },
+    {
+      "id": "WI-0031",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/forma/0.6.1.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "releases/folio/0.4.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "channels/echelon-current/channel.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T15:06:16Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T145801739Z-cc93091f"
+      ],
+      "latestCheckpoint": {
+        "id": "84549f5cd2261a3a4f1fb032",
+        "recordedAt": "2026-10-13T15:06:11Z",
+        "executionId": "EXE-20261013T145801739Z-cc93091f",
+        "repository": "echelon-registry",
+        "branch": "forma-folio/0.6.1-0.4.0",
+        "commit": "9adc42dd1699976fd254325bf6ea992b069c2a4c",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "forma-folio/0.6.1-0.4.0",
+        "remoteCommit": "9adc42dd1699976fd254325bf6ea992b069c2a4c",
+        "summary": "Forma 0.6.1 and Folio 0.4.0 recorded and selected in echelon-current 1.20.0; local conformance passes; branch pushed",
+        "nextAction": "complete, open PR, merge through the gate",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T15:06:16Z"
     }
   ]
 }
