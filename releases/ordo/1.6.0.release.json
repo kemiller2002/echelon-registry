@@ -1,0 +1,78 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "ordo",
+  "version": "1.6.0",
+  "repository": "kemiller2002/ordo",
+  "tag": "v1.6.0",
+  "commit": "85951eb2b8213621854fcc2945e102fba61bb178",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "self-contained-native-cli",
+  "executable": "ordo",
+  "compatibilityAliases": [
+    "sde"
+  ],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "url": "https://github.com/kemiller2002/ordo/releases/tag/v1.6.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "native-checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "8f567d2ddc5e431e1f56c7ddc8457098b5beaf23fa5afb778699648aff680ad5"
+    },
+    {
+      "name": "ordo-construction.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "732cfbf1492179e9743e32cf9a323e02c6a8c951626530c452455f582fdf2f67"
+    },
+    {
+      "name": "ordo-core.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "b99d426c03593b98227bf316bb061cf49632bc6f1994469564f785bc1abb9662"
+    },
+    {
+      "name": "ordo-linux-arm64.tar.gz",
+      "purpose": "executable",
+      "platform": "linux-arm64",
+      "sha256": "4fb88c5a7c0bafe14b45dde76ef7d2e1c5ba3670faf3ebb176b4e76215f41b30"
+    },
+    {
+      "name": "ordo-linux-musl-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "linux-musl-x64",
+      "sha256": "e6a827395459922d183a1f539ad8feaf0ac29ecd756df2c85c3e71a45dacb32a"
+    },
+    {
+      "name": "ordo-linux-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "linux-x64",
+      "sha256": "1fa0240454433e09503cbb2c251933171f48663dd2d10f5809f7c2c42fdef77d"
+    },
+    {
+      "name": "ordo-osx-arm64.tar.gz",
+      "purpose": "executable",
+      "platform": "osx-arm64",
+      "sha256": "f4b2eef8c81c41efc54c2f627284c61df01fab73b943789fd25715e89b489021"
+    },
+    {
+      "name": "ordo-osx-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "osx-x64",
+      "sha256": "b36cfd1519719326c1a61ba2b09d31f78ae753322f124e720fcd3a1ce062751d"
+    },
+    {
+      "name": "ordo-win-x64.zip",
+      "purpose": "executable",
+      "platform": "win-x64",
+      "sha256": "2c4fb8b6ef5156750694d306e8098b4e66f85bf96c0399b70168e1e7bdb5f64d"
+    }
+  ]
+}

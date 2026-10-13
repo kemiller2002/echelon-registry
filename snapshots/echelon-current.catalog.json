@@ -144,6 +144,12 @@
       "sha256": "077bead5ca780ee638ce836e320e1650c16d1361e558aa6a9e1f2634035134be"
     },
     {
+      "systemId": "ordo",
+      "version": "1.6.0",
+      "manifest": "releases/ordo/1.6.0.release.json",
+      "sha256": "ef003a4718bdeadd2f3a1259d197b5bcf549a5599bdec34b895d50d3551c2e13"
+    },
+    {
       "systemId": "percepta",
       "version": "0.1.0",
       "manifest": "releases/percepta/0.1.0.release.json",
@@ -339,9 +345,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.20.0",
+      "version": "1.21.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "9746acf4662a54322b76b6246cdfda225783b828030f5c2c3e662258dd73504d"
+      "sha256": "fb9d805e70590da2c2da74bbad7ba5c26a68f7bdead936b647653f7a853d62e0"
     }
   ]
 }
