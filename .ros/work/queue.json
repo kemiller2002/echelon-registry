@@ -672,10 +672,10 @@
       "description": null,
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-13T14:57:49.369Z",
-      "updatedAt": "2026-10-13T14:57:55Z",
+      "updatedAt": "2026-10-13T15:06:16Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
