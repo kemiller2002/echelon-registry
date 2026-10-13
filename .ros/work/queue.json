@@ -1013,10 +1013,10 @@
       "description": null,
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-13T18:13:31.599Z",
-      "updatedAt": "2026-10-13T18:13:34.000Z",
+      "updatedAt": "2026-10-13T18:14:27.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
