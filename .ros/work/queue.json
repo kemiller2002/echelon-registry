@@ -777,10 +777,10 @@
       "description": null,
       "tags": [],
       "priority": "high",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-13T15:50:23Z",
-      "updatedAt": "2026-10-13T15:50:23Z",
+      "updatedAt": "2026-10-13T15:52:52Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
