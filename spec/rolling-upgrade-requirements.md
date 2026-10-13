@@ -57,7 +57,7 @@ pins.
 ### Pending
 
 - **Forma and Folio join the declared list when the apps declare them.**
-  Conditor 0.8.3 lets applications opt Forma and Folio into `conditor.json`.
+  Conditor 0.9.0 lets applications opt Forma and Folio into `conditor.json`.
   When the apps declare them, add `forma` and `folio` to
   `conformance/conditor-declared-components.json` in the same cycle, so that
   REG-RU-007 covers them from the first declaration. Do the same for Limen if
