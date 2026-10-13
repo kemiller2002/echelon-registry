@@ -992,10 +992,10 @@
       "description": null,
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-13T17:00:34.261Z",
-      "updatedAt": "2026-10-13T17:00:35Z",
+      "updatedAt": "2026-10-13T17:02:18Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
