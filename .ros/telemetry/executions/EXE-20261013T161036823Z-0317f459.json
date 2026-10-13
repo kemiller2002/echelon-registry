@@ -609,14 +609,30 @@
     },
     {
       "metricId": "agent.interruptions",
-      "status": "unknown",
-      "reason": "runtime capability not reported or mapped",
-      "discoveredAt": "2026-10-13T16:10:36.823Z",
+      "status": "derived",
+      "reason": "normalized measurement recorded",
+      "discoveredAt": "2026-10-13T16:12:22.000Z",
       "source": {
-        "type": "environment",
-        "name": "runtime-identity",
-        "mechanism": "whitelisted-claude-environment"
-      }
+        "type": "calculated",
+        "name": "ros-work-protocol",
+        "mechanism": "blocked-transition"
+      },
+      "lastAssessedAt": "2026-10-13T16:12:22.000Z",
+      "recordedAt": "2026-10-13T16:12:22.000Z",
+      "history": [
+        {
+          "status": "unknown",
+          "reason": "runtime capability not reported or mapped",
+          "source": {
+            "type": "environment",
+            "name": "runtime-identity",
+            "mechanism": "whitelisted-claude-environment"
+          },
+          "discoveredAt": "2026-10-13T16:10:36.823Z",
+          "lastAssessedAt": "2026-10-13T16:10:36.823Z",
+          "recordedAt": "2026-10-13T16:10:36.823Z"
+        }
+      ]
     },
     {
       "metricId": "agent.resumes",
@@ -1458,6 +1474,26 @@
       },
       "collectedAt": "2026-10-13T16:10:36.823Z",
       "schemaVersion": "1.0.0"
+    },
+    {
+      "measurementId": "MEAS-5cb2b07f18e68da3e77955f0",
+      "id": "agent.interruptions",
+      "value": 1,
+      "unit": "count",
+      "currency": null,
+      "quality": "derived",
+      "confidence": null,
+      "scope": "execution",
+      "aggregation": "sum",
+      "dimensions": {},
+      "pricing": null,
+      "source": {
+        "type": "calculated",
+        "name": "ros-work-protocol",
+        "mechanism": "blocked-transition"
+      },
+      "collectedAt": "2026-10-13T16:12:22.000Z",
+      "schemaVersion": "1.0.0"
     }
   ],
   "rawTelemetry": [],
@@ -1470,6 +1506,17 @@
         "name": "ros",
         "mechanism": "work-lifecycle"
       }
+    },
+    {
+      "type": "work.blocked",
+      "occurredAt": "2026-10-13T16:12:22.000Z",
+      "reason": "Requirements captured (spec/release-attestation-requirements.md, REG-SIG-001..008, REG-SIG-CT-001..008). This repository's completion policy needs implementation and tests evidence, which only the Registry agent's implementation of signed attestations and conformance/validate-release-attestations.fsx can truthfully provide; resume and complete it with that work.",
+      "source": {
+        "type": "ros-clock",
+        "name": "ros",
+        "mechanism": "work-lifecycle"
+      },
+      "eventId": "TEVT-67dae46c6e17edd10f27549d"
     }
   ],
   "repository": {
