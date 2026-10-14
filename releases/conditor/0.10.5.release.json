@@ -1,0 +1,76 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "conditor",
+  "version": "0.10.5",
+  "repository": "kemiller2002/conditor",
+  "tag": "v0.10.5",
+  "commit": "ae2b9552e1b21987852817ba6547f6bbae3fbcdf",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "self-contained-native-cli",
+  "executable": "conditor",
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "url": "https://github.com/kemiller2002/conditor/releases/tag/v0.10.5"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "conditor-linux-x64",
+      "purpose": "executable",
+      "platform": "linux-x64",
+      "sha256": "79b1fc42850b1221a0fef9937964fb61d6b393430404073a021b7a520d290b14"
+    },
+    {
+      "name": "conditor-linux-arm64",
+      "purpose": "executable",
+      "platform": "linux-arm64",
+      "sha256": "9dd80f6f1cb0e40a2b5ddd7c955a35fc1c7bbd6c4901b01a88898fff5d6c181a"
+    },
+    {
+      "name": "conditor-linux-musl-x64",
+      "purpose": "executable",
+      "platform": "linux-musl-x64",
+      "sha256": "78288cf886028902619e085b720f9d1911ec5e3bde7de8af3d2bf2314223a9e2"
+    },
+    {
+      "name": "conditor-linux-musl-arm64",
+      "purpose": "executable",
+      "platform": "linux-musl-arm64",
+      "sha256": "150628e5d4626d391701247618343c5cabe3359eb5c998dbd0de16cb8b35aaab"
+    },
+    {
+      "name": "conditor-osx-x64",
+      "purpose": "executable",
+      "platform": "osx-x64",
+      "sha256": "1e8c5acfb89b80b92ff7a8f1e4b97c00316bede1f405147ed44595947bf96607"
+    },
+    {
+      "name": "conditor-osx-arm64",
+      "purpose": "executable",
+      "platform": "osx-arm64",
+      "sha256": "a5fa56a4f705f1707805df16a2d21a13b2e11f145ccb9ee7c3f1f3120f4c6ed8"
+    },
+    {
+      "name": "conditor-win-x64.exe",
+      "purpose": "executable",
+      "platform": "win-x64",
+      "sha256": "0aa7d71882d3f00af1107ce8bae5fdb8d1a11fc27a7ce54429cd9e6a42ee5c11"
+    },
+    {
+      "name": "conditor-win-arm64.exe",
+      "purpose": "executable",
+      "platform": "win-arm64",
+      "sha256": "7d2b517c85e060912fdb30246a886bb96dd0215ef693e2f3f1eba79d8d78cc09"
+    },
+    {
+      "name": "checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "8c6b8b7e72679c94c8c36c7af1345515c75fd6894e5eeb72f680e434a141e6d7"
+    }
+  ]
+}
