@@ -1,0 +1,30 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "visual-engineering",
+  "version": "1.0.1",
+  "repository": "kemiller2002/visual-engineering",
+  "tag": "visual-engineering-v1.0.1",
+  "commit": "b648cdef291d39c443ccb10215529ad69afe8b32",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "repository-lifecycle",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "npm",
+      "package": "@echelon-foundry/visual-engineering",
+      "url": "https://registry.npmjs.org/@echelon-foundry/visual-engineering/-/visual-engineering-1.0.1.tgz"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "echelon-foundry-visual-engineering-1.0.1.tgz",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "32347d5c134f724cb35f9c33d882c2ed51f860381f0d5802634da3da74fb3f2f",
+      "mediaType": "application/gzip"
+    }
+  ]
+}

@@ -31,14 +31,13 @@ Examples:
 ```text
 vigila follow-up add
 chrona time record
-summa billing record
 ```
 
 Cross-system writes MUST use the receiving system's integration boundary when one exists. Consumers MUST NOT depend on another system's internal storage layout.
 
 ## Bootstrap
 
-See `spec/` for normative requirements, `schemas/` for machine-readable contracts, and `examples/` for reference manifests.
+See `spec/` for normative requirements (channel-move ordering: `spec/rolling-upgrade-requirements.md`, REG-RU-007), `schemas/` for machine-readable contracts, and `examples/` for reference manifests.
 
 ## Installation inventory and release metadata
 
@@ -73,9 +72,47 @@ The distribution foundation adds:
 - `echelon.resolved-release-set/v1` — exact platform-specific release/artifact selection;
 - `echelon.readiness/v1` — machine-readable distribution-readiness projection.
 
-`registry/systems-v2.json` is the canonical-identity seed for the currently identified Echelon products.
+`registry/systems-v2.json` is the canonical-identity seed for the currently identified Echelon products. Its `plannedCapabilities` list names portfolio capabilities that have a planned owner but no implementation (canonical time primitives, planned owner Chrona; ledger/invoicing/receivables/payments, planned owner Summa; QDI-079 amended 2026-10-05). Ownership is a commitment, not a capability: their capability ids MUST NOT appear in any system's `provides`, including the planned owner's, until they are implemented.
 
-The first Registry-owned host profile is `profiles/echelon-engineering.profile.json`. Version `0.1.0` pins the real published native releases Praxis `3.6.0` and Ordo `1.4.0`. Version `0.2.0` (`profiles/echelon-engineering-0.2.0.profile.json`) adds Dokimos `0.2.0` as a `repository-lifecycle` component that declares `echelon.repository-lifecycle` v1; its resolved sets for all six supported platforms are under `resolved/echelon-engineering/0.2.0/`. Profile versions are immutable: 0.1.0 is unchanged. The checked-in Linux x64 resolved release set is a conformance fixture and the seed for Conditor's Registry-consumption implementation.
+The first Registry-owned host profile is `profiles/echelon-engineering.profile.json`. Version `0.1.0` pins the real published native releases Praxis `3.6.0` and Ordo `1.4.0`. Immutable version `0.2.0` (`profiles/echelon-engineering-0.2.0.profile.json`) adds Dokimos `0.2.0` as a `repository-lifecycle` component, with resolved release sets for six supported platforms under `resolved/echelon-engineering/0.2.0/`. Version 0.1.0 is unchanged. The checked-in Linux x64 resolved release set is a conformance fixture and the seed for Conditor's Registry-consumption implementation.
+
+## Moving the echelon-current channel
+
+`channels/echelon-current/` is generated, never hand-edited. To move the
+channel (for example to pick up a newly recorded release):
+
+0. Confirm that the latest released Conditor qualifies every new version of a
+   component consumers declare in `conditor.json` (REG-RU-007,
+   `spec/rolling-upgrade-requirements.md`). Otherwise wait for that Conditor
+   release; CI refuses the move until it exists.
+1. Edit `snapshots/echelon-current.catalog.json` (add or retire release rows).
+2. Regenerate every platform's resolved set:
+
+   ```bash
+   for platform in linux-x64 linux-arm64 osx-x64 osx-arm64 win-x64; do
+     dotnet fsi tools/resolve-profile.fsx -- \
+       --profile profiles/echelon-current.profile.json \
+       --snapshot snapshots/echelon-current.catalog.json \
+       --platform "$platform" \
+       --output "channels/echelon-current/$platform.json"
+   done
+   ```
+
+3. Regenerate the channel index (`channel.json`: profile, snapshot and
+   resolved-set digests):
+
+   ```bash
+   dotnet fsi tools/generate-channel-index.fsx -- \
+     --channel channels/echelon-current \
+     --profile profiles/echelon-current.profile.json \
+     --snapshot snapshots/echelon-current.catalog.json
+   ```
+
+   The generator refuses resolved sets that were not produced from that
+   profile and snapshot, so a skipped step 2 fails here.
+
+CI regenerates the resolved sets and the index and fails on any byte
+difference, then runs `conformance/validate-current-channel.fsx`.
 
 ## Repository lifecycle contract
 

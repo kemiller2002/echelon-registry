@@ -37,6 +37,8 @@ Applies to: every Echelon repository that publishes a distributable executable, 
 
 **REG-REL-013** A release MAY expose multiple distribution mechanisms, but each artifact SHALL have one explicit purpose/platform identity.
 
+**REG-REL-014** A `nuget-library` release whose distribution names no single package MAY publish a package family, two or more platform-neutral `.nupkg` artifacts with purpose `package` (for example a pure core package and its adapter). The resolver then selects every one of them as primary, and a consumer installs the family together. A release that names its distribution package, and every other distribution class, still installs from exactly one primary artifact.
+
 ## Ecosystem readiness matrix
 
 **REG-REL-020** Registry SHALL maintain or generate a machine-readable readiness projection for Echelon systems.

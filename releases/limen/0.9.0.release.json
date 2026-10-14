@@ -1,0 +1,30 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "limen",
+  "version": "0.9.0",
+  "repository": "kemiller2002/limen",
+  "tag": "v0.9.0",
+  "commit": "96eb75fb5c5aeea41f59e7476d76e143dc35a759",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "web-package",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "npm",
+      "package": "@echelon-foundry/limen",
+      "url": "https://registry.npmjs.org/@echelon-foundry/limen/-/limen-0.9.0.tgz"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "echelon-foundry-limen-0.9.0.tgz",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "45b64d580548fc5ecd13bb391104bc3d1d135faf5fccab46900c1a7cc64685ec",
+      "mediaType": "application/gzip"
+    }
+  ]
+}

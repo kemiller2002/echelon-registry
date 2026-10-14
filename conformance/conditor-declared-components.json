@@ -1,0 +1,21 @@
+{
+  "schema": "echelon.conditor-declared-components/v1",
+  "requirement": "REG-RU-007",
+  "description": "Components that consumer repositories declare in conditor.json. echelon-current must not select a version of these that the latest released Conditor refuses. Add a component when any consumer starts declaring it; remove one only when no consumer declares it.",
+  "observedIn": [
+    "kemiller2002/chrona",
+    "kemiller2002/summa",
+    "kemiller2002/signal"
+  ],
+  "components": [
+    "arca",
+    "fides",
+    "folio",
+    "forma",
+    "limen-fsharp",
+    "ordo",
+    "praxis",
+    "summa-contracts",
+    "visual-engineering"
+  ]
+}

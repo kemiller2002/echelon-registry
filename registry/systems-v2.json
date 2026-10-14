@@ -259,7 +259,9 @@
       "displayName": "Limen",
       "repository": "kemiller2002/limen",
       "status": "active",
-      "aliases": [],
+      "aliases": [
+        "typescript-wasm-kernel"
+      ],
       "executableAliases": [],
       "distributionClasses": [
         "web-package",
@@ -360,20 +362,7 @@
       "distributionClasses": [
         "application-artifact"
       ],
-      "provides": [
-        {
-          "id": "billing.record",
-          "contractVersion": 1
-        },
-        {
-          "id": "invoice.create",
-          "contractVersion": 1
-        },
-        {
-          "id": "payment.record",
-          "contractVersion": 1
-        }
-      ],
+      "provides": [],
       "optionalConsumes": []
     },
     {
@@ -389,7 +378,12 @@
         "self-contained-native-cli",
         "nuget-library"
       ],
-      "provides": [],
+      "provides": [
+        {
+          "id": "echelon.repository-lifecycle",
+          "contractVersion": 1
+        }
+      ],
       "optionalConsumes": []
     },
     {
@@ -473,6 +467,94 @@
       ],
       "provides": [],
       "optionalConsumes": []
+    },
+    {
+      "id": "arca",
+      "displayName": "Arca",
+      "repository": "kemiller2002/arca",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "nuget-library"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "fides",
+      "displayName": "Fides",
+      "repository": "kemiller2002/fides",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "nuget-library"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "summa-contracts",
+      "displayName": "Summa Contracts",
+      "repository": "kemiller2002/summa",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "nuget-library"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "limen-fsharp",
+      "displayName": "Limen F# packages",
+      "repository": "kemiller2002/limen",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "nuget-library"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    }
+  ],
+  "plannedCapabilities": [
+    {
+      "id": "time-primitives",
+      "displayName": "Canonical time primitives",
+      "description": "Shared Instant, Clock and date-only/calendar semantics for Echelon systems. Not implemented: no library or contract exists yet. Chrona owns it as a separately packaged library inside the chrona repository, not inside the time-entry application; Vigila defines its own local Instant/Clock until then.",
+      "capabilities": [],
+      "plannedOwner": "chrona",
+      "status": "planned",
+      "decision": "QDI-079 (amended 2026-10-05)",
+      "prerequisites": [
+        "separately packaged library in chrona (working name Chrona.Time); Vigila first consumer"
+      ],
+      "previouslyUnownedSince": "QDI-079",
+      "previouslyAssumedOwner": "chrona",
+      "nextAction": "Chrona builds Chrona.Time as a separately packaged library in the chrona repository; Vigila adopts it as the first consumer. No system provides this capability until it is implemented."
+    },
+    {
+      "id": "ledger-receivables-payments",
+      "displayName": "Ledger, invoicing, receivables and payments",
+      "description": "Financial ledger, billing, invoicing, receivables and payment recording. Not implemented: requirements exist only as Summa input documents. Summa owns it, gated on Summa's foundation.",
+      "capabilities": [
+        "billing.record",
+        "invoice.create",
+        "payment.record"
+      ],
+      "plannedOwner": "summa",
+      "status": "planned",
+      "decision": "QDI-079 (amended 2026-10-05)",
+      "prerequisites": [
+        "Summa foundation replaces copied Node tooling (QDI-071)"
+      ],
+      "previouslyUnownedSince": "QDI-079",
+      "previouslyAssumedOwner": "summa",
+      "nextAction": "Summa replaces its copied Node-era tooling with a real foundation (QDI-071), then implements ledger/invoicing/receivables/payments. Summa must not list billing.record, invoice.create or payment.record in provides until they are implemented."
     }
   ]
 }

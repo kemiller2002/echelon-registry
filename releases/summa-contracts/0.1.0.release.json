@@ -1,0 +1,34 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "summa-contracts",
+  "version": "0.1.0",
+  "repository": "kemiller2002/summa",
+  "tag": "contracts-v0.1.0",
+  "commit": "e888cfb102be7001db7129121a5769a02c44a968",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "nuget-library",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "url": "https://github.com/kemiller2002/summa/releases/tag/contracts-v0.1.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "EchelonFoundry.Summa.Contracts.0.1.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "8ef0e595f9749edac7fc3c46c1d400ba1a4d44f10090c3ed27291855845d15f1"
+    },
+    {
+      "name": "checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "526dc765ac6736de9043a0cc08b4f9932b4b79518c4bff0b049d5366df7f6776"
+    }
+  ]
+}

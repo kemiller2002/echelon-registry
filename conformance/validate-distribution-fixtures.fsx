@@ -33,6 +33,7 @@ let schemaFiles =
         "schemas/resolved-release-set.schema.json"
         "schemas/catalog-snapshot.schema.json"
         "schemas/readiness.schema.json"
+        "schemas/current-channel.schema.json"
     |]
 
 for path in schemaFiles do
@@ -80,6 +81,59 @@ require (aliases |> Array.distinct |> Array.length = aliases.Length) "system ali
 
 for alias in aliases do
     require (not (canonicalIds |> Array.contains alias)) (sprintf "alias %s collides with a canonical system id" alias)
+
+// Capabilities with a planned owner (owner decision QDI-079, amended
+// 2026-10-05, in echelon-organization-administration) are commitments, not
+// implementations. No system, including the planned owner, may provide one of
+// their capability ids until it is implemented and the entry is retired.
+let providedCapabilities =
+    systems
+    |> Array.collect (fun system ->
+        arrayProperty "provides" system
+        |> Array.map (fun capability -> stringProperty "id" capability, stringProperty "id" system))
+
+let plannedCapabilities = arrayProperty "plannedCapabilities" systemsDoc.RootElement
+let plannedIds = plannedCapabilities |> Array.map (stringProperty "id")
+
+let tryStringProperty (name: string) (element: JsonElement) =
+    match element.TryGetProperty name with
+    | true, value when value.ValueKind = JsonValueKind.String -> Some (value.GetString())
+    | _ -> None
+
+let isBlank = Option.forall String.IsNullOrWhiteSpace
+
+let plannedEntryViolations (entry: JsonElement) =
+    let id = stringProperty "id" entry
+    let plannedOwner = tryStringProperty "plannedOwner" entry
+    let ownerViolations =
+        match plannedOwner with
+        | Some owner when canonicalIds |> Array.contains owner -> []
+        | Some owner -> [ sprintf "planned capability %s names unknown plannedOwner %s" id owner ]
+        | None -> [ sprintf "planned capability %s must name a plannedOwner" id ]
+    let fieldViolations =
+        [ if tryStringProperty "status" entry <> Some "planned" then
+              sprintf "planned capability %s must have status planned" id
+          if isBlank (tryStringProperty "decision" entry) then
+              sprintf "planned capability %s must cite a decision" id
+          if isBlank (tryStringProperty "nextAction" entry) then
+              sprintf "planned capability %s must name a next action" id ]
+    let providerViolations =
+        arrayProperty "capabilities" entry
+        |> Array.map (fun capability -> capability.GetString())
+        |> Array.collect (fun capabilityId ->
+            providedCapabilities
+            |> Array.filter (fun (provided, _) -> provided = capabilityId)
+            |> Array.map (fun (_, systemId) ->
+                sprintf "planned capability %s (%s) is provided by %s; planned capabilities must not be provided until implemented" capabilityId id systemId))
+        |> Array.toList
+    ownerViolations @ fieldViolations @ providerViolations
+
+let plannedViolations =
+    [ if plannedIds |> Array.distinct |> Array.length <> plannedIds.Length then
+          "planned capability ids must be unique"
+      yield! plannedCapabilities |> Seq.collect plannedEntryViolations ]
+
+require (List.isEmpty plannedViolations) (String.Join(Environment.NewLine, plannedViolations))
 
 let validateResolution
     (name: string)
@@ -269,8 +323,8 @@ validateResolution
         "dokimos", "releases/dokimos/0.2.0.release.json"
     ])
 
-// echelon-engineering 0.2.0 adds Dokimos; every supported platform's
-// checked-in resolved set must equal the resolver output and validate.
+// Immutable echelon-engineering 0.2.0 adds Dokimos to Praxis and Ordo.
+// Regenerated release sets must match their checked-in fixture bytes.
 let engineering020Generated =
     Environment.GetEnvironmentVariable("ECHELON_ENGINEERING_020_RESOLVED_DIR")
     |> Option.ofObj

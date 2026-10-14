@@ -1,0 +1,66 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "ordo",
+  "version": "1.4.2",
+  "repository": "kemiller2002/ordo",
+  "tag": "v1.4.2",
+  "commit": "6637b22f67d7e972d7b209ba649f476a77af996b",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "self-contained-native-cli",
+  "executable": "ordo",
+  "compatibilityAliases": [
+    "sde"
+  ],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "url": "https://github.com/kemiller2002/ordo/releases/tag/v1.4.2"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "native-checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "9bbed2363fb2754f841162f505fd4a8330d33f88d4cd9695cd3bdd12ec119071"
+    },
+    {
+      "name": "ordo-linux-arm64.tar.gz",
+      "purpose": "executable",
+      "platform": "linux-arm64",
+      "sha256": "ae6cd8260e169272275ddc803d4565d4b132ca381891e4d0e046dc929b94e33f"
+    },
+    {
+      "name": "ordo-linux-musl-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "linux-musl-x64",
+      "sha256": "89f833343c796e246fe8d76c323ca8cdcb7a136d01ef6534fe1f8e8f9478890f"
+    },
+    {
+      "name": "ordo-linux-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "linux-x64",
+      "sha256": "64ee9562aab3f1a8a789af39e0086d479d26150352824e53dd534a4fc8b79ca0"
+    },
+    {
+      "name": "ordo-osx-arm64.tar.gz",
+      "purpose": "executable",
+      "platform": "osx-arm64",
+      "sha256": "cda1ba6508324e9d18cde30afbe0019816018147b2f6bc3f9eea549269b22af1"
+    },
+    {
+      "name": "ordo-osx-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "osx-x64",
+      "sha256": "7b6aebc354cf103825096eea191dcbad487b3d7a82235dad5b8048a2eee24df3"
+    },
+    {
+      "name": "ordo-win-x64.zip",
+      "purpose": "executable",
+      "platform": "win-x64",
+      "sha256": "de95f23ca0c651f7151925b7bf8ba1acf9a2c40edf70de3fc5a8e28e36dec713"
+    }
+  ]
+}

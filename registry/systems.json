@@ -35,11 +35,7 @@
       "id": "summa",
       "repository": "kemiller2002/summa",
       "executable": "summa",
-      "provides": [
-        { "id": "billing.record", "contractVersion": 1 },
-        { "id": "invoice.create", "contractVersion": 1 },
-        { "id": "payment.record", "contractVersion": 1 }
-      ]
+      "provides": []
     },
     {
       "id": "ordo",

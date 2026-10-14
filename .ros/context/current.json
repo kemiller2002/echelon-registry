@@ -1,0 +1,2115 @@
+{
+  "schemaVersion": "1.0.0",
+  "protocolVersion": "1.0.0",
+  "repository": "echelon-registry",
+  "actor": "anthropic/claude-code",
+  "startedAt": "2026-10-06T12:28:34.761Z",
+  "updatedAt": "2026-10-14T08:34:19Z",
+  "baselineDirtyPaths": [],
+  "workItems": [
+    {
+      "id": "ROS-INSTALL-3-7-1",
+      "type": "mechanical",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "installation",
+          "path": ".ros/installation.json"
+        }
+      ],
+      "updatedAt": "2026-10-06T12:28:34.761Z",
+      "completedAt": "2026-10-06T12:28:34.761Z"
+    },
+    {
+      "id": "WI-0001",
+      "type": "mechanical",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": ".echelon/ros.json"
+        },
+        {
+          "type": "implementation",
+          "path": ".echelon/sde.json"
+        },
+        {
+          "type": "documentation",
+          "path": "AGENTS.md"
+        },
+        {
+          "type": "documentation",
+          "path": "spec/ecosystem-distribution-readiness.md"
+        },
+        {
+          "type": "tests",
+          "path": ".github/workflows/praxis-validation.yml"
+        }
+      ],
+      "updatedAt": "2026-10-06T12:30:31.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261006T123008854Z-5ef1095b"
+      ],
+      "latestCheckpoint": {
+        "id": "3720b0ed2c66539eb27fff9c",
+        "recordedAt": "2026-10-06T12:30:30.000Z",
+        "executionId": "EXE-20261006T123008854Z-5ef1095b",
+        "repository": "echelon-registry",
+        "branch": "chore/praxis-3.7.1-governance",
+        "commit": "bcf7ea241dd4aae4037ab507713d3933be3465c3",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/praxis-3.7.1-governance",
+        "remoteCommit": "bcf7ea241dd4aae4037ab507713d3933be3465c3",
+        "summary": "Praxis 3.7.1 and Ordo 1.4.0 installed, readiness refreshed, pushed",
+        "nextAction": "complete, PR",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-06T12:30:31.000Z"
+    },
+    {
+      "id": "WI-0002",
+      "type": "mechanical",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/ordo/1.4.1.release.json"
+        }
+      ],
+      "updatedAt": "2026-10-06T12:58:00.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261006T125650838Z-b7dcb767"
+      ],
+      "latestCheckpoint": {
+        "id": "54c08843ef75047dfb6ec493",
+        "recordedAt": "2026-10-06T12:57:59.000Z",
+        "executionId": "EXE-20261006T125650838Z-b7dcb767",
+        "repository": "echelon-registry",
+        "branch": "release/ordo-1.4.1",
+        "commit": "9bfb1a26eb5cb91906e70748fd7d59248ecf4fa1",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "release/ordo-1.4.1",
+        "remoteCommit": "9bfb1a26eb5cb91906e70748fd7d59248ecf4fa1",
+        "summary": "ordo 1.4.1 record, catalog row and regenerated channel pushed",
+        "nextAction": "complete",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-06T12:58:00.000Z"
+    },
+    {
+      "id": "WI-0003",
+      "type": "mechanical",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": ".echelon/toolchain.json"
+        },
+        {
+          "type": "implementation",
+          "path": ".echelon/sde.json"
+        },
+        {
+          "type": "tests",
+          "path": ".github/workflows/praxis-validation.yml"
+        }
+      ],
+      "updatedAt": "2026-10-06T14:03:48.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261006T140214433Z-672d1898"
+      ],
+      "latestCheckpoint": {
+        "id": "1f8c653548b9a1d97ea19037",
+        "recordedAt": "2026-10-06T14:03:47.000Z",
+        "executionId": "EXE-20261006T140214433Z-672d1898",
+        "repository": "echelon-registry",
+        "branch": "chore/ordo-1.4.1",
+        "commit": "7e5074c46c2b2c464c38c9c9cef903ab5be2fab0",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/ordo-1.4.1",
+        "remoteCommit": "7e5074c46c2b2c464c38c9c9cef903ab5be2fab0",
+        "summary": "Ordo 1.4.1 applied, verified, pushed",
+        "nextAction": "complete, PR",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-06T14:03:48.000Z"
+    },
+    {
+      "id": "WI-0004",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/ordo/1.4.2.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-06T14:54:56.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261006T145419687Z-c61eb962"
+      ],
+      "latestCheckpoint": {
+        "id": "928c1b31ce3eeb9f786f14d7",
+        "recordedAt": "2026-10-06T14:54:54.000Z",
+        "executionId": "EXE-20261006T145419687Z-c61eb962",
+        "repository": "echelon-registry",
+        "branch": "chore/ordo-1.4.2",
+        "commit": "38e9638da2f426de1bfa1e9210b094659a3b7219",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/ordo-1.4.2",
+        "remoteCommit": "38e9638da2f426de1bfa1e9210b094659a3b7219",
+        "summary": "record Ordo 1.4.2 and select it in echelon-current: implemented, tested, pushed",
+        "nextAction": "complete, PR, merge when green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-06T14:54:56.000Z"
+    },
+    {
+      "id": "WI-0005",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/praxis/3.7.2.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-06T15:28:49.553Z",
+      "telemetryExecutionIds": [
+        "EXE-20261006T152646414Z-b4cc107a"
+      ],
+      "latestCheckpoint": {
+        "id": "f0bdecf6e92bd7cc5772d58d",
+        "recordedAt": "2026-10-06T15:28:40.209Z",
+        "executionId": "EXE-20261006T152646414Z-b4cc107a",
+        "repository": "echelon-registry",
+        "branch": "chore/praxis-3.7.2",
+        "commit": "9971fb944c8974f1932a9ae1faa099c9cfe8313a",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/praxis-3.7.2",
+        "remoteCommit": "9971fb944c8974f1932a9ae1faa099c9cfe8313a",
+        "summary": "Praxis 3.7.2 recorded and selected in echelon-current; conformance replayed locally",
+        "nextAction": "Complete WI-0005, open PR, merge when green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-06T15:28:49.553Z"
+    },
+    {
+      "id": "WI-0006",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/visual-engineering/1.0.1.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-06T16:03:31.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261006T160225148Z-93fe6afd"
+      ],
+      "latestCheckpoint": {
+        "id": "e6fca79faa7f142ee201a30a",
+        "recordedAt": "2026-10-06T16:03:30.000Z",
+        "executionId": "EXE-20261006T160225148Z-93fe6afd",
+        "repository": "echelon-registry",
+        "branch": "release/visual-engineering-1.0.1",
+        "commit": "a53b75202696c0d256ceccfd76b3fcafe40cb22a",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "release/visual-engineering-1.0.1",
+        "remoteCommit": "a53b75202696c0d256ceccfd76b3fcafe40cb22a",
+        "summary": "VE 1.0.1 recorded; echelon-current regenerated",
+        "nextAction": "Merge PR",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-06T16:03:31.000Z",
+      "conclusion": "VE 1.0.1 selected in echelon-current"
+    },
+    {
+      "id": "WI-0007",
+      "type": "mechanical",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": ".echelon/toolchain.json"
+        },
+        {
+          "type": "implementation",
+          "path": ".echelon/ros.json"
+        },
+        {
+          "type": "implementation",
+          "path": ".echelon/sde.json"
+        },
+        {
+          "type": "implementation",
+          "path": "conditor.json"
+        }
+      ],
+      "updatedAt": "2026-10-06T16:36:49.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261006T163454001Z-addcf904"
+      ],
+      "latestCheckpoint": {
+        "id": "713309b8961e027b53235cd3",
+        "recordedAt": "2026-10-06T16:36:48.000Z",
+        "executionId": "EXE-20261006T163454001Z-addcf904",
+        "repository": "echelon-registry",
+        "branch": "chore/praxis-3.7.2-final",
+        "commit": "e1209bd315aec7be7aceeaa08fa14b1785ae208e",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/praxis-3.7.2-final",
+        "remoteCommit": "e1209bd315aec7be7aceeaa08fa14b1785ae208e",
+        "summary": "toolchain upgrade applied, verified, pushed",
+        "nextAction": "complete, PR",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-06T16:36:49.000Z"
+    },
+    {
+      "id": "WI-0008",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/strata/0.1.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "tools/resolve-profile.fsx"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-08T01:43:26.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T013251418Z-331f1338"
+      ],
+      "latestCheckpoint": {
+        "id": "5b6b2b564aaa713b7d056e41",
+        "recordedAt": "2026-10-08T01:43:25.000Z",
+        "executionId": "EXE-20261008T013251418Z-331f1338",
+        "repository": "echelon-registry",
+        "branch": "registry/strata-0.1.0",
+        "commit": "a95fc3069254fdffc5adc90268fcbc8f1f46af6e",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "registry/strata-0.1.0",
+        "remoteCommit": "a95fc3069254fdffc5adc90268fcbc8f1f46af6e",
+        "summary": "Strata 0.1.0 recorded and selected (optional) in echelon-current 1.2.0; conformance passes locally; pushed",
+        "nextAction": "record completion, PR, merge when green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T01:43:26.000Z"
+    },
+    {
+      "id": "WI-0009",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/ordo/1.5.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "snapshots/echelon-current.catalog.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-08T06:48:50.282Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T064609736Z-09c7af0b"
+      ],
+      "latestCheckpoint": {
+        "id": "74a51ec8aaaa057329b4fd7b",
+        "recordedAt": "2026-10-08T06:48:47.427Z",
+        "executionId": "EXE-20261008T064609736Z-09c7af0b",
+        "repository": "echelon-registry",
+        "branch": "claude/record-ordo-1.5.0",
+        "commit": "b9aaef2ec9ae0e879adaac9f2493261bafda877b",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/record-ordo-1.5.0",
+        "remoteCommit": "b9aaef2ec9ae0e879adaac9f2493261bafda877b",
+        "summary": "Ordo 1.5.0 recorded (assets, checksums, Sigstore attestations verified) and selected in echelon-current 1.2.0; conformance passes locally; pushed",
+        "nextAction": "record completion, open PR, merge when green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T06:48:50.282Z",
+      "conclusion": "Ordo 1.5.0 recorded and selected in echelon-current (profile 1.2.0 unchanged)"
+    },
+    {
+      "id": "WI-0010",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "conditor.json"
+        },
+        {
+          "type": "implementation",
+          "path": ".conditor/lock.json"
+        },
+        {
+          "type": "implementation",
+          "path": ".conditor/authority/resolved-release-set.json"
+        },
+        {
+          "type": "implementation",
+          "path": ".echelon/toolchain.json"
+        },
+        {
+          "type": "tests",
+          "path": ".github/workflows/praxis-validation.yml"
+        }
+      ],
+      "updatedAt": "2026-10-08T07:14:52.992Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T071442466Z-244b5a73"
+      ],
+      "latestCheckpoint": {
+        "id": "a364aebf569f43ced205790d",
+        "recordedAt": "2026-10-08T07:14:51.960Z",
+        "executionId": "EXE-20261008T071442466Z-244b5a73",
+        "repository": "echelon-registry",
+        "branch": "chore/ordo-1.5.0",
+        "commit": "e943a753a72c2c5311c6c2a5db14c7578f546501",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/ordo-1.5.0",
+        "remoteCommit": "e943a753a72c2c5311c6c2a5db14c7578f546501",
+        "summary": "conditor upgrade --current to echelon-current 1.2.0 (Ordo 1.4.2 -> 1.5.0) committed and pushed; local checks passed",
+        "nextAction": "Open the PR, get CI green and merge",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T07:14:52.992Z",
+      "conclusion": "Ordo 1.5.0 through echelon-current 1.2.0; local checks passed (log: /tmp/claude-0/-home-user-praxis/7bcb3038-90cc-534e-8e5b-9be62aa1de8c/scratchpad/sweep/logs/echelon-registry.log)"
+    },
+    {
+      "id": "WI-0011",
+      "type": "chore",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/strata/0.1.1.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "implementation",
+          "path": "snapshots/echelon-current.catalog.json"
+        },
+        {
+          "type": "implementation",
+          "path": "channels/echelon-current/channel.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-08T07:36:32.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T072737250Z-f587ce55"
+      ],
+      "latestCheckpoint": {
+        "id": "48c2901ab23445250b061d66",
+        "recordedAt": "2026-10-08T07:27:46.000Z",
+        "executionId": "EXE-20261008T072737250Z-f587ce55",
+        "repository": "echelon-registry",
+        "branch": "chore/strata-0.1.1",
+        "commit": "94fabc19b814261fbe771bfa8ecd116a2ebb66b3",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/strata-0.1.1",
+        "remoteCommit": "94fabc19b814261fbe771bfa8ecd116a2ebb66b3",
+        "summary": "Strata 0.1.1 recorded with verified digests and attestations; echelon-current profile 1.3.0 requires strata >=0.1.1; channel regenerated",
+        "nextAction": "Get conformance green, complete and merge",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T07:36:32.000Z",
+      "conclusion": "Strata 0.1.1 recorded (digests and Sigstore build provenance verified against release.yml@main, f650d91) and selected by echelon-current 1.3.0, whose strata range is now >=0.1.1. distribution-conformance green on PR #44."
+    },
+    {
+      "id": "WI-0012",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/arca/0.1.0.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "channels/echelon-current/linux-x64.json"
+        }
+      ],
+      "updatedAt": "2026-10-08T09:40:01.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T093957097Z-26416832"
+      ],
+      "latestCheckpoint": {
+        "id": "1a4cc025ee4486f7849da6b8",
+        "recordedAt": "2026-10-08T09:40:00.000Z",
+        "executionId": "EXE-20261008T093957097Z-26416832",
+        "repository": "echelon-registry",
+        "branch": "chore/arca-0.1.0",
+        "commit": "b0f9b5a5983f820ba0554f8f2a47d7b08ad49f7a",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/arca-0.1.0",
+        "remoteCommit": "b0f9b5a5983f820ba0554f8f2a47d7b08ad49f7a",
+        "summary": "Arca 0.1.0 recorded and selected in echelon-current 1.4.0",
+        "nextAction": "PR, CI green, merge",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T09:40:01.000Z"
+    },
+    {
+      "id": "WI-0013",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/fides/0.1.0.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "channels/echelon-current/channel.json"
+        }
+      ],
+      "updatedAt": "2026-10-08T10:23:11.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T102059727Z-630e230f"
+      ],
+      "latestCheckpoint": {
+        "id": "2b76951403c58b92437b0f21",
+        "recordedAt": "2026-10-08T10:23:10.000Z",
+        "executionId": "EXE-20261008T102059727Z-630e230f",
+        "repository": "echelon-registry",
+        "branch": "fides-0.1.0",
+        "commit": "0043e4e4691c69ac195c379bb64eab54751a0ac1",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "fides-0.1.0",
+        "remoteCommit": "0043e4e4691c69ac195c379bb64eab54751a0ac1",
+        "summary": "Fides 0.1.0 recorded, fides registered, echelon-current 1.5.0 with fides as optional project binding; channels regenerated; conformance passes",
+        "nextAction": "Merge after CI",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T10:23:11.000Z"
+    },
+    {
+      "id": "WI-0014",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/arca/0.2.0.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "channels/echelon-current/channel.json"
+        }
+      ],
+      "updatedAt": "2026-10-08T10:34:52.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T103444435Z-df0a5c58"
+      ],
+      "latestCheckpoint": {
+        "id": "3f3f9de978f0698f766662b9",
+        "recordedAt": "2026-10-08T10:34:46.000Z",
+        "executionId": "EXE-20261008T103444435Z-df0a5c58",
+        "repository": "echelon-registry",
+        "branch": "main",
+        "commit": "61a81f0fd52461aabfe4e0d95d1b2e4348b47805",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "main",
+        "remoteCommit": "61a81f0fd52461aabfe4e0d95d1b2e4348b47805",
+        "summary": "Arca 0.2.0 recorded; echelon-current 1.6.0 channels regenerated and validated",
+        "nextAction": "None",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T10:34:52.000Z"
+    },
+    {
+      "id": "WI-0015",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/fides/0.2.0.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "channels/echelon-current/channel.json"
+        }
+      ],
+      "updatedAt": "2026-10-08T11:02:11.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T110053043Z-36e7d43b"
+      ],
+      "latestCheckpoint": {
+        "id": "519dbda1b68636a6bf0d9a3e",
+        "recordedAt": "2026-10-08T11:02:10.000Z",
+        "executionId": "EXE-20261008T110053043Z-36e7d43b",
+        "repository": "echelon-registry",
+        "branch": "fides-0.2.0",
+        "commit": "6dd7b7a4dfd3aeee8074c3ddece3b96a6ff5cc93",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "fides-0.2.0",
+        "remoteCommit": "6dd7b7a4dfd3aeee8074c3ddece3b96a6ff5cc93",
+        "summary": "Fides 0.2.0 recorded; echelon-current 1.7.0; conformance and end-to-end install pass",
+        "nextAction": "Merge after CI",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T11:02:11.000Z"
+    },
+    {
+      "id": "WI-0016",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/summa-contracts/0.1.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "tests",
+          "path": "channels/echelon-current/linux-x64.json"
+        }
+      ],
+      "updatedAt": "2026-10-08T15:23:23.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T152102701Z-201d8cde"
+      ],
+      "latestCheckpoint": {
+        "id": "abcff6c5c4e6e3f1198bd862",
+        "recordedAt": "2026-10-08T15:23:22.000Z",
+        "executionId": "EXE-20261008T152102701Z-201d8cde",
+        "repository": "echelon-registry",
+        "branch": "chore/summa-contracts-0.1.0",
+        "commit": "4704162815e1d5c4d73fc37cf822005b283b268f",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry.git"
+        },
+        "remoteBranch": "chore/summa-contracts-0.1.0",
+        "remoteCommit": "4704162815e1d5c4d73fc37cf822005b283b268f",
+        "summary": "summa-contracts 0.1.0 recorded and selected in echelon-current 1.8.0",
+        "nextAction": "Merge after CI",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T15:23:23.000Z"
+    },
+    {
+      "id": "WI-0017",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/arca/0.2.1.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "tests",
+          "path": "channels/echelon-current/channel.json"
+        }
+      ],
+      "updatedAt": "2026-10-08T16:30:52.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T162929403Z-3747eb62"
+      ],
+      "latestCheckpoint": {
+        "id": "205f4a147c06a3613924df40",
+        "recordedAt": "2026-10-08T16:30:51.000Z",
+        "executionId": "EXE-20261008T162929403Z-3747eb62",
+        "repository": "echelon-registry",
+        "branch": "chore/arca-0.2.1-registry",
+        "commit": "7c42cd097138de1e2e297f9909d5fa448caf6880",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/arca-0.2.1-registry",
+        "remoteCommit": "7c42cd097138de1e2e297f9909d5fa448caf6880",
+        "summary": "Arca 0.2.1 recorded; echelon-current 1.9.0 regenerated; channel conformance passes",
+        "nextAction": "Merge the registry PR",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T16:30:52.000Z"
+    },
+    {
+      "id": "WI-0018",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/limen-fsharp/0.8.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "tests",
+          "path": "channels/echelon-current/linux-x64.json"
+        }
+      ],
+      "updatedAt": "2026-10-08T18:44:31.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T181936337Z-ae5dad3b"
+      ],
+      "latestCheckpoint": {
+        "id": "210d51a91632d8887c3fbf95",
+        "recordedAt": "2026-10-08T18:44:25.000Z",
+        "executionId": "EXE-20261008T181936337Z-ae5dad3b",
+        "repository": "echelon-registry",
+        "branch": "chore/limen-0.8.0-registry",
+        "commit": "4f0068e51a1bd0254a64aed3f30a5ae354e1f04c",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry.git"
+        },
+        "remoteBranch": "chore/limen-0.8.0-registry",
+        "remoteCommit": "4f0068e51a1bd0254a64aed3f30a5ae354e1f04c",
+        "summary": "Recorded limen 0.8.0 and limen-fsharp 0.8.0, registered limen-fsharp, echelon-current 1.10.0 regenerated and validated; Conditor install, verify and upgrade --check proven in scratch consumers.",
+        "nextAction": "Open the PR and merge when every check is green.",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T18:44:31.000Z"
+    },
+    {
+      "id": "WI-0019",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/limen/0.9.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "releases/limen-fsharp/0.9.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "tests",
+          "path": "channels/echelon-current/linux-x64.json"
+        }
+      ],
+      "updatedAt": "2026-10-08T21:19:35.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T211422256Z-20bae3b9"
+      ],
+      "latestCheckpoint": {
+        "id": "ba511062468d72f6b16b8d15",
+        "recordedAt": "2026-10-08T21:19:18.000Z",
+        "executionId": "EXE-20261008T211422256Z-20bae3b9",
+        "repository": "echelon-registry",
+        "branch": "release/limen-0.9.0",
+        "commit": "5f738e2394b290f7134184a772d6f1052af4d5cb",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "release/limen-0.9.0",
+        "remoteCommit": "5f738e2394b290f7134184a772d6f1052af4d5cb",
+        "summary": "Limen 0.9.0 and limen-fsharp 0.9.0 recorded, echelon-current 1.11.0 resolved and validated, Conditor upgrade verified end to end",
+        "nextAction": "Open the PR and merge on green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T21:19:35.000Z"
+    },
+    {
+      "id": "WI-0020",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/arca/0.3.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-08T21:40:37.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T213340706Z-22fd1475"
+      ],
+      "latestCheckpoint": {
+        "id": "4e5596c00801e20748f50a75",
+        "recordedAt": "2026-10-08T21:40:26.000Z",
+        "executionId": "EXE-20261008T213340706Z-22fd1475",
+        "repository": "echelon-registry",
+        "branch": "arca/0.3.0",
+        "commit": "63c67aac91c36e14710ecc9767dd6d7b80c49139",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "arca/0.3.0",
+        "remoteCommit": "63c67aac91c36e14710ecc9767dd6d7b80c49139",
+        "summary": "Arca 0.3.0 recorded; echelon-current 1.12.0 regenerated; conformance passes locally",
+        "nextAction": "Merge on green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T21:40:37.000Z"
+    },
+    {
+      "id": "WI-0021",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/forma/0.5.0.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "channels/echelon-current/channel.json"
+        }
+      ],
+      "updatedAt": "2026-10-08T22:16:21.573Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T221405592Z-ff5262d2"
+      ],
+      "latestCheckpoint": {
+        "id": "cf45412a282c42c4f82ef4cf",
+        "recordedAt": "2026-10-08T22:16:20.439Z",
+        "executionId": "EXE-20261008T221405592Z-ff5262d2",
+        "repository": "echelon-registry",
+        "branch": "chore/echelon-current-forma-0.5.0",
+        "commit": "eceb948e0ea6558ba02c9f80b2d072729357d71a",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/echelon-current-forma-0.5.0",
+        "remoteCommit": "eceb948e0ea6558ba02c9f80b2d072729357d71a",
+        "summary": "Main merged; Forma 0.5.0 selected in echelon-current 1.13.0; channels regenerated; distribution conformance passes locally",
+        "nextAction": "CI green, then merge PR #49",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T22:16:21.573Z"
+    },
+    {
+      "id": "WI-0022",
+      "type": "release",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/praxis/3.9.1.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-08T22:29:37.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T222846812Z-0187a41d"
+      ],
+      "latestCheckpoint": {
+        "id": "98b503e7c31b3c6d9c597399",
+        "recordedAt": "2026-10-08T22:29:36.000Z",
+        "executionId": "EXE-20261008T222846812Z-0187a41d",
+        "repository": "echelon-registry",
+        "branch": "chore/praxis-3.9.1",
+        "commit": "49b4832948b70c402023a569d1da78468f98c28b",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/praxis-3.9.1",
+        "remoteCommit": "49b4832948b70c402023a569d1da78468f98c28b",
+        "summary": "Praxis 3.9.1 recorded from verified assets; echelon-current 1.14.0 selects it; channel regenerated and validated",
+        "nextAction": "Merge on green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T22:29:37.000Z"
+    },
+    {
+      "id": "WI-0023",
+      "type": "release",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/conditor/0.8.0.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-08T23:36:41.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261008T233601616Z-98051a88"
+      ],
+      "latestCheckpoint": {
+        "id": "f71c2adfdf58378f912f5282",
+        "recordedAt": "2026-10-08T23:36:40.000Z",
+        "executionId": "EXE-20261008T233601616Z-98051a88",
+        "repository": "echelon-registry",
+        "branch": "chore/conditor-0.8.0",
+        "commit": "da1e2e937ad2ffc1e1273e45737c852e0c002ead",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/conditor-0.8.0",
+        "remoteCommit": "da1e2e937ad2ffc1e1273e45737c852e0c002ead",
+        "summary": "Conditor 0.8.0 recorded from its verified release manifest",
+        "nextAction": "Merge on green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-08T23:36:41.000Z"
+    },
+    {
+      "id": "WI-0024",
+      "type": "release",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/praxis/3.10.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-09T01:09:37.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261009T010832907Z-3d8948d0"
+      ],
+      "latestCheckpoint": {
+        "id": "5da631824e6a691b247fbed3",
+        "recordedAt": "2026-10-09T01:09:36.000Z",
+        "executionId": "EXE-20261009T010832907Z-3d8948d0",
+        "repository": "echelon-registry",
+        "branch": "chore/praxis-3.10.0",
+        "commit": "fead852234e1a546103d11194c5299a3064439af",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/praxis-3.10.0",
+        "remoteCommit": "fead852234e1a546103d11194c5299a3064439af",
+        "summary": "Praxis 3.10.0 recorded from verified assets; echelon-current 1.15.0 selects it",
+        "nextAction": "Merge on green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-09T01:09:37.000Z"
+    },
+    {
+      "id": "WI-0025",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/arca/0.4.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "channels/echelon-current/channel.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-09T02:18:18.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261009T021416883Z-4041a442"
+      ],
+      "latestCheckpoint": {
+        "id": "d3ef6d6c8993f0868be27cfd",
+        "recordedAt": "2026-10-09T02:18:17.000Z",
+        "executionId": "EXE-20261009T021416883Z-4041a442",
+        "repository": "echelon-registry",
+        "branch": "arca/0.4.0",
+        "commit": "0eb57fcbf6ffc62d4e3ee8cd4f5aefc40ebdc2d1",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry.git"
+        },
+        "remoteBranch": "arca/0.4.0",
+        "remoteCommit": "0eb57fcbf6ffc62d4e3ee8cd4f5aefc40ebdc2d1",
+        "summary": "All PR #59 checks green on 0eb57fc",
+        "nextAction": "Merge #59; arca distribution status",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-09T02:18:18.000Z",
+      "conclusion": "Arca 0.4.0 recorded; echelon-current 1.16.0"
+    },
+    {
+      "id": "WI-0026",
+      "type": "chore",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/praxis/3.11.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-09T02:59:14.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261009T025758901Z-54da18a4"
+      ],
+      "latestCheckpoint": {
+        "id": "3170e291482dfa43a3293e54",
+        "recordedAt": "2026-10-09T02:59:13.000Z",
+        "executionId": "EXE-20261009T025758901Z-54da18a4",
+        "repository": "echelon-registry",
+        "branch": "chore/praxis-3.11.0",
+        "commit": "fbd84658bf53103ee0c4e34bcac4681f4e6b8be2",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/praxis-3.11.0",
+        "remoteCommit": "fbd84658bf53103ee0c4e34bcac4681f4e6b8be2",
+        "summary": "Praxis 3.11.0 recorded from verified assets; echelon-current 1.17.0 selects it",
+        "nextAction": "Merge on green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-09T02:59:14.000Z"
+    },
+    {
+      "id": "WI-0027",
+      "type": "chore",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/conditor/0.8.2.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-09T03:23:05.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261009T032238573Z-ab3af6b5"
+      ],
+      "latestCheckpoint": {
+        "id": "3088a1f66456aa10cd8094fa",
+        "recordedAt": "2026-10-09T03:23:04.000Z",
+        "executionId": "EXE-20261009T032238573Z-ab3af6b5",
+        "repository": "echelon-registry",
+        "branch": "chore/conditor-0.8.2",
+        "commit": "7c4b02ae61a8e5ba8911c0c9abd1f1780b11fba5",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/conditor-0.8.2",
+        "remoteCommit": "7c4b02ae61a8e5ba8911c0c9abd1f1780b11fba5",
+        "summary": "Conditor 0.8.2 recorded from verified assets",
+        "nextAction": "Merge on green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-09T03:23:05.000Z"
+    },
+    {
+      "id": "WI-0028",
+      "type": "chore",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/conditor/0.8.1.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-09T03:33:55.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261009T033330877Z-72a1657f"
+      ],
+      "latestCheckpoint": {
+        "id": "2f0c94294270c4b7080110da",
+        "recordedAt": "2026-10-09T03:33:53.000Z",
+        "executionId": "EXE-20261009T033330877Z-72a1657f",
+        "repository": "echelon-registry",
+        "branch": "chore/conditor-0.8.1",
+        "commit": "f4ca2be6a27538096f8ce1c3af1b104dd8a9dcc1",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/conditor-0.8.1",
+        "remoteCommit": "f4ca2be6a27538096f8ce1c3af1b104dd8a9dcc1",
+        "summary": "Conditor 0.8.1 recorded from verified assets",
+        "nextAction": "Merge on green",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-09T03:33:55.000Z"
+    },
+    {
+      "id": "WI-0029",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/arca/0.4.1.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "channels/echelon-current/channel.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-09T04:17:23.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261009T041441103Z-24322079"
+      ],
+      "latestCheckpoint": {
+        "id": "3f3f3c0453425e1821864295",
+        "recordedAt": "2026-10-09T04:17:21.000Z",
+        "executionId": "EXE-20261009T041441103Z-24322079",
+        "repository": "echelon-registry",
+        "branch": "arca/0.4.1",
+        "commit": "564fefb0b8eb4efae7bbd8d2294ab183dd9d3e87",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry.git"
+        },
+        "remoteBranch": "arca/0.4.1",
+        "remoteCommit": "564fefb0b8eb4efae7bbd8d2294ab183dd9d3e87",
+        "summary": "All PR #63 checks green on 564fefb",
+        "nextAction": "Merge #63; arca distribution status",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-09T04:17:23.000Z",
+      "conclusion": "Arca 0.4.1 recorded; echelon-current 1.18.0"
+    },
+    {
+      "id": "WI-0030",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/arca/0.5.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "channels/echelon-current/channel.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T12:47:31.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T124544059Z-016f7e52"
+      ],
+      "latestCheckpoint": {
+        "id": "83f59696c8238a62a291be61",
+        "recordedAt": "2026-10-13T12:47:15.000Z",
+        "executionId": "EXE-20261013T124544059Z-016f7e52",
+        "repository": "echelon-registry",
+        "branch": "arca/0.5.0",
+        "commit": "c8e0be3e7f78d936f0a0459f9ffc8105ebd4e6d4",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "arca/0.5.0",
+        "remoteCommit": "c8e0be3e7f78d936f0a0459f9ffc8105ebd4e6d4",
+        "summary": "Arca 0.5.0 recorded; echelon-current 1.19.0 selects it; channels regenerated and validated",
+        "nextAction": "Merge on green; Arca distribution-status PR",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T12:47:31.000Z"
+    },
+    {
+      "id": "WI-0031",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/forma/0.6.1.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "releases/folio/0.4.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "channels/echelon-current/channel.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T15:06:16Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T145801739Z-cc93091f"
+      ],
+      "latestCheckpoint": {
+        "id": "84549f5cd2261a3a4f1fb032",
+        "recordedAt": "2026-10-13T15:06:11Z",
+        "executionId": "EXE-20261013T145801739Z-cc93091f",
+        "repository": "echelon-registry",
+        "branch": "forma-folio/0.6.1-0.4.0",
+        "commit": "9adc42dd1699976fd254325bf6ea992b069c2a4c",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "forma-folio/0.6.1-0.4.0",
+        "remoteCommit": "9adc42dd1699976fd254325bf6ea992b069c2a4c",
+        "summary": "Forma 0.6.1 and Folio 0.4.0 recorded and selected in echelon-current 1.20.0; local conformance passes; branch pushed",
+        "nextAction": "complete, open PR, merge through the gate",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T15:06:16Z"
+    },
+    {
+      "id": "WI-0033",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "documentation",
+          "path": "spec/rolling-upgrade-requirements.md"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        },
+        {
+          "type": "implementation",
+          "path": ".github/workflows/distribution-conformance.yml"
+        }
+      ],
+      "updatedAt": "2026-10-13T15:22:22Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T152003413Z-3dfe930f"
+      ],
+      "latestCheckpoint": {
+        "id": "4ae42508516415e8bfe0f107",
+        "recordedAt": "2026-10-13T15:22:17Z",
+        "executionId": "EXE-20261013T152003413Z-3dfe930f",
+        "repository": "echelon-registry",
+        "branch": "requirements/reg-ru-007-conditor-qualification",
+        "commit": "7ab0162b624a194b473db93b3d7c04fb5e27034f",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "requirements/reg-ru-007-conditor-qualification",
+        "remoteCommit": "7ab0162b624a194b473db93b3d7c04fb5e27034f",
+        "summary": "REG-RU-007 spec, declared-component list, qualification check and CI step pushed; check passes on 1.20.0 and fails on held 1.21.0",
+        "nextAction": "complete, open PR, merge through the gate",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T15:22:22Z"
+    },
+    {
+      "id": "WI-0035",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/conditor/0.9.0.release.json"
+        },
+        {
+          "type": "documentation",
+          "path": "spec/rolling-upgrade-requirements.md"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T15:42:56Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T154059599Z-1332ebae"
+      ],
+      "latestCheckpoint": {
+        "id": "ec3446be8e9542e7fcbfb046",
+        "recordedAt": "2026-10-13T15:42:39Z",
+        "executionId": "EXE-20261013T154059599Z-1332ebae",
+        "repository": "echelon-registry",
+        "branch": "chore/conditor-0.9.0",
+        "commit": "e2155f2bbd572f27f8151964e8bdaed82716de17",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/conditor-0.9.0",
+        "remoteCommit": "e2155f2bbd572f27f8151964e8bdaed82716de17",
+        "summary": "Conditor 0.9.0 recorded; 0.8.3 mentions corrected; conformance passes; branch pushed",
+        "nextAction": "complete, open PR, merge through the gate; then #66",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T15:42:56Z"
+    },
+    {
+      "id": "WI-0036",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/ordo/1.6.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "channels/echelon-current/channel.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T15:47:45Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T154536611Z-d3dcc2c1"
+      ],
+      "latestCheckpoint": {
+        "id": "d7dfab36262bd7f55450f4ed",
+        "recordedAt": "2026-10-13T15:47:39Z",
+        "executionId": "EXE-20261013T154536611Z-d3dcc2c1",
+        "repository": "echelon-registry",
+        "branch": "ordo/1.6.0-on-main",
+        "commit": "b33ff44c24cb0402b6622ac114f9b629e3b6f827",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "ordo/1.6.0-on-main",
+        "remoteCommit": "b33ff44c24cb0402b6622ac114f9b629e3b6f827",
+        "summary": "Ordo 1.6.0 regenerated on current main (byte-identical to #66), echelon-current 1.21.0; conformance and REG-RU-007 with Conditor 0.9.0 pass; pushed",
+        "nextAction": "complete, open PR superseding #66, merge through the gate",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T15:47:45Z"
+    },
+    {
+      "id": "WI-0037",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/ordo/1.7.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "channels/echelon-current/channel.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T15:52:52Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T155034853Z-ecd73391"
+      ],
+      "latestCheckpoint": {
+        "id": "7fe82f515882485dd8872bfb",
+        "recordedAt": "2026-10-13T15:52:47Z",
+        "executionId": "EXE-20261013T155034853Z-ecd73391",
+        "repository": "echelon-registry",
+        "branch": "ordo/1.7.0",
+        "commit": "0bf2633c486c51a458ab60ff47e7cc49a24c3cde",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "ordo/1.7.0",
+        "remoteCommit": "0bf2633c486c51a458ab60ff47e7cc49a24c3cde",
+        "summary": "Ordo 1.7.0 recorded and selected in echelon-current 1.22.0; conformance, REG-RU-007 (Conditor 0.9.0) and Conditor check pass; pushed",
+        "nextAction": "complete, open PR, merge through the gate",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T15:52:52Z"
+    },
+    {
+      "id": "WI-0034",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "conformance/conditor-declared-components.json"
+        },
+        {
+          "type": "documentation",
+          "path": "spec/rolling-upgrade-requirements.md"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T16:05:04Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T160426528Z-edbd4c41"
+      ],
+      "latestCheckpoint": {
+        "id": "b3d3146fd70746fdebf8fcc6",
+        "recordedAt": "2026-10-13T16:04:58Z",
+        "executionId": "EXE-20261013T160426528Z-edbd4c41",
+        "repository": "echelon-registry",
+        "branch": "conformance/declare-forma-folio",
+        "commit": "f3e4cc032245081b92ddf98dc81436177f8776dd",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "conformance/declare-forma-folio",
+        "remoteCommit": "f3e4cc032245081b92ddf98dc81436177f8776dd",
+        "summary": "forma and folio added to the REG-RU-007 declared list; check passes with Conditor 0.9.0 and fails as a negative control with 0.8.2; pushed",
+        "nextAction": "complete, open PR, merge through the gate",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T16:05:04Z"
+    },
+    {
+      "id": "WI-0038",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/conditor/0.10.0.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T16:11:43Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T161028508Z-4f8cf903"
+      ],
+      "latestCheckpoint": {
+        "id": "8fa6090182fa6e6daa31496e",
+        "recordedAt": "2026-10-13T16:11:37Z",
+        "executionId": "EXE-20261013T161028508Z-4f8cf903",
+        "repository": "echelon-registry",
+        "branch": "chore/conditor-0.10.0",
+        "commit": "de139fc1d63be68293e2f430b99973a25eeaa9ff",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/conditor-0.10.0",
+        "remoteCommit": "de139fc1d63be68293e2f430b99973a25eeaa9ff",
+        "summary": "Conditor 0.10.0 recorded after digest, checksum, attestation and tamper verification; conformance and REG-RU-007 pass; pushed",
+        "nextAction": "complete, open PR, merge through the gate",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T16:11:43Z"
+    },
+    {
+      "id": "WI-0039",
+      "type": "task",
+      "state": "blocked",
+      "semanticState": "blocked",
+      "evidence": [],
+      "updatedAt": "2026-10-13T16:15:16.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T161453795Z-08f8ba1e"
+      ],
+      "latestCheckpoint": {
+        "id": "e8a8a800ec0d9e76ca90dfe6",
+        "recordedAt": "2026-10-13T16:15:10.000Z",
+        "executionId": "EXE-20261013T161453795Z-08f8ba1e",
+        "repository": "echelon-registry",
+        "branch": "spec/reg-sig-release-attestations-v2",
+        "commit": "ccbb8b7419c76a328a0823242fa8c7fdf24f4605",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry.git"
+        },
+        "remoteBranch": "spec/reg-sig-release-attestations-v2",
+        "remoteCommit": "ccbb8b7419c76a328a0823242fa8c7fdf24f4605",
+        "summary": "REG-SIG-001..008 and REG-SIG-CT-001..008 spec pushed (regenerated from #73)",
+        "nextAction": "Registry agent implements signed attestations and completes this item with implementation and tests evidence",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "blockReason": "Requirements captured (spec/release-attestation-requirements.md, REG-SIG-001..008, REG-SIG-CT-001..008). This repository's completion policy needs implementation and tests evidence, which only the Registry agent's implementation of signed attestations and conformance/validate-release-attestations.fsx can truthfully provide; resume and complete it with that work."
+    },
+    {
+      "id": "WI-0040",
+      "type": "task",
+      "state": "blocked",
+      "semanticState": "blocked",
+      "evidence": [],
+      "updatedAt": "2026-10-13T16:19:03Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T161757090Z-00f22b0c"
+      ],
+      "latestCheckpoint": {
+        "id": "ab8b7ab9995ceab140f76249",
+        "recordedAt": "2026-10-13T16:18:29Z",
+        "executionId": "EXE-20261013T161757090Z-00f22b0c",
+        "repository": "echelon-registry",
+        "branch": "requirements/reg-ru-001-006",
+        "commit": "07aa52a36f47898cfcbd0ae89d913682de4de793",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "requirements/reg-ru-001-006",
+        "remoteCommit": "07aa52a36f47898cfcbd0ae89d913682de4de793",
+        "summary": "REG-RU-001..006 captured in spec/rolling-upgrade-requirements.md with status notes; requirements only; pushed",
+        "nextAction": "complete, open PR, merge through the gate",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "blockReason": "Requirements-only capture is done and pushed (checkpoint ab8b7ab9). Completion needs implementation and tests evidence (completionEvidence.default for type task), which a spec-only item does not have; recording the spec as implementation or reclassifying as mechanical would misstate it. Awaiting a program-lead decision on the evidence policy for requirements-only items (same condition as WI-0039)."
+    },
+    {
+      "id": "WI-0041",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "ros.json"
+        },
+        {
+          "type": "tests",
+          "path": ".github/workflows/praxis-validation.yml"
+        }
+      ],
+      "updatedAt": "2026-10-13T16:30:48Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T163000542Z-5b50234b"
+      ],
+      "latestCheckpoint": {
+        "id": "6413626b8b4f629780923092",
+        "recordedAt": "2026-10-13T16:30:42Z",
+        "executionId": "EXE-20261013T163000542Z-5b50234b",
+        "repository": "echelon-registry",
+        "branch": "chore/requirements-work-type",
+        "commit": "d33d898025a6fac6933cbdb7bfb663dd8e48d39c",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/requirements-work-type",
+        "remoteCommit": "d33d898025a6fac6933cbdb7bfb663dd8e48d39c",
+        "summary": "requirements work type added to completionEvidence; WI-0042..WI-0046 captured and ready; pushed",
+        "nextAction": "complete, open PR, merge through the gate",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T16:30:48Z"
+    },
+    {
+      "id": "WI-0047",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/conditor/0.10.1.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T17:02:18Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T170044551Z-b2ea1a68"
+      ],
+      "latestCheckpoint": {
+        "id": "79c1d45d1ca4014679867510",
+        "recordedAt": "2026-10-13T17:02:12Z",
+        "executionId": "EXE-20261013T170044551Z-b2ea1a68",
+        "repository": "echelon-registry",
+        "branch": "chore/conditor-0.10.1",
+        "commit": "fef34ca850015f680accb6aa1d185e2ba195dc71",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "chore/conditor-0.10.1",
+        "remoteCommit": "fef34ca850015f680accb6aa1d185e2ba195dc71",
+        "summary": "Conditor 0.10.1 recorded after digest, checksum, attestation and tamper verification; conformance and REG-RU-007 pass; pushed",
+        "nextAction": "complete, open PR, merge through the gate",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T17:02:18Z"
+    },
+    {
+      "id": "WI-0048",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/conditor/0.10.2.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T18:14:27.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T181337822Z-0217633a"
+      ],
+      "latestCheckpoint": {
+        "id": "d6a9411d7142fb833f72a7f0",
+        "recordedAt": "2026-10-13T18:14:13.000Z",
+        "executionId": "EXE-20261013T181337822Z-0217633a",
+        "repository": "echelon-registry",
+        "branch": "conditor/0.10.2",
+        "commit": "c897693c44dd8aee755a74c7af10999d316d7d4f",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry.git"
+        },
+        "remoteBranch": "conditor/0.10.2",
+        "remoteCommit": "c897693c44dd8aee755a74c7af10999d316d7d4f",
+        "summary": "Conditor 0.10.2 release record and readiness row pushed; REG-RU-007 passes locally",
+        "nextAction": "Open PR, gate-merge",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T18:14:27.000Z"
+    },
+    {
+      "id": "WI-0049",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/praxis/3.12.0.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T22:02:38Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T220111627Z-58c17520"
+      ],
+      "latestCheckpoint": {
+        "id": "4f44098331a3a718ee51d416",
+        "recordedAt": "2026-10-13T22:02:34Z",
+        "executionId": "EXE-20261013T220111627Z-58c17520",
+        "repository": "echelon-registry",
+        "branch": "wi-0049-record-praxis-3.12.0",
+        "commit": "1f3f4c7fb3d1b039646911a30e8377570cfa5c96",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "wi-0049-record-praxis-3.12.0",
+        "remoteCommit": "1f3f4c7fb3d1b039646911a30e8377570cfa5c96",
+        "summary": "Recorded releases/praxis/3.12.0.release.json via the conversion that reproduces 3.11.0 byte-for-byte; REG-RU-007 and conformance validators pass locally; pushed 1f3f4c7f",
+        "nextAction": "Open PR, gate-merge on green exact head SHA",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T22:02:38Z",
+      "conclusion": "Praxis 3.12.0 recorded; no channel change; REG-RU-007 passes"
+    },
+    {
+      "id": "WI-0050",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/conditor/0.10.3.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T22:29:13Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T222826184Z-57b97484"
+      ],
+      "latestCheckpoint": {
+        "id": "3c549a0e9f7ba02965679314",
+        "recordedAt": "2026-10-13T22:29:06Z",
+        "executionId": "EXE-20261013T222826184Z-57b97484",
+        "repository": "echelon-registry",
+        "branch": "wi-0050-record-conditor-0.10.3",
+        "commit": "ed83043d0697b84398312132a8c36ca26fb52fb2",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "wi-0050-record-conditor-0.10.3",
+        "remoteCommit": "ed83043d0697b84398312132a8c36ca26fb52fb2",
+        "summary": "Recorded releases/conditor/0.10.3.release.json (conversion reproduces 0.10.2); readiness row; REG-RU-007 passes with 0.10.3",
+        "nextAction": "Gate-merge, then cut echelon-current 1.23.0",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T22:29:13Z",
+      "conclusion": "Conditor 0.10.3 recorded; REG-RU-007 passes"
+    },
+    {
+      "id": "WI-0052",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/conditor/0.10.4.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T23:10:22Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T230934226Z-4c9d6889"
+      ],
+      "latestCheckpoint": {
+        "id": "9b36194e03a6d88cc52fe6b6",
+        "recordedAt": "2026-10-13T23:10:20Z",
+        "executionId": "EXE-20261013T230934226Z-4c9d6889",
+        "repository": "echelon-registry",
+        "branch": "wi-0052-record-conditor-0.10.4",
+        "commit": "d392a08b68f46740fc38711f4e410e144dc47326",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "wi-0052-record-conditor-0.10.4",
+        "remoteCommit": "d392a08b68f46740fc38711f4e410e144dc47326",
+        "summary": "Recorded releases/conditor/0.10.4.release.json; readiness row; REG-RU-007 passes",
+        "nextAction": "Gate-merge, then rebase and propose echelon-current 1.23.0",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T23:10:22Z",
+      "conclusion": "Conditor 0.10.4 recorded"
+    },
+    {
+      "id": "WI-0053",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "channels/echelon-current/channel.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T23:15:15Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T231307028Z-0e412b2f"
+      ],
+      "latestCheckpoint": {
+        "id": "3e43fcd3468c35237466f9fa",
+        "recordedAt": "2026-10-13T23:15:05Z",
+        "executionId": "EXE-20261013T231307028Z-0e412b2f",
+        "repository": "echelon-registry",
+        "branch": "wi-0053-echelon-current-1.23.0",
+        "commit": "b0a6c9f45e4dd679d8e31f6d635452979d4966f8",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "wi-0053-echelon-current-1.23.0",
+        "remoteCommit": "b0a6c9f45e4dd679d8e31f6d635452979d4966f8",
+        "summary": "echelon-current 1.23.0 cut on current main (only praxis 3.11.0->3.12.0); REG-RU-007 passes with 0.10.4; stepwise from 1.22.0 plans one step and exits 0",
+        "nextAction": "Open PR, gate-merge on green exact head",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T23:15:15Z",
+      "conclusion": "echelon-current 1.23.0: Praxis 3.11.0 -> 3.12.0 only; REG-RU-007 and stepwise from 1.22.0 pass"
+    },
+    {
+      "id": "WI-0054",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/ordo/1.8.2.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-distribution-fixtures.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-13T23:36:02Z",
+      "telemetryExecutionIds": [
+        "EXE-20261013T233527169Z-2be5f944"
+      ],
+      "latestCheckpoint": {
+        "id": "edbe566b6293ad49cc40b607",
+        "recordedAt": "2026-10-13T23:36:00Z",
+        "executionId": "EXE-20261013T233527169Z-2be5f944",
+        "repository": "echelon-registry",
+        "branch": "wi-0054-record-ordo-1.8.2",
+        "commit": "9ecfb5774d743c9aeb4021a64677a16eda6c526f",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "wi-0054-record-ordo-1.8.2",
+        "remoteCommit": "9ecfb5774d743c9aeb4021a64677a16eda6c526f",
+        "summary": "Ordo 1.8.2 reviewed (stamp-only on Chrona/Summa/Signal) and recorded; conversion reproduces 1.5.0-1.7.0",
+        "nextAction": "Gate-merge; then Conditor release qualifying Ordo 1.8.2",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-13T23:36:02Z",
+      "conclusion": "Ordo 1.8.2 recorded"
+    },
+    {
+      "id": "WI-0055",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/conditor/0.10.5.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-14T08:34:19Z",
+      "telemetryExecutionIds": [
+        "EXE-20261014T083308298Z-c8e1930c"
+      ],
+      "latestCheckpoint": {
+        "id": "ab3e27970c7e63cd2c56a9d5",
+        "recordedAt": "2026-10-14T08:34:16Z",
+        "executionId": "EXE-20261014T083308298Z-c8e1930c",
+        "repository": "echelon-registry",
+        "branch": "wi-0055-record-conditor-0.10.5",
+        "commit": "59ddc19a965a7d4f9ac1c82e8413b26a68a0d406",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "wi-0055-record-conditor-0.10.5",
+        "remoteCommit": "59ddc19a965a7d4f9ac1c82e8413b26a68a0d406",
+        "summary": "Recorded releases/conditor/0.10.5.release.json; readiness row; REG-RU-007 passes",
+        "nextAction": "Gate-merge",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-14T08:34:19Z",
+      "conclusion": "Conditor 0.10.5 recorded"
+    }
+  ]
+}

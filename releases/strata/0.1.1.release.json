@@ -1,0 +1,57 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "strata",
+  "version": "0.1.1",
+  "repository": "kemiller2002/strata",
+  "tag": "v0.1.1",
+  "commit": "f650d91e2930dfcbe82a1d2c52d8c5245e0f9996",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "self-contained-native-cli",
+  "executable": "strata",
+  "compatibilityAliases": [],
+  "provides": [
+    {
+      "id": "echelon.repository-lifecycle",
+      "contractVersion": 1
+    }
+  ],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "url": "https://github.com/kemiller2002/strata/releases/tag/v0.1.1"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "native-checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "fc42113dfbeb48f361cd2b402c1a3a5dbdcd3c38c35034e2856544f7d618a1fe"
+    },
+    {
+      "name": "strata-linux-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "linux-x64",
+      "sha256": "497ec245b60994e13b8a8923ec6a8fb994acdb8365d022e9e4fcf955605f2a1b"
+    },
+    {
+      "name": "strata-osx-arm64.tar.gz",
+      "purpose": "executable",
+      "platform": "osx-arm64",
+      "sha256": "e0f50e7d792e72aff320d6cf4b082d0e5842ee6e89e5b82aea3bfea626ad8e69"
+    },
+    {
+      "name": "strata-osx-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "osx-x64",
+      "sha256": "70735c26d140d32dcec66368a083cb0f32d8d764e46192731f099d94416314b3"
+    },
+    {
+      "name": "strata-win-x64.zip",
+      "purpose": "executable",
+      "platform": "win-x64",
+      "sha256": "e2f59c1e1eaf1efb43a371c5589830d88d43553182508585edc976b5e5f06e98"
+    }
+  ]
+}

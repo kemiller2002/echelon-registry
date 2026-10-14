@@ -1,0 +1,365 @@
+{
+  "schema": "echelon.catalog-snapshot/v1",
+  "systems": [
+    {
+      "id": "praxis",
+      "repository": "kemiller2002/praxis",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "ordo",
+      "repository": "kemiller2002/ordo",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "percepta",
+      "repository": "kemiller2002/percepta",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "dokimos",
+      "repository": "kemiller2002/dokimos",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "visual-engineering",
+      "repository": "kemiller2002/visual-engineering",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "communication-engineering",
+      "repository": "kemiller2002/communication-engineering",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "tutela",
+      "repository": "kemiller2002/tutela",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "aegis",
+      "repository": "kemiller2002/aegis",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "limen",
+      "repository": "kemiller2002/limen",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "forma",
+      "repository": "kemiller2002/forma",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "folio",
+      "repository": "kemiller2002/folio",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "strata",
+      "repository": "kemiller2002/strata",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "arca",
+      "repository": "kemiller2002/arca",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "fides",
+      "repository": "kemiller2002/fides",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "summa-contracts",
+      "repository": "kemiller2002/summa",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
+      "id": "limen-fsharp",
+      "repository": "kemiller2002/limen",
+      "manifest": "registry/systems-v2.json"
+    }
+  ],
+  "releases": [
+    {
+      "systemId": "praxis",
+      "version": "3.6.0",
+      "manifest": "releases/praxis/3.6.0.release.json",
+      "sha256": "992e276ae0098b5c9b65cdd06f8c783aec95942c850e60d4bf06a28df22e6543"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.7.1",
+      "manifest": "releases/praxis/3.7.1.release.json",
+      "sha256": "c032e3233c17c14b4b7c90896625a5e04b99ff27d5f26fa2230805af918970e8"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.7.2",
+      "manifest": "releases/praxis/3.7.2.release.json",
+      "sha256": "05b86ca8f09b0a95e82fc94b23778747d0cbae5a26433b16ab83a64a87c4a0f2"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.9.1",
+      "manifest": "releases/praxis/3.9.1.release.json",
+      "sha256": "c6a2e91229ad7c262d6a2f0443a74d233176254e3619b4d10b8d8f2c39c625f7"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.10.0",
+      "manifest": "releases/praxis/3.10.0.release.json",
+      "sha256": "390587c2386c1e07748155dea1c68b46e06404999962e1baa437d8a3aa1de256"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.11.0",
+      "manifest": "releases/praxis/3.11.0.release.json",
+      "sha256": "c535097a24754f58dac21947d822cbfdbb78277ff2e41cd72e320f86eb65b58e"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.12.0",
+      "manifest": "releases/praxis/3.12.0.release.json",
+      "sha256": "9a854f48aaf4100f16318be03dc20034085b818cf93ea70f35984e0102f12cd3"
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.4.0",
+      "manifest": "releases/ordo/1.4.0.release.json",
+      "sha256": "79a813b1f04fc4ec964be11e2a304caf5d87bb527da0b4b1779be6fc6a112659"
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.4.1",
+      "manifest": "releases/ordo/1.4.1.release.json",
+      "sha256": "966734e3af6986775511ae89dce824702f7611f68496f2545a14bb00171bf74a"
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.4.2",
+      "manifest": "releases/ordo/1.4.2.release.json",
+      "sha256": "cfb7c8064c000f6054782cf6aaccd091ae51b4af2a3bc6470613be3a66626db0"
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.5.0",
+      "manifest": "releases/ordo/1.5.0.release.json",
+      "sha256": "077bead5ca780ee638ce836e320e1650c16d1361e558aa6a9e1f2634035134be"
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.6.0",
+      "manifest": "releases/ordo/1.6.0.release.json",
+      "sha256": "ef003a4718bdeadd2f3a1259d197b5bcf549a5599bdec34b895d50d3551c2e13"
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.7.0",
+      "manifest": "releases/ordo/1.7.0.release.json",
+      "sha256": "5261ec97e76008c64553f35719d961019a7d89a803bfb6a4bd1de70a9bc0bcba"
+    },
+    {
+      "systemId": "percepta",
+      "version": "0.1.0",
+      "manifest": "releases/percepta/0.1.0.release.json",
+      "sha256": "07b6291c63ff25e6b669edb8c845e48ba76831b6a6133efa4ad3a390439b1b2b"
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.2.0",
+      "manifest": "releases/dokimos/0.2.0.release.json",
+      "sha256": "1c75d80b9eb76a47239f2db7163c8e9e2f10e4ad303cd487284afd14c5a56737"
+    },
+    {
+      "systemId": "visual-engineering",
+      "version": "1.0.0",
+      "manifest": "releases/visual-engineering/1.0.0.release.json",
+      "sha256": "36635703cd975c2627ab18fec4c27a8b5129864e223af1fa3644a5d19bb82540"
+    },
+    {
+      "systemId": "visual-engineering",
+      "version": "1.0.1",
+      "manifest": "releases/visual-engineering/1.0.1.release.json",
+      "sha256": "23ab4fdb38d3fc7827519cc3c29df88c950211db1d53d114c53f36a662a0dbda"
+    },
+    {
+      "systemId": "communication-engineering",
+      "version": "1.0.0",
+      "manifest": "releases/communication-engineering/1.0.0.release.json",
+      "sha256": "d4b79053301635b6335caf81c2ca28b0721cca4a78967501be820a8eb7118296"
+    },
+    {
+      "systemId": "tutela",
+      "version": "0.1.0",
+      "manifest": "releases/tutela/0.1.0.release.json",
+      "sha256": "5db1e8a1f039ae88b2b9426c7cbeec1783b40e29d58b0dfd40dfa90104a3c4ba"
+    },
+    {
+      "systemId": "aegis",
+      "version": "1.0.0",
+      "manifest": "releases/aegis/1.0.0.release.json",
+      "sha256": "4530cfa3396c1e57d3e1a6500c661cd2d520236e852d1d9e88aa44c385d0bd6b"
+    },
+    {
+      "systemId": "limen",
+      "version": "0.6.2",
+      "manifest": "releases/limen/0.6.2.release.json",
+      "sha256": "c597068533397406942a229c633adf2631bfb840e666bd02c900051695df8aac"
+    },
+    {
+      "systemId": "limen",
+      "version": "0.7.0",
+      "manifest": "releases/limen/0.7.0.release.json",
+      "sha256": "3d1ba4b65fe533615f0fbd50cc422912a9eab94f9a1223ebd450067df8655d34"
+    },
+    {
+      "systemId": "limen",
+      "version": "0.7.1",
+      "manifest": "releases/limen/0.7.1.release.json",
+      "sha256": "8343bff92bb9387c8702fdbf73b5fe84c5155854541906af903f9fc2cf487c61"
+    },
+    {
+      "systemId": "forma",
+      "version": "0.3.0",
+      "manifest": "releases/forma/0.3.0.release.json",
+      "sha256": "02bd9eae35cf3384a5f5a1913c50594407f6fd937df1ef4e9e697520e96af6f0"
+    },
+    {
+      "systemId": "forma",
+      "version": "0.4.1",
+      "manifest": "releases/forma/0.4.1.release.json",
+      "sha256": "a406c48bbff4576d363ab0f48888a9b1739466d63ec2471166988e85a3204c38"
+    },
+    {
+      "systemId": "forma",
+      "version": "0.5.0",
+      "manifest": "releases/forma/0.5.0.release.json",
+      "sha256": "489852fc9f6a6b992b948cee360a47ea1fdf7202ef680c52c7597fe67b46aad2"
+    },
+    {
+      "systemId": "forma",
+      "version": "0.6.1",
+      "manifest": "releases/forma/0.6.1.release.json",
+      "sha256": "164660ba86d913aaf4715c790ac81034142d4cf90e5c1ebd56d3bbb73041feb9"
+    },
+    {
+      "systemId": "folio",
+      "version": "0.3.0",
+      "manifest": "releases/folio/0.3.0.release.json",
+      "sha256": "a7c446787aafd6433932c247734249b4f01f8b78da4bbee3dcb6f743145f8d21"
+    },
+    {
+      "systemId": "folio",
+      "version": "0.4.0",
+      "manifest": "releases/folio/0.4.0.release.json",
+      "sha256": "1263b1825061e33dd71134659293b3d73946b5fd70e59d9526956d586905df4a"
+    },
+    {
+      "systemId": "strata",
+      "version": "0.1.0",
+      "manifest": "releases/strata/0.1.0.release.json",
+      "sha256": "e5e33a9738f1e3ca7855fdba4174e955ff03881b5e4c7738fd6b92080f277e96"
+    },
+    {
+      "systemId": "strata",
+      "version": "0.1.1",
+      "manifest": "releases/strata/0.1.1.release.json",
+      "sha256": "262bf735e8af934a5d104cad910e34d55e8ffcf310696f8604560bc73eb8ab04"
+    },
+    {
+      "systemId": "arca",
+      "version": "0.1.0",
+      "manifest": "releases/arca/0.1.0.release.json",
+      "sha256": "5cf084ee76ad2e4897796d5569212b0e7c1aaba8a28a8e24ce45f78687fe65a8"
+    },
+    {
+      "systemId": "arca",
+      "version": "0.2.0",
+      "manifest": "releases/arca/0.2.0.release.json",
+      "sha256": "38bd3c8ebb6e968d3ead49a0c71fc3f1f8621e56746ea792e3f20cb13fd241f6"
+    },
+    {
+      "systemId": "arca",
+      "version": "0.2.1",
+      "manifest": "releases/arca/0.2.1.release.json",
+      "sha256": "89896a65cf9d21bcfe871a62cfcc8d40558c4832c4cf933c5485ad4e5523b77e"
+    },
+    {
+      "systemId": "arca",
+      "version": "0.3.0",
+      "manifest": "releases/arca/0.3.0.release.json",
+      "sha256": "d3b73d5f4ca76b04f9b581e5fb7b138f724b4642f18361cbaf6f60b45a64f803"
+    },
+    {
+      "systemId": "arca",
+      "version": "0.4.0",
+      "manifest": "releases/arca/0.4.0.release.json",
+      "sha256": "f1ec5078b5c003a8200d3e13f3f840242bde065fe4ce0aeb61aecdb358237a37"
+    },
+    {
+      "systemId": "arca",
+      "version": "0.4.1",
+      "manifest": "releases/arca/0.4.1.release.json",
+      "sha256": "76c1d7132147044421a5664c3c77cf339ec90a47044fb67ed79c0768de3bf368"
+    },
+    {
+      "systemId": "arca",
+      "version": "0.5.0",
+      "manifest": "releases/arca/0.5.0.release.json",
+      "sha256": "1cab5320290e6084f873e942465fe2289c8bc952b8ec7ce3a445ad24b8ac2e84"
+    },
+    {
+      "systemId": "fides",
+      "version": "0.1.0",
+      "manifest": "releases/fides/0.1.0.release.json",
+      "sha256": "79d80d2aa43769441683a22de916aa8284944f98edcf23eae9844a86cf1b8021"
+    },
+    {
+      "systemId": "fides",
+      "version": "0.2.0",
+      "manifest": "releases/fides/0.2.0.release.json",
+      "sha256": "0ef2204d8ec298e6d930ce11d66629794486a5e31367959d7f9dbd39468b6a2a"
+    },
+    {
+      "systemId": "summa-contracts",
+      "version": "0.1.0",
+      "manifest": "releases/summa-contracts/0.1.0.release.json",
+      "sha256": "b952e4c667bc83aae23092397e8de3bcd75ecd2a6d59ef7d1047f2f5d094bcfe"
+    },
+    {
+      "systemId": "limen",
+      "version": "0.8.0",
+      "manifest": "releases/limen/0.8.0.release.json",
+      "sha256": "8ce5c4dee1630750cf8303310041bebefdce943adae2a97b14e429e007d7d302"
+    },
+    {
+      "systemId": "limen-fsharp",
+      "version": "0.8.0",
+      "manifest": "releases/limen-fsharp/0.8.0.release.json",
+      "sha256": "c59cf3e1ff8e4f4dd0eaa52db4488c7ad910b6ba05511121514eab0e79a77a2b"
+    },
+    {
+      "systemId": "limen",
+      "version": "0.9.0",
+      "manifest": "releases/limen/0.9.0.release.json",
+      "sha256": "5ffc580705cb612f9a5c99ee7ee0f81c7f18904947336a6e14a9be19393a74db"
+    },
+    {
+      "systemId": "limen-fsharp",
+      "version": "0.9.0",
+      "manifest": "releases/limen-fsharp/0.9.0.release.json",
+      "sha256": "d8aec120fdaff6bb2a9dcd6e4d79b8a92d69f8cc0227de1c6b7166c6c3b8ce3a"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "echelon-current",
+      "version": "1.23.0",
+      "manifest": "profiles/echelon-current.profile.json",
+      "sha256": "36c0273206e5df6306e356d4d0428eaa13008120fdac67c3e9b3bf34b6da48b1"
+    }
+  ]
+}

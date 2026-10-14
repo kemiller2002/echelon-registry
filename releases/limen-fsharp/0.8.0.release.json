@@ -1,0 +1,46 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "limen-fsharp",
+  "version": "0.8.0",
+  "repository": "kemiller2002/limen",
+  "tag": "v0.8.0",
+  "commit": "509ef4f53c06fd6eed103170934cb58ec2b21bfc",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "nuget-library",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "url": "https://github.com/kemiller2002/limen/releases/tag/v0.8.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "EchelonFoundry.Limen.Contract.0.8.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "1fc4d5ed688ed7f835a62083bab01399e5adc6db0d837673ef3b88be9efca0e2"
+    },
+    {
+      "name": "EchelonFoundry.Limen.Guest.0.8.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "53abdf3f7b0e04c152b4d584080d615df3746d4c616bc4259b12254ae537bd4e"
+    },
+    {
+      "name": "EchelonFoundry.Limen.Store.0.8.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "0dae1d77b84c2ececab9f1f3f1198a937289d2fde52b1a96889f4a41df862c92"
+    },
+    {
+      "name": "checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "45287206147922ab92ac3cb753bb36b16efd74295f4a5969472452719fd13db0"
+    }
+  ]
+}

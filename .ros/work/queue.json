@@ -1,0 +1,1158 @@
+{
+  "schemaVersion": "1.0.0",
+  "repository": "echelon-registry",
+  "nextSeq": 51,
+  "items": [
+    {
+      "id": "WI-0001",
+      "title": "Govern echelon-registry with Praxis 3.7.1 and Ordo 1.4.0; refresh distribution readiness",
+      "description": null,
+      "tags": [
+        "praxis",
+        "ordo",
+        "toolchain"
+      ],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-06T12:30:07.886Z",
+      "updatedAt": "2026-10-06T12:30:31.000Z",
+      "createdBy": "anthropic/claude-code",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0002",
+      "title": "Record Ordo 1.4.1 and select it in echelon-current",
+      "description": null,
+      "tags": [
+        "ordo",
+        "registry"
+      ],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-06T12:56:50.090Z",
+      "updatedAt": "2026-10-06T12:58:00.000Z",
+      "createdBy": "anthropic/claude-code",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0003",
+      "title": "Move echelon-registry to Ordo 1.4.1",
+      "description": null,
+      "tags": [
+        "ordo",
+        "toolchain"
+      ],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-06T14:01:58.041Z",
+      "updatedAt": "2026-10-06T14:03:48.000Z",
+      "createdBy": "anthropic/claude-code",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0005",
+      "title": "Record Praxis 3.7.2 and select it in echelon-current",
+      "description": null,
+      "tags": [],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-06T15:26:45.642Z",
+      "updatedAt": "2026-10-06T15:28:49.553Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": "https://github.com/kemiller2002/praxis/releases/tag/v3.7.2"
+    },
+    {
+      "id": "WI-0006",
+      "title": "Record Visual Engineering 1.0.1 and select it in echelon-current",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-06T16:02:24.000Z",
+      "updatedAt": "2026-10-06T16:03:31.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0007",
+      "title": "Move echelon-registry to Praxis 3.7.2, Ordo 1.4.2; adopt Conditor",
+      "description": null,
+      "tags": [
+        "praxis",
+        "ordo",
+        "toolchain",
+        "conditor"
+      ],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-06T16:34:53.248Z",
+      "updatedAt": "2026-10-06T16:36:49.000Z",
+      "createdBy": "anthropic/claude-code",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0008",
+      "title": "Record Strata 0.1.0 and select it in echelon-current; let optional components skip platforms their release does not ship",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T01:32:45.259Z",
+      "updatedAt": "2026-10-08T01:43:26.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0009",
+      "title": "Record Ordo 1.5.0 and select it in echelon-current",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T06:46:01.071Z",
+      "updatedAt": "2026-10-08T06:48:50.282Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0010",
+      "title": "Move echelon-registry to Ordo 1.5.0 via echelon-current 1.2.0 (conditor upgrade --current)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T07:14:41.747Z",
+      "updatedAt": "2026-10-08T07:14:52.992Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0011",
+      "title": "Record Strata 0.1.1 and select it in echelon-current",
+      "description": null,
+      "tags": [
+        "release",
+        "strata"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T07:27:32.000Z",
+      "updatedAt": "2026-10-08T07:36:32.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "unknown",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0012",
+      "title": "Record Arca 0.1.0 (NuGet package family as attested GitHub release assets), register the arca system, select it as an optional project binding in echelon-current 1.4.0, and let the resolver select a NuGet package family (REG-REL-014)",
+      "description": null,
+      "tags": [
+        "release",
+        "arca",
+        "channel",
+        "resolver"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T09:38:57.000Z",
+      "updatedAt": "2026-10-08T09:40:01.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0013",
+      "title": "Record Fides 0.1.0, register fides, and select it as an optional project binding in echelon-current 1.5.0",
+      "description": "Fides 0.1.0 (kemiller2002/fides, tag v0.1.0 at d2bd908d3db1cdfc48ddb163594a56fcd29404e0) ships EchelonFoundry.Fides, .Fides.Client and .Fides.Hosting plus the AWS Lambda package as Sigstore-attested GitHub release assets. Record the release, the fides system, and offer fides as an optional project binding the way arca 0.1.0 was (WI-0012 here).",
+      "tags": [
+        "registry",
+        "fides"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T10:20:54.000Z",
+      "updatedAt": "2026-10-08T10:23:11.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0014",
+      "title": "Record Arca 0.2.0 and select it in echelon-current 1.6.0",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T10:34:43.000Z",
+      "updatedAt": "2026-10-08T10:34:52.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0015",
+      "title": "Record Fides 0.2.0 and select it in echelon-current 1.7.0",
+      "description": "Fides 0.2.0 (kemiller2002/fides, tag v0.2.0 at dea13cef62b0bd34e2d4295659b4965da87f2698) adds EchelonFoundry.Fides.Arca and the Aegis binding. Record the release, add it to the catalog snapshot, move echelon-current to 1.6.0 so fides resolves to 0.2.0, regenerate the channels.",
+      "tags": [
+        "registry",
+        "fides"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T11:00:36.000Z",
+      "updatedAt": "2026-10-08T11:02:11.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0016",
+      "title": "Record summa-contracts 0.1.0 (EchelonFoundry.Summa.Contracts, the Chrona-to-Summa contract), register summa-contracts, select it as an optional project binding in echelon-current 1.8.0",
+      "description": "Summa released contracts-v0.1.0 (kemiller2002/summa, commit e888cfb, run 37799394989) with the release-contract manifest and Sigstore attestations. Record it, register the nuget-library system summa-contracts, and add it to echelon-current as an optional project binding so Chrona can declare it in conditor.json (Chrona WI-0037, Summa WI-0017).",
+      "tags": [
+        "registry",
+        "summa",
+        "chrona"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T15:21:01.000Z",
+      "updatedAt": "2026-10-08T15:23:23.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0017",
+      "title": "Record Arca 0.2.1 (multi-tab offline-queue fix) and select it in echelon-current 1.9.0",
+      "description": null,
+      "tags": [
+        "arca",
+        "release"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T16:29:21.330Z",
+      "updatedAt": "2026-10-08T16:30:52.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0018",
+      "title": "Record Limen 0.8.0 and limen-fsharp 0.8.0 (the F# store packages), register limen-fsharp, select both in echelon-current 1.10.0",
+      "description": "Limen 0.8.0 (kemiller2002/limen v0.8.0) ships the IndexedDB store pack's limen.store version 2 on npm and three attested NuGet release assets (EchelonFoundry.Limen.Contract, .Guest, .Store). Conditor's NuGet feed installs only nuget-library releases, so, as with summa-contracts, the .nupkg files are recorded as a second system, limen-fsharp, at the same repository, tag and version, and selected as an optional project binding so Arca and Chrona can declare it (Limen WI-0166, LCP-080).",
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T18:19:31.000Z",
+      "updatedAt": "2026-10-08T18:44:31.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0019",
+      "title": "Record Limen 0.9.0 and limen-fsharp 0.9.0 (the routing module and EchelonFoundry.Limen.Routing) and select both in echelon-current 1.11.0",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T21:14:18.200Z",
+      "updatedAt": "2026-10-08T21:19:35.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0020",
+      "title": "Record Arca 0.3.0 (Core, GitHub and the new Limen bridge package) and select it in echelon-current 1.11.0",
+      "description": "kemiller2002/arca v0.3.0: EchelonFoundry.Arca.Core, .GitHub and .Limen 0.3.0. EchelonFoundry.Arca.Limen depends on EchelonFoundry.Limen.Store 0.8.0 (limen-fsharp, already selected in 1.10.0 by #52).",
+      "tags": [
+        "arca",
+        "release",
+        "channel"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T21:33:35.000Z",
+      "updatedAt": "2026-10-08T21:40:37.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0021",
+      "title": "Record Forma 0.5.0 and select it in echelon-current 1.13.0",
+      "description": "Forma 0.5.0 (kemiller2002/forma, tag v0.5.0 at 8a5a5993421fbfd808582f735dedcf2adea07010) adds the static icon system and the icons/* package exports. PR #49 first recorded it under a branch-local WI-0016 that collided with main's WI-0016 (summa-contracts) after main moved to echelon-current 1.12.0. Bring the branch up to date by merging main, record the release, add it to the catalog snapshot, move echelon-current to 1.13.0 so forma resolves to 0.5.0, regenerate the channels.",
+      "tags": [
+        "registry",
+        "forma"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T22:14:04.811Z",
+      "updatedAt": "2026-10-08T22:16:21.573Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0022",
+      "title": "Record Praxis 3.9.1 (URL-addressable state foundations, Limen routes schema vendored) and select it in echelon-current 1.14.0",
+      "description": "Praxis 3.9.1 (tag v3.9.1 at 607d058a, native-release.yml run 37851051894) carries the SAF-URL-1..10 deep-linking standard and the routing foundation check (praxis#209), with Limen 0.9.0's contract/routes.schema.json vendored (praxis#211). Record it from the verified assets and select it.",
+      "tags": [
+        "praxis",
+        "echelon-current"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T22:28:45.885Z",
+      "updatedAt": "2026-10-08T22:29:37.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0023",
+      "title": "Record Conditor 0.8.0 (Limen.Routing web scaffold; deep-linking Indy preset)",
+      "description": "Conditor 0.8.0 (tag v0.8.0 at 9185bba7, release.yml): Limen 0.9.0 qualified and default, fsharp-limen-web routes through EchelonFoundry.Limen.Routing with limen-fsharp >= 0.9.0, indy-init preset on Indy-init 2eee2d5. First Conditor release record; Conditor is not a component of echelon-current, so no profile or channel changes.",
+      "tags": [
+        "conditor"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T23:36:00.542Z",
+      "updatedAt": "2026-10-08T23:36:41.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0024",
+      "title": "Record Praxis 3.10.0 (web and hub URL state through Limen.Routing) and select it in echelon-current 1.15.0",
+      "description": "Praxis 3.10.0 (tag v3.10.0 at 3185e368, native-release.yml run 37866320297): Praxis's own web and hub UIs route through the vendored EchelonFoundry.Limen.Routing (praxis#214). Record it from the verified assets and select it.",
+      "tags": [
+        "praxis",
+        "echelon-current"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-09T01:08:31.900Z",
+      "updatedAt": "2026-10-09T01:09:37.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0025",
+      "title": "Record Arca 0.4.0 (namespace-scoped change tokens, explicit erasure, stable account ids at sign-out) and select it in echelon-current 1.16.0",
+      "description": "kemiller2002/arca v0.4.0 at a252caf9142f283d8442fb8a5e1ebc2c5212d1d1, published by release.yml run 37873327778. Add releases/arca/0.4.0.release.json (the release's echelon-release.json in the record shape), the catalog row, echelon-current 1.15.0 -> 1.16.0 with Arca >=0.4.0 <1.0.0, regenerate every platform's resolved set and the channel index with the registry tools, update the readiness spec, and run the conformance validators.",
+      "tags": [],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-09T02:14:15.000Z",
+      "updatedAt": "2026-10-09T02:18:18.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0026",
+      "title": "Record Praxis 3.11.0 and select it in echelon-current 1.17.0",
+      "description": null,
+      "tags": [],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-09T02:57:57.000Z",
+      "updatedAt": "2026-10-09T02:59:14.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0027",
+      "title": "Record Conditor 0.8.2 (Praxis 3.10.0 and 3.11.0 qualified for upgrade --current)",
+      "description": null,
+      "tags": [],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-09T03:22:37.000Z",
+      "updatedAt": "2026-10-09T03:23:05.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0028",
+      "title": "Record Conditor 0.8.1 so the Conditor release history has no gap",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-09T03:33:30.000Z",
+      "updatedAt": "2026-10-09T03:33:55.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0029",
+      "title": "Record Arca 0.4.1 (revise keeps the entry's account id at sign-out) and select it in echelon-current 1.18.0",
+      "description": "kemiller2002/arca v0.4.1 at 82745430f209a06807b786d422b56d890f76bd68, published by release.yml run 37882697760: OfflineQueue.revise no longer drops AccountId (ARCA-OFF-007). Add releases/arca/0.4.1.release.json, the catalog row, echelon-current 1.17.0 -> 1.18.0 with Arca >=0.4.1 <1.0.0 so the affected 0.4.0 is no longer selected, regenerate every resolved set and the channel index with the registry tools, update the readiness spec, run the validators.",
+      "tags": [],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-09T04:14:40.000Z",
+      "updatedAt": "2026-10-09T04:17:23.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0030",
+      "title": "Record Arca 0.5.0 (batched read-cache save, pinned GitHub reads; arca#38, arca#39) and select it in echelon-current 1.19.0",
+      "description": null,
+      "tags": [
+        "arca",
+        "release"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T12:45:42.000Z",
+      "updatedAt": "2026-10-13T12:47:31.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "github",
+      "sourceReference": "kemiller2002/arca#42"
+    },
+    {
+      "id": "WI-0031",
+      "title": "Register Forma 0.6.1 and Folio 0.4.0 and select them in echelon-current 1.20.0",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T14:57:49.369Z",
+      "updatedAt": "2026-10-13T15:06:16Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0033",
+      "title": "REG-RU-007: never select in echelon-current a version the latest released Conditor refuses for a consumer-declared component; enforce in distribution conformance",
+      "description": null,
+      "tags": [],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T15:19:54Z",
+      "updatedAt": "2026-10-13T15:22:22Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0034",
+      "title": "When apps declare forma/folio in conditor.json (Conditor 0.9.0 opt-in), add them to conformance/conditor-declared-components.json in the same cycle (REG-RU-007 pending item)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T15:23:30.483Z",
+      "updatedAt": "2026-10-13T16:05:04Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0035",
+      "title": "Record Conditor 0.9.0 and correct the 0.8.3 mentions in REG-RU-007",
+      "description": null,
+      "tags": [],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T15:40:48Z",
+      "updatedAt": "2026-10-13T15:42:56Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0036",
+      "title": "Register Ordo 1.6.0 and select it in echelon-current 1.21.0 on current main (supersedes the conflicted WI-0032 branch, PR #66)",
+      "description": null,
+      "tags": [],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T15:45:25Z",
+      "updatedAt": "2026-10-13T15:47:45Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0037",
+      "title": "Register Ordo 1.7.0 and select it in echelon-current 1.22.0",
+      "description": null,
+      "tags": [],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T15:50:23Z",
+      "updatedAt": "2026-10-13T15:52:52Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0038",
+      "title": "Record Conditor 0.10.0",
+      "description": null,
+      "tags": [],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T16:10:17Z",
+      "updatedAt": "2026-10-13T16:11:43Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0039",
+      "title": "REG-SIG-001..008: requirements for signed release attestations (DF-CON-2026-A004 decision 2 precondition)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T16:14:48.332Z",
+      "updatedAt": "2026-10-13T16:14:51.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0040",
+      "title": "Capture REG-RU-001..006 from Conditor's rolling-upgrade notes (b61c3d9e) as Registry requirements (spec only)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T16:17:46.298Z",
+      "updatedAt": "2026-10-13T16:17:48Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0041",
+      "title": "Add a requirements work type to workProtocol.completionEvidence and capture the REG-SIG/REG-RU implementation items",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T16:29:50.788Z",
+      "updatedAt": "2026-10-13T16:30:48Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0042",
+      "title": "PROPOSAL-REQUIRED: implement REG-SIG-001..008 and REG-SIG-CT-001..008 (signing key and protected signing workflow, releaseAttestation in resolved sets, conformance checks). Key custody and workflow design go to the program lead as a proposal before any build.",
+      "description": null,
+      "tags": [
+        "proposal-required",
+        "reg-sig"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T16:30:11.611Z",
+      "updatedAt": "2026-10-13T16:30:18Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0043",
+      "title": "Implement REG-RU-001: library release workflows open the Registry registration PR automatically (needs coordination with each library repository)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T16:30:12.537Z",
+      "updatedAt": "2026-10-13T16:30:18Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0044",
+      "title": "Implement REG-RU-002: releasedAt and migrationNotes in the release manifest schema (echelon.release/v2 or successor)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T16:30:13.442Z",
+      "updatedAt": "2026-10-13T16:30:18Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0045",
+      "title": "Implement REG-RU-004: stalenessPolicy in echelon-current resolved sets, in the shape Conditor reads",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T16:30:14.351Z",
+      "updatedAt": "2026-10-13T16:30:18Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0046",
+      "title": "Implement REG-RU-006: consumerContracts claims checked at registration and backfilled on active web-package and NuGet-library releases; depends on the REG-SIG implementation (WI-0042)",
+      "description": null,
+      "tags": [
+        "depends-on-WI-0042"
+      ],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-13T16:30:15.380Z",
+      "updatedAt": "2026-10-13T16:30:18Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0047",
+      "title": "Record Conditor 0.10.1",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T17:00:34.261Z",
+      "updatedAt": "2026-10-13T17:02:18Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0048",
+      "title": "Record Conditor 0.10.2 (workstation host tools from the Registry; downgrade refusal)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T18:13:31.599Z",
+      "updatedAt": "2026-10-13T18:14:27.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0049",
+      "title": "Record Praxis 3.12.0",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T22:00:56.155Z",
+      "updatedAt": "2026-10-13T22:02:38Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0050",
+      "title": "Record Conditor 0.10.3",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T22:28:18.086Z",
+      "updatedAt": "2026-10-13T22:29:13Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0052",
+      "title": "Record Conditor 0.10.4",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T23:09:28Z",
+      "updatedAt": "2026-10-13T23:10:22Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0053",
+      "title": "Cut echelon-current 1.23.0: Praxis 3.11.0 -> 3.12.0",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T23:13:00Z",
+      "updatedAt": "2026-10-13T23:15:15Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0054",
+      "title": "Record Ordo 1.8.2",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-13T23:35:21Z",
+      "updatedAt": "2026-10-13T23:36:02Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0055",
+      "title": "Record Conditor 0.10.5",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-14T08:33:03Z",
+      "updatedAt": "2026-10-14T08:34:19Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    }
+  ]
+}
