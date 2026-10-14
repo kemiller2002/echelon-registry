@@ -74,7 +74,7 @@ The distribution foundation adds:
 
 `registry/systems-v2.json` is the canonical-identity seed for the currently identified Echelon products. Its `plannedCapabilities` list names portfolio capabilities that have a planned owner but no implementation (canonical time primitives, planned owner Chrona; ledger/invoicing/receivables/payments, planned owner Summa; QDI-079 amended 2026-10-05). Ownership is a commitment, not a capability: their capability ids MUST NOT appear in any system's `provides`, including the planned owner's, until they are implemented.
 
-The first Registry-owned host profile is `profiles/echelon-engineering.profile.json`. Version `0.1.0` pins the real published native releases Praxis `3.6.0` and Ordo `1.4.0`. The checked-in Linux x64 resolved release set is a conformance fixture and the seed for Conditor's Registry-consumption implementation.
+The first Registry-owned host profile is `profiles/echelon-engineering.profile.json`. Version `0.1.0` pins the real published native releases Praxis `3.6.0` and Ordo `1.4.0`. Immutable version `0.2.0` (`profiles/echelon-engineering-0.2.0.profile.json`) adds Dokimos `0.2.0` as a `repository-lifecycle` component, with resolved release sets for six supported platforms under `resolved/echelon-engineering/0.2.0/`. Version 0.1.0 is unchanged. The checked-in Linux x64 resolved release set is a conformance fixture and the seed for Conditor's Registry-consumption implementation.
 
 ## Moving the echelon-current channel
 

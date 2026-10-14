@@ -1,0 +1,136 @@
+{
+  "schema": "echelon.resolved-release-set/v1",
+  "profile": {
+    "id": "echelon-engineering",
+    "version": "0.2.0",
+    "sha256": "5037cf59166bad2dd42c0d1b1f80d29eefc68942275691b327fc6515fd9c420a"
+  },
+  "platform": "linux-arm64",
+  "resolver": {
+    "name": "echelon-registry-resolver",
+    "version": "0.1.0"
+  },
+  "catalogSnapshot": {
+    "sha256": "6eeb9bf4e0a3ce9238c0f87cf0232a4c7100c5aaf5e4121d9dd07334ae6895a7"
+  },
+  "components": [
+    {
+      "systemId": "praxis",
+      "role": "host-tool",
+      "required": true,
+      "version": "3.6.0",
+      "repository": "kemiller2002/praxis",
+      "tag": "v3.6.0",
+      "commit": "2d80783536f129a2314f86d8e5919c0bb6e7b511",
+      "releaseStage": "stable",
+      "lifecycleState": "active",
+      "distributionClass": "self-contained-native-cli",
+      "executable": "praxis",
+      "releaseManifest": {
+        "schema": "echelon.release/v2",
+        "sha256": "992e276ae0098b5c9b65cdd06f8c783aec95942c850e60d4bf06a28df22e6543"
+      },
+      "distribution": {
+        "mechanism": "github-release",
+        "package": null,
+        "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.6.0"
+      },
+      "artifacts": [
+        {
+          "name": "praxis-linux-arm64.tar.gz",
+          "purpose": "executable",
+          "platform": "linux-arm64",
+          "sha256": "70a692fbeea75b2db67c6a8ec5d3721b84bda8d7aa031be0fd1786c5978d1b03"
+        },
+        {
+          "name": "native-checksums.txt",
+          "purpose": "checksums",
+          "platform": null,
+          "sha256": "f534fb295eca6f89303cd1b812e6da6d456b75683dcd077b811ee5ae8558aef2"
+        }
+      ]
+    },
+    {
+      "systemId": "ordo",
+      "role": "host-tool",
+      "required": true,
+      "version": "1.4.0",
+      "repository": "kemiller2002/ordo",
+      "tag": "v1.4.0",
+      "commit": "17467fb34ed66a51f4d2eac55ae3d65447155696",
+      "releaseStage": "stable",
+      "lifecycleState": "active",
+      "distributionClass": "self-contained-native-cli",
+      "executable": "ordo",
+      "releaseManifest": {
+        "schema": "echelon.release/v2",
+        "sha256": "79a813b1f04fc4ec964be11e2a304caf5d87bb527da0b4b1779be6fc6a112659"
+      },
+      "distribution": {
+        "mechanism": "github-release",
+        "package": null,
+        "url": "https://github.com/kemiller2002/ordo/releases/tag/v1.4.0"
+      },
+      "artifacts": [
+        {
+          "name": "ordo-linux-arm64.tar.gz",
+          "purpose": "executable",
+          "platform": "linux-arm64",
+          "sha256": "6198ec70f8882851bbbf2e5b13fd4328822b0d828d183ca76addfa115936e197"
+        },
+        {
+          "name": "native-checksums.txt",
+          "purpose": "checksums",
+          "platform": null,
+          "sha256": "61a4bf5d2a36aba58328172ac571b2daf140dd66c624c4b094bff146738ff310"
+        }
+      ]
+    },
+    {
+      "systemId": "dokimos",
+      "role": "repository-lifecycle",
+      "required": true,
+      "version": "0.2.0",
+      "repository": "kemiller2002/dokimos",
+      "tag": "dokimos-v0.2.0",
+      "commit": "e641048c52edd8755c2964b6bafa4ae860e34062",
+      "releaseStage": "stable",
+      "lifecycleState": "active",
+      "distributionClass": "self-contained-native-cli",
+      "executable": "dokimos",
+      "repositoryLifecycle": {
+        "contract": "echelon.repository-lifecycle",
+        "contractVersion": 1
+      },
+      "releaseManifest": {
+        "schema": "echelon.release/v2",
+        "sha256": "1c75d80b9eb76a47239f2db7163c8e9e2f10e4ad303cd487284afd14c5a56737"
+      },
+      "distribution": {
+        "mechanism": "github-release",
+        "package": null,
+        "url": "https://github.com/kemiller2002/dokimos/releases/tag/dokimos-v0.2.0"
+      },
+      "artifacts": [
+        {
+          "name": "dokimos-linux-arm64.tar.gz",
+          "purpose": "executable",
+          "platform": "linux-arm64",
+          "sha256": "ae5eba7bbcdd2fb53f7dac156984be50907b3ed6646e8326b3ec498adb15ab1d"
+        },
+        {
+          "name": "dokimos-checksums.txt",
+          "purpose": "checksums",
+          "platform": null,
+          "sha256": "bcdb3676c409ae47ec083bbc016ce65d41a137fd305d367ff3923d0221298acc"
+        },
+        {
+          "name": "LICENSE",
+          "purpose": "licenses",
+          "platform": null,
+          "sha256": "e26da7c631b207a3ea65b0eb4761774fa246183e2855c52001d080b41577e9f2"
+        }
+      ]
+    }
+  ]
+}

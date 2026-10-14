@@ -1,0 +1,48 @@
+{
+  "schema": "echelon.catalog-snapshot/v1",
+  "systems": [
+    {
+      "id": "praxis",
+      "repository": "kemiller2002/praxis",
+      "manifest": "examples/praxis.system.json"
+    },
+    {
+      "id": "ordo",
+      "repository": "kemiller2002/ordo",
+      "manifest": "examples/ordo.system.json"
+    },
+    {
+      "id": "dokimos",
+      "repository": "kemiller2002/dokimos",
+      "manifest": "examples/dokimos.system.json"
+    }
+  ],
+  "releases": [
+    {
+      "systemId": "praxis",
+      "version": "3.6.0",
+      "manifest": "releases/praxis/3.6.0.release.json",
+      "sha256": "992e276ae0098b5c9b65cdd06f8c783aec95942c850e60d4bf06a28df22e6543"
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.4.0",
+      "manifest": "releases/ordo/1.4.0.release.json",
+      "sha256": "79a813b1f04fc4ec964be11e2a304caf5d87bb527da0b4b1779be6fc6a112659"
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.2.0",
+      "manifest": "releases/dokimos/0.2.0.release.json",
+      "sha256": "1c75d80b9eb76a47239f2db7163c8e9e2f10e4ad303cd487284afd14c5a56737"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "echelon-engineering",
+      "version": "0.2.0",
+      "manifest": "profiles/echelon-engineering-0.2.0.profile.json",
+      "sha256": "5037cf59166bad2dd42c0d1b1f80d29eefc68942275691b327fc6515fd9c420a"
+    }
+  ]
+}

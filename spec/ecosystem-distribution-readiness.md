@@ -152,6 +152,10 @@ The repositories below must **not** become normal Conditor install targets in th
 6. Project Administration is the canonical installation-instance inventory owner. Echelon Registry remains the catalog owner.
 7. `limen` is canonical. The repository was formerly `typescript-wasm-kernel`, which remains a compatibility alias of `limen`, not a second system. From 0.7.0 the npm distribution identity is `@echelon-foundry/limen`. `@echelon-foundry/typescript-wasm-kernel` is deprecated; its releases through 0.6.2 keep that package name as the historical distribution identity valid for those releases (REG-DIST-152).
 
+### Immutable Echelon engineering host profile 0.2.0
+
+The historical Registry-owned `echelon-engineering` 0.2.0 host profile includes Praxis 3.6.0 and Ordo 1.4.0 as host tools, with Dokimos 0.2.0 as a repository-lifecycle capability. The six pinned platform release sets in `resolved/echelon-engineering/0.2.0/` are checked against the immutable release catalog. This does not modify version 0.1.0, the rolling `echelon-current` channel, or the frozen Indy Init profile.
+
 ## F. Stable-profile eligibility gate
 
 A system may enter a stable Conditor profile only when all applicable items are proven:
