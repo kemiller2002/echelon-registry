@@ -54,3 +54,4 @@
 | WI-0050 | Record Conditor 0.10.3 | complete |  | medium |
 | WI-0052 | Record Conditor 0.10.4 | complete |  | medium |
 | WI-0053 | Cut echelon-current 1.23.0: Praxis 3.11.0 -> 3.12.0 | complete |  | medium |
+| WI-0054 | Record Ordo 1.8.2 | complete |  | medium |
