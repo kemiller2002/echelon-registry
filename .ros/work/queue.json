@@ -1164,10 +1164,10 @@
         "dependency"
       ],
       "priority": "high",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-17T16:42:47.086Z",
-      "updatedAt": "2026-10-17T16:42:48.000Z",
+      "updatedAt": "2026-10-17T19:43:30.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

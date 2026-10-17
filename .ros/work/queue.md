@@ -56,4 +56,4 @@
 | WI-0053 | Cut echelon-current 1.23.0: Praxis 3.11.0 -> 3.12.0 | complete |  | medium |
 | WI-0054 | Record Ordo 1.8.2 | complete |  | medium |
 | WI-0055 | Record Conditor 0.10.5 | complete |  | medium |
-| WI-0056 | Record Forma 0.9.0 and select it in echelon-current | ready | registry, forma, dependency | high |
+| WI-0056 | Record Forma 0.9.0 and select it in echelon-current | complete | registry, forma, dependency | high |
