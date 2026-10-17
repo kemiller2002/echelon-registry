@@ -2122,21 +2122,20 @@
         "EXE-20261017T164252314Z-edc1cf49"
       ],
       "latestCheckpoint": {
-        "id": "36ab472255f91b24955bb940",
-        "recordedAt": "2026-10-17T16:43:49.000Z",
+        "id": "f14e170b96356644253b447b",
+        "recordedAt": "2026-10-17T19:43:06.000Z",
         "executionId": "EXE-20261017T164252314Z-edc1cf49",
-        "stepId": "STEP-20261017T164257000Z-7ce6b6eb",
         "repository": "echelon-registry",
         "branch": "codex/record-forma-090",
-        "commit": "3da61bfed66b8575d14175bdad439e3ee7a98514",
+        "commit": "2891cd4ebeda763cf1d2f96e3019b3c8fe499dea",
         "remote": {
           "name": "origin",
           "url": "https://github.com/kemiller2002/echelon-registry.git"
         },
         "remoteBranch": "codex/record-forma-090",
-        "remoteCommit": "3da61bfed66b8575d14175bdad439e3ee7a98514",
-        "summary": "Forma 0.9.0 release and asset hashes verified; Registry work item created; channel move correctly gated because Conditor 0.10.5 qualifies only through Forma 0.6.1.",
-        "nextAction": "Release a narrowly scoped Conditor version qualifying Forma 0.9.0, then add the Forma release record and regenerate echelon-current 1.24.0.",
+        "remoteCommit": "2891cd4ebeda763cf1d2f96e3019b3c8fe499dea",
+        "summary": "Recorded Forma 0.9.0 and Conditor 0.10.6, selected Ordo 1.8.2 and Forma 0.9.0 in echelon-current 1.24.0, regenerated all platform sets, and passed conformance.",
+        "nextAction": "Open the Registry pull request, require green CI including released Conditor qualification, then merge.",
         "verification": {
           "status": "verified",
           "mechanism": "git-remote-observation"
