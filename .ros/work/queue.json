@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 51,
+  "nextSeq": 57,
   "items": [
     {
       "id": "WI-0001",
@@ -1153,6 +1153,31 @@
       },
       "source": "manual",
       "sourceReference": null
+    },
+    {
+      "id": "WI-0056",
+      "title": "Record Forma 0.9.0 and select it in echelon-current",
+      "description": null,
+      "tags": [
+        "registry",
+        "forma",
+        "dependency"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-17T16:42:47.086Z",
+      "updatedAt": "2026-10-17T19:43:30.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "openai/codex",
+        "provider": "openai",
+        "model": "unknown",
+        "runtime": "codex"
+      },
+      "source": "release",
+      "sourceReference": "https://github.com/kemiller2002/forma/releases/tag/v0.9.0"
     }
   ]
 }
