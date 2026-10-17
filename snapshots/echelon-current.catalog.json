@@ -162,6 +162,12 @@
       "sha256": "5261ec97e76008c64553f35719d961019a7d89a803bfb6a4bd1de70a9bc0bcba"
     },
     {
+      "systemId": "ordo",
+      "version": "1.8.2",
+      "manifest": "releases/ordo/1.8.2.release.json",
+      "sha256": "272bcc4dff151d26aac5212e26421aa60026e91ced625967d186c3be10240c38"
+    },
+    {
       "systemId": "percepta",
       "version": "0.1.0",
       "manifest": "releases/percepta/0.1.0.release.json",
@@ -244,6 +250,12 @@
       "version": "0.6.1",
       "manifest": "releases/forma/0.6.1.release.json",
       "sha256": "164660ba86d913aaf4715c790ac81034142d4cf90e5c1ebd56d3bbb73041feb9"
+    },
+    {
+      "systemId": "forma",
+      "version": "0.9.0",
+      "manifest": "releases/forma/0.9.0.release.json",
+      "sha256": "674c10a5a317c5e4dbf2f52a495ae3ec4a995907c24d86e02c0bdc3625f70da9"
     },
     {
       "systemId": "folio",
@@ -357,9 +369,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.23.0",
+      "version": "1.24.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "36c0273206e5df6306e356d4d0428eaa13008120fdac67c3e9b3bf34b6da48b1"
+      "sha256": "efe437489cc2b741cacc756b2c9b11f119627cc5aaf25c917933884a47b39c53"
     }
   ]
 }
