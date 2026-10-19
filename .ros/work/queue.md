@@ -58,3 +58,4 @@
 | WI-0055 | Record Conditor 0.10.5 | complete |  | medium |
 | WI-0056 | Record Forma 0.9.0 and select it in echelon-current | complete | registry, forma, dependency | high |
 | WI-0057 | Record Praxis 3.14.0 and Dokimos 0.6.0 | complete |  | medium |
+| WI-0058 | Record Conditor 0.10.7 and Praxis 3.15.0 | complete |  | medium |
