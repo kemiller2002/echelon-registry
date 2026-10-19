@@ -1185,10 +1185,10 @@
       "description": "Record the published Praxis v3.14.0 and Dokimos dokimos-v0.6.0 releases (verified digests, provenance attestations). Records only; echelon-current is not moved.",
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-19T18:17:16.000Z",
-      "updatedAt": "2026-10-19T18:17:24.000Z",
+      "updatedAt": "2026-10-19T18:20:16.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
