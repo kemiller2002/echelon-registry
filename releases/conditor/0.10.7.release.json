@@ -1,0 +1,86 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "conditor",
+  "version": "0.10.7",
+  "repository": "kemiller2002/conditor",
+  "tag": "v0.10.7",
+  "commit": "3836d53272bd727317292f29f8ecd2fd1a449d18",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "self-contained-native-cli",
+  "executable": "conditor",
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "package": null,
+      "url": "https://github.com/kemiller2002/conditor/releases/tag/v0.10.7"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "conditor-linux-x64",
+      "purpose": "executable",
+      "platform": "linux-x64",
+      "sha256": "b5302cb26801402a39a51df51afc8ec238a1557ff93aab0790b0adf0ef9ca018",
+      "mediaType": "application/octet-stream"
+    },
+    {
+      "name": "conditor-linux-arm64",
+      "purpose": "executable",
+      "platform": "linux-arm64",
+      "sha256": "aae66e9f73cfd443bfde272725f999be1fc880a63ed20f63ce094e052f8aa5ec",
+      "mediaType": "application/octet-stream"
+    },
+    {
+      "name": "conditor-linux-musl-x64",
+      "purpose": "executable",
+      "platform": "linux-musl-x64",
+      "sha256": "75e5de0fb1daaa4a555767f15db75f0eaf1425dbf755fab5d9820b3a14db3d3f",
+      "mediaType": "application/octet-stream"
+    },
+    {
+      "name": "conditor-linux-musl-arm64",
+      "purpose": "executable",
+      "platform": "linux-musl-arm64",
+      "sha256": "603dbedf881acdeeba05526405a67e70beb27b7f0695076248ae614290468db5",
+      "mediaType": "application/octet-stream"
+    },
+    {
+      "name": "conditor-osx-x64",
+      "purpose": "executable",
+      "platform": "osx-x64",
+      "sha256": "6e63c111378ad0068dd91bd42667d5fb69aaa3053e39a8c5b0a18a3c3caa4cf6",
+      "mediaType": "application/octet-stream"
+    },
+    {
+      "name": "conditor-osx-arm64",
+      "purpose": "executable",
+      "platform": "osx-arm64",
+      "sha256": "75976c25f616a9e94454e796a16254904cce04e0e48b7d140da2297711070124",
+      "mediaType": "application/octet-stream"
+    },
+    {
+      "name": "conditor-win-x64.exe",
+      "purpose": "executable",
+      "platform": "win-x64",
+      "sha256": "ad416f68ebaafde9145f41bfc74fbe004f4e2dc52c238daa61ac7db3866c4f31",
+      "mediaType": "application/vnd.microsoft.portable-executable"
+    },
+    {
+      "name": "conditor-win-arm64.exe",
+      "purpose": "executable",
+      "platform": "win-arm64",
+      "sha256": "f89aaba88c93a105604372be827e737780226b09f81a2e55a5ad9e57dd774b23",
+      "mediaType": "application/vnd.microsoft.portable-executable"
+    },
+    {
+      "name": "checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "627a986f01b5e4ce7b992cdf3a861e715f400f356502f252636f27600cd4d41c",
+      "mediaType": "text/plain"
+    }
+  ]
+}
