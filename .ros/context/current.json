@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-17T19:43:30.000Z",
+  "updatedAt": "2026-10-19T18:20:16.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -2163,6 +2163,51 @@
         }
       },
       "completedAt": "2026-10-17T19:43:30.000Z"
+    },
+    {
+      "id": "WI-0057",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/praxis/3.14.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "releases/dokimos/0.6.0.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-distribution-fixtures.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-19T18:20:16.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261019T181724935Z-8d6774cb"
+      ],
+      "latestCheckpoint": {
+        "id": "db67542e16e557387387b56e",
+        "recordedAt": "2026-10-19T18:20:15.000Z",
+        "executionId": "EXE-20261019T181724935Z-8d6774cb",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-reliability-integration-g8x7vn",
+        "commit": "3b948bfb79e992a61f65c5f2d1b189d7e093a97f",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-reliability-integration-g8x7vn",
+        "remoteCommit": "3b948bfb79e992a61f65c5f2d1b189d7e093a97f",
+        "summary": "Praxis 3.14.0 and Dokimos 0.6.0 recorded with verified digests; conformance passes",
+        "nextAction": "Complete WI-0057; release a Conditor qualifying Praxis 3.14.0 before cutting echelon-current",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-19T18:20:16.000Z"
     }
   ]
 }

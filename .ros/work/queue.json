@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 57,
+  "nextSeq": 58,
   "items": [
     {
       "id": "WI-0001",
@@ -1178,6 +1178,27 @@
       },
       "source": "release",
       "sourceReference": "https://github.com/kemiller2002/forma/releases/tag/v0.9.0"
+    },
+    {
+      "id": "WI-0057",
+      "title": "Record Praxis 3.14.0 and Dokimos 0.6.0",
+      "description": "Record the published Praxis v3.14.0 and Dokimos dokimos-v0.6.0 releases (verified digests, provenance attestations). Records only; echelon-current is not moved.",
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-19T18:17:16.000Z",
+      "updatedAt": "2026-10-19T18:20:16.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
     }
   ]
 }
