@@ -1,0 +1,117 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "dokimos",
+  "version": "0.6.0",
+  "repository": "kemiller2002/dokimos",
+  "tag": "dokimos-v0.6.0",
+  "commit": "828208f46b7d1073534bd02873d6298b62ad1de2",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "self-contained-native-cli",
+  "executable": "dokimos",
+  "compatibilityAliases": [],
+  "provides": [
+    {
+      "id": "quality.snapshot",
+      "contractVersion": 2
+    },
+    {
+      "id": "quality.compare",
+      "contractVersion": 1
+    },
+    {
+      "id": "quality.evaluate",
+      "contractVersion": 1
+    },
+    {
+      "id": "quality.history",
+      "contractVersion": 1
+    },
+    {
+      "id": "completion.verify",
+      "contractVersion": 1
+    },
+    {
+      "id": "echelon.repository-lifecycle",
+      "contractVersion": 1
+    }
+  ],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "package": null,
+      "url": "https://github.com/kemiller2002/dokimos/releases/tag/dokimos-v0.6.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "dokimos-linux-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "linux-x64",
+      "sha256": "484cbc0cb2876d415ff416acf46a4d17aaa684f1c39ddcf4c59c76a4e0a1e94b",
+      "mediaType": "application/gzip"
+    },
+    {
+      "name": "dokimos-linux-arm64.tar.gz",
+      "purpose": "executable",
+      "platform": "linux-arm64",
+      "sha256": "339b553c005c625d760da43de07c67e48243dd468ca75fb1726cc12137c13df9",
+      "mediaType": "application/gzip"
+    },
+    {
+      "name": "dokimos-linux-musl-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "linux-musl-x64",
+      "sha256": "577fa4a6189e3eb94be0aa6a340da86348beb3fbc6f729539c89883f40eedaf7",
+      "mediaType": "application/gzip"
+    },
+    {
+      "name": "dokimos-osx-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "osx-x64",
+      "sha256": "37ccbc4b090dbcf59aca45dc379071226a094fcd8c0dfe17af877ae9f824b40f",
+      "mediaType": "application/gzip"
+    },
+    {
+      "name": "dokimos-osx-arm64.tar.gz",
+      "purpose": "executable",
+      "platform": "osx-arm64",
+      "sha256": "38a6e40f186ddcebc3ec76bb1aae16f9eb7925abb503442615de996aaccbd06c",
+      "mediaType": "application/gzip"
+    },
+    {
+      "name": "dokimos-win-x64.zip",
+      "purpose": "executable",
+      "platform": "win-x64",
+      "sha256": "a85ff37e49fbf0f888f49e58189961c7ae0761ecfc42d5141d6347b3a3685cc0",
+      "mediaType": "application/zip"
+    },
+    {
+      "name": "EchelonFoundry.Dokimos.Cli.0.6.0.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "8590423481129a8aa42449c2feef7dfccf62f0fd49efe96b37f2f723478d44cb",
+      "mediaType": "application/zip"
+    },
+    {
+      "name": "dokimos-checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "d462c0ca9f0c6ee8a19d92cacb435f8f2bff35532309a6030c9324172b87a5e5",
+      "mediaType": "text/plain"
+    },
+    {
+      "name": "LICENSE",
+      "purpose": "licenses",
+      "platform": null,
+      "sha256": "ffcca38841adb694b6f380647e15f17c446a4d1656fed51a1e2041d064c94cc8",
+      "mediaType": "text/plain"
+    }
+  ],
+  "evidence": {
+    "licenses": {
+      "artifactName": "LICENSE",
+      "sha256": "ffcca38841adb694b6f380647e15f17c446a4d1656fed51a1e2041d064c94cc8"
+    }
+  }
+}
