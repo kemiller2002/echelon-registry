@@ -2306,7 +2306,27 @@
       "updatedAt": "2026-10-20T07:52:37.000Z",
       "telemetryExecutionIds": [
         "EXE-20261020T075238198Z-f7be08b2"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "461c4c95e4c2fbd7db376690",
+        "recordedAt": "2026-10-20T08:17:53.000Z",
+        "executionId": "EXE-20261020T075238198Z-f7be08b2",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-reliability-integration-g8x7vn",
+        "commit": "10a5cd2925fc89b8f91011c172de8813b08ae94b",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-reliability-integration-g8x7vn",
+        "remoteCommit": "10a5cd2925fc89b8f91011c172de8813b08ae94b",
+        "summary": "echelon-current 1.25.0 selects Praxis 3.16.0, Ordo 1.17.0, Dokimos 0.6.0; Conditor 0.10.8 recorded; conformance incl. REG-RU-007 against released v0.10.8 passes",
+        "nextAction": "complete WI-0060 and open the Registry PR",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      }
     }
   ]
 }
