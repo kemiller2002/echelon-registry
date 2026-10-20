@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-20T07:49:49.000Z",
+  "updatedAt": "2026-10-20T07:52:13.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -2258,13 +2258,44 @@
     {
       "id": "WI-0059",
       "type": "task",
-      "state": "active",
-      "semanticState": "active",
-      "evidence": [],
-      "updatedAt": "2026-10-20T07:49:49.000Z",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/praxis/3.16.0.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "releases/ordo/1.17.0.release.json"
+        }
+      ],
+      "updatedAt": "2026-10-20T07:52:13.000Z",
       "telemetryExecutionIds": [
         "EXE-20261020T074949860Z-3fcd59e9"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "90d4c342b6de4a80aa20f334",
+        "recordedAt": "2026-10-20T07:52:10.000Z",
+        "executionId": "EXE-20261020T074949860Z-3fcd59e9",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-reliability-integration-g8x7vn",
+        "commit": "e777a1644289b45e2dcd5312e5dbd97567f6d470",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-reliability-integration-g8x7vn",
+        "remoteCommit": "e777a1644289b45e2dcd5312e5dbd97567f6d470",
+        "summary": "Praxis 3.16.0 and Ordo 1.17.0 recorded (e777a16); conformance with Conditor v0.10.7 and praxis validate pass",
+        "nextAction": "Complete WI-0059; cut echelon-current 1.25.0 on a new work item",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-20T07:52:13.000Z",
+      "conclusion": "Recorded Praxis 3.16.0 and Ordo 1.17.0 by the precedent conversions; digests, checksums and attestations verified; conformance passes."
     }
   ]
 }
