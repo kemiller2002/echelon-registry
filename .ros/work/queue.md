@@ -60,4 +60,4 @@
 | WI-0057 | Record Praxis 3.14.0 and Dokimos 0.6.0 | complete |  | medium |
 | WI-0058 | Record Conditor 0.10.7 and Praxis 3.15.0 | complete |  | medium |
 | WI-0059 | Record Praxis 3.16.0 and Ordo 1.17.0 | complete | release | high |
-| WI-0060 | Cut echelon-current 1.25.0: Praxis 3.16.0, Dokimos 0.6.0, Ordo 1.17.0 | ready | release, channel | high |
+| WI-0060 | Cut echelon-current 1.25.0: Praxis 3.16.0, Dokimos 0.6.0, Ordo 1.17.0 | complete | release, channel | high |
