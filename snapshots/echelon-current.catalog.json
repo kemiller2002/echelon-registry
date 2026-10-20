@@ -126,6 +126,12 @@
       "sha256": "9a854f48aaf4100f16318be03dc20034085b818cf93ea70f35984e0102f12cd3"
     },
     {
+      "systemId": "praxis",
+      "version": "3.16.0",
+      "manifest": "releases/praxis/3.16.0.release.json",
+      "sha256": "53b4eb6e9a1b22cd76e86af741e84308444d96c244e1f3a52be1f1de2609cf12"
+    },
+    {
       "systemId": "ordo",
       "version": "1.4.0",
       "manifest": "releases/ordo/1.4.0.release.json",
@@ -168,6 +174,12 @@
       "sha256": "272bcc4dff151d26aac5212e26421aa60026e91ced625967d186c3be10240c38"
     },
     {
+      "systemId": "ordo",
+      "version": "1.17.0",
+      "manifest": "releases/ordo/1.17.0.release.json",
+      "sha256": "d9ee8be3b8723582389bcade5a969827f92a89266aab801c7e6b6e3bc224e0e8"
+    },
+    {
       "systemId": "percepta",
       "version": "0.1.0",
       "manifest": "releases/percepta/0.1.0.release.json",
@@ -178,6 +190,12 @@
       "version": "0.2.0",
       "manifest": "releases/dokimos/0.2.0.release.json",
       "sha256": "1c75d80b9eb76a47239f2db7163c8e9e2f10e4ad303cd487284afd14c5a56737"
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.6.0",
+      "manifest": "releases/dokimos/0.6.0.release.json",
+      "sha256": "0da83cfe844ad220324468ddaf7b4ae669828ff96bd25dc5f8a9b8f963952dba"
     },
     {
       "systemId": "visual-engineering",
@@ -369,9 +387,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.24.0",
+      "version": "1.25.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "efe437489cc2b741cacc756b2c9b11f119627cc5aaf25c917933884a47b39c53"
+      "sha256": "83450d917344fc6d29a3edffc2a5bf290d5ae0bb83b9e572b698840a1a51a0ba"
     }
   ]
 }

@@ -1243,6 +1243,30 @@
       },
       "source": "Echelon release qualification",
       "sourceReference": "praxis v3.16.0 (bb8fbad8), ordo v1.17.0 (bb43c26c)"
+    },
+    {
+      "id": "WI-0060",
+      "title": "Cut echelon-current 1.25.0: Praxis 3.16.0, Dokimos 0.6.0, Ordo 1.17.0",
+      "description": null,
+      "tags": [
+        "release",
+        "channel"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-20T07:52:36.000Z",
+      "updatedAt": "2026-10-20T07:52:37.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "Echelon release qualification",
+      "sourceReference": "WI-0059 records; conditor WI-0048"
     }
   ]
 }
