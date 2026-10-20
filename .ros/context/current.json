@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-20T07:52:13.000Z",
+  "updatedAt": "2026-10-20T08:18:15.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -2296,6 +2296,56 @@
       },
       "completedAt": "2026-10-20T07:52:13.000Z",
       "conclusion": "Recorded Praxis 3.16.0 and Ordo 1.17.0 by the precedent conversions; digests, checksums and attestations verified; conformance passes."
+    },
+    {
+      "id": "WI-0060",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "implementation",
+          "path": "releases/conditor/0.10.8.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-current-channel.fsx"
+        },
+        {
+          "type": "resolved-set",
+          "path": "channels/echelon-current/channel.json"
+        }
+      ],
+      "updatedAt": "2026-10-20T08:18:15.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261020T075238198Z-f7be08b2"
+      ],
+      "latestCheckpoint": {
+        "id": "461c4c95e4c2fbd7db376690",
+        "recordedAt": "2026-10-20T08:17:53.000Z",
+        "executionId": "EXE-20261020T075238198Z-f7be08b2",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-reliability-integration-g8x7vn",
+        "commit": "10a5cd2925fc89b8f91011c172de8813b08ae94b",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-reliability-integration-g8x7vn",
+        "remoteCommit": "10a5cd2925fc89b8f91011c172de8813b08ae94b",
+        "summary": "echelon-current 1.25.0 selects Praxis 3.16.0, Ordo 1.17.0, Dokimos 0.6.0; Conditor 0.10.8 recorded; conformance incl. REG-RU-007 against released v0.10.8 passes",
+        "nextAction": "complete WI-0060 and open the Registry PR",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-20T08:18:15.000Z",
+      "conclusion": "echelon-current 1.25.0 cut (Praxis 3.16.0, Ordo 1.17.0, Dokimos 0.6.0); REG-RU-007 PASS against released Conditor v0.10.8; all distribution-conformance steps pass"
     }
   ]
 }
