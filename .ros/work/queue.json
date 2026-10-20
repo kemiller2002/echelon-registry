@@ -1220,6 +1220,29 @@
       },
       "source": "manual",
       "sourceReference": null
+    },
+    {
+      "id": "WI-0059",
+      "title": "Record Praxis 3.16.0 and Ordo 1.17.0",
+      "description": null,
+      "tags": [
+        "release"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-20T07:49:48.000Z",
+      "updatedAt": "2026-10-20T07:49:49.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "Echelon release qualification",
+      "sourceReference": "praxis v3.16.0 (bb8fbad8), ordo v1.17.0 (bb43c26c)"
     }
   ]
 }
