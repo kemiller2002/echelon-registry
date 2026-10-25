@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 62,
+  "nextSeq": 63,
   "items": [
     {
       "id": "WI-0001",
@@ -1281,6 +1281,30 @@
       "attachments": [],
       "createdAt": "2026-10-25T01:27:26.393Z",
       "updatedAt": "2026-10-25T01:34:29.043Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0062",
+      "title": "Cut echelon-current 1.27.0: Dokimos 0.6.0 -> 0.7.0, add percepta-semantic 0.1.0, declare the verified-completion-attested pairing; record the release set and its owner approval (EP-A6a-R1/R2) after REG-RU-007 with released Conditor",
+      "description": null,
+      "tags": [
+        "release",
+        "channel"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-25T01:38:01.996Z",
+      "updatedAt": "2026-10-25T04:51:04.735Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

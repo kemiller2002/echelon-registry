@@ -198,3 +198,23 @@ jobs:
 
       - name: Validate generated release contract
         run: dotnet fsi conformance/validate-release-generation.fsx examples/release-contract/generated.release.json
+
+  # EP-A6a-R1/R2 (schemas/release-set.schema.json): the current channel's set
+  # is recorded immutably and approved. A separate job, so that the
+  # distribution-conformance job's REG-RU-007 result for a proposed set stands
+  # on its own as the qualification evidence its approval cites.
+  release-set-approval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Validate release-set records and approval (EP-A6a-R1/R2)
+        env:
+          RELEASE_SET_BASE_REF: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: dotnet fsi conformance/validate-release-sets.fsx

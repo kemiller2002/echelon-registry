@@ -34,6 +34,7 @@ let schemaFiles =
         "schemas/catalog-snapshot.schema.json"
         "schemas/readiness.schema.json"
         "schemas/current-channel.schema.json"
+        "schemas/release-set.schema.json"
     |]
 
 for path in schemaFiles do
