@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-25T04:34:12.541Z",
+  "updatedAt": "2026-10-25T04:35:25.081Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -2411,13 +2411,34 @@
     {
       "id": "WI-0063",
       "type": "default",
-      "state": "active",
-      "semanticState": "active",
+      "state": "blocked",
+      "semanticState": "blocked",
       "evidence": [],
-      "updatedAt": "2026-10-25T04:34:12.541Z",
+      "updatedAt": "2026-10-25T04:35:25.081Z",
       "telemetryExecutionIds": [
         "EXE-20261025T043412996Z-70e99ef7"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "6cfda2aee3507d21954b4927",
+        "recordedAt": "2026-10-25T04:35:23.744Z",
+        "executionId": "EXE-20261025T043412996Z-70e99ef7",
+        "repository": "echelon-registry",
+        "branch": "claude/percepta-semantic-registration",
+        "commit": "6585107b7d3fab625c2e5fa98930424ebe17a266",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/percepta-semantic-registration",
+        "remoteCommit": "6585107b7d3fab625c2e5fa98930424ebe17a266",
+        "summary": "percepta-semantic identity and record builder ready; apply steps in intake",
+        "nextAction": "When percepta-semantic-v0.1.0 is published, follow .praxis/inbox/documents/2026-10-25-REG-PERCEPTA-SEMCLI-registration.md",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "blockReason": "Upstream release percepta-semantic-v0.1.0 (kemiller2002/percepta#39) not published as of 2026-10-25T04:30Z"
     }
   ]
 }
