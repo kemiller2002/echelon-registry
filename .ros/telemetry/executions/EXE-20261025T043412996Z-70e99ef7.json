@@ -617,8 +617,8 @@
         "name": "ros-work-protocol",
         "mechanism": "blocked-transition"
       },
-      "lastAssessedAt": "2026-10-25T04:35:25.081Z",
-      "recordedAt": "2026-10-25T04:35:25.081Z",
+      "lastAssessedAt": "2026-10-25T04:35:50.444Z",
+      "recordedAt": "2026-10-25T04:35:50.444Z",
       "history": [
         {
           "status": "unknown",
@@ -1530,6 +1530,26 @@
       },
       "collectedAt": "2026-10-25T04:35:46.727Z",
       "schemaVersion": "1.0.0"
+    },
+    {
+      "measurementId": "MEAS-ca6e13215ed2660ffeb3f007",
+      "id": "agent.interruptions",
+      "value": 1,
+      "unit": "count",
+      "currency": null,
+      "quality": "derived",
+      "confidence": null,
+      "scope": "execution",
+      "aggregation": "sum",
+      "dimensions": {},
+      "pricing": null,
+      "source": {
+        "type": "calculated",
+        "name": "ros-work-protocol",
+        "mechanism": "blocked-transition"
+      },
+      "collectedAt": "2026-10-25T04:35:50.444Z",
+      "schemaVersion": "1.0.0"
     }
   ],
   "rawTelemetry": [],
@@ -1564,6 +1584,17 @@
         "mechanism": "work-lifecycle"
       },
       "eventId": "TEVT-f893a48f642e03e492ecf4a6"
+    },
+    {
+      "type": "work.blocked",
+      "occurredAt": "2026-10-25T04:35:50.444Z",
+      "reason": "Upstream release percepta-semantic-v0.1.0 (kemiller2002/percepta#39) not published as of 2026-10-25T04:30Z",
+      "source": {
+        "type": "ros-clock",
+        "name": "ros",
+        "mechanism": "work-lifecycle"
+      },
+      "eventId": "TEVT-efd3219645e48987594b1e68"
     }
   ],
   "repository": {
