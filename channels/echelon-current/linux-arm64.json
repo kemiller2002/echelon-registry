@@ -2,8 +2,8 @@
   "schema": "echelon.resolved-release-set/v1",
   "profile": {
     "id": "echelon-current",
-    "version": "1.27.0",
-    "sha256": "1fc15263e1652b08d075b5aaa1524ca038d3c92e6f0b7fe738156d067c1e835c"
+    "version": "1.28.0",
+    "sha256": "0ebeeaee2fbcec8d73a702b2128f0b48b767b96176a2a3c53eb9b3039a99d63e"
   },
   "platform": "linux-arm64",
   "resolver": {
@@ -11,7 +11,7 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "a61aba03c9617d8b225c5df0f3605e404f1e0da62da9c65cba6038e9ffb934f3"
+    "sha256": "95a6c5bf836df6cdbc7c38d93929743860266f6b4496f3d734eee913599539dc"
   },
   "components": [
     {
@@ -119,6 +119,42 @@
           "purpose": "checksums",
           "platform": null,
           "sha256": "ff99817e48d4ae09307b2e313a0e6facc645dc952566de1391e510d95a2093d3"
+        }
+      ]
+    },
+    {
+      "systemId": "percepta-semantic",
+      "role": "host-tool",
+      "required": true,
+      "version": "0.1.0",
+      "repository": "kemiller2002/percepta",
+      "tag": "percepta-semantic-v0.1.0",
+      "commit": "3c3889d037402a5bf84b50267249ce7ead4689d4",
+      "releaseStage": "stable",
+      "lifecycleState": "active",
+      "distributionClass": "self-contained-native-cli",
+      "executable": "percepta",
+      "releaseManifest": {
+        "schema": "echelon.release/v2",
+        "sha256": "9e4851ab9dc716459c9cbbb36e6cebb94ae2f3bc2e84d67cf94ede94b2672c1b"
+      },
+      "distribution": {
+        "mechanism": "github-release",
+        "package": null,
+        "url": "https://github.com/kemiller2002/percepta/releases/tag/percepta-semantic-v0.1.0"
+      },
+      "artifacts": [
+        {
+          "name": "percepta-semantic-0.1.0-linux-arm64.tar.gz",
+          "purpose": "executable",
+          "platform": "linux-arm64",
+          "sha256": "76a661d37639da83f8c787b75374323b2e7fc4f489a134afd1f978846aa33457"
+        },
+        {
+          "name": "checksums.txt",
+          "purpose": "checksums",
+          "platform": null,
+          "sha256": "8288cc059f3b71f04a19fec6ca778aa99e2f450f19dca7310eb725f731e9c5ba"
         }
       ]
     },
