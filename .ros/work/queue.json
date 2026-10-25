@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 63,
+  "nextSeq": 64,
   "items": [
     {
       "id": "WI-0001",
@@ -1305,6 +1305,30 @@
       "attachments": [],
       "createdAt": "2026-10-25T01:38:01.996Z",
       "updatedAt": "2026-10-25T04:51:04.735Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0063",
+      "title": "Register percepta-semantic (Percepta semantic CLI, executable percepta) 0.1.0 from its published release assets and cut echelon-current 1.28.0 with it: the complete Rehearsal 4 kickoff set (OD-INDY-2, OD-INDY-8)",
+      "description": null,
+      "tags": [
+        "release",
+        "channel"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-25T04:34:12.077Z",
+      "updatedAt": "2026-10-25T04:34:12.280Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

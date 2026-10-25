@@ -17,6 +17,11 @@
       "manifest": "registry/systems-v2.json"
     },
     {
+      "id": "percepta-semantic",
+      "repository": "kemiller2002/percepta",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
       "id": "dokimos",
       "repository": "kemiller2002/dokimos",
       "manifest": "registry/systems-v2.json"
@@ -190,6 +195,12 @@
       "version": "0.1.0",
       "manifest": "releases/percepta/0.1.0.release.json",
       "sha256": "07b6291c63ff25e6b669edb8c845e48ba76831b6a6133efa4ad3a390439b1b2b"
+    },
+    {
+      "systemId": "percepta-semantic",
+      "version": "0.1.0",
+      "manifest": "releases/percepta-semantic/0.1.0.release.json",
+      "sha256": "9e4851ab9dc716459c9cbbb36e6cebb94ae2f3bc2e84d67cf94ede94b2672c1b"
     },
     {
       "systemId": "dokimos",
@@ -399,9 +410,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.27.0",
+      "version": "1.28.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "1fc15263e1652b08d075b5aaa1524ca038d3c92e6f0b7fe738156d067c1e835c"
+      "sha256": "0ebeeaee2fbcec8d73a702b2128f0b48b767b96176a2a3c53eb9b3039a99d63e"
     }
   ]
 }

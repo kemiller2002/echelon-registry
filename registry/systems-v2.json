@@ -231,12 +231,26 @@
       "status": "active",
       "aliases": [],
       "executableAliases": [
-        "percepta",
         "percepta-repo"
       ],
       "distributionClasses": [
         "self-contained-native-cli",
         "repository-lifecycle"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
+      "id": "percepta-semantic",
+      "displayName": "Percepta Semantic CLI",
+      "repository": "kemiller2002/percepta",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [
+        "percepta"
+      ],
+      "distributionClasses": [
+        "self-contained-native-cli"
       ],
       "provides": [],
       "optionalConsumes": []
