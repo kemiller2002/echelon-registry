@@ -1277,10 +1277,10 @@
         "registry"
       ],
       "priority": "high",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-25T01:27:26.393Z",
-      "updatedAt": "2026-10-25T01:27:33.679Z",
+      "updatedAt": "2026-10-25T01:34:29.043Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
