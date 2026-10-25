@@ -109,6 +109,28 @@
           }
         }
       }
+    },
+    "disabledCapabilities": {
+      "description": "REG-PAIR-001: capabilities a profile pairs (capabilityPairings) that this snapshot records as disabled, with the reason. A disabled capability does not fail resolution; resolved sets report it as disabled.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "reason"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
     }
   }
 }

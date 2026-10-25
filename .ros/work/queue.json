@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 58,
+  "nextSeq": 62,
   "items": [
     {
       "id": "WI-0001",
@@ -1267,6 +1267,30 @@
       },
       "source": "Echelon release qualification",
       "sourceReference": "WI-0059 records; conditor WI-0048"
+    },
+    {
+      "id": "WI-0061",
+      "title": "REG-PAIR-001: capability pairing constraint (verified-completion-attested: praxis >=3.17.0 requires dokimos >=0.7.0), register Dokimos 0.7.0, restore Praxis 3.17.0-3.19.0 manifests, record Conditor 0.10.10",
+      "description": null,
+      "tags": [
+        "release",
+        "registry"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-25T01:27:26.393Z",
+      "updatedAt": "2026-10-25T01:27:33.679Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
     }
   ]
 }

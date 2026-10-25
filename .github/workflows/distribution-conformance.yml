@@ -95,6 +95,16 @@ jobs:
           fi
           dotnet fsi conformance/validate-current-channel.fsx
 
+      # REG-PAIR-001-R1 (spec/capability-pairing.md): the resolver refuses a
+      # set that enables a paired capability's host side without its paired
+      # side, unless the snapshot records the capability as disabled.
+      - name: Validate capability pairing constraints (REG-PAIR-001-R1)
+        run: dotnet fsi conformance/validate-capability-pairing.fsx
+
+      # REG-PAIR-001-R3: no record names a release manifest that does not exist.
+      - name: Validate release manifest references (REG-PAIR-001-R3)
+        run: dotnet fsi conformance/validate-manifest-references.fsx
+
       # REG-RU-007 (spec/rolling-upgrade-requirements.md): the channel must not
       # select a version of a consumer-declared component that the latest
       # released Conditor refuses. The binary is checked against its release
