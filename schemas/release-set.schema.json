@@ -1,0 +1,320 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.release-set.v1.json",
+  "title": "Echelon Release Set v1",
+  "description": "EP-A6a-R1/R2: the immutable record of one channel profile version. Every field except status, approval and assessments is derived from the channel's committed files (tools/generate-release-set.fsx) and recomputed by conformance/validate-release-sets.fsx. A set that is not approved is never the current channel. A published record is never edited; a change is a new profile version.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "channel",
+    "profile",
+    "catalogSnapshot",
+    "channelIndex",
+    "platforms",
+    "components",
+    "capabilities",
+    "status"
+  ],
+  "properties": {
+    "schema": {
+      "const": "echelon.release-set/v1"
+    },
+    "channel": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "version",
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "catalogSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "channelIndex": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "platforms": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "platform",
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "platform": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "systemId",
+          "version",
+          "releaseManifestSha256",
+          "platforms"
+        ],
+        "properties": {
+          "systemId": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+          },
+          "releaseManifestSha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "platforms": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "platform",
+          "state"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "platform": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state": {
+            "enum": [
+              "enabled",
+              "inactive",
+              "disabled"
+            ]
+          }
+        }
+      }
+    },
+    "status": {
+      "enum": [
+        "proposed",
+        "approved"
+      ]
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "by",
+        "at",
+        "statement",
+        "decision",
+        "evidence"
+      ],
+      "properties": {
+        "by": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The person with release authority who approved the set."
+        },
+        "at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the person gave the approval."
+        },
+        "statement": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "The person's own words, quoted."
+        },
+        "decision": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The decision record the approval implements."
+        },
+        "recordedBy": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Who wrote this approval into the record, when it was not the approver."
+        },
+        "recordedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "url",
+              "description"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "reg-ru-007",
+                  "conditor-qualification",
+                  "compatibility",
+                  "other"
+                ]
+              },
+              "url": {
+                "type": "string",
+                "pattern": "^https://"
+              },
+              "description": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "Must include REG-RU-007 and Conditor qualification runs for exactly this set."
+        }
+      }
+    },
+    "assessments": {
+      "type": "array",
+      "description": "EP-A6a-R3: releases known to the Registry and inside a component's range that this set does not select.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "systemId",
+          "version",
+          "assessment",
+          "reason"
+        ],
+        "properties": {
+          "systemId": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+          },
+          "assessment": {
+            "enum": [
+              "pending",
+              "rejected",
+              "superseded"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "if": {
+    "properties": {
+      "status": {
+        "const": "approved"
+      }
+    }
+  },
+  "then": {
+    "required": [
+      "approval"
+    ]
+  },
+  "else": {
+    "not": {
+      "required": [
+        "approval"
+      ]
+    }
+  }
+}
