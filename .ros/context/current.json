@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-25T01:38:02.462Z",
+  "updatedAt": "2026-10-25T04:51:04.735Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -2400,13 +2400,51 @@
     {
       "id": "WI-0062",
       "type": "default",
-      "state": "active",
-      "semanticState": "active",
-      "evidence": [],
-      "updatedAt": "2026-10-25T01:38:02.462Z",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "implementation",
+          "path": "sets/echelon-current/1.27.0.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-release-sets.fsx"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-capability-pairing.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-25T04:51:04.735Z",
       "telemetryExecutionIds": [
         "EXE-20261025T013802877Z-4fdbf3c4"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "aaf253d7db12f1c4ffd81612",
+        "recordedAt": "2026-10-25T04:51:03.362Z",
+        "executionId": "EXE-20261025T013802877Z-4fdbf3c4",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-current-1.27.0",
+        "commit": "a2426970ef4129e5699ca7070693dcffaf83f3e0",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-current-1.27.0",
+        "remoteCommit": "a2426970ef4129e5699ca7070693dcffaf83f3e0",
+        "summary": "echelon-current 1.27.0 cut, qualified (REG-RU-007 with Conditor 0.10.11; Conditor qualification) and approval recorded",
+        "nextAction": "PR #94 CI green, mark ready, merge",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-25T04:51:04.735Z"
     }
   ]
 }
