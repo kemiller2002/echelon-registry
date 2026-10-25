@@ -262,7 +262,46 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-10-24T21:09:00-04:00",
+    "statement": [
+      "Release it",
+      "Do what you recommend",
+      "I approve all merges"
+    ],
+    "decision": "OD-INDY-8 (kickoff release set: the newest stable, compatible, verified release of each Echelon system, approved in the Registry after Conditor qualification; if a component fails qualification, keep the newest compatible release and record the exception, VER-003), kemiller2002/indy-init docs/OWNER-DECISIONS-2026-10-24.md (indy-init#13)",
+    "recordedBy": "anthropic/claude-code (claude-opus-5-5), on the owner's instruction, after REG-RU-007 passed against released Conditor 0.10.11 and Conditor qualified this exact set; the VER-003 exception in this record applies",
+    "recordedAt": "2026-10-25T04:50:38Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/40163226978/job/121078948896",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.11 (published 2026-10-25T04:46:50Z), on this exact set (commit 28b724dd); distribution conformance, REG-PAIR-001-R1 and -R3 all passed"
+      },
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/40162107345/job/121075642459",
+        "description": "The same checks against released Conditor v0.10.10 on the same channel bytes (commit 8db0d44a)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40162657592/job/121077487564",
+        "description": "Conditor echelon-current-1-27-0-kickoff-set-qualification: workstation apply of this set's linux-x64 native environment from the real release bytes, every receipt matched, Dokimos 0.7.0 identity verified"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40162657592/job/121077487493",
+        "description": "Conditor sweep: upgrade --current 1.26.0 -> 1.27.0 plans no declared transition"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40162970376",
+        "description": "Release of Conditor v0.10.11 (b37c7d35), which carries that qualification (conditor#109)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
