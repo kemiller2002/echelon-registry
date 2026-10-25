@@ -157,7 +157,7 @@ let render (node: JsonObject) =
     node.ToJsonString(JsonSerializerOptions(WriteIndented = true)) + "\n"
 
 /// The fields a person adds to a record; everything else is derived.
-let decisionFields = set [ "status"; "approval"; "assessments" ]
+let decisionFields = set [ "status"; "approval"; "assessments"; "exceptions" ]
 
 /// The record without its decision fields, for comparison with `derivedNode`.
 let withoutDecision (text: string) =

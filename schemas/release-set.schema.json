@@ -296,6 +296,37 @@
           }
         }
       }
+    },
+    "exceptions": {
+      "type": "array",
+      "description": "Indy-init VER-003: a documented exception, when the set keeps an older compatible release or omits a system the consumer expected. Written with the approval; never derived.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "requirement",
+          "systemId",
+          "detail"
+        ],
+        "properties": {
+          "requirement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "systemId": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "detail": {
+            "type": "string",
+            "minLength": 1
+          },
+          "resolution": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
     }
   },
   "if": {

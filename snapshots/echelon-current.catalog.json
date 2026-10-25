@@ -204,6 +204,12 @@
       "sha256": "0da83cfe844ad220324468ddaf7b4ae669828ff96bd25dc5f8a9b8f963952dba"
     },
     {
+      "systemId": "dokimos",
+      "version": "0.7.0",
+      "manifest": "releases/dokimos/0.7.0.release.json",
+      "sha256": "c3faefc6ae60a718bbc15aa0e93eb0d8dde3ef18e344f0c15dbae8eb4e0e0ddf"
+    },
+    {
       "systemId": "visual-engineering",
       "version": "1.0.0",
       "manifest": "releases/visual-engineering/1.0.0.release.json",
@@ -393,9 +399,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.26.0",
+      "version": "1.27.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "a88b4a8ad35f12b4f395bce4b9c48235b70ba7e147426e9b00b06037e23359a8"
+      "sha256": "1fc15263e1652b08d075b5aaa1524ca038d3c92e6f0b7fe738156d067c1e835c"
     }
   ]
 }

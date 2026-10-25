@@ -1,7 +1,7 @@
 {
   "schema": "echelon.profile/v1",
   "id": "echelon-current",
-  "version": "1.26.0",
+  "version": "1.27.0",
   "description": "Moving stable channel for the current Registry-approved Echelon repository environment. Version ranges select the newest compatible active stable releases from the channel catalog snapshot.",
   "supportedPlatforms": [
     "linux-x64",
@@ -140,6 +140,24 @@
       "required": false,
       "version": {
         "range": ">=0.8.0 <1.0.0"
+      }
+    }
+  ],
+  "capabilityPairings": [
+    {
+      "id": "verified-completion-attested",
+      "description": "Attested verified completion: Praxis 3.17.0 and later issues attested completion claims that only Dokimos 0.7.0 and later can verify (completion.verify-attested). Praxis 3.20.0 with Dokimos 0.6.0 refuses with VERIFIER_ATTESTATION_UNSUPPORTED.",
+      "evidence": [
+        "kemiller2002/indy-init-rehearsal-003 research/rehearsal-003-engineering-hardening.md section 7 (OBSERVED)",
+        "spec/capability-pairing.md (REG-PAIR-001)"
+      ],
+      "host": {
+        "systemId": "praxis",
+        "range": ">=3.17.0"
+      },
+      "requires": {
+        "systemId": "dokimos",
+        "range": ">=0.7.0"
       }
     }
   ]

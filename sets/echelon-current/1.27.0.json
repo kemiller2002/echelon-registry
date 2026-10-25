@@ -1,0 +1,330 @@
+{
+  "schema": "echelon.release-set/v1",
+  "channel": "echelon-current",
+  "profile": {
+    "id": "echelon-current",
+    "version": "1.27.0",
+    "path": "profiles/echelon-current.profile.json",
+    "sha256": "1fc15263e1652b08d075b5aaa1524ca038d3c92e6f0b7fe738156d067c1e835c"
+  },
+  "catalogSnapshot": {
+    "path": "snapshots/echelon-current.catalog.json",
+    "sha256": "a61aba03c9617d8b225c5df0f3605e404f1e0da62da9c65cba6038e9ffb934f3"
+  },
+  "channelIndex": {
+    "path": "channels/echelon-current/channel.json",
+    "sha256": "530c5768faf6d200696590529ddcd06ac94291f833ae1f050cdacbf3aa6910b0"
+  },
+  "platforms": [
+    {
+      "platform": "linux-x64",
+      "path": "channels/echelon-current/linux-x64.json",
+      "sha256": "7cfb3e2beab0777e849e090bc85c0755f2b841e3430b9c125addfe332d091734"
+    },
+    {
+      "platform": "linux-arm64",
+      "path": "channels/echelon-current/linux-arm64.json",
+      "sha256": "8116a71e5b409b6f41fd62f9877bbea1557cdc06d31b518e85ddddb66357a63c"
+    },
+    {
+      "platform": "osx-x64",
+      "path": "channels/echelon-current/osx-x64.json",
+      "sha256": "0f3825cddf11204b98701f1121fb18429adc087cf917b70746bd052726d5cefc"
+    },
+    {
+      "platform": "osx-arm64",
+      "path": "channels/echelon-current/osx-arm64.json",
+      "sha256": "24b97a0e96bfc99c8e4a33e963f88111d0c4208f434a76dc454daf0cd9bd3b51"
+    },
+    {
+      "platform": "win-x64",
+      "path": "channels/echelon-current/win-x64.json",
+      "sha256": "18428fdbdccd9d5d072447ef2c45ad92e8480827b57bb53753db1cb4d2266257"
+    }
+  ],
+  "components": [
+    {
+      "systemId": "praxis",
+      "version": "3.20.0",
+      "releaseManifestSha256": "40bbfefac8a0d0c74e02dd0a1efe18562a63ee7ed9dcb8ba0a1e200701c9bbb8",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.17.0",
+      "releaseManifestSha256": "d9ee8be3b8723582389bcade5a969827f92a89266aab801c7e6b6e3bc224e0e8",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "percepta",
+      "version": "0.1.0",
+      "releaseManifestSha256": "07b6291c63ff25e6b669edb8c845e48ba76831b6a6133efa4ad3a390439b1b2b",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.7.0",
+      "releaseManifestSha256": "c3faefc6ae60a718bbc15aa0e93eb0d8dde3ef18e344f0c15dbae8eb4e0e0ddf",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "visual-engineering",
+      "version": "1.0.1",
+      "releaseManifestSha256": "23ab4fdb38d3fc7827519cc3c29df88c950211db1d53d114c53f36a662a0dbda",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "communication-engineering",
+      "version": "1.0.0",
+      "releaseManifestSha256": "d4b79053301635b6335caf81c2ca28b0721cca4a78967501be820a8eb7118296",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "tutela",
+      "version": "0.1.0",
+      "releaseManifestSha256": "5db1e8a1f039ae88b2b9426c7cbeec1783b40e29d58b0dfd40dfa90104a3c4ba",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "aegis",
+      "version": "1.0.0",
+      "releaseManifestSha256": "4530cfa3396c1e57d3e1a6500c661cd2d520236e852d1d9e88aa44c385d0bd6b",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "limen",
+      "version": "0.9.0",
+      "releaseManifestSha256": "5ffc580705cb612f9a5c99ee7ee0f81c7f18904947336a6e14a9be19393a74db",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "forma",
+      "version": "0.9.0",
+      "releaseManifestSha256": "674c10a5a317c5e4dbf2f52a495ae3ec4a995907c24d86e02c0bdc3625f70da9",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "folio",
+      "version": "0.4.0",
+      "releaseManifestSha256": "1263b1825061e33dd71134659293b3d73946b5fd70e59d9526956d586905df4a",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "strata",
+      "version": "0.1.1",
+      "releaseManifestSha256": "262bf735e8af934a5d104cad910e34d55e8ffcf310696f8604560bc73eb8ab04",
+      "platforms": [
+        "linux-x64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "arca",
+      "version": "0.5.0",
+      "releaseManifestSha256": "1cab5320290e6084f873e942465fe2289c8bc952b8ec7ce3a445ad24b8ac2e84",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "fides",
+      "version": "0.2.0",
+      "releaseManifestSha256": "0ef2204d8ec298e6d930ce11d66629794486a5e31367959d7f9dbd39468b6a2a",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "summa-contracts",
+      "version": "0.1.0",
+      "releaseManifestSha256": "b952e4c667bc83aae23092397e8de3bcd75ecd2a6d59ef7d1047f2f5d094bcfe",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "limen-fsharp",
+      "version": "0.9.0",
+      "releaseManifestSha256": "d8aec120fdaff6bb2a9dcd6e4d79b8a92d69f8cc0227de1c6b7166c6c3b8ce3a",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "verified-completion-attested",
+      "platform": "linux-x64",
+      "state": "enabled"
+    },
+    {
+      "id": "verified-completion-attested",
+      "platform": "linux-arm64",
+      "state": "enabled"
+    },
+    {
+      "id": "verified-completion-attested",
+      "platform": "osx-x64",
+      "state": "enabled"
+    },
+    {
+      "id": "verified-completion-attested",
+      "platform": "osx-arm64",
+      "state": "enabled"
+    },
+    {
+      "id": "verified-completion-attested",
+      "platform": "win-x64",
+      "state": "enabled"
+    }
+  ],
+  "status": "proposed",
+  "assessments": [
+    {
+      "systemId": "praxis",
+      "version": "3.14.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.20.0, which carries its changes; never qualified by a released Conditor and in no catalog snapshot"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.15.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.20.0, which carries its changes; never qualified by a released Conditor and in no catalog snapshot"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.17.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.20.0, which carries its changes; never qualified by a released Conditor and in no catalog snapshot"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.18.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.20.0, which carries its changes; never qualified by a released Conditor and in no catalog snapshot"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.19.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.20.0, which carries its changes; never qualified by a released Conditor and in no catalog snapshot"
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.6.0",
+      "assessment": "superseded",
+      "reason": "Replaced by Dokimos 0.7.0: Praxis 3.20.0 with Dokimos 0.6.0 refuses attested completion (VERIFIER_ATTESTATION_UNSUPPORTED); the verified-completion-attested pairing refuses that selection"
+    },
+    {
+      "systemId": "forma",
+      "version": "0.9.1",
+      "assessment": "pending",
+      "reason": "Named by EP-A6a; not observed on 2026-10-25 (npm @echelon-foundry/design-system latest stable is 0.9.0; the GitHub repository was not readable from this session); not registered"
+    },
+    {
+      "systemId": "limen",
+      "version": "0.9.1",
+      "assessment": "pending",
+      "reason": "Named by EP-A6a; not observed on 2026-10-25 (GitHub latest release v0.9.0, npm @echelon-foundry/limen latest 0.9.0); not registered"
+    },
+    {
+      "systemId": "aegis",
+      "version": "2.0.0",
+      "assessment": "pending",
+      "reason": "Named by EP-A6a; not registered and not verified from this session; outside the profile range >=1.0.0 <2.0.0, so a major-version profile change would be needed to select it"
+    }
+  ],
+  "exceptions": [
+    {
+      "requirement": "Indy-init VER-003 / OD-INDY-8 (OD-INDY-2)",
+      "systemId": "percepta-semantic",
+      "detail": "The Percepta semantic CLI release percepta-semantic-v0.1.0 (kemiller2002/percepta#39) was not published by 2026-10-25T04:30Z, after three hours of polling, so it cannot be registered or selected. This set is the newest compatible set without it. It is therefore not the complete Rehearsal 4 kickoff set: OD-INDY-2 requires the released semantic CLI to be pinned by the kickoff set.",
+      "resolution": "Register percepta-semantic from the published assets and cut echelon-current 1.28.0 (prepared branch claude/percepta-semantic-registration); that set, once Conditor-qualified and approved, is the kickoff set."
+    }
+  ]
+}
