@@ -42,7 +42,7 @@ Intake: Praxis document ingestion. Source material, not a canonical requirement.
      --artifact osx-x64=percepta-semantic-0.1.0-osx-x64.tar.gz \
      --artifact osx-arm64=percepta-semantic-0.1.0-osx-arm64.tar.gz \
      --artifact win-x64=percepta-semantic-0.1.0-win-x64.zip \
-     --output releases/percepta-semantic/0.1.0.release.json
+     --output "releases/percepta-semantic/$version.release.json"   # version=0.1.0
    ```
 
 3. Check that each archive has a single top-level directory containing `percepta` (`percepta.exe` on Windows) and
