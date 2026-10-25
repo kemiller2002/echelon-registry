@@ -1,0 +1,37 @@
+{
+  "schema": "echelon.catalog-snapshot/v1",
+  "systems": [
+    {
+      "id": "praxis",
+      "repository": "kemiller2002/praxis",
+      "manifest": "../registry/systems-v2.json"
+    },
+    {
+      "id": "dokimos",
+      "repository": "kemiller2002/dokimos",
+      "manifest": "../registry/systems-v2.json"
+    }
+  ],
+  "releases": [
+    {
+      "systemId": "praxis",
+      "version": "3.16.0",
+      "manifest": "../releases/praxis/3.16.0.release.json",
+      "sha256": "53b4eb6e9a1b22cd76e86af741e84308444d96c244e1f3a52be1f1de2609cf12"
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.6.0",
+      "manifest": "../releases/dokimos/0.6.0.release.json",
+      "sha256": "0da83cfe844ad220324468ddaf7b4ae669828ff96bd25dc5f8a9b8f963952dba"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "capability-pairing-proof",
+      "version": "1.0.0",
+      "manifest": "capability-pairing/capability-pairing-proof.profile.json",
+      "sha256": "ce78baee80daafe61d73637866a748d990b850182947647c8795ae059a0de8f0"
+    }
+  ]
+}

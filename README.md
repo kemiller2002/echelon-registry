@@ -114,6 +114,12 @@ channel (for example to pick up a newly recorded release):
 CI regenerates the resolved sets and the index and fails on any byte
 difference, then runs `conformance/validate-current-channel.fsx`.
 
+A profile can pair components for a named capability (`capabilityPairings`,
+`spec/capability-pairing.md`, REG-PAIR-001), for example
+`verified-completion-attested`: Praxis `>=3.17.0` requires Dokimos `>=0.7.0`.
+Step 2 then fails when the snapshot would select one without the other, unless
+the snapshot records the capability in `disabledCapabilities`.
+
 ## Repository lifecycle contract
 
 `spec/repository-lifecycle-contract.md` defines `echelon.repository-lifecycle`

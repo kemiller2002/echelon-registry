@@ -75,6 +75,13 @@
       "items": {
         "$ref": "#/$defs/component"
       }
+    },
+    "capabilityPairings": {
+      "description": "REG-PAIR-001 (spec/capability-pairing.md): a named capability that the host component's versions enable only together with the paired component's versions. Resolution fails when a set selects a host version inside host.range without a paired version inside requires.range, unless the catalog snapshot records the capability in disabledCapabilities.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/capabilityPairing"
+      }
     }
   },
   "$defs": {
@@ -131,6 +138,67 @@
               "preview",
               "nightly"
             ]
+          }
+        }
+      }
+    },
+    "capabilityPairing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "host",
+        "requires"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "description": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "host": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "systemId",
+            "range"
+          ],
+          "properties": {
+            "systemId": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]*$"
+            },
+            "range": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "requires": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "systemId",
+            "range"
+          ],
+          "properties": {
+            "systemId": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]*$"
+            },
+            "range": {
+              "type": "string",
+              "minLength": 1
+            }
           }
         }
       }

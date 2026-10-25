@@ -79,6 +79,108 @@
       "items": {
         "$ref": "#/$defs/component"
       }
+    },
+    "capabilities": {
+      "description": "REG-PAIR-001: the state of each capability pairing the profile declares, on this platform. Present only when the profile declares capabilityPairings. enabled: the host and paired selections both satisfy their ranges. inactive: the host selection does not enable the capability. disabled: the catalog snapshot records the capability as disabled (reason given). A set that would enable the host side without the paired side is never produced.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "state",
+          "host",
+          "requires"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "state": {
+            "enum": [
+              "enabled",
+              "inactive",
+              "disabled"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "host": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "systemId",
+              "range",
+              "selected"
+            ],
+            "properties": {
+              "systemId": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]*$"
+              },
+              "range": {
+                "type": "string",
+                "minLength": 1
+              },
+              "selected": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The version this set selects, or null when the component is not in this platform's set."
+              }
+            }
+          },
+          "requires": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "systemId",
+              "range",
+              "selected"
+            ],
+            "properties": {
+              "systemId": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]*$"
+              },
+              "range": {
+                "type": "string",
+                "minLength": 1
+              },
+              "selected": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The version this set selects, or null when the component is not in this platform's set."
+              }
+            }
+          }
+        },
+        "if": {
+          "properties": {
+            "state": {
+              "const": "disabled"
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "reason"
+          ]
+        },
+        "else": {
+          "not": {
+            "required": [
+              "reason"
+            ]
+          }
+        }
+      }
     }
   },
   "$defs": {

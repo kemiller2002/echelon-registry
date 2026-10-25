@@ -1,0 +1,48 @@
+{
+  "schema": "echelon.profile/v1",
+  "id": "capability-pairing-proof",
+  "version": "1.0.0",
+  "description": "REG-PAIR-001 conformance fixture: Praxis and Dokimos with the verified-completion-attested pairing. Not a channel.",
+  "supportedPlatforms": [
+    "linux-x64"
+  ],
+  "allowedReleaseStages": [
+    "stable"
+  ],
+  "components": [
+    {
+      "systemId": "praxis",
+      "role": "host-tool",
+      "required": true,
+      "version": {
+        "range": ">=3.0.0 <4.0.0"
+      }
+    },
+    {
+      "systemId": "dokimos",
+      "role": "repository-lifecycle",
+      "required": true,
+      "version": {
+        "range": ">=0.2.0 <1.0.0"
+      }
+    }
+  ],
+  "capabilityPairings": [
+    {
+      "id": "verified-completion-attested",
+      "description": "Attested verified completion: Praxis 3.17.0 and later issues attested completion claims that only Dokimos 0.7.0 and later can verify (completion.verify-attested). Praxis 3.20.0 with Dokimos 0.6.0 refuses with VERIFIER_ATTESTATION_UNSUPPORTED.",
+      "evidence": [
+        "kemiller2002/indy-init-rehearsal-003 research/rehearsal-003-engineering-hardening.md section 7 (OBSERVED)",
+        ".praxis/inbox/documents/2026-10-24-REG-PAIR-001-capability-pairing-constraints.md"
+      ],
+      "host": {
+        "systemId": "praxis",
+        "range": ">=3.17.0"
+      },
+      "requires": {
+        "systemId": "dokimos",
+        "range": ">=0.7.0"
+      }
+    }
+  ]
+}

@@ -174,16 +174,22 @@ let satisfiesComparator candidate comparator =
     | LessThanOrEqual _ -> c <= 0
     | EqualTo _ -> c = 0
 
+let parseRange (raw: string) =
+    let tokens = raw.Split([|' '; '\t'|], StringSplitOptions.RemoveEmptyEntries) |> Array.toList
+    require (not tokens.IsEmpty) "version range is empty"
+    tokens |> List.map parseComparator
+
+let satisfiesRange (raw: string) rawVersion =
+    let candidate = parseSemVer rawVersion
+    parseRange raw |> List.forall (satisfiesComparator candidate)
+
 let versionMatches (rule: JsonElement) rawVersion =
     let candidate = parseSemVer rawVersion
     match tryProperty "exact" rule, tryProperty "range" rule with
     | Some exact, None when exact.ValueKind = JsonValueKind.String ->
         compareSemVer candidate (parseSemVer (exact.GetString())) = 0
     | None, Some range when range.ValueKind = JsonValueKind.String ->
-        let raw = range.GetString()
-        let tokens = raw.Split([|' '; '\t'|], StringSplitOptions.RemoveEmptyEntries) |> Array.toList
-        require (not tokens.IsEmpty) "version range is empty"
-        tokens |> List.map parseComparator |> List.forall (satisfiesComparator candidate)
+        satisfiesRange (range.GetString()) rawVersion
     | _ ->
         fail "version rule must contain exactly one of exact or range"
 
@@ -500,6 +506,130 @@ let resolvedComponents =
     objects "components" profile
     |> List.choose resolveComponent
 
+// REG-PAIR-001-R1 (spec/capability-pairing.md): a profile may declare that a
+// named capability is enabled by one component's versions only together with
+// another component's versions. The constraint is data in the profile; the
+// snapshot may record the capability as disabled. Resolution refuses a set
+// that enables the host side without the paired side.
+type PairingSide =
+    { SystemId: string
+      Range: string }
+
+type CapabilityPairing =
+    { Id: string
+      Host: PairingSide
+      Requires: PairingSide }
+
+type CapabilityState =
+    | Enabled
+    | Disabled of reason: string
+    | Inactive
+
+let capabilityPattern = Regex("^[a-z][a-z0-9-]*$", RegexOptions.Compiled)
+
+let parsePairingSide (pairingId: string) (side: string) (element: JsonElement) =
+    let value = property side element
+    let parsed = { SystemId = str "systemId" value; Range = str "range" value }
+    // Parsing the range here reports a malformed one before any evaluation.
+    parseRange parsed.Range |> ignore
+    parsed
+
+let profileSystemIds =
+    objects "components" profile |> List.map (str "systemId") |> Set.ofList
+
+let capabilityPairings =
+    match tryProperty "capabilityPairings" profile with
+    | None -> []
+    | Some _ ->
+        objects "capabilityPairings" profile
+        |> List.map (fun element ->
+            let id = str "id" element
+            require (capabilityPattern.IsMatch id) $"capability pairing id '{id}' is not a lowercase identifier"
+
+            { Id = id
+              Host = parsePairingSide id "host" element
+              Requires = parsePairingSide id "requires" element })
+
+let pairingIds = capabilityPairings |> List.map _.Id
+require (List.distinct pairingIds = pairingIds) $"profile {profileId}@{profileVersion} declares a capability pairing more than once"
+
+for pairing in capabilityPairings do
+    require (pairing.Host.SystemId <> pairing.Requires.SystemId) $"capability {pairing.Id} pairs {pairing.Host.SystemId} with itself"
+
+    for side in [ pairing.Host; pairing.Requires ] do
+        require (profileSystemIds.Contains side.SystemId) $"capability {pairing.Id} names {side.SystemId}, which is not a component of {profileId}@{profileVersion}"
+
+let disabledCapabilities =
+    match tryProperty "disabledCapabilities" snapshot with
+    | None -> []
+    | Some _ ->
+        objects "disabledCapabilities" snapshot
+        |> List.map (fun element ->
+            let id = str "id" element
+            let reason = str "reason" element
+            require (not (String.IsNullOrWhiteSpace reason)) $"disabled capability {id} needs a reason"
+            id, reason)
+
+let disabledIds = disabledCapabilities |> List.map fst
+require (List.distinct disabledIds = disabledIds) "snapshot disables a capability more than once"
+
+for id in disabledIds do
+    require (List.contains id pairingIds) $"snapshot disables capability {id}, which profile {profileId}@{profileVersion} does not declare"
+
+let selectedVersion systemId =
+    resolvedComponents
+    |> List.tryPick (fun (node: JsonObject) ->
+        if node["systemId"].GetValue<string>() = systemId then Some(node["version"].GetValue<string>())
+        else None)
+
+let capabilityState (pairing: CapabilityPairing) =
+    let host = selectedVersion pairing.Host.SystemId
+    let paired = selectedVersion pairing.Requires.SystemId
+    let hostEnables = host |> Option.exists (satisfiesRange pairing.Host.Range)
+    let pairedSatisfies = paired |> Option.exists (satisfiesRange pairing.Requires.Range)
+
+    match List.tryFind (fst >> (=) pairing.Id) disabledCapabilities, hostEnables, pairedSatisfies with
+    | Some(_, reason), _, _ -> Ok(Disabled reason)
+    | None, false, _ -> Ok Inactive
+    | None, true, true -> Ok Enabled
+    | None, true, false ->
+        let describe = Option.defaultValue "nothing"
+        Error
+            $"REG-PAIR-001: capability {pairing.Id} is enabled by {pairing.Host.SystemId} {describe host} ({pairing.Host.Range}) but {pairing.Requires.SystemId} {pairing.Requires.Range} is not selected (selected: {describe paired}) on {platform}; select a paired release or record the capability as disabled in the snapshot"
+
+let capabilityStates =
+    capabilityPairings |> List.map (fun pairing -> pairing, capabilityState pairing)
+
+match capabilityStates |> List.choose (snd >> function Error e -> Some e | Ok _ -> None) with
+| [] -> ()
+| violations -> fail (String.concat "; " violations)
+
+let capabilityNode (pairing: CapabilityPairing, state: Result<CapabilityState, string>) =
+    let side (pairingSide: PairingSide) =
+        let node = JsonObject()
+        node["systemId"] <- JsonValue.Create pairingSide.SystemId
+        node["range"] <- JsonValue.Create pairingSide.Range
+        node["selected"] <-
+            match selectedVersion pairingSide.SystemId with
+            | Some version -> JsonValue.Create(version) :> JsonNode
+            | None -> null
+        node
+
+    let node = JsonObject()
+    node["id"] <- JsonValue.Create pairing.Id
+
+    match state with
+    | Ok Enabled -> node["state"] <- JsonValue.Create "enabled"
+    | Ok Inactive -> node["state"] <- JsonValue.Create "inactive"
+    | Ok(Disabled reason) ->
+        node["state"] <- JsonValue.Create "disabled"
+        node["reason"] <- JsonValue.Create reason
+    | Error message -> fail message
+
+    node["host"] <- side pairing.Host
+    node["requires"] <- side pairing.Requires
+    node
+
 let output = JsonObject()
 output["schema"] <- JsonValue.Create "echelon.resolved-release-set/v1"
 
@@ -522,6 +652,13 @@ output["catalogSnapshot"] <- catalog
 let components = JsonArray()
 resolvedComponents |> List.iter components.Add
 output["components"] <- components
+
+// Written only when the profile declares pairings, so the resolved sets of
+// every other profile stay byte-identical.
+if not capabilityPairings.IsEmpty then
+    let capabilities = JsonArray()
+    capabilityStates |> List.iter (capabilityNode >> capabilities.Add)
+    output["capabilities"] <- capabilities
 
 let outputDirectory = Path.GetDirectoryName outputPath
 if not (String.IsNullOrWhiteSpace outputDirectory) then Directory.CreateDirectory outputDirectory |> ignore

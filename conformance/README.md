@@ -58,3 +58,18 @@ check after the channel is regenerated. The rule is in
 conditor compatibility --json > /tmp/compatibility.json
 dotnet fsi conformance/validate-conditor-qualification.fsx /tmp/compatibility.json
 ```
+
+## Capability pairing and manifest references (REG-PAIR-001)
+
+`validate-capability-pairing.fsx` resolves the fixtures in
+`examples/capability-pairing/` and requires the resolver to refuse a set that
+enables a paired capability's host side without its paired side (Praxis 3.20.0
+with Dokimos 0.6.0), unless the snapshot records the capability as disabled.
+It also checks the capability states of the echelon-current channel.
+`validate-manifest-references.fsx` fails when any record names a release
+manifest that does not exist. Both are described in `spec/capability-pairing.md`.
+
+```bash
+dotnet fsi conformance/validate-capability-pairing.fsx
+dotnet fsi conformance/validate-manifest-references.fsx
+```

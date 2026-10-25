@@ -61,3 +61,4 @@
 | WI-0058 | Record Conditor 0.10.7 and Praxis 3.15.0 | complete |  | medium |
 | WI-0059 | Record Praxis 3.16.0 and Ordo 1.17.0 | complete | release | high |
 | WI-0060 | Cut echelon-current 1.25.0: Praxis 3.16.0, Dokimos 0.6.0, Ordo 1.17.0 | complete | release, channel | high |
+| WI-0061 | REG-PAIR-001: capability pairing constraint (verified-completion-attested: praxis >=3.17.0 requires dokimos >=0.7.0), register Dokimos 0.7.0, restore Praxis 3.17.0-3.19.0 manifests, record Conditor 0.10.10 | complete | release, registry | high |
