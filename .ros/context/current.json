@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-26T20:28:16.000Z",
+  "updatedAt": "2026-10-26T21:40:16.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -2500,33 +2500,34 @@
     {
       "id": "WI-0064",
       "type": "task",
-      "state": "active",
-      "semanticState": "active",
+      "state": "blocked",
+      "semanticState": "blocked",
       "evidence": [],
-      "updatedAt": "2026-10-26T20:28:16.000Z",
+      "updatedAt": "2026-10-26T21:40:16.000Z",
       "telemetryExecutionIds": [
         "EXE-20261026T202816683Z-9a46d910"
       ],
       "latestCheckpoint": {
-        "id": "2bcbe27026b57512fc74e3d6",
-        "recordedAt": "2026-10-26T20:36:48.000Z",
+        "id": "8094d9f6bf57090517e17213",
+        "recordedAt": "2026-10-26T21:40:14.000Z",
         "executionId": "EXE-20261026T202816683Z-9a46d910",
         "repository": "echelon-registry",
         "branch": "claude/echelon-current-1.28.0",
-        "commit": "ddf7026269a8c724541d423aa38fcb45c1cd7a6c",
+        "commit": "01029fe5e3d9ddfcee7fd80027c843b0059f5e6a",
         "remote": {
           "name": "origin",
           "url": "https://github.com/kemiller2002/echelon-registry"
         },
         "remoteBranch": "claude/echelon-current-1.28.0",
-        "remoteCommit": "ddf7026269a8c724541d423aa38fcb45c1cd7a6c",
-        "summary": "Registered Praxis 3.21.0 and Folio 0.4.1; cut echelon-current 1.28.0 (proposed) with percepta-semantic 0.2.1; all local conformance passes except REG-RU-007 (Conditor 0.10.11 refuses Praxis 3.21.0 and Folio 0.4.1) and the approval gate",
-        "nextAction": "Conditor qualifies Praxis 3.21.0, Folio 0.4.1 and the 1.28.0 set and releases; rerun REG-RU-007; the owner approves the set",
+        "remoteCommit": "01029fe5e3d9ddfcee7fd80027c843b0059f5e6a",
+        "summary": "Conditor 0.10.12 released and recorded; REG-RU-007 passes on 01029fe against it; Conditor qualified this exact set (conditor#111)",
+        "nextAction": "The owner records the approval in sets/echelon-current/1.28.0.json (draft prepared); then complete WI-0064 and merge #98",
         "verification": {
           "status": "verified",
           "mechanism": "git-remote-observation"
         }
-      }
+      },
+      "blockReason": "Awaiting the owner's own approval record for echelon-current 1.28.0 (EP-A6a-R2); agents do not write ratification fields"
     }
   ]
 }

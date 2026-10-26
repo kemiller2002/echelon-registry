@@ -609,14 +609,30 @@
     },
     {
       "metricId": "agent.interruptions",
-      "status": "unknown",
-      "reason": "runtime capability not reported or mapped",
-      "discoveredAt": "2026-10-26T20:28:16.683Z",
+      "status": "derived",
+      "reason": "normalized measurement recorded",
+      "discoveredAt": "2026-10-26T21:40:16.000Z",
       "source": {
-        "type": "environment",
-        "name": "runtime-identity",
-        "mechanism": "whitelisted-claude-environment"
-      }
+        "type": "calculated",
+        "name": "ros-work-protocol",
+        "mechanism": "blocked-transition"
+      },
+      "lastAssessedAt": "2026-10-26T21:40:16.000Z",
+      "recordedAt": "2026-10-26T21:40:16.000Z",
+      "history": [
+        {
+          "status": "unknown",
+          "reason": "runtime capability not reported or mapped",
+          "source": {
+            "type": "environment",
+            "name": "runtime-identity",
+            "mechanism": "whitelisted-claude-environment"
+          },
+          "discoveredAt": "2026-10-26T20:28:16.683Z",
+          "lastAssessedAt": "2026-10-26T20:28:16.683Z",
+          "recordedAt": "2026-10-26T20:28:16.683Z"
+        }
+      ]
     },
     {
       "metricId": "agent.resumes",
@@ -1458,6 +1474,26 @@
       },
       "collectedAt": "2026-10-26T20:28:16.683Z",
       "schemaVersion": "1.0.0"
+    },
+    {
+      "measurementId": "MEAS-54cafcffdb141791f08d0b6f",
+      "id": "agent.interruptions",
+      "value": 1,
+      "unit": "count",
+      "currency": null,
+      "quality": "derived",
+      "confidence": null,
+      "scope": "execution",
+      "aggregation": "sum",
+      "dimensions": {},
+      "pricing": null,
+      "source": {
+        "type": "calculated",
+        "name": "ros-work-protocol",
+        "mechanism": "blocked-transition"
+      },
+      "collectedAt": "2026-10-26T21:40:16.000Z",
+      "schemaVersion": "1.0.0"
     }
   ],
   "rawTelemetry": [],
@@ -1470,6 +1506,17 @@
         "name": "ros",
         "mechanism": "work-lifecycle"
       }
+    },
+    {
+      "type": "work.blocked",
+      "occurredAt": "2026-10-26T21:40:16.000Z",
+      "reason": "Awaiting the owner's own approval record for echelon-current 1.28.0 (EP-A6a-R2); agents do not write ratification fields",
+      "source": {
+        "type": "ros-clock",
+        "name": "ros",
+        "mechanism": "work-lifecycle"
+      },
+      "eventId": "TEVT-506b9652db85530f7fee439e"
     }
   ],
   "repository": {
