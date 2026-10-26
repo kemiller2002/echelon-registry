@@ -6,7 +6,7 @@
     "version": "1.28.0",
     "path": "profiles/echelon-current.profile.json",
     "sha256": "4261346fa179c59302627da7f6af569609efb6b80be0dd3d284874b535f773f0"
-  },
+  }, 
   "catalogSnapshot": {
     "path": "snapshots/echelon-current.catalog.json",
     "sha256": "d7f34d13855864b5c18575d5864c6990ef6b0e77d8fb64f5bc665adc16c6cde0"
