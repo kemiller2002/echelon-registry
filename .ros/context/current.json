@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-26T21:40:16.000Z",
+  "updatedAt": "2026-10-26T22:13:46.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -2500,34 +2500,65 @@
     {
       "id": "WI-0064",
       "type": "task",
-      "state": "blocked",
-      "semanticState": "blocked",
-      "evidence": [],
-      "updatedAt": "2026-10-26T21:40:16.000Z",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "sets/echelon-current/1.28.0.json"
+        },
+        {
+          "type": "implementation",
+          "path": "profiles/echelon-current.profile.json"
+        },
+        {
+          "type": "implementation",
+          "path": "releases/praxis/3.21.0.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "releases/folio/0.4.1.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "releases/conditor/0.10.12.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-release-sets.fsx"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-26T22:13:46.000Z",
       "telemetryExecutionIds": [
         "EXE-20261026T202816683Z-9a46d910"
       ],
       "latestCheckpoint": {
-        "id": "8094d9f6bf57090517e17213",
-        "recordedAt": "2026-10-26T21:40:14.000Z",
+        "id": "f874a01be15de09e4ee4bc15",
+        "recordedAt": "2026-10-26T22:13:44.000Z",
         "executionId": "EXE-20261026T202816683Z-9a46d910",
         "repository": "echelon-registry",
         "branch": "claude/echelon-current-1.28.0",
-        "commit": "01029fe5e3d9ddfcee7fd80027c843b0059f5e6a",
+        "commit": "876c5f1a793f6177056ba909c19a2027067a51c0",
         "remote": {
           "name": "origin",
           "url": "https://github.com/kemiller2002/echelon-registry"
         },
         "remoteBranch": "claude/echelon-current-1.28.0",
-        "remoteCommit": "01029fe5e3d9ddfcee7fd80027c843b0059f5e6a",
-        "summary": "Conditor 0.10.12 released and recorded; REG-RU-007 passes on 01029fe against it; Conditor qualified this exact set (conditor#111)",
-        "nextAction": "The owner records the approval in sets/echelon-current/1.28.0.json (draft prepared); then complete WI-0064 and merge #98",
+        "remoteCommit": "876c5f1a793f6177056ba909c19a2027067a51c0",
+        "summary": "echelon-current 1.28.0 approved by the owner (OD-INDY-8) and recorded on the owner's instruction; REG-RU-007 passes against released Conditor 0.10.12; release-set validators pass",
+        "nextAction": "CI green on #98, then merge (owner: Merge when ready)",
         "verification": {
           "status": "verified",
           "mechanism": "git-remote-observation"
         }
       },
-      "blockReason": "Awaiting the owner's own approval record for echelon-current 1.28.0 (EP-A6a-R2); agents do not write ratification fields"
+      "blockReason": "Awaiting the owner's own approval record for echelon-current 1.28.0 (EP-A6a-R2); agents do not write ratification fields",
+      "completedAt": "2026-10-26T22:13:46.000Z",
+      "conclusion": "echelon-current 1.28.0 (Praxis 3.21.0, Folio 0.4.1, percepta-semantic 0.2.1) cut, qualified by released Conditor 0.10.12 and approved by the owner (OD-INDY-8)"
     }
   ]
 }

@@ -1346,10 +1346,10 @@
         "channel"
       ],
       "priority": "high",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-26T20:28:10.000Z",
-      "updatedAt": "2026-10-26T20:28:15.000Z",
+      "updatedAt": "2026-10-26T22:13:46.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
