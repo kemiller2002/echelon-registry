@@ -63,3 +63,4 @@
 | WI-0060 | Cut echelon-current 1.25.0: Praxis 3.16.0, Dokimos 0.6.0, Ordo 1.17.0 | complete | release, channel | high |
 | WI-0061 | REG-PAIR-001: capability pairing constraint (verified-completion-attested: praxis >=3.17.0 requires dokimos >=0.7.0), register Dokimos 0.7.0, restore Praxis 3.17.0-3.19.0 manifests, record Conditor 0.10.10 | complete | release, registry | high |
 | WI-0062 | Cut echelon-current 1.27.0: Dokimos 0.6.0 -> 0.7.0, add percepta-semantic 0.1.0, declare the verified-completion-attested pairing; record the release set and its owner approval (EP-A6a-R1/R2) after REG-RU-007 with released Conditor | complete | release, channel | high |
+| WI-0063 | Register and independently verify Percepta semantic 0.2.1 | ready |  | medium |
