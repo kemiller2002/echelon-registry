@@ -275,6 +275,52 @@
     }
   ],
   "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-10-26T21:03:14Z",
+    "statement": [
+      "Do it please.  I approve all recommendations",
+      "I approve all recommendations",
+      "I approve all",
+      "Approved",
+      "Write my approval into 1.28.0.json"
+    ],
+    "decision": "OD-INDY-8 (kickoff release set: the newest stable, compatible, verified release of each Echelon system, approved in the Registry after Conditor qualification; if a component fails qualification, keep the newest compatible release and record the exception, VER-003), kemiller2002/indy-init docs/OWNER-DECISIONS-2026-10-24.md (indy-init#13). \"I approve all\" (2026-10-26T21:03:14Z) answered the request to merge kemiller2002/conditor#111 and approve this exact set; \"Approved\" is the owner's review on echelon-registry#98 (2026-10-26T22:07Z); \"Write my approval into 1.28.0.json\" (2026-10-26T22:12:18Z) instructed this record",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit instruction of 2026-10-26T22:12:18Z, after REG-RU-007 passed against released Conditor 0.10.12 and Conditor qualified this exact set; no VER-003 exception applies",
+    "recordedAt": "2026-10-26T22:12:32Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/40402420298/job/121851452144",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.12 (published 2026-10-26T21:11:28Z), on this exact set (commit 01029fe5); distribution conformance, REG-PAIR-001-R1 and -R3 all passed"
+      },
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/40397300686/job/121833596917",
+        "description": "The same check against released Conditor v0.10.11 on the same channel bytes (commit 23193df5) refused Praxis 3.21.0 and Folio 0.4.1, which 0.10.12 qualifies"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40401183297/job/121847515782",
+        "description": "Conditor echelon-current-1-28-0-kickoff-set-qualification: workstation apply of this set's linux-x64 native environment from the real release bytes, every receipt matched; Praxis 3.21.0 carries the requirements-preservation gate, percepta reports 0.2.1, Dokimos 0.7.0 identity verified"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40401183297/job/121847515686",
+        "description": "Chrona 1.26.0 -> 1.28.0: upgrade --current moves Praxis 3.20.0 -> 3.21.0 through its lifecycle and Folio 0.4.0 -> 0.4.1 through npm with the real releases, and the repository verifies"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40401183297/job/121847515727",
+        "description": "Conditor sweep: upgrade --current to 1.28.0 moves only Praxis 3.20.0 -> 3.21.0, and the installed 3.21.0 verifies the swept repository"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40401826551",
+        "description": "Release of Conditor v0.10.12 (84d4847d), which carries that qualification (conditor#111)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
