@@ -2506,7 +2506,27 @@
       "updatedAt": "2026-10-26T20:28:16.000Z",
       "telemetryExecutionIds": [
         "EXE-20261026T202816683Z-9a46d910"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "2bcbe27026b57512fc74e3d6",
+        "recordedAt": "2026-10-26T20:36:48.000Z",
+        "executionId": "EXE-20261026T202816683Z-9a46d910",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-current-1.28.0",
+        "commit": "ddf7026269a8c724541d423aa38fcb45c1cd7a6c",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-current-1.28.0",
+        "remoteCommit": "ddf7026269a8c724541d423aa38fcb45c1cd7a6c",
+        "summary": "Registered Praxis 3.21.0 and Folio 0.4.1; cut echelon-current 1.28.0 (proposed) with percepta-semantic 0.2.1; all local conformance passes except REG-RU-007 (Conditor 0.10.11 refuses Praxis 3.21.0 and Folio 0.4.1) and the approval gate",
+        "nextAction": "Conditor qualifies Praxis 3.21.0, Folio 0.4.1 and the 1.28.0 set and releases; rerun REG-RU-007; the owner approves the set",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      }
     }
   ]
 }
