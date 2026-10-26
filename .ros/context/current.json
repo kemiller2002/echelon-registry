@@ -2455,7 +2455,27 @@
       "updatedAt": "2026-10-26T07:16:46.000Z",
       "telemetryExecutionIds": [
         "EXE-20261026T071647012Z-78c371f8"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "c5dca792bf89be8aef7b074f",
+        "recordedAt": "2026-10-26T07:23:54.000Z",
+        "executionId": "EXE-20261026T071647012Z-78c371f8",
+        "repository": "echelon-registry",
+        "branch": "codex/register-percepta-semantic-021",
+        "commit": "0e5a20ec359cce78d6e1829db1e4d889bc3d52dd",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry.git"
+        },
+        "remoteBranch": "codex/register-percepta-semantic-021",
+        "remoteCommit": "0e5a20ec359cce78d6e1829db1e4d889bc3d52dd",
+        "summary": "Percepta semantic 0.2.1 identity and immutable release record added; local conformance, five-platform resolution, artifact checksums, and negative cases pass",
+        "nextAction": "Open the registry pull request, require green CI, merge, then verify authoritative-main resolution and close WI-0063",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      }
     }
   ]
 }
