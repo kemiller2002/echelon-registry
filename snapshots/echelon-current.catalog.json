@@ -17,6 +17,11 @@
       "manifest": "registry/systems-v2.json"
     },
     {
+      "id": "percepta-semantic",
+      "repository": "kemiller2002/percepta",
+      "manifest": "registry/systems-v2.json"
+    },
+    {
       "id": "dokimos",
       "repository": "kemiller2002/dokimos",
       "manifest": "registry/systems-v2.json"
@@ -138,6 +143,12 @@
       "sha256": "40bbfefac8a0d0c74e02dd0a1efe18562a63ee7ed9dcb8ba0a1e200701c9bbb8"
     },
     {
+      "systemId": "praxis",
+      "version": "3.21.0",
+      "manifest": "releases/praxis/3.21.0.release.json",
+      "sha256": "6fed7eea26039704ec28e58b655cd1c6b7d0228cabe668afb4c49cd222af58c1"
+    },
+    {
       "systemId": "ordo",
       "version": "1.4.0",
       "manifest": "releases/ordo/1.4.0.release.json",
@@ -190,6 +201,12 @@
       "version": "0.1.0",
       "manifest": "releases/percepta/0.1.0.release.json",
       "sha256": "07b6291c63ff25e6b669edb8c845e48ba76831b6a6133efa4ad3a390439b1b2b"
+    },
+    {
+      "systemId": "percepta-semantic",
+      "version": "0.2.1",
+      "manifest": "releases/percepta-semantic/0.2.1.release.json",
+      "sha256": "156ef405778000991724e95c7cf80e3761d189397e1c069207055cce100b3e37"
     },
     {
       "systemId": "dokimos",
@@ -300,6 +317,12 @@
       "sha256": "1263b1825061e33dd71134659293b3d73946b5fd70e59d9526956d586905df4a"
     },
     {
+      "systemId": "folio",
+      "version": "0.4.1",
+      "manifest": "releases/folio/0.4.1.release.json",
+      "sha256": "d453d980ce7f81e3c5bd227e34bd8d287417ea79ca09aa97ae9fdc56a28c6880"
+    },
+    {
       "systemId": "strata",
       "version": "0.1.0",
       "manifest": "releases/strata/0.1.0.release.json",
@@ -399,9 +422,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.27.0",
+      "version": "1.28.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "1fc15263e1652b08d075b5aaa1524ca038d3c92e6f0b7fe738156d067c1e835c"
+      "sha256": "4261346fa179c59302627da7f6af569609efb6b80be0dd3d284874b535f773f0"
     }
   ]
 }

@@ -2,8 +2,8 @@
   "schema": "echelon.resolved-release-set/v1",
   "profile": {
     "id": "echelon-current",
-    "version": "1.27.0",
-    "sha256": "1fc15263e1652b08d075b5aaa1524ca038d3c92e6f0b7fe738156d067c1e835c"
+    "version": "1.28.0",
+    "sha256": "4261346fa179c59302627da7f6af569609efb6b80be0dd3d284874b535f773f0"
   },
   "platform": "win-x64",
   "resolver": {
@@ -11,42 +11,42 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "a61aba03c9617d8b225c5df0f3605e404f1e0da62da9c65cba6038e9ffb934f3"
+    "sha256": "d7f34d13855864b5c18575d5864c6990ef6b0e77d8fb64f5bc665adc16c6cde0"
   },
   "components": [
     {
       "systemId": "praxis",
       "role": "host-tool",
       "required": true,
-      "version": "3.20.0",
+      "version": "3.21.0",
       "repository": "kemiller2002/praxis",
-      "tag": "v3.20.0",
-      "commit": "ee6430af3c03aa958c4e5663d65269457269db3d",
+      "tag": "v3.21.0",
+      "commit": "fa474c420e59b26ecacf767a63257e602f039a8c",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "self-contained-native-cli",
       "executable": "praxis",
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "40bbfefac8a0d0c74e02dd0a1efe18562a63ee7ed9dcb8ba0a1e200701c9bbb8"
+        "sha256": "6fed7eea26039704ec28e58b655cd1c6b7d0228cabe668afb4c49cd222af58c1"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": null,
-        "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.20.0"
+        "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.21.0"
       },
       "artifacts": [
         {
           "name": "praxis-win-x64.zip",
           "purpose": "executable",
           "platform": "win-x64",
-          "sha256": "48a2fb6f16ac70e297219b8343e17bc1974753595852f373f073ab9344d99da8"
+          "sha256": "dc3e86c68217a36de59f158871587435eba3607cd025de3cc8bc56b1f4ee592c"
         },
         {
           "name": "native-checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "af3f8a413cb21da426f3c5e48c29ec71a846fc7e65eae93a5eb7150a4263e836"
+          "sha256": "3c4ec79fdbd22fb98bc076c0284a9df4f63ce5ac3ee04068b195c17bf231c361"
         }
       ]
     },
@@ -119,6 +119,42 @@
           "purpose": "checksums",
           "platform": null,
           "sha256": "ff99817e48d4ae09307b2e313a0e6facc645dc952566de1391e510d95a2093d3"
+        }
+      ]
+    },
+    {
+      "systemId": "percepta-semantic",
+      "role": "host-tool",
+      "required": true,
+      "version": "0.2.1",
+      "repository": "kemiller2002/percepta",
+      "tag": "percepta-semantic-v0.2.1",
+      "commit": "8b78df803abb401e2e77320203a2b944d919f6c7",
+      "releaseStage": "stable",
+      "lifecycleState": "active",
+      "distributionClass": "self-contained-native-cli",
+      "executable": "percepta",
+      "releaseManifest": {
+        "schema": "echelon.release/v2",
+        "sha256": "156ef405778000991724e95c7cf80e3761d189397e1c069207055cce100b3e37"
+      },
+      "distribution": {
+        "mechanism": "github-release",
+        "package": null,
+        "url": "https://github.com/kemiller2002/percepta/releases/tag/percepta-semantic-v0.2.1"
+      },
+      "artifacts": [
+        {
+          "name": "percepta-semantic-0.2.1-win-x64.zip",
+          "purpose": "executable",
+          "platform": "win-x64",
+          "sha256": "38bfd85a5609dcb978eae4f791f9ed4c70768580f418e4f2aa40d1454095a20b"
+        },
+        {
+          "name": "checksums.txt",
+          "purpose": "checksums",
+          "platform": null,
+          "sha256": "937168564981c0c5df4e60a768cbff27ef7c7a557243e452f2f8b5b01f4ce82d"
         }
       ]
     },
@@ -370,35 +406,35 @@
       "systemId": "folio",
       "role": "project-binding",
       "required": true,
-      "version": "0.4.0",
+      "version": "0.4.1",
       "repository": "kemiller2002/folio",
-      "tag": "v0.4.0",
-      "commit": "de2832735f3b8a4426f7e180af2859bf4888a938",
+      "tag": "v0.4.1",
+      "commit": "a94cea73dd4b4c5409fb0d4399ba65f7dbc51f5e",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "web-package",
       "executable": null,
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "1263b1825061e33dd71134659293b3d73946b5fd70e59d9526956d586905df4a"
+        "sha256": "d453d980ce7f81e3c5bd227e34bd8d287417ea79ca09aa97ae9fdc56a28c6880"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": "@echelon-foundry/print-components",
-        "url": "https://github.com/kemiller2002/folio/releases/tag/v0.4.0"
+        "url": "https://github.com/kemiller2002/folio/releases/tag/v0.4.1"
       },
       "artifacts": [
         {
-          "name": "echelon-foundry-print-components-0.4.0.tgz",
+          "name": "echelon-foundry-print-components-0.4.1.tgz",
           "purpose": "package",
           "platform": null,
-          "sha256": "50453b89c055135f4991a5b81532d4aad198f3226e874692fd4b317fc2d3156d"
+          "sha256": "57c6a0eccad41e6acef7c0b91a6e072276b0ebaddda27fbb3b36abd956aeea1b"
         },
         {
           "name": "checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "e03983078bb0c15eeecde9a58b4ce5c9a1daf35d7fd9ca17817d970d8828be4b"
+          "sha256": "aab49e9b12a85db0fd5a206b33378cbc3038b326664d6c6e2eab6c3812a2e328"
         }
       ]
     },
@@ -642,7 +678,7 @@
       "host": {
         "systemId": "praxis",
         "range": "\u003E=3.17.0",
-        "selected": "3.20.0"
+        "selected": "3.21.0"
       },
       "requires": {
         "systemId": "dokimos",
