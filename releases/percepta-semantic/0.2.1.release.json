@@ -1,0 +1,79 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "percepta-semantic",
+  "version": "0.2.1",
+  "repository": "kemiller2002/percepta",
+  "tag": "percepta-semantic-v0.2.1",
+  "commit": "8b78df803abb401e2e77320203a2b944d919f6c7",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "self-contained-native-cli",
+  "executable": "percepta",
+  "compatibilityAliases": [],
+  "provides": [
+    {
+      "id": "percepta.evidence",
+      "contractVersion": 1
+    }
+  ],
+  "compatibility": {
+    "supportedPlatforms": [
+      "linux-x64",
+      "linux-arm64",
+      "osx-x64",
+      "osx-arm64",
+      "win-x64"
+    ]
+  },
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "package": null,
+      "url": "https://github.com/kemiller2002/percepta/releases/tag/percepta-semantic-v0.2.1"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "percepta-semantic-0.2.1-linux-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "linux-x64",
+      "sha256": "edf1760cfc2aff3ce716b05944f5dbfba947bc0c00ef53b9d9e8ba2a73ff881b",
+      "mediaType": "application/gzip"
+    },
+    {
+      "name": "percepta-semantic-0.2.1-linux-arm64.tar.gz",
+      "purpose": "executable",
+      "platform": "linux-arm64",
+      "sha256": "00ddf709773eaf7a58efa88705fd83fccb89b1d889ab931e5201deeb6de3d887",
+      "mediaType": "application/gzip"
+    },
+    {
+      "name": "percepta-semantic-0.2.1-osx-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "osx-x64",
+      "sha256": "c22e17b61a560b5d1b731a246150755e26ee99dd3a22008d0299297e3bcbb099",
+      "mediaType": "application/gzip"
+    },
+    {
+      "name": "percepta-semantic-0.2.1-osx-arm64.tar.gz",
+      "purpose": "executable",
+      "platform": "osx-arm64",
+      "sha256": "66f3db5f61569fff5b76167f683cf83f463e09d51ec632ccb6d07596b74f0135",
+      "mediaType": "application/gzip"
+    },
+    {
+      "name": "percepta-semantic-0.2.1-win-x64.zip",
+      "purpose": "executable",
+      "platform": "win-x64",
+      "sha256": "38bfd85a5609dcb978eae4f791f9ed4c70768580f418e4f2aa40d1454095a20b",
+      "mediaType": "application/zip"
+    },
+    {
+      "name": "checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "937168564981c0c5df4e60a768cbff27ef7c7a557243e452f2f8b5b01f4ce82d",
+      "mediaType": "text/plain"
+    }
+  ]
+}
