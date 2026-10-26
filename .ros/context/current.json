@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-26T07:16:46.000Z",
+  "updatedAt": "2026-10-26T11:54:31.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -2449,33 +2449,53 @@
     {
       "id": "WI-0063",
       "type": "release",
-      "state": "active",
-      "semanticState": "active",
-      "evidence": [],
-      "updatedAt": "2026-10-26T07:16:46.000Z",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/percepta-semantic/0.2.1.release.json"
+        },
+        {
+          "type": "implementation",
+          "path": "registry/systems-v2.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-manifest-references.fsx"
+        },
+        {
+          "type": "tests",
+          "path": ".github/workflows/distribution-conformance.yml"
+        }
+      ],
+      "updatedAt": "2026-10-26T11:54:31.000Z",
       "telemetryExecutionIds": [
         "EXE-20261026T071647012Z-78c371f8"
       ],
       "latestCheckpoint": {
-        "id": "c5dca792bf89be8aef7b074f",
-        "recordedAt": "2026-10-26T07:23:54.000Z",
+        "id": "a5a9a793be99f17bfba7df45",
+        "recordedAt": "2026-10-26T11:53:17.000Z",
         "executionId": "EXE-20261026T071647012Z-78c371f8",
+        "stepId": "STEP-20261026T115242000Z-094ec62b",
         "repository": "echelon-registry",
-        "branch": "codex/register-percepta-semantic-021",
-        "commit": "0e5a20ec359cce78d6e1829db1e4d889bc3d52dd",
+        "branch": "codex/register-percepta-semantic-021-completion",
+        "commit": "a94bb9b589a9c3f34b73f0a1ed7aeaf7ef8aac78",
         "remote": {
           "name": "origin",
           "url": "https://github.com/kemiller2002/echelon-registry.git"
         },
-        "remoteBranch": "codex/register-percepta-semantic-021",
-        "remoteCommit": "0e5a20ec359cce78d6e1829db1e4d889bc3d52dd",
-        "summary": "Percepta semantic 0.2.1 identity and immutable release record added; local conformance, five-platform resolution, artifact checksums, and negative cases pass",
-        "nextAction": "Open the registry pull request, require green CI, merge, then verify authoritative-main resolution and close WI-0063",
+        "remoteBranch": "codex/register-percepta-semantic-021-completion",
+        "remoteCommit": "a94bb9b589a9c3f34b73f0a1ed7aeaf7ef8aac78",
+        "summary": "PR #96 merged as a94bb9b; authoritative main and post-merge CI resolve Percepta semantic 0.2.1 with Praxis 3.20.0, Ordo 1.17.0, and Dokimos 0.7.0; artifact and negative tests pass",
+        "nextAction": "Complete WI-0063 with the published registry record and conformance evidence",
         "verification": {
           "status": "verified",
           "mechanism": "git-remote-observation"
         }
-      }
+      },
+      "completedAt": "2026-10-26T11:54:31.000Z",
+      "conclusion": "Percepta semantic 0.2.1 is registered and resolves from authoritative main with compatible Praxis 3.20.0, Ordo 1.17.0, and Dokimos 0.7.0; published artifact integrity and required negative cases verified."
     }
   ]
 }

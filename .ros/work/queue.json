@@ -1322,10 +1322,10 @@
       "description": null,
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-26T07:16:34.838Z",
-      "updatedAt": "2026-10-26T07:16:41.000Z",
+      "updatedAt": "2026-10-26T11:54:31.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
