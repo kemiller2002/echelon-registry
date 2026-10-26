@@ -1336,6 +1336,30 @@
       },
       "source": "manual",
       "sourceReference": null
+    },
+    {
+      "id": "WI-0064",
+      "title": "Cut echelon-current 1.28.0 (proposed): register Praxis 3.21.0, select Praxis 3.21.0 and percepta-semantic 0.2.1, assess Folio 0.4.1; the owner's approval follows Conditor qualification (OD-INDY-8)",
+      "description": null,
+      "tags": [
+        "release",
+        "channel"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-26T20:28:10.000Z",
+      "updatedAt": "2026-10-26T22:13:46.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
     }
   ]
 }
