@@ -66,3 +66,4 @@
 | WI-0063 | Register and independently verify Percepta semantic 0.2.1 | complete |  | medium |
 | WI-0064 | Cut echelon-current 1.28.0 (proposed): register Praxis 3.21.0, select Praxis 3.21.0 and percepta-semantic 0.2.1, assess Folio 0.4.1; the owner's approval follows Conditor qualification (OD-INDY-8) | complete | release, channel | high |
 | WI-0065 | Register Conditor 0.10.13 (Indy preset on echelon-current 1.28.0) and verify REG-RU-007 | complete |  | medium |
+| WI-0066 | Cut echelon-current 1.29.0 (proposed): register Praxis 3.22.0, Ordo 1.18.0, Dokimos 0.8.0 and percepta-semantic 0.3.0 and select them; the owner's approval follows Conditor qualification (OD-INDY-8) | complete | release, channel | high |
