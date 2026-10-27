@@ -274,7 +274,53 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-10-27T19:01:00Z",
+    "statement": [
+      "Please do what you recommend",
+      "Yes",
+      "I allow",
+      "I approve anything you need to do",
+      "go ahead and update it"
+    ],
+    "decision": "OD-INDY-8 (kickoff release set: the newest stable, compatible, verified release of each Echelon system, approved in the Registry after Conditor qualification; if a component fails qualification, keep the newest compatible release and record the exception, VER-003), kemiller2002/indy-init docs/OWNER-DECISIONS-2026-10-24.md (indy-init#13). The owner asked that Rehearsal 5 use the latest components and authorized the recommended path (\"Please do what you recommend\", \"Yes\", \"I allow\": publish praxis 3.22.0, ordo 1.18.0, dokimos 0.8.0, percepta-semantic 0.3.0 and Conditor 0.10.14, then cut and approve this set). \"I approve anything you need to do\" (about 2026-10-27T19:01Z) answered the stated plan to release Conditor 0.10.14, record the owner's approval of this exact set and merge echelon-registry#100; \"go ahead and update it\" answered the request to set this record to approved. Chat timestamps are approximate to the minute; the agent does not see exact message times",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit instruction \"go ahead and update it\", after REG-RU-007 passed against released Conditor 0.10.14 and Conditor qualified this exact set; no VER-003 exception applies",
+    "recordedAt": "2026-10-27T19:45:00Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/40568731102/job/122416885839",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.14 (published 2026-10-27T19:10:20Z), on this exact set (commit 7b37428d); distribution conformance passed on all five platforms"
+      },
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/40565057122/job/122404017215",
+        "description": "The same check against released Conditor v0.10.13 on the same channel bytes (commit 05941f8a) refused Praxis 3.22.0 and Ordo 1.18.0, which 0.10.14 qualifies"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40565096181/job/122404531710",
+        "description": "Conditor echelon-current-1-29-0-kickoff-set-qualification: workstation apply of this set's linux-x64 native environment from the real release bytes, every receipt matched (conditor#114)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40565096181/job/122404531838",
+        "description": "Chrona praxis lifecycle qualification with the real releases (conditor#114)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40565096181/job/122404531680",
+        "description": "Conditor sweep: upgrade --current to 1.29.0 with the real releases, and the swept repository verifies (conditor#114)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40566267987",
+        "description": "Release of Conditor v0.10.14 (fb672442), which carries that qualification (conditor#114)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
