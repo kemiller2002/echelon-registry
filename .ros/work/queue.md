@@ -65,4 +65,4 @@
 | WI-0062 | Cut echelon-current 1.27.0: Dokimos 0.6.0 -> 0.7.0, add percepta-semantic 0.1.0, declare the verified-completion-attested pairing; record the release set and its owner approval (EP-A6a-R1/R2) after REG-RU-007 with released Conditor | complete | release, channel | high |
 | WI-0063 | Register and independently verify Percepta semantic 0.2.1 | complete |  | medium |
 | WI-0064 | Cut echelon-current 1.28.0 (proposed): register Praxis 3.21.0, select Praxis 3.21.0 and percepta-semantic 0.2.1, assess Folio 0.4.1; the owner's approval follows Conditor qualification (OD-INDY-8) | complete | release, channel | high |
-| WI-0065 | Register Conditor 0.10.13 (Indy preset on echelon-current 1.28.0) and verify REG-RU-007 | ready |  | medium |
+| WI-0065 | Register Conditor 0.10.13 (Indy preset on echelon-current 1.28.0) and verify REG-RU-007 | complete |  | medium |
