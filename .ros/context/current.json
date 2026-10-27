@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-26T22:13:46.000Z",
+  "updatedAt": "2026-10-27T14:57:42.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -2559,6 +2559,47 @@
       "blockReason": "Awaiting the owner's own approval record for echelon-current 1.28.0 (EP-A6a-R2); agents do not write ratification fields",
       "completedAt": "2026-10-26T22:13:46.000Z",
       "conclusion": "echelon-current 1.28.0 (Praxis 3.21.0, Folio 0.4.1, percepta-semantic 0.2.1) cut, qualified by released Conditor 0.10.12 and approved by the owner (OD-INDY-8)"
+    },
+    {
+      "id": "WI-0065",
+      "type": "mechanical",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "releases/conditor/0.10.13.release.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-conditor-qualification.fsx"
+        }
+      ],
+      "updatedAt": "2026-10-27T14:57:42.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261027T145614248Z-3db2ddcc"
+      ],
+      "latestCheckpoint": {
+        "id": "fd48ed781ae8653f5f98fe82",
+        "recordedAt": "2026-10-27T14:57:40.000Z",
+        "executionId": "EXE-20261027T145614248Z-3db2ddcc",
+        "repository": "echelon-registry",
+        "branch": "claude/conditor-0.10.13-release-record",
+        "commit": "2cc2ba5da662f992bb137407124d2670d0218aaa",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/conditor-0.10.13-release-record",
+        "remoteCommit": "2cc2ba5da662f992bb137407124d2670d0218aaa",
+        "summary": "Conditor 0.10.13 release record added; REG-RU-007 PASS against 0.10.13 on 1.28.0; 8 conformance checks pass locally",
+        "nextAction": "Registry CI, then owner merge",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-27T14:57:42.000Z"
     }
   ]
 }
