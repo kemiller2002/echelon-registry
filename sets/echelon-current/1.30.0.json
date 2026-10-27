@@ -274,7 +274,51 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-10-27T20:36:00Z",
+    "statement": [
+      "1 merge",
+      "2 approve",
+      "3 well use on rehersal 6"
+    ],
+    "decision": "OD-INDY-8 (kickoff release set: the newest stable, compatible, verified release of each Echelon system, approved in the Registry after Conditor qualification; if a component fails qualification, keep the newest compatible release and record the exception, VER-003), kemiller2002/indy-init docs/OWNER-DECISIONS-2026-10-24.md (indy-init#13). The owner answered three questions about this set (about 2026-10-27T20:36Z): \"1 merge\" approved merging kemiller2002/conditor#115 and releasing Conditor 0.10.15, which qualifies Forma 0.10.0; \"2 approve\" approved echelon-current 1.30.0 once that release qualifies it; \"3 well use on rehersal 6\" keeps Indy Rehearsal 5 on the approved 1.29.0 (the Conditor Indy preset is not moved) and adopts Forma 0.10.0 from Rehearsal 6. Chat timestamps are approximate to the minute; the agent does not see exact message times",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit approval \"2 approve\", after REG-RU-007 passed against released Conditor 0.10.15 and Conditor qualified this exact set; no VER-003 exception applies",
+    "recordedAt": "2026-10-27T20:49:25Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/40581072867/job/122460272233",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.15 (published 2026-10-27T20:45:29Z), on this exact set (commit 40fa91a7); distribution conformance passed on all five platforms"
+      },
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/40571609942/job/122426990384",
+        "description": "The same check against released Conditor v0.10.14 on the same channel bytes (commit 5f7341e8) refused Forma 0.10.0, which 0.10.15 qualifies"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40579838099/job/122456360133",
+        "description": "Chrona 1.29.0 -> 1.30.0: upgrade --current moves only Forma 0.9.0 -> 0.10.0 through npm with the real release, the installed package reports 0.10.0, and the repository verifies (conditor#115)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40579838099/job/122456360228",
+        "description": "Conditor sweep: on 1.30.0 the swept repository, which does not declare Forma, plans no transition (conditor#115)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40579838099/job/122455941336",
+        "description": "Conditor build-test, including WebPackageUpgradeTests.echelonCurrent130 (Forma 0.9.0 -> 0.10.0 by its exact GitHub release-asset pin) (conditor#115)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40580358854",
+        "description": "Release of Conditor v0.10.15 (a02e3d94), which carries that qualification (conditor#115)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
@@ -358,7 +402,7 @@
       "systemId": "forma",
       "version": "0.9.0",
       "assessment": "superseded",
-      "reason": "Replaced by Forma 0.10.0 (v0.10.0, e0b088db), the newest stable release: LCE-001 layout constraint enforcement. Bounded pill radius and curved/rotated boundary padding keep text inside node shapes; connector labels wrap within 12rem; the workflow engine sizes nodes with a script-aware, WCAG 1.4.12-spacing-aware text measure and routes connectors and labels around nodes. It fixes the clipped, overlapping causal diagrams of the Indy-init Causa app on 0.9.0 (kemiller2002/forma experiments/LCE-001/REPORT.md). No token, class or API is removed. The selection stands only once a released Conditor qualifies 0.10.0 (REG-RU-007)"
+      "reason": "Replaced by Forma 0.10.0 (v0.10.0, e0b088db), the newest stable release: LCE-001 layout constraint enforcement. Bounded pill radius and curved/rotated boundary padding keep text inside node shapes; connector labels wrap within 12rem; the workflow engine sizes nodes with a script-aware, WCAG 1.4.12-spacing-aware text measure and routes connectors and labels around nodes. It fixes the clipped, overlapping causal diagrams of the Indy-init Causa app on 0.9.0 (kemiller2002/forma experiments/LCE-001/REPORT.md). No token, class or API is removed. Released Conditor 0.10.15 qualifies 0.10.0 (REG-RU-007, conditor#115)"
     },
     {
       "systemId": "forma",
