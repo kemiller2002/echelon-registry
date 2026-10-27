@@ -609,14 +609,30 @@
     },
     {
       "metricId": "agent.interruptions",
-      "status": "unknown",
-      "reason": "runtime capability not reported or mapped",
-      "discoveredAt": "2026-10-27T18:48:21.564Z",
+      "status": "derived",
+      "reason": "normalized measurement recorded",
+      "discoveredAt": "2026-10-27T18:52:48.000Z",
       "source": {
-        "type": "environment",
-        "name": "runtime-identity",
-        "mechanism": "explicit-or-unmapped-environment"
-      }
+        "type": "calculated",
+        "name": "ros-work-protocol",
+        "mechanism": "blocked-transition"
+      },
+      "lastAssessedAt": "2026-10-27T18:52:48.000Z",
+      "recordedAt": "2026-10-27T18:52:48.000Z",
+      "history": [
+        {
+          "status": "unknown",
+          "reason": "runtime capability not reported or mapped",
+          "source": {
+            "type": "environment",
+            "name": "runtime-identity",
+            "mechanism": "explicit-or-unmapped-environment"
+          },
+          "discoveredAt": "2026-10-27T18:48:21.564Z",
+          "lastAssessedAt": "2026-10-27T18:48:21.564Z",
+          "recordedAt": "2026-10-27T18:48:21.564Z"
+        }
+      ]
     },
     {
       "metricId": "agent.resumes",
@@ -1458,6 +1474,26 @@
       },
       "collectedAt": "2026-10-27T18:48:21.564Z",
       "schemaVersion": "1.0.0"
+    },
+    {
+      "measurementId": "MEAS-36532fd91d93dd17e55be880",
+      "id": "agent.interruptions",
+      "value": 1,
+      "unit": "count",
+      "currency": null,
+      "quality": "derived",
+      "confidence": null,
+      "scope": "execution",
+      "aggregation": "sum",
+      "dimensions": {},
+      "pricing": null,
+      "source": {
+        "type": "calculated",
+        "name": "ros-work-protocol",
+        "mechanism": "blocked-transition"
+      },
+      "collectedAt": "2026-10-27T18:52:48.000Z",
+      "schemaVersion": "1.0.0"
     }
   ],
   "rawTelemetry": [],
@@ -1470,6 +1506,17 @@
         "name": "ros",
         "mechanism": "work-lifecycle"
       }
+    },
+    {
+      "type": "work.blocked",
+      "occurredAt": "2026-10-27T18:52:48.000Z",
+      "reason": "Awaiting a released Conditor (0.10.14) that qualifies Praxis 3.22.0 and Ordo 1.18.0 (REG-RU-007) and the owner's own approval record for echelon-current 1.29.0 (EP-A6a-R2, OD-INDY-8); agents do not write ratification fields",
+      "source": {
+        "type": "ros-clock",
+        "name": "ros",
+        "mechanism": "work-lifecycle"
+      },
+      "eventId": "TEVT-8a4300c4ada7a0dc8f675f87"
     }
   ],
   "repository": {

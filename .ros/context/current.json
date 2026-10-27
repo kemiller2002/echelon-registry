@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-27T18:48:21.000Z",
+  "updatedAt": "2026-10-27T18:52:48.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -2604,13 +2604,34 @@
     {
       "id": "WI-0066",
       "type": "task",
-      "state": "active",
-      "semanticState": "active",
+      "state": "blocked",
+      "semanticState": "blocked",
       "evidence": [],
-      "updatedAt": "2026-10-27T18:48:21.000Z",
+      "updatedAt": "2026-10-27T18:52:48.000Z",
       "telemetryExecutionIds": [
         "EXE-20261027T184821564Z-2af4c773"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "d55a8f7a9538b2f264973cc6",
+        "recordedAt": "2026-10-27T18:52:46.000Z",
+        "executionId": "EXE-20261027T184821564Z-2af4c773",
+        "repository": "echelon-registry",
+        "branch": "claude/rehearsal-5-prep-qlbywr",
+        "commit": "8ecc5c07aca98099990e45a28e7f8a217e264f4f",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/rehearsal-5-prep-qlbywr",
+        "remoteCommit": "8ecc5c07aca98099990e45a28e7f8a217e264f4f",
+        "summary": "Praxis 3.22.0, Ordo 1.18.0, Dokimos 0.8.0 and percepta-semantic 0.3.0 recorded; echelon-current 1.29.0 cut as proposed (channel, sets, release-set record without approval); REG-RU-007 refuses Praxis 3.22.0 and Ordo 1.18.0 against released Conditor 0.10.13, as expected",
+        "nextAction": "Conditor qualifies 1.29.0 and releases 0.10.14; record releases/conditor/0.10.14.release.json here; REG-RU-007 then passes; the owner approves sets/echelon-current/1.29.0.json (OD-INDY-8); then complete WI-0066",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "blockReason": "Awaiting a released Conditor (0.10.14) that qualifies Praxis 3.22.0 and Ordo 1.18.0 (REG-RU-007) and the owner's own approval record for echelon-current 1.29.0 (EP-A6a-R2, OD-INDY-8); agents do not write ratification fields"
     }
   ]
 }
