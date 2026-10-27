@@ -1405,6 +1405,30 @@
       },
       "source": "manual",
       "sourceReference": null
+    },
+    {
+      "id": "WI-0067",
+      "title": "Register Forma 0.10.0 and cut echelon-current 1.30.0 (proposed): select Forma 0.10.0 on top of 1.29.0; the owner's approval follows Conditor qualification (OD-INDY-8)",
+      "description": "Forma 0.10.0 (v0.10.0, e0b088db) carries LCE-001 layout constraint enforcement. Register its release record and select it in echelon-current 1.30.0, stacked on the approved 1.29.0.",
+      "tags": [
+        "release",
+        "channel"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-27T19:40:22Z",
+      "updatedAt": "2026-10-27T19:40:22Z",
+      "createdBy": "anthropic/claude-code",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
     }
   ]
 }
