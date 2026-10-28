@@ -1,0 +1,431 @@
+{
+  "schema": "echelon.release-set/v1",
+  "channel": "echelon-current",
+  "profile": {
+    "id": "echelon-current",
+    "version": "1.31.0",
+    "path": "profiles/echelon-current.profile.json",
+    "sha256": "7f5ed473401805c155254d018c6098469f83f4d5f394c597fdf1d803b9d8bf73"
+  },
+  "catalogSnapshot": {
+    "path": "snapshots/echelon-current.catalog.json",
+    "sha256": "fd22d69156c99e4a2b10410ae6588d96569ecc03708316a203b987c27aa31164"
+  },
+  "channelIndex": {
+    "path": "channels/echelon-current/channel.json",
+    "sha256": "6856e41ae48f08c86c3aeeeba08ea69e9b1c5723fc1c406754cb925fce560130"
+  },
+  "platforms": [
+    {
+      "platform": "linux-x64",
+      "path": "channels/echelon-current/linux-x64.json",
+      "sha256": "4d30d15f3b268a0b2673d511d092d592c086eadc985283606b536e6c027287d8"
+    },
+    {
+      "platform": "linux-arm64",
+      "path": "channels/echelon-current/linux-arm64.json",
+      "sha256": "2c013306c74f88c12ef984f84eb64f7e5771c8045d5cd0a24891f989b9b9c289"
+    },
+    {
+      "platform": "osx-x64",
+      "path": "channels/echelon-current/osx-x64.json",
+      "sha256": "df4626aa133da822b19bfd310039c6ee38ec312c492736eb424513e7216fdc4a"
+    },
+    {
+      "platform": "osx-arm64",
+      "path": "channels/echelon-current/osx-arm64.json",
+      "sha256": "5a994082919aba6999aa53ea6c7a1f382b3a1263584cbdc5f76f5d76c898cefa"
+    },
+    {
+      "platform": "win-x64",
+      "path": "channels/echelon-current/win-x64.json",
+      "sha256": "3b54e10581bbe06f75774f884d0c3dac2c6ecc855f041e295a131a28f4ee4c9d"
+    }
+  ],
+  "components": [
+    {
+      "systemId": "praxis",
+      "version": "3.23.0",
+      "releaseManifestSha256": "6e45c76104f6337f49571cdac3e0434a7a919f5a95a09f2ba6660365cdffcc16",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.19.0",
+      "releaseManifestSha256": "b6287549fc6615c89d89b832991924f8b98863391d4112cdc52b166c66506410",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "percepta",
+      "version": "0.1.0",
+      "releaseManifestSha256": "07b6291c63ff25e6b669edb8c845e48ba76831b6a6133efa4ad3a390439b1b2b",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "percepta-semantic",
+      "version": "0.3.0",
+      "releaseManifestSha256": "ea5acb7296017ee101d55c8f4d6cb80db82d34b86695ec52eec526f40785a278",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.9.0",
+      "releaseManifestSha256": "76adde4a97c91ac6274b9a3b8aee82ef9580d7b459147e2fa9b5dd37e9348bed",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "visual-engineering",
+      "version": "1.0.1",
+      "releaseManifestSha256": "23ab4fdb38d3fc7827519cc3c29df88c950211db1d53d114c53f36a662a0dbda",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "communication-engineering",
+      "version": "1.0.0",
+      "releaseManifestSha256": "d4b79053301635b6335caf81c2ca28b0721cca4a78967501be820a8eb7118296",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "tutela",
+      "version": "0.1.0",
+      "releaseManifestSha256": "5db1e8a1f039ae88b2b9426c7cbeec1783b40e29d58b0dfd40dfa90104a3c4ba",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "aegis",
+      "version": "1.0.0",
+      "releaseManifestSha256": "4530cfa3396c1e57d3e1a6500c661cd2d520236e852d1d9e88aa44c385d0bd6b",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "limen",
+      "version": "0.9.1",
+      "releaseManifestSha256": "54f088e76880308b2db1f7d447ad946d95d1a7f384893f0da2ae63937f6a1655",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "forma",
+      "version": "0.10.0",
+      "releaseManifestSha256": "4ed44de2d5cf9d64e20817f824c5a63e65e72b85c08c39783f9e95e2af1c9949",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "folio",
+      "version": "0.4.1",
+      "releaseManifestSha256": "d453d980ce7f81e3c5bd227e34bd8d287417ea79ca09aa97ae9fdc56a28c6880",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "strata",
+      "version": "0.1.1",
+      "releaseManifestSha256": "262bf735e8af934a5d104cad910e34d55e8ffcf310696f8604560bc73eb8ab04",
+      "platforms": [
+        "linux-x64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "arca",
+      "version": "0.5.0",
+      "releaseManifestSha256": "1cab5320290e6084f873e942465fe2289c8bc952b8ec7ce3a445ad24b8ac2e84",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "fides",
+      "version": "0.2.0",
+      "releaseManifestSha256": "0ef2204d8ec298e6d930ce11d66629794486a5e31367959d7f9dbd39468b6a2a",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "summa-contracts",
+      "version": "0.1.0",
+      "releaseManifestSha256": "b952e4c667bc83aae23092397e8de3bcd75ecd2a6d59ef7d1047f2f5d094bcfe",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "limen-fsharp",
+      "version": "0.9.0",
+      "releaseManifestSha256": "d8aec120fdaff6bb2a9dcd6e4d79b8a92d69f8cc0227de1c6b7166c6c3b8ce3a",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "verified-completion-attested",
+      "platform": "linux-x64",
+      "state": "enabled"
+    },
+    {
+      "id": "verified-completion-attested",
+      "platform": "linux-arm64",
+      "state": "enabled"
+    },
+    {
+      "id": "verified-completion-attested",
+      "platform": "osx-x64",
+      "state": "enabled"
+    },
+    {
+      "id": "verified-completion-attested",
+      "platform": "osx-arm64",
+      "state": "enabled"
+    },
+    {
+      "id": "verified-completion-attested",
+      "platform": "win-x64",
+      "state": "enabled"
+    }
+  ],
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-10-28T15:35:00Z",
+    "statement": [
+      "approve echelon-current 1.31.0"
+    ],
+    "decision": "OD-INDY-8 (kickoff release set: the newest stable, compatible, verified release of each Echelon system, approved in the Registry after Conditor qualification; if a component fails qualification, keep the newest compatible release and record the exception, VER-003), kemiller2002/indy-init docs/OWNER-DECISIONS-2026-10-24.md (indy-init#13). On 2026-10-28 the owner approved releasing Praxis 3.23.0, Ordo 1.19.0, Dokimos 0.9.0, Limen 0.9.1 and Conditor 0.10.16 and moving the channel (\"Yes please\"), decided to ship Limen 0.9.1 under its new PolyForm-Noncommercial-1.0.0 license and to move the Conditor Indy preset to Forma 0.10.0 (conditor#119), and then approved this set: \"approve echelon-current 1.31.0\". Chat timestamps are approximate to the minute; the agent does not see exact message times",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit approval \"approve echelon-current 1.31.0\", after REG-RU-007 passed against released Conditor 0.10.16 and Conditor qualified this exact set; no VER-003 exception applies",
+    "recordedAt": "2026-10-28T15:35:49Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/40705628455/job/122876839387",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.16, on this exact set (commit 9608969d); distribution conformance passed on all five platforms (echelon-registry#102)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40693632434/job/122835033566",
+        "description": "Conditor echelon-current-1-31-0-kickoff-set-qualification: installs the 1.31.0 native set from the real release bytes and checks every receipt, praxis work evidence, sde verification schedule and Dokimos 0.9.0 (conditor#119)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40693632434/job/122834524453",
+        "description": "Conditor build-test, including the 1.31.0 kickoff-set, Praxis 3.22.0 -> 3.23.0 upgrade, Ordo 1.19.0 integrity-gate and Limen 0.9.1 qualification tests (conditor#119)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40693632434/job/122835033434",
+        "description": "Conditor echelon-current sweep qualification on 1.31.0 (conditor#119)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40703803043",
+        "description": "Release of Conditor v0.10.16 (57b22103), which carries that qualification (conditor#119)"
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "systemId": "praxis",
+      "version": "3.14.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.23.0, which carries its changes; qualified by released Conditor but in no catalog snapshot"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.15.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.23.0, which carries its changes; never qualified by a released Conditor and in no catalog snapshot"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.17.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.23.0, which carries its changes; never qualified by a released Conditor and in no catalog snapshot"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.18.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.23.0, which carries its changes; never qualified by a released Conditor and in no catalog snapshot"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.19.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.23.0, which carries its changes; never qualified by a released Conditor and in no catalog snapshot"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.20.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.23.0, which carries its changes (via 3.21.0)"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.21.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.23.0, which carries its changes (via 3.22.0)"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.22.0",
+      "assessment": "superseded",
+      "reason": "Replaced by Praxis 3.23.0 (v3.23.0, 398af6dd): 3.22.0 plus praxis streams check (praxis#295) and praxis work evidence (praxis#296). provides and the tag's release.json compatibility are unchanged; the tag's release.json differs from 3.22.0 only in version. Released Conditor 0.10.16 qualifies it (REG-RU-007, conditor#119)"
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.17.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Ordo 1.19.0, which carries its changes (via 1.18.0)"
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.18.0",
+      "assessment": "superseded",
+      "reason": "Replaced by Ordo 1.19.0 (v1.19.0, 1e8a9578): sde verification schedule gains policy-aware freshness (ordo#108), per-obligation acceptance-contract freshness (ordo#109), the FP-PROCESS-THIS-RUN policy (ordo#110) and a --reuse-context option; provides unchanged (none declared). Released Conditor 0.10.16 qualifies it (REG-RU-007, conditor#119) through the integrity-only gate"
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.6.0",
+      "assessment": "superseded",
+      "reason": "Superseded by Dokimos 0.7.0 and later: the verified-completion-attested pairing (Praxis >=3.17.0 requires Dokimos >=0.7.0) refuses Dokimos 0.6.0 beside the selected Praxis 3.23.0"
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.7.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Dokimos 0.9.0, which carries its changes (via 0.8.0); provides keeps completion.verify-attested 1 and echelon.repository-lifecycle 1"
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.8.0",
+      "assessment": "superseded",
+      "reason": "Replaced by Dokimos 0.9.0 (dokimos-v0.9.0, 2dab315b): passing and failing evidence recorded durably in the evidence store, where a failure blocks reuse (dokimos evidence record, dokimos#58), and mandatory final verification: the release checkpoint refuses evidence reuse (dokimos evidence plan --checkpoint release, dokimos#59). provides adds evidence.reuse-plan 1 and evidence.provenance-record 1 and keeps completion.verify-attested 1 and echelon.repository-lifecycle 1, so the verified-completion-attested pairing stays enabled. Not a REG-RU-007 declared component; Conditor installs it from the set through the generic lifecycle contract (conditor#119)"
+    },
+    {
+      "systemId": "percepta-semantic",
+      "version": "0.2.1",
+      "assessment": "superseded",
+      "reason": "Replaced by percepta-semantic 0.3.0 (percepta-semantic-v0.3.0, c9747c26): adds percepta verify-app (screen bindings and state injection for served applications, percepta#43); provides percepta.evidence 1 unchanged, same five platforms. Host tool, not a REG-RU-007 declared component"
+    },
+    {
+      "systemId": "limen",
+      "version": "0.9.0",
+      "assessment": "superseded",
+      "reason": "Replaced by Limen 0.9.1 (v0.9.1, 743cdb9b; npm @echelon-foundry/limen with SLSA provenance naming publish.yml at that commit): the build stamps the package version into the browser-kernel artifact (window.__ECHELON_RUNTIME__, limen#110) and the F# CLI gains limen wasm-check (limen#113, limen#114), with no change to the source, the protocol or the routing module. The package license changes from MIT (0.9.0) to PolyForm-Noncommercial-1.0.0 (0.9.1); the owner (kemiller2002) explicitly decided to ship 0.9.1 with that license. Released Conditor 0.10.16 qualifies it (REG-RU-007, conditor#119)"
+    },
+    {
+      "systemId": "limen-fsharp",
+      "version": "0.9.1",
+      "assessment": "pending",
+      "reason": "Released with Limen v0.9.1 (EchelonFoundry.Limen.Contract, .Guest, .Store and .Routing 0.9.1) but not qualified and not registered; limen-fsharp stays at 0.9.0"
+    },
+    {
+      "systemId": "aegis",
+      "version": "2.0.0",
+      "assessment": "pending",
+      "reason": "Not registered and not verified from this session; outside the profile range >=1.0.0 <2.0.0, so a major-version profile change would be needed to select it"
+    },
+    {
+      "systemId": "forma",
+      "version": "0.9.0",
+      "assessment": "superseded",
+      "reason": "Replaced by Forma 0.10.0 (v0.10.0, e0b088db), the newest stable release: LCE-001 layout constraint enforcement. Bounded pill radius and curved/rotated boundary padding keep text inside node shapes; connector labels wrap within 12rem; the workflow engine sizes nodes with a script-aware, WCAG 1.4.12-spacing-aware text measure and routes connectors and labels around nodes. It fixes the clipped, overlapping causal diagrams of the Indy-init Causa app on 0.9.0 (kemiller2002/forma experiments/LCE-001/REPORT.md). No token, class or API is removed. Released Conditor 0.10.15 qualifies 0.10.0 (REG-RU-007, conditor#115)"
+    },
+    {
+      "systemId": "forma",
+      "version": "0.9.1",
+      "assessment": "superseded",
+      "reason": "Never tagged: its release check failed on 2026-10-22 (run 39780631501) on the marketing fixture pin; Forma 0.10.0 carries its changes. Not registered"
+    }
+  ]
+}

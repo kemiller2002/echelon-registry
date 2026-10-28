@@ -2,8 +2,8 @@
   "schema": "echelon.resolved-release-set/v1",
   "profile": {
     "id": "echelon-current",
-    "version": "1.30.0",
-    "sha256": "7ba5a904ac88b5870288d20815e1b4fa80b024d46bba79e12872bdaea71aa2c6"
+    "version": "1.31.0",
+    "sha256": "7f5ed473401805c155254d018c6098469f83f4d5f394c597fdf1d803b9d8bf73"
   },
   "platform": "linux-x64",
   "resolver": {
@@ -11,42 +11,42 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "c813a631791e0509ecd20a98ba3e816a6b8065d25ba79184a56becc377a354a4"
+    "sha256": "fd22d69156c99e4a2b10410ae6588d96569ecc03708316a203b987c27aa31164"
   },
   "components": [
     {
       "systemId": "praxis",
       "role": "host-tool",
       "required": true,
-      "version": "3.22.0",
+      "version": "3.23.0",
       "repository": "kemiller2002/praxis",
-      "tag": "v3.22.0",
-      "commit": "830e8a45e5c02d1cb2dfe3cf7a41738f1d1e6b65",
+      "tag": "v3.23.0",
+      "commit": "398af6dd1509afc93d0f3aa2612ba2d2f5c9c32e",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "self-contained-native-cli",
       "executable": "praxis",
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "4542c3a2bdd8cef9b80993c3d6955f18e7a9e530d725e82f43d3a02932f60c02"
+        "sha256": "6e45c76104f6337f49571cdac3e0434a7a919f5a95a09f2ba6660365cdffcc16"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": null,
-        "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.22.0"
+        "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.23.0"
       },
       "artifacts": [
         {
           "name": "praxis-linux-x64.tar.gz",
           "purpose": "executable",
           "platform": "linux-x64",
-          "sha256": "36edb44b058e417b2e8e6ad321f9f9090ed408b32921ed36489b81cc085745c0"
+          "sha256": "63ae6b31843901ca37fa23936973253cc8fa2df096ca9620b83c66a15b01060b"
         },
         {
           "name": "native-checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "da6d33889fda33cca4423c925ab357089392d22291046c87f55c786b53a55193"
+          "sha256": "b1f283b4b3fec46d1dfca6db79d69b5f649527a442fb0b8d744d48e3706b0677"
         }
       ]
     },
@@ -54,35 +54,35 @@
       "systemId": "ordo",
       "role": "host-tool",
       "required": true,
-      "version": "1.18.0",
+      "version": "1.19.0",
       "repository": "kemiller2002/ordo",
-      "tag": "v1.18.0",
-      "commit": "f1e0563aa299ed209eccfaa55b8e891ba7ae2381",
+      "tag": "v1.19.0",
+      "commit": "1e8a95780813ed0520f9b0719b14e4052958ca20",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "self-contained-native-cli",
       "executable": "ordo",
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "92eb8a1bd072d19fc33a8e76b02200df32a6b2a00d3cfd54db26166b213652f5"
+        "sha256": "b6287549fc6615c89d89b832991924f8b98863391d4112cdc52b166c66506410"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": null,
-        "url": "https://github.com/kemiller2002/ordo/releases/tag/v1.18.0"
+        "url": "https://github.com/kemiller2002/ordo/releases/tag/v1.19.0"
       },
       "artifacts": [
         {
           "name": "ordo-linux-x64.tar.gz",
           "purpose": "executable",
           "platform": "linux-x64",
-          "sha256": "267923947ff3f93fa07f282a7569b635bb478e94a5ae4b73e1824f07315f0f7b"
+          "sha256": "2898e8541a2bc2836f3e1efee108f2b05594118b9ca1ecf4464a452c33aa4a36"
         },
         {
           "name": "native-checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "4685a632109474c87bba38e9af63621078e213493efedac0b0391b67d497fa5c"
+          "sha256": "ff4370e9b71869b6547c40cd467954f680b87bf027eaaf3831d88a5553513db7"
         }
       ]
     },
@@ -162,10 +162,10 @@
       "systemId": "dokimos",
       "role": "repository-lifecycle",
       "required": true,
-      "version": "0.8.0",
+      "version": "0.9.0",
       "repository": "kemiller2002/dokimos",
-      "tag": "dokimos-v0.8.0",
-      "commit": "49a92b89639b647c7ad3ea206b6f71611156f9f0",
+      "tag": "dokimos-v0.9.0",
+      "commit": "2dab315ba10c8eef652562ffa4543eee10942a51",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "self-contained-native-cli",
@@ -176,25 +176,25 @@
       },
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "b6792b8ffdeb587b4e038008abb79815ec1b53e079b1705a3cfd6345edbb7a5a"
+        "sha256": "76adde4a97c91ac6274b9a3b8aee82ef9580d7b459147e2fa9b5dd37e9348bed"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": null,
-        "url": "https://github.com/kemiller2002/dokimos/releases/tag/dokimos-v0.8.0"
+        "url": "https://github.com/kemiller2002/dokimos/releases/tag/dokimos-v0.9.0"
       },
       "artifacts": [
         {
           "name": "dokimos-linux-x64.tar.gz",
           "purpose": "executable",
           "platform": "linux-x64",
-          "sha256": "a51fe5aa51a36e74f71ff525afe8def556c983f0238e9ea17118fef3884b0153"
+          "sha256": "7131b09419e6da039fe32a31e86528cb43112769892f53ac54d8943be2e22069"
         },
         {
           "name": "dokimos-checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "1da5acccb47d90567810cccba34cd2cb59382fc26b61a6fac66ba88d4a5ffc99"
+          "sha256": "1a213297cc8555b14e26ccab221426cbbc1a76837a09e03d50374507b2f9c5dc"
         },
         {
           "name": "LICENSE",
@@ -340,29 +340,29 @@
       "systemId": "limen",
       "role": "project-binding",
       "required": true,
-      "version": "0.9.0",
+      "version": "0.9.1",
       "repository": "kemiller2002/limen",
-      "tag": "v0.9.0",
-      "commit": "96eb75fb5c5aeea41f59e7476d76e143dc35a759",
+      "tag": "v0.9.1",
+      "commit": "743cdb9be8971c0a3a250906a6e2e112170dfae0",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "web-package",
       "executable": null,
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "5ffc580705cb612f9a5c99ee7ee0f81c7f18904947336a6e14a9be19393a74db"
+        "sha256": "54f088e76880308b2db1f7d447ad946d95d1a7f384893f0da2ae63937f6a1655"
       },
       "distribution": {
         "mechanism": "npm",
         "package": "@echelon-foundry/limen",
-        "url": "https://registry.npmjs.org/@echelon-foundry/limen/-/limen-0.9.0.tgz"
+        "url": "https://registry.npmjs.org/@echelon-foundry/limen/-/limen-0.9.1.tgz"
       },
       "artifacts": [
         {
-          "name": "echelon-foundry-limen-0.9.0.tgz",
+          "name": "echelon-foundry-limen-0.9.1.tgz",
           "purpose": "package",
           "platform": null,
-          "sha256": "45b64d580548fc5ecd13bb391104bc3d1d135faf5fccab46900c1a7cc64685ec"
+          "sha256": "a7dd300577a145ff56bfa2d8ebae21e864c00b1409e701ebb3704cc367d4ddc8"
         }
       ]
     },
@@ -678,12 +678,12 @@
       "host": {
         "systemId": "praxis",
         "range": "\u003E=3.17.0",
-        "selected": "3.22.0"
+        "selected": "3.23.0"
       },
       "requires": {
         "systemId": "dokimos",
         "range": "\u003E=0.7.0",
-        "selected": "0.8.0"
+        "selected": "0.9.0"
       }
     }
   ]

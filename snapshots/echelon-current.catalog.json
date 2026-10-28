@@ -155,6 +155,12 @@
       "sha256": "4542c3a2bdd8cef9b80993c3d6955f18e7a9e530d725e82f43d3a02932f60c02"
     },
     {
+      "systemId": "praxis",
+      "version": "3.23.0",
+      "manifest": "releases/praxis/3.23.0.release.json",
+      "sha256": "6e45c76104f6337f49571cdac3e0434a7a919f5a95a09f2ba6660365cdffcc16"
+    },
+    {
       "systemId": "ordo",
       "version": "1.4.0",
       "manifest": "releases/ordo/1.4.0.release.json",
@@ -209,6 +215,12 @@
       "sha256": "92eb8a1bd072d19fc33a8e76b02200df32a6b2a00d3cfd54db26166b213652f5"
     },
     {
+      "systemId": "ordo",
+      "version": "1.19.0",
+      "manifest": "releases/ordo/1.19.0.release.json",
+      "sha256": "b6287549fc6615c89d89b832991924f8b98863391d4112cdc52b166c66506410"
+    },
+    {
       "systemId": "percepta",
       "version": "0.1.0",
       "manifest": "releases/percepta/0.1.0.release.json",
@@ -249,6 +261,12 @@
       "version": "0.8.0",
       "manifest": "releases/dokimos/0.8.0.release.json",
       "sha256": "b6792b8ffdeb587b4e038008abb79815ec1b53e079b1705a3cfd6345edbb7a5a"
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.9.0",
+      "manifest": "releases/dokimos/0.9.0.release.json",
+      "sha256": "76adde4a97c91ac6274b9a3b8aee82ef9580d7b459147e2fa9b5dd37e9348bed"
     },
     {
       "systemId": "visual-engineering",
@@ -443,6 +461,12 @@
       "sha256": "5ffc580705cb612f9a5c99ee7ee0f81c7f18904947336a6e14a9be19393a74db"
     },
     {
+      "systemId": "limen",
+      "version": "0.9.1",
+      "manifest": "releases/limen/0.9.1.release.json",
+      "sha256": "54f088e76880308b2db1f7d447ad946d95d1a7f384893f0da2ae63937f6a1655"
+    },
+    {
       "systemId": "limen-fsharp",
       "version": "0.9.0",
       "manifest": "releases/limen-fsharp/0.9.0.release.json",
@@ -452,9 +476,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.30.0",
+      "version": "1.31.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "7ba5a904ac88b5870288d20815e1b4fa80b024d46bba79e12872bdaea71aa2c6"
+      "sha256": "7f5ed473401805c155254d018c6098469f83f4d5f394c597fdf1d803b9d8bf73"
     }
   ]
 }
