@@ -274,7 +274,44 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-10-28T15:35:00Z",
+    "statement": [
+      "approve echelon-current 1.31.0"
+    ],
+    "decision": "OD-INDY-8 (kickoff release set: the newest stable, compatible, verified release of each Echelon system, approved in the Registry after Conditor qualification; if a component fails qualification, keep the newest compatible release and record the exception, VER-003), kemiller2002/indy-init docs/OWNER-DECISIONS-2026-10-24.md (indy-init#13). On 2026-10-28 the owner approved releasing Praxis 3.23.0, Ordo 1.19.0, Dokimos 0.9.0, Limen 0.9.1 and Conditor 0.10.16 and moving the channel (\"Yes please\"), decided to ship Limen 0.9.1 under its new PolyForm-Noncommercial-1.0.0 license and to move the Conditor Indy preset to Forma 0.10.0 (conditor#119), and then approved this set: \"approve echelon-current 1.31.0\". Chat timestamps are approximate to the minute; the agent does not see exact message times",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit approval \"approve echelon-current 1.31.0\", after REG-RU-007 passed against released Conditor 0.10.16 and Conditor qualified this exact set; no VER-003 exception applies",
+    "recordedAt": "2026-10-28T15:35:49Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/40705628455/job/122876839387",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.16, on this exact set (commit 9608969d); distribution conformance passed on all five platforms (echelon-registry#102)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40693632434/job/122835033566",
+        "description": "Conditor echelon-current-1-31-0-kickoff-set-qualification: installs the 1.31.0 native set from the real release bytes and checks every receipt, praxis work evidence, sde verification schedule and Dokimos 0.9.0 (conditor#119)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40693632434/job/122834524453",
+        "description": "Conditor build-test, including the 1.31.0 kickoff-set, Praxis 3.22.0 -> 3.23.0 upgrade, Ordo 1.19.0 integrity-gate and Limen 0.9.1 qualification tests (conditor#119)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40693632434/job/122835033434",
+        "description": "Conditor echelon-current sweep qualification on 1.31.0 (conditor#119)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40703803043",
+        "description": "Release of Conditor v0.10.16 (57b22103), which carries that qualification (conditor#119)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
