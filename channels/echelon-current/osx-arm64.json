@@ -2,8 +2,8 @@
   "schema": "echelon.resolved-release-set/v1",
   "profile": {
     "id": "echelon-current",
-    "version": "1.31.0",
-    "sha256": "7f5ed473401805c155254d018c6098469f83f4d5f394c597fdf1d803b9d8bf73"
+    "version": "1.32.0",
+    "sha256": "001fb6807901ce496b6e6faeee501c26d7c606e6f313ffed908c083e6f8a8d90"
   },
   "platform": "osx-arm64",
   "resolver": {
@@ -11,7 +11,7 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "fd22d69156c99e4a2b10410ae6588d96569ecc03708316a203b987c27aa31164"
+    "sha256": "a6c21d3dbb6352fdcc0672719789fdc729460c2cb1dbcd3e2e0ef6f8c254cfde"
   },
   "components": [
     {
@@ -370,35 +370,35 @@
       "systemId": "forma",
       "role": "project-binding",
       "required": true,
-      "version": "0.10.0",
+      "version": "0.11.0",
       "repository": "kemiller2002/forma",
-      "tag": "v0.10.0",
-      "commit": "e0b088dbbe98b05221c4bc5b5e2224e9bf470827",
+      "tag": "v0.11.0",
+      "commit": "7a545813563457716c6bb640a86ba01517e384c7",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "web-package",
       "executable": null,
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "4ed44de2d5cf9d64e20817f824c5a63e65e72b85c08c39783f9e95e2af1c9949"
+        "sha256": "1b3ce0040332b84e5a16fb1989970967356891cda57c74415af8c4f305b0c747"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": "@echelon-foundry/design-system",
-        "url": "https://github.com/kemiller2002/forma/releases/tag/v0.10.0"
+        "url": "https://github.com/kemiller2002/forma/releases/tag/v0.11.0"
       },
       "artifacts": [
         {
-          "name": "echelon-foundry-design-system-0.10.0.tgz",
+          "name": "echelon-foundry-design-system-0.11.0.tgz",
           "purpose": "package",
           "platform": null,
-          "sha256": "2358d28eea57dc0d26da8205a7b2fc5ec5cd8a53f4b7dd076dce7f707c57e5af"
+          "sha256": "82b8b8e4c844cd51c6f6477665c85f359556b413418f381f353454e81507f1dd"
         },
         {
           "name": "forma-marketing.sha256",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "eb97fd045872ed0816411579a87319e0f4a7379f17c2c6838a51439185e54a13"
+          "sha256": "7b9522cb8359cecc61e1e132b52d16144b03a7f92d3bd6aaa4d0bffb3ef497ce"
         }
       ]
     },
@@ -482,47 +482,47 @@
       "systemId": "arca",
       "role": "project-binding",
       "required": false,
-      "version": "0.5.0",
+      "version": "0.6.0",
       "repository": "kemiller2002/arca",
-      "tag": "v0.5.0",
-      "commit": "5dd00d94de60f82db623211a8e5bcab2ab8b2e84",
+      "tag": "v0.6.0",
+      "commit": "d0ce9daef33101aae88deb0211ee2b59d7ca0ce5",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "nuget-library",
       "executable": null,
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "1cab5320290e6084f873e942465fe2289c8bc952b8ec7ce3a445ad24b8ac2e84"
+        "sha256": "8f2cd0dab3dd8a3e5c67639538b086b97adc93833a3129b4d695632c664c3612"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": null,
-        "url": "https://github.com/kemiller2002/arca/releases/tag/v0.5.0"
+        "url": "https://github.com/kemiller2002/arca/releases/tag/v0.6.0"
       },
       "artifacts": [
         {
-          "name": "EchelonFoundry.Arca.Core.0.5.0.nupkg",
+          "name": "EchelonFoundry.Arca.Core.0.6.0.nupkg",
           "purpose": "package",
           "platform": null,
-          "sha256": "a593126db171bcb94212ae288fffbc821d6b2d0a6b312aa3e3a490843f8afee4"
+          "sha256": "e93c434553819704f57bfc6c9e70ed0333ca2dad37247ce9d4068a7abffc9646"
         },
         {
-          "name": "EchelonFoundry.Arca.GitHub.0.5.0.nupkg",
+          "name": "EchelonFoundry.Arca.GitHub.0.6.0.nupkg",
           "purpose": "package",
           "platform": null,
-          "sha256": "bbd6383ee3c1ca698c83cdb311b1d03665a6231188a65b8e5bad60ef8b3570aa"
+          "sha256": "34f160c4825952f0b2f8c48cb06943bdb2f6c25ed357ced31e9a8d2240c57fe9"
         },
         {
-          "name": "EchelonFoundry.Arca.Limen.0.5.0.nupkg",
+          "name": "EchelonFoundry.Arca.Limen.0.6.0.nupkg",
           "purpose": "package",
           "platform": null,
-          "sha256": "a2fb27e9023698acb14e4228cb657983a9c016aa36880b574e56c945dd175b44"
+          "sha256": "c4ef571f1fd1171cbe1a441ad5cd6d574c5faea148a45effd0b94f4131535a11"
         },
         {
           "name": "checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "d790bd43e67d7ccdfe2fc07d6fa05d33dc54caf341da7bbf88a7dbc882493340"
+          "sha256": "6bce2c70b3f42258cc0de800719b92ca7c984c8b94ee4ebfa5c2485bc1c5e61e"
         }
       ]
     },

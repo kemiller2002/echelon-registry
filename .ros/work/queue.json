@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 69,
+  "nextSeq": 70,
   "items": [
     {
       "id": "WI-0001",
@@ -1443,6 +1443,30 @@
       "attachments": [],
       "createdAt": "2026-10-28T14:16:30.280Z",
       "updatedAt": "2026-10-28T14:23:43Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0069",
+      "title": "Register Forma 0.11.0, Arca 0.6.0 and Conditor 0.10.17 and cut echelon-current 1.32.0 (proposed); the owner's approval takes effect on merge (OD-INDY-8)",
+      "description": "Select Forma 0.11.0 and Arca 0.6.0 (license now PolyForm-Noncommercial-1.0.0, owner-accepted; breaking API DF-ARCA-2026-0014) on top of the approved 1.31.0. Register Conditor 0.10.17, which qualifies the set (REG-RU-007, conditor#120).",
+      "tags": [
+        "release",
+        "channel"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-28T17:34:24.175Z",
+      "updatedAt": "2026-10-28T17:50:21Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
