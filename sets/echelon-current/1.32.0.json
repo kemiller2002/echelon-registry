@@ -274,7 +274,46 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-10-28T17:52:00Z",
+    "statement": [
+      "Adopt the new arca and forma .11",
+      "I approve step 3 when ready and please merge 4 when ready",
+      "I approve"
+    ],
+    "decision": "OD-INDY-8 (kickoff release set: the newest stable, compatible, verified release of each Echelon system, approved in the Registry after Conditor qualification; if a component fails qualification, keep the newest compatible release and record the exception, VER-003), kemiller2002/indy-init docs/OWNER-DECISIONS-2026-10-24.md (indy-init#13). On 2026-10-28 the owner decided Rehearsal 6 adopts Forma 0.11.0 and Arca 0.6.0 (\"Adopt the new arca and forma .11\"), approved this set in advance (\"I approve step 3 when ready\"), accepted Arca 0.6.0's license change from MIT to PolyForm-Noncommercial-1.0.0, decided that 1.32.0 ships Arca 0.6.0 while Chrona, whose store code does not compile against Arca 0.6.0, stays on 1.31.0 until it migrates, and then approved this set (\"I approve\"). Chat timestamps are approximate to the minute; the agent does not see exact message times",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit approval \"I approve\", after REG-RU-007 passed against released Conditor 0.10.17 and Conditor qualified this exact set; no VER-003 exception applies (Chrona's Arca incompatibility is a known consumer incompatibility, not a failed qualification)",
+    "recordedAt": "2026-10-28T17:52:47Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/40739629472/job/122997383280",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.17, on this exact set (commit bed2a6f2); distribution conformance on all five platforms (echelon-registry#103)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40737202482/job/122989400749",
+        "description": "Chrona 1.31.0 -> 1.32.0: the plan names Forma 0.10.0 -> 0.11.0 and Arca 0.5.0 -> 0.6.0 with the release digests and is not applied; Chrona stays on 1.31.0 until it migrates (conditor#120)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40737202482/job/122988838003",
+        "description": "Conditor build-test, including WebPackageUpgradeTests.echelonCurrent132 (Forma 0.10.0 -> 0.11.0 by its exact release-asset pin) and WebScaffoldTests.runKickoffSet132 (Arca 0.6.0 from the release-asset feed with the real package digests) (conditor#120)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40737202482/job/122989400657",
+        "description": "Conditor echelon-current sweep qualification on 1.32.0 (conditor#120)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40738353326",
+        "description": "Release of Conditor v0.10.17 (94308dd6), which carries that qualification (conditor#120)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
