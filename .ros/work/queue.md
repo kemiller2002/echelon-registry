@@ -68,4 +68,4 @@
 | WI-0065 | Register Conditor 0.10.13 (Indy preset on echelon-current 1.28.0) and verify REG-RU-007 | complete |  | medium |
 | WI-0066 | Cut echelon-current 1.29.0 (proposed): register Praxis 3.22.0, Ordo 1.18.0, Dokimos 0.8.0 and percepta-semantic 0.3.0 and select them; the owner's approval follows Conditor qualification (OD-INDY-8) | complete | release, channel | high |
 | WI-0067 | Register Forma 0.10.0 and cut echelon-current 1.30.0 (proposed): select Forma 0.10.0 on top of 1.29.0; the owner's approval follows Conditor qualification (OD-INDY-8) | complete | release, channel | high |
-| WI-0068 | Register Praxis 3.23.0, Ordo 1.19.0, Dokimos 0.9.0, Limen 0.9.1 and Conditor 0.10.16 and cut echelon-current 1.31.0 (proposed); the owner's approval takes effect on merge (OD-INDY-8) | ready | release, channel | high |
+| WI-0068 | Register Praxis 3.23.0, Ordo 1.19.0, Dokimos 0.9.0, Limen 0.9.1 and Conditor 0.10.16 and cut echelon-current 1.31.0 (proposed); the owner's approval takes effect on merge (OD-INDY-8) | complete | release, channel | high |
