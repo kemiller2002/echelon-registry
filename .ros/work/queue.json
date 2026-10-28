@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 67,
+  "nextSeq": 69,
   "items": [
     {
       "id": "WI-0001",
@@ -1420,6 +1420,30 @@
       "createdAt": "2026-10-27T19:40:22Z",
       "updatedAt": "2026-10-27T20:50:43Z",
       "createdBy": "anthropic/claude-code",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0068",
+      "title": "Register Praxis 3.23.0, Ordo 1.19.0, Dokimos 0.9.0, Limen 0.9.1 and Conditor 0.10.16 and cut echelon-current 1.31.0 (proposed); the owner's approval takes effect on merge (OD-INDY-8)",
+      "description": "Select Praxis 3.23.0, Ordo 1.19.0, Dokimos 0.9.0 and Limen 0.9.1 (license now PolyForm-Noncommercial-1.0.0, owner-approved) on top of the approved 1.30.0; limen-fsharp stays at 0.9.0. Register Conditor 0.10.16, which qualifies the set (REG-RU-007).",
+      "tags": [
+        "release",
+        "channel"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-28T14:16:30.280Z",
+      "updatedAt": "2026-10-28T14:16:35Z",
+      "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
         "id": "anthropic/claude-code",

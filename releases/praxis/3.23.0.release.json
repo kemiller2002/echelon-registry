@@ -1,0 +1,75 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "praxis",
+  "version": "3.23.0",
+  "repository": "kemiller2002/praxis",
+  "tag": "v3.23.0",
+  "commit": "398af6dd1509afc93d0f3aa2612ba2d2f5c9c32e",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "self-contained-native-cli",
+  "executable": "praxis",
+  "compatibilityAliases": [
+    "ros"
+  ],
+  "provides": [
+    {
+      "id": "agent.identity",
+      "contractVersion": 1
+    },
+    {
+      "id": "engineering.metrics",
+      "contractVersion": 1
+    }
+  ],
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.23.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "native-checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "b1f283b4b3fec46d1dfca6db79d69b5f649527a442fb0b8d744d48e3706b0677"
+    },
+    {
+      "name": "praxis-linux-arm64.tar.gz",
+      "purpose": "executable",
+      "platform": "linux-arm64",
+      "sha256": "c9ab2cfdbba447cafda88b0c3106f010b4b1c3e893e9fe5337e214ec0a401d42"
+    },
+    {
+      "name": "praxis-linux-musl-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "linux-musl-x64",
+      "sha256": "41be82fb932464246ad9f06e463e60430398f6adc7c1964992bdebdab38d087e"
+    },
+    {
+      "name": "praxis-linux-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "linux-x64",
+      "sha256": "63ae6b31843901ca37fa23936973253cc8fa2df096ca9620b83c66a15b01060b"
+    },
+    {
+      "name": "praxis-osx-arm64.tar.gz",
+      "purpose": "executable",
+      "platform": "osx-arm64",
+      "sha256": "a8becc6fb62f272aad36450157b513a6b5d410c5e09b863813b00e6d900a3dad"
+    },
+    {
+      "name": "praxis-osx-x64.tar.gz",
+      "purpose": "executable",
+      "platform": "osx-x64",
+      "sha256": "fe04f2d786abf419fa64cc00a5366ec954338fbbd26341dc682fe38cbad658af"
+    },
+    {
+      "name": "praxis-win-x64.zip",
+      "purpose": "executable",
+      "platform": "win-x64",
+      "sha256": "2b336d7e3540dbc4ada91c938554da039d55c28412373e78b402ccc5d12597b4"
+    }
+  ]
+}

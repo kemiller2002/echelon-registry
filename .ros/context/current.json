@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-10-27T20:50:43Z",
+  "updatedAt": "2026-10-28T14:16:35Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -2701,6 +2701,17 @@
       "blockReason": "Waiting on a Conditor release that qualifies Forma 0.10.0 (REG-RU-007) and the owner's approval of 1.30.0 (OD-INDY-8)",
       "completedAt": "2026-10-27T20:50:43Z",
       "conclusion": "Forma 0.10.0 registered and selected in echelon-current 1.30.0; Conditor 0.10.15 (conditor#115) qualifies it (REG-RU-007 PASS in CI); the owner approved 1.30.0 on 2026-10-27. Indy Rehearsal 5 stays on 1.29.0; Rehearsal 6 adopts Forma 0.10.0."
+    },
+    {
+      "id": "WI-0068",
+      "type": "task",
+      "state": "active",
+      "semanticState": "active",
+      "evidence": [],
+      "updatedAt": "2026-10-28T14:16:35Z",
+      "telemetryExecutionIds": [
+        "EXE-20261028T141636461Z-ee19d150"
+      ]
     }
   ]
 }
