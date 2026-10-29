@@ -1,0 +1,424 @@
+{
+  "schema": "echelon.release-set/v1",
+  "channel": "echelon-current",
+  "profile": {
+    "id": "echelon-current",
+    "version": "1.33.0",
+    "path": "profiles/echelon-current.profile.json",
+    "sha256": "0ba5baeb04b8ddbde16e5b62391c44ccd37683bd74954ee060fed8e2b27922b7"
+  },
+  "catalogSnapshot": {
+    "path": "snapshots/echelon-current.catalog.json",
+    "sha256": "e45a414d087febe50c846ec523cf64cb7a41062e32a1a3c76c522ba436e5b905"
+  },
+  "channelIndex": {
+    "path": "channels/echelon-current/channel.json",
+    "sha256": "5b31ea9da675c11e16b0b72750210ecd76adf20413fa5c858c93a6f4f88912e2"
+  },
+  "platforms": [
+    {
+      "platform": "linux-x64",
+      "path": "channels/echelon-current/linux-x64.json",
+      "sha256": "de658f5aba301b7c588787d1ff3ca9fd64aad01852af53d8915eb43804401ac7"
+    },
+    {
+      "platform": "linux-arm64",
+      "path": "channels/echelon-current/linux-arm64.json",
+      "sha256": "78936ad17299931ac9d53a0b7ba4a98ca373fc4d1b5d257eacee49c108cca0c5"
+    },
+    {
+      "platform": "osx-x64",
+      "path": "channels/echelon-current/osx-x64.json",
+      "sha256": "f0fa5cc8e095aac119afc8e7cca6915d0380426cf6fc01486c04b33eed139be7"
+    },
+    {
+      "platform": "osx-arm64",
+      "path": "channels/echelon-current/osx-arm64.json",
+      "sha256": "d410e580c3a7dec734a675d003e43ff4f98ac40b9979a7e96b733019496cf57a"
+    },
+    {
+      "platform": "win-x64",
+      "path": "channels/echelon-current/win-x64.json",
+      "sha256": "7e2e84d017aff3e3a80a49151afbf6c33e7d86df9b38234061f2232efc48c699"
+    }
+  ],
+  "components": [
+    {
+      "systemId": "praxis",
+      "version": "3.24.0",
+      "releaseManifestSha256": "40ace1372475eae7bc1abed384b115c29c1bf86f514537d014a517d1c9871a12",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.19.0",
+      "releaseManifestSha256": "b6287549fc6615c89d89b832991924f8b98863391d4112cdc52b166c66506410",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "percepta",
+      "version": "0.1.0",
+      "releaseManifestSha256": "07b6291c63ff25e6b669edb8c845e48ba76831b6a6133efa4ad3a390439b1b2b",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "percepta-semantic",
+      "version": "0.3.0",
+      "releaseManifestSha256": "ea5acb7296017ee101d55c8f4d6cb80db82d34b86695ec52eec526f40785a278",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.9.0",
+      "releaseManifestSha256": "76adde4a97c91ac6274b9a3b8aee82ef9580d7b459147e2fa9b5dd37e9348bed",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "visual-engineering",
+      "version": "1.0.1",
+      "releaseManifestSha256": "23ab4fdb38d3fc7827519cc3c29df88c950211db1d53d114c53f36a662a0dbda",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "communication-engineering",
+      "version": "1.0.0",
+      "releaseManifestSha256": "d4b79053301635b6335caf81c2ca28b0721cca4a78967501be820a8eb7118296",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "tutela",
+      "version": "0.1.0",
+      "releaseManifestSha256": "5db1e8a1f039ae88b2b9426c7cbeec1783b40e29d58b0dfd40dfa90104a3c4ba",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "aegis",
+      "version": "1.0.0",
+      "releaseManifestSha256": "4530cfa3396c1e57d3e1a6500c661cd2d520236e852d1d9e88aa44c385d0bd6b",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "limen",
+      "version": "0.9.1",
+      "releaseManifestSha256": "54f088e76880308b2db1f7d447ad946d95d1a7f384893f0da2ae63937f6a1655",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "forma",
+      "version": "0.12.0",
+      "releaseManifestSha256": "0175a2879a7ad9cfc4e79eb65d7c89ff916fc65be6458e4615f8fcacc75a2ab2",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "folio",
+      "version": "0.4.1",
+      "releaseManifestSha256": "d453d980ce7f81e3c5bd227e34bd8d287417ea79ca09aa97ae9fdc56a28c6880",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "strata",
+      "version": "0.1.1",
+      "releaseManifestSha256": "262bf735e8af934a5d104cad910e34d55e8ffcf310696f8604560bc73eb8ab04",
+      "platforms": [
+        "linux-x64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "arca",
+      "version": "0.7.0",
+      "releaseManifestSha256": "dca9f0ebd2ab0edc1c2a7a5e902359df45d3a8b664d25b779a6f48cd4189b600",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "fides",
+      "version": "0.2.0",
+      "releaseManifestSha256": "0ef2204d8ec298e6d930ce11d66629794486a5e31367959d7f9dbd39468b6a2a",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "summa-contracts",
+      "version": "0.1.0",
+      "releaseManifestSha256": "b952e4c667bc83aae23092397e8de3bcd75ecd2a6d59ef7d1047f2f5d094bcfe",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    },
+    {
+      "systemId": "limen-fsharp",
+      "version": "0.9.0",
+      "releaseManifestSha256": "d8aec120fdaff6bb2a9dcd6e4d79b8a92d69f8cc0227de1c6b7166c6c3b8ce3a",
+      "platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "osx-x64",
+        "osx-arm64",
+        "win-x64"
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "verified-completion-attested",
+      "platform": "linux-x64",
+      "state": "enabled"
+    },
+    {
+      "id": "verified-completion-attested",
+      "platform": "linux-arm64",
+      "state": "enabled"
+    },
+    {
+      "id": "verified-completion-attested",
+      "platform": "osx-x64",
+      "state": "enabled"
+    },
+    {
+      "id": "verified-completion-attested",
+      "platform": "osx-arm64",
+      "state": "enabled"
+    },
+    {
+      "id": "verified-completion-attested",
+      "platform": "win-x64",
+      "state": "enabled"
+    }
+  ],
+  "status": "proposed",
+  "assessments": [
+    {
+      "systemId": "praxis",
+      "version": "3.14.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.24.0, which carries its changes; qualified by released Conditor but in no catalog snapshot"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.15.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.24.0, which carries its changes; never qualified by a released Conditor and in no catalog snapshot"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.17.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.24.0, which carries its changes; never qualified by a released Conditor and in no catalog snapshot"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.18.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.24.0, which carries its changes; never qualified by a released Conditor and in no catalog snapshot"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.19.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.24.0, which carries its changes; never qualified by a released Conditor and in no catalog snapshot"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.20.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.24.0, which carries its changes (via 3.21.0)"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.21.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.24.0, which carries its changes (via 3.22.0)"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.22.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Praxis 3.24.0, which carries its changes (via 3.23.0)"
+    },
+    {
+      "systemId": "praxis",
+      "version": "3.23.0",
+      "assessment": "superseded",
+      "reason": "Replaced by Praxis 3.24.0 (v3.24.0, dccf8400): 3.23.0 plus the autonomy domain (praxis autonomy: policy check, owner-signed run authorization, revocation, review, a fail-closed evaluator and the merge lifecycle with receipts; WI-0104, praxis#298), owner-delegated agent authority (WI-0105, praxis#299) and the starter CI workflow fix (the scaffolded praxis-validation.yml runs once per ref with a concurrency group and a timeout; WI-0106, praxis#300). provides is unchanged (agent.identity 1, engineering.metrics 1); the release's echelon-release.json differs from 3.23.0's only in version, tag, commit and digests. Every executable digest matches native-checksums.txt and GitHub's API digest, and praxis-linux-x64.tar.gz verifies with gh attestation verify (native-release.yml at dccf8400). Released Conditor 0.10.18 qualifies it as an upgrade --current target from 3.23.0 (REG-RU-007, conditor#123)"
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.17.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Ordo 1.19.0, which carries its changes (via 1.18.0)"
+    },
+    {
+      "systemId": "ordo",
+      "version": "1.18.0",
+      "assessment": "superseded",
+      "reason": "Replaced by Ordo 1.19.0 (v1.19.0, 1e8a9578): sde verification schedule gains policy-aware freshness (ordo#108), per-obligation acceptance-contract freshness (ordo#109), the FP-PROCESS-THIS-RUN policy (ordo#110) and a --reuse-context option; provides unchanged (none declared). Released Conditor 0.10.16 qualifies it (REG-RU-007, conditor#119) through the integrity-only gate"
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.6.0",
+      "assessment": "superseded",
+      "reason": "Superseded by Dokimos 0.7.0 and later: the verified-completion-attested pairing (Praxis >=3.17.0 requires Dokimos >=0.7.0) refuses Dokimos 0.6.0 beside the selected Praxis 3.23.0"
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.7.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Dokimos 0.9.0, which carries its changes (via 0.8.0); provides keeps completion.verify-attested 1 and echelon.repository-lifecycle 1"
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.8.0",
+      "assessment": "superseded",
+      "reason": "Replaced by Dokimos 0.9.0 (dokimos-v0.9.0, 2dab315b): passing and failing evidence recorded durably in the evidence store, where a failure blocks reuse (dokimos evidence record, dokimos#58), and mandatory final verification: the release checkpoint refuses evidence reuse (dokimos evidence plan --checkpoint release, dokimos#59). provides adds evidence.reuse-plan 1 and evidence.provenance-record 1 and keeps completion.verify-attested 1 and echelon.repository-lifecycle 1, so the verified-completion-attested pairing stays enabled. Not a REG-RU-007 declared component; Conditor installs it from the set through the generic lifecycle contract (conditor#119)"
+    },
+    {
+      "systemId": "percepta-semantic",
+      "version": "0.2.1",
+      "assessment": "superseded",
+      "reason": "Replaced by percepta-semantic 0.3.0 (percepta-semantic-v0.3.0, c9747c26): adds percepta verify-app (screen bindings and state injection for served applications, percepta#43); provides percepta.evidence 1 unchanged, same five platforms. Host tool, not a REG-RU-007 declared component"
+    },
+    {
+      "systemId": "limen",
+      "version": "0.9.0",
+      "assessment": "superseded",
+      "reason": "Replaced by Limen 0.9.1 (v0.9.1, 743cdb9b; npm @echelon-foundry/limen with SLSA provenance naming publish.yml at that commit): the build stamps the package version into the browser-kernel artifact (window.__ECHELON_RUNTIME__, limen#110) and the F# CLI gains limen wasm-check (limen#113, limen#114), with no change to the source, the protocol or the routing module. The package license changes from MIT (0.9.0) to PolyForm-Noncommercial-1.0.0 (0.9.1); the owner (kemiller2002) explicitly decided to ship 0.9.1 with that license. Released Conditor 0.10.16 qualifies it (REG-RU-007, conditor#119)"
+    },
+    {
+      "systemId": "limen-fsharp",
+      "version": "0.9.1",
+      "assessment": "pending",
+      "reason": "Released with Limen v0.9.1 (EchelonFoundry.Limen.Contract, .Guest, .Store and .Routing 0.9.1) but not qualified and not registered; limen-fsharp stays at 0.9.0"
+    },
+    {
+      "systemId": "aegis",
+      "version": "2.0.0",
+      "assessment": "pending",
+      "reason": "Not registered and not verified from this session; outside the profile range >=1.0.0 <2.0.0, so a major-version profile change would be needed to select it"
+    },
+    {
+      "systemId": "forma",
+      "version": "0.9.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Forma 0.12.0, which carries its changes (via 0.10.0)"
+    },
+    {
+      "systemId": "forma",
+      "version": "0.9.1",
+      "assessment": "superseded",
+      "reason": "Never tagged: its release check failed on 2026-10-22 (run 39780631501) on the marketing fixture pin; Forma 0.10.0 carries its changes. Not registered"
+    },
+    {
+      "systemId": "forma",
+      "version": "0.10.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Forma 0.12.0, which carries its changes (via 0.11.0)"
+    },
+    {
+      "systemId": "forma",
+      "version": "0.11.0",
+      "assessment": "superseded",
+      "reason": "Replaced by Forma 0.12.0 (v0.12.0, 38ba6701): diagram non-text contrast and status tokens (R7-REM-009, forma#173). Workflow validation is stricter: the new error rule A11Y-NONTEXT-CONTRAST (WCAG 1.4.11, 3:1) judges literal colours on nodes, groups, legend swatches and edges, so a document that validated on 0.11.0 can now fail and forma-workflow render refuses it (exit 1). Forma's migration: use token:status-* or token:border-functional, pass the host's pinned theme (--theme light|dark, ValidationOptions.Theme), or adjust literal colours to reach 3:1. token:status-warning, -danger, -success and -info are added to the workflow colour vocabulary and render to var(--ef-color-status-*). The package has the same 578 files as 0.11.0 and adds or removes no CSS custom property or class; the license is unchanged (PolyForm-Noncommercial-1.0.0). Installed from its GitHub release asset, as the 0.11.0 record is; every asset digest matches GitHub's API digest and the CSS bundles match forma-marketing.sha256. The release asset carries no build-provenance attestation, nor did 0.11.0's. 0.12.0 is also published to npm as @echelon-foundry/design-system@0.12.0 (dist-tag latest), byte-identical to the release asset, with npm SLSA provenance. Released Conditor 0.10.18 qualifies it as an exact web-package binding target (REG-RU-007, conditor#123)"
+    },
+    {
+      "systemId": "arca",
+      "version": "0.5.0",
+      "assessment": "superseded",
+      "reason": "Superseded by the selected Arca 0.7.0, which carries its changes (via 0.6.0: the breaking opaque queue and receipt types of DF-ARCA-2026-0014, and the license change from MIT to PolyForm-Noncommercial-1.0.0 that the owner accepted). Known consumer incompatibility, not a VER-003 exception: Chrona declares arca 0.5.0 (conditor.json and Directory.Packages.props on Chrona main, 481e389) and its store code does not compile against 0.6.0 or later, so Chrona stays on 1.31.0 until it migrates"
+    },
+    {
+      "systemId": "arca",
+      "version": "0.6.0",
+      "assessment": "superseded",
+      "reason": "Replaced by Arca 0.7.0 (v0.7.0, 7e1f90d6), a minor release (DF-ARCA-2026-0015; arca#47, arca#48) for bounded queue-sync scheduling (ARCA-OFF-010). It adds Deferral (why an attempt stopped short, typed) with SyncAttempt, OfflineSync.attempt and OfflineSync.drive; RetryPolicy (a policy that could spin is refused); SyncSchedule (pure transitions with isDue and wakeAt); and SaveState.ofQueue. OfflineSync.step and run keep their results. Fixes: a GitHub 5xx read is ARCA.GITHUB.SERVER_ERROR, transient, and a 5xx to the ref update is an unknown outcome reconciled by idempotency key; ConnectivityChanged acts only on a change. Source-compatibility caveat: the public union CallFailure (Arca.GitHub) gains the case ServerError, so an exhaustive match on it in application code needs that case; otherwise 0.6.0 code compiles and behaves as before. The persisted queue format is unchanged and the license stays PolyForm-Noncommercial-1.0.0 (all three nuspecs). The three .nupkg files match checksums.txt and GitHub's API digests, and each verifies with gh attestation verify (release.yml on main at 7e1f90d6). Package dependencies are unchanged from 0.6.0: EchelonFoundry.Arca.Limen 0.7.0 needs EchelonFoundry.Limen.Store and .Contract >= 0.9.0 (limen-fsharp 0.9.0 selected), and Arca.GitHub needs Aegis.Core and Aegis.Integration.GitHub >= 1.0.0 (aegis 1.0.0 selected); EchelonFoundry.Fides.Arca 0.2.0 needs Arca.Core >= 0.1.0. Conditor has no Arca descriptor: released Conditor 0.10.18 accepts it as an unlisted nuget-library and installs the set's selection from its release-asset NuGet feed against the Registry's sha256 (REG-RU-007, conditor#123). Known consumer incompatibility, not a VER-003 exception: Chrona declares arca 0.5.0 and does not compile against 0.6.0 or later; it stays on 1.31.0 until it migrates, and Conditor 0.10.18's CI plans Chrona's 1.33.0 moves without applying them (conditor#123). No component failed qualification"
+    }
+  ]
+}
