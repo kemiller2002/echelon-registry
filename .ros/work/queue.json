@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 70,
+  "nextSeq": 71,
   "items": [
     {
       "id": "WI-0001",
@@ -1467,6 +1467,30 @@
       "attachments": [],
       "createdAt": "2026-10-28T17:34:24.175Z",
       "updatedAt": "2026-10-28T17:50:21Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0070",
+      "title": "Register Arca 0.7.0, Forma 0.12.0, Praxis 3.24.0 and Conditor 0.10.18 and cut echelon-current 1.33.0 (proposed); the owner's approval is pending (OD-INDY-8)",
+      "description": "Select Arca 0.7.0 (adds SyncSchedule, RetryPolicy, SaveState, Deferral; CallFailure gains ServerError, DF-ARCA-2026-0015), Forma 0.12.0 (A11Y-NONTEXT-CONTRAST and token:status-*) and Praxis 3.24.0 (WI-0104..0106) on top of 1.32.0. Register Conditor 0.10.18, which qualifies the set (REG-RU-007). No approval is recorded; the owner has not approved 1.33.0.",
+      "tags": [
+        "release",
+        "channel"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-10-29T16:00:30.585Z",
+      "updatedAt": "2026-10-29T16:00:33.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
