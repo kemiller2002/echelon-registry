@@ -274,7 +274,46 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-10-29T16:15:00Z",
+    "statement": [
+      "Cut them, then registry",
+      "Then update the echelon registry when they are released",
+      "Yes"
+    ],
+    "decision": "OD-INDY-8 (kickoff release set: the newest stable, compatible, verified release of each Echelon system, approved in the Registry after Conditor qualification; if a component fails qualification, keep the newest compatible release and record the exception, VER-003), kemiller2002/indy-init docs/OWNER-DECISIONS-2026-10-24.md (indy-init#13). On 2026-10-29 the owner instructed the releases of Arca 0.7.0, Forma 0.12.0, Praxis 3.24.0 and Conditor 0.10.18 and the Registry update (\"Cut them, then registry\"; \"Then update the echelon registry when they are released\"), and, asked \"Do you approve echelon-current 1.33.0: Praxis 3.24.0, Forma 0.12.0 (stricter diagram contrast validation) and Arca 0.7.0 (CallFailure.ServerError caveat), with Chrona staying on 1.31.0 until it migrates off Arca 0.5.0?\", answered \"Yes\". Chat timestamps are approximate to the minute; the agent does not see exact message times",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit approval \"Yes\", after REG-RU-007 passed against released Conditor 0.10.18 and Conditor qualified this exact set; no VER-003 exception applies (Chrona's Arca incompatibility is a known consumer incompatibility, not a failed qualification)",
+    "recordedAt": "2026-10-29T16:15:40Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/40909363314/job/123572791281",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.18, on this exact set (commit 3bf99f8b); distribution conformance on all five platforms (echelon-registry#104)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40905267511/job/123558756786",
+        "description": "Conditor echelon-current 1.33.0 kickoff-set qualification against the real releases (conditor#123)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40905267511/job/123558755966",
+        "description": "Conditor echelon-current sweep qualification, applying Praxis 3.24.0 (conditor#123)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40905267511/job/123558183661",
+        "description": "Conditor build-test, including WebPackageUpgradeTests for Forma 0.11.0 -> 0.12.0 by its exact release-asset pin (conditor#123)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/40906236445",
+        "description": "Release of Conditor v0.10.18 (2d6ae48e), which carries that qualification (conditor#123)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
