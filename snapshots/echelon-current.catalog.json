@@ -161,6 +161,12 @@
       "sha256": "6e45c76104f6337f49571cdac3e0434a7a919f5a95a09f2ba6660365cdffcc16"
     },
     {
+      "systemId": "praxis",
+      "version": "3.24.0",
+      "manifest": "releases/praxis/3.24.0.release.json",
+      "sha256": "40ace1372475eae7bc1abed384b115c29c1bf86f514537d014a517d1c9871a12"
+    },
+    {
       "systemId": "ordo",
       "version": "1.4.0",
       "manifest": "releases/ordo/1.4.0.release.json",
@@ -359,6 +365,12 @@
       "sha256": "1b3ce0040332b84e5a16fb1989970967356891cda57c74415af8c4f305b0c747"
     },
     {
+      "systemId": "forma",
+      "version": "0.12.0",
+      "manifest": "releases/forma/0.12.0.release.json",
+      "sha256": "0175a2879a7ad9cfc4e79eb65d7c89ff916fc65be6458e4615f8fcacc75a2ab2"
+    },
+    {
       "systemId": "folio",
       "version": "0.3.0",
       "manifest": "releases/folio/0.3.0.release.json",
@@ -437,6 +449,12 @@
       "sha256": "8f2cd0dab3dd8a3e5c67639538b086b97adc93833a3129b4d695632c664c3612"
     },
     {
+      "systemId": "arca",
+      "version": "0.7.0",
+      "manifest": "releases/arca/0.7.0.release.json",
+      "sha256": "dca9f0ebd2ab0edc1c2a7a5e902359df45d3a8b664d25b779a6f48cd4189b600"
+    },
+    {
       "systemId": "fides",
       "version": "0.1.0",
       "manifest": "releases/fides/0.1.0.release.json",
@@ -488,9 +506,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.32.0",
+      "version": "1.33.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "001fb6807901ce496b6e6faeee501c26d7c606e6f313ffed908c083e6f8a8d90"
+      "sha256": "0ba5baeb04b8ddbde16e5b62391c44ccd37683bd74954ee060fed8e2b27922b7"
     }
   ]
 }

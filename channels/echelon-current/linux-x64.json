@@ -2,8 +2,8 @@
   "schema": "echelon.resolved-release-set/v1",
   "profile": {
     "id": "echelon-current",
-    "version": "1.32.0",
-    "sha256": "001fb6807901ce496b6e6faeee501c26d7c606e6f313ffed908c083e6f8a8d90"
+    "version": "1.33.0",
+    "sha256": "0ba5baeb04b8ddbde16e5b62391c44ccd37683bd74954ee060fed8e2b27922b7"
   },
   "platform": "linux-x64",
   "resolver": {
@@ -11,42 +11,42 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "a6c21d3dbb6352fdcc0672719789fdc729460c2cb1dbcd3e2e0ef6f8c254cfde"
+    "sha256": "e45a414d087febe50c846ec523cf64cb7a41062e32a1a3c76c522ba436e5b905"
   },
   "components": [
     {
       "systemId": "praxis",
       "role": "host-tool",
       "required": true,
-      "version": "3.23.0",
+      "version": "3.24.0",
       "repository": "kemiller2002/praxis",
-      "tag": "v3.23.0",
-      "commit": "398af6dd1509afc93d0f3aa2612ba2d2f5c9c32e",
+      "tag": "v3.24.0",
+      "commit": "dccf840061723627b64fb625fc8c16e74635fc10",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "self-contained-native-cli",
       "executable": "praxis",
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "6e45c76104f6337f49571cdac3e0434a7a919f5a95a09f2ba6660365cdffcc16"
+        "sha256": "40ace1372475eae7bc1abed384b115c29c1bf86f514537d014a517d1c9871a12"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": null,
-        "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.23.0"
+        "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.24.0"
       },
       "artifacts": [
         {
           "name": "praxis-linux-x64.tar.gz",
           "purpose": "executable",
           "platform": "linux-x64",
-          "sha256": "63ae6b31843901ca37fa23936973253cc8fa2df096ca9620b83c66a15b01060b"
+          "sha256": "95f2455cd0afeb9b58db47447ff3588f7e2ad864c9ac8be8ba29077dc742f26c"
         },
         {
           "name": "native-checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "b1f283b4b3fec46d1dfca6db79d69b5f649527a442fb0b8d744d48e3706b0677"
+          "sha256": "369dc868cf082a6764a2456fda3c03d5e9fcade7bf90e04672b3af04bc3b4745"
         }
       ]
     },
@@ -370,35 +370,35 @@
       "systemId": "forma",
       "role": "project-binding",
       "required": true,
-      "version": "0.11.0",
+      "version": "0.12.0",
       "repository": "kemiller2002/forma",
-      "tag": "v0.11.0",
-      "commit": "7a545813563457716c6bb640a86ba01517e384c7",
+      "tag": "v0.12.0",
+      "commit": "38ba6701e6e6adf1d87f33868b86321d14453f0e",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "web-package",
       "executable": null,
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "1b3ce0040332b84e5a16fb1989970967356891cda57c74415af8c4f305b0c747"
+        "sha256": "0175a2879a7ad9cfc4e79eb65d7c89ff916fc65be6458e4615f8fcacc75a2ab2"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": "@echelon-foundry/design-system",
-        "url": "https://github.com/kemiller2002/forma/releases/tag/v0.11.0"
+        "url": "https://github.com/kemiller2002/forma/releases/tag/v0.12.0"
       },
       "artifacts": [
         {
-          "name": "echelon-foundry-design-system-0.11.0.tgz",
+          "name": "echelon-foundry-design-system-0.12.0.tgz",
           "purpose": "package",
           "platform": null,
-          "sha256": "82b8b8e4c844cd51c6f6477665c85f359556b413418f381f353454e81507f1dd"
+          "sha256": "b824568d528562658ded3d53ecd06504e907f7d42129facd86a8f298d1cb7aae"
         },
         {
           "name": "forma-marketing.sha256",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "7b9522cb8359cecc61e1e132b52d16144b03a7f92d3bd6aaa4d0bffb3ef497ce"
+          "sha256": "5d50ee1e181d843bdf6cfe0dd344a4e67f104d2cd1f3c118d19b89670f9096ee"
         }
       ]
     },
@@ -482,47 +482,47 @@
       "systemId": "arca",
       "role": "project-binding",
       "required": false,
-      "version": "0.6.0",
+      "version": "0.7.0",
       "repository": "kemiller2002/arca",
-      "tag": "v0.6.0",
-      "commit": "d0ce9daef33101aae88deb0211ee2b59d7ca0ce5",
+      "tag": "v0.7.0",
+      "commit": "7e1f90d6b461af68439a4289f46ee5e6efa5921d",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "nuget-library",
       "executable": null,
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "8f2cd0dab3dd8a3e5c67639538b086b97adc93833a3129b4d695632c664c3612"
+        "sha256": "dca9f0ebd2ab0edc1c2a7a5e902359df45d3a8b664d25b779a6f48cd4189b600"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": null,
-        "url": "https://github.com/kemiller2002/arca/releases/tag/v0.6.0"
+        "url": "https://github.com/kemiller2002/arca/releases/tag/v0.7.0"
       },
       "artifacts": [
         {
-          "name": "EchelonFoundry.Arca.Core.0.6.0.nupkg",
+          "name": "EchelonFoundry.Arca.Core.0.7.0.nupkg",
           "purpose": "package",
           "platform": null,
-          "sha256": "e93c434553819704f57bfc6c9e70ed0333ca2dad37247ce9d4068a7abffc9646"
+          "sha256": "931a1f29c1df1f815104a58daa85cca59d38f68fff6598bd20c0327edafd7622"
         },
         {
-          "name": "EchelonFoundry.Arca.GitHub.0.6.0.nupkg",
+          "name": "EchelonFoundry.Arca.GitHub.0.7.0.nupkg",
           "purpose": "package",
           "platform": null,
-          "sha256": "34f160c4825952f0b2f8c48cb06943bdb2f6c25ed357ced31e9a8d2240c57fe9"
+          "sha256": "9f8ef324119e25cba1c3d9dfcfac9c457db31b78ac7f30ddc2eef1499b20bc94"
         },
         {
-          "name": "EchelonFoundry.Arca.Limen.0.6.0.nupkg",
+          "name": "EchelonFoundry.Arca.Limen.0.7.0.nupkg",
           "purpose": "package",
           "platform": null,
-          "sha256": "c4ef571f1fd1171cbe1a441ad5cd6d574c5faea148a45effd0b94f4131535a11"
+          "sha256": "966966a23dc85e02bbb69f8dd82525af23336e38daaf542305980f8d853c15e7"
         },
         {
           "name": "checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "6bce2c70b3f42258cc0de800719b92ca7c984c8b94ee4ebfa5c2485bc1c5e61e"
+          "sha256": "0d5f20005137405b6e9e6dd699dfa098d7cefc310d53497846749c56bb860590"
         }
       ]
     },
@@ -678,7 +678,7 @@
       "host": {
         "systemId": "praxis",
         "range": "\u003E=3.17.0",
-        "selected": "3.23.0"
+        "selected": "3.24.0"
       },
       "requires": {
         "systemId": "dokimos",
