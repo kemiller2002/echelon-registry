@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 71,
+  "nextSeq": 72,
   "items": [
     {
       "id": "WI-0001",
@@ -1491,6 +1491,27 @@
       "attachments": [],
       "createdAt": "2026-10-29T16:00:30.585Z",
       "updatedAt": "2026-10-29T16:12:23.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0071",
+      "title": "Register Forma 0.13.0 (layout reliability release)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-30T11:01:19.405Z",
+      "updatedAt": "2026-10-30T11:02:27.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
