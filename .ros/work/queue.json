@@ -1508,10 +1508,10 @@
       "description": null,
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-10-30T11:01:19.405Z",
-      "updatedAt": "2026-10-30T11:01:24.000Z",
+      "updatedAt": "2026-10-30T11:02:27.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
