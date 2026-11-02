@@ -2981,7 +2981,27 @@
       "updatedAt": "2026-11-02T21:23:55Z",
       "telemetryExecutionIds": [
         "EXE-20261102T212356977Z-5528904d"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "83e702142717c24ca34a4dfa",
+        "recordedAt": "2026-11-02T21:28:16Z",
+        "executionId": "EXE-20261102T212356977Z-5528904d",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-current-1.35.0",
+        "commit": "de79ba7bea2f49822249e6c6fd8f15c8642c4d9a",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-current-1.35.0",
+        "remoteCommit": "de79ba7bea2f49822249e6c6fd8f15c8642c4d9a",
+        "summary": "Registered Dokimos 0.10.0 and percepta-semantic 0.4.0; cut echelon-current 1.35.0 (proposed); REG-RU-007 passes against released Conditor 0.10.19",
+        "nextAction": "Conditor kickoff-set qualification of 1.35.0, then the owner's approval",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      }
     }
   ]
 }
