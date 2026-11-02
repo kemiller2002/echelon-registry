@@ -72,3 +72,4 @@
 | WI-0069 | Register Forma 0.11.0, Arca 0.6.0 and Conditor 0.10.17 and cut echelon-current 1.32.0 (proposed); the owner's approval takes effect on merge (OD-INDY-8) | complete | release, channel | high |
 | WI-0070 | Register Arca 0.7.0, Forma 0.12.0, Praxis 3.24.0 and Conditor 0.10.18 and cut echelon-current 1.33.0 (proposed); the owner's approval is pending (OD-INDY-8) | complete | release, channel | high |
 | WI-0071 | Register Forma 0.13.0 (layout reliability release) | complete |  | medium |
+| WI-0072 | Register Ordo 1.20.0 and cut echelon-current 1.34.0 (Ordo 1.20.0, Forma 0.13.0) | complete |  | medium |
