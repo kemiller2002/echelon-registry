@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 72,
+  "nextSeq": 73,
   "items": [
     {
       "id": "WI-0001",
@@ -1512,6 +1512,27 @@
       "attachments": [],
       "createdAt": "2026-10-30T11:01:19.405Z",
       "updatedAt": "2026-10-30T11:02:27.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0072",
+      "title": "Register Ordo 1.20.0 and cut echelon-current 1.34.0 (Ordo 1.20.0, Forma 0.13.0)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-11-02T13:46:14.813Z",
+      "updatedAt": "2026-11-02T13:46:20.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
