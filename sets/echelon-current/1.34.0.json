@@ -274,7 +274,50 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-11-02T14:09:00Z",
+    "statement": [
+      "Can yoy update ordo, the echelon registry, and anything that needs to be updated?  We want to use all current echelon systems",
+      "Yes, approve 1.34.0 and record it"
+    ],
+    "decision": "OD-INDY-8 (kickoff release set: the newest stable, compatible, verified release of each Echelon system, approved in the Registry after Conditor qualification; if a component fails qualification, keep the newest compatible release and record the exception, VER-003), kemiller2002/indy-init docs/OWNER-DECISIONS-2026-10-24.md (indy-init#13). On 2026-11-02 the owner asked for Ordo, the Echelon Registry and anything else needing it to be updated so that all current Echelon systems are used, and, asked \"Do you approve echelon-current 1.34.0, which moves Ordo from 1.19.0 to 1.20.0 (adds decision events) and Forma from 0.12.0 to 0.13.0 (long URLs, SHAs and paths now wrap inside containers; the npm package now ships its F# token validator), with everything else unchanged from 1.33.0? And may I record that approval for you?\", answered \"Yes, approve 1.34.0 and record it\". The answer came before Conditor 0.10.19 was released; it is recorded only after REG-RU-007 passed against that release. Chat timestamps are approximate to the minute; the agent does not see exact message times",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit approval and permission to record it (\"Yes, approve 1.34.0 and record it\"), after REG-RU-007 passed in CI against released Conditor 0.10.19 and Conditor qualified this exact set; no VER-003 exception applies",
+    "recordedAt": "2026-11-02T14:35:41Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/41460710713/job/125328705987",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.19 (checksum and build-provenance attestation verified), on this exact set (commit 7b35b153); distribution conformance on all five platforms (echelon-registry#106)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/41458621258/job/125322169304",
+        "description": "Conditor echelon-current 1.34.0 kickoff-set qualification against the real releases (conditor#128)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/41458621258/job/125322169754",
+        "description": "Conditor Ordo 1.20.0 integrity-gate qualification (conditor#128)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/41458621258/job/125322169136",
+        "description": "Conditor echelon-current sweep qualification, applying Ordo 1.20.0 (conditor#128)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/41458621258/job/125321625275",
+        "description": "Conditor build-test, including WebPackageUpgradeTests for Forma 0.12.0 -> 0.13.0 by its exact release-asset pin (conditor#128)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/41459500380",
+        "description": "Release of Conditor v0.10.19 (31725a78), which carries that qualification (conditor#128)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
