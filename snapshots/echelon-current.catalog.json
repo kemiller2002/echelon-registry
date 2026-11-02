@@ -251,6 +251,12 @@
       "sha256": "ea5acb7296017ee101d55c8f4d6cb80db82d34b86695ec52eec526f40785a278"
     },
     {
+      "systemId": "percepta-semantic",
+      "version": "0.4.0",
+      "manifest": "releases/percepta-semantic/0.4.0.release.json",
+      "sha256": "07e4e640816e480b456ad3ce6e3562cc7aae8717a75db5683a2addcac02b1ee8"
+    },
+    {
       "systemId": "dokimos",
       "version": "0.2.0",
       "manifest": "releases/dokimos/0.2.0.release.json",
@@ -279,6 +285,12 @@
       "version": "0.9.0",
       "manifest": "releases/dokimos/0.9.0.release.json",
       "sha256": "76adde4a97c91ac6274b9a3b8aee82ef9580d7b459147e2fa9b5dd37e9348bed"
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.10.0",
+      "manifest": "releases/dokimos/0.10.0.release.json",
+      "sha256": "fd61cde4e7f233fb4090648f8a05cceed050631f5c4ff0c92c2c1d771ca1eaae"
     },
     {
       "systemId": "visual-engineering",
@@ -518,9 +530,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.34.0",
+      "version": "1.35.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "39b03aad846eb6be8e2addc8ed5d178e1313f0ee311cd980ba5182fd539744ff"
+      "sha256": "5b9ab58d176c50592970315275535990a4a35a63f492dded751eae83db9b972c"
     }
   ]
 }
