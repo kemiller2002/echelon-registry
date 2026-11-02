@@ -274,7 +274,35 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-11-02T21:45:00Z",
+    "statement": [
+      "do what needs to be done so they can be used on the next rehearsal",
+      "Approve, record it"
+    ],
+    "decision": "OD-INDY-8 (kickoff release set: the newest stable, compatible, verified release of each Echelon system, approved in the Registry after Conditor qualification; if a component fails qualification, keep the newest compatible release and record the exception, VER-003), kemiller2002/indy-init docs/OWNER-DECISIONS-2026-10-24.md (indy-init#13). On 2026-11-02 the owner asked for the new Dokimos and Percepta releases to be made usable on the next rehearsal (\"do what needs to be done so they can be used on the next rehearsal\"), and, asked \"Do you approve echelon-current 1.35.0? It is 1.34.0, approved today, with exactly two changes: Dokimos 0.9.0 -> 0.10.0 (the verification compiler) and Percepta semantic 0.3.0 -> 0.4.0 (percepta spec-preflight), on all five platforms ... If you approve, may I record your approval in sets/echelon-current/1.35.0.json on registry PR #107?\", selected \"Approve, record it\". Chat timestamps are approximate to the minute; the agent does not see exact message times",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit approval and permission to record it (\"Approve, record it\"), after REG-RU-007 passed in CI against released Conditor 0.10.19 on this exact set and Conditor qualified it from the real release bytes; no VER-003 exception applies",
+    "recordedAt": "2026-11-02T21:46:00Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/41528687002/job/125562979264",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.19, on this exact set (commit 40014b80); distribution conformance on all five platforms (echelon-registry#107)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/41529774723/job/125567236417",
+        "description": "Conditor echelon-current 1.35.0 kickoff-set qualification against the real releases: installs Dokimos 0.10.0 and percepta-semantic 0.4.0 at their published digests and checks dokimos verification and percepta spec-preflight (conditor#129)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/41529774723/job/125566648029",
+        "description": "Conditor build-test, including WebScaffoldTests.runKickoffSet135 over the vendored 1.35.0 linux-x64 set (sha256 bc0f9515...; conditor#129)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
