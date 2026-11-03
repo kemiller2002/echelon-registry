@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-11-02T21:52:26Z",
+  "updatedAt": "2026-11-03T21:23:30Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -3012,6 +3012,78 @@
         }
       },
       "completedAt": "2026-11-02T21:52:26Z"
+    },
+    {
+      "id": "WI-0074",
+      "type": "task",
+      "state": "active",
+      "semanticState": "active",
+      "evidence": [],
+      "updatedAt": "2026-11-03T19:56:20Z",
+      "telemetryExecutionIds": [
+        "EXE-20261103T195620960Z-cd7a1dc8"
+      ],
+      "latestCheckpoint": {
+        "id": "c2ea90a09e0bea3b5075f4c9",
+        "recordedAt": "2026-11-03T20:05:02Z",
+        "executionId": "EXE-20261103T195620960Z-cd7a1dc8",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-current-1.36.0",
+        "commit": "8d403809fad34b90627d607740d8cea7aae41c8b",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-current-1.36.0",
+        "remoteCommit": "8d403809fad34b90627d607740d8cea7aae41c8b",
+        "summary": "Registered Praxis 3.25.0 and Dokimos 0.11.0; cut echelon-current 1.36.0 (proposed). REG-RU-007 refuses Praxis 3.25.0 against Conditor 0.10.19.",
+        "nextAction": "A Conditor release qualifying Praxis 3.25.0, then the owner's approval of 1.36.0 (OD-INDY-8)",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      }
+    },
+    {
+      "id": "WI-0075",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "sets/echelon-current/1.36.0.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-release-sets.fsx"
+        }
+      ],
+      "updatedAt": "2026-11-03T21:23:30Z",
+      "telemetryExecutionIds": [
+        "EXE-20261103T212247463Z-f9a38663"
+      ],
+      "latestCheckpoint": {
+        "id": "0f0dce4445efa2db4e43c8dc",
+        "recordedAt": "2026-11-03T21:23:21Z",
+        "executionId": "EXE-20261103T212247463Z-f9a38663",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-current-1.36.0",
+        "commit": "e76a8cc1c6cc7243eb23e6485bdb56319a440f4e",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-current-1.36.0",
+        "remoteCommit": "e76a8cc1c6cc7243eb23e6485bdb56319a440f4e",
+        "summary": "Recorded the owner's approval of echelon-current 1.36.0 after REG-RU-007 passed against Conditor 0.10.20.",
+        "nextAction": "Merge echelon-registry#108 when green (owner's instruction).",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-11-03T21:23:30Z"
     }
   ]
 }

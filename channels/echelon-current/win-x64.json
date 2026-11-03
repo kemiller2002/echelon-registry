@@ -2,8 +2,8 @@
   "schema": "echelon.resolved-release-set/v1",
   "profile": {
     "id": "echelon-current",
-    "version": "1.35.0",
-    "sha256": "5b9ab58d176c50592970315275535990a4a35a63f492dded751eae83db9b972c"
+    "version": "1.36.0",
+    "sha256": "463edcd2e3aba7e0736e363a29ea9651d551e2615e791acf7f039b760f10f0c1"
   },
   "platform": "win-x64",
   "resolver": {
@@ -11,42 +11,42 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "9440b11ac66649ad98548c0bd2785bc33b0e70e32b3f9d5c32a55e44a8a595ee"
+    "sha256": "9c051a60d2e4f58d572dae3a530c033fdb5ab0d7199d673538d51c4f2ca32025"
   },
   "components": [
     {
       "systemId": "praxis",
       "role": "host-tool",
       "required": true,
-      "version": "3.24.0",
+      "version": "3.25.0",
       "repository": "kemiller2002/praxis",
-      "tag": "v3.24.0",
-      "commit": "dccf840061723627b64fb625fc8c16e74635fc10",
+      "tag": "v3.25.0",
+      "commit": "12bf9951253fc15e6973c2d3f5b88076f4556245",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "self-contained-native-cli",
       "executable": "praxis",
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "40ace1372475eae7bc1abed384b115c29c1bf86f514537d014a517d1c9871a12"
+        "sha256": "b42b9cf7cf2b3a436f7419c03fccc32d123abe0594839889fe8b6372cfb46a41"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": null,
-        "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.24.0"
+        "url": "https://github.com/kemiller2002/praxis/releases/tag/v3.25.0"
       },
       "artifacts": [
         {
           "name": "praxis-win-x64.zip",
           "purpose": "executable",
           "platform": "win-x64",
-          "sha256": "92ef7762646f578765ae35cb3b4beb8a5e52c07e1c8032c1d39c26d1ef2df55b"
+          "sha256": "f70c1bc5981b5ed16b6da30cb222bb9aaca8916bd07e72d516f93b8b0f4b1a87"
         },
         {
           "name": "native-checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "369dc868cf082a6764a2456fda3c03d5e9fcade7bf90e04672b3af04bc3b4745"
+          "sha256": "c109ef21729f176cbd44f998cadc9bc92a6c0f1ee4ed386dd61f937d4f8b7dc4"
         }
       ]
     },
@@ -162,10 +162,10 @@
       "systemId": "dokimos",
       "role": "repository-lifecycle",
       "required": true,
-      "version": "0.10.0",
+      "version": "0.11.0",
       "repository": "kemiller2002/dokimos",
-      "tag": "dokimos-v0.10.0",
-      "commit": "11477629f0a2682a256e1d0c75ffeab64abef11a",
+      "tag": "dokimos-v0.11.0",
+      "commit": "d49014831478fd4a50fdb2d70b0c63c7b314af1a",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "self-contained-native-cli",
@@ -176,25 +176,25 @@
       },
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "fd61cde4e7f233fb4090648f8a05cceed050631f5c4ff0c92c2c1d771ca1eaae"
+        "sha256": "255e2915d2e2204a3b93c6cb0891b15b100676dcdcda8e2ff67a6922611b2bae"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": null,
-        "url": "https://github.com/kemiller2002/dokimos/releases/tag/dokimos-v0.10.0"
+        "url": "https://github.com/kemiller2002/dokimos/releases/tag/dokimos-v0.11.0"
       },
       "artifacts": [
         {
           "name": "dokimos-win-x64.zip",
           "purpose": "executable",
           "platform": "win-x64",
-          "sha256": "44c25855c08fd3a84df375d32002512d9f5feb93054bd8b0387c728df0965c6d"
+          "sha256": "d57188f796835c82009cb0f0e61bc5bd2aca4a1db0b2156b4c2f5b240dc7359f"
         },
         {
           "name": "dokimos-checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "38c91d298697b0badf5ccf904e2563f54ee93248ebcad71782cfe84b7bb69351"
+          "sha256": "40d470e85c3a7bc467b21a31a3bcb5875e6b2c970e497401c7e8e203267a394c"
         },
         {
           "name": "LICENSE",
@@ -678,12 +678,12 @@
       "host": {
         "systemId": "praxis",
         "range": "\u003E=3.17.0",
-        "selected": "3.24.0"
+        "selected": "3.25.0"
       },
       "requires": {
         "systemId": "dokimos",
         "range": "\u003E=0.7.0",
-        "selected": "0.10.0"
+        "selected": "0.11.0"
       }
     }
   ]

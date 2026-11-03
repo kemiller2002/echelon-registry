@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 73,
+  "nextSeq": 76,
   "items": [
     {
       "id": "WI-0001",
@@ -1533,6 +1533,51 @@
       "attachments": [],
       "createdAt": "2026-11-02T13:46:14.813Z",
       "updatedAt": "2026-11-02T14:36:30.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0074",
+      "title": "Register Praxis 3.25.0 and Dokimos 0.11.0 and cut echelon-current 1.36.0 (proposed); the owner's approval follows Conditor qualification (OD-INDY-8)",
+      "description": null,
+      "tags": [
+        "release",
+        "channel"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-11-03T19:56:15Z",
+      "updatedAt": "2026-11-03T19:56:20Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0075",
+      "title": "Record the owner's approval of echelon-current 1.36.0 (OD-INDY-8)",
+      "description": null,
+      "tags": [],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-03T21:22:46.520Z",
+      "updatedAt": "2026-11-03T21:23:30Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
