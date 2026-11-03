@@ -167,6 +167,12 @@
       "sha256": "40ace1372475eae7bc1abed384b115c29c1bf86f514537d014a517d1c9871a12"
     },
     {
+      "systemId": "praxis",
+      "version": "3.25.0",
+      "manifest": "releases/praxis/3.25.0.release.json",
+      "sha256": "b42b9cf7cf2b3a436f7419c03fccc32d123abe0594839889fe8b6372cfb46a41"
+    },
+    {
       "systemId": "ordo",
       "version": "1.4.0",
       "manifest": "releases/ordo/1.4.0.release.json",
@@ -291,6 +297,12 @@
       "version": "0.10.0",
       "manifest": "releases/dokimos/0.10.0.release.json",
       "sha256": "fd61cde4e7f233fb4090648f8a05cceed050631f5c4ff0c92c2c1d771ca1eaae"
+    },
+    {
+      "systemId": "dokimos",
+      "version": "0.11.0",
+      "manifest": "releases/dokimos/0.11.0.release.json",
+      "sha256": "255e2915d2e2204a3b93c6cb0891b15b100676dcdcda8e2ff67a6922611b2bae"
     },
     {
       "systemId": "visual-engineering",
@@ -530,9 +542,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.35.0",
+      "version": "1.36.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "5b9ab58d176c50592970315275535990a4a35a63f492dded751eae83db9b972c"
+      "sha256": "463edcd2e3aba7e0736e363a29ea9651d551e2615e791acf7f039b760f10f0c1"
     }
   ]
 }
