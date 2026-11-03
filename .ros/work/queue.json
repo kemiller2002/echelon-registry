@@ -1543,6 +1543,30 @@
       },
       "source": "manual",
       "sourceReference": null
+    },
+    {
+      "id": "WI-0074",
+      "title": "Register Praxis 3.25.0 and Dokimos 0.11.0 and cut echelon-current 1.36.0 (proposed); the owner's approval follows Conditor qualification (OD-INDY-8)",
+      "description": null,
+      "tags": [
+        "release",
+        "channel"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-11-03T19:56:15Z",
+      "updatedAt": "2026-11-03T19:56:20Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
     }
   ]
 }
