@@ -3022,7 +3022,27 @@
       "updatedAt": "2026-11-03T19:56:20Z",
       "telemetryExecutionIds": [
         "EXE-20261103T195620960Z-cd7a1dc8"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "c2ea90a09e0bea3b5075f4c9",
+        "recordedAt": "2026-11-03T20:05:02Z",
+        "executionId": "EXE-20261103T195620960Z-cd7a1dc8",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-current-1.36.0",
+        "commit": "8d403809fad34b90627d607740d8cea7aae41c8b",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-current-1.36.0",
+        "remoteCommit": "8d403809fad34b90627d607740d8cea7aae41c8b",
+        "summary": "Registered Praxis 3.25.0 and Dokimos 0.11.0; cut echelon-current 1.36.0 (proposed). REG-RU-007 refuses Praxis 3.25.0 against Conditor 0.10.19.",
+        "nextAction": "A Conditor release qualifying Praxis 3.25.0, then the owner's approval of 1.36.0 (OD-INDY-8)",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      }
     }
   ]
 }
