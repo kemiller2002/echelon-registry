@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-11-03T19:56:20Z",
+  "updatedAt": "2026-11-03T21:23:30Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -3043,6 +3043,47 @@
           "mechanism": "git-remote-observation"
         }
       }
+    },
+    {
+      "id": "WI-0075",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "sets/echelon-current/1.36.0.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-release-sets.fsx"
+        }
+      ],
+      "updatedAt": "2026-11-03T21:23:30Z",
+      "telemetryExecutionIds": [
+        "EXE-20261103T212247463Z-f9a38663"
+      ],
+      "latestCheckpoint": {
+        "id": "0f0dce4445efa2db4e43c8dc",
+        "recordedAt": "2026-11-03T21:23:21Z",
+        "executionId": "EXE-20261103T212247463Z-f9a38663",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-current-1.36.0",
+        "commit": "e76a8cc1c6cc7243eb23e6485bdb56319a440f4e",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-current-1.36.0",
+        "remoteCommit": "e76a8cc1c6cc7243eb23e6485bdb56319a440f4e",
+        "summary": "Recorded the owner's approval of echelon-current 1.36.0 after REG-RU-007 passed against Conditor 0.10.20.",
+        "nextAction": "Merge echelon-registry#108 when green (owner's instruction).",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-11-03T21:23:30Z"
     }
   ]
 }

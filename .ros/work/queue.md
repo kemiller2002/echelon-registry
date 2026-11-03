@@ -74,4 +74,5 @@
 | WI-0071 | Register Forma 0.13.0 (layout reliability release) | complete |  | medium |
 | WI-0072 | Register Ordo 1.20.0 and cut echelon-current 1.34.0 (Ordo 1.20.0, Forma 0.13.0) | complete |  | medium |
 | WI-0073 | WI-0073 | complete |  |  |
-| WI-0074 | Register Praxis 3.25.0 and Dokimos 0.11.0 and cut echelon-current 1.36.0 (proposed); the owner's approval follows Conditor qualification (OD-INDY-8) | ready | release, channel | high |
+| WI-0074 | Register Praxis 3.25.0 and Dokimos 0.11.0 and cut echelon-current 1.36.0 (proposed); the owner's approval follows Conditor qualification (OD-INDY-8) | active | release, channel | high |
+| WI-0075 | Record the owner's approval of echelon-current 1.36.0 (OD-INDY-8) | complete |  | high |
