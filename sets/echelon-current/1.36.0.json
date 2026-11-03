@@ -274,7 +274,39 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-11-03T21:16:00Z",
+    "statement": [
+      "Approve 1.36.0, record it"
+    ],
+    "decision": "OD-INDY-8 (kickoff release set: the newest stable, compatible, verified release of each Echelon system, approved in the Registry after Conditor qualification; if a component fails qualification, keep the newest compatible release and record the exception, VER-003), kemiller2002/indy-init docs/OWNER-DECISIONS-2026-10-24.md (indy-init#13). On 2026-11-03 the owner, having asked for the Rehearsal 9 toolchain to carry the requirement-catalog tools (Praxis 3.25.0, praxis requirements manifest; Dokimos 0.11.0, dokimos verification requirements) and having merged conditor#130, which qualifies this exact set and released Conditor 0.10.20, wrote in chat: \"Approve 1.36.0, record it\". Chat timestamps are approximate to the minute; the agent does not see exact message times",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit approval and permission to record it (\"Approve 1.36.0, record it\"), after REG-RU-007 passed in CI against released Conditor 0.10.20 on this exact set and Conditor qualified it from the real release bytes; no VER-003 exception applies",
+    "recordedAt": "2026-11-03T21:22:00Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/41709399690/job/126212895434",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.20, on this exact set; distribution conformance on all five platforms (echelon-registry#108)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/41718590401/job/126205433561",
+        "description": "Conditor echelon-current 1.36.0 kickoff-set qualification against the real releases: installs Praxis 3.25.0 and Dokimos 0.11.0 at their published digests and checks praxis requirements manifest compile and dokimos verification requirements (conditor#130)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/41718590401/job/126205013996",
+        "description": "Conditor build-test, including WebScaffoldTests.runKickoffSet136 over the vendored 1.36.0 linux-x64 set (sha256 1189bc9b...) and CurrentUpgradeTests Praxis 3.24.0 -> 3.25.0 (conditor#130)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/41718590401/job/126205433321",
+        "description": "Conditor echelon-current sweep: a repository moves Praxis 3.24.0 -> 3.25.0 with the real release under 1.36.0 and verifies strictly (conditor#130)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
