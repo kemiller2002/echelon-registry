@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 76,
+  "nextSeq": 77,
   "items": [
     {
       "id": "WI-0001",
@@ -1578,6 +1578,29 @@
       "attachments": [],
       "createdAt": "2026-11-03T21:22:46.520Z",
       "updatedAt": "2026-11-03T21:23:30Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0076",
+      "title": "Register Dokimos 0.11.1 and cut echelon-current 1.37.0 (proposed); the owner's approval follows Conditor qualification (OD-INDY-8)",
+      "description": null,
+      "tags": [
+        "release,channel"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-11-04T21:59:27.008Z",
+      "updatedAt": "2026-11-04T21:59:34.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
