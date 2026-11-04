@@ -3094,7 +3094,27 @@
       "updatedAt": "2026-11-04T21:59:34.000Z",
       "telemetryExecutionIds": [
         "EXE-20261104T215935075Z-da89fee1"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "c55402314b94276d225a30d7",
+        "recordedAt": "2026-11-04T22:05:33.000Z",
+        "executionId": "EXE-20261104T215935075Z-da89fee1",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-current-dokimos-0.11.1",
+        "commit": "0cec857122279ead4f6fcc1f9216220cb7328091",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-current-dokimos-0.11.1",
+        "remoteCommit": "0cec857122279ead4f6fcc1f9216220cb7328091",
+        "summary": "Registered Dokimos 0.11.1 and cut echelon-current 1.37.0 (proposed, no approval); validators run, release-sets refuses only the unapproved current set (EP-A6a-R2)",
+        "nextAction": "Owner decision on approving 1.37.0 (OD-INDY-8) after Conditor qualifies this exact set",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      }
     }
   ]
 }
