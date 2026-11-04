@@ -2,8 +2,8 @@
   "schema": "echelon.resolved-release-set/v1",
   "profile": {
     "id": "echelon-current",
-    "version": "1.36.0",
-    "sha256": "463edcd2e3aba7e0736e363a29ea9651d551e2615e791acf7f039b760f10f0c1"
+    "version": "1.37.0",
+    "sha256": "4a5b6c20344f462a49ee5c747c7b9e46ce83fa93ab1a3eceda7e4e8bb5cdc1f0"
   },
   "platform": "linux-arm64",
   "resolver": {
@@ -11,7 +11,7 @@
     "version": "0.1.0"
   },
   "catalogSnapshot": {
-    "sha256": "9c051a60d2e4f58d572dae3a530c033fdb5ab0d7199d673538d51c4f2ca32025"
+    "sha256": "3c311674de285e3d8fb0fb210077c707647269878b03ac51bdad9ef563ebeca8"
   },
   "components": [
     {
@@ -162,10 +162,10 @@
       "systemId": "dokimos",
       "role": "repository-lifecycle",
       "required": true,
-      "version": "0.11.0",
+      "version": "0.11.1",
       "repository": "kemiller2002/dokimos",
-      "tag": "dokimos-v0.11.0",
-      "commit": "d49014831478fd4a50fdb2d70b0c63c7b314af1a",
+      "tag": "dokimos-v0.11.1",
+      "commit": "fecbe0c51dda4d87a78e43a034c38c00e6045c7b",
       "releaseStage": "stable",
       "lifecycleState": "active",
       "distributionClass": "self-contained-native-cli",
@@ -176,25 +176,25 @@
       },
       "releaseManifest": {
         "schema": "echelon.release/v2",
-        "sha256": "255e2915d2e2204a3b93c6cb0891b15b100676dcdcda8e2ff67a6922611b2bae"
+        "sha256": "c5bf0df99823aaf1f3d2fc0f11f56cc92f266952df4733e32f18719a56f9b285"
       },
       "distribution": {
         "mechanism": "github-release",
         "package": null,
-        "url": "https://github.com/kemiller2002/dokimos/releases/tag/dokimos-v0.11.0"
+        "url": "https://github.com/kemiller2002/dokimos/releases/tag/dokimos-v0.11.1"
       },
       "artifacts": [
         {
           "name": "dokimos-linux-arm64.tar.gz",
           "purpose": "executable",
           "platform": "linux-arm64",
-          "sha256": "fd027f1c88ed89618a88e46580ba957d8eaff85057677f64200ed457171161e3"
+          "sha256": "097def6486f932273dbbc5ade21bbfd18b33892e736a9f08887219a8001b5fc0"
         },
         {
           "name": "dokimos-checksums.txt",
           "purpose": "checksums",
           "platform": null,
-          "sha256": "40d470e85c3a7bc467b21a31a3bcb5875e6b2c970e497401c7e8e203267a394c"
+          "sha256": "c3b301b8c3678a0d335cf5412e86705cca4ddf3f797e32743525432fd1783a40"
         },
         {
           "name": "LICENSE",
@@ -643,7 +643,7 @@
       "requires": {
         "systemId": "dokimos",
         "range": "\u003E=0.7.0",
-        "selected": "0.11.0"
+        "selected": "0.11.1"
       }
     }
   ]
