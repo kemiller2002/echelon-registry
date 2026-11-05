@@ -274,7 +274,34 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-11-05T01:33:00Z",
+    "statement": [
+      "1 I approve"
+    ],
+    "decision": "OD-INDY-8 (kickoff release set: the newest stable, compatible, verified release of each Echelon system, approved in the Registry after Conditor qualification; if a component fails qualification, keep the newest compatible release and record the exception, VER-003), kemiller2002/indy-init docs/OWNER-DECISIONS-2026-10-24.md (indy-init#13). On 2026-11-05 the owner, having asked for the Rehearsal 010 toolchain to carry Dokimos 0.11.1 (the url-input fix, Indy-init ODR-RG-03) and been told that conditor#131 qualifies this exact set, answered the item \"Approve 1.37.0\" of the agent's list in chat: \"1 I approve\". The owner wrote between 01:31:19Z (the conditor#131 merge) and 01:33:54Z; the agent does not see exact message times",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit approval given directly in this session (\"1 I approve\", answering \"Approve 1.37.0\"), after REG-RU-007 passed in CI against released Conditor 0.10.20 on this exact set and Conditor qualified it from the real release bytes (conditor#131); no VER-003 exception applies",
+    "recordedAt": "2026-11-05T01:40:00Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/41922385682/job/126897897419",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.20, on this exact set; distribution conformance on all five platforms (echelon-registry#109)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/41946329182/job/126980565280",
+        "description": "Conditor echelon-current 1.37.0 kickoff-set qualification against the real releases: installs Dokimos 0.11.1 at its published digest (dokimos version 0.11.1 at fecbe0c5) and checks dokimos verification requirements, then compile, scaffold, coverage and probe (conditor#131)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/41946329182/job/126979335163",
+        "description": "Conditor build-test, including WebScaffoldTests.runKickoffSet137 over the vendored 1.37.0 linux-x64 set (sha256 bba3594a...) (conditor#131)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
