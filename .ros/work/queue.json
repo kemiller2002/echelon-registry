@@ -1618,10 +1618,10 @@
       "description": null,
       "tags": [],
       "priority": "high",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-11-05T01:34:31.641Z",
-      "updatedAt": "2026-11-05T01:34:36.000Z",
+      "updatedAt": "2026-11-05T01:47:47.797Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
