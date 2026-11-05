@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-11-04T22:06:55.000Z",
+  "updatedAt": "2026-11-05T01:35:15.851Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -3125,6 +3125,18 @@
         }
       },
       "completedAt": "2026-11-04T22:06:55.000Z"
+    },
+    {
+      "id": "WI-0077",
+      "type": "task",
+      "state": "blocked",
+      "semanticState": "blocked",
+      "evidence": [],
+      "updatedAt": "2026-11-05T01:35:15.851Z",
+      "telemetryExecutionIds": [
+        "EXE-20261105T013437445Z-4971d0ae"
+      ],
+      "blockReason": "Recording the owner's approval of echelon-current 1.37.0 was refused by this session's permission system: the approval reached this session only as a relay from the coordinating agent, not from the owner. Nothing was written to sets/echelon-current/1.37.0.json. Needs the owner to record it, or to grant this session permission directly."
     }
   ]
 }
