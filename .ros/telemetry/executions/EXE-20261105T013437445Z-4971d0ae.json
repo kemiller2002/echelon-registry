@@ -636,14 +636,30 @@
     },
     {
       "metricId": "agent.resumes",
-      "status": "unknown",
-      "reason": "runtime capability not reported or mapped",
-      "discoveredAt": "2026-11-05T01:34:37.445Z",
+      "status": "derived",
+      "reason": "normalized measurement recorded",
+      "discoveredAt": "2026-11-05T01:36:01.638Z",
       "source": {
-        "type": "environment",
-        "name": "runtime-identity",
-        "mechanism": "whitelisted-claude-environment"
-      }
+        "type": "calculated",
+        "name": "ros-work-protocol",
+        "mechanism": "resume-transition"
+      },
+      "lastAssessedAt": "2026-11-05T01:36:01.638Z",
+      "recordedAt": "2026-11-05T01:36:01.638Z",
+      "history": [
+        {
+          "status": "unknown",
+          "reason": "runtime capability not reported or mapped",
+          "source": {
+            "type": "environment",
+            "name": "runtime-identity",
+            "mechanism": "whitelisted-claude-environment"
+          },
+          "discoveredAt": "2026-11-05T01:34:37.445Z",
+          "lastAssessedAt": "2026-11-05T01:34:37.445Z",
+          "recordedAt": "2026-11-05T01:34:37.445Z"
+        }
+      ]
     },
     {
       "metricId": "agent.human_escalations",
@@ -1494,6 +1510,26 @@
       },
       "collectedAt": "2026-11-05T01:35:15.851Z",
       "schemaVersion": "1.0.0"
+    },
+    {
+      "measurementId": "MEAS-c735f558effebb5351e39e2b",
+      "id": "agent.resumes",
+      "value": 1,
+      "unit": "count",
+      "currency": null,
+      "quality": "derived",
+      "confidence": null,
+      "scope": "execution",
+      "aggregation": "sum",
+      "dimensions": {},
+      "pricing": null,
+      "source": {
+        "type": "calculated",
+        "name": "ros-work-protocol",
+        "mechanism": "resume-transition"
+      },
+      "collectedAt": "2026-11-05T01:36:01.638Z",
+      "schemaVersion": "1.0.0"
     }
   ],
   "rawTelemetry": [],
@@ -1551,6 +1587,51 @@
         "mechanism": "work-lifecycle"
       },
       "eventId": "TEVT-a85e9cbe684d7ef2c53152a6"
+    },
+    {
+      "type": "work.resumed",
+      "occurredAt": "2026-11-05T01:36:01.638Z",
+      "reason": null,
+      "source": {
+        "type": "ros-clock",
+        "name": "ros",
+        "mechanism": "work-lifecycle"
+      },
+      "eventId": "TEVT-4f1bae680b49181c10b73f41"
+    },
+    {
+      "type": "step.active",
+      "occurredAt": "2026-11-05T01:36:02.943Z",
+      "stepId": "STEP-20261105T013441743Z-5799eab7",
+      "actor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": {
+        "type": "ros-cli",
+        "name": "step",
+        "mechanism": "step-lifecycle"
+      }
+    },
+    {
+      "type": "step.completed",
+      "occurredAt": "2026-11-05T01:47:30.049Z",
+      "stepId": "STEP-20261105T013441743Z-5799eab7",
+      "actor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": {
+        "type": "ros-cli",
+        "name": "step",
+        "mechanism": "step-lifecycle"
+      }
     }
   ],
   "repository": {
@@ -1601,12 +1682,12 @@
       "classification": [
         "governance"
       ],
-      "status": "blocked",
+      "status": "completed",
       "plannedAt": "2026-11-05T01:34:41.743Z",
       "startedAt": "2026-11-05T01:34:41.743Z",
-      "completedAt": null,
-      "endedAt": null,
-      "updatedAt": "2026-11-05T01:35:15.500Z",
+      "completedAt": "2026-11-05T01:47:30.049Z",
+      "endedAt": "2026-11-05T01:47:30.049Z",
+      "updatedAt": "2026-11-05T01:47:30.049Z",
       "actor": {
         "kind": "agent",
         "id": "anthropic/claude-code",
@@ -1919,6 +2000,32 @@
           "to": "blocked",
           "occurredAt": "2026-11-05T01:35:15.500Z",
           "reason": "Recording the owner's approval of echelon-current 1.37.0 was refused by this session's permission system: the approval reached this session only as a relay from the coordinating agent, not from the owner. Nothing was written to sets/echelon-current/1.37.0.json. Needs the owner to record it, or to grant this session permission directly.",
+          "actor": {
+            "kind": "agent",
+            "id": "anthropic/claude-code",
+            "provider": "anthropic",
+            "model": "unknown",
+            "runtime": "claude-code"
+          }
+        },
+        {
+          "from": "blocked",
+          "to": "active",
+          "occurredAt": "2026-11-05T01:36:02.943Z",
+          "reason": null,
+          "actor": {
+            "kind": "agent",
+            "id": "anthropic/claude-code",
+            "provider": "anthropic",
+            "model": "unknown",
+            "runtime": "claude-code"
+          }
+        },
+        {
+          "from": "active",
+          "to": "completed",
+          "occurredAt": "2026-11-05T01:47:30.049Z",
+          "reason": null,
           "actor": {
             "kind": "agent",
             "id": "anthropic/claude-code",
