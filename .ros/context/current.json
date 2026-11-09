@@ -3259,7 +3259,27 @@
       "updatedAt": "2026-11-09T20:32:32.000Z",
       "telemetryExecutionIds": [
         "EXE-20261109T203233440Z-6074da4d"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "a07d14946a04a1fe62774ceb",
+        "recordedAt": "2026-11-09T20:56:27.000Z",
+        "executionId": "EXE-20261109T203233440Z-6074da4d",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-current-1.38.0",
+        "commit": "31fd09d8fef1af8586fca6dd19f561a63723778d",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-current-1.38.0",
+        "remoteCommit": "31fd09d8fef1af8586fca6dd19f561a63723778d",
+        "summary": "echelon-current 1.38.0 cut (proposed): Forma 1.0.1 and echelon-theme 1.0.0 registered; profile, snapshot, channel and release set regenerated",
+        "nextAction": "Conditor qualifies 1.38.0 and releases; then REG-RU-007 in CI and record the owner's approval",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      }
     }
   ]
 }
