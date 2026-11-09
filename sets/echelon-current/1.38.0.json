@@ -286,7 +286,34 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-11-09T09:24:00-05:00",
+    "statement": [
+      "Yes, approved (Recommended)"
+    ],
+    "decision": "EDS-ADR-002 (Echelon branding moves out of Forma into kemiller2002/echelon-design-system; Forma becomes brand-neutral) and OD-INDY-8 (kickoff release set: the newest stable, compatible, verified release of each Echelon system, approved in the Registry after Conditor qualification; if a component fails qualification, keep the newest compatible release and record the exception, VER-003), kemiller2002/indy-init docs/OWNER-DECISIONS-2026-10-24.md (indy-init#13). On 2026-11-09 the owner approved channel releases for Forma 1.0.0, the Echelon theme component and echelon-current 1.38.0, answering a multiple-choice prompt with the option \"Yes, approved (Recommended)\". The exact minute is not available to the recording agent: the answer came after the owner attached the brand-separation directive at 08:45 local and before their next message at 09:24 local (\"Go back what was the major brake question\"), so `at` records 09:24, the latest moment it could have been given, not the exact time; the offset -05:00 assumes US Eastern, the basis 1.37.2 used. The owner then chose \"Do the major break\" (the ef- -> forma- rename shipped with brand neutrality as Forma 1.0) and a gradual migration (\"On 5 let's do a gradual upgrade. Do signal now and we'll do each other when we work on them\", 09:37 local): consumers that have not migrated stay on 1.37.2. The set selects Forma 1.0.1, the patch of the approved 1.0.0 released after review (forma#183: codemod false-negative fixes, no CSS output change), and the optional echelon-theme 1.0.0",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit approval (\"Yes, approved (Recommended)\", 2026-11-09, channel releases for Forma 1.0.0, the theme component and echelon-current 1.38.0) relayed to this session by the orchestrating agent, which authorized the Conditor 0.10.24 release, this channel move to 1.38.0 and the recording of the approval; recorded after REG-RU-007 passed in CI against released Conditor 0.10.24 on this exact set and Conditor qualified it from the real release bytes (conditor#137); no VER-003 exception applies",
+    "recordedAt": "2026-11-09T21:32:49Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/42697785064/job/129452956041",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.24 (checksum and build-provenance attestation verified), on this exact set, with echelon-theme a declared component; distribution conformance on all five platforms (echelon-registry#112)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/42701676098/job/129448316422",
+        "description": "Conditor echelon-current 1.38.0 kickoff-set qualification against the real releases: installs every native host tool of the set at its published digest and verifies each receipt (conditor#137, head 7146a0c, merged as 0e79f6c and released as v0.10.24)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/42701676098/job/129447702753",
+        "description": "Conditor build-test, including WebScaffoldTests.runKickoffSet1380 over the vendored 1.38.0 linux-x64 set (sha256 b92b3be8...), WebPackageUpgradeTests.echelonCurrent1380 (Forma 0.14.0 -> 1.0.1 as an exact release-asset pin, with the Forma 1.0 boundary disclosed and digest-bound) and EchelonThemeComponentTests (conditor#137)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
