@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-11-09T12:36:35.000Z",
+  "updatedAt": "2026-11-09T12:56:16.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -3212,33 +3212,43 @@
     {
       "id": "WI-0079",
       "type": "task",
-      "state": "active",
-      "semanticState": "active",
-      "evidence": [],
-      "updatedAt": "2026-11-09T12:36:35.000Z",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "sets/echelon-current/1.37.2.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-release-sets.fsx"
+        }
+      ],
+      "updatedAt": "2026-11-09T12:56:16.000Z",
       "telemetryExecutionIds": [
         "EXE-20261109T123636077Z-9588de86"
       ],
       "latestCheckpoint": {
-        "id": "74f851d1aad97b1efcbe3c10",
-        "recordedAt": "2026-11-09T12:39:39.000Z",
+        "id": "53ff6f0564c729584c0e1de7",
+        "recordedAt": "2026-11-09T12:56:15.000Z",
         "executionId": "EXE-20261109T123636077Z-9588de86",
         "repository": "echelon-registry",
         "branch": "claude/echelon-current-1.37.2",
-        "commit": "c164da492d56809d3cfdc3a9d30d29ee4d267d56",
+        "commit": "4b389eec5297a59b9048631e97540e9ee3920dd9",
         "remote": {
           "name": "origin",
           "url": "https://github.com/kemiller2002/echelon-registry"
         },
         "remoteBranch": "claude/echelon-current-1.37.2",
-        "remoteCommit": "c164da492d56809d3cfdc3a9d30d29ee4d267d56",
-        "summary": "Forma 0.14.0 registered; echelon-current 1.37.2 cut (proposed); PR #111 open",
-        "nextAction": "Conditor qualifies Forma 0.14.0 and releases 0.10.23; re-run REG-RU-007 here; record the owner's approval; merge #111",
+        "remoteCommit": "4b389eec5297a59b9048631e97540e9ee3920dd9",
+        "summary": "Forma 0.14.0 registered; echelon-current 1.37.2 cut and approved (REG-RU-007 PASS vs Conditor 0.10.23)",
+        "nextAction": "Merge #111 after CI; Signal upgrades to 1.37.2",
         "verification": {
           "status": "verified",
           "mechanism": "git-remote-observation"
         }
-      }
+      },
+      "completedAt": "2026-11-09T12:56:16.000Z"
     }
   ]
 }
