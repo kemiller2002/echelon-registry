@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 79,
+  "nextSeq": 80,
   "items": [
     {
       "id": "WI-0001",
@@ -1643,6 +1643,27 @@
       "attachments": [],
       "createdAt": "2026-11-09T01:29:26.889Z",
       "updatedAt": "2026-11-09T02:12:11.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0079",
+      "title": "Register Forma 0.14.0 and cut echelon-current 1.37.2 (owner-approved)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-09T12:36:24.373Z",
+      "updatedAt": "2026-11-09T12:56:16.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
