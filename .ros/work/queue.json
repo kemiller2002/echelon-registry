@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 80,
+  "nextSeq": 81,
   "items": [
     {
       "id": "WI-0001",
@@ -1674,6 +1674,27 @@
       },
       "source": "manual",
       "sourceReference": null
+    },
+    {
+      "id": "WI-0080",
+      "title": "Register Forma 1.0.1 and the Echelon theme 1.0.0; cut echelon-current 1.38.0 (owner-approved)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-11-09T20:32:24.000Z",
+      "updatedAt": "2026-11-09T20:32:32.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": ".praxis/inbox/documents/2026-11-09-EDS-ADR-002-echelon-current-1.38.0.md"
     }
   ]
 }

@@ -9,6 +9,7 @@
   ],
   "components": [
     "arca",
+    "echelon-theme",
     "fides",
     "folio",
     "forma",
