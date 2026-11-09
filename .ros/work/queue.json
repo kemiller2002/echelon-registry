@@ -1681,10 +1681,10 @@
       "description": null,
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-11-09T20:32:24.000Z",
-      "updatedAt": "2026-11-09T20:32:32.000Z",
+      "updatedAt": "2026-11-09T21:33:27.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
