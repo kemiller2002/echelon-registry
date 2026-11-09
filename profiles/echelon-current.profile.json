@@ -1,7 +1,7 @@
 {
   "schema": "echelon.profile/v1",
   "id": "echelon-current",
-  "version": "1.37.2",
+  "version": "1.38.0",
   "description": "Moving stable channel for the current Registry-approved Echelon repository environment. Version ranges select the newest compatible active stable releases from the channel catalog snapshot.",
   "supportedPlatforms": [
     "linux-x64",
@@ -99,7 +99,7 @@
       "role": "project-binding",
       "required": true,
       "version": {
-        "range": ">=0.3.0 <1.0.0"
+        "range": ">=1.0.0 <2.0.0"
       }
     },
     {
@@ -148,6 +148,14 @@
       "required": false,
       "version": {
         "range": ">=0.8.0 <1.0.0"
+      }
+    },
+    {
+      "systemId": "echelon-theme",
+      "role": "project-binding",
+      "required": false,
+      "version": {
+        "range": ">=1.0.0 <2.0.0"
       }
     }
   ],
