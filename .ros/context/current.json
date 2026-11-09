@@ -3218,7 +3218,27 @@
       "updatedAt": "2026-11-09T12:36:35.000Z",
       "telemetryExecutionIds": [
         "EXE-20261109T123636077Z-9588de86"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "74f851d1aad97b1efcbe3c10",
+        "recordedAt": "2026-11-09T12:39:39.000Z",
+        "executionId": "EXE-20261109T123636077Z-9588de86",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-current-1.37.2",
+        "commit": "c164da492d56809d3cfdc3a9d30d29ee4d267d56",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-current-1.37.2",
+        "remoteCommit": "c164da492d56809d3cfdc3a9d30d29ee4d267d56",
+        "summary": "Forma 0.14.0 registered; echelon-current 1.37.2 cut (proposed); PR #111 open",
+        "nextAction": "Conditor qualifies Forma 0.14.0 and releases 0.10.23; re-run REG-RU-007 here; record the owner's approval; merge #111",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      }
     }
   ]
 }
