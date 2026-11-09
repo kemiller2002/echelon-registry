@@ -274,7 +274,34 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-11-09T07:31:00-05:00",
+    "statement": [
+      "approved"
+    ],
+    "decision": "OD-INDY-8 (kickoff release set: the newest stable, compatible, verified release of each Echelon system, approved in the Registry after Conditor qualification; if a component fails qualification, keep the newest compatible release and record the exception, VER-003), kemiller2002/indy-init docs/OWNER-DECISIONS-2026-10-24.md (indy-init#13). On 2026-11-09, after Forma 0.14.0 (AIS-001, forma#181) was released, the owner approved adding Forma 0.14.0 to the echelon-current release channel, answering in chat: \"approved\". The message was relayed to this agent with its time as 07:31 local on 2026-11-09; the offset -05:00 assumes the owner's local zone is US Eastern (EST), consistent with the Forma v0.14.0 release at 12:27Z and this session starting at 12:35Z",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit approval (\"approved\", 2026-11-09, adding Forma 0.14.0 to echelon-current) relayed to this session by the orchestrating agent, which authorized the Conditor 0.10.23 release, this channel move to 1.37.2 and the recording of the approval; recorded after REG-RU-007 passed in CI against released Conditor 0.10.23 on this exact set and Conditor qualified it from the real release bytes (conditor#136); no VER-003 exception applies",
+    "recordedAt": "2026-11-09T12:55:53Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/42618893540/job/129172001754",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.23, on this exact set; distribution conformance on all five platforms (echelon-registry#111)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/42619250221/job/129167288097",
+        "description": "Conditor echelon-current 1.37.2 kickoff-set qualification against the real releases: installs every native host tool of the set at its published digest and verifies each receipt (conditor#136)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/42619250221/job/129166840719",
+        "description": "Conditor build-test, including WebScaffoldTests.runKickoffSet1372 over the vendored 1.37.2 linux-x64 set (sha256 3902cb89...) and WebPackageUpgradeTests.echelonCurrent1372 (Forma 0.13.1 -> 0.14.0 as an exact release-asset pin) (conditor#136)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
