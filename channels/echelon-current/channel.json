@@ -3,38 +3,38 @@
   "id": "echelon-current",
   "profile": {
     "id": "echelon-current",
-    "version": "1.37.1",
-    "sha256": "928223d08074d0298ca613325a4e02d973305a364eec34eec2c81c594c29ae1d"
+    "version": "1.37.2",
+    "sha256": "f40993d5a6ff765427acb499383e03edf87c40a59f98458c5bdc1ad71efb4e8e"
   },
   "catalogSnapshot": {
     "path": "snapshots/echelon-current.catalog.json",
-    "sha256": "0d58067176164ba305493ab893e3032ff42b0a5633e73104dc6c106e4104793c"
+    "sha256": "b407bff6ee2e5cb829d2c62ce2a51b70ff850b715ad6808a2cd07d287d040b08"
   },
   "platforms": [
     {
       "platform": "linux-x64",
       "path": "channels/echelon-current/linux-x64.json",
-      "sha256": "98220b45709ad15edc5be2b820598eb8fc9e498a2cfa9af696f2a83fa5f944fd"
+      "sha256": "3902cb89380f0a63e6987607bb5a69a7309b69e4dfaf2792ef1614d371937d86"
     },
     {
       "platform": "linux-arm64",
       "path": "channels/echelon-current/linux-arm64.json",
-      "sha256": "77d7ac5e74551904c8e7ef1291bcb5b1fdfd197ae1f28ac5559a0048ac2107dc"
+      "sha256": "96cd87b01bb0fb75082f760302305e02bb4a027ea0e356b282c02553e3f1712c"
     },
     {
       "platform": "osx-x64",
       "path": "channels/echelon-current/osx-x64.json",
-      "sha256": "a69125027794231ca643eb0857bf8b2b5b7698b2553e1fe08dd7761d5aded75a"
+      "sha256": "ee5e553e6e2804392745343556177a9aa865a01a12dec7df31bf776696f5edef"
     },
     {
       "platform": "osx-arm64",
       "path": "channels/echelon-current/osx-arm64.json",
-      "sha256": "b165194591a9ce84f1ae375eb9fda5f1954bbf8496210a59ad8c01edabc02d0a"
+      "sha256": "2ae364f74b26e444ff9c44c39143defbbe02765a478a01fb44341da05c49730b"
     },
     {
       "platform": "win-x64",
       "path": "channels/echelon-current/win-x64.json",
-      "sha256": "968ca9258053c1f1e7a02994ac3fc57708480d5480a7d1c17946f067a865f9a6"
+      "sha256": "066eefff39b5d67de09147cf39b5dcd05863b508d4aaa1a3032357629835ccc2"
     }
   ]
 }

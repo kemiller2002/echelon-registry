@@ -419,6 +419,12 @@
       "sha256": "7c02efde81372b6112f783c2811d73a4585f01b23d5d335eaf7e2e67370e4cda"
     },
     {
+      "systemId": "forma",
+      "version": "0.14.0",
+      "manifest": "releases/forma/0.14.0.release.json",
+      "sha256": "18968771efdd5d080b7a77bc4b19de22146d362e59ae6e6d0ea9113556ab8b16"
+    },
+    {
       "systemId": "folio",
       "version": "0.3.0",
       "manifest": "releases/folio/0.3.0.release.json",
@@ -554,9 +560,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.37.1",
+      "version": "1.37.2",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "928223d08074d0298ca613325a4e02d973305a364eec34eec2c81c594c29ae1d"
+      "sha256": "f40993d5a6ff765427acb499383e03edf87c40a59f98458c5bdc1ad71efb4e8e"
     }
   ]
 }
