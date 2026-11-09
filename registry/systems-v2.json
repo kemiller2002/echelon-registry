@@ -316,6 +316,19 @@
       "optionalConsumes": []
     },
     {
+      "id": "echelon-theme",
+      "displayName": "Echelon Theme",
+      "repository": "kemiller2002/echelon-design-system",
+      "status": "active",
+      "aliases": [],
+      "executableAliases": [],
+      "distributionClasses": [
+        "web-package"
+      ],
+      "provides": [],
+      "optionalConsumes": []
+    },
+    {
       "id": "iter",
       "displayName": "Iter",
       "repository": "kemiller2002/iter",

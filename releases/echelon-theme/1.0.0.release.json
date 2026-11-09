@@ -1,0 +1,49 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "echelon-theme",
+  "version": "1.0.0",
+  "repository": "kemiller2002/echelon-design-system",
+  "tag": "v1.0.0",
+  "commit": "296a03050068eaf8842b55eb31fc09a9f33399bc",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "web-package",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [],
+  "compatibility": {
+    "requiresSystems": [
+      {
+        "systemId": "forma",
+        "versionRange": ">=1.0.0"
+      }
+    ]
+  },
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "package": "@echelon-foundry/echelon-theme",
+      "url": "https://github.com/kemiller2002/echelon-design-system/releases/tag/v1.0.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "echelon-foundry-echelon-theme-1.0.0.tgz",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "5d981420cfd4f7a835564a204938eb5db1f1d35350477a755df98daa37ec8394"
+    },
+    {
+      "name": "asset-manifest.json",
+      "purpose": "bundle",
+      "platform": null,
+      "sha256": "6d2cafe346bbc1a934e9f318ba28c7a0f429d1a5ae8abb06f785b2611039b782"
+    },
+    {
+      "name": "checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "757e4816f40f9db2587f5e158600795d7e8460dec861ebfee6327e78b3a8a3d5"
+    }
+  ]
+}
