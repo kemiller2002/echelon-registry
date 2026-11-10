@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 81,
+  "nextSeq": 82,
   "items": [
     {
       "id": "WI-0001",
@@ -1695,6 +1695,27 @@
       },
       "source": "manual",
       "sourceReference": ".praxis/inbox/documents/2026-11-09-EDS-ADR-002-echelon-current-1.38.0.md"
+    },
+    {
+      "id": "WI-0081",
+      "title": "Register the Echelon theme 1.1.0; cut echelon-current 1.39.0 (owner-approved)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-10T03:41:07.000Z",
+      "updatedAt": "2026-11-10T04:06:17.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": ".praxis/inbox/documents/2026-11-09-echelon-current-1.39.0-echelon-theme-1.1.0.md"
     }
   ]
 }
