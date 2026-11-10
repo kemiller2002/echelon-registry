@@ -460,6 +460,12 @@
       "sha256": "986254788eed9a44c0e1b63cc4c5abb228593351af54167d6d2bc7d3e7840851"
     },
     {
+      "systemId": "echelon-theme",
+      "version": "1.1.0",
+      "manifest": "releases/echelon-theme/1.1.0.release.json",
+      "sha256": "7909ed0a38348327efd46ae4bdaf72d626550b46071e5d788a1e021bacc3d295"
+    },
+    {
       "systemId": "strata",
       "version": "0.1.0",
       "manifest": "releases/strata/0.1.0.release.json",
@@ -577,9 +583,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.38.0",
+      "version": "1.39.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "a70c463a68155dab7dbd23e94527e1958121867eb389e41e6a1b260c8e957e6c"
+      "sha256": "460f02a163d5e8272995e6cffbe478dd267b36b21d843be24d8512a12c58febf"
     }
   ]
 }
