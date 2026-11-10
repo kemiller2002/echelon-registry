@@ -1,0 +1,109 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "echelon-theme",
+  "version": "1.1.0",
+  "repository": "kemiller2002/echelon-design-system",
+  "tag": "v1.1.0",
+  "commit": "a03c5ac05d99c0bace43df35c90e74c3fe352d02",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "web-package",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [],
+  "compatibility": {
+    "requiresSystems": [
+      {
+        "systemId": "forma",
+        "versionRange": ">=1.0.0"
+      }
+    ]
+  },
+  "distributions": [
+    {
+      "mechanism": "github-release",
+      "package": "@echelon-foundry/echelon-theme",
+      "url": "https://github.com/kemiller2002/echelon-design-system/releases/tag/v1.1.0"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "echelon-foundry-echelon-theme-1.1.0.tgz",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "e9360d743ad9e9a62abb3cf22d29bc8a26a4f9fd2b4980dd1d050c27937ec6bd"
+    },
+    {
+      "name": "asset-manifest.json",
+      "purpose": "bundle",
+      "platform": null,
+      "sha256": "9b349a41a20ed37a474b71f3a01acf56d5751d31dca2f2302717d2167405928d"
+    },
+    {
+      "name": "echelon-app.css",
+      "purpose": "bundle",
+      "platform": null,
+      "sha256": "d65759e601af7bef107a60ab04567939a305f36d61df757c78f58bdf85917669"
+    },
+    {
+      "name": "echelon-fonts.css",
+      "purpose": "bundle",
+      "platform": null,
+      "sha256": "b8c81581c682e877f73bca84c927167ba5d8476f732dd9381215ca896f99e629"
+    },
+    {
+      "name": "ibm-plex-mono-latin-400-normal.woff2",
+      "purpose": "bundle",
+      "platform": null,
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+    },
+    {
+      "name": "ibm-plex-mono-latin-500-normal.woff2",
+      "purpose": "bundle",
+      "platform": null,
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+    },
+    {
+      "name": "manrope-latin-wght-normal.woff2",
+      "purpose": "bundle",
+      "platform": null,
+      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972"
+    },
+    {
+      "name": "newsreader-latin-wght-italic.woff2",
+      "purpose": "bundle",
+      "platform": null,
+      "sha256": "48bc8861b9b2ca9300747cad4fd6a3b4ac3028d364df00bd1b72097baa75e509"
+    },
+    {
+      "name": "newsreader-latin-wght-normal.woff2",
+      "purpose": "bundle",
+      "platform": null,
+      "sha256": "62981321d9a3cc7a61a73792729043703fd6112da86e8ec848bb57f088578757"
+    },
+    {
+      "name": "ibm-plex-mono-OFL.txt",
+      "purpose": "licenses",
+      "platform": null,
+      "sha256": "23b0a9d0c6d3f140a0b77e483c5cfa6bba574325ef5cb189ed9f2fec4884533f"
+    },
+    {
+      "name": "manrope-OFL.txt",
+      "purpose": "licenses",
+      "platform": null,
+      "sha256": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30"
+    },
+    {
+      "name": "newsreader-OFL.txt",
+      "purpose": "licenses",
+      "platform": null,
+      "sha256": "26028ec4e13b650065fa525a09532176f8a668b76ff849ea01c564a7480f91e7"
+    },
+    {
+      "name": "checksums.txt",
+      "purpose": "checksums",
+      "platform": null,
+      "sha256": "753cb364b9e4bdfca60ff5d32a5f4195ca1839c417cd205d86155d1233f733a9"
+    }
+  ]
+}
