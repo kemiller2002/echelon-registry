@@ -286,7 +286,34 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-11-09T20:40:00-05:00",
+    "statement": [
+      "Yes, approved (Recommended)"
+    ],
+    "decision": "OD-INDY-8 (kickoff release set: the newest stable, compatible, verified release of each Echelon system, approved in the Registry after Conditor qualification; if a component fails qualification, keep the newest compatible release and record the exception, VER-003), kemiller2002/indy-init docs/OWNER-DECISIONS-2026-10-24.md (indy-init#13), and EDS-ADR-002 (the Echelon brand lives in kemiller2002/echelon-design-system). On 2026-11-09 the owner answered a multiple-choice prompt, \"To ship the new look I'd release Echelon theme 1.1.0 (fonts plus the approved panels, app bar, chips, emphasis buttons and loading styles) and move echelon-current to 1.39.0, with only the theme version changed. Approve that channel release?\", with the option \"Yes, approved (Recommended)\". The exact minute is not available to the recording agent: the answer came after the owner's 20:24 local message and before the theme pull request's review began, so `at` records 20:40 local, the latest moment it could have been given, not the exact time; the offset -05:00 assumes US Eastern, the basis 1.37.2 and 1.38.0 used. The set selects exactly that move: the optional Echelon theme 1.0.0 -> 1.1.0, nothing else",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit approval (\"Yes, approved (Recommended)\", 2026-11-09, releasing the Echelon theme 1.1.0 and moving echelon-current to 1.39.0 with only the theme version changed) relayed to this session by the orchestrating agent, which authorized the Conditor 0.10.25 release, this channel move to 1.39.0 and the recording of the approval; recorded after REG-RU-007 passed in CI against released Conditor 0.10.25 on this exact set and Conditor qualified it from the real release bytes (conditor#138); no VER-003 exception applies",
+    "recordedAt": "2026-11-10T04:05:53Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/42751360994/job/129621919212",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.25 (checksum and build-provenance attestation verified), on this exact set, with echelon-theme a declared component; distribution conformance on all five platforms (echelon-registry#113)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/42751976937/job/129617833747",
+        "description": "Conditor echelon-current 1.39.0 kickoff-set qualification against the real releases: installs every native host tool of the set at its published digest and verifies each receipt (conditor#138, head d7893064, merged as d75c1db and released as v0.10.25)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/42751976937/job/129617463942",
+        "description": "Conditor build-test, including WebScaffoldTests.runKickoffSet1390 over the vendored 1.39.0 linux-x64 set (sha256 b6510138...), WebPackageUpgradeTests.echelonCurrent1390 (the Echelon theme 1.0.0 -> 1.1.0 as an exact release-asset pin, no boundary crossed) and EchelonThemeComponentTests (conditor#138)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
