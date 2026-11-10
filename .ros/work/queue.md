@@ -81,4 +81,4 @@
 | WI-0078 | Register Forma 0.13.1 and cut echelon-current 1.37.1 (record header fix, forma#179) | complete |  | medium |
 | WI-0079 | Register Forma 0.14.0 and cut echelon-current 1.37.2 (owner-approved) | complete |  | medium |
 | WI-0080 | Register Forma 1.0.1 and the Echelon theme 1.0.0; cut echelon-current 1.38.0 (owner-approved) | complete |  | medium |
-| WI-0081 | Register the Echelon theme 1.1.0; cut echelon-current 1.39.0 (owner-approved) | ready |  | medium |
+| WI-0081 | Register the Echelon theme 1.1.0; cut echelon-current 1.39.0 (owner-approved) | complete |  | medium |
