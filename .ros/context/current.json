@@ -3304,7 +3304,27 @@
       "updatedAt": "2026-11-10T03:41:09.000Z",
       "telemetryExecutionIds": [
         "EXE-20261110T034110052Z-3cd095ba"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "d3b1d2d756f6eb04b199ad8d",
+        "recordedAt": "2026-11-10T03:44:01.000Z",
+        "executionId": "EXE-20261110T034110052Z-3cd095ba",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-current-1.39.0",
+        "commit": "f23d2bce8297af0156d20a95a06f665b0467e2d8",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-current-1.39.0",
+        "remoteCommit": "f23d2bce8297af0156d20a95a06f665b0467e2d8",
+        "summary": "echelon-current 1.39.0 cut (proposed): theme 1.1.0 registered; profile, snapshot, channel and release set regenerated",
+        "nextAction": "Conditor qualifies theme 1.1.0 and releases 0.10.25; then REG-RU-007 in CI and record the owner's approval",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      }
     }
   ]
 }
