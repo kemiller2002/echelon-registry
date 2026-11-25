@@ -93,4 +93,4 @@
 | WI-0090 | Register Aegis 2.0.1 and cut echelon-current 1.41.0 selecting it (2.0.0 declares FSharp.Core >= 11.0.101) | complete |  | medium |
 | WI-0091 | Register Aegis 2.0.2 and cut echelon-current 1.42.0 (detached capture makes no blocking wait) | complete |  | medium |
 | WI-0092 | Upgrade the registry's own toolchain to echelon-current 1.42.0 (praxis 3.7.2->3.25.0, ordo 1.5.0->1.20.0) | complete |  | medium |
-| WI-0093 | INIT-012: record planned (not available) capabilities for durable command execution, system messaging and runtime telemetry; correct Vigila portfolio description | ready |  | medium |
+| WI-0093 | INIT-012: record planned (not available) capabilities for durable command execution, system messaging and runtime telemetry; correct Vigila portfolio description | complete |  | medium |
