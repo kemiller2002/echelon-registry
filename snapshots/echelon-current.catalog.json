@@ -178,6 +178,12 @@
       "sha256": "b42b9cf7cf2b3a436f7419c03fccc32d123abe0594839889fe8b6372cfb46a41"
     },
     {
+      "systemId": "praxis",
+      "version": "3.26.0",
+      "manifest": "releases/praxis/3.26.0.release.json",
+      "sha256": "87754d1831a82a742b63804705eb3c03c9acda34f7c69d9a1760ba9107efc299"
+    },
+    {
       "systemId": "ordo",
       "version": "1.4.0",
       "manifest": "releases/ordo/1.4.0.release.json",
@@ -550,6 +556,12 @@
       "sha256": "dca9f0ebd2ab0edc1c2a7a5e902359df45d3a8b664d25b779a6f48cd4189b600"
     },
     {
+      "systemId": "arca",
+      "version": "0.7.1",
+      "manifest": "releases/arca/0.7.1.release.json",
+      "sha256": "2816bf4728ccd150b48593f5b496c46d9e25be97406f696fe65c62e27e16a27a"
+    },
+    {
       "systemId": "fides",
       "version": "0.1.0",
       "manifest": "releases/fides/0.1.0.release.json",
@@ -601,9 +613,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.42.0",
+      "version": "1.43.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "7f4b25b0a1730a4f4b7c74301aa3d71e454311ad92a4364265d9dc6c03243b84"
+      "sha256": "4b4f2c6b865a5ef83c0bc30adb1f752332dc8c7fda0551d7f52fa1bd05d68c3e"
     }
   ]
 }
