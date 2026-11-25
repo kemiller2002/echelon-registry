@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 82,
+  "nextSeq": 89,
   "items": [
     {
       "id": "WI-0001",
@@ -1716,6 +1716,132 @@
       },
       "source": "manual",
       "sourceReference": ".praxis/inbox/documents/2026-11-09-echelon-current-1.39.0-echelon-theme-1.1.0.md"
+    },
+    {
+      "id": "WI-0083",
+      "title": "Register Aegis 2.0.0 once released: source is 2.0.0, NuGet and Registry have only 1.0.0 (RP-REG-2026-0001 N-01)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "captured",
+      "attachments": [],
+      "createdAt": "2026-11-25T01:59:03.288Z",
+      "updatedAt": "2026-11-25T01:59:03.288Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0084",
+      "title": "Owner decision: register Vitium (active defect-reporting system, absent from systems-v2.json) (RP-REG-2026-0001 N-02)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "captured",
+      "attachments": [],
+      "createdAt": "2026-11-25T01:59:03.607Z",
+      "updatedAt": "2026-11-25T01:59:03.607Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0085",
+      "title": "Owner decision: name a provider for workitem.query or remove it from Praxis optionalConsumes (RP-REG-2026-0001 N-03)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "captured",
+      "attachments": [],
+      "createdAt": "2026-11-25T01:59:03.895Z",
+      "updatedAt": "2026-11-25T01:59:03.895Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0086",
+      "title": "Owner decision: register or exclude unregistered Echelon repositories Causa, Specula, Census, Armamentarium, echelon-knowledge-store, EDF (RP-REG-2026-0001 N-05)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "captured",
+      "attachments": [],
+      "createdAt": "2026-11-25T01:59:04.197Z",
+      "updatedAt": "2026-11-25T01:59:04.197Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0087",
+      "title": "Owner decision: delete the empty observer repository or reserve it for the application-observability option (RP-REG-2026-0001 N-06)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "captured",
+      "attachments": [],
+      "createdAt": "2026-11-25T01:59:04.483Z",
+      "updatedAt": "2026-11-25T01:59:04.483Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0088",
+      "title": "Owner decision: take or keep deferring the application-observability option; on taking it, add a plannedCapabilities entry with owner and decision (RP-REG-2026-0001 Options)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "captured",
+      "attachments": [],
+      "createdAt": "2026-11-25T01:59:04.790Z",
+      "updatedAt": "2026-11-25T01:59:04.790Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
     }
   ]
 }

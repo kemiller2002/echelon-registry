@@ -1,1 +1,69 @@
-[]
+[
+  {
+    "author_agent": "anthropic/claude-code",
+    "completion": "complete",
+    "confidence": "medium",
+    "created": "2026-11-25",
+    "discipline": [
+      "observability",
+      "architecture"
+    ],
+    "id": "RP-REG-2026-0001",
+    "keywords": [
+      "logging",
+      "metrics",
+      "tracing",
+      "health",
+      "alerting",
+      "OpenTelemetry",
+      "OTLP",
+      "Aegis",
+      "Vitium"
+    ],
+    "path": "research/packages/RP-REG-2026-0001--application-observability-use-cases-and-gap-analysis.md",
+    "priority": "medium",
+    "provenance": {
+      "contributions": {
+        "EXE-20261125T015539652Z-8aaad225": {
+          "actor": {
+            "id": "anthropic/claude-code",
+            "kind": "agent",
+            "model": "unknown",
+            "provider": "anthropic",
+            "runtime": "claude-code"
+          },
+          "at": "2026-11-25T01:59:09.743Z",
+          "operations": [
+            "created"
+          ],
+          "reason": "Record application-observability use cases and gap analysis; owner deferred building the system"
+        }
+      }
+    },
+    "related_documents": [
+      "registry/systems-v2.json",
+      "spec/ecosystem-distribution-readiness.md",
+      "spec/echelon-integration-standard.md"
+    ],
+    "related_projects": [
+      "aegis",
+      "vigila",
+      "vitium",
+      "strata",
+      "unbound"
+    ],
+    "research_area": "portfolio-capabilities",
+    "superseded_by": [],
+    "supersedes": [],
+    "tags": [
+      "observability",
+      "telemetry",
+      "gap-analysis",
+      "use-cases",
+      "unowned-capability"
+    ],
+    "title": "Application observability — use cases and gap analysis",
+    "updated": "2026-11-25",
+    "version": "1.0.0"
+  }
+]

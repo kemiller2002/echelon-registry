@@ -82,3 +82,10 @@
 | WI-0079 | Register Forma 0.14.0 and cut echelon-current 1.37.2 (owner-approved) | complete |  | medium |
 | WI-0080 | Register Forma 1.0.1 and the Echelon theme 1.0.0; cut echelon-current 1.38.0 (owner-approved) | complete |  | medium |
 | WI-0081 | Register the Echelon theme 1.1.0; cut echelon-current 1.39.0 (owner-approved) | complete |  | medium |
+| WI-0082 | WI-0082 | active |  |  |
+| WI-0083 | Register Aegis 2.0.0 once released: source is 2.0.0, NuGet and Registry have only 1.0.0 (RP-REG-2026-0001 N-01) | captured |  | medium |
+| WI-0084 | Owner decision: register Vitium (active defect-reporting system, absent from systems-v2.json) (RP-REG-2026-0001 N-02) | captured |  | medium |
+| WI-0085 | Owner decision: name a provider for workitem.query or remove it from Praxis optionalConsumes (RP-REG-2026-0001 N-03) | captured |  | medium |
+| WI-0086 | Owner decision: register or exclude unregistered Echelon repositories Causa, Specula, Census, Armamentarium, echelon-knowledge-store, EDF (RP-REG-2026-0001 N-05) | captured |  | medium |
+| WI-0087 | Owner decision: delete the empty observer repository or reserve it for the application-observability option (RP-REG-2026-0001 N-06) | captured |  | medium |
+| WI-0088 | Owner decision: take or keep deferring the application-observability option; on taking it, add a plannedCapabilities entry with owner and decision (RP-REG-2026-0001 Options) | captured |  | medium |

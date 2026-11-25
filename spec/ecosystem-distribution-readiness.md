@@ -116,6 +116,14 @@ Two portfolio capabilities have a **planned owner** but **no implementation**. T
 
 Until a planned capability is implemented, no system — including its planned owner — may list its capability ids under `provides`. A consumer may still declare them in `optionalConsumes`; resolution returns `unavailable`, which MUST NOT fail the consumer's core behavior.
 
+### Unowned portfolio capabilities (recorded options)
+
+An unowned capability is a gap that has no owner and no implementation. It is not a `plannedCapabilities` entry, because those require a planned owner and an owner decision. It gets one only when the owner assigns it.
+
+| Capability | State | Record |
+|---|---|---|
+| Application observability: structured logs, metrics, distributed tracing, application health, alerting, telemetry export, and AI-assisted operational diagnosis | No owner and no implementation. Aegis produces structured fault events but declares itself not a logging, metrics, tracing or monitoring tool. Vigila is the follow-up and task organizer. No repository depends on OpenTelemetry, Serilog or Microsoft.Extensions.Logging. The owner deferred building it on 2026-11-25 and kept it as an option | [`research/packages/RP-REG-2026-0001--application-observability-use-cases-and-gap-analysis.md`](../research/packages/RP-REG-2026-0001--application-observability-use-cases-and-gap-analysis.md): use cases, gap analysis, Unbound traceability and options |
+
 ## D. Research, methodology, planning, website, and data repositories
 
 The repositories below must **not** become normal Conditor install targets in their present role.
