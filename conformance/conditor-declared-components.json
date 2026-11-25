@@ -5,9 +5,11 @@
   "observedIn": [
     "kemiller2002/chrona",
     "kemiller2002/summa",
-    "kemiller2002/signal"
+    "kemiller2002/signal",
+    "kemiller2002/causa"
   ],
   "components": [
+    "aegis",
     "arca",
     "echelon-theme",
     "fides",
