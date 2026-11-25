@@ -1,0 +1,12 @@
+{
+  "schema": "praxis.instance/1",
+  "instanceId": "pxi-83fbf3ac819e4470a1be6ca7b282ea17",
+  "createdAt": "2026-11-25T18:36:05.198Z",
+  "createdWith": "3.25.0",
+  "repository": {
+    "provider": "github",
+    "repositoryId": null,
+    "repository": "kemiller2002/echelon-registry"
+  },
+  "predecessors": []
+}
