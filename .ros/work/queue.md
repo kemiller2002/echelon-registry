@@ -91,3 +91,4 @@
 | WI-0088 | Owner decision: take or keep deferring the application-observability option; on taking it, add a plannedCapabilities entry with owner and decision (RP-REG-2026-0001 Options) | captured |  | medium |
 | WI-0089 | Move echelon-current to Aegis 2.0.0 (owner request 2026-11-25) | complete |  | medium |
 | WI-0090 | Register Aegis 2.0.1 and cut echelon-current 1.41.0 selecting it (2.0.0 declares FSharp.Core >= 11.0.101) | complete |  | medium |
+| WI-0091 | Register Aegis 2.0.2 and cut echelon-current 1.42.0 (detached capture makes no blocking wait) | ready |  | medium |

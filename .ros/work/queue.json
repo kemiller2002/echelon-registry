@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 91,
+  "nextSeq": 92,
   "items": [
     {
       "id": "WI-0001",
@@ -1874,6 +1874,27 @@
       "attachments": [],
       "createdAt": "2026-11-25T12:46:28.037Z",
       "updatedAt": "2026-11-25T13:26:19Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0091",
+      "title": "Register Aegis 2.0.2 and cut echelon-current 1.42.0 (detached capture makes no blocking wait)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-11-25T15:35:23.075Z",
+      "updatedAt": "2026-11-25T15:35:23Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
