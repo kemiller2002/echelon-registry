@@ -286,7 +286,29 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-11-25T15:08:00Z",
+    "statement": [
+      "Release and do what you recommend"
+    ],
+    "decision": "Owner instruction in this session on 2026-11-25. The session had reported that Aegis 2.x's capture waited synchronously for a detached fault record, freezing single-threaded WebAssembly hosts (found by Summa's browser fault test; Signal and Vigila carry the same latent hang), and recommended \"Aegis 2.0.2, where capture stops waiting when recording is set to the default background (Detached) mode ... and needs a channel move to 1.42.0\". The owner answered \"Release and do what you recommend\". The exact minute is not available to the recording agent: the answer came after the 1.41.0 merge at 13:30Z and before WI-0008 (the Aegis 2.0.2 fix) began at about 15:15Z, so `at` records an approximate time within that window, not the exact minute. The set selects exactly that move: Aegis 2.0.1 -> 2.0.2, nothing else",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit instruction (\"Release and do what you recommend\", 2026-11-25, approving the recommended Aegis 2.0.2 release and the move of echelon-current to 1.42.0); recorded after REG-RU-007 passed in CI against released Conditor 0.10.29 on this exact set and Conditor qualified it (conditor#143); no VER-003 exception applies",
+    "recordedAt": "2026-11-25T16:30:50Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/45647515019/job/139346752258",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.29 (checksum and build-provenance attestation verified), on this exact set, with aegis a declared component; distribution conformance on all five platforms (echelon-registry#117)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/pull/143",
+        "description": "Conditor echelon-current 1.42.0 kickoff-set qualification and build-test (WebScaffoldTests.runKickoffSet1420 over the vendored 1.42.0 linux-x64 set, sha256 6be3bc97...; NugetBindingTests.wasmPatchMove), CI 37/37 green on head b171c090, merged as 693ccef and released as v0.10.29 (release run 45650270927)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
