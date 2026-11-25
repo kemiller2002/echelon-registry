@@ -286,7 +286,34 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-11-25T04:38:45Z",
+    "statement": [
+      "Move the echelon current"
+    ],
+    "decision": "Owner request in this session on 2026-11-25, \"Move the echelon current\", following the publication of Aegis 2.0.0 (aegis#24) and its registration (echelon-registry#114), where the session had reported that echelon-current still selected Aegis 1.0.0 because its range was >=1.0.0 <2.0.0 and that moving it was a separate owner approval. The exact minute is not available to the recording agent: the request came after 03:50:51Z (when echelon-registry#114's merge was reported) and before WI-0089 began at 04:38:45Z, so `at` records that upper bound, not the exact time. The set selects exactly that move: Aegis 1.0.0 -> 2.0.0, nothing else. Before this approval was recorded the session reported to the owner that `conditor upgrade --current` has no transition for a nuget.org-distributed binding, so repositories that declare Aegis 1.0.0 are refused rather than moved and stay on 1.39.0 until they migrate (Conditor WI-0077); the owner was told the move would ship as is unless they said otherwise, and gave no other instruction",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit instruction (\"Move the echelon current\", 2026-11-25), which also authorized the Conditor 0.10.26 release that qualifies Aegis 2.0.0; recorded after REG-RU-007 passed in CI against released Conditor 0.10.26 on this exact set and Conditor qualified it (conditor#140); no VER-003 exception applies",
+    "recordedAt": "2026-11-25T05:17:00Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/45548570969/job/138994348065",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.26 (checksum and build-provenance attestation verified), on this exact set, with aegis a declared component; distribution conformance on all five platforms (echelon-registry#115)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/45549697381/job/138988165685",
+        "description": "Conditor echelon-current 1.40.0 kickoff-set qualification against the real releases: installs every native host tool of the set at its published digest and verifies each receipt (conditor#140, head 11f5a878, merged as 164fa7a and released as v0.10.26)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/45549697381/job/138987728443",
+        "description": "Conditor build-test, including WebScaffoldTests.runKickoffSet1400 over the vendored 1.40.0 linux-x64 set (sha256 2469c310...): Aegis 2.0.0 qualified, no native tool for Aegis, and the kickoff engine project references EchelonFoundry.Aegis.Core 2.0.0 (conditor#140)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
