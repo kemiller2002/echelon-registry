@@ -1912,10 +1912,10 @@
       "description": null,
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-11-25T18:35:47.479Z",
-      "updatedAt": "2026-11-25T18:35:47Z",
+      "updatedAt": "2026-11-25T18:41:13Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
