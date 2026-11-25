@@ -1905,6 +1905,29 @@
       },
       "source": "manual",
       "sourceReference": null
+    },
+    {
+      "id": "GOV-TRN-001",
+      "title": "Organizational transparency, portfolio governance and repository manifest (GOV-TRN-2026-11)",
+      "description": "Public organizational portfolio, repository and initiative inventories, echelon.repository/v1 manifest spec, portfolio validator, governance research deliverables",
+      "tags": [
+        "governance"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-11-25T17:47:43Z",
+      "updatedAt": "2026-11-25T17:47:46Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
     }
   ]
 }

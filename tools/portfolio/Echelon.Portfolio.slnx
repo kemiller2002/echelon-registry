@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Echelon.Portfolio.Cli/Echelon.Portfolio.Cli.fsproj" />
+    <Project Path="src/Echelon.Portfolio/Echelon.Portfolio.fsproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Echelon.Portfolio.Tests/Echelon.Portfolio.Tests.fsproj" />
+  </Folder>
+</Solution>
