@@ -3428,7 +3428,27 @@
       "updatedAt": "2026-11-25T04:38:45.000Z",
       "telemetryExecutionIds": [
         "EXE-20261125T043846373Z-d156cd4c"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "e12352b39777f888bc751c6c",
+        "recordedAt": "2026-11-25T04:41:50.000Z",
+        "executionId": "EXE-20261125T043846373Z-d156cd4c",
+        "repository": "echelon-registry",
+        "branch": "claude/vigila-implementation-jdeps1",
+        "commit": "4af9a3979c21bd41653193ac9ba0c286856e5caa",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/vigila-implementation-jdeps1",
+        "remoteCommit": "4af9a3979c21bd41653193ac9ba0c286856e5caa",
+        "summary": "echelon-current 1.40.0 cut as proposed (Aegis 2.0.0) at 4af9a39; REG-RU-007 refuses against Conditor 0.10.25",
+        "nextAction": "Qualify Aegis 2.0.0 in Conditor, release it, then record the owner's approval",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      }
     }
   ]
 }
