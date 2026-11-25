@@ -37,6 +37,20 @@
             "created"
           ],
           "reason": "Record application-observability use cases and gap analysis; owner deferred building the system"
+        },
+        "EXE-20261125T022340136Z-6a6c981b": {
+          "actor": {
+            "id": "anthropic/claude-code",
+            "kind": "agent",
+            "model": "unknown",
+            "provider": "anthropic",
+            "runtime": "claude-code"
+          },
+          "at": "2026-11-25T02:25:27.190Z",
+          "operations": [
+            "modified"
+          ],
+          "reason": "Mark N-01 closed after Aegis 2.0.0 publication and registration"
         }
       }
     },
