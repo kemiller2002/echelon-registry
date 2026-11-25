@@ -286,7 +286,34 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-11-25T13:26:06Z",
+    "statement": [
+      "Approved"
+    ],
+    "decision": "Owner approval in this session on 2026-11-25. The session asked \"Approve echelon-current 1.41.0? (Aegis 2.0.0 -> 2.0.1 only.)\", having reported that the Aegis 2.0.0 packages declare FSharp.Core >= 11.0.101 so consumers on the .NET 10 SDK fail restore (NU1605/NU1109), that Aegis 2.0.1 (aegis#25) pins the floor at 10.1.400 with no source change, and that REG-RU-007 passed against released Conditor 0.10.28; the owner answered \"Approved\". `at` is when the answer reached the recording agent. The set selects exactly that move: Aegis 2.0.0 -> 2.0.1, nothing else",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit approval (\"Approved\", 2026-11-25, echelon-current 1.41.0); recorded after REG-RU-007 passed in CI against released Conditor 0.10.28 on this exact set and Conditor qualified it (conditor#142); no VER-003 exception applies",
+    "recordedAt": "2026-11-25T13:26:06Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/45617775287/job/139224232242",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.28 (checksum and build-provenance attestation verified), on this exact set, with aegis a declared component; distribution conformance on all five platforms (echelon-registry#116)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/45617770099/job/139218167326",
+        "description": "Conditor echelon-current 1.41.0 kickoff-set qualification against the real releases: installs every native host tool of the set at its published digest and verifies each receipt (conditor#142, head 9aea6076, merged as ee9cf5e and released as v0.10.28, release run 45618868450)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/actions/runs/45617770099/job/139217528793",
+        "description": "Conditor build-test, including WebScaffoldTests.runKickoffSet1410 over the vendored 1.41.0 linux-x64 set (sha256 daa69508...): Aegis 2.0.1 qualified and the kickoff engine project references EchelonFoundry.Aegis.Core 2.0.1, and NugetBindingTests.patchMove (2.0.0 -> 2.0.1 moves every Aegis pin and leaves FSharp.Core untouched) (conditor#142)"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
