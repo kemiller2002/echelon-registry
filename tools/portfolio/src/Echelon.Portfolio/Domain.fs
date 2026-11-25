@@ -95,4 +95,5 @@ module Vocabulary =
               "third-party-rights"
               "competitive-specific"
               "incident-evidence"
+              "intellectual-property"
               "other" ]

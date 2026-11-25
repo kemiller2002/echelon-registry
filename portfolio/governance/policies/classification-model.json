@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.classification-model.v1.json",
+  "schema": "echelon.classification-model/v1",
+  "standard": "STD-ORG-CLS-001",
+  "version": "0.1.0",
+  "status": "proposed",
+  "levels": [
+    {
+      "id": "public",
+      "rank": 0,
+      "permittedRepositoryVisibility": ["public", "private"],
+      "gitStoragePermitted": true,
+      "externalAiProcessing": "any",
+      "publication": "allowed",
+      "accessReviewMonths": null,
+      "maxRestrictionReviewMonths": null
+    },
+    {
+      "id": "internal",
+      "rank": 1,
+      "permittedRepositoryVisibility": ["private"],
+      "gitStoragePermitted": true,
+      "externalAiProcessing": "approved-providers-no-training",
+      "publication": "after-classification-decision",
+      "accessReviewMonths": null,
+      "maxRestrictionReviewMonths": 6
+    },
+    {
+      "id": "confidential",
+      "rank": 2,
+      "permittedRepositoryVisibility": ["private"],
+      "gitStoragePermitted": true,
+      "externalAiProcessing": "approved-providers-contractual-minimum-necessary",
+      "publication": "sanitized-projection-only",
+      "accessReviewMonths": 12,
+      "maxRestrictionReviewMonths": 12
+    },
+    {
+      "id": "restricted",
+      "rank": 3,
+      "permittedRepositoryVisibility": [],
+      "gitStoragePermitted": false,
+      "externalAiProcessing": "none",
+      "publication": "opaque-reference-only",
+      "accessReviewMonths": 3,
+      "maxRestrictionReviewMonths": 6
+    }
+  ],
+  "justificationCategories": [
+    "contractual",
+    "personal-data",
+    "security-exploitable",
+    "credential",
+    "legal-privilege",
+    "third-party-rights",
+    "competitive-specific",
+    "incident-evidence",
+    "intellectual-property",
+    "other"
+  ],
+  "invalidJustifications": [
+    "embarrassing",
+    "incomplete-capability",
+    "contradicts-previous-decision",
+    "reveals-general-strategy",
+    "unpolished",
+    "not-reviewed"
+  ],
+  "$defs": {
+    "classification": {
+      "enum": ["public", "internal", "confidential", "restricted"]
+    },
+    "restriction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "justification"],
+      "properties": {
+        "classification": {"enum": ["internal", "confidential", "restricted"]},
+        "justification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["category", "harm", "decidedBy", "decidedOn", "reviewBy"],
+          "properties": {
+            "category": {
+              "enum": ["contractual", "personal-data", "security-exploitable", "credential", "legal-privilege", "third-party-rights", "competitive-specific", "incident-evidence", "intellectual-property", "other"]
+            },
+            "harm": {"type": "string", "minLength": 10},
+            "decidedBy": {"type": "string", "minLength": 1},
+            "decidedOn": {"type": "string", "format": "date"},
+            "reviewBy": {"type": "string", "format": "date"}
+          }
+        }
+      }
+    }
+  }
+}
