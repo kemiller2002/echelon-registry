@@ -352,6 +352,12 @@
       "sha256": "00d6dcc26bb8526a225dda2691fe2900ea02608f5515e2e0117f16eee7c3b6af"
     },
     {
+      "systemId": "aegis",
+      "version": "2.0.1",
+      "manifest": "releases/aegis/2.0.1.release.json",
+      "sha256": "1093c4936161386a5a686036f575c6e93c8aa703716d49bee9b74145a4eefdc2"
+    },
+    {
       "systemId": "limen",
       "version": "0.6.2",
       "manifest": "releases/limen/0.6.2.release.json",
@@ -589,9 +595,9 @@
   "profiles": [
     {
       "id": "echelon-current",
-      "version": "1.40.0",
+      "version": "1.41.0",
       "manifest": "profiles/echelon-current.profile.json",
-      "sha256": "b6d0dd2b342495aa2078ecf6d63ea2bb6c44cae00efed491199ea409d7ebc1ab"
+      "sha256": "7aaf4326aaf3e5c4a43962a13497aca6cb2a97640882fb90af794b22dd3692d9"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 90,
+  "nextSeq": 91,
   "items": [
     {
       "id": "WI-0001",
@@ -1853,6 +1853,27 @@
       "attachments": [],
       "createdAt": "2026-11-25T04:38:40.991Z",
       "updatedAt": "2026-11-25T05:17:08.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0090",
+      "title": "Register Aegis 2.0.1 and cut echelon-current 1.41.0 selecting it (2.0.0 declares FSharp.Core >= 11.0.101)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-11-25T12:46:28.037Z",
+      "updatedAt": "2026-11-25T12:46:31Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

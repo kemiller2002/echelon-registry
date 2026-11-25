@@ -1,0 +1,30 @@
+{
+  "schema": "echelon.release/v2",
+  "systemId": "aegis",
+  "version": "2.0.1",
+  "repository": "kemiller2002/aegis",
+  "tag": "nuget:EchelonFoundry.Aegis.Core@2.0.1",
+  "commit": "c41d14e4e22c38ea7523c8e6dd9709bca35b17f5",
+  "releaseStage": "stable",
+  "lifecycleState": "active",
+  "distributionClass": "nuget-library",
+  "executable": null,
+  "compatibilityAliases": [],
+  "provides": [],
+  "distributions": [
+    {
+      "mechanism": "nuget",
+      "package": "EchelonFoundry.Aegis.Core",
+      "url": "https://api.nuget.org/v3-flatcontainer/echelonfoundry.aegis.core/2.0.1/echelonfoundry.aegis.core.2.0.1.nupkg"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "EchelonFoundry.Aegis.Core.2.0.1.nupkg",
+      "purpose": "package",
+      "platform": null,
+      "sha256": "f578f3426d2b9863edadb139ab0430dc51ca4e8c3d2b980fbbe88d5f3613fb56",
+      "mediaType": "application/zip"
+    }
+  ]
+}
