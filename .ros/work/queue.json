@@ -1954,10 +1954,10 @@
       "description": null,
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-11-25T23:30:47.190Z",
-      "updatedAt": "2026-11-25T23:30:49Z",
+      "updatedAt": "2026-11-25T23:39:15Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
