@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-11-25T02:25:05.000Z",
+  "updatedAt": "2026-11-25T05:17:08.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -3418,6 +3418,47 @@
         }
       },
       "completedAt": "2026-11-25T02:25:05.000Z"
+    },
+    {
+      "id": "WI-0089",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "sets/echelon-current/1.40.0.json"
+        },
+        {
+          "type": "tests",
+          "path": "conformance/validate-release-sets.fsx"
+        }
+      ],
+      "updatedAt": "2026-11-25T05:17:08.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261125T043846373Z-d156cd4c"
+      ],
+      "latestCheckpoint": {
+        "id": "276260fb89d0e5105a75a3d2",
+        "recordedAt": "2026-11-25T05:17:07.000Z",
+        "executionId": "EXE-20261125T043846373Z-d156cd4c",
+        "repository": "echelon-registry",
+        "branch": "claude/vigila-implementation-jdeps1",
+        "commit": "9c63087887e85bd08c7e2e8173bfc5f64208001a",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/vigila-implementation-jdeps1",
+        "remoteCommit": "9c63087887e85bd08c7e2e8173bfc5f64208001a",
+        "summary": "1.40.0 approved and recorded; REG-RU-007 passes against Conditor 0.10.26",
+        "nextAction": "Complete WI-0089 and merge echelon-registry#115",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-11-25T05:17:08.000Z"
     }
   ]
 }
