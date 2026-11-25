@@ -38,6 +38,16 @@ provenance:
         model: unknown
         runtime: claude-code
       reason: "Record application-observability use cases and gap analysis; owner deferred building the system"
+    EXE-20261125T022340136Z-6a6c981b:
+      operations: [modified]
+      at: 2026-11-25T02:25:27.190Z
+      actor:
+        kind: agent
+        id: anthropic/claude-code
+        provider: anthropic
+        model: unknown
+        runtime: claude-code
+      reason: "Mark N-01 closed after Aegis 2.0.0 publication and registration"
 ---
 
 # Research State Snapshot
