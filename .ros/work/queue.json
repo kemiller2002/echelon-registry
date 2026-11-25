@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 93,
+  "nextSeq": 94,
   "items": [
     {
       "id": "WI-0001",
@@ -1916,6 +1916,27 @@
       "attachments": [],
       "createdAt": "2026-11-25T18:35:47.479Z",
       "updatedAt": "2026-11-25T18:41:13Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0093",
+      "title": "INIT-012: record planned (not available) capabilities for durable command execution, system messaging and runtime telemetry; correct Vigila portfolio description",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-25T20:15:31.094Z",
+      "updatedAt": "2026-11-25T20:16:43Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

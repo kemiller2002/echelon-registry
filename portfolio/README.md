@@ -12,7 +12,7 @@ This is a descriptive planning layer, not a capability discovery or release cont
 | Project Administration | Installation inventory and project administration | project-administration |
 | Dokimos | Quality verification and testing | dokimos |
 | Tutela | Engineering guidance and safeguards | tutela |
-| Vigila | Follow-up tracking; operational monitoring direction to verify | vigila |
+| Vigila | Follow-up and task organizer; verified not an operational monitoring owner (RP-REG-2026-0001; INIT-012) | vigila |
 | Tekmerion | Research publication | tekmerion |
 | Visual Engineering | Visual engineering practices | visual-engineering |
 | Communication Engineering | Communication engineering practices | communication-engineering |
