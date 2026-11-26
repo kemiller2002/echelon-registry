@@ -4179,8 +4179,8 @@
         "Research, architecture and requirements (documented-only)"
       ],
       "plannedCapabilities": [
-        "Pipeline model and validator, transformation and check libraries, standard adapters (phase 1, docs/roadmap.md)",
-        "Execution engine, PostgreSQL storage, lineage and evidence (phase 2)"
+        "Phase 1 (owner-directed, DF-TRN-2026-0018): minimal declarative typed linear pipeline with immutable raw evidence, isolated temporary staging, deterministic mapping, validation, reconciliation, authorized domain-API load, post-load verification, checkpoints/replay/idempotency and dry runs; basic reusable mapping packages (docs/roadmap.md)",
+        "Later, trigger-gated: complex DAGs (T2), advanced AI and vendor-specific packages (T3), visual editing (T4)"
       ],
       "systems": [],
       "initiatives": [
@@ -4213,15 +4213,14 @@
         "docs/roadmap.md"
       ],
       "outstandingDecisions": [
-        "Extraction of Echelon.Execution to a shared repository (OQ-01)",
-        "Strata DIV / Transitus adapter boundary (OQ-02)",
-        "Owner for runtime observability, GAP-05 (OQ-03)",
-        "Repository licence: MIT per charter vs portfolio PolyForm Noncommercial (OQ-12)"
+        "Owner for runtime observability, GAP-05: investigate Arca and portfolio ownership before assignment (OQ-03)",
+        "Repository licence: resolve against the authoritative portfolio licensing policy before release (OQ-12)",
+        "Bank format from first partner; Schwab documentation terms; NACHA redistribution rights (OQ-06, OQ-07, OQ-16)"
       ],
       "knownLimitations": [
         "No implementation; all performance figures are theoretical (docs/architecture/12-performance-and-economics.md)"
       ],
-      "plannedDirection": "Phase 1 implements only the pipeline model, validator, pure transformation and check libraries and file adapters needed by Unbound release-1 scenarios (docs/roadmap.md).",
+      "plannedDirection": "Owner-directed phase 1 (2026-11-26): minimal declarative typed pipeline demonstrated on the IRS feed, a bank/custodian feed and canonical historical migration with rehearsal; Echelon.Execution used in place until its shared contract is stable; no separate service (docs/roadmap.md).",
       "lineage": {
         "previousNames": [],
         "supersedes": [],
