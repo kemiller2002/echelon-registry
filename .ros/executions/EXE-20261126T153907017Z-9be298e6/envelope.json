@@ -1,0 +1,101 @@
+{
+  "schema": "ordo.execution/1",
+  "executionId": "EXE-20261126T153907017Z-9be298e6",
+  "workItem": "kemiller2002/echelon-registry:WI-0097",
+  "actor": {
+    "id": "anthropic/claude",
+    "kind": "agent",
+    "provider": "anthropic",
+    "model": null,
+    "runtime": "claude-code"
+  },
+  "role": "implementation",
+  "capabilities": [
+    "implementation.modify",
+    "implementation.modify-tests",
+    "evaluator.invoke",
+    "verification.observe",
+    "evidence.record"
+  ],
+  "prohibitions": [
+    "specification.create-promise",
+    "specification.approve",
+    "acceptance.modify",
+    "evaluator.modify",
+    "verification.verdict",
+    "review.accept"
+  ],
+  "baselineRevision": "2522ef57597214575770a57d552a91e1c2a5e5c0",
+  "candidateRevision": "fc508a57e3c5273f5e02be2e229e5d66045911dc",
+  "workspace": "checkout:EXE-20261126T153907017Z-9be298e6",
+  "workspaceBinding": {
+    "id": "checkout:EXE-20261126T153907017Z-9be298e6",
+    "branch": "claude/daf-ingestion-stp-research-954xag",
+    "path": null,
+    "mechanism": "working-directory"
+  },
+  "containment": "semantic-only",
+  "containmentDetail": {
+    "mechanism": "working-directory",
+    "restrictions": [],
+    "evidence": []
+  },
+  "securitySandbox": false,
+  "mutationBoundary": {
+    "scopes": [],
+    "projections": [],
+    "evaluatorReferences": []
+  },
+  "evaluator": null,
+  "humanOnlyTransitions": [],
+  "parentExecution": null,
+  "startedAt": "2026-11-26T15:39:07.547Z",
+  "state": "completed",
+  "stateReason": null,
+  "origin": {
+    "kind": "work-transition",
+    "reference": "work.begin"
+  },
+  "containmentProfile": {
+    "schema": "praxis.containment/1",
+    "source": null,
+    "hostEnforced": false,
+    "restrictions": [
+      {
+        "dimension": "filesystem",
+        "status": "unknown",
+        "mechanism": null,
+        "evidence": null
+      },
+      {
+        "dimension": "process",
+        "status": "unknown",
+        "mechanism": null,
+        "evidence": null
+      },
+      {
+        "dimension": "network",
+        "status": "unknown",
+        "mechanism": null,
+        "evidence": null
+      },
+      {
+        "dimension": "credential",
+        "status": "unknown",
+        "mechanism": null,
+        "evidence": null
+      },
+      {
+        "dimension": "environment",
+        "status": "unknown",
+        "mechanism": null,
+        "evidence": null
+      }
+    ]
+  },
+  "evaluatorCommand": null,
+  "provider": {
+    "sessionId": "be3ccebe-6f35-54ca-9867-b1fca4925a53",
+    "agentInstanceId": null
+  }
+}
