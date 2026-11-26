@@ -1,24 +1,24 @@
 {
   "schemaVersion": 4,
   "project": "echelon-registry",
-  "manifestSha256": "d4828fc385a47ea31f01808a0969bc06c2d3dcad1a692b7074754c4527286368",
+  "manifestSha256": "60a3e9602c17c9df77c3f8ac4e97f5933fbc6d9018ad6f5dee140502b0239b34",
   "manifest": {
     "schemaVersion": 1,
     "name": "echelon-registry",
     "registryAuthority": {
       "kind": "resolved-release-set",
       "path": ".conditor/authority/resolved-release-set.json",
-      "sha256": "ea1b39a003d3f2f41c4fb6e979694ec82fd03964854e5dd268e38df51cd22931"
+      "sha256": "4851c24d52cf3a7ef6dd2ccec26ef7a97c769dd06076b51dfede387c5a8cf8c9"
     },
     "components": [
       {
         "id": "ordo",
-        "version": "1.5.0",
+        "version": "1.20.0",
         "required": true
       },
       {
         "id": "praxis",
-        "version": "3.7.2",
+        "version": "3.26.0",
         "required": true
       }
     ],
@@ -30,21 +30,21 @@
   "components": [
     {
       "id": "ordo",
-      "version": "1.5.0",
+      "version": "1.20.0",
       "distribution": "host-tool",
       "package": "ordo",
-      "descriptorSha256": "cac222af525161218391dade23d2a583c29315e8df255ffb9f11f0f2bb4eaf3a",
+      "descriptorSha256": "e0c49f0c717fd5afdd14699c77add4a12f68eded63231b80206cbe6a3cb374e5",
       "authority": "embedded-component-descriptor",
-      "sourceReference": "host:ordo@1.5.0"
+      "sourceReference": "host:ordo@1.20.0"
     },
     {
       "id": "praxis",
-      "version": "3.7.2",
+      "version": "3.26.0",
       "distribution": "host-tool",
       "package": "praxis",
-      "descriptorSha256": "476164cdd93d38e8b7960f37253334f1636204b6950c82e9f993605b269f0d45",
+      "descriptorSha256": "5cb1f058f06dde4ff975e0c559b74a564abda5a78aadac1d4d3fd8f6e3eaefa7",
       "authority": "embedded-component-descriptor",
-      "sourceReference": "host:praxis@3.7.2"
+      "sourceReference": "host:praxis@3.26.0"
     }
   ],
   "requirements": [],
@@ -54,7 +54,7 @@
       "code": "SDE-STRUCT-001",
       "band": "review",
       "path": "tools/resolve-profile.fsx",
-      "lineCount": 519
+      "lineCount": 671
     }
   ]
 }

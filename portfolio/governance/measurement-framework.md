@@ -20,7 +20,7 @@ first measurements, not trends.
 |---|---|---|---|---|---|
 | M-01 | Repositories registered | Echelon repositories with a portfolio entry ÷ Echelon repositories identified | `portfolio/repositories.json` vs internal inventory | 64 named + 19 aggregate of 83 identified = 100% counted; **77% named** | 100% named or justified |
 | M-02 | Repository descriptions verified | entries not `provisional` and `source: manifest` ÷ entries | validator metrics | 38 non-provisional of 64; **0 manifest-sourced** | ≥ 80% manifest-sourced |
-| M-03 | Initiatives with current status | initiatives with `lastReview` ≤ 180 days ÷ initiatives | validator PF010 | 28/28 (all reviewed 2026-11-25) | ≥ 95% sustained |
+| M-03 | Initiatives with current status | initiatives with `lastReview` ≤ 180 days ÷ initiatives | validator PF010 | 29/29 (reviewed 2026-11-25 or 2026-11-26) | ≥ 95% sustained |
 | M-04 | Capabilities with identified owners | capability areas in the ownership matrix with an owner ÷ areas | ownership matrix | 28 of 31 areas (3 unowned: GAP-05/06/07) | 100% owned or explicitly unowned with decision |
 | M-05 | Conflicting responsibilities | open DUP-* findings rated moderate or high confidence | duplication analysis | 8 | decreasing; each resolved by decision, not by deletion |
 | M-06 | Duplicate research efforts | research programs with overlapping questions | duplication analysis (DUP-01, DUP-08) | 2 | decreasing |

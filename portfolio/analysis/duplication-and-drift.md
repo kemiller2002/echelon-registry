@@ -19,7 +19,7 @@ maintenance cost, organizational complexity and long-term consequences, and stat
 ## 1. Portfolio diagnosis (EDF grammar)
 
 **System context.** One accountable owner, ~64 Echelon repositories (57 public), 32 registered
-systems, 28 initiatives, most work performed by autonomous agents under Praxis.
+systems, 29 initiatives, most work performed by autonomous agents under Praxis.
 
 **Manifestations.**
 - Version facts disagree across records: `ros.json` `rosVersion` differs from `.echelon/ros.json`

@@ -89,7 +89,7 @@ system claims it.
 | Due diligence answers | echelon-due-diligence (research) | echelon-assurance (controls) | due-diligence governance | boundary in DD governance doc |
 | Canonical time primitives | **Chrona (planned owner, QDI-079)** | Vigila (local Instant/Clock until then) | systems-v2 plannedCapabilities | planned, unimplemented |
 | Ledger, invoicing, payments | **Summa (planned owner, QDI-079)** | — | systems-v2 plannedCapabilities | planned, unimplemented |
-| Runtime monitoring and production logging | **unowned** (Vigila named "runtime monitoring" in the Secure Construction Standard; Vigila is a follow-up tracker) | — | assurance ECH1 finding 6; vigila charter | **unowned** (GAP-05) |
+| Runtime monitoring and production logging | **unowned** (Vigila named "runtime monitoring" in the Secure Construction Standard; Vigila is a follow-up tracker, independently verified as not an operational monitoring owner in RP-REG-2026-0001 / INIT-012) | — | assurance ECH1 finding 6; vigila charter | **unowned** (GAP-05) |
 | Auditor evidence export package | **unowned** | Praxis, Folio (proposals) | assurance ECH1 finding 6 | **unowned** (GAP-06) |
 | WORM / tamper-evident evidence storage | **unowned** | Dokimos evidence branch (mutable by pushers) | assurance ECH1 | **unowned** (GAP-07) |
 | Publication safeguards (portfolio projection checks) | Registry `tools/portfolio` (implemented 2026-11-25) | Tutela (secret scanning) | this work | coherent |

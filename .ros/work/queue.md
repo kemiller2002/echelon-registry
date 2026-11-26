@@ -3,6 +3,7 @@
 | ID | Work | Status | Tags | Priority |
 |---|---|---|---|---|
 | GOV-TRN-001 | Organizational transparency, portfolio governance and repository manifest (GOV-TRN-2026-11) | complete | governance | high |
+| GOV-TRN-002 | Resolve INIT-012 collision: renumber transparency initiative to INIT-029, add INIT-012 availability to the projection | ready | governance | high |
 | ROS-INSTALL-3-7-1 | ROS-INSTALL-3-7-1 | complete |  |  |
 | WI-0001 | Govern echelon-registry with Praxis 3.7.1 and Ordo 1.4.0; refresh distribution readiness | complete | praxis, ordo, toolchain | medium |
 | WI-0002 | Record Ordo 1.4.1 and select it in echelon-current | complete | ordo, registry | medium |
@@ -93,3 +94,8 @@
 | WI-0089 | Move echelon-current to Aegis 2.0.0 (owner request 2026-11-25) | complete |  | medium |
 | WI-0090 | Register Aegis 2.0.1 and cut echelon-current 1.41.0 selecting it (2.0.0 declares FSharp.Core >= 11.0.101) | complete |  | medium |
 | WI-0091 | Register Aegis 2.0.2 and cut echelon-current 1.42.0 (detached capture makes no blocking wait) | complete |  | medium |
+| WI-0092 | Upgrade the registry's own toolchain to echelon-current 1.42.0 (praxis 3.7.2->3.25.0, ordo 1.5.0->1.20.0) | complete |  | medium |
+| WI-0093 | INIT-012: record planned (not available) capabilities for durable command execution, system messaging and runtime telemetry; correct Vigila portfolio description | complete |  | medium |
+| WI-0094 | Register Praxis 3.26.0 and Arca 0.7.1 and propose echelon-current 1.43.0 | complete |  | medium |
+| WI-0095 | Record the owner's approval of echelon-current 1.43.0 | complete |  | medium |
+| WI-0096 | Upgrade the registry's own toolchain to echelon-current 1.43.0 (Praxis 3.25.0 -> 3.26.0) | complete |  | medium |

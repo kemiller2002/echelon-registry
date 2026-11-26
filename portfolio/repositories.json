@@ -44,6 +44,7 @@
         "INIT-001",
         "INIT-003",
         "INIT-006",
+        "INIT-012",
         "INIT-018"
       ],
       "dependencies": [
@@ -1030,6 +1031,7 @@
         "conditor"
       ],
       "initiatives": [
+        "INIT-012",
         "INIT-013",
         "INIT-016"
       ],
@@ -1323,6 +1325,7 @@
         "INIT-001",
         "INIT-003",
         "INIT-006",
+        "INIT-012",
         "INIT-015"
       ],
       "dependencies": [
@@ -1484,7 +1487,7 @@
         "INIT-002",
         "INIT-003",
         "INIT-006",
-        "INIT-012"
+        "INIT-029"
       ]
     },
     {
@@ -1757,7 +1760,7 @@
       "initiatives": [
         "INIT-002",
         "INIT-006",
-        "INIT-012"
+        "INIT-029"
       ]
     },
     {
@@ -1935,7 +1938,7 @@
         "INIT-002",
         "INIT-003",
         "INIT-009",
-        "INIT-012"
+        "INIT-029"
       ],
       "dependencies": [
         ".NET 10 SDK (build)",
@@ -1999,7 +2002,8 @@
         "INIT-010",
         "INIT-012",
         "INIT-027",
-        "INIT-028"
+        "INIT-028",
+        "INIT-029"
       ]
     },
     {
@@ -2043,7 +2047,8 @@
       "initiatives": [
         "INIT-010",
         "INIT-012",
-        "INIT-016"
+        "INIT-016",
+        "INIT-029"
       ],
       "dependencies": [
         "Conditor release qualification before channel moves (REG-RU-007) (hard)",
@@ -2310,7 +2315,8 @@
       ],
       "initiatives": [
         "INIT-001",
-        "INIT-008"
+        "INIT-008",
+        "INIT-012"
       ],
       "dependencies": [
         "Praxis/ROS 3.1.4 (build)",
@@ -2975,6 +2981,7 @@
       "initiatives": [
         "INIT-001",
         "INIT-008",
+        "INIT-012",
         "INIT-017"
       ],
       "dependencies": [
@@ -3165,6 +3172,7 @@
         "ordo"
       ],
       "initiatives": [
+        "INIT-012",
         "INIT-013"
       ],
       "dependencies": [
@@ -3333,7 +3341,8 @@
         "INIT-012",
         "INIT-013",
         "INIT-015",
-        "INIT-016"
+        "INIT-016",
+        "INIT-029"
       ],
       "dependencies": [
         "Aegis, Forma, Folio (shared application foundations) (hard)",
@@ -3850,6 +3859,7 @@
       ],
       "initiatives": [
         "INIT-001",
+        "INIT-012",
         "INIT-018"
       ],
       "dependencies": [
@@ -4252,7 +4262,8 @@
       ],
       "systems": [],
       "initiatives": [
-        "INIT-005"
+        "INIT-005",
+        "INIT-012"
       ],
       "dependencies": [
         "daf-landscape (research source) (hard)",

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 92,
+  "nextSeq": 97,
   "items": [
     {
       "id": "WI-0001",
@@ -1918,6 +1918,134 @@
       "attachments": [],
       "createdAt": "2026-11-25T17:47:43Z",
       "updatedAt": "2026-11-25T18:09:35Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0092",
+      "title": "Upgrade the registry's own toolchain to echelon-current 1.42.0 (praxis 3.7.2->3.25.0, ordo 1.5.0->1.20.0)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-25T18:35:47.479Z",
+      "updatedAt": "2026-11-25T18:41:13Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0093",
+      "title": "INIT-012: record planned (not available) capabilities for durable command execution, system messaging and runtime telemetry; correct Vigila portfolio description",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-25T20:15:31.094Z",
+      "updatedAt": "2026-11-25T20:16:43Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0094",
+      "title": "Register Praxis 3.26.0 and Arca 0.7.1 and propose echelon-current 1.43.0",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-25T23:30:47.190Z",
+      "updatedAt": "2026-11-25T23:39:15Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0095",
+      "title": "Record the owner's approval of echelon-current 1.43.0",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-26T00:18:46.093Z",
+      "updatedAt": "2026-11-26T00:19:16Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0096",
+      "title": "Upgrade the registry's own toolchain to echelon-current 1.43.0 (Praxis 3.25.0 -> 3.26.0)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-26T00:22:27.513Z",
+      "updatedAt": "2026-11-26T00:23:36Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "GOV-TRN-002",
+      "title": "Resolve INIT-012 collision: renumber transparency initiative to INIT-029, add INIT-012 availability to the projection",
+      "description": null,
+      "tags": [
+        "governance"
+      ],
+      "priority": "high",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-11-26T13:03:15Z",
+      "updatedAt": "2026-11-26T13:03:15Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

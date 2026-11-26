@@ -2,7 +2,7 @@
   "schema": "echelon.portfolio-initiatives/v1",
   "classification": "public",
   "sourceRecord": "kemiller2002/echelon-organization-administration:portfolio/initiatives.json",
-  "sourceDigest": "sha256:9d8a41cc2f1e6357f131e1e51d2a5653fdc29d38e3ea0845a9567e05268a3e06",
+  "sourceDigest": "sha256:d08953aa358b571001a3565a9357915190a172a574f47d31a41eea0fc2bee3c9",
   "initiatives": [
     {
       "id": "INIT-001",
@@ -94,12 +94,12 @@
       ],
       "dependencies": [
         "INIT-003 evidence",
-        "INIT-012 claim discipline"
+        "INIT-029 claim discipline"
       ],
       "relatedInitiatives": [
         "INIT-003",
         "INIT-006",
-        "INIT-012"
+        "INIT-029"
       ],
       "status": "research",
       "evidence": [
@@ -473,7 +473,7 @@
       ],
       "relatedInitiatives": [
         "INIT-010",
-        "INIT-012"
+        "INIT-029"
       ],
       "status": "research",
       "evidence": [
@@ -524,7 +524,7 @@
       ],
       "dependencies": [],
       "relatedInitiatives": [
-        "INIT-012",
+        "INIT-029",
         "INIT-009",
         "INIT-013"
       ],
@@ -576,7 +576,7 @@
         "INIT-001"
       ],
       "relatedInitiatives": [
-        "INIT-012"
+        "INIT-029"
       ],
       "status": "research",
       "evidence": [
@@ -603,66 +603,68 @@
     },
     {
       "id": "INIT-012",
-      "name": "Organizational transparency and public trust",
-      "description": "Operate public by default, confidential by necessity, secure by construction and verifiable by evidence; publish the portfolio, policies and assurance status from authoritative records.",
-      "origin": "Mission brief 2026-11-25 (this register).",
-      "rationale": "Transparency can reduce procurement friction and build research credibility, but only when information is accurate, current and evidenced.",
-      "problem": "Echelon\u0027s governance, direction and assurance status were not discoverable as a coherent public record.",
+      "name": "Continuous availability, durable execution and cache readiness",
+      "description": "Make reliable, recoverable, cache-ready applications achievable with less application-specific engineering: durable command processing, continuous availability and deployment, cache-ready architecture, query consistency, system messaging and acknowledgment.",
+      "origin": "Owner issues #12 and #14 in organization administration and unbound#12; application-governance/availability-architecture/00-INDEX.md.",
+      "rationale": "Server-side transactional applications (Unbound first) need durable execution guarantees that no existing Echelon system provides by charter.",
+      "problem": "Reliability, recovery and caching are re-engineered per application, and durable command execution has no owner.",
       "intendedOutcomes": [
-        "Adopted transparency, classification, disclosure and vulnerability disclosure policies",
-        "Public portfolio and trust center generated from authoritative records"
+        "Owner decisions U-01..U-14 recorded",
+        "Durable command execution incubated in Unbound with extraction when a second consumer starts (ADR-EAR-004, proposed)"
       ],
       "successCriteria": [
-        "Policies adopted",
-        "Public portfolio validates in CI",
-        "Trust center requirements reviewed before any build",
-        "No accidental disclosure incidents attributable to the publication pipeline"
+        "Managed-database benchmark completed after owner decisions"
       ],
       "repositories": [
-        "echelon-registry",
-        "echelon-organization-administration",
-        "echelon-due-diligence",
-        "echelon-assurance",
+        "unbound",
         "praxis",
-        "echelon-knowledge-store"
+        "dokimos",
+        "echelon-registry",
+        "forma",
+        "limen",
+        "aegis",
+        "conditor",
+        "strata",
+        "ordo",
+        "echelon-organization-administration"
       ],
       "systems": [
-        "praxis"
+        "praxis",
+        "dokimos",
+        "forma",
+        "limen",
+        "aegis",
+        "conditor",
+        "strata",
+        "ordo"
       ],
       "dependencies": [
-        "INIT-010",
-        "INIT-003"
+        "INIT-005 (Unbound is the first consumer)"
       ],
       "relatedInitiatives": [
-        "INIT-002",
-        "INIT-003",
-        "INIT-010"
+        "INIT-005",
+        "INIT-018",
+        "INIT-001"
       ],
-      "status": "active",
+      "status": "research",
       "evidence": [
-        "echelon-organization-administration policies/transparency, information-classification, disclosure, security/vulnerability-disclosure-policy.md (proposed 2026-11-25)",
-        "echelon-registry portfolio/governance/ (2026-11-25)"
+        "echelon-organization-administration application-governance/availability-architecture/ (research, architecture and requirements complete for review; all proposed, nothing implemented, 2026-11-25)",
+        "echelon-registry spec/ecosystem-distribution-readiness.md (planned, unowned capabilities)"
       ],
       "outstandingDecisions": [
-        "OD-GOV-001 policy adoption",
-        "OD-GOV-002 assurance repository visibility",
-        "OD-GOV-012 accidental secret exposure response (restricted record)"
+        "Owner decisions U-01..U-14 (availability-architecture/19-UNRESOLVED-DECISIONS.md)"
       ],
       "risks": [
-        "Transparency without accuracy reduces trust",
-        "Publication workload exceeds a one-person organization\u0027s capacity",
-        "Accidental disclosure in public repositories"
+        "Incubating a shared capability inside one product may delay extraction"
       ],
       "nextActions": [
-        "Owner review and adoption of the four policies",
-        "Enable secret scanning and push protection on public repositories (PUB-SG-01)",
-        "Add SECURITY.md to public repositories (VDP-T2)"
+        "Owner decisions U-01..U-14, then managed-database benchmark"
       ],
       "completionCriteria": [
-        "Policies adopted, safeguards P1 implemented, trust center information architecture approved"
+        "Decisions recorded and capabilities owned or explicitly incubated"
       ],
-      "lastReview": "2026-11-25",
-      "provisional": false
+      "lastReview": "2026-11-26",
+      "provisional": true
     },
     {
       "id": "INIT-013",
@@ -1368,7 +1370,7 @@
       ],
       "dependencies": [],
       "relatedInitiatives": [
-        "INIT-012",
+        "INIT-029",
         "INIT-020"
       ],
       "status": "active",
@@ -1483,6 +1485,69 @@
       ],
       "lastReview": "2026-11-25",
       "provisional": true
+    },
+    {
+      "id": "INIT-029",
+      "name": "Organizational transparency and public trust",
+      "description": "Operate public by default, confidential by necessity, secure by construction and verifiable by evidence; publish the portfolio, policies and assurance status from authoritative records.",
+      "origin": "Mission brief 2026-11-25 (this register). Renumbered from INIT-012 on 2026-11-26: INIT-012 was already assigned to continuous availability (organization administration PR #16, merged first).",
+      "rationale": "Transparency can reduce procurement friction and build research credibility, but only when information is accurate, current and evidenced.",
+      "problem": "Echelon\u0027s governance, direction and assurance status were not discoverable as a coherent public record.",
+      "intendedOutcomes": [
+        "Adopted transparency, classification, disclosure and vulnerability disclosure policies",
+        "Public portfolio and trust center generated from authoritative records"
+      ],
+      "successCriteria": [
+        "Policies adopted",
+        "Public portfolio validates in CI",
+        "Trust center requirements reviewed before any build",
+        "No accidental disclosure incidents attributable to the publication pipeline"
+      ],
+      "repositories": [
+        "echelon-registry",
+        "echelon-organization-administration",
+        "echelon-due-diligence",
+        "echelon-assurance",
+        "praxis",
+        "echelon-knowledge-store"
+      ],
+      "systems": [
+        "praxis"
+      ],
+      "dependencies": [
+        "INIT-010",
+        "INIT-003"
+      ],
+      "relatedInitiatives": [
+        "INIT-002",
+        "INIT-003",
+        "INIT-010"
+      ],
+      "status": "active",
+      "evidence": [
+        "echelon-organization-administration policies/transparency, information-classification, disclosure, security/vulnerability-disclosure-policy.md (proposed 2026-11-25)",
+        "echelon-registry portfolio/governance/ (2026-11-25)"
+      ],
+      "outstandingDecisions": [
+        "OD-GOV-001 policy adoption",
+        "OD-GOV-002 assurance repository visibility",
+        "OD-GOV-012 accidental secret exposure response (restricted record)"
+      ],
+      "risks": [
+        "Transparency without accuracy reduces trust",
+        "Publication workload exceeds a one-person organization\u0027s capacity",
+        "Accidental disclosure in public repositories"
+      ],
+      "nextActions": [
+        "Owner review and adoption of the four policies",
+        "Enable secret scanning and push protection on public repositories (PUB-SG-01)",
+        "Add SECURITY.md to public repositories (VDP-T2)"
+      ],
+      "completionCriteria": [
+        "Policies adopted, safeguards P1 implemented, trust center information architecture approved"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": false
     }
   ]
 }

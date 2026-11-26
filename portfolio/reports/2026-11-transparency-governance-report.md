@@ -13,7 +13,7 @@ status: iteration 1 complete; owner decisions outstanding; not "done"
 
 Echelon now has proposed policies for transparency, classification, disclosure and vulnerability
 disclosure; the first complete, validated inventory of its repositories (64 named, 19 private counted
-in aggregate) and initiatives (28, INIT-001..011 preserved); a repository manifest contract that
+in aggregate) and initiatives (29, INIT-001..012 preserved; the transparency initiative was renumbered INIT-029 on 2026-11-26 because INIT-012 was already assigned to continuous availability); a repository manifest contract that
 extends the Registry without changing existing contracts; an F# validator that enforces the public
 portfolio's disclosure rules by construction; and requirements for Praxis, the Knowledge Store, due
 diligence and continuous assurance. The most important findings are not documents: **a credential is

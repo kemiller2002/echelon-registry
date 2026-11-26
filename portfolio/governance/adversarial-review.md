@@ -136,7 +136,7 @@ not volume; the trust center has preconditions before it may be built.
 
 ### Investor
 - **Values:** focus, evidence of demand, defensibility, key-person risk management.
-- **Distrusts:** 28 initiatives and ~64 repositories for one accountable owner.
+- **Distrusts:** 29 initiatives and ~64 repositories for one accountable owner.
 - **Could exploit:** n/a.
 - **Needs:** priorities and what has been stopped.
 - **Challenges:** is the portfolio too broad? The register makes the breadth visible; that is useful information, not a flaw of the register.
@@ -145,7 +145,7 @@ not volume; the trust center has preconditions before it may be built.
 
 ### Organizational operations manager
 - **Values:** low maintenance cost, clear owners, deadlines.
-- **Distrusts:** policies whose upkeep exceeds capacity (review cycles for 28 initiatives, 64 repositories, 4 policies).
+- **Distrusts:** policies whose upkeep exceeds capacity (review cycles for 29 initiatives, 64 repositories, 4 policies).
 - **Could exploit:** n/a.
 - **Needs:** a review calendar that fits one person.
 - **Challenges:** semi-annual and quarterly reviews may be unrealistic. **[applied]** staleness threshold 180 days in the validator; reviews driven by triggers (RM-03) rather than calendars where possible.

@@ -16,7 +16,7 @@ it), **A** = agent work after authorization.
 | ID | Pri | Item | Owner | Depends on | Done when |
 |---|---|---|---|---|---|
 | R-00 | P0 | Contain the exposed credential: revoke at the provider, then remove from the repository tip; history rewrite optional | O | — | provider confirms revocation; OD-GOV-012 closed |
-| R-01 | P0 | Decide initiative priorities and dispositions (ABN-01..05) — the register shows 28 initiatives for one owner | O | — | priorities recorded in the internal register and projected |
+| R-01 | P0 | Decide initiative priorities and dispositions (ABN-01..05) — the register shows 29 initiatives for one owner | O | — | priorities recorded in the internal register and projected |
 | R-02 | P1 | Adopt (or amend) the four policies | O | — | OD-GOV-001 decided |
 | R-03 | P1 | Enable secret scanning + push protection and private vulnerability reporting on all public repositories | O | — | M-22 scanning 100% |
 | R-04 | P1 | Add `SECURITY.md` (template in `portfolio/governance/templates/`) to public repositories | A | R-02 | M-22 SECURITY.md 100% |
