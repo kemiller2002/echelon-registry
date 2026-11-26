@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 98,
+  "nextSeq": 99,
   "items": [
     {
       "id": "WI-0001",
@@ -2067,6 +2067,27 @@
       "attachments": [],
       "createdAt": "2026-11-26T15:38:47.212Z",
       "updatedAt": "2026-11-26T15:41:55Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0098",
+      "title": "Register Transitus in the portfolio inventory (replaces PR #123 after work-item ID collision)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-26T20:03:32.306Z",
+      "updatedAt": "2026-11-26T20:03:48.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
