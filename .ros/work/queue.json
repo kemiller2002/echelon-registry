@@ -1996,10 +1996,10 @@
       "description": null,
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-11-26T00:22:27.513Z",
-      "updatedAt": "2026-11-26T00:22:29Z",
+      "updatedAt": "2026-11-26T00:23:36Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
