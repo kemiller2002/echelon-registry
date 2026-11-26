@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-11-26T15:41:55Z",
+  "updatedAt": "2026-11-26T20:03:48.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -3863,6 +3863,44 @@
       },
       "completedAt": "2026-11-26T15:41:55Z",
       "conclusion": "File ingestion recorded as an unowned capability; INIT-030 projected; portfolio validate and 38 portfolio tests passed; praxis validate passed"
+    },
+    {
+      "id": "WI-0098",
+      "type": "requirements",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "documentation",
+          "path": "portfolio/repositories.json"
+        }
+      ],
+      "updatedAt": "2026-11-26T20:03:48.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261126T200333146Z-5003032e"
+      ],
+      "latestCheckpoint": {
+        "id": "f32401a37fcd5046ff57bc97",
+        "recordedAt": "2026-11-26T20:03:47.000Z",
+        "executionId": "EXE-20261126T200333146Z-5003032e",
+        "repository": "echelon-registry",
+        "branch": "claude/transitus-registry-entry-42a96z",
+        "commit": "7e7ad2d57d6d503d8af821d43398d616441864e6",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/transitus-registry-entry-42a96z",
+        "remoteCommit": "7e7ad2d57d6d503d8af821d43398d616441864e6",
+        "summary": "Transitus entry re-applied on main",
+        "nextAction": "Complete and open replacement PR",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-11-26T20:03:48.000Z",
+      "conclusion": "Transitus registered at requirements maturity (replaces PR #123)"
     }
   ]
 }

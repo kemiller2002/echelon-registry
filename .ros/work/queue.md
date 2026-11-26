@@ -100,3 +100,4 @@
 | WI-0095 | Record the owner's approval of echelon-current 1.43.0 | complete |  | medium |
 | WI-0096 | Upgrade the registry's own toolchain to echelon-current 1.43.0 (Praxis 3.25.0 -> 3.26.0) | complete |  | medium |
 | WI-0097 | Record controlled file ingestion (INIT-030) as an unowned portfolio capability and project INIT-030 | complete |  | medium |
+| WI-0098 | Register Transitus in the portfolio inventory (replaces PR #123 after work-item ID collision) | complete |  | medium |
