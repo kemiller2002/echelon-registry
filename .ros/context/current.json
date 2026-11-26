@@ -3827,7 +3827,27 @@
       "updatedAt": "2026-11-26T15:39:06Z",
       "telemetryExecutionIds": [
         "EXE-20261126T153907017Z-9be298e6"
-      ]
+      ],
+      "latestCheckpoint": {
+        "id": "d9cf51d43c9dfdb34d994ef2",
+        "recordedAt": "2026-11-26T15:41:16Z",
+        "executionId": "EXE-20261126T153907017Z-9be298e6",
+        "repository": "echelon-registry",
+        "branch": "claude/daf-ingestion-stp-research-954xag",
+        "commit": "11a2fac331db342648b66a12d4f8a9ac5634df5c",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/daf-ingestion-stp-research-954xag",
+        "remoteCommit": "11a2fac331db342648b66a12d4f8a9ac5634df5c",
+        "summary": "INIT-030 recorded as unowned capability and projected; registry validation passed; branch pushed",
+        "nextAction": "Owner review of the cross-repository pull requests",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      }
     }
   ]
 }
