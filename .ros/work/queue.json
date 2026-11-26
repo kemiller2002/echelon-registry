@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 94,
+  "nextSeq": 96,
   "items": [
     {
       "id": "WI-0001",
@@ -1937,6 +1937,48 @@
       "attachments": [],
       "createdAt": "2026-11-25T20:15:31.094Z",
       "updatedAt": "2026-11-25T20:16:43Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0094",
+      "title": "Register Praxis 3.26.0 and Arca 0.7.1 and propose echelon-current 1.43.0",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-25T23:30:47.190Z",
+      "updatedAt": "2026-11-25T23:39:15Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0095",
+      "title": "Record the owner's approval of echelon-current 1.43.0",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-26T00:18:46.093Z",
+      "updatedAt": "2026-11-26T00:19:16Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
