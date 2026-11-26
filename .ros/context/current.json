@@ -4,7 +4,7 @@
   "repository": "echelon-registry",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-10-06T12:28:34.761Z",
-  "updatedAt": "2026-11-26T00:23:36Z",
+  "updatedAt": "2026-11-26T13:03:40Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -3543,6 +3543,44 @@
       "completedAt": "2026-11-25T16:31:01Z"
     },
     {
+      "id": "GOV-TRN-001",
+      "type": "requirements",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "documentation",
+          "path": "portfolio/reports/2026-11-transparency-governance-report.md"
+        }
+      ],
+      "updatedAt": "2026-11-25T18:09:35Z",
+      "telemetryExecutionIds": [
+        "EXE-20261125T174746872Z-a0f622de"
+      ],
+      "latestCheckpoint": {
+        "id": "02601f088c4a90108f7754ac",
+        "recordedAt": "2026-11-25T18:09:34Z",
+        "executionId": "EXE-20261125T174746872Z-a0f622de",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-transparency-governance-rvt82z",
+        "commit": "e963ab4aa3b2ad15303465a7132e88b9835b24f2",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-transparency-governance-rvt82z",
+        "remoteCommit": "e963ab4aa3b2ad15303465a7132e88b9835b24f2",
+        "summary": "Iteration 1 deliverables committed and pushed",
+        "nextAction": "Owner decisions in portfolio/governance/open-decisions.md",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-11-25T18:09:35Z",
+      "conclusion": "Iteration 1 deliverables produced and validated; owner decisions outstanding (open-decisions.md); not adopted or merged"
+    },
+    {
       "id": "WI-0092",
       "type": "task",
       "state": "complete",
@@ -3742,6 +3780,43 @@
         }
       },
       "completedAt": "2026-11-26T00:23:36Z"
+    },
+    {
+      "id": "GOV-TRN-002",
+      "type": "requirements",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "documentation",
+          "path": "portfolio/initiatives.json"
+        }
+      ],
+      "updatedAt": "2026-11-26T13:03:40Z",
+      "telemetryExecutionIds": [
+        "EXE-20261126T130317356Z-6134685c"
+      ],
+      "latestCheckpoint": {
+        "id": "a0735cb4920ffb0dfc14fb7c",
+        "recordedAt": "2026-11-26T13:03:38Z",
+        "executionId": "EXE-20261126T130317356Z-6134685c",
+        "repository": "echelon-registry",
+        "branch": "claude/echelon-transparency-governance-rvt82z",
+        "commit": "0d821cbfc6553b2851e0dc6cee8a19ef21f144b5",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/echelon-registry"
+        },
+        "remoteBranch": "claude/echelon-transparency-governance-rvt82z",
+        "remoteCommit": "0d821cbfc6553b2851e0dc6cee8a19ef21f144b5",
+        "summary": "INIT-012 collision resolved; merged main",
+        "nextAction": "Merge PR",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-11-26T13:03:40Z"
     }
   ]
 }

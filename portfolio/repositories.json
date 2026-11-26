@@ -1,0 +1,4501 @@
+{
+  "schema": "echelon.portfolio-repositories/v1",
+  "classification": "public",
+  "generatedOn": "2026-11-25",
+  "notes": "Central seed inventory (source central-seed) built from read-only inspection of repository HEADs on 2026-11-25. Entries summarise repository documentation and are provisional where marked. Private repositories appear only with a disclosure decision (DD-001: identity already public in registry records; contents not disclosed). Repositories become manifest-sourced when they adopt .echelon/repository.json (spec/repository-manifest.md).",
+  "privateRepositories": {
+    "count": 19,
+    "basis": "Echelon-related private repositories identified in the internal inventory whose identity has not been evaluated for disclosure (2026-11-25)"
+  },
+  "repositories": [
+    {
+      "id": "aegis",
+      "repository": "kemiller2002/aegis",
+      "displayName": "Aegis",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "supporting-library",
+      "purpose": "A standard mechanism for handling and recovering from unexpected operational failure in .NET applications without threading error types everywhere or swallowing failures (README.md).",
+      "responsibilities": [
+        "Fault model, capture, redaction, lifecycle, recovery, escalation, presentation, diagnostics (README.md)",
+        "GitHub storage adapter (README.md)",
+        "GitHub failure integration (README.md)"
+      ],
+      "nonResponsibilities": [
+        "Database adapters built elsewhere against Store.T (README.md; DF-AEGIS-2026-DBBD)"
+      ],
+      "intendedConsumers": [
+        ".NET/F# Echelon applications (README.md)",
+        "AI coding agents integrating Aegis (docs/aegis/AGENT-INTEGRATION.md)"
+      ],
+      "providedCapabilities": [
+        "Aegis.Core (tested)",
+        "Aegis.Store.GitHub (implemented)",
+        "Aegis.Integration.GitHub (implemented)",
+        "NuGet publishing (implemented)"
+      ],
+      "plannedCapabilities": [
+        "4 partial, 2 not-started requirements (docs/aegis/REQUIREMENTS-STATUS.md)"
+      ],
+      "systems": [
+        "aegis"
+      ],
+      "initiatives": [
+        "INIT-001",
+        "INIT-003",
+        "INIT-006",
+        "INIT-012",
+        "INIT-018"
+      ],
+      "dependencies": [
+        "Praxis, Ordo, Visual Engineering (hard)",
+        "Dokimos (build)"
+      ],
+      "dependents": [
+        "Chrona, Summa, Fides, Project Administration, Vigila, Strata (their .echelon/foundations.json)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "released",
+      "latestRelease": "aegis 2.0.2 (registry release record)",
+      "lastCommit": "2026-11-25",
+      "authoritativeDocuments": [
+        "README.md",
+        "docs/aegis/README.md",
+        "docs/aegis/REQUIREMENTS-STATUS.md",
+        "docs/aegis/OPEN-QUESTIONS.md",
+        "docs/aegis/PUBLISHING.md"
+      ],
+      "outstandingDecisions": [
+        "docs/aegis/OPEN-QUESTIONS.md: initial open questions closed out; remaining open items listed there"
+      ],
+      "knownLimitations": [
+        "Scope limited to core + GitHub adapters (README.md)"
+      ],
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/aegis@HEAD README.md",
+        "kemiller2002/aegis@HEAD docs/aegis/README.md",
+        "kemiller2002/aegis@HEAD docs/aegis/REQUIREMENTS-STATUS.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "agile-assessment",
+      "repository": "kemiller2002/agile-assessment",
+      "displayName": "Agile assessment / Agile scorecard",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "historical",
+      "purpose": "Agile team self-assessment survey and scorecard web app, plus 2026 research into redesigning it as a diagnostic instrument (agile-scorecard/, docs/research/agile-assessment-research-and-redesign.md).",
+      "responsibilities": [
+        "React survey/scorecard app (agile-scorecard/)",
+        "Survey data transformation scripts (scripts/)",
+        "Research and redesign of the instrument (docs/research/)"
+      ],
+      "nonResponsibilities": [],
+      "intendedConsumers": [
+        "Agile teams being assessed (scripts/agile-assessment-randomized/make-email.js)"
+      ],
+      "providedCapabilities": [
+        "Survey/checklist UI with charts (implemented)",
+        "Survey link/email generation (implemented)",
+        "Redesigned diagnostic instrument (36 items, 12 evidence requests) (documented-only)"
+      ],
+      "plannedCapabilities": [
+        "Validation program for redesigned instrument (docs/research/validation-strategy.md)"
+      ],
+      "systems": [],
+      "initiatives": [],
+      "dependencies": [
+        "React 18, react-scripts 5, chart.js, recharts (package)"
+      ],
+      "dependents": [],
+      "developmentStatus": "dormant",
+      "maturity": "implemented",
+      "lastCommit": "2026-07-30",
+      "authoritativeDocuments": [
+        "docs/research/agile-assessment-research-and-redesign.md",
+        "prompts/Agile_Assessment_Research_and_Redesign_Mission_REP.md"
+      ],
+      "outstandingDecisions": [],
+      "knownLimitations": [
+        "Current instrument is not scientifically validated; mixes constructs and treats ordinal labels as arithmetic (docs/research/agile-assessment-research-and-redesign.md)"
+      ],
+      "plannedDirection": "Replace maturity checklist with outcome-balanced diagnostic system and prospective validation (docs/research/agile-assessment-research-and-redesign.md).",
+      "lineage": {
+        "previousNames": [
+          "agile-scorecard"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/agile-assessment@HEAD docs/research/agile-assessment-research-and-redesign.md",
+        "kemiller2002/agile-assessment@HEAD prompts/Agile_Assessment_Research_and_Redesign_Mission_REP.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "ai-engineering",
+      "repository": "kemiller2002/AI-Engineering",
+      "displayName": "AI Research Operating System (AI-ROS) / AI Engineering",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "research",
+      "purpose": "Canonical repository for AI-ROS; 'Markdown is the source of truth. Everything else is generated.' Objective: validate AI-ROS through evidence-traceable evaluation of long-horizon repository agents (README.md, CURRENT-STATE.md).",
+      "responsibilities": [
+        "Long-horizon repository agent evaluation research, Cycles 001-005 (ROADMAP.md, CURRENT-STATE.md)",
+        "Deterministic grader calibration and blind exports (ROADMAP.md)",
+        "Research frontier records (research/frontier/)",
+        "Knowledge platform architecture docs (knowledge-platform/)",
+        "Research site publishing (.github/workflows/publish-research.yml)",
+        "State-system testing guidance (state-systems/)"
+      ],
+      "nonResponsibilities": [],
+      "intendedConsumers": [],
+      "providedCapabilities": [
+        "Research corpus and generated site (implemented)",
+        "ROS CLI/history tooling (tested)",
+        "Evaluation tooling (implemented)",
+        "Knowledge platform design (documented-only)"
+      ],
+      "plannedCapabilities": [
+        "Cycle 004a independent review + frozen-grader unseen challenge; 004b baseline; 005 context/system comparison (ROADMAP.md)",
+        "Research sequence: context/memory, permissions/security, orchestration, retrieval, model routing (ROADMAP.md)"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-014",
+        "INIT-026"
+      ],
+      "dependencies": [
+        "Praxis/ROS 1.1.0 (build)",
+        "research-publisher (build)"
+      ],
+      "dependents": [],
+      "developmentStatus": "dormant",
+      "maturity": "requirements",
+      "lastCommit": "2026-09-30",
+      "authoritativeDocuments": [
+        "README.md",
+        "CURRENT-STATE.md",
+        "ROADMAP.md",
+        "CHANGELOG.md",
+        "research/AI-Research-Roadmap.md",
+        "HANDOFF.md"
+      ],
+      "outstandingDecisions": [
+        "Independent reviews of ET-004-P01 and ET-014-P01 (CURRENT-STATE.md)",
+        "Metadata-adoption policy for canonical artifacts (CURRENT-STATE.md)"
+      ],
+      "knownLimitations": [
+        "Legacy handbook/course-note documents excluded from publishing pending canonical IDs (CURRENT-STATE.md, ROADMAP.md)",
+        "Public benchmark validity may not transfer to repository tasks (CURRENT-STATE.md)",
+        "PROJECT-CHARTER.md unfilled template"
+      ],
+      "plannedDirection": "Cycle 004/005 evaluation then six-step research validation sequence (ROADMAP.md).",
+      "lineage": {
+        "previousNames": [
+          "AI-ROS / AI Research Operating System vs repo name AI-Engineering (README.md)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/AI-Engineering@HEAD README.md",
+        "kemiller2002/AI-Engineering@HEAD CURRENT-STATE.md",
+        "kemiller2002/AI-Engineering@HEAD ROADMAP.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "arca",
+      "repository": "kemiller2002/arca",
+      "displayName": "Arca",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "supporting-library",
+      "purpose": "Shared data layer for Echelon applications storing authoritative records in GitHub repositories, running in browser WASM behind Limen (README.md).",
+      "responsibilities": [
+        "Pure core: record format, versioning, conflict detection/merge, commit/audit, offline queue (README.md)",
+        "GitHub adapter with effects as data (README.md)",
+        "IndexedDB offline queue via Limen (README.md)",
+        "Conformance suite and in-memory provider (PROJECT-CHARTER.md)"
+      ],
+      "nonResponsibilities": [
+        "Domain meaning (PROJECT-CHARTER.md)",
+        "Authentication; no Fides dependency (PROJECT-CHARTER.md)",
+        "Non-GitHub providers and at-rest encryption for now (PROJECT-CHARTER.md)",
+        "Large binaries (PROJECT-CHARTER.md)"
+      ],
+      "intendedConsumers": [
+        "Chrona, Summa, Signal (PROJECT-CHARTER.md)"
+      ],
+      "providedCapabilities": [
+        "Arca.Core (tested)",
+        "Arca.GitHub adapter (tested)",
+        "Arca.Limen IndexedDB queue (implemented)",
+        "Browser WASM verification (implemented)"
+      ],
+      "plannedCapabilities": [
+        "nuget.org publishing (docs/distribution-short-term-plan.md)"
+      ],
+      "systems": [
+        "arca"
+      ],
+      "initiatives": [
+        "INIT-017",
+        "INIT-018"
+      ],
+      "dependencies": [
+        "Limen (limen-fsharp) (hard)",
+        "Praxis, Ordo, Communication Engineering (hard)",
+        "GitHub API (hard)"
+      ],
+      "dependents": [
+        "Chrona, Summa, Signal (PROJECT-CHARTER.md)",
+        "Fides.Arca (fides/src/Fides.Arca)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "released",
+      "latestRelease": "arca 0.7.0 (registry release record)",
+      "lastCommit": "2026-10-30",
+      "authoritativeDocuments": [
+        "README.md",
+        "PROJECT-CHARTER.md",
+        "CHANGELOG.md",
+        "docs/requirements/ARCA-STORAGE-REQUIREMENTS.md",
+        "docs/consuming-arca.md"
+      ],
+      "outstandingDecisions": [
+        "OQ-ARCA-003 durable browser storage (context/CURRENT-STATE.md, may be superseded by Arca.Limen)"
+      ],
+      "knownLimitations": [
+        "Releases are GitHub assets until nuget.org publishing set up (README.md)"
+      ],
+      "plannedDirection": "Publish to nuget.org; serve Chrona then Summa, Signal (PROJECT-CHARTER.md).",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/arca@HEAD README.md",
+        "kemiller2002/arca@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/arca@HEAD CHANGELOG.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "armamentarium",
+      "repository": "kemiller2002/armamentarium",
+      "displayName": "Armamentarium",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "governance",
+      "purpose": "Assemble compatible Echelon tools, libraries, WASM assets, schemas and templates into a signed, platform-specific build kit that agents verify and preflight before application development (README.md, requirements/MASTER.md).",
+      "responsibilities": [
+        "Release assembly and compatibility lock across Echelon components (requirements/MASTER.md ARM-003, Boundaries)",
+        "Signed distribution and verification before extraction (ARM-004, ARM-014)",
+        "Mandatory strict preflight 'armamentarium doctor' (ARM-006)",
+        "Profiles: full, web-app, data-app, minimal (ARM-011)",
+        "Measured bootstrap performance experiment (ARM-012)"
+      ],
+      "nonResponsibilities": [
+        "Not a replacement for component source repos; they keep own CI/releases (requirements/MASTER.md Boundaries)",
+        "Runtime services not bundled as running services (requirements/MASTER.md Boundaries)",
+        "No Kubernetes/Terraform (ARM-017)"
+      ],
+      "intendedConsumers": [
+        "Agents bootstrapping Echelon application development (README.md)"
+      ],
+      "providedCapabilities": [
+        "Release metadata audit workflow (implemented)",
+        "Normative requirements ARM-001..018 (documented-only)",
+        "Component inventory and release audit results (documented-only)"
+      ],
+      "plannedCapabilities": [
+        "Kit build, signing and GitHub Release publication (ARM-004)",
+        "doctor/inventory CLI in F# (ARM-006, ARM-015, ARM-017)",
+        "Linux x64 initial target (ARM-016)",
+        ".NET prerequisite detection/installation via Conditor (requirements/dotnet-prerequisites.md)"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-016"
+      ],
+      "dependencies": [
+        "Conditor (hard)",
+        "Praxis, Ordo, Dokimos, Aegis, Vigila, Vitium, Fides, Strata, Arca, Percepta, Limen, Forma, Forma Studio, Folio, Iter (components to package) (hard)"
+      ],
+      "dependents": [],
+      "developmentStatus": "experimental",
+      "maturity": "requirements",
+      "lastCommit": "2026-11-01",
+      "authoritativeDocuments": [
+        "README.md",
+        "requirements/MASTER.md",
+        "docs/architecture.md",
+        "requirements/component-inventory.md"
+      ],
+      "outstandingDecisions": [
+        "Whether Conditor already owns kit composition and bootstrap (requirements/component-inventory.md)",
+        "Finalize compatibility lock and release manifest (README.md Next milestone)"
+      ],
+      "knownLimitations": [
+        "0 asset contents or Linux x64 compatibility verified; 5 components without latest release (docs/release-audit-results-2026-11-01.md)"
+      ],
+      "plannedDirection": "Audit actual repositories and published assets, then finalize compatibility lock and release manifest (README.md).",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/armamentarium@HEAD README.md",
+        "kemiller2002/armamentarium@HEAD requirements/MASTER.md",
+        "kemiller2002/armamentarium@HEAD docs/architecture.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "causa",
+      "repository": "kemiller2002/causa",
+      "displayName": "Causa (Root-Cause Investigator)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product",
+      "purpose": "Workspace for causal investigations: record what happened, evidence, hypotheses and relations, and view the causal analysis; each investigation stored as an event history in a user-owned GitHub repository, no server (README.md).",
+      "responsibilities": [
+        "Event-sourced investigation domain (decide/evolve) (src/Causa.Domain)",
+        "GitHub-backed persistence with conflict detection (src/Causa.Persistence)",
+        "Browser UI via Limen/Forma (src/Causa.App, web/)",
+        "Catalog case viewing from causa-data (README.md)",
+        "Domain-neutral investigation kernel (docs/PRODUCT-REQUIREMENTS.md P0.3)"
+      ],
+      "nonResponsibilities": [
+        "Core kernel must not depend on EDF, hackathon or Echelon vocabulary (docs/PRODUCT-REQUIREMENTS.md P0.3)",
+        "Competition constraints must not leak into the kernel (docs/PRODUCT-REQUIREMENTS.md)"
+      ],
+      "intendedConsumers": [
+        "Investigators recording causal analyses (README.md)",
+        "EDF as first domain specialization (docs/PRODUCT-REQUIREMENTS.md P0.4)"
+      ],
+      "providedCapabilities": [
+        "Record observations and hypotheses; append-only history (tested)",
+        "Load/save to GitHub repo with conflict stop (tested)",
+        "Read-only catalog cases (Apollo 11, Challenger) (implemented)",
+        "Causal analysis / graph view (implemented)",
+        "Evidence, assessments, causes, corrective actions, conclusions authoring (planned)",
+        "Reports and print via Folio (planned)"
+      ],
+      "plannedCapabilities": [
+        "Edit/delete and duplicate checks (README.md)",
+        "In-app conflict resolution (README.md)",
+        "Folio reports/print (README.md)",
+        "Remaining WDL/INV work items and UI slices (README.md)",
+        "Multi-agent and autonomous investigation, policy engine (docs/MULTI-AGENT-INVESTIGATION.md, docs/POLICY-ENGINE.md; documented-only)"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-021"
+      ],
+      "dependencies": [
+        "Limen 0.9.1 (package)",
+        "Forma 0.13.0 (package)",
+        "Praxis 3.25.0 (hard)",
+        "Conditor (build)",
+        "Aegis (hard)",
+        "Percepta (optional)",
+        "kemiller2002/causa-data (data store) (hard)",
+        "kemiller2002/Indy-init (governed harness/requirements) (test)"
+      ],
+      "dependents": [
+        "causa-data (storage contract consumer)",
+        "causa-testing-repo (preview workflow)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "prototype",
+      "lastCommit": "2026-11-13",
+      "authoritativeDocuments": [
+        "README.md",
+        "docs/PRODUCT-REQUIREMENTS.md",
+        "docs/OPEN-QUESTIONS.md",
+        "DEPLOYMENT.md",
+        "docs/SECURITY-THREAT-MODEL.md",
+        "evidence/FINAL-REPORT.md"
+      ],
+      "outstandingDecisions": [
+        "OQ-001 durable product name post-Indy Init (docs/OPEN-QUESTIONS.md)",
+        "OQ-002 numeric confidence model (docs/OPEN-QUESTIONS.md)",
+        "OQ-003 formal causal graph formalism (docs/OPEN-QUESTIONS.md)",
+        "Deployment target undecided, RQR-005 (DEPLOYMENT.md)"
+      ],
+      "knownLimitations": [
+        "Only observations/hypotheses can be recorded (README.md)",
+        "No edit/delete; append-only (README.md)",
+        "Basic conflict handling only (README.md)",
+        "Token held only in tab memory; one repo/branch per tab (README.md)",
+        "Tested in Chromium (and WebKit for catalog) only (README.md)"
+      ],
+      "plannedDirection": "Complete remaining slices toward the reusable Root-Cause Investigator; EDF as first specialization (docs/PRODUCT-REQUIREMENTS.md P0.4, README.md Not built yet).",
+      "lineage": {
+        "previousNames": [
+          "Causa T0 (PROJECT-CHARTER.md)",
+          "Root-Cause Investigator / Indy Init build (docs/PRODUCT-REQUIREMENTS.md)",
+          "Indy-init rehearsals (causa-data engine.lock.json)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/causa@HEAD README.md",
+        "kemiller2002/causa@HEAD docs/PRODUCT-REQUIREMENTS.md",
+        "kemiller2002/causa@HEAD docs/OPEN-QUESTIONS.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "causa-data",
+      "repository": "kemiller2002/causa-data",
+      "displayName": "Causa Data",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "supporting-library",
+      "purpose": "Canonical datastore for Causa: storage contract versions, demonstration/historical investigation catalogs built from primary sources, and verification tooling (README.md).",
+      "responsibilities": [
+        "Causa storage contract v1.0.0 (frozen), v1.1.0, v1.2.0 (contract/)",
+        "Active demonstration-v1 catalog and historical-v1 catalog (catalog/)",
+        "Research provenance for historical cases (research/historical/)",
+        "Contract/compatibility verification tools in F# and Python (tools/)",
+        "Release tagging after gates (.github/workflows/release-tag.yml)"
+      ],
+      "nonResponsibilities": [
+        "Never migrate, overwrite or reshape frozen files (README.md Contract)",
+        "No records bundled into any application (README.md)",
+        "No credentials or private personal data (README.md Security)"
+      ],
+      "intendedConsumers": [
+        "Causa application (README.md)",
+        "External applications reading workspace templates (README.md)"
+      ],
+      "providedCapabilities": [
+        "Storage contract specs and JSON schemas (documented-only)",
+        "Deterministic historical catalog build/verify via pinned engine (tested)",
+        "Independent Python reader/verifier (implemented)",
+        "Compatibility and live REST checks in CI (tested)"
+      ],
+      "plannedCapabilities": [],
+      "systems": [],
+      "initiatives": [
+        "INIT-021"
+      ],
+      "dependencies": [
+        "Causa engine pinned from kemiller2002/indy-init-rehearsal-001 (build)",
+        ".NET SDK 10.0.402 (build)",
+        "Python 3 (build)"
+      ],
+      "dependents": [
+        "Causa (README.md)",
+        "causa-testing-repo preview workflow (causa-testing-repo/.github/workflows/causa-preview.yml)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "released",
+      "latestRelease": "causa-storage-v1.1.0 (repository tag)",
+      "lastCommit": "2026-11-08",
+      "authoritativeDocuments": [
+        "README.md",
+        "contract/v1.0.0/CONTRACT.md",
+        "research/HISTORICAL-CASE-CATALOG.md",
+        "catalog/historical-v1/verification/VERIFICATION.md"
+      ],
+      "outstandingDecisions": [],
+      "knownLimitations": [
+        "Historical catalog is a content-policy extension beyond contract §15 (README.md, research/HISTORICAL-CASE-CATALOG.md)"
+      ],
+      "lineage": {
+        "previousNames": [
+          "historical-v1 superseded as active catalog by demonstration-v1 (README.md)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/causa-data@HEAD README.md",
+        "kemiller2002/causa-data@HEAD contract/v1.0.0/CONTRACT.md",
+        "kemiller2002/causa-data@HEAD research/HISTORICAL-CASE-CATALOG.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "causa-testing-repo",
+      "repository": "kemiller2002/causa-testing-repo",
+      "displayName": "causa-testing-repo",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "test-fixture",
+      "purpose": "Target repository for Causa preview real-provider acceptance tests and GitHub Pages deployment (.github/workflows/causa-preview.yml header).",
+      "responsibilities": [
+        "Receive test writes under workspaces/demo/<workspace>/ (.github/workflows/causa-preview.yml)",
+        "Build and deploy a Causa preview to Pages (.github/workflows/causa-preview.yml)"
+      ],
+      "nonResponsibilities": [],
+      "intendedConsumers": [
+        "Causa preview CI"
+      ],
+      "providedCapabilities": [
+        "Causa preview workflow (acceptance + Pages deploy) (implemented)"
+      ],
+      "plannedCapabilities": [],
+      "systems": [],
+      "initiatives": [
+        "INIT-021"
+      ],
+      "dependencies": [
+        "kemiller2002/Indy-init (app source, branch claude/causa-historical-compatibility-09j9rw) (hard)",
+        "kemiller2002/causa-data (catalog) (hard)"
+      ],
+      "dependents": [],
+      "developmentStatus": "dormant",
+      "maturity": "prototype",
+      "lastCommit": "2026-11-05",
+      "authoritativeDocuments": [
+        ".github/workflows/causa-preview.yml"
+      ],
+      "outstandingDecisions": [],
+      "knownLimitations": [],
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/causa-testing-repo@HEAD .github/workflows/causa-preview.yml"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "causa-write-test",
+      "repository": "kemiller2002/causa-write-test",
+      "displayName": "causa-write-test",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "test-fixture",
+      "purpose": "Not documented in the repository.",
+      "responsibilities": [
+        "Scratch write target for Causa live acceptance/persistence tests (workspaces/demo, workspaces/r7-pat, workspaces/r7-browser)"
+      ],
+      "nonResponsibilities": [],
+      "intendedConsumers": [
+        "Causa live acceptance tests"
+      ],
+      "providedCapabilities": [],
+      "plannedCapabilities": [],
+      "systems": [],
+      "initiatives": [
+        "INIT-021"
+      ],
+      "dependencies": [],
+      "dependents": [],
+      "developmentStatus": "dormant",
+      "maturity": "concept",
+      "lastCommit": "2026-10-30",
+      "authoritativeDocuments": [
+        "README.md"
+      ],
+      "outstandingDecisions": [],
+      "knownLimitations": [],
+      "lineage": {
+        "previousNames": [
+          "r7 = Indy-init rehearsal 7 workspace names (workspaces/r7-*)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/causa-write-test@HEAD README.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "chrona",
+      "repository": "kemiller2002/chrona",
+      "displayName": "Chrona",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product",
+      "purpose": "Chrona records, corrects, reviews, reports and publishes business time; it is the authority for recorded time and publishes approved billable time to Summa (PROJECT-CHARTER.md).",
+      "responsibilities": [
+        "Timer/manual entry in exact minutes, overlap prevention (PROJECT-CHARTER.md)",
+        "Amend/void/split/merge with append-only audit (PROJECT-CHARTER.md)",
+        "Billing projection, approval, attestation, publication (PROJECT-CHARTER.md)",
+        "Storage via Arca, sign-in via Fides, offline reconciliation (PROJECT-CHARTER.md)"
+      ],
+      "nonResponsibilities": [
+        "Money: rates, invoices, payments belong to Summa (PROJECT-CHARTER.md)",
+        "No database (Strata) (PROJECT-CHARTER.md)",
+        "No legacy code migration (PROJECT-CHARTER.md)"
+      ],
+      "intendedConsumers": [
+        "People recording time; reviewers/approvers; Summa (PROJECT-CHARTER.md)"
+      ],
+      "providedCapabilities": [
+        "Pure time domain (tested)",
+        "Arca persistence and Fides sign-in (tested)",
+        "Browser app with visual/conformance tests (tested)"
+      ],
+      "plannedCapabilities": [
+        "Production completion gate (docs/requirements/production-completion-gate.md)"
+      ],
+      "systems": [
+        "chrona"
+      ],
+      "initiatives": [
+        "INIT-018",
+        "INIT-025"
+      ],
+      "dependencies": [
+        "Arca (hard)",
+        "Fides (hard)",
+        "Summa contracts (hard)",
+        "Limen, Forma, Folio, Aegis (hard)",
+        "Praxis, Ordo, Visual Engineering (hard)"
+      ],
+      "dependents": [
+        "Summa consumes published time (PROJECT-CHARTER.md)"
+      ],
+      "developmentStatus": "unknown",
+      "maturity": "implemented",
+      "lastCommit": "2026-10-16",
+      "authoritativeDocuments": [
+        "PROJECT-CHARTER.md",
+        "context/CURRENT-STATE.md",
+        "docs/requirements/implementation-gap-analysis.md",
+        "docs/requirements/backlog-plan.md"
+      ],
+      "outstandingDecisions": [
+        "Legacy data import only if production records appear (WI-0044, PROJECT-CHARTER.md)"
+      ],
+      "knownLimitations": [],
+      "plannedDirection": "Reach production completion gate: all 44 scenarios, gap analysis 'tested' (PROJECT-CHARTER.md).",
+      "lineage": {
+        "previousNames": [
+          "Replaces legacy time-tracking-application 'Business Activity Ledger' (PROJECT-CHARTER.md)",
+          "'WASM kernel' renamed (docs)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/chrona@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/chrona@HEAD context/CURRENT-STATE.md",
+        "kemiller2002/chrona@HEAD docs/requirements/implementation-gap-analysis.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "visibility": "private",
+      "classification": "public",
+      "responsibilities": [],
+      "nonResponsibilities": [],
+      "systems": [],
+      "dependencies": [],
+      "developmentStatus": "unknown",
+      "maturity": "unknown",
+      "authoritativeDocuments": [
+        "registry/systems-v2.json or public references (identity only)"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25",
+      "evidence": [],
+      "id": "clarity-framework",
+      "repository": "kemiller2002/clarity-framework",
+      "displayName": "Clarity Framework",
+      "echelonRelation": "research",
+      "purpose": "Clarity framework content: method, training and decision-posture material.",
+      "disclosureDecision": "DD-001",
+      "initiatives": [
+        "INIT-007",
+        "INIT-019"
+      ]
+    },
+    {
+      "id": "clarity-framework-training",
+      "repository": "kemiller2002/clarity-framework-training",
+      "displayName": "Clarity Framework Training",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product-website",
+      "purpose": "Static site for Clarity Framework Training, a facilitated practice session for diagnosing decision failure in complex systems before solutions harden (index.html, package.json).",
+      "responsibilities": [
+        "Describe training offering, boundaries, case patterns, teams/cohorts, FAQ, privacy (*.html)",
+        "'Request an Invite' as sole primary CTA (README.md)",
+        "Locked terminology and tone rules for copy (README.md)"
+      ],
+      "nonResponsibilities": [
+        "No certification or badges; no outcome guarantees (index.html, README.md)"
+      ],
+      "intendedConsumers": [
+        "Decision-makers and teams (index.html)"
+      ],
+      "providedCapabilities": [
+        "Static multi-page site (implemented)",
+        "UI conformance tests (tested)",
+        "Teen stress-test Q&A training material (documented-only)"
+      ],
+      "plannedCapabilities": [],
+      "systems": [],
+      "initiatives": [
+        "INIT-019"
+      ],
+      "dependencies": [
+        "@playwright/test 1.56.1, ajv 8.20.0 (test)"
+      ],
+      "dependents": [],
+      "developmentStatus": "dormant",
+      "maturity": "implemented",
+      "lastCommit": "2026-10-13",
+      "authoritativeDocuments": [
+        "README.md",
+        "why-clarity-is-necessary.md",
+        "index.html"
+      ],
+      "outstandingDecisions": [],
+      "knownLimitations": [],
+      "lineage": {
+        "previousNames": [
+          "boundries.html (misspelled older Boundaries page, title differs) coexists with boundaries.html"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/clarity-framework-training@HEAD README.md",
+        "kemiller2002/clarity-framework-training@HEAD why-clarity-is-necessary.md",
+        "kemiller2002/clarity-framework-training@HEAD index.html"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "visibility": "private",
+      "classification": "public",
+      "responsibilities": [],
+      "nonResponsibilities": [],
+      "systems": [
+        "clarity-service"
+      ],
+      "dependencies": [],
+      "developmentStatus": "unknown",
+      "maturity": "unknown",
+      "authoritativeDocuments": [
+        "registry/systems-v2.json or public references (identity only)"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25",
+      "evidence": [],
+      "id": "clarity-service",
+      "repository": "kemiller2002/clarity-service",
+      "displayName": "Clarity Service",
+      "echelonRelation": "product",
+      "purpose": "Clarity decision-analysis service; F# CLI that inventories a repository and extracts evidence (registry systems-v2.json).",
+      "disclosureDecision": "DD-001",
+      "initiatives": [
+        "INIT-007",
+        "INIT-019"
+      ]
+    },
+    {
+      "id": "cohort-based-engineering",
+      "repository": "kemiller2002/cohort-based-engineering",
+      "displayName": "Cohort-Based Engineering (CBE)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "research",
+      "purpose": "Proposes Cohort-Based Engineering: requirements are units of accountability, coherent requirement cohorts are units of planning/construction/verification; also hosts the cross-system Echelon constraint-driven engineering program (README.md, program/PROGRAM.md).",
+      "responsibilities": [
+        "Define the CBE method and operating model (README.md, docs/operating-model.md)",
+        "Cross-system program record: current state, plan, contracts, experiments, release gates (program/)",
+        "Cross-system experiments VAC, ARCH, REL with evidence (research/)"
+      ],
+      "nonResponsibilities": [
+        "Does not claim to replace or implement Praxis, Ordo, Dokimos or research-documents functionality (README.md)",
+        "Program record does not replace any repository's own records; requirements still enter via each repo's Praxis intake (program/PROGRAM.md)"
+      ],
+      "intendedConsumers": [
+        "Praxis, Ordo, Dokimos, Conditor, Echelon Registry maintainers/agents (program/PROGRAM.md)",
+        "the owner (program/EXECUTION-STATE.md)"
+      ],
+      "providedCapabilities": [
+        "CBE method/operating model (documented-only)",
+        "Evidence-backed cross-repo capability inventory (documented-only)",
+        "Draft inter-component contracts and schemas (documented-only)",
+        "Experiment harnesses and results (VAC-001, VAC-002, ARCH-001/002) (implemented)"
+      ],
+      "plannedCapabilities": [
+        "Preregistered R-EXP-1 and R-EXP-2 experiments (README.md)",
+        "Program increments in program/IMPLEMENTATION-PLAN.md"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-014"
+      ],
+      "dependencies": [
+        "Praxis (orchestration, telemetry, intake) (optional)",
+        "Ordo (optional)",
+        "Dokimos (optional)",
+        "kemiller2002/research-documents (private, frozen evidence) (optional)"
+      ],
+      "dependents": [
+        "Praxis, Ordo, Dokimos, Conditor, Echelon Registry are in program scope (program/PROGRAM.md)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "requirements",
+      "lastCommit": "2026-11-09",
+      "authoritativeDocuments": [
+        "README.md",
+        "program/PROGRAM.md",
+        "program/CURRENT-STATE.md",
+        "program/EXECUTION-STATE.md",
+        "docs/operating-model.md"
+      ],
+      "outstandingDecisions": [
+        "Unresolved inter-component contract decisions (program/CONTRACTS.md 'Unresolved decisions')",
+        "Owner decisions OD-* recorded as decided 2026-10-24 with follow-through (program/EXECUTION-STATE.md)"
+      ],
+      "knownLimitations": [
+        "Evidence from single experiments; causal confidence limited (README.md)",
+        "VAC-001 correctness at ceiling so reliability benefit unmeasurable (README.md)",
+        "CURRENT-STATE says CBE has no CI (program/CURRENT-STATE.md)"
+      ],
+      "plannedDirection": "program/PROGRAM.md: shift to authorized requirements -> constrained construction -> mechanical verification -> independent acceptance; outcomes O1-O5 with promotion targets.",
+      "lineage": {
+        "previousNames": [
+          "ROS (Praxis former name, referenced as EX-ROS-*)",
+          "SDE (Ordo alias)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/cohort-based-engineering@HEAD README.md",
+        "kemiller2002/cohort-based-engineering@HEAD program/PROGRAM.md",
+        "kemiller2002/cohort-based-engineering@HEAD program/CURRENT-STATE.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "communication-engineering",
+      "repository": "kemiller2002/communication-engineering",
+      "displayName": "Communication Engineering",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "research",
+      "purpose": "Research program and emerging methodology for choosing, structuring, producing and evaluating communication by purpose, audience, proof obligation, context and consequence (README.md).",
+      "responsibilities": [
+        "Communication research corpus (research/)",
+        "Evidence-bounded operational agent context (agent-context/)",
+        "Lifecycle CLI init/status/verify/upgrade/doctor installing .communication-engineering/ (README.md, bin/communication-engineering.mjs)",
+        "Research site publishing via research-publisher (README.md)",
+        "Communication preflight requirements candidate (docs/communication-preflight-requirements-candidate-v0.1.md)"
+      ],
+      "nonResponsibilities": [
+        "Installer does not install research corpus or promote provisional claims to universal rules (README.md)",
+        "Does not claim validated universal writer rules, quality scores, persuasion optimizers, cultural or AI strategy selectors (README.md)"
+      ],
+      "intendedConsumers": [
+        "Echelon repositories and their AI agents (README.md lifecycle section)",
+        "Researchers (README.md)"
+      ],
+      "providedCapabilities": [
+        "Lifecycle CLI (dependency-free Node) (tested)",
+        "Operational communication context (documented-only)",
+        "Research site build/publish (implemented)",
+        "Communication preflight (planned)"
+      ],
+      "plannedCapabilities": [
+        "Selective communication preflight capability (docs/communication-preflight-requirements-candidate-v0.1.md)",
+        "Participant-facing behavioral test (HANDOFF.md objective)"
+      ],
+      "systems": [
+        "communication-engineering"
+      ],
+      "initiatives": [
+        "INIT-026"
+      ],
+      "dependencies": [
+        "Praxis/ROS 3.0.3 (build)",
+        "@echelon-foundry/research-publisher 0.1.0 (build)"
+      ],
+      "dependents": [],
+      "developmentStatus": "maintained",
+      "maturity": "released",
+      "latestRelease": "communication-engineering 1.0.0 (registry release record)",
+      "lastCommit": "2026-10-08",
+      "authoritativeDocuments": [
+        "README.md",
+        "context/CURRENT-STATE.md",
+        "HANDOFF.md",
+        "agent-context/RESEARCH-STATUS.md",
+        "docs/lifecycle-installation.md",
+        "framework/REP-SPECIFICATION.md"
+      ],
+      "outstandingDecisions": [
+        "Whether to productize selective preflight (docs/communication-preflight-requirements-candidate-v0.1.md)"
+      ],
+      "knownLimitations": [
+        "Full context did not improve correctness when brief already strong (docs/communication-preflight-requirements-candidate-v0.1.md)",
+        "PROJECT-CHARTER.md unfilled template"
+      ],
+      "plannedDirection": "Narrow to selective communication preflight rather than ambient prose-generation context (docs/communication-preflight-requirements-candidate-v0.1.md).",
+      "lineage": {
+        "previousNames": [
+          "Legacy ROS snapshot .ros/installation.json kept as migration history (README.md)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/communication-engineering@HEAD README.md",
+        "kemiller2002/communication-engineering@HEAD context/CURRENT-STATE.md",
+        "kemiller2002/communication-engineering@HEAD HANDOFF.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "conditor",
+      "repository": "kemiller2002/conditor",
+      "displayName": "Conditor",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "core-system",
+      "purpose": "Conditor establishes a governed engineering environment from an empty repository: resolves a declarative manifest, installs pinned Echelon capabilities, verifies them and writes a lock (README.md).",
+      "responsibilities": [
+        "Parse/validate conditor.json and resolve pinned lifecycle components (README.md)",
+        "Deterministic installation plan, execution and verification; .conditor/lock.json (README.md)",
+        "Scaffolds fsharp-nuget-library and fsharp-limen-web (README.md)",
+        "status/doctor/repair/upgrade lifecycle commands (docs/roadmap.md)",
+        "Bind Forma, Folio, Aegis, Limen packages to generated targets (README.md)"
+      ],
+      "nonResponsibilities": [
+        "Not specific to the Indy Init competition application (README.md)",
+        "Does not recreate scaffold files once established; they belong to the project (README.md)",
+        "npm packages refused for library scaffold (README.md)"
+      ],
+      "intendedConsumers": [
+        "New and existing Echelon repositories (README.md)",
+        "Agents bootstrapping repositories (README.md)"
+      ],
+      "providedCapabilities": [
+        "Deterministic manifest-driven install/verify/lock (tested)",
+        "Native self-contained release binaries with checksums and attestations (implemented)",
+        "fsharp-nuget-library and fsharp-limen-web scaffolds (implemented)",
+        "status/doctor/repair/version-only upgrade (implemented)"
+      ],
+      "plannedCapabilities": [
+        "Component/source attestation and signature policy (docs/roadmap.md)",
+        "Broader scaffold catalog (docs/roadmap.md)"
+      ],
+      "systems": [
+        "conditor"
+      ],
+      "initiatives": [
+        "INIT-012",
+        "INIT-013",
+        "INIT-016"
+      ],
+      "dependencies": [
+        "Praxis (hard)",
+        "Ordo (hard)",
+        "Visual Engineering (optional)",
+        "Communication Engineering (optional)",
+        "Echelon Registry (version authority) (hard)",
+        ".NET/F# (build)"
+      ],
+      "dependents": [
+        "Arca, Fides, Chrona, Summa installed via Conditor (their conditor.json)",
+        "Indy Init demonstration (README.md)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "released",
+      "latestRelease": "conditor 0.10.19 (registry release record); repository tag v0.10.29",
+      "lastCommit": "2026-11-25",
+      "authoritativeDocuments": [
+        "README.md",
+        "docs/roadmap.md",
+        "requirements/CONDITOR-REQUIREMENTS.md",
+        "docs/decisions/0001-registry-version-authority.md"
+      ],
+      "outstandingDecisions": [
+        "HANDOFF.md unresolved questions are stale greenfield boilerplate"
+      ],
+      "knownLimitations": [
+        "Application dependencies need explicit scaffold/binding target; Conditor stops rather than guess (README.md)",
+        "Upgrade path is version-only; governance changes rejected (docs/roadmap.md)"
+      ],
+      "plannedDirection": "docs/roadmap.md: finish Slice 2 remaining items (attestation policy, broader scaffolds), then Slice 3 requirements import.",
+      "lineage": {
+        "previousNames": [
+          "ROS -> Praxis (README.md: 'Praxis/ROS'); SDE -> Ordo"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/conditor@HEAD README.md",
+        "kemiller2002/conditor@HEAD docs/roadmap.md",
+        "kemiller2002/conditor@HEAD requirements/CONDITOR-REQUIREMENTS.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "construct-010-trials",
+      "repository": "kemiller2002/construct-010-trials",
+      "displayName": "CONSTRUCT-010 trials",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "test-fixture",
+      "purpose": "Trial workspaces for the CONSTRUCT-010 study 'Reduce Construction Cost Without Sacrificing Correctness'; study records live in kemiller2002/research-documents (README.md).",
+      "responsibilities": [
+        "Host orphan run branches, one per trial, containing only what the trial agent may see (README.md)",
+        "Carry trial outbox/requests and host-relay responses (README.md)"
+      ],
+      "nonResponsibilities": [
+        "Must never contain requirements oracles, acceptance suites, ECIR, construction plans, prepared artifacts, digests, caches or prior results (README.md)"
+      ],
+      "intendedConsumers": [
+        "CONSTRUCT-010 trial agent sessions",
+        "the trial host/relay (README.md)"
+      ],
+      "providedCapabilities": [
+        "Isolated per-trial workspace branches (documented-only)"
+      ],
+      "plannedCapabilities": [],
+      "systems": [],
+      "initiatives": [
+        "INIT-014"
+      ],
+      "dependencies": [
+        "kemiller2002/research-documents (study records) (optional)"
+      ],
+      "dependents": [
+        "CONSTRUCT-010 study in research-documents"
+      ],
+      "developmentStatus": "unknown",
+      "maturity": "concept",
+      "lastCommit": "2026-10-13",
+      "authoritativeDocuments": [
+        "README.md"
+      ],
+      "outstandingDecisions": [],
+      "knownLimitations": [
+        "README.md: a trial session can read every branch of this repository"
+      ],
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/construct-010-trials@HEAD README.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "daf-landscape",
+      "repository": "kemiller2002/daf-landscape",
+      "displayName": "DAF landscape research",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "research",
+      "purpose": "Evidence-classified research corpus on the U.S. donor-advised fund industry: structure, economics, technology, providers, assurance, tax and AI (research/DAF-INDUSTRY-REPORT-2026-11.md, research/README.md).",
+      "responsibilities": [
+        "DAF industry report and topical research notes (research/)",
+        "Machine-readable datasets and source registers (data/)",
+        "Analysis/collection scripts (scripts/)",
+        "AI-native DAF enterprise design workstream with F# models (research/ai-native-daf-enterprise/)",
+        "Public DNS/CT inventory collection (.github/workflows/daf-public-dns.yml)"
+      ],
+      "nonResponsibilities": [
+        "No live vendor test executed; no vendor scored pass/fail (research/README.md)",
+        "DNS CNAMEs do not establish supplier/contract relationships (research/iphi-175-client-lead-and-dns-execution-2026-11-11.md)"
+      ],
+      "intendedConsumers": [
+        "Unbound (unbound/requirements/CHARTER.md)",
+        "Echelon AI-Native Enterprise Design Framework DAF case study (its README.md)",
+        "owner's commercial decisions (research/mission-2026-11-14/strategic-synthesis.md)"
+      ],
+      "providedCapabilities": [
+        "Consolidated DAF industry report (documented-only)",
+        "Source registers and evidence datasets (500+ CSV) (implemented)",
+        "AI-native DAF enterprise F# models (tested)",
+        "DAF DNS/CT collector (implemented)"
+      ],
+      "plannedCapabilities": [
+        "Research backlog workstreams (research/DAF-MARKET-RESEARCH-AGENDA.md, research/comprehensive-research-backlog-2026-11-11.md)"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-004",
+        "INIT-005"
+      ],
+      "dependencies": [
+        "EDF claim-and-confidence policy (optional)",
+        "Clarity/EDF framework commits (optional)",
+        "Python + vendored jsonschema wheels (build)",
+        "F# .NET 8 (build)"
+      ],
+      "dependents": [
+        "Unbound",
+        "Echelon-AI-Native-Enterprise-Design-Framework"
+      ],
+      "developmentStatus": "active",
+      "maturity": "implemented",
+      "lastCommit": "2026-11-25",
+      "authoritativeDocuments": [
+        "research/DAF-INDUSTRY-REPORT-2026-11.md",
+        "research/README.md",
+        "research/ai-native-daf-enterprise/README.md",
+        "research/mission-2026-11-14/strategic-synthesis.md"
+      ],
+      "outstandingDecisions": [
+        "research/ai-native-daf-enterprise/DECISION-LOG.md and OUTSTANDING.md"
+      ],
+      "knownLimitations": [
+        "No live DNS response obtained in this environment (research/iphi-175-client-lead-and-dns-execution-2026-11-11.md)",
+        "Vendor tests unexecuted; reference cases not CPA-validated (research/README.md)"
+      ],
+      "plannedDirection": "Map DAF ecosystem beyond Ren via company registry, technology audit and other workstreams (research/DAF-MARKET-RESEARCH-AGENDA.md).",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/daf-landscape@HEAD research/DAF-INDUSTRY-REPORT-2026-11.md",
+        "kemiller2002/daf-landscape@HEAD research/README.md",
+        "kemiller2002/daf-landscape@HEAD research/ai-native-daf-enterprise/README.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "decision-posture",
+      "repository": "kemiller2002/decision-posture",
+      "displayName": "decisionposture.com (Clarity Framework site)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product-website",
+      "purpose": "Static public website for the Clarity Framework (decision posture, claims/evidence/confidence review), with a local guided 'Try Clarity' assessment (README.md).",
+      "responsibilities": [
+        "Publish Clarity framework, learning, glossary and research pages (README.md)",
+        "Interactive Try Clarity assessment with report/print (js/try-clarity.js)",
+        "Downloadable Clarity Quick Assessment (clarity-quick-assessment-v1.md)",
+        "Contact/inquiry form (js/contact.js)"
+      ],
+      "nonResponsibilities": [
+        "Clarity does not select the correct action or predict outcomes (docs/clarity-explanation-audit-2026-08-26.md)"
+      ],
+      "intendedConsumers": [
+        "People and organizations applying Clarity; prospective assessment clients (assessments.html, contact.html)"
+      ],
+      "providedCapabilities": [
+        "Clarity framework public site (implemented)",
+        "Try Clarity guided assessment (implemented)",
+        "UI conformance Playwright suite (tested)",
+        "Clarity guides (Decision Constitution, Decision Map, Posture Model) (documented-only)"
+      ],
+      "plannedCapabilities": [],
+      "systems": [],
+      "initiatives": [
+        "INIT-019"
+      ],
+      "dependencies": [
+        "Playwright (test only) (test)",
+        "visual-engineering UI-LAYOUT-INTERACTION@1.0.0 (test)"
+      ],
+      "dependents": [],
+      "developmentStatus": "maintained",
+      "maturity": "implemented",
+      "lastCommit": "2026-10-13",
+      "authoritativeDocuments": [
+        "README.md",
+        "docs/research-execution-package.md",
+        "docs/clarity-explanation-audit-2026-08-26.md"
+      ],
+      "outstandingDecisions": [
+        "Open research questions: environments that break Clarity, measuring confidence debt, systems-thinking integration, simplest working version (research.html)"
+      ],
+      "knownLimitations": [
+        "Audit found Decision Constitution overpromises safety and mandates universal governance (docs/clarity-explanation-audit-2026-08-26.md)",
+        "js/main.js not loaded by any page (README.md)"
+      ],
+      "plannedDirection": "docs/research-execution-package.md: consolidate Clarity as reasoning calibration/reassessment with decision posture as one module; EDF governs diagnosis.",
+      "lineage": {
+        "previousNames": [
+          "Decision Posture (legacy redirect pages decision-posture.html etc., README.md)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/decision-posture@HEAD README.md",
+        "kemiller2002/decision-posture@HEAD docs/research-execution-package.md",
+        "kemiller2002/decision-posture@HEAD docs/clarity-explanation-audit-2026-08-26.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "dokimos",
+      "repository": "kemiller2002/dokimos",
+      "displayName": "Dokimos",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "core-system",
+      "purpose": "Evidence-based code-quality system that measures quality, preserves observations over time, detects regressions/improvement and hotspots, with inspectable evidence (README.md).",
+      "responsibilities": [
+        "Code-quality measurement and longitudinal evidence (README.md)",
+        "Immutable snapshots, comparison, trend and finding lifecycle (context/CURRENT-STATE.md)",
+        "Git churn and hotspot evidence (context/CURRENT-STATE.md)",
+        "CI quality gate action (actions/quality-gate)",
+        "Public site dokimos.echelonfoundry.com (README.md)"
+      ],
+      "nonResponsibilities": [
+        "Security owned by 'Aegis/Tutors' (README.md)",
+        "Process telemetry owned by Praxis/ROS (README.md)",
+        "Application state legality owned by Ordo (README.md)"
+      ],
+      "intendedConsumers": [
+        "Developers and agents (PROJECT-CHARTER.md)",
+        "Echelon repositories via dokimos.yml workflows (fides, aegis)"
+      ],
+      "providedCapabilities": [
+        "Snapshot/comparison/trend engine (tested)",
+        "F# structural analyzer (implemented)",
+        "Dokimos CLI and CI self-measurement (tested)",
+        "Requirement/construction/completion verification (documented-only)",
+        "Static public website (implemented)"
+      ],
+      "plannedCapabilities": [
+        "Results UI after evidence pipeline trustworthy (PROJECT-CHARTER.md)",
+        "DOK-OPS-026 external action (context/CURRENT-STATE.md)"
+      ],
+      "systems": [
+        "dokimos"
+      ],
+      "initiatives": [
+        "INIT-001",
+        "INIT-003",
+        "INIT-006",
+        "INIT-012",
+        "INIT-015"
+      ],
+      "dependencies": [
+        "Ordo (hard)",
+        "Praxis (hard)",
+        "Visual Engineering (optional)",
+        "Forma/Folio (results UI) (optional)",
+        ".NET/F# (build)"
+      ],
+      "dependents": [
+        "Fides and Aegis run dokimos.yml (their .github/workflows)",
+        "Project Administration inventory records Dokimos installation"
+      ],
+      "developmentStatus": "active",
+      "maturity": "released",
+      "latestRelease": "dokimos 0.11.1 (registry release record)",
+      "lastCommit": "2026-11-09",
+      "authoritativeDocuments": [
+        "README.md",
+        "PROJECT-CHARTER.md",
+        "requirements/REQUIREMENTS.md",
+        "docs/architecture/ARCHITECTURE.md",
+        "context/CURRENT-STATE.md"
+      ],
+      "outstandingDecisions": [
+        "Pending Pages/DNS external actions (context/CURRENT-STATE.md)"
+      ],
+      "knownLimitations": [
+        "experiments/rule-provenance/LIMITATIONS.md"
+      ],
+      "plannedDirection": "Results UI on Forma/Folio after trustworthy evidence pipeline (PROJECT-CHARTER.md).",
+      "lineage": {
+        "previousNames": [
+          "ROS -> Praxis",
+          "'Tutors' appears as security owner (README.md), likely Tutela"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/dokimos@HEAD README.md",
+        "kemiller2002/dokimos@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/dokimos@HEAD requirements/REQUIREMENTS.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "echelon-ai-native-enterprise-design-framework",
+      "repository": "kemiller2002/Echelon-AI-Native-Enterprise-Design-Framework",
+      "displayName": "Echelon AI-Native Enterprise Design Framework (EEF)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "research",
+      "purpose": "F# framework to model how an enterprise operates, reinvent workflows, assign work to software/AI/agents/humans, price and test redesigns, and generate traceable architecture (README.md).",
+      "responsibilities": [
+        "Typed enterprise model, validation EEF001-015, reinvention and executor-assignment engines (README.md, src/Echelon.Enterprise)",
+        "eef CLI (src/Echelon.Enterprise.Cli)",
+        "Case studies, DAF end to end (case-studies/)",
+        "Methodology docs (methodology/)"
+      ],
+      "nonResponsibilities": [
+        "Does not perform Clarity review or EDF diagnosis, only prepares inputs (README.md)",
+        "Does not modify other Echelon repos (AGENTS.md rule 6)"
+      ],
+      "intendedConsumers": [
+        "Enterprise redesign analysts/consulting; Clarity and EDF reviewers (README.md)"
+      ],
+      "providedCapabilities": [
+        "Enterprise model validate/analyse/export-eks CLI (tested)",
+        "EKS record export validated by eks validate (tested)",
+        "AI Responsibility Model R1-R7 (implemented)",
+        "eef.analysis/0 IR schema (implemented)"
+      ],
+      "plannedCapabilities": [
+        "Healthcare prior-auth and insurance claims case studies (progress/research-gaps-and-next-priorities.md)",
+        "Activity splitting in engine (same)",
+        "Cross-case economics/simulations/commercial (README.md 'to come')"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-005",
+        "INIT-007"
+      ],
+      "dependencies": [
+        "echelon-knowledge-store (eks validate) (optional)",
+        "daf-landscape (source corpus) (optional)",
+        ".NET 10 SDK (build)"
+      ],
+      "dependents": [],
+      "developmentStatus": "active",
+      "maturity": "implemented",
+      "lastCommit": "2026-11-20",
+      "authoritativeDocuments": [
+        "README.md",
+        "AGENTS.md",
+        "progress/LEDGER.md",
+        "docs/decisions/"
+      ],
+      "outstandingDecisions": [
+        "Praxis adoption not authorised (progress/research-gaps-and-next-priorities.md, ADR 0003)",
+        "Licence not chosen (same)",
+        "Branch protection on main (same)"
+      ],
+      "knownLimitations": [
+        "DAF economics verdict reverses at adverse corner; hands-on effort data missing (progress/research-gaps-and-next-priorities.md)"
+      ],
+      "plannedDirection": "Phase 4: add healthcare and insurance case studies and record generalisation changes (progress/research-gaps-and-next-priorities.md).",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/Echelon-AI-Native-Enterprise-Design-Framework@HEAD README.md",
+        "kemiller2002/Echelon-AI-Native-Enterprise-Design-Framework@HEAD AGENTS.md",
+        "kemiller2002/Echelon-AI-Native-Enterprise-Design-Framework@HEAD progress/LEDGER.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "visibility": "public",
+      "classification": "public",
+      "responsibilities": [
+        "Unified control catalog and evidence architecture",
+        "Assurance coordination and validation methodology"
+      ],
+      "nonResponsibilities": [
+        "Asserting that any system is compliant",
+        "Storing production evidence or live findings"
+      ],
+      "systems": [],
+      "dependencies": [],
+      "developmentStatus": "active",
+      "maturity": "requirements",
+      "authoritativeDocuments": [
+        "README.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25",
+      "evidence": [
+        "kemiller2002/echelon-assurance requirements/continuous-assurance-requirements.md"
+      ],
+      "id": "echelon-assurance",
+      "repository": "kemiller2002/echelon-assurance",
+      "displayName": "Echelon Assurance",
+      "echelonRelation": "governance",
+      "purpose": "Organizational assurance research, control design, evidence architecture and validation methodology for an AI-native compliance operating model.",
+      "outstandingDecisions": [
+        "Repository visibility: owner directed private, observed public on 2026-11-25 (OD-GOV-002)",
+        "Research branch not yet merged"
+      ],
+      "lastCommit": "2026-11-25",
+      "initiatives": [
+        "INIT-002",
+        "INIT-003",
+        "INIT-006",
+        "INIT-029"
+      ]
+    },
+    {
+      "id": "echelon-culinary",
+      "repository": "kemiller2002/echelon-culinary",
+      "displayName": "Echelon Foundry Culinary",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product-website",
+      "purpose": "Professional web presence for Echelon Foundry's foodservice consulting practice; primary audience consulting prospects, secondary speaking credibility (README.md, notes/echelon-foundry-culinary-site-decisions.md).",
+      "responsibilities": [
+        "Marketing pages: about, clarity, consulting, research, speaking, contact (app/)",
+        "SEO/sitemap (lib/seo.ts, public/sitemap.xml)",
+        "Static export deployed to GitHub Pages (README.md, .github/workflows/deploy-pages.yml)"
+      ],
+      "nonResponsibilities": [
+        "Not a recipe blog, chef-influencer site, food photography portfolio or separate lifestyle brand (notes/echelon-foundry-culinary-site-decisions.md)"
+      ],
+      "intendedConsumers": [
+        "Foodservice consulting prospects; event organizers (notes/echelon-foundry-culinary-site-decisions.md)"
+      ],
+      "providedCapabilities": [
+        "React/vinext static marketing site (implemented)",
+        "Site integrity check (tested)"
+      ],
+      "plannedCapabilities": [],
+      "systems": [],
+      "initiatives": [
+        "INIT-028"
+      ],
+      "dependencies": [
+        "React 19, vinext 1.0.0-beta.9, shadcn/Tailwind (package)"
+      ],
+      "dependents": [],
+      "developmentStatus": "dormant",
+      "maturity": "implemented",
+      "lastCommit": "2026-09-30",
+      "authoritativeDocuments": [
+        "README.md",
+        "notes/echelon-foundry-culinary-site-decisions.md",
+        "notes/culinary-site-implementation-plan.md",
+        "notes/culinary-site-review.md"
+      ],
+      "outstandingDecisions": [],
+      "knownLimitations": [
+        "Parent-site source not present; uses parent information patterns only (notes/culinary-site-implementation-plan.md)"
+      ],
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/echelon-culinary@HEAD README.md",
+        "kemiller2002/echelon-culinary@HEAD notes/echelon-foundry-culinary-site-decisions.md",
+        "kemiller2002/echelon-culinary@HEAD notes/culinary-site-implementation-plan.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "echelon-design-system",
+      "repository": "kemiller2002/echelon-design-system",
+      "displayName": "Echelon Foundry Design System (Echelon theme)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "governance",
+      "purpose": "Defines Echelon brand foundations, semantic tokens, typography, accessibility and print design contracts; ships @echelon-foundry/echelon-theme for Forma. 'It is not a second UI component library' (README.md).",
+      "responsibilities": [
+        "Echelon brand manifest, tokens and theme CSS for Forma (theme/, dist/)",
+        "Owner-approved corporate logos (logos/, brand/application-logos.md)",
+        "Brand source audit (brand/AUDIT.md)",
+        "Echelon application layer CSS and self-hosted fonts (README.md 1.1.0, dist/echelon-app.css)",
+        "Contrast/scope/parity validation of theme (tools/theme_validator.py, tests/)",
+        "Accessibility requirements (accessibility/requirements.md)"
+      ],
+      "nonResponsibilities": [
+        "Not a second UI component library; Forma implements components (README.md)",
+        "Must use, never define, the Forma namespace (README.md 1.1.0)"
+      ],
+      "intendedConsumers": [
+        "Echelon applications using Forma (docs/CONSUMING-THE-ECHELON-THEME.md)",
+        "Forma, Forma Studio, Folio, Percepta, Dokimos, Conditor (README.md)"
+      ],
+      "providedCapabilities": [
+        "@echelon-foundry/echelon-theme 1.1.0 package (tested)",
+        "Theme build from pinned Forma compilers (implemented)",
+        "Contrast and logo checks (tested)",
+        "Forma parity check (implemented)",
+        "Component/print/schema contracts (planned)"
+      ],
+      "plannedCapabilities": [
+        "Machine-readable primitive/semantic/typography/component/print contracts with schemas (README.md gates)",
+        "Immutable checksummed contract releases (README.md)",
+        "Update Forma, Studio, Folio, Percepta, Dokimos, Conditor; migrate applications in waves (README.md)"
+      ],
+      "systems": [
+        "echelon-theme"
+      ],
+      "initiatives": [
+        "INIT-008"
+      ],
+      "dependencies": [
+        "Forma v1.0.0 (pinned commit, F# compilers) (build)",
+        "Python build/validation tooling (build)",
+        "Playwright visual checks (test)",
+        "npm font packages (Newsreader, Manrope, IBM Plex Mono) (build)"
+      ],
+      "dependents": [
+        "Forma",
+        "Forma Studio",
+        "Folio",
+        "Percepta",
+        "Dokimos",
+        "Conditor"
+      ],
+      "developmentStatus": "active",
+      "maturity": "released",
+      "latestRelease": "echelon-theme 1.1.0 (registry release record)",
+      "lastCommit": "2026-11-11",
+      "authoritativeDocuments": [
+        "README.md",
+        "docs/adr-002-brand-asset-ownership.md",
+        "docs/CONSUMING-THE-ECHELON-THEME.md",
+        "docs/CONSUMER-CONTRACT.md",
+        "brand/AUDIT.md",
+        "docs/forma-brand-neutral-architecture.md"
+      ],
+      "outstandingDecisions": [
+        "Owner approval of brand palette pending; candidate hex values unverified (README.md)",
+        "Frozen v1 palette not established; colors carried from Forma 0.14.0 (README.md)"
+      ],
+      "knownLimitations": [
+        "Most planned directories (components/, print/, schemas contracts) not yet implemented (README.md 'Planned layout')"
+      ],
+      "plannedDirection": "Six implementation gates: audit, machine-readable contracts, WCAG verification, immutable releases, downstream updates, application migration waves (README.md).",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/echelon-design-system@HEAD README.md",
+        "kemiller2002/echelon-design-system@HEAD docs/adr-002-brand-asset-ownership.md",
+        "kemiller2002/echelon-design-system@HEAD docs/CONSUMING-THE-ECHELON-THEME.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "echelon-diagnostic-framework",
+      "repository": "kemiller2002/echelon-diagnostic-framework",
+      "displayName": "Echelon Diagnostic Framework (EDF)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "research",
+      "purpose": "EDF is a working diagnostic grammar for making system diagnoses explicit enough to challenge (README.md); a systems-understanding framework answering 'What is happening?' (docs/edf/README.md).",
+      "responsibilities": [
+        "EDF v0.3 specification and release bundle (docs/edf/specification.md, docs/edf/releases/v0.3/)",
+        "Hypothesis, evidence and theory registries (research/registries/)",
+        "Claim and confidence policy and validation protocol (docs/framework-engineering/)",
+        "Preregistered benchmark EX-EDF-001 (research/experiments/EX-EDF-001/)",
+        "Public educational website (static-site/)"
+      ],
+      "nonResponsibilities": [
+        "No application framework or runtime dependency (README.md Validation)",
+        "Site ships no JavaScript (README.md Website)",
+        "Does not answer 'What should we do?' (Clarity's role) (docs/edf/README.md)"
+      ],
+      "intendedConsumers": [
+        "Practitioners diagnosing systems; public site readers (docs/website-architecture.md)"
+      ],
+      "providedCapabilities": [
+        "Diagnostic grammar specification v0.3 (documented-only)",
+        "Repository/registry integrity validation (tested)",
+        "Benchmark preregistration integrity and scoring (tested)",
+        "Static website with F# browser conformance tests (tested)",
+        "Confirmatory EX-EDF-001 execution (planned)"
+      ],
+      "plannedCapabilities": [
+        "EDF v1.0 specification (candidate) (docs/edf/specification-v1-draft.md)",
+        "Confirmatory EX-EDF-001 run once executors frozen (README.md)"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-007",
+        "INIT-020"
+      ],
+      "dependencies": [
+        "Forma 0.13.0 (pinned CSS) (package)",
+        "Node 22 (validation scripts) (build)",
+        "ROS/Praxis (build)"
+      ],
+      "dependents": [
+        "Causa (EDF as first domain specialization, causa docs/PRODUCT-REQUIREMENTS.md)",
+        "Mercatus portfolio GTM (mercatus README.md)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "implemented",
+      "lastCommit": "2026-11-17",
+      "authoritativeDocuments": [
+        "README.md",
+        "docs/edf/specification.md",
+        "docs/edf/README.md",
+        "docs/edf/validation/evidence-ledger.md",
+        "research/registries/hypothesis-registry.json",
+        "docs/framework-engineering/claim-and-confidence-policy.md"
+      ],
+      "outstandingDecisions": [
+        "Freeze analyzer/evaluator provider/model bindings before EX-EDF-001 (README.md)",
+        "Charter unresolved questions: first user/problem, baseline (HANDOFF.md)"
+      ],
+      "knownLimitations": [
+        "No cross-executor reproducibility, incremental value, evidence-sensitive updating or speed/learnability established (README.md, docs/edf/README.md)",
+        "Historical R1 runs lack execution detail for reconstruction (README.md)"
+      ],
+      "plannedDirection": "Run confirmatory EX-EDF-001 once executors are bound; v1.0 draft remains a candidate until evidence supports promotion (README.md, docs/edf/specification-v1-draft.md).",
+      "lineage": {
+        "previousNames": [
+          "overview.md legacy overview (status Superseded)",
+          "ROS -> Praxis"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/echelon-diagnostic-framework@HEAD README.md",
+        "kemiller2002/echelon-diagnostic-framework@HEAD docs/edf/specification.md",
+        "kemiller2002/echelon-diagnostic-framework@HEAD docs/edf/README.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "visibility": "public",
+      "classification": "public",
+      "responsibilities": [
+        "Canonical due diligence question bank and answers",
+        "Evidence requirements and claim status per answer"
+      ],
+      "nonResponsibilities": [
+        "Storing restricted supporting evidence",
+        "Assurance control design (echelon-assurance)"
+      ],
+      "systems": [],
+      "dependencies": [],
+      "developmentStatus": "active",
+      "maturity": "requirements",
+      "authoritativeDocuments": [
+        "README.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25",
+      "evidence": [
+        "kemiller2002/echelon-due-diligence governance/TRANSPARENCY-ALIGNMENT.md"
+      ],
+      "id": "echelon-due-diligence",
+      "repository": "kemiller2002/echelon-due-diligence",
+      "displayName": "Echelon Due Diligence",
+      "echelonRelation": "research",
+      "purpose": "Canonical due diligence research: questions, target and approved answers, control definitions, evidence requirements and claim status.",
+      "outstandingDecisions": [
+        "Research branch establishing the Praxis foundation not yet merged (2026-11-25)"
+      ],
+      "lastCommit": "2026-11-25",
+      "initiatives": [
+        "INIT-002",
+        "INIT-006",
+        "INIT-029"
+      ]
+    },
+    {
+      "id": "echelon-engineering-system",
+      "repository": "kemiller2002/echelon-engineering-system",
+      "displayName": "Echelon Engineering System (website)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product-website",
+      "purpose": "Static F#-published documentation site for Echelon Foundry's engineering architecture, method, components, agent decision boundaries and research (README.md).",
+      "responsibilities": [
+        "Explanatory site pages: architecture atlas, lifecycle, agents, components, research, rehearsal evidence (requirements/DETAILED-WEBSITE-AND-SOURCE-INVENTORY-v0.2.md)",
+        "Versioned source inventory of upstream Echelon repos (docs/source-inventory.md)",
+        "Print PDFs of architecture, inventory, lifecycle, research (output/pdf/, tests/print.spec.mjs)",
+        "Accessibility/responsive verification (tests/site.spec.mjs)"
+      ],
+      "nonResponsibilities": [
+        "Upstream repositories continue to own their contracts and evidence (README.md)",
+        "Limen intentionally absent until stateful browser requirement (README.md)"
+      ],
+      "intendedConsumers": [
+        "Readers of engineering.echelonfoundry.com (README.md)"
+      ],
+      "providedCapabilities": [
+        "F# static site publisher (tested)",
+        "Tagged Letter PDFs via Folio (tested)",
+        "Branding comparison test (implemented)"
+      ],
+      "plannedCapabilities": [
+        "WP-01..WP-07: resolve brand authority, verify Forma/Limen, resolve repo identities for Praxis, Dokimos, Tutors, Aegis, Vitium, Causa, diagrams/walkthrough (requirements/DETAILED-WEBSITE-AND-SOURCE-INVENTORY-v0.2.md)"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-028"
+      ],
+      "dependencies": [
+        "Forma 0.9.0 (@echelon-foundry/design-system) (package)",
+        "Folio 0.4.1 (@echelon-foundry/print-components) (package)",
+        ".NET 10 SDK, Node 24 (build)",
+        "Playwright + axe-core (test)"
+      ],
+      "dependents": [],
+      "developmentStatus": "active",
+      "maturity": "implemented",
+      "lastCommit": "2026-10-28",
+      "authoritativeDocuments": [
+        "README.md",
+        "docs/source-inventory.md",
+        "docs/requirements-verification.md",
+        "docs/branding-contract.md",
+        "requirements/DETAILED-WEBSITE-AND-SOURCE-INVENTORY-v0.2.md"
+      ],
+      "outstandingDecisions": [
+        "Corporate brand authority unresolved (WP-01)",
+        "Canonical repository identities for Praxis, Dokimos, Tutors, Aegis, Vitium, Causa (WP-03)"
+      ],
+      "knownLimitations": [
+        "Branding test requires a local private reference build path (README.md)",
+        "Pinned Forma 0.9.0 predates brand-neutral Forma 1.0 (package.json vs forma/CHANGELOG.md)"
+      ],
+      "plannedDirection": "Work packets WP-01..WP-07 (requirements/DETAILED-WEBSITE-AND-SOURCE-INVENTORY-v0.2.md).",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/echelon-engineering-system@HEAD README.md",
+        "kemiller2002/echelon-engineering-system@HEAD docs/source-inventory.md",
+        "kemiller2002/echelon-engineering-system@HEAD docs/requirements-verification.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "echelon-foundry",
+      "repository": "kemiller2002/echelon-foundry",
+      "displayName": "Echelon Foundry (corporate website)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product-website",
+      "purpose": "Corporate website for echelonfoundry.com built by a static Node build (build.js), presenting EDF case studies, research and HelixNote; README.md itself only describes the Praxis 3.7.1 pilot scaffolding.",
+      "responsibilities": [
+        "Corporate pages: home, about, research, contact (src/pages/)",
+        "EDF applied-diagnostics case studies (src/case-studies/, src/data/case-studies.json)",
+        "HelixNote product page (src/pages/helixnote.html)",
+        "Contact/inquiry forms posting to an external worker (contact.js)",
+        "Corporate typography/palette/page shell used by other sites (echelon-engineering-system/docs/source-inventory.md)"
+      ],
+      "nonResponsibilities": [],
+      "intendedConsumers": [
+        "Prospective clients/visitors of echelonfoundry.com (CNAME, src/pages) - interpretation"
+      ],
+      "providedCapabilities": [
+        "Static site build (implemented)",
+        "Color contrast and UI conformance tests (tested)",
+        "Inquiry form submission to external worker (implemented)"
+      ],
+      "plannedCapabilities": [],
+      "systems": [],
+      "initiatives": [
+        "INIT-028"
+      ],
+      "dependencies": [
+        "Praxis 3.7.1 (build)",
+        "Visual Engineering, Communication Engineering, Limen verify scripts (build)",
+        "External inquiry worker service (hard)",
+        "Playwright (UI conformance) (test)"
+      ],
+      "dependents": [],
+      "developmentStatus": "maintained",
+      "maturity": "implemented",
+      "lastCommit": "2026-10-13",
+      "authoritativeDocuments": [
+        "README.md",
+        "AGENTS.md",
+        "HANDOFF.md",
+        "src/data/case-studies.json"
+      ],
+      "outstandingDecisions": [
+        "HANDOFF.md 'Unresolved questions' (bootstrap template)"
+      ],
+      "knownLimitations": [
+        "PROJECT-CHARTER.md unfilled template; README does not describe the website"
+      ],
+      "lineage": {
+        "previousNames": [
+          "ROS -> Praxis; './ros' is compatibility alias of './praxis' (README.md)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/echelon-foundry@HEAD README.md",
+        "kemiller2002/echelon-foundry@HEAD AGENTS.md",
+        "kemiller2002/echelon-foundry@HEAD HANDOFF.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "echelon-knowledge-store",
+      "repository": "kemiller2002/echelon-knowledge-store",
+      "displayName": "Echelon Knowledge Store (EKS)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "research",
+      "purpose": "Researches whether typed, F#-validated knowledge beats Markdown for agents; current finding: keep Markdown+front matter canonical and compile it (README.md).",
+      "responsibilities": [
+        "Knowledge representation research and benchmarks (research/, benchmarks/)",
+        "Record model, parsers, validators (src/Echelon.KnowledgeStore.Core)",
+        "Experimental knowledge compiler and eks CLI (src/Echelon.KnowledgeStore.Compiler, tools/)"
+      ],
+      "nonResponsibilities": [
+        "No migrations: never modify knowledge in other Echelon repos (AGENTS.md)",
+        "No new infrastructure without evidence (AGENTS.md)",
+        "Not a stable schema or production service (AGENTS.md)"
+      ],
+      "intendedConsumers": [
+        "Echelon repositories and their agents, notably Praxis (README.md, research/2026-compiler-integration/architecture/praxis-integration.md)",
+        "EEF (exports validated by eks validate)"
+      ],
+      "providedCapabilities": [
+        "eks validate / context over repository clones (tested)",
+        "Benchmark harness (implemented)",
+        "Research findings/executive report (documented-only)"
+      ],
+      "plannedCapabilities": [
+        "Praxis compiler integration (research/2026-compiler-integration/)"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-002",
+        "INIT-003",
+        "INIT-009",
+        "INIT-029"
+      ],
+      "dependencies": [
+        ".NET 10 SDK (build)",
+        "Praxis knowledge corpus (read-only) (optional)"
+      ],
+      "dependents": [
+        "Echelon-AI-Native-Enterprise-Design-Framework",
+        "unbound (mentions Knowledge Store schema status)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "implemented",
+      "lastCommit": "2026-11-17",
+      "authoritativeDocuments": [
+        "README.md",
+        "AGENTS.md",
+        "research/2026-knowledge-representation/strategy/executive-report.md",
+        "docs/decisions/0001-license.md"
+      ],
+      "outstandingDecisions": [],
+      "knownLimitations": [
+        "Schemas experimental and unstable (AGENTS.md)"
+      ],
+      "plannedDirection": "Compile Markdown knowledge (links, closures, authority, edit validation, task packages) rather than replace it (README.md).",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/echelon-knowledge-store@HEAD README.md",
+        "kemiller2002/echelon-knowledge-store@HEAD AGENTS.md",
+        "kemiller2002/echelon-knowledge-store@HEAD research/2026-knowledge-representation/strategy/executive-report.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "visibility": "private",
+      "classification": "public",
+      "responsibilities": [],
+      "nonResponsibilities": [],
+      "systems": [],
+      "dependencies": [],
+      "developmentStatus": "unknown",
+      "maturity": "unknown",
+      "authoritativeDocuments": [
+        "registry/systems-v2.json or public references (identity only)"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25",
+      "evidence": [],
+      "id": "echelon-organization-administration",
+      "repository": "kemiller2002/echelon-organization-administration",
+      "displayName": "Echelon Organization Administration",
+      "echelonRelation": "governance",
+      "purpose": "Authoritative organizational policies and administration records.",
+      "disclosureDecision": "DD-001",
+      "initiatives": [
+        "INIT-010",
+        "INIT-012",
+        "INIT-027",
+        "INIT-028",
+        "INIT-029"
+      ]
+    },
+    {
+      "id": "echelon-registry",
+      "repository": "kemiller2002/echelon-registry",
+      "displayName": "Echelon Registry",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "core-system",
+      "purpose": "Discovery and interoperability specification and distribution catalog for Echelon systems: identity, canonical repository, provided/consumed capabilities, releases, profiles and channels (README.md).",
+      "responsibilities": [
+        "Canonical system identity seed registry/systems-v2.json (README.md)",
+        "Contract schemas echelon.system/release/profile/catalog-snapshot/resolved-release-set/readiness (README.md, schemas/)",
+        "Profiles and generated echelon-current channel (profiles/, channels/)",
+        "Normative specs incl. integration standard, rolling upgrade, lifecycle contract (spec/)",
+        "Descriptive portfolio directory (portfolio/README.md)"
+      ],
+      "nonResponsibilities": [
+        "Must not contain credentials, destination business logic or another system's persistence layout (README.md)",
+        "Never records where a system is installed; project-administration owns installation history (README.md)",
+        "Portfolio is not a capability discovery or release contract (portfolio/README.md)"
+      ],
+      "intendedConsumers": [
+        "Conditor (installer/resolver, spec/distribution-catalog-requirements.md REG-DIST-015)",
+        "Praxis/Project Administration (catalog check)",
+        "agents proposing new systems (portfolio/README.md)",
+        "Unbound EF discovery (unbound/requirements/CHARTER.md)"
+      ],
+      "providedCapabilities": [
+        "systems-v2 identity catalog (32 systems) (implemented)",
+        "Profile resolver and channel index generators (tested)",
+        "Distribution conformance CI (implemented)",
+        "Portfolio directory and initiative catalog requirements (documented-only)",
+        "Capability pairing REG-PAIR-001 (tested)"
+      ],
+      "plannedCapabilities": [
+        "Planned owner commitments: time-primitives (Chrona), ledger-receivables-payments (Summa) (registry/systems-v2.json plannedCapabilities)",
+        "Initiative catalog with stable IDs, participating repos, maturity, review dates (portfolio/README.md)"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-010",
+        "INIT-012",
+        "INIT-016",
+        "INIT-029"
+      ],
+      "dependencies": [
+        "Conditor release qualification before channel moves (REG-RU-007) (hard)",
+        "Praxis 3.7.x (installed repository OS) (build)",
+        ".NET fsi for tools/conformance (build)"
+      ],
+      "dependents": [
+        "Conditor",
+        "Praxis installation registration",
+        "Project Administration",
+        "Unbound"
+      ],
+      "developmentStatus": "active",
+      "maturity": "implemented",
+      "lastCommit": "2026-11-25",
+      "authoritativeDocuments": [
+        "README.md",
+        "registry/systems-v2.json",
+        "portfolio/README.md",
+        "spec/",
+        "profiles/echelon-current.profile.json"
+      ],
+      "outstandingDecisions": [
+        "Project charter purpose/users/outcome not established (PROJECT-CHARTER.md template)"
+      ],
+      "knownLimitations": [
+        "Registry knew older releases than source for forma/limen/aegis as of 2026-10-23 (cohort-based-engineering/program/CURRENT-STATE.md)",
+        "No Praxis intake present (same)"
+      ],
+      "plannedDirection": "Distribution catalog v2 foundation and initiative catalog (README.md, portfolio/README.md).",
+      "lineage": {
+        "previousNames": [
+          "Praxis alias ros; Ordo alias sde; Tutela alias tutors; Tekmerion alias research-publisher (registry/systems-v2.json)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/echelon-registry@HEAD README.md",
+        "kemiller2002/echelon-registry@HEAD registry/systems-v2.json",
+        "kemiller2002/echelon-registry@HEAD portfolio/README.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "fides",
+      "repository": "kemiller2002/fides",
+      "displayName": "Fides",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "supporting-library",
+      "purpose": "Common Echelon authentication and single sign-on identity boundary, starting with GitHub App user-to-server tokens (README.md).",
+      "responsibilities": [
+        "Stateless server-side code-for-token exchange, refresh, revocation (README.md)",
+        "F# client library for Limen/Forma WASM apps and Arca token provider (README.md)",
+        "AWS Lambda hosting adapter (PROJECT-CHARTER.md)"
+      ],
+      "nonResponsibilities": [
+        "Nothing is deployed from this repository (README.md)",
+        "No session service (DF-FIDES-2026-0004 via context/CURRENT-STATE.md)"
+      ],
+      "intendedConsumers": [
+        "People signing in; Echelon apps (Chrona, Summa, Signal); Arca; operator (PROJECT-CHARTER.md)"
+      ],
+      "providedCapabilities": [
+        "Exchange core and GitHub App provider (tested)",
+        "AWS Lambda adapter + CloudFormation (tested)",
+        "Client library (WASM) (implemented)"
+      ],
+      "plannedCapabilities": [
+        "Additional identity providers (PROJECT-CHARTER.md)"
+      ],
+      "systems": [
+        "fides"
+      ],
+      "initiatives": [
+        "INIT-017",
+        "INIT-018"
+      ],
+      "dependencies": [
+        "Arca (token-provider port) (hard)",
+        "Aegis (hard)",
+        "Praxis, Ordo, Percepta, Dokimos, Tutela, VE, CE (hard)",
+        "AWS Lambda (optional)",
+        "GitHub App (hard)"
+      ],
+      "dependents": [
+        "Chrona, Summa, Signal (PROJECT-CHARTER.md)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "released",
+      "latestRelease": "fides 0.2.0 (registry release record)",
+      "lastCommit": "2026-11-12",
+      "authoritativeDocuments": [
+        "README.md",
+        "PROJECT-CHARTER.md",
+        "docs/requirements/FIDES-REQUIREMENTS.md",
+        "docs/hosting/AWS.md",
+        "CHANGELOG.md"
+      ],
+      "outstandingDecisions": [],
+      "knownLimitations": [
+        "GitHub is the only provider (PROJECT-CHARTER.md)",
+        "Operator must supply GitHub App, AWS account, domain, secret (README.md)"
+      ],
+      "plannedDirection": "Chrona sign-in through Fides as first bounded outcome (PROJECT-CHARTER.md).",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/fides@HEAD README.md",
+        "kemiller2002/fides@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/fides@HEAD docs/requirements/FIDES-REQUIREMENTS.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "folio",
+      "repository": "kemiller2002/folio",
+      "displayName": "Folio",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "core-system",
+      "purpose": "Echelon Foundry print component system: reusable light-DOM web components and print-layout primitives for HTML documents printed to paper/PDF, standards first (README.md, PROJECT-CHARTER.md).",
+      "responsibilities": [
+        "Light-DOM ef-print-* components (document, title page, header/footer, table, TOC...) (README.md, src/components)",
+        "Print CSS, page profiles (Letter/A4) and tokens (PROJECT-CHARTER.md)",
+        "Tiered renderer capability profiles P0-P3 (README.md)",
+        "Deterministic Chromium PDF export as separate adapter (PROJECT-CHARTER.md)",
+        "Tutela Security Evidence Record print format (requirements/TUTELA-SECURITY-EVIDENCE-RECORD.md)",
+        "Workflow/diagram paged-media projection (PROJECT-CHARTER.md)",
+        "Forma icon print tooling (package.json exports ./forma-icons)"
+      ],
+      "nonResponsibilities": [
+        "No JavaScript general-purpose pagination engine (README.md, PROJECT-CHARTER.md)",
+        "No WYSIWYG editor, CMYK/prepress, pixel-identical output, PDF/UA guarantee (PROJECT-CHARTER.md)",
+        "No business/domain logic, diagram routing/editing, or bundled charting (PROJECT-CHARTER.md)",
+        "Limen is not the pagination engine (README.md)"
+      ],
+      "intendedConsumers": [
+        "Echelon Foundry applications needing reports, proposals, invoices, manuals (PROJECT-CHARTER.md)",
+        "Other framework-independent web applications (PROJECT-CHARTER.md)",
+        "Tutela (security evidence records) (requirements/TUTELA-SECURITY-EVIDENCE-RECORD.md)"
+      ],
+      "providedCapabilities": [
+        "Passive light-DOM print components (21 elements) (tested)",
+        "Runtime version registry window.__ECHELON_RUNTIME__ (tested)",
+        "Tutela security evidence record (tested)",
+        "Diagram projection to paged media (tested)",
+        "Print experiments / renderer research (implemented)",
+        "Interactive preview/configuration app (Limen) (planned)"
+      ],
+      "plannedCapabilities": [
+        "Interactive preview/configuration application using Limen (README.md)",
+        "Optional P3 enhanced paged-media engine adapters after experiments (context/CURRENT-STATE.md)"
+      ],
+      "systems": [
+        "folio"
+      ],
+      "initiatives": [
+        "INIT-002",
+        "INIT-008"
+      ],
+      "dependencies": [
+        "Praxis/ROS 3.1.4 (build)",
+        "Limen 0.7.1 (declared notApplicable) (optional)",
+        "Forma icons (optional)",
+        "Visual/Communication Engineering, SDE/Ordo (build)",
+        "Chromium (deterministic PDF) (test)"
+      ],
+      "dependents": [
+        "Echelon Foundry applications (PROJECT-CHARTER.md)",
+        "Tutela (requirements/TUTELA-SECURITY-EVIDENCE-RECORD.md)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "released",
+      "latestRelease": "folio 0.4.1 (registry release record)",
+      "lastCommit": "2026-11-23",
+      "authoritativeDocuments": [
+        "README.md",
+        "PROJECT-CHARTER.md",
+        "context/CURRENT-STATE.md",
+        "docs/requirements/PRINT-COMPONENTS-REQUIREMENTS.md",
+        "docs/architecture/PRINT-ARCHITECTURE.md",
+        "docs/AGENT-USAGE.md"
+      ],
+      "outstandingDecisions": [
+        "Research queue items (context/RESEARCH-QUEUE.md)",
+        "HANDOFF.md unresolved questions are stale bootstrap boilerplate"
+      ],
+      "knownLimitations": [
+        "Firefox/Safari lack page-margin boxes; mainstream browsers lack bleed/crop marks (context/CURRENT-STATE.md)",
+        "ef-print-sidebar has provisional portability posture (README.md)"
+      ],
+      "plannedDirection": "First vertical slice exercising difficult print behavior with deterministic PDF tests; Limen preview app later (README.md).",
+      "lineage": {
+        "previousNames": [
+          "Echelon Print Components (PROJECT-CHARTER.md, HANDOFF.md)",
+          "@echelon-foundry/print-components package id retained (README.md)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/folio@HEAD README.md",
+        "kemiller2002/folio@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/folio@HEAD context/CURRENT-STATE.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "forma",
+      "repository": "kemiller2002/forma",
+      "displayName": "Forma",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "core-system",
+      "purpose": "Zero-component-runtime, brand-neutral design system: semantic HTML patterns, CSS, design tokens and accessibility contracts; brand identity comes from external manifests/themes (README.md, PROJECT-CHARTER.md).",
+      "responsibilities": [
+        "DTCG design tokens and themes (tokens/, tools/TokenCompiler)",
+        "Canonical HTML/CSS component patterns and catalog site (patterns/, catalog/, docs/CATALOG-AUTHORING.md)",
+        "Accessibility contracts targeting WCAG 2.2 AA (PROJECT-CHARTER.md)",
+        "Brand manifests and white-label skinning (docs/BRANDING.md, tools/BrandCompiler)",
+        "Marketing-site shell and layouts (docs/MARKETING-SITES.md)",
+        "Aegis fault presentation family (docs/AEGIS-INTEGRATION.md)",
+        "Portable workflow/diagram standard and EchelonFoundry.Forma.Workflow package (ADR-0006, src/workflow/)",
+        "Icons and Figma contract (docs/ICONS.md, docs/FIGMA.md)"
+      ],
+      "nonResponsibilities": [
+        "No JavaScript, WebAssembly, Custom Elements, Shadow DOM or UI runtimes in the design-system runtime (PROJECT-CHARTER.md, ADR-0002)",
+        "No application-domain logic or persistence/network effects (PROJECT-CHARTER.md)",
+        "Behavior beyond browser-native belongs to consuming app, normally Limen (README.md)",
+        "Ships no organization brand (README.md, CHANGELOG.md 1.0.0)"
+      ],
+      "intendedConsumers": [
+        "Echelon application developers and agents (PROJECT-CHARTER.md)",
+        "Product designers and accessibility reviewers (PROJECT-CHARTER.md)",
+        "Marketing websites (README.md)",
+        "External developers of future public packages (PROJECT-CHARTER.md)"
+      ],
+      "providedCapabilities": [
+        "Token/theme compiler and validator (F#) (tested)",
+        "HTML/CSS component patterns + catalog site (tested)",
+        "Brand compiler / brand neutrality guard (tested)",
+        "Portable workflow engine/CLI (F#) (tested)",
+        "Character-grid (IBM 3270) presentation family (tested)",
+        "Namespace migrator codemod ef- -> forma- (tested)",
+        "Conformance package (implemented)"
+      ],
+      "plannedCapabilities": [
+        "Planned components listed in docs/COMPONENT-INVENTORY.md",
+        "npm Trusted Publishing (README.md)"
+      ],
+      "systems": [
+        "forma"
+      ],
+      "initiatives": [
+        "INIT-001",
+        "INIT-008",
+        "INIT-012"
+      ],
+      "dependencies": [
+        "Praxis/ROS 3.1.4 (build)",
+        "Visual Engineering (build)",
+        "Communication Engineering (build)",
+        "Aegis Presentation.T (presentation contract) (optional)",
+        "Playwright (test)",
+        ".NET/F# for build tools (build)"
+      ],
+      "dependents": [
+        "Limen-based applications (README.md)",
+        "Folio (reconcile-forma-print workflow in folio)",
+        "Forma Studio",
+        "@echelon-foundry/echelon-theme consumers (CHANGELOG.md 1.0.0)",
+        "kemiller2002.github.io (forma.lock)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "released",
+      "latestRelease": "forma 1.0.1 (registry release record); repository tag v1.1.0",
+      "lastCommit": "2026-11-23",
+      "authoritativeDocuments": [
+        "README.md",
+        "PROJECT-CHARTER.md",
+        "CHANGELOG.md",
+        "docs/CONSUMING-FORMA.md",
+        "docs/COMPONENT-INVENTORY.md",
+        "docs/decisions/",
+        "docs/AGENT-USAGE.md",
+        "SDE-MAP.md"
+      ],
+      "outstandingDecisions": [
+        "HANDOFF.md 'Unresolved questions' (first slice, baseline) appear stale from bootstrap",
+        "Independent visual review open for new icons (CHANGELOG.md 1.1.0)"
+      ],
+      "knownLimitations": [
+        "Known pattern issues e.g. aside with role=status/alert (docs/COMPONENT-INVENTORY.md, catalog/known-issues.json)",
+        "Aegis family validation not run locally at authoring time (HANDOFF.md)"
+      ],
+      "lineage": {
+        "previousNames": [
+          "Echelon Design System (HANDOFF.md heading; package @echelon-foundry/design-system)",
+          "ef- class namespace renamed forma- in 1.0.0 (CHANGELOG.md)",
+          "ROS -> Praxis"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/forma@HEAD README.md",
+        "kemiller2002/forma@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/forma@HEAD CHANGELOG.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "forma-studio",
+      "repository": "kemiller2002/forma-studio",
+      "displayName": "Forma Studio",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product",
+      "purpose": "Visual application and diagram specification environment: compose real Forma components into pages, author Flow diagrams, preview, and export a typed specification for developers and agents (README.md, PROJECT-CHARTER.md).",
+      "responsibilities": [
+        "Visual specification authoring across Layout pages and Flow diagrams (PROJECT-CHARTER.md)",
+        "Authoritative versioned project document; canvas as projection (README.md, schemas/forma-studio.schema.json)",
+        "F# Studio state and legal editing transitions (src/engine/FormaStudio.Engine)",
+        "Edit/save Forma portable workflow documents (docs/WORKFLOWS.md)",
+        "Deterministic HTML export using public Forma markup (docs/HTML-EXPORT.md)",
+        "Machine-readable developer/agent handoff (requirements/08-export-handoff-agents.md)",
+        "Forma capability inventory synchronization (REQUIREMENTS.md)"
+      ],
+      "nonResponsibilities": [
+        "Does not own business-domain state of designed applications (PROJECT-CHARTER.md, RN-008)",
+        "Does not fork/replace Forma component implementation (PROJECT-CHARTER.md, RN-009)",
+        "v1 non-goals: freehand/vector/photo/3D editing, real-time multiplayer, JS plugins, workflow execution, notation-standard claims (requirements/12-roadmap-nongoals.md)"
+      ],
+      "intendedConsumers": [
+        "Designers/people composing Forma pages and diagrams (PROJECT-CHARTER.md)",
+        "Developers and AI agents consuming exported specs (PROJECT-CHARTER.md)"
+      ],
+      "providedCapabilities": [
+        "F# editor engine (commands, layout, flow, icons, diff) (tested)",
+        "Project schema + requirement validators (implemented)",
+        "Portable workflow editing (implemented)",
+        "HTML export (implemented)",
+        "Browser UI tests (tested)",
+        "Public marketing site (implemented)",
+        "Studio CLI (implemented)"
+      ],
+      "plannedCapabilities": [
+        "Figma, Visio/draw.io adapters (RN-039..041)",
+        "Templates/gallery, reusable fragments, brand packs (RN-042..044)",
+        "Real-time collaboration, hosted persistence, comments, plugins (RN-045..048)",
+        "Additional diagram profiles (RN-051)",
+        "Reusable contextual AI assistance UX (latest commit message)"
+      ],
+      "systems": [
+        "forma-studio"
+      ],
+      "initiatives": [
+        "INIT-008"
+      ],
+      "dependencies": [
+        "Forma 0.10.0 + forma-workflow 1.1.0 (vendored) (hard)",
+        "Limen 0.9.0 (hard)",
+        "Aegis Core 1.0.0 (EchelonFoundry.Aegis.Core) (package)",
+        "Folio (when print enters scope) (optional)",
+        "Praxis/ROS 3.1.4, SDE/Ordo 1.3.0 (build)",
+        "Visual/Communication Engineering (build)"
+      ],
+      "dependents": [],
+      "developmentStatus": "active",
+      "maturity": "prototype",
+      "lastCommit": "2026-11-23",
+      "authoritativeDocuments": [
+        "README.md",
+        "PROJECT-CHARTER.md",
+        "REQUIREMENTS.md",
+        "requirements/",
+        "capabilities.lock.json",
+        "docs/WORKFLOWS.md",
+        "docs/HTML-EXPORT.md"
+      ],
+      "outstandingDecisions": [
+        "Flow schema extension not yet applied to bootstrap schema (README.md)",
+        "Implementation gate and deferred list (requirements/AUDIT-COVERAGE-2026-09-30.md)"
+      ],
+      "knownLimitations": [
+        "Pinned Forma 0.10.0 predates Forma 1.0 brand-neutral/namespace break (capabilities.lock.json vs forma/CHANGELOG.md) - interpretation",
+        "HANDOFF.md is unmodified bootstrap template"
+      ],
+      "plannedDirection": "Deferred-but-compatible adapters and collaboration features listed in requirements/12-roadmap-nongoals.md.",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/forma-studio@HEAD README.md",
+        "kemiller2002/forma-studio@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/forma-studio@HEAD REQUIREMENTS.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "framework-engineering",
+      "repository": "kemiller2002/framework-engineering",
+      "displayName": "Framework Engineering",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "research",
+      "purpose": "Defines the methodology used to create, validate, evolve and publish analytical frameworks so they evolve through evidence rather than intuition (README.md, charter.md).",
+      "responsibilities": [
+        "Framework lifecycle methodology: constitution, reference suites, frozen versions, ECRs (README.md, CONSTITUTION.md)",
+        "Governance of EDF and Clarity frameworks (README.md, applications/README.md)",
+        "FEMS-1 measurement instrument (foundation/research-methodology/FEMS-1.md, CURRENT_STATE.md)",
+        "Knowledge artifact taxonomy and reference corpus (docs/knowledge-artifacts/, research/corpus/)",
+        "Research experiments FE-001..FE-012C incl. LLM blind pilots (CURRENT_STATE.md)",
+        "Research site publishing (research-publisher.config.mjs, .github/workflows/deploy-pages.yml)"
+      ],
+      "nonResponsibilities": [
+        "Applications may produce evidence for Foundation but do not establish it (applications/README.md)"
+      ],
+      "intendedConsumers": [
+        "EDF, Clarity, Execution, framework templates, ECP generator (applications/README.md)"
+      ],
+      "providedCapabilities": [
+        "Framework validation and canonical model standards (documented-only)",
+        "Experiment registry tooling (tested)",
+        "ROS FE profile validator (tested)",
+        "ECP generator (implemented)",
+        "UI conformance tests for research site (implemented)",
+        "Research frontier build (implemented)"
+      ],
+      "plannedCapabilities": [
+        "Phase III framework taxonomy research: census, grammar reduction, archetypes (roadmap.md)"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-020",
+        "INIT-026"
+      ],
+      "dependencies": [
+        "research-publisher (github:kemiller2002/research-publisher#main, patched on postinstall) (build)",
+        "Playwright, ajv (test)",
+        "Forma (UI conformance) (test)",
+        "OpenAI/Anthropic/Gemini APIs (experiment FE-012C) (optional)"
+      ],
+      "dependents": [
+        "EDF",
+        "Clarity"
+      ],
+      "developmentStatus": "active",
+      "maturity": "requirements",
+      "lastCommit": "2026-10-13",
+      "authoritativeDocuments": [
+        "README.md",
+        "CONSTITUTION.md",
+        "RESEARCH_CHARTER.md",
+        "CURRENT_STATE.md",
+        "roadmap.md",
+        "foundation/research-methodology/FEMS-1.md",
+        "docs/evidence-ledger.md"
+      ],
+      "outstandingDecisions": [
+        "Deferred insights (docs/deferred-insights.md)",
+        "FE-002 archetype hypothesis to be supported/refined/rejected (roadmap.md)"
+      ],
+      "knownLimitations": [],
+      "plannedDirection": "Phase I Foundation -> II Proof -> III Framework Taxonomy Research (roadmap.md).",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/framework-engineering@HEAD README.md",
+        "kemiller2002/framework-engineering@HEAD CONSTITUTION.md",
+        "kemiller2002/framework-engineering@HEAD RESEARCH_CHARTER.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "visibility": "private",
+      "classification": "public",
+      "responsibilities": [],
+      "nonResponsibilities": [],
+      "systems": [
+        "framework-templates"
+      ],
+      "dependencies": [],
+      "developmentStatus": "unknown",
+      "maturity": "unknown",
+      "authoritativeDocuments": [
+        "registry/systems-v2.json or public references (identity only)"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25",
+      "evidence": [],
+      "id": "framework-templates",
+      "repository": "kemiller2002/Framework-templates",
+      "displayName": "Framework Templates",
+      "echelonRelation": "core-system",
+      "purpose": "Reusable framework contracts and templates (registry systems-v2.json).",
+      "disclosureDecision": "DD-001",
+      "initiatives": [
+        "INIT-013"
+      ]
+    },
+    {
+      "id": "gate-proof-r10",
+      "repository": "kemiller2002/gate-proof-r10",
+      "displayName": "Gate Proof R10",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "test-fixture",
+      "purpose": "Freshly initialized Praxis greenfield repository used to prove the Indy-init Rehearsal verification gate (R10); the charter is an unfilled template (README.md, PROJECT-CHARTER.md, .github/workflows/verification-gate.yml).",
+      "responsibilities": [
+        "Host Praxis scaffold and governed verification gate copied from Indy-init (.github/workflows/verification-gate.yml)"
+      ],
+      "nonResponsibilities": [
+        "verification-gate.yml must not be edited here; CI compares with Indy-init's copy (.github/workflows/verification-gate.yml)"
+      ],
+      "intendedConsumers": [
+        "Indy-init rehearsal tooling (tools/r9 in Indy-init)"
+      ],
+      "providedCapabilities": [
+        "Praxis 3.12.0 greenfield scaffold (implemented)",
+        "Verification gate workflow (Dokimos 0.11.0 / requirements-compiler) (implemented)"
+      ],
+      "plannedCapabilities": [],
+      "systems": [],
+      "initiatives": [
+        "INIT-021"
+      ],
+      "dependencies": [
+        "Praxis 3.12.0 (hard)",
+        "Conditor component set: praxis 3.25.0, ordo 1.20.0, percepta, aegis, limen, forma, folio (hard)",
+        "Indy-init tools/r9 (build)"
+      ],
+      "dependents": [],
+      "developmentStatus": "dormant",
+      "maturity": "concept",
+      "lastCommit": "2026-11-06",
+      "authoritativeDocuments": [
+        "README.md",
+        "HANDOFF.md",
+        ".github/workflows/verification-gate.yml"
+      ],
+      "outstandingDecisions": [
+        "Project charter purpose/users/outcome 'Not yet established' (PROJECT-CHARTER.md)"
+      ],
+      "knownLimitations": [],
+      "lineage": {
+        "previousNames": [
+          "ROS -> Praxis (./ros compatibility alias, README.md)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/gate-proof-r10@HEAD README.md",
+        "kemiller2002/gate-proof-r10@HEAD HANDOFF.md",
+        "kemiller2002/gate-proof-r10@HEAD .github/workflows/verification-gate.yml"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "visibility": "private",
+      "classification": "public",
+      "responsibilities": [],
+      "nonResponsibilities": [],
+      "systems": [
+        "helix-note"
+      ],
+      "dependencies": [],
+      "developmentStatus": "unknown",
+      "maturity": "unknown",
+      "authoritativeDocuments": [
+        "registry/systems-v2.json or public references (identity only)"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25",
+      "evidence": [],
+      "id": "helix-note-application",
+      "repository": "kemiller2002/helix-note-application",
+      "displayName": "HelixNote",
+      "echelonRelation": "product",
+      "purpose": "Canonical HelixNote application (registry systems-v2.json helix-note).",
+      "disclosureDecision": "DD-001",
+      "initiatives": [
+        "INIT-011"
+      ]
+    },
+    {
+      "id": "helix-note-website",
+      "repository": "kemiller2002/Helix-Note-Website",
+      "displayName": "HelixNote Website",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product-website",
+      "purpose": "Static marketing site for HelixNote, a platform to capture events, symptoms, labs, documents and context and produce specialist-ready summaries (index.html, package.json).",
+      "responsibilities": [
+        "Present HelixNote features, use cases (health, research, forensics), privacy and FAQ (index.html)",
+        "Demo request via email link (index.html)"
+      ],
+      "nonResponsibilities": [],
+      "intendedConsumers": [
+        "Prospective HelixNote users (patients/caregivers, research, forensics) (index.html)"
+      ],
+      "providedCapabilities": [
+        "Static marketing page (implemented)",
+        "UI conformance browser tests (tested)"
+      ],
+      "plannedCapabilities": [],
+      "systems": [],
+      "initiatives": [
+        "INIT-011"
+      ],
+      "dependencies": [
+        "@playwright/test 1.56.1 (test)",
+        "Visual Engineering UI-LAYOUT-INTERACTION@1.0.0 conformance (test)"
+      ],
+      "dependents": [],
+      "developmentStatus": "dormant",
+      "maturity": "implemented",
+      "lastCommit": "2026-10-13",
+      "authoritativeDocuments": [
+        "index.html"
+      ],
+      "outstandingDecisions": [],
+      "knownLimitations": [],
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/Helix-Note-Website@HEAD index.html"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "indy-init",
+      "repository": "kemiller2002/Indy-init",
+      "displayName": "Indy Init (Root-Cause Investigator / Causa)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "experiment",
+      "purpose": "Planning and experiment repository for the Indy Init hackathon: requirements, architecture and rehearsal tooling for a generic Root-Cause Investigator (Causa) built by the Echelon software factory (README.md).",
+      "responsibilities": [
+        "Causa requirements, domain model, state transitions, acceptance (docs/, requirements/)",
+        "Frozen compiled requirement packages v1..v4.1.6 (requirements-compiled/)",
+        "F# requirements-compiler and rehearsal governance tools (tools/)",
+        "Rehearsal protocols, results and owner decisions (docs/REHEARSAL-*, docs/OWNER-DECISIONS-*)",
+        "Owner-controlled acceptance assets (verification/)"
+      ],
+      "nonResponsibilities": [
+        "Should not contain the implemented competition application before kickoff (README.md, docs/HACKATHON-BOUNDARIES.md)",
+        "Agents never write approval records or self-ratify (AGENTS.md)"
+      ],
+      "intendedConsumers": [
+        "Rehearsal/competition build agents",
+        "the owner",
+        "rehearsal repos such as indy-init-rehearsal-001 and gate-proof-r10"
+      ],
+      "providedCapabilities": [
+        "requirements-compiler (baseline, verify-process, catalog-acceptance, stop-decision) (tested)",
+        "Rehearsal governance r9/r10 scripts (implemented)",
+        "Frozen requirements packages (implemented)",
+        "Offline factory rehearsal CI (implemented)"
+      ],
+      "plannedCapabilities": [
+        "EDF-specific investigator on the shared kernel after the hackathon (docs/EDF-FOLLOW-ON.md)"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-021"
+      ],
+      "dependencies": [
+        "Ordo (hard)",
+        "Praxis (hard)",
+        "Aegis (hard)",
+        "Limen (hard)",
+        "Forma (hard)",
+        "Folio (hard)",
+        "Dokimos (test)",
+        "GitHub as persistence store (hard)"
+      ],
+      "dependents": [
+        "EDF (follow-on specialization, docs/EDF-FOLLOW-ON.md)",
+        "Echelon Registry indy-init profile (echelon-registry profiles/indy-init.profile.json)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "implemented",
+      "latestRelease": "indy-init-requirements-v4.1.6 (repository tag)",
+      "lastCommit": "2026-11-09",
+      "authoritativeDocuments": [
+        "README.md",
+        "AGENTS.md",
+        "docs/OPEN-QUESTIONS.md",
+        "docs/OWNER-DECISIONS-2026-11-03.md",
+        "requirements/README.md"
+      ],
+      "outstandingDecisions": [
+        "48 open questions incl. OQ-001 durable product name (docs/OPEN-QUESTIONS.md)",
+        "Deployment target undecided (RQR-005, cited in indy-init-rehearsal-001/DEPLOYMENT.md)"
+      ],
+      "knownLimitations": [
+        "Rehearsal 4 and 5 computed NOT ACCEPTED (README.md)",
+        "Some non-F# tools still to be ported (AGENTS.md)"
+      ],
+      "plannedDirection": "After the hackathon, EDF becomes first domain specialization of the investigation kernel (README.md, docs/EDF-FOLLOW-ON.md).",
+      "lineage": {
+        "previousNames": [
+          "Root-Cause Investigator -> Causa",
+          "ROS -> Praxis (README stack lists both)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/Indy-init@HEAD README.md",
+        "kemiller2002/Indy-init@HEAD AGENTS.md",
+        "kemiller2002/Indy-init@HEAD docs/OPEN-QUESTIONS.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "indy-init-rehearsal-001",
+      "repository": "kemiller2002/indy-init-rehearsal-001",
+      "displayName": "Indy Init Rehearsal 001",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "experiment",
+      "purpose": "Rehearsal build of the Indy-init Root-Cause Investigator (Causa) application under Praxis 3.16.0, used as experiment EX-INDY-INIT-2026-R001 (evidence/MISSION-RESULT.md).",
+      "responsibilities": [
+        "F# engine/kernel/WASM app source (src/)",
+        "Engine and browser tests (tests/)",
+        "Deployment to GitHub Pages (.github/workflows/deploy-pages.yml)",
+        "Experiment evidence and traceability (evidence/)"
+      ],
+      "nonResponsibilities": [],
+      "intendedConsumers": [
+        "Indy-init experiment program",
+        "research-documents (result record)"
+      ],
+      "providedCapabilities": [
+        "Causa investigation engine (F#) (tested)",
+        "Browser UI tests (Playwright, axe) (tested)",
+        "GitHub-backed persistence (tested)"
+      ],
+      "plannedCapabilities": [],
+      "systems": [],
+      "initiatives": [
+        "INIT-021"
+      ],
+      "dependencies": [
+        "Forma (@echelon-foundry/design-system 0.9.0) (package)",
+        "Limen 0.9.0 (package)",
+        "Folio v0.3.0 tarball (package)",
+        "Praxis 3.16.0 (hard)",
+        "Aegis boundaries (hard)",
+        "Conditor (build)"
+      ],
+      "dependents": [],
+      "developmentStatus": "dormant",
+      "maturity": "implemented",
+      "lastCommit": "2026-10-23",
+      "authoritativeDocuments": [
+        "evidence/MISSION-RESULT.md",
+        "DEPLOYMENT.md",
+        "HANDOFF.md"
+      ],
+      "outstandingDecisions": [
+        "Deployment target not decided (DEPLOYMENT.md, RQR-005)"
+      ],
+      "knownLimitations": [
+        "Static Pages site cannot hold secrets; AI provider key/OAuth exchange need a backend (DEPLOYMENT.md)",
+        "Only 61/82 scoped requirements verified (evidence/MISSION-RESULT.md)"
+      ],
+      "lineage": {
+        "previousNames": [
+          "ROS -> Praxis (README.md)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/indy-init-rehearsal-001@HEAD evidence/MISSION-RESULT.md",
+        "kemiller2002/indy-init-rehearsal-001@HEAD DEPLOYMENT.md",
+        "kemiller2002/indy-init-rehearsal-001@HEAD HANDOFF.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "iter",
+      "repository": "kemiller2002/iter",
+      "displayName": "Iter",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "supporting-library",
+      "purpose": "Smallest useful set of typed .NET application-side web primitives above the Limen boundary, starting with routing (PROJECT-CHARTER.md; README.md).",
+      "responsibilities": [
+        "Typed route parsing/formatting and navigation intent (README.md)",
+        "Minimality budget enforcement (docs/MINIMALITY.md)"
+      ],
+      "nonResponsibilities": [
+        "Rendering, DOM, components, lifecycle, DI, state management, forms, domain semantics (README.md)",
+        "Browser capability access (Limen) (PROJECT-CHARTER.md)"
+      ],
+      "intendedConsumers": [
+        "F# and .NET Echelon applications (PROJECT-CHARTER.md)"
+      ],
+      "providedCapabilities": [
+        "Pure route codec and typed navigation intent (tested)"
+      ],
+      "plannedCapabilities": [
+        "Public Iter website (README.md)"
+      ],
+      "systems": [
+        "iter"
+      ],
+      "initiatives": [
+        "INIT-017"
+      ],
+      "dependencies": [
+        "Ordo, Praxis, Visual Engineering (hard)",
+        "Tutela (optional)",
+        "Limen (conceptual boundary, not runtime) (optional)"
+      ],
+      "dependents": [],
+      "developmentStatus": "unknown",
+      "maturity": "implemented",
+      "lastCommit": "2026-10-16",
+      "authoritativeDocuments": [
+        "README.md",
+        "PROJECT-CHARTER.md",
+        "requirements/REQUIREMENTS.md",
+        "docs/MINIMALITY.md"
+      ],
+      "outstandingDecisions": [],
+      "knownLimitations": [
+        "Site deferred until routing surface stable (README.md)"
+      ],
+      "plannedDirection": "Stabilize routing, then public site (README.md).",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/iter@HEAD README.md",
+        "kemiller2002/iter@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/iter@HEAD requirements/REQUIREMENTS.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "limen",
+      "repository": "kemiller2002/limen",
+      "displayName": "Limen",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "core-system",
+      "purpose": "An explicit boundary that keeps browser capabilities separate from application authority: a dependency-free browser kernel plus a repository lifecycle CLI (README.md, package.json).",
+      "responsibilities": [
+        "TypeScript browser kernel: DOM bindings, HTTP, storage, clipboard, navigation as typed effects (README.md, docs/ROADMAP.md)",
+        "JSON-serializable engine/kernel protocol and EngineTransport seam (src/protocol.ts per docs/ROADMAP.md)",
+        "Lifecycle CLI init/status/verify/upgrade/doctor, written in F# (README.md, docs/20-lifecycle-cli.md)",
+        "Optional capability packs (focus, schedule, measure, events...) (package.json exports, docs/24-contract-and-capabilities.md)",
+        "F# engine-side libraries: Store, Forms, Outbox, Http, Routing, Resources, Localization (libraries/fsharp/)",
+        "Mechanical architecture checks rejecting browser authority in engines (scripts/check-architecture.ts)"
+      ],
+      "nonResponsibilities": [
+        "Does not make illegal domain states unrepresentable; consumer engine must (README.md, HANDOFF.md)",
+        "npm package does not ship a WASM application engine (README.md)",
+        "Reusable interaction patterns are owned by Forma, not Limen (docs/37-accessible-patterns.md)",
+        "Core frozen at v1: new browser capabilities go to optional packs, not kernel (docs/ROADMAP.md)"
+      ],
+      "intendedConsumers": [
+        "Web applications with an F#/.NET WebAssembly or TypeScript engine (README.md)",
+        "AI coding agents (AGENTS.md, docs/14-agent-guide.md)",
+        "Arca and Chrona consumers of F# packages (docs/41-indexeddb.md)",
+        "time-entry-state-machine application (README.md)"
+      ],
+      "providedCapabilities": [
+        "Browser kernel + protocol (npm @echelon-foundry/limen) (tested)",
+        "Lifecycle CLI (F#) (tested)",
+        "F# WASM product site engine (tested)",
+        "WASM federation existence proof (implemented)",
+        "F# engine libraries (Store, Forms, Outbox, Routing, Http...) (implemented)",
+        "wasm-check interpreter frame-size check (unreleased) (implemented)"
+      ],
+      "plannedCapabilities": [
+        "Neutral contract source, generated bindings, fingerprint handshake (noted absent in HANDOFF.md GH-57 negative knowledge)",
+        "Comparative experiment Limen+F# WASM vs conventional browser state (HANDOFF.md)",
+        "Align accessible-pattern proofs with Forma API (docs/37-accessible-patterns.md)"
+      ],
+      "systems": [
+        "limen",
+        "limen-fsharp"
+      ],
+      "initiatives": [
+        "INIT-001",
+        "INIT-008",
+        "INIT-012",
+        "INIT-017"
+      ],
+      "dependencies": [
+        "Praxis/ROS (@echelon-foundry/repository-operating-system) (build)",
+        "Conditor (NuGet release-asset feed for F# packages) (optional)",
+        "Visual Engineering context (build)",
+        ".NET WebAssembly runtime (build)"
+      ],
+      "dependents": [
+        "Arca",
+        "Chrona",
+        "time-entry-state-machine",
+        "Folio (limen.config.json present there)",
+        "Forma Studio (limen.config.json)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "released",
+      "latestRelease": "limen 0.9.1 (registry release record)",
+      "lastCommit": "2026-10-28",
+      "authoritativeDocuments": [
+        "README.md",
+        "AGENTS.md",
+        "HANDOFF.md",
+        "CHANGELOG.md",
+        "docs/ROADMAP.md",
+        "docs/mental-model.md",
+        "docs/11-api-reference.md",
+        "architecture/core.json"
+      ],
+      "outstandingDecisions": [
+        "Status upgrades pending PR #56 / issues #52, #55, #17 (HANDOFF.md)",
+        "Core growth requires a Core Admission (docs/core-admission.md)"
+      ],
+      "knownLimitations": [
+        "F# protocol types are a handwritten mirror of src/protocol.ts; no neutral contract (HANDOFF.md)",
+        "Comparative outcomes (speed, defects, tokens) not established (README.md, docs/19-evidence.md)",
+        "Federation publish outputs not git-ignored; lockfile drift (HANDOFF.md)",
+        "PROJECT-CHARTER.md is unfilled template (purpose/users 'Not yet established')"
+      ],
+      "plannedDirection": "Keep kernel small/frozen; grow via optional capability packs and F# engine libraries; seek comparative evidence (docs/ROADMAP.md, HANDOFF.md).",
+      "lineage": {
+        "previousNames": [
+          "@echelon-foundry/typescript-wasm-kernel (renamed to @echelon-foundry/limen at 0.7.0) (docs/18-naming-and-compatibility.md)",
+          "ROS -> Praxis (docs/18-naming-and-compatibility.md)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/limen@HEAD README.md",
+        "kemiller2002/limen@HEAD AGENTS.md",
+        "kemiller2002/limen@HEAD HANDOFF.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "mercatus",
+      "repository": "kemiller2002/mercatus",
+      "displayName": "Mercatus (Echelon Sales and Marketing)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product",
+      "purpose": "Evidence-driven commercial intelligence and execution system treating sales and marketing as explicit state, evidence, hypotheses, controlled transitions, obligations, experiments and learning; not a conventional CRM (README.md, PROJECT-CHARTER.md).",
+      "responsibilities": [
+        "Market/problem hypotheses, evidence and ICP management (README.md core loop)",
+        "Lead qualification, opportunity and outcome tracking for first slice PRD-25 (PROJECT-CHARTER.md)",
+        "Capability-scoped agent transitions and policy checks for external actions (PROJECT-CHARTER.md PRD-18)",
+        "Provider-neutral integration boundary (Proton Mail, Reddit, Meta, X, LinkedIn) (requirements/INTEGRATION-REQUIREMENTS.md via README.md)",
+        "Portfolio GTM pressure testing for Clarity, EDF, HelixNote (requirements/PORTFOLIO-GTM-SCENARIOS.md)"
+      ],
+      "nonResponsibilities": [
+        "Not a conventional CRM, autonomous spam system, social-content factory or set of disconnected agents (README.md)",
+        "No real outbound sending before WF-09 gate (PROJECT-CHARTER.md)",
+        "No production secrets/personal data before privacy and threat review (PROJECT-CHARTER.md)"
+      ],
+      "intendedConsumers": [
+        "Echelon Foundry's own commercial work (PROJECT-CHARTER.md)",
+        "Agents acting through capability-scoped transitions (PROJECT-CHARTER.md)"
+      ],
+      "providedCapabilities": [
+        "Tier 1/2 F# domain core for nine first-slice aggregates with exhaustive decide (tested)",
+        "Transition-table conformance suite against requirements/slice-transitions.json (tested)",
+        "Modernization gate / static UI and architecture checks (tested)",
+        "Domain state model, scenarios and verification requirements (documented-only)",
+        "Limen/Forma UI screens (planned)"
+      ],
+      "plannedCapabilities": [
+        "Tier 3 command handling (expected version, idempotency, event envelope, replay) (HANDOFF.md)",
+        "Store port with contract tests; GitHub as initial durable backing store (HANDOFF.md, README.md)",
+        "Limen host and Forma screens; Folio exports (HANDOFF.md, requirements/UI-REQUIREMENTS.md)",
+        "Proton Mail and Reddit integrations (README.md)"
+      ],
+      "systems": [
+        "mercatus"
+      ],
+      "initiatives": [
+        "INIT-024"
+      ],
+      "dependencies": [
+        "Praxis/ROS (hard)",
+        "Conditor (echelon-current 1.39.0) (build)",
+        "Ordo (hard)",
+        "@echelon-foundry/limen 0.9.1 (package)",
+        "Forma (@echelon-foundry/design-system 1.0.1) (package)",
+        "echelon-theme 1.1.0 (package)",
+        "Folio (print-components 0.4.1) (package)",
+        "Communication Engineering / Visual Engineering (build)",
+        "Aegis (to be restored with first host project) (optional)"
+      ],
+      "dependents": [],
+      "developmentStatus": "active",
+      "maturity": "prototype",
+      "lastCommit": "2026-11-15",
+      "authoritativeDocuments": [
+        "README.md",
+        "PROJECT-CHARTER.md",
+        "HANDOFF.md",
+        "context/CURRENT-STATE.md",
+        "requirements/PRODUCT-REQUIREMENTS.md",
+        "requirements/DOMAIN-STATE-MODEL.md",
+        "docs/modernization/"
+      ],
+      "outstandingDecisions": [
+        "WI-0037 personal-data placement (context/CURRENT-STATE.md)",
+        "WI-0039 and WI-0044 owner decisions (HANDOFF.md)",
+        "Critical spec findings WI-0015, WI-0022, WI-0025, WI-0029 (HANDOFF.md)"
+      ],
+      "knownLimitations": [
+        "All 15 workflows blocked by modernization gate (context/CURRENT-STATE.md)",
+        "Gaps: outbound compliance, personal data in Git, agent security, acceptance criteria (docs/requirements-evaluation/REQUIREMENTS-EVALUATION-2026-11.md)",
+        "Folio 0.4.1 not yet Forma 1.x aligned (context/CURRENT-STATE.md WI-0045)"
+      ],
+      "plannedDirection": "Tier 3 command handling and store port, then Limen host and Forma screens for the PRD-25 vertical slice (HANDOFF.md WI-0013 next).",
+      "lineage": {
+        "previousNames": [
+          "Predecessor: kemiller2002/sales-and-marketing ('Marketing OS') (requirements/LEGACY-MARKETING-OS.md)",
+          "Formerly planned as echelon-sales-and-marketing (requirements/LEGACY-MARKETING-OS.md)",
+          "ROS -> Praxis (HANDOFF.md commands)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/mercatus@HEAD README.md",
+        "kemiller2002/mercatus@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/mercatus@HEAD HANDOFF.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "ordo",
+      "repository": "kemiller2002/ordo",
+      "displayName": "Ordo (State Directed Engineering / SDE)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "core-system",
+      "purpose": "Establish and validate State-Directed Engineering, the methodology for building software under State Programming principles, as evidence-traceable doctrine, method and templates (PROJECT-CHARTER.md).",
+      "responsibilities": [
+        "SDE doctrine, method and templates (PROJECT-CHARTER.md)",
+        "ordo/sde lifecycle CLI installing .sde/ into repositories (README.md)",
+        "Public Ordo website with evidence-backed claims (README.md, site/)",
+        "Construction plan consensus and typed construction engine (HANDOFF.md)"
+      ],
+      "nonResponsibilities": [
+        "No modification to HelixNote (PROJECT-CHARTER.md)",
+        "Not solving Boundary Change Amplification in this phase (PROJECT-CHARTER.md)"
+      ],
+      "intendedConsumers": [
+        "Engineering agents (human or AI) (PROJECT-CHARTER.md)",
+        "Researchers extending the evidence base (PROJECT-CHARTER.md)"
+      ],
+      "providedCapabilities": [
+        "ordo/sde init/status/verify/upgrade lifecycle CLI (tested)",
+        "Static evidence-validated website (tested)",
+        "Construction plan consensus (tested)",
+        "Ordo.Construction deterministic Four-Tier F# generation (implemented)",
+        "Complexity/churn analysis (tested)"
+      ],
+      "plannedCapabilities": [
+        "First engineering validation on a non-HelixNote project (PROJECT-CHARTER.md; method/FIRST-VALIDATION-DESIGN.md)",
+        "CLI construction-plan family (HANDOFF.md 'Not done')"
+      ],
+      "systems": [
+        "ordo"
+      ],
+      "initiatives": [
+        "INIT-012",
+        "INIT-013"
+      ],
+      "dependencies": [
+        "Praxis/ROS (hard)",
+        ".NET/F# (build)",
+        "Node (npm launcher only) (package)",
+        "Anthropic provider (optional)"
+      ],
+      "dependents": [
+        "Dokimos states application state legality is owned by Ordo (dokimos/README.md)",
+        "Most scanned repos install Ordo via conditor.json"
+      ],
+      "developmentStatus": "active",
+      "maturity": "released",
+      "latestRelease": "ordo 1.20.0 (registry release record)",
+      "lastCommit": "2026-11-02",
+      "authoritativeDocuments": [
+        "README.md",
+        "PROJECT-CHARTER.md",
+        "HANDOFF.md",
+        "doctrine/STATE-DIRECTED-ENGINEERING.md",
+        "docs/cli.md",
+        "method/CONSTRUCTION-METHOD-v0.2.md"
+      ],
+      "outstandingDecisions": [
+        "Locality/manifest hypotheses unresolved, Low confidence (context/CURRENT-STATE.md)",
+        "Construction-plan CLI approval surface not decided (HANDOFF.md)"
+      ],
+      "knownLimitations": [
+        "No construction-method slice run on a non-HelixNote project (context/CURRENT-STATE.md)",
+        "experiments/verified-construction/LIMITATIONS.md"
+      ],
+      "plannedDirection": "Execute first engineering validation per method/FIRST-VALIDATION-DESIGN.md (PROJECT-CHARTER.md).",
+      "lineage": {
+        "previousNames": [
+          "State Directed Engineering / SDE -> Ordo (README.md; DF-SDE-2026-0005)",
+          "'sde' command alias (README.md)",
+          "ROS -> Praxis"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/ordo@HEAD README.md",
+        "kemiller2002/ordo@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/ordo@HEAD HANDOFF.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "percepta",
+      "repository": "kemiller2002/percepta",
+      "displayName": "Percepta",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "core-system",
+      "purpose": "Typed mechanism for preserving product meaning when UIs are implemented or modified by AI agents, via semantic UI contracts verified with evidence (PROJECT-CHARTER.md).",
+      "responsibilities": [
+        "Semantic UI contracts (regions, hierarchy, state projections, action legality) (README.md)",
+        "percepta semantic verification CLI (docs/PERCEPTA-SEMANTIC-CLI.md)",
+        "percepta-repo repository lifecycle (README.md)"
+      ],
+      "nonResponsibilities": [
+        "Not a design system, CSS framework, component library, state-machine engine, screenshot regression or general E2E framework (PROJECT-CHARTER.md)",
+        "Lifecycle does not own .percepta/contracts or app code (README.md)"
+      ],
+      "intendedConsumers": [
+        "AI agents and teams building Echelon UIs (PROJECT-CHARTER.md)",
+        "Arca/Fides foundations list percepta (.echelon/foundations.json there)"
+      ],
+      "providedCapabilities": [
+        "Contract kernel and compiler (tested)",
+        "Released semantic CLI (multi-platform) (implemented)",
+        "Playwright adapter (implemented)",
+        "Repository lifecycle (tested)"
+      ],
+      "plannedCapabilities": [],
+      "systems": [
+        "percepta",
+        "percepta-semantic"
+      ],
+      "initiatives": [
+        "INIT-008",
+        "INIT-014"
+      ],
+      "dependencies": [
+        "Praxis, Ordo, Visual Engineering, Communication Engineering (hard)",
+        "Aegis, Forma, Folio, Limen (package)",
+        "Playwright (optional)"
+      ],
+      "dependents": [
+        "Fides installs Percepta (fides/conditor.json)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "released",
+      "latestRelease": "percepta 0.1.0 (registry release record); repository tag percepta-semantic-v0.4.0",
+      "lastCommit": "2026-11-02",
+      "authoritativeDocuments": [
+        "README.md",
+        "PROJECT-CHARTER.md",
+        "docs/ARCHITECTURE.md",
+        "docs/CONTRACT-MODEL.md",
+        "docs/PERCEPTA-SEMANTIC-CLI.md"
+      ],
+      "outstandingDecisions": [],
+      "knownLimitations": [
+        "Visual/LLM review cannot be sole completion gate (PROJECT-CHARTER.md)"
+      ],
+      "plannedDirection": "Initial success criterion: three independent agents implement same screen preserving semantics (PROJECT-CHARTER.md).",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/percepta@HEAD README.md",
+        "kemiller2002/percepta@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/percepta@HEAD docs/ARCHITECTURE.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "praxis",
+      "repository": "kemiller2002/praxis",
+      "displayName": "Praxis",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "core-system",
+      "purpose": "Repository operating system: initialization, verification, diagnostics and upgrade tooling that makes research, engineering, decisions and handoffs durable without relying on conversation history (README.md).",
+      "responsibilities": [
+        "Work protocol with legal begin/block/resume/complete transitions and completion evidence (README.md)",
+        "Canonical research records and generated record registries (README.md)",
+        "Execution telemetry, agent identity and provenance (README.md, docs/agent-provenance.md)",
+        "Validation and CI workflow (README.md)",
+        "Native CLI distribution (README.md, .github/workflows/native-release.yml)"
+      ],
+      "nonResponsibilities": [
+        "Central project-administration policy, repository registration, portfolio data, reporting belong to the central reporting repository, not Praxis (README.md ownership table)",
+        "Must remain operational when Echelon Registry is unavailable; registration is not a dependency (requirements/PRAXIS-DUAL-ENTRY-RECONCILIATION.md #18)"
+      ],
+      "intendedConsumers": [
+        "Every Echelon repository and its agents (README.md)",
+        "Conditor/Registry profiles (echelon-registry profiles/)"
+      ],
+      "providedCapabilities": [
+        "praxis CLI: init/status/verify/work/validate/registry build (tested)",
+        "Installation registration with Project Administration (optional Registry catalog check) (implemented)",
+        "Remote protocol / reconcile workflows (implemented)",
+        "Reusable foundations-verify workflow (implemented)",
+        "Project administration hub (local registry of Praxis repos) (implemented)"
+      ],
+      "plannedCapabilities": [
+        "Requirements in requirements/: planning work groups, execution orchestration, code quality hardening, dual-entry reconciliation, Tutela security metrics"
+      ],
+      "systems": [
+        "praxis"
+      ],
+      "initiatives": [
+        "INIT-001",
+        "INIT-003",
+        "INIT-010",
+        "INIT-012",
+        "INIT-013",
+        "INIT-015",
+        "INIT-016",
+        "INIT-029"
+      ],
+      "dependencies": [
+        "Aegis, Forma, Folio (shared application foundations) (hard)",
+        "Limen (UI URL state routing) (hard)",
+        "Echelon Registry registry/systems.json (optional)",
+        "Project Administration (optional)",
+        ".NET 10 (build)"
+      ],
+      "dependents": [
+        "Ordo, Dokimos, Conditor and most Echelon repos install Praxis (cohort-based-engineering/program/CURRENT-STATE.md)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "released",
+      "latestRelease": "praxis 3.25.0 (registry release record)",
+      "lastCommit": "2026-11-03",
+      "authoritativeDocuments": [
+        "README.md",
+        "AGENTS.md",
+        "requirements/",
+        "docs/installation-registration.md",
+        "release.json"
+      ],
+      "outstandingDecisions": [],
+      "knownLimitations": [
+        "CI was red on main as of 2026-10-23 due to runner drift (cohort-based-engineering/program/CURRENT-STATE.md)",
+        "287 of 307 execution records lacked tokens (same source)"
+      ],
+      "lineage": {
+        "previousNames": [
+          "ROS / Repository Operating System (package @echelon-foundry/repository-operating-system, ros alias)",
+          "npm distribution retired (DF-ROS-2026-A044, A049)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/praxis@HEAD README.md",
+        "kemiller2002/praxis@HEAD AGENTS.md",
+        "kemiller2002/praxis@HEAD requirements/"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "project-administration",
+      "repository": "kemiller2002/project-administration",
+      "displayName": "Project Administration (Project Knowledge Hub)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "governance",
+      "purpose": "A docs-as-code home for cross-project knowledge, and the canonical installation inventory of which Echelon system is installed where (README.md; docs/installation-inventory.md).",
+      "responsibilities": [
+        "Cross-project FAQs, how-tos, guides, reference (README.md)",
+        "Append-only installation event history and generated current state (docs/installation-inventory.md)",
+        "administration CLI reading/writing inventory layout (docs/installation-inventory.md)"
+      ],
+      "nonResponsibilities": [
+        "Not the store for repository-local work execution (docs/installation-inventory.md)",
+        "Never becomes a catalog; Registry owns that (docs/installation-inventory.md)",
+        "Project-specific API/code docs stay with owning project (README.md)"
+      ],
+      "intendedConsumers": [
+        "People working across projects (README.md)",
+        "Praxis registration client / Conditor (docs/installation-inventory.md)"
+      ],
+      "providedCapabilities": [
+        "Knowledge site validate/build with search (Limen/Forma/Folio) (implemented)",
+        "Installation inventory events and projection (tested)",
+        "Limen daily upgrade automation (implemented)"
+      ],
+      "plannedCapabilities": [],
+      "systems": [
+        "project-administration"
+      ],
+      "initiatives": [
+        "INIT-010",
+        "INIT-013"
+      ],
+      "dependencies": [
+        "Aegis (hard)",
+        "Forma (package)",
+        "Folio (package)",
+        "Limen (package)",
+        "Ordo (hard)",
+        "Praxis (hard)",
+        "Python 3 (build)"
+      ],
+      "dependents": [
+        "Praxis is the registration client (docs/installation-inventory.md)",
+        "Conditor installs (docs/installation-inventory.md)"
+      ],
+      "developmentStatus": "unknown",
+      "maturity": "implemented",
+      "lastCommit": "2026-10-14",
+      "authoritativeDocuments": [
+        "README.md",
+        "docs/installation-inventory.md",
+        "docs/architecture.md",
+        "content/reference/authoring-guide.md"
+      ],
+      "outstandingDecisions": [
+        "Charter/HANDOFF unresolved questions are greenfield boilerplate (HANDOFF.md)"
+      ],
+      "knownLimitations": [],
+      "lineage": {
+        "previousNames": [
+          "ROS -> Praxis"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/project-administration@HEAD README.md",
+        "kemiller2002/project-administration@HEAD docs/installation-inventory.md",
+        "kemiller2002/project-administration@HEAD docs/architecture.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "visibility": "private",
+      "classification": "public",
+      "responsibilities": [],
+      "nonResponsibilities": [],
+      "systems": [],
+      "dependencies": [],
+      "developmentStatus": "unknown",
+      "maturity": "unknown",
+      "authoritativeDocuments": [
+        "registry/systems-v2.json or public references (identity only)"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25",
+      "evidence": [],
+      "id": "research-documents",
+      "repository": "kemiller2002/research-documents",
+      "displayName": "Research Documents",
+      "echelonRelation": "research",
+      "purpose": "Frozen research evidence referenced by engineering method research.",
+      "disclosureDecision": "DD-001",
+      "initiatives": []
+    },
+    {
+      "visibility": "private",
+      "classification": "public",
+      "responsibilities": [],
+      "nonResponsibilities": [],
+      "systems": [
+        "ros-worker-daemon"
+      ],
+      "dependencies": [],
+      "developmentStatus": "unknown",
+      "maturity": "unknown",
+      "authoritativeDocuments": [
+        "registry/systems-v2.json or public references (identity only)"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25",
+      "evidence": [],
+      "id": "ros-worker-daemon",
+      "repository": "kemiller2002/ROS-WorkerDaemon",
+      "displayName": "ROS Worker Daemon",
+      "echelonRelation": "core-system",
+      "purpose": "Repository worker daemon (registry systems-v2.json).",
+      "disclosureDecision": "DD-001",
+      "initiatives": [
+        "INIT-013"
+      ]
+    },
+    {
+      "id": "sales-and-marketing",
+      "repository": "kemiller2002/sales-and-marketing",
+      "displayName": "Marketing OS (Sales & Marketing)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product",
+      "purpose": "AI-assisted sales and marketing operating system built around explicit hypotheses, evidence, controlled state transitions and measurable learning (README.md).",
+      "responsibilities": [
+        "Model market/problem hypotheses, ICP, evidence, campaigns, assets, results as domain objects with legal transitions (README.md §15)",
+        "Bounded agents: Researcher, Strategist, Experiment Designer (README.md §12)",
+        "Evidence/transition/approval policies (README.md §18)"
+      ],
+      "nonResponsibilities": [
+        "Not an autonomous spam system, content factory, chatbot CMO or engagement-maximization machine (README.md §23)",
+        "Content agent does not own strategy (README.md §8)"
+      ],
+      "intendedConsumers": [
+        "Echelon Foundry commercial/marketing function (README.md §25)"
+      ],
+      "providedCapabilities": [
+        "Marketing OS directory scaffold script (implemented)",
+        "Hypothesis/evidence learning-loop design (documented-only)",
+        "Consulting offer diversification analysis (documented-only)"
+      ],
+      "plannedCapabilities": [
+        "Domain entities ProblemHypothesis, Evidence, MarketHypothesis, ICP, Campaign (README.md §24)",
+        "Researcher, Strategist, Experiment Designer agents",
+        "Future agents: content, outreach, CRM, analyst (README.md §13)"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-024"
+      ],
+      "dependencies": [
+        "Aegis 1.0.0 (hard)",
+        "Forma 0.2.0 (hard)",
+        "Folio 0.3.0 (hard)",
+        "Limen 0.6.1 (hard)",
+        "Ordo 1.3.0 (hard)",
+        "Praxis 3.1.4 foundations-verify workflow (build)"
+      ],
+      "dependents": [],
+      "developmentStatus": "dormant",
+      "maturity": "requirements",
+      "lastCommit": "2026-09-30",
+      "authoritativeDocuments": [
+        "README.md",
+        "REQUIREMENTS.md",
+        ".echelon/foundations.json"
+      ],
+      "outstandingDecisions": [
+        "npm vs release artifact as canonical Forma source not yet selected (REQUIREMENTS.md)"
+      ],
+      "knownLimitations": [],
+      "plannedDirection": "README.md §24: define hypothesis/evidence entities and transitions, implement Researcher and Strategist, run one real hypothesis, then add campaigns and experiment designer.",
+      "lineage": {
+        "previousNames": [
+          "marketing-os (directory name, README.md §14)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/sales-and-marketing@HEAD README.md",
+        "kemiller2002/sales-and-marketing@HEAD REQUIREMENTS.md",
+        "kemiller2002/sales-and-marketing@HEAD .echelon/foundations.json"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "signal",
+      "repository": "kemiller2002/signal",
+      "displayName": "Echelon Signal",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product",
+      "purpose": "Build a deterministic, URL-first survey and assessment engine in F#/.NET WebAssembly while using it as a demanding integration trial for ROS, Ordo/State-Directed Engineering and Limen (PROJECT-CHARTER.md).",
+      "responsibilities": [
+        "Immutable survey template authoring, validation, publication (HANDOFF.md WI-0042)",
+        "Live URL as canonical respondent state (PROJECT-CHARTER.md)",
+        "Anonymous/identified finalization with no PII (PROJECT-CHARTER.md)",
+        "Import, aggregation, scoring and report generation (HANDOFF.md)",
+        "Administrator domain over Arca storage with Fides sign-in (HANDOFF.md)",
+        "Producing evidence about ROS/Ordo/Limen effectiveness (PROJECT-CHARTER.md)"
+      ],
+      "nonResponsibilities": [
+        "No PII collection/processing of any kind (PROJECT-CHARTER.md Excluded)",
+        "No free-form answers during trial (PROJECT-CHARTER.md)",
+        "No executable scripts in templates (PROJECT-CHARTER.md)",
+        "No production-grade external identity management (PROJECT-CHARTER.md)",
+        "No server-side respondent session persistence requirement (PROJECT-CHARTER.md)"
+      ],
+      "intendedConsumers": [
+        "Survey authors",
+        "Respondents",
+        "Administrators",
+        "Technical/audit users (PROJECT-CHARTER.md)"
+      ],
+      "providedCapabilities": [
+        "F# survey engine: canonical templates, URL codec, scoring, submission, import, aggregation (tested)",
+        "Administrator domain: deployment config, storage, access, roster over Arca (tested)",
+        "Browser front end (survey, admin) via Limen (implemented)",
+        "Cross-browser and visual capture tests (tested)",
+        "GitHub Pages deployment (implemented)"
+      ],
+      "plannedCapabilities": [
+        "Administrator import UI and storage (WI-0011..13) (HANDOFF.md Next action)",
+        "Template authoring/publication UI (WI-0003)",
+        "Flow, validation and recommendations (WI-0006)",
+        "Report data contract (WI-0009, SRPP)"
+      ],
+      "systems": [
+        "signal"
+      ],
+      "initiatives": [
+        "INIT-023"
+      ],
+      "dependencies": [
+        "Praxis/ROS (hard)",
+        "Conditor (echelon-current 1.22.0) (build)",
+        "Ordo 1.7.0 (hard)",
+        "Limen (limen-fsharp 0.9.0) (package)",
+        "Arca 0.5.0 (Core, GitHub) (package)",
+        "Fides 0.2.0 (package)",
+        "Aegis (GitHub failure classification) (hard)",
+        "Forma 0.6.1 / Folio 0.4.0 (package)",
+        "kemiller2002/echelon-organization-administration as data store (hard)"
+      ],
+      "dependents": [],
+      "developmentStatus": "active",
+      "maturity": "implemented",
+      "lastCommit": "2026-11-12",
+      "authoritativeDocuments": [
+        "PROJECT-CHARTER.md",
+        "HANDOFF.md",
+        "docs/requirements/implementation-gap-analysis.md",
+        "docs/deployment.md",
+        "docs/requirements/backlog-plan.md"
+      ],
+      "outstandingDecisions": [
+        "Where invitation links are minted (HANDOFF.md Unresolved 1)",
+        "Move entropy to a Limen entropy capability (ARX-004) (HANDOFF.md)",
+        "Measured URL budgets for 25-200 item surveys (HANDOFF.md)"
+      ],
+      "knownLimitations": [
+        "114 of 183 requirement groups missing as of 2026-10-07 (HANDOFF.md)",
+        "Arca IndexedDB queue/cache declined; per-respondent data stays off device (HANDOFF.md DF-SIGNAL-2026-0001)"
+      ],
+      "plannedDirection": "Administrator import UI/storage, then template authoring, flow/validation/recommendations, report data contract (HANDOFF.md Next action).",
+      "lineage": {
+        "previousNames": [
+          "ROS -> Praxis (README.md vs .echelon/ros.json)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/signal@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/signal@HEAD HANDOFF.md",
+        "kemiller2002/signal@HEAD docs/requirements/implementation-gap-analysis.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "software-engineering",
+      "repository": "kemiller2002/software-engineering",
+      "displayName": "Software Engineering",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "research",
+      "purpose": "ROS greenfield research pilot; provisional first outcome is a handoff reconstruction evaluator testing whether a successor (human or AI) can form a correct continuation plan (PROJECT-CHARTER.md).",
+      "responsibilities": [
+        "Research on AI coding and handoff reconstruction (HANDOFF.md, research/experiments/)",
+        "Evaluating the ROS pilot itself (README.md 'Pilot rule')",
+        "Study safeguards and preregistration protocol (HANDOFF.md JR-SAFEGUARDS, MS-PREREG)",
+        "Agile assessment survey instruments (assessments/*.json)"
+      ],
+      "nonResponsibilities": [
+        "Broad discipline claims without comparative evidence (PROJECT-CHARTER.md)",
+        "Safeguards journal 'does not authorize participant research' (HANDOFF.md)"
+      ],
+      "intendedConsumers": [
+        "A successor, human or AI, resuming a bounded software task from a handoff artifact (PROJECT-CHARTER.md)"
+      ],
+      "providedCapabilities": [
+        "Research records (REPs, hypotheses, decisions) (documented-only)",
+        "Agile/scrum-master assessment JSON instruments (documented-only)",
+        "Knowledge site validation/build (implemented)",
+        "Handoff reconstruction evaluator (planned)"
+      ],
+      "plannedCapabilities": [
+        "Handoff reconstruction evaluation experiment (EX-HANDOFF-2026-0D7A)",
+        "Stratified crossover field study on AI coding (EX-AICODING-2026-2D77)"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-014"
+      ],
+      "dependencies": [
+        "Praxis/ROS 1.0.0 (self-contained snapshot) (build)",
+        "research-publisher (build)"
+      ],
+      "dependents": [],
+      "developmentStatus": "dormant",
+      "maturity": "requirements",
+      "lastCommit": "2026-09-30",
+      "authoritativeDocuments": [
+        "README.md",
+        "PROJECT-CHARTER.md",
+        "HANDOFF.md",
+        "context/CURRENT-STATE.md",
+        "research/frontier/PORTFOLIO-QUEUE.md"
+      ],
+      "outstandingDecisions": [
+        "Reliability of safe-continuation scoring; ethics rules; recruitment feasibility; ROS attribution (HANDOFF.md 'Unresolved questions')",
+        "Independent/accountable roles needed before preregistration freeze (HANDOFF.md 'Next action')"
+      ],
+      "knownLimitations": [
+        "Distinct 'software engineering' discipline rejected at review stage (HANDOFF.md, DF-BOUNDARY-2026-3F72)"
+      ],
+      "plannedDirection": "Staff independent roles, freeze preregistration, review REPs before running experiments (HANDOFF.md).",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/software-engineering@HEAD README.md",
+        "kemiller2002/software-engineering@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/software-engineering@HEAD HANDOFF.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "specula",
+      "repository": "kemiller2002/specula",
+      "displayName": "Specula",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product",
+      "purpose": "Independent, read-only observer for autonomous software engineering: inspects a public GitHub repo's commits, PRs, CI, deployments, decisions, evidence and a replayable timeline without directing agents (README.md).",
+      "responsibilities": [
+        "Overview/Activity/Verification/Replay views of a public repo (README.md)",
+        "SHA-bound check status and evidence coverage (README.md)",
+        "Read-only Ordo decision-event metrics (README.md)",
+        "Competition clock and replay for Indy Init (README.md)"
+      ],
+      "nonResponsibilities": [
+        "Never directs agents or changes the observed repository (README.md)",
+        "Private repos, server-side indexing, multi-repo dashboards, notifications, agent orchestration outside MVP (requirements/CAPABILITIES.md)"
+      ],
+      "intendedConsumers": [
+        "Observers of autonomous agent builds, initially Indy Init (README.md Initial use)"
+      ],
+      "providedCapabilities": [
+        "F# engine: GitHub normalization, SHA binding, evidence adapters, metrics (tested)",
+        "WASM browser app via Limen (tested)",
+        "Ordo decision-event metrics (implemented)",
+        "Deployed static site with smoke tests (tested)"
+      ],
+      "plannedCapabilities": [],
+      "systems": [],
+      "initiatives": [
+        "INIT-014",
+        "INIT-022"
+      ],
+      "dependencies": [
+        "@echelon-foundry/limen 0.9.1 (package)",
+        "Forma (@echelon-foundry/design-system 0.13.0) (package)",
+        "EchelonFoundry.Limen.Contract 0.9.1 (vendored NuGet) (package)",
+        "Ordo decision-event format (evidence/ordo/decision-events.jsonl in observed repo) (optional)",
+        "GitHub public REST API (hard)"
+      ],
+      "dependents": [],
+      "developmentStatus": "maintained",
+      "maturity": "implemented",
+      "lastCommit": "2026-11-04",
+      "authoritativeDocuments": [
+        "README.md",
+        "requirements/PRODUCT.md",
+        "requirements/CAPABILITIES.md",
+        "requirements/ENGINEERING.md",
+        "evidence/FINAL-REPORT.md",
+        "dependency-baseline.json"
+      ],
+      "outstandingDecisions": [],
+      "knownLimitations": [
+        "Cannot see agent private reasoning or uncommitted actions (requirements/CAPABILITIES.md)",
+        "Unauthenticated GitHub API rate limits (requirements/CAPABILITIES.md)",
+        "Real-device Safari/VoiceOver, WebKit, forced colors unverified (evidence/FINAL-REPORT.md)"
+      ],
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/specula@HEAD README.md",
+        "kemiller2002/specula@HEAD requirements/PRODUCT.md",
+        "kemiller2002/specula@HEAD requirements/CAPABILITIES.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "strata",
+      "repository": "kemiller2002/strata",
+      "displayName": "Strata",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "core-system",
+      "purpose": "Declarative schema management for PostgreSQL where 'I could not check that' is never rendered the same as 'that is fine' (README.md).",
+      "responsibilities": [
+        "Compile .sql schema to artifact, diff against live DB, judge and apply changes (README.md)",
+        "Six explicit comparison states (README.md)",
+        "Echelon repository lifecycle contract v1 (README.md)"
+      ],
+      "nonResponsibilities": [],
+      "intendedConsumers": [
+        "Echelon repositories using PostgreSQL; agents (README.md 'For agents')",
+        "DAF platform as first consumer of data-interaction virtualization (docs/requirements/data-interaction-virtualization.md)"
+      ],
+      "providedCapabilities": [
+        "compile/diff/deploy CLI (tested)",
+        "Native releases with checksums/attestations (implemented)",
+        "Universal data interaction virtualization (planned)"
+      ],
+      "plannedCapabilities": [
+        "Data interaction virtualization STRATA-DIV-001 (docs/requirements/data-interaction-virtualization.md)"
+      ],
+      "systems": [
+        "strata"
+      ],
+      "initiatives": [
+        "INIT-001",
+        "INIT-012",
+        "INIT-018"
+      ],
+      "dependencies": [
+        "PostgreSQL 16 (hard)",
+        "pgsqlparser/libpg_query (package)",
+        "Npgsql (package)",
+        "Praxis, Ordo, Communication Engineering (hard)",
+        "Aegis, Forma, Folio, Limen (hard)"
+      ],
+      "dependents": [
+        "DAF platform (docs/requirements/data-interaction-virtualization.md)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "released",
+      "latestRelease": "strata 0.1.1 (registry release record)",
+      "lastCommit": "2026-11-23",
+      "authoritativeDocuments": [
+        "README.md",
+        "docs/strata/ROADMAP.md",
+        "docs/strata/REQUIREMENTS-ANALYSIS.md",
+        "context/CURRENT-STATE.md"
+      ],
+      "outstandingDecisions": [
+        "HY-STRATA-2026-4D92 and 6F14 untested (context/CURRENT-STATE.md)"
+      ],
+      "knownLimitations": [
+        "Only PostgreSQL 16 tested (README.md)",
+        "No linux-arm64 build (README.md)",
+        "Agent advantage does not survive scale (EV-STRATA-2026-D7B2, README.md)"
+      ],
+      "plannedDirection": "Data interaction virtualization requirements (STRATA-DIV-001) proposed 2026-11-23.",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/strata@HEAD README.md",
+        "kemiller2002/strata@HEAD docs/strata/ROADMAP.md",
+        "kemiller2002/strata@HEAD docs/strata/REQUIREMENTS-ANALYSIS.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "summa",
+      "repository": "kemiller2002/summa",
+      "displayName": "Summa",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product",
+      "purpose": "Invoicing, receivables and ledger application on F# and the Echelon foundation stack (HANDOFF.md); README.md also describes a cross-repository Praxis project-administration hub.",
+      "responsibilities": [
+        "Pure financial domain: Money, Ledger, Invoicing, Payments, Reports (HANDOFF.md)",
+        "Chrona-to-Summa contracts package (src/Summa.Contracts)",
+        "Cross-repo Praxis hub (README.md; docs/project-administration-hub.md)"
+      ],
+      "nonResponsibilities": [
+        "Hub never edits registered repositories' files (README.md)"
+      ],
+      "intendedConsumers": [
+        "Businesses invoicing (HANDOFF.md)",
+        "Chrona (time publication contracts)"
+      ],
+      "providedCapabilities": [
+        "Ledger/invoice/payment vertical slice (tested)",
+        "Summa.Contracts package (implemented)",
+        "Project administration hub web UI (implemented)"
+      ],
+      "plannedCapabilities": [
+        "Storage on Arca, sign-in via Fides, Folio invoice document, finance UI (HANDOFF.md)"
+      ],
+      "systems": [
+        "summa",
+        "summa-contracts"
+      ],
+      "initiatives": [
+        "INIT-018",
+        "INIT-025"
+      ],
+      "dependencies": [
+        "Arca, Fides (hard)",
+        "Limen, Forma, Folio, Aegis (hard)",
+        "Praxis, Ordo, Visual Engineering (hard)"
+      ],
+      "dependents": [
+        "Chrona (chrona/conditor.json summa-contracts)"
+      ],
+      "developmentStatus": "unknown",
+      "maturity": "implemented",
+      "latestRelease": "summa-contracts 0.1.0 (registry release record)",
+      "lastCommit": "2026-10-17",
+      "authoritativeDocuments": [
+        "HANDOFF.md",
+        "context/CURRENT-STATE.md",
+        "docs/requirements/implementation-gap-analysis.md",
+        "docs/requirements/backlog-plan.md",
+        "docs/project-administration-hub.md"
+      ],
+      "outstandingDecisions": [
+        "Deployment (Fides endpoint, GitHub App, data repo) does not exist (HANDOFF.md)"
+      ],
+      "knownLimitations": [
+        "Financial state in memory only; nothing stored in GitHub yet (context/CURRENT-STATE.md)"
+      ],
+      "plannedDirection": "WI-0017 contracts, then Arca storage, Fides sign-in, authorization, invoicing features (HANDOFF.md).",
+      "lineage": {
+        "previousNames": [
+          "ROS -> Praxis"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/summa@HEAD HANDOFF.md",
+        "kemiller2002/summa@HEAD context/CURRENT-STATE.md",
+        "kemiller2002/summa@HEAD docs/requirements/implementation-gap-analysis.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "tekmerion",
+      "repository": "kemiller2002/tekmerion",
+      "displayName": "Tekmerion (formerly Research Publisher)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "core-system",
+      "purpose": "Turn durable repository research into an evidence-faithful research system: read, validate, expose provenance and project into human- and machine-readable publications without fabrication (PROJECT-CHARTER.md).",
+      "responsibilities": [
+        "Typed ingestion of research state (README.md)",
+        "Versioned /data/v1 machine contracts (README.md)",
+        "Script-free static research site (README.md)",
+        "Lifecycle init/status/verify/upgrade/doctor (README.md)",
+        "Legacy JS/Astro publishing engine (README.md)"
+      ],
+      "nonResponsibilities": [
+        "Inferring claims/evidence from prose (PROJECT-CHARTER.md)",
+        "Access-controlled publication (PROJECT-CHARTER.md)",
+        "Database/server/large frontend without measured need (PROJECT-CHARTER.md)"
+      ],
+      "intendedConsumers": [
+        "Researchers and agents authoring ROS/Praxis research; readers (PROJECT-CHARTER.md)"
+      ],
+      "providedCapabilities": [
+        "F# Tekmerion ingest engine (tested)",
+        "npm research-publisher lifecycle CLI (tested)",
+        "Astro + Pagefind publishing (implemented)"
+      ],
+      "plannedCapabilities": [
+        "Package rename to @echelon-foundry/tekmerion (OQ-TEK-014)",
+        "F# pipeline replacing legacy JS (TEK-ARC-006)"
+      ],
+      "systems": [
+        "tekmerion"
+      ],
+      "initiatives": [
+        "INIT-026"
+      ],
+      "dependencies": [
+        "Ordo, Praxis, Visual Engineering (hard)",
+        "Forma (package)",
+        "Limen, Aegis (hard)",
+        "Node/Astro/Pagefind (package)"
+      ],
+      "dependents": [
+        "Research repositories e.g. visual-engineering/composition-science (PROJECT-CHARTER.md)"
+      ],
+      "developmentStatus": "unknown",
+      "maturity": "released",
+      "latestRelease": "v0.2.0 (repository tag)",
+      "lastCommit": "2026-10-16",
+      "authoritativeDocuments": [
+        "README.md",
+        "PROJECT-CHARTER.md",
+        "HANDOFF.md",
+        "docs/requirements/tekmerion-requirements.md",
+        "docs/requirements/open-questions.md"
+      ],
+      "outstandingDecisions": [
+        "OQ-TEK-014 npm package rename (README.md)",
+        "OQ-TEK-001 inferring claims from prose (PROJECT-CHARTER.md)",
+        "OQ-TEK-004 private publication (PROJECT-CHARTER.md)"
+      ],
+      "knownLimitations": [
+        "User roles not validated with users (PROJECT-CHARTER.md)"
+      ],
+      "plannedDirection": "Complete vertical slice exit criteria in docs/vnext/13-vertical-slice.md (PROJECT-CHARTER.md).",
+      "lineage": {
+        "previousNames": [
+          "Research Publisher -> Tekmerion (README.md)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/tekmerion@HEAD README.md",
+        "kemiller2002/tekmerion@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/tekmerion@HEAD HANDOFF.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "time-tracking-application",
+      "repository": "kemiller2002/time-tracking-application",
+      "displayName": "Echelon Business Activity Ledger (Time Tracking Application)",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "historical",
+      "purpose": "Mobile-first, audit-friendly business activity tracker with an F# domain compiled to WebAssembly running in the browser (README.md).",
+      "responsibilities": [
+        "Timer, manual entry, amend, void/restore, split, merge (README.md)",
+        "Evidence attach/detach, daily review/attestation (README.md)",
+        "Daily/monthly reports in JSON, Markdown, CSV (README.md)",
+        "Chrona receiver-owned integration contract package (docs/integration/INTEGRATION-CONTRACT.md)"
+      ],
+      "nonResponsibilities": [
+        "JS bridge makes no business decisions (README.md)",
+        "No modal workflows (decisions/DEC-0003-no-modal-workflows.md)"
+      ],
+      "intendedConsumers": [
+        "Single owner/business user (decisions/DEC-0004-authentication-strategy-needed.md)",
+        "External systems submitting time observations via Chrona.Integration (docs/integration/INTEGRATION-CONTRACT.md)"
+      ],
+      "providedCapabilities": [
+        "F# ledger domain and engine (tested)",
+        "WASM browser app with local storage persistence (implemented)",
+        "EchelonFoundry.Chrona.Integration package (tested)",
+        "Backend sync/authentication (planned)"
+      ],
+      "plannedCapabilities": [
+        "Real backend sync (README.md)",
+        "Cloudflare Access authentication (HANDOFF.md Next action)",
+        "Package publish step CHR-INT-018 (.github/workflows/chrona-integration-ci.yml)"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-025"
+      ],
+      "dependencies": [
+        ".NET SDK 10 wasm-tools (build)",
+        "ROS 1.0.0 (build)",
+        "Aegis, Forma, Folio (obligations) (hard)"
+      ],
+      "dependents": [
+        "ROS as an external submitter to Chrona (docs/integration/INTEGRATION-CONTRACT.md)"
+      ],
+      "developmentStatus": "dormant",
+      "maturity": "implemented",
+      "lastCommit": "2026-09-30",
+      "authoritativeDocuments": [
+        "README.md",
+        "docs/DOMAIN-REQUIREMENTS.md",
+        "docs/integration/INTEGRATION-CONTRACT.md",
+        "decisions/",
+        "METRICS-COMPARISON.md"
+      ],
+      "outstandingDecisions": [
+        "DEC-0004 authentication strategy (Proposed) (decisions/DEC-0004-authentication-strategy-needed.md)",
+        "Cloudflare schemas/optimistic version contract; evidence file limits/retention (HANDOFF.md Unresolved)"
+      ],
+      "knownLimitations": [
+        "Data only in browser local storage, not synced (README.md)",
+        "No backend, auth or evidence upload connected (HANDOFF.md)"
+      ],
+      "plannedDirection": "Migrate requirement corpus into Chrona; choose Capability 2 identity boundary (docs/DOMAIN-REQUIREMENTS.md, HANDOFF.md).",
+      "lineage": {
+        "previousNames": [
+          "Time Tracking Application -> Echelon Business Activity Ledger -> Chrona (README.md, docs/DOMAIN-REQUIREMENTS.md)",
+          "Retired JavaScript implementation superseded by F#/WASM (METRICS-COMPARISON.md)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/time-tracking-application@HEAD README.md",
+        "kemiller2002/time-tracking-application@HEAD docs/DOMAIN-REQUIREMENTS.md",
+        "kemiller2002/time-tracking-application@HEAD docs/integration/INTEGRATION-CONTRACT.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "tutela",
+      "repository": "kemiller2002/tutela",
+      "displayName": "Tutela",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "core-system",
+      "purpose": "Security engineering discipline turning security claims into explicit invariants, threats, controls, evidence, unknowns and release decisions; never asserts a system is secure (README.md).",
+      "responsibilities": [
+        "Security model Asset->Boundary->Threat->Invariant->Control->Evidence->Posture (README.md)",
+        "Deterministic posture gate (F# CI authority) (context/CURRENT-STATE.md)",
+        "Machine schemas for threats, invariants, evidence, exceptions (context/CURRENT-STATE.md)",
+        "Sensitive-data catalog security/SENSITIVE-DATA-RULES.json (context/CURRENT-STATE.md)"
+      ],
+      "nonResponsibilities": [
+        "Not a vulnerability scanner, compliance badge, pentest replacement or binary secure classifier (PROJECT-CHARTER.md)"
+      ],
+      "intendedConsumers": [
+        "Echelon repositories (Iter, Fides install Tutela: .echelon/tutela.json)"
+      ],
+      "providedCapabilities": [
+        "Posture gate CLI 'tutela' (tested)",
+        "Self secret scan and traceability ratchet (implemented)",
+        "Python conformance oracle (expiring) (tested)",
+        "Results UI (documented-only)"
+      ],
+      "plannedCapabilities": [
+        "Forma Tutela web components; Folio Security Evidence Record; Aegis evidence adapter; Praxis telemetry adapter; Conditor installer (context/CURRENT-STATE.md)",
+        "Adversarial experiments against real apps (context/CURRENT-STATE.md)"
+      ],
+      "systems": [
+        "tutela"
+      ],
+      "initiatives": [
+        "INIT-001",
+        "INIT-003",
+        "INIT-006",
+        "INIT-015"
+      ],
+      "dependencies": [
+        "Ordo (hard)",
+        "Praxis (hard)",
+        ".NET/F# (build)",
+        "Python 3 (test)"
+      ],
+      "dependents": [
+        "Ordo/SDE, ROS, Aegis, Praxis, Forma, Folio, Limen, Conditor integrations (README.md)"
+      ],
+      "developmentStatus": "unknown",
+      "maturity": "released",
+      "latestRelease": "tutela 0.1.0 (registry release record)",
+      "lastCommit": "2026-10-16",
+      "authoritativeDocuments": [
+        "README.md",
+        "PROJECT-CHARTER.md",
+        "context/CURRENT-STATE.md",
+        "docs/GATE-SEMANTICS.md",
+        "docs/VERIFICATION-CONTRACT.md",
+        "docs/SECURITY-OWNERSHIP.md"
+      ],
+      "outstandingDecisions": [
+        "Python gate oracle expiry (docs/decisions/0001-gate-authority.md)"
+      ],
+      "knownLimitations": [
+        "No claim that Tutela or a consumer is generally secure (context/CURRENT-STATE.md)",
+        "Integration adapters unimplemented (context/CURRENT-STATE.md)"
+      ],
+      "plannedDirection": "Implement owning-repo integrations (Forma, Folio, Aegis, Praxis, Conditor) and adversarial experiments (context/CURRENT-STATE.md).",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/tutela@HEAD README.md",
+        "kemiller2002/tutela@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/tutela@HEAD context/CURRENT-STATE.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "unbound",
+      "repository": "kemiller2002/unbound",
+      "displayName": "Unbound",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product",
+      "purpose": "Requirements discovery for Unbound, an AI-native DAF reference enterprise (software platform only), designed from first principles as an Echelon Foundry capability experiment (requirements/CHARTER.md, requirements/OPEN-QUESTIONS.md).",
+      "responsibilities": [
+        "Enterprise requirements baseline across UNB-* domains (requirements/CHARTER.md, requirements/AUTHORITATIVE-BASELINE.md)",
+        "Open questions register and resolution log (requirements/OPEN-QUESTIONS.md, requirements/questions/)",
+        "Architecture designs (architecture/)",
+        "Requirements audit tooling (tools/reqaudit/)"
+      ],
+      "nonResponsibilities": [
+        "No application implementation until baseline passes formal review gate (requirements/CHARTER.md)",
+        "Research stays in daf-landscape (requirements/CHARTER.md)",
+        "Not a claim that a regulated sponsor exists; software platform only (CHARTER.md; SPD-ADV-004 in OPEN-QUESTIONS.md)"
+      ],
+      "intendedConsumers": [
+        "Product owner, counsel, finance and technology reviewers (requirements/OPEN-QUESTIONS.md)"
+      ],
+      "providedCapabilities": [
+        "Requirements baseline: 1176 requirements, 82 convergence clauses (documented-only)",
+        "reqaudit generators/validators (implemented)",
+        "Replay model (F#) (tested)"
+      ],
+      "plannedCapabilities": [
+        "Three operating models and economics per first research backlog (requirements/CHARTER.md)",
+        "EF capability matrix from registry catalog (requirements/CHARTER.md)"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-005",
+        "INIT-012"
+      ],
+      "dependencies": [
+        "daf-landscape (research source) (hard)",
+        "Echelon Registry catalog for EF integration discovery (optional)",
+        "Knowledge Store (research-stage schema) (optional)"
+      ],
+      "dependents": [],
+      "developmentStatus": "active",
+      "maturity": "requirements",
+      "lastCommit": "2026-11-24",
+      "authoritativeDocuments": [
+        "requirements/CHARTER.md",
+        "requirements/AUTHORITATIVE-BASELINE.md",
+        "requirements/OPEN-QUESTIONS.md",
+        "requirements/PRINCIPLES.md"
+      ],
+      "outstandingDecisions": [
+        "316 open items: 101 open decisions, 72 awaiting confirmation, 143 requirement questions (requirements/OPEN-QUESTIONS.md)"
+      ],
+      "knownLimitations": [
+        "Unverified legal claims remain hypotheses pending qualified review (requirements/CHARTER.md)",
+        "Synthetic data/simulated money only (requirements/CHARTER.md)"
+      ],
+      "plannedDirection": "requirements/EXPANSION-ROADMAP-AND-GATES.md; formal review gate before implementation (requirements/CHARTER.md).",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/unbound@HEAD requirements/CHARTER.md",
+        "kemiller2002/unbound@HEAD requirements/AUTHORITATIVE-BASELINE.md",
+        "kemiller2002/unbound@HEAD requirements/OPEN-QUESTIONS.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "vigila",
+      "repository": "kemiller2002/vigila",
+      "displayName": "Vigila",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "product",
+      "purpose": "System of record for personal and business follow-ups, open loops, reminders, waiting items and lightweight tasks; not a project-management system (PROJECT-CHARTER.md).",
+      "responsibilities": [
+        "Item capture and lifecycle (create/edit/complete/reopen/cancel/defer) (docs/requirements/SCOPE.md)",
+        "GitHub repository persistence per user (PROJECT-CHARTER.md)",
+        "Agent integration API (docs/requirements/AGENT.md)",
+        "Views Now/Waiting/Upcoming/Deferred/Completed (docs/requirements/SCOPE.md)"
+      ],
+      "nonResponsibilities": [
+        "Not a project-management system; not a replacement for ROS (PROJECT-CHARTER.md, docs/requirements/GOVERNANCE.md)"
+      ],
+      "intendedConsumers": [
+        "Individuals and conversational agents acting for them (PROJECT-CHARTER.md)"
+      ],
+      "providedCapabilities": [
+        "Semantic item domain and transitions (tested)",
+        "GitHub store host (tested)",
+        "WASM browser UI (implemented)"
+      ],
+      "plannedCapabilities": [
+        "Deferred backlog in docs/requirements/SCOPE.md"
+      ],
+      "systems": [
+        "vigila"
+      ],
+      "initiatives": [
+        "INIT-003",
+        "INIT-025"
+      ],
+      "dependencies": [
+        "Aegis, Forma, Folio, Limen (hard)",
+        "Ordo, Praxis (hard)",
+        "GitHub API (user token) (hard)",
+        "Playwright (test)"
+      ],
+      "dependents": [],
+      "developmentStatus": "unknown",
+      "maturity": "implemented",
+      "lastCommit": "2026-10-16",
+      "authoritativeDocuments": [
+        "PROJECT-CHARTER.md",
+        "docs/requirements/README.md",
+        "docs/requirements/SCOPE.md",
+        "docs/requirements/OPEN-QUESTIONS.md"
+      ],
+      "outstandingDecisions": [
+        "docs/requirements/OPEN-QUESTIONS.md OQ-01..OQ-11 all marked RESOLVED"
+      ],
+      "knownLimitations": [],
+      "plannedDirection": "v1 scope per docs/requirements/SCOPE.md (VIG-SCOPE-001).",
+      "lineage": {
+        "previousNames": [
+          "'Vigilia' spelling considered (docs/requirements/OPEN-QUESTIONS.md OQ-03)"
+        ],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/vigila@HEAD PROJECT-CHARTER.md",
+        "kemiller2002/vigila@HEAD docs/requirements/README.md",
+        "kemiller2002/vigila@HEAD docs/requirements/SCOPE.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "id": "visual-engineering",
+      "repository": "kemiller2002/visual-engineering",
+      "displayName": "Visual Engineering",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "research",
+      "purpose": "Installs and maintains the Visual Engineering UI research context in a repository (init/verify/diagnose/upgrade) so people and agents design UIs from current evidence (README.md).",
+      "responsibilities": [
+        "visual-engineering CLI: init/status/verify/doctor/upgrade of .visual-engineering context (README.md, docs/cli.md)",
+        "UI research context package @kemiller2002/visual-engineering-context (packages/visual-engineering-context, CHANGELOG.md)",
+        "Application polish standard and review protocol (framework/standards/APPLICATION-POLISH.md)",
+        "Universal UI layout/interaction conformance contract UI-LAYOUT-INTERACTION@1.0.0 (framework/standards/UI-LAYOUT-INTERACTION.md)",
+        "UI research program: frontier, hypotheses, experiments (research/)",
+        "Theme measurement tooling (tools/theme-measure-lib, .github/workflows/theme-measure.yml)"
+      ],
+      "nonResponsibilities": [],
+      "intendedConsumers": [
+        "Echelon repositories and their implementation agents (README.md)",
+        "Conditor adoption of installations (CHANGELOG.md 1.0.1)"
+      ],
+      "providedCapabilities": [
+        "Self-contained F# CLI distributed via npm platform packages (tested)",
+        "File ownership/managed-region model (documented-only)",
+        "Application polish standard + review protocol (documented-only)",
+        "UI conformance schema (implemented)",
+        "Research publishing site (implemented)",
+        "Theme catalog validation/measurement (tested)"
+      ],
+      "plannedCapabilities": [
+        "UI conformance rollout across Echelon interfaces (issue #47 per README.md)",
+        "Knowledge platform implementation (knowledge-platform/implementation-roadmap.md)"
+      ],
+      "systems": [
+        "visual-engineering"
+      ],
+      "initiatives": [
+        "INIT-008",
+        "INIT-026"
+      ],
+      "dependencies": [
+        "Node.js >=20 (launcher only) (hard)",
+        ".NET (build of self-contained executable) (build)",
+        "Praxis/ROS 3.1.1 (build)",
+        "Limen (installed lifecycle) (optional)"
+      ],
+      "dependents": [
+        "Conditor (adopts installations) (CHANGELOG.md)",
+        "Forma, Folio, Limen, Forma Studio (via .visual-engineering/ installs)"
+      ],
+      "developmentStatus": "maintained",
+      "maturity": "released",
+      "latestRelease": "visual-engineering 1.0.1 (registry release record)",
+      "lastCommit": "2026-10-15",
+      "authoritativeDocuments": [
+        "README.md",
+        "CHANGELOG.md",
+        "docs/cli.md",
+        "docs/ownership.md",
+        "framework/standards/APPLICATION-POLISH.md",
+        "framework/standards/UI-LAYOUT-INTERACTION.md",
+        "research/frontier/FRONTIER-MASTER.md"
+      ],
+      "outstandingDecisions": [
+        "HANDOFF.md unresolved questions (bootstrap template)",
+        "EX-VE-TCG-2026-319C pilot forgone (HANDOFF.md)"
+      ],
+      "knownLimitations": [
+        "PROJECT-CHARTER.md is unfilled template ('Not yet established')",
+        "1.0.0 gitignore bug fixed in 1.0.1 (CHANGELOG.md)"
+      ],
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/visual-engineering@HEAD README.md",
+        "kemiller2002/visual-engineering@HEAD CHANGELOG.md",
+        "kemiller2002/visual-engineering@HEAD docs/cli.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25"
+    },
+    {
+      "visibility": "public",
+      "classification": "public",
+      "responsibilities": [
+        "Public defect report form",
+        "Machine defect intake contract for Echelon build systems (not deployed)"
+      ],
+      "nonResponsibilities": [],
+      "systems": [],
+      "dependencies": [],
+      "developmentStatus": "active",
+      "maturity": "prototype",
+      "authoritativeDocuments": [
+        "README.md",
+        "docs/requirements/VITIUM-REQUIREMENTS.md"
+      ],
+      "provisional": true,
+      "source": "central-seed",
+      "lastVerified": "2026-11-25",
+      "evidence": [
+        "kemiller2002/vitium@HEAD README.md"
+      ],
+      "id": "vitium",
+      "repository": "kemiller2002/vitium",
+      "displayName": "Vitium",
+      "echelonRelation": "product",
+      "purpose": "Cross-repository defect reporting and quality intelligence application (README.md).",
+      "lastCommit": "2026-10-16",
+      "knownLimitations": [
+        "Machine intake adapter not deployed; NuGet packages not published (README.md)"
+      ],
+      "outstandingDecisions": [
+        "Not registered in registry/systems-v2.json (GAP-02)"
+      ],
+      "initiatives": [
+        "INIT-015"
+      ]
+    }
+  ]
+}

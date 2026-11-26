@@ -1907,6 +1907,29 @@
       "sourceReference": null
     },
     {
+      "id": "GOV-TRN-001",
+      "title": "Organizational transparency, portfolio governance and repository manifest (GOV-TRN-2026-11)",
+      "description": "Public organizational portfolio, repository and initiative inventories, echelon.repository/v1 manifest spec, portfolio validator, governance research deliverables",
+      "tags": [
+        "governance"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-25T17:47:43Z",
+      "updatedAt": "2026-11-25T18:09:35Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
       "id": "WI-0092",
       "title": "Upgrade the registry's own toolchain to echelon-current 1.42.0 (praxis 3.7.2->3.25.0, ordo 1.5.0->1.20.0)",
       "description": null,
@@ -2004,6 +2027,29 @@
       "createdByActor": {
         "kind": "agent",
         "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "GOV-TRN-002",
+      "title": "Resolve INIT-012 collision: renumber transparency initiative to INIT-029, add INIT-012 availability to the projection",
+      "description": null,
+      "tags": [
+        "governance"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-26T13:03:15Z",
+      "updatedAt": "2026-11-26T13:03:40Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude",
         "provider": "anthropic",
         "model": "unknown",
         "runtime": "claude-code"

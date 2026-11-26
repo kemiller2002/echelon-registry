@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://echelonfoundry.com/schemas/echelon.repository.v1.json",
+  "title": "Echelon Repository Manifest v1",
+  "description": "Companion to echelon.system/v2. Organizational facts about a repository. Never declares capabilities. See spec/repository-manifest.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "id",
+    "repository",
+    "displayName",
+    "purpose",
+    "responsibilities",
+    "nonResponsibilities",
+    "systems",
+    "informationClassification",
+    "developmentStatus",
+    "maturity",
+    "authoritativeDocuments",
+    "lastReviewed"
+  ],
+  "properties": {
+    "schema": {"const": "echelon.repository/v1"},
+    "id": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
+    "repository": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9._-]+$"},
+    "displayName": {"type": "string", "minLength": 1},
+    "purpose": {"type": "string", "minLength": 1},
+    "businessJustification": {"type": "string"},
+    "responsibilities": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "nonResponsibilities": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "intendedConsumers": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "systems": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"}},
+    "initiatives": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^INIT-[0-9]{3}$"}},
+    "informationClassification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maximumPermitted"],
+      "properties": {"maximumPermitted": {"enum": ["public", "internal", "confidential"]}}
+    },
+    "developmentStatus": {"enum": ["active", "maintained", "experimental", "dormant", "archived", "superseded"]},
+    "maturity": {"enum": ["concept", "requirements", "prototype", "implemented", "verified", "released"]},
+    "authoritativeDocuments": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "knownLimitations": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "plannedDirection": {"type": "string"},
+    "outstandingDecisions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "governingPolicies": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "previousNames": {"type": "array", "items": {"type": "string"}},
+        "supersedes": {"type": "array", "items": {"type": "string"}},
+        "supersededBy": {"type": ["string", "null"]}
+      }
+    },
+    "lastReviewed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["date", "by", "method"],
+      "properties": {
+        "date": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+        "by": {"type": "string", "minLength": 1},
+        "method": {"enum": ["manual", "agent", "generated"]}
+      }
+    }
+  }
+}

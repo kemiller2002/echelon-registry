@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <Compile Include="Domain.fs" />
+    <Compile Include="Json.fs" />
+    <Compile Include="Schema.fs" />
+    <Compile Include="Rules.fs" />
+    <Compile Include="Projection.fs" />
+    <Compile Include="Render.fs" />
+  </ItemGroup>
+</Project>

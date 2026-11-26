@@ -1,0 +1,1553 @@
+{
+  "schema": "echelon.portfolio-initiatives/v1",
+  "classification": "public",
+  "sourceRecord": "kemiller2002/echelon-organization-administration:portfolio/initiatives.json",
+  "sourceDigest": "sha256:d08953aa358b571001a3565a9357915190a172a574f47d31a41eea0fc2bee3c9",
+  "initiatives": [
+    {
+      "id": "INIT-001",
+      "name": "Secure construction",
+      "description": "Prevent vulnerability classes through enforceable architectural constraints (typed database access, no user HTML, no application JavaScript outside Limen, memory-safe languages, deny-by-default authorization).",
+      "origin": "Initiative register baseline 2026-11-25; Secure Construction Standard v0.1.",
+      "rationale": "Removing whole defect classes by construction is cheaper and more reliable than finding instances later.",
+      "problem": "Scanning and review find instances of known weakness classes but do not prevent recurrence.",
+      "intendedOutcomes": [
+        "Each SEC-* rule has an owner, enforcement mechanism, negative tests and evidence",
+        "Unbound is the first product built under the standard"
+      ],
+      "successCriteria": [
+        "Every mandatory SEC-* rule has machine-checkable enforcement and a passing negative test suite",
+        "Scanner validation report published per scanner release"
+      ],
+      "repositories": [
+        "aegis",
+        "strata",
+        "limen",
+        "forma",
+        "dokimos",
+        "praxis",
+        "tutela"
+      ],
+      "systems": [
+        "aegis",
+        "strata",
+        "limen",
+        "forma",
+        "dokimos",
+        "praxis",
+        "tutela"
+      ],
+      "dependencies": [
+        "INIT-018 shared application foundations"
+      ],
+      "relatedInitiatives": [
+        "INIT-003",
+        "INIT-006",
+        "INIT-015",
+        "INIT-016"
+      ],
+      "status": "active",
+      "evidence": [
+        "echelon-organization-administration policies/security/secure-construction-standard.md (v0.1, proposed)",
+        "tutela repository: security engineering discipline and secret scanning (tutela-foundation.yml)"
+      ],
+      "outstandingDecisions": [
+        "Formal adoption of the Secure Construction Standard",
+        "Whether Tutela or Aegis owns the rule registry (the standard names Aegis; Tutela\u0027s charter describes security invariants and controls)"
+      ],
+      "risks": [
+        "Rule ownership is split between Aegis (named in the standard) and Tutela (security discipline), risking duplicated rule registries",
+        "Claims of eliminated vulnerability classes without scoped evidence"
+      ],
+      "nextActions": [
+        "Translate the standard into verifiable requirements with one owner per rule",
+        "Resolve Aegis/Tutela rule-registry ownership (DUP-03)"
+      ],
+      "completionCriteria": [
+        "All mandatory rules enforced fail-closed in Unbound CI with evidence"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-002",
+      "name": "Customer due diligence",
+      "description": "Anticipate enterprise and financial-institution due diligence questions and answer them from evidence-backed, reusable records.",
+      "origin": "Initiative register baseline 2026-11-25.",
+      "rationale": "Questionnaire effort and procurement delay are recurring costs; reusable evidence-backed answers reduce them.",
+      "problem": "Each questionnaire is answered from scratch and answers drift from reality.",
+      "intendedOutcomes": [
+        "Canonical question bank with target and approved current answers",
+        "Answers carry claim status, scope and evidence references"
+      ],
+      "successCriteria": [
+        "Share of questionnaire questions answered from approved records (metric M-12) measured on the first real questionnaire"
+      ],
+      "repositories": [
+        "echelon-due-diligence",
+        "echelon-knowledge-store",
+        "folio",
+        "echelon-assurance"
+      ],
+      "systems": [
+        "folio"
+      ],
+      "dependencies": [
+        "INIT-003 evidence",
+        "INIT-029 claim discipline"
+      ],
+      "relatedInitiatives": [
+        "INIT-003",
+        "INIT-006",
+        "INIT-029"
+      ],
+      "status": "research",
+      "evidence": [
+        "echelon-due-diligence research branch established 2026-11-25 (Praxis installed, taxonomy)",
+        "echelon-due-diligence governance/TRANSPARENCY-ALIGNMENT.md"
+      ],
+      "outstandingDecisions": [
+        "Licensing of standard questionnaire content (SIG, CAIQ) before storing question text"
+      ],
+      "risks": [
+        "Publishing answers that overstate implementation (claim discipline mitigates)"
+      ],
+      "nextActions": [
+        "Continue the comprehensive due diligence research initiative",
+        "Adopt the claim status vocabulary of POL-ORG-TRN-001 \u00A76"
+      ],
+      "completionCriteria": [
+        "First real customer questionnaire answered from approved records with measured effort"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": false
+    },
+    {
+      "id": "INIT-003",
+      "name": "Continuous compliance",
+      "description": "Generate current assurance evidence during normal engineering and operations instead of periodic collection.",
+      "origin": "Initiative register baseline 2026-11-25.",
+      "rationale": "Evidence produced as a by-product is cheaper, fresher and harder to fabricate than evidence assembled for an audit.",
+      "problem": "Periodic evidence collection is expensive and goes stale between assessments.",
+      "intendedOutcomes": [
+        "Control-to-evidence traceability for every control",
+        "Evidence with provenance, freshness, expiry and revocation"
+      ],
+      "successCriteria": [
+        "Percentage of controls with current automatically generated evidence (metrics M-10, M-13)"
+      ],
+      "repositories": [
+        "echelon-assurance",
+        "praxis",
+        "dokimos",
+        "aegis",
+        "vigila",
+        "tutela",
+        "echelon-knowledge-store"
+      ],
+      "systems": [
+        "praxis",
+        "dokimos",
+        "aegis",
+        "vigila",
+        "tutela"
+      ],
+      "dependencies": [
+        "INIT-015 continuous verification"
+      ],
+      "relatedInitiatives": [
+        "INIT-002",
+        "INIT-006",
+        "INIT-015"
+      ],
+      "status": "research",
+      "evidence": [
+        "echelon-assurance research branch (control catalog, evidence architecture, integration assessment) \u2014 unmerged as of 2026-11-25",
+        "echelon-assurance requirements/continuous-assurance-requirements.md"
+      ],
+      "outstandingDecisions": [
+        "echelon-assurance repository visibility: owner directed private, observed public (OD-GOV-002)",
+        "Enable Praxis verified/attested completion in repositories (implemented but not enabled per the assurance integration assessment)"
+      ],
+      "risks": [
+        "Internal verification misrepresented as independent assurance",
+        "Self-reported provenance treated as authenticated"
+      ],
+      "nextActions": [
+        "Merge or reconcile the assurance research branch",
+        "Enable verified completion in one pilot repository"
+      ],
+      "completionCriteria": [
+        "Unbound control set has continuously generated, fresh evidence for each automated control"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-004",
+      "name": "DAF market intelligence",
+      "description": "Understand donor-advised fund industry structure, competition, technology and servicing economics.",
+      "origin": "Initiative register baseline 2026-11-25; daf-landscape research corpus.",
+      "rationale": "Unbound and any DAF offering depend on a correct model of the market and its economics.",
+      "problem": "Commercial and product decisions in the DAF space lacked an evidence-classified market model.",
+      "intendedOutcomes": [
+        "Evidence-classified market and economics corpus",
+        "Validated servicing-economics model"
+      ],
+      "successCriteria": [
+        "Servicing economics model inputs traced to classified evidence",
+        "Commercial assumptions marked validated or rejected"
+      ],
+      "repositories": [
+        "daf-landscape"
+      ],
+      "systems": [],
+      "dependencies": [],
+      "relatedInitiatives": [
+        "INIT-005",
+        "INIT-007"
+      ],
+      "status": "active",
+      "evidence": [
+        "daf-landscape research/ and data/ (evidence-classified corpus; servicing economics reports)"
+      ],
+      "outstandingDecisions": [
+        "Vendor tests unexecuted; reference cases not CPA-validated (daf-landscape research/README.md)"
+      ],
+      "risks": [
+        "Third-party company information and lead material must stay within publication rights"
+      ],
+      "nextActions": [
+        "Continue research agenda (research/DAF-MARKET-RESEARCH-AGENDA.md)",
+        "Validate commercial assumptions"
+      ],
+      "completionCriteria": [
+        "Market model and economics accepted as inputs to Unbound requirements"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": false
+    },
+    {
+      "id": "INIT-005",
+      "name": "AI-native DAF administration (Unbound)",
+      "description": "Design Unbound, an AI-native donor-advised fund reference enterprise with low-friction workflows and financial integrity.",
+      "origin": "Initiative register baseline 2026-11-25; unbound requirements charter.",
+      "rationale": "Demonstrates AI-native enterprise design on a regulated financial domain.",
+      "problem": "Incumbent DAF administration is workflow- and labor-intensive.",
+      "intendedOutcomes": [
+        "Reviewed requirements baseline",
+        "Implementation that enforces financial invariants under the secure construction standard"
+      ],
+      "successCriteria": [
+        "Formal requirements review gate passed",
+        "Open decisions reduced from the 2026-11 baseline of 101"
+      ],
+      "repositories": [
+        "unbound",
+        "daf-landscape",
+        "echelon-ai-native-enterprise-design-framework"
+      ],
+      "systems": [],
+      "dependencies": [
+        "INIT-001",
+        "INIT-003",
+        "INIT-004"
+      ],
+      "relatedInitiatives": [
+        "INIT-004",
+        "INIT-007",
+        "INIT-001"
+      ],
+      "status": "research",
+      "evidence": [
+        "unbound requirements/ (charter, open questions: 101 open decisions, 72 awaiting confirmation, 143 questions)"
+      ],
+      "outstandingDecisions": [
+        "316 open requirement items (unbound requirements/OPEN-QUESTIONS.md)",
+        "Legal claims remain hypotheses pending qualified review"
+      ],
+      "risks": [
+        "Three repositories model an AI-native DAF enterprise (DUP-01)",
+        "Regulatory exposure before qualified legal review"
+      ],
+      "nextActions": [
+        "Refine requirements and trace evidence",
+        "Decide relationship between unbound, the EEF DAF case study and daf-landscape/ai-native-daf-enterprise (DUP-01)"
+      ],
+      "completionCriteria": [
+        "Requirements baseline approved for implementation"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": false
+    },
+    {
+      "id": "INIT-006",
+      "name": "External assurance cost reduction",
+      "description": "Minimize avoidable external assurance cost without weakening independence.",
+      "origin": "Initiative register baseline 2026-11-25.",
+      "rationale": "External assessments are a large fixed cost for a small organization.",
+      "problem": "Without first-party evidence, every external assessment starts from discovery.",
+      "intendedOutcomes": [
+        "Scanner validation pathways accepted by assessors",
+        "Measured external assurance spend"
+      ],
+      "successCriteria": [
+        "External assurance expenditure measured (metric M-15) and compared with a recorded baseline"
+      ],
+      "repositories": [
+        "echelon-due-diligence",
+        "echelon-assurance",
+        "aegis",
+        "dokimos",
+        "tutela"
+      ],
+      "systems": [
+        "aegis",
+        "dokimos",
+        "tutela"
+      ],
+      "dependencies": [
+        "INIT-003"
+      ],
+      "relatedInitiatives": [
+        "INIT-001",
+        "INIT-003",
+        "INIT-002"
+      ],
+      "status": "research",
+      "evidence": [
+        "Secure Construction Standard \u00A7External assurance and economics",
+        "echelon-assurance research branch: penetration testing research and cost evidence (unmerged)"
+      ],
+      "outstandingDecisions": [
+        "Which assessors accept which internal evidence (written acceptance required)"
+      ],
+      "risks": [
+        "Savings assumed before measurement",
+        "Internal evidence presented as independent"
+      ],
+      "nextActions": [
+        "Establish acceptance and scanner validation pathways",
+        "Record an external assurance cost baseline (currently unknown)"
+      ],
+      "completionCriteria": [
+        "Written acceptance of at least one internal evidence class by an external assessor"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-007",
+      "name": "AI-native business transformation",
+      "description": "Redesign workflows rather than automate legacy processes, using evidence-driven enterprise design.",
+      "origin": "Initiative register baseline 2026-11-25.",
+      "rationale": "Automating existing processes preserves their waste; redesign can remove it.",
+      "problem": "Organizations apply AI to legacy workflows without testing whether a redesign is better.",
+      "intendedOutcomes": [
+        "A repeatable, evidence-driven enterprise design method",
+        "Case studies that can conclude a redesign is inferior"
+      ],
+      "successCriteria": [
+        "At least two case studies beyond DAF modelled end to end with recorded generalisation changes"
+      ],
+      "repositories": [
+        "echelon-ai-native-enterprise-design-framework",
+        "echelon-diagnostic-framework",
+        "clarity-service",
+        "clarity-framework"
+      ],
+      "systems": [
+        "clarity-service"
+      ],
+      "dependencies": [
+        "INIT-019",
+        "INIT-020",
+        "INIT-009"
+      ],
+      "relatedInitiatives": [
+        "INIT-019",
+        "INIT-020",
+        "INIT-005"
+      ],
+      "status": "research",
+      "evidence": [
+        "Echelon-AI-Native-Enterprise-Design-Framework: v0, one case study (DAF) modelled end to end, tests in CI"
+      ],
+      "outstandingDecisions": [
+        "Praxis adoption in EEF not authorised (ADR 0003)",
+        "Licence not chosen"
+      ],
+      "risks": [
+        "Methods presented as validated before confirmatory evidence"
+      ],
+      "nextActions": [
+        "Add healthcare and insurance case studies (EEF Phase 4)"
+      ],
+      "completionCriteria": [
+        "Generalisation demonstrated across three industries"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": false
+    },
+    {
+      "id": "INIT-008",
+      "name": "Unified design and accessibility",
+      "description": "Consistent, accessible application UI and printed reports through shared design and rendering systems.",
+      "origin": "Initiative register baseline 2026-11-25.",
+      "rationale": "Shared components carry accessibility and safety fixes to every application.",
+      "problem": "Applications drift into bespoke CSS and copied style guides.",
+      "intendedOutcomes": [
+        "Applications consume pinned Forma, Limen and Folio releases",
+        "WCAG 2.2 AA conformance evidence per application"
+      ],
+      "successCriteria": [
+        "Share of applications passing foundations verify for Forma/Folio/Limen",
+        "Accessibility commitments published with conformance status"
+      ],
+      "repositories": [
+        "forma",
+        "limen",
+        "folio",
+        "echelon-design-system",
+        "forma-studio",
+        "visual-engineering",
+        "percepta"
+      ],
+      "systems": [
+        "forma",
+        "limen",
+        "folio",
+        "echelon-theme",
+        "forma-studio",
+        "visual-engineering",
+        "percepta"
+      ],
+      "dependencies": [],
+      "relatedInitiatives": [
+        "INIT-017",
+        "INIT-001"
+      ],
+      "status": "active",
+      "evidence": [
+        "forma v1.1.0 tag (brand-neutral since 1.0.0)",
+        "folio v0.4.1",
+        "echelon-design-system echelon-theme v1.1.0"
+      ],
+      "outstandingDecisions": [
+        "Brand palette approval pending (echelon-design-system README)",
+        "Who owns design-system preview and documentation: Forma, Forma Studio or echelon-design-system (DUP-05)"
+      ],
+      "risks": [
+        "Consumers pin pre-1.0 Forma (forma-studio 0.10.0, echelon-engineering-system 0.9.0)"
+      ],
+      "nextActions": [
+        "Verify standards and adoption",
+        "Publish accessibility commitments (trust center requirement TC-R-11)"
+      ],
+      "completionCriteria": [
+        "Every active application passes foundations verify against current pins"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": false
+    },
+    {
+      "id": "INIT-009",
+      "name": "Structured knowledge",
+      "description": "Machine-readable organizational knowledge and relationships, compiled into task-specific context for agents.",
+      "origin": "Initiative register baseline 2026-11-25.",
+      "rationale": "Agents waste context and make errors when they must read whole corpora.",
+      "problem": "Organizational knowledge is spread across Markdown in dozens of repositories.",
+      "intendedOutcomes": [
+        "Knowledge compilation (links, closures, authority, task packages) over Markdown",
+        "Task-specific projections of the portfolio for agents"
+      ],
+      "successCriteria": [
+        "Measured reduction in tokens or time for an agent to locate authoritative knowledge (metric M-18)"
+      ],
+      "repositories": [
+        "echelon-knowledge-store"
+      ],
+      "systems": [],
+      "dependencies": [
+        "INIT-010 portfolio records"
+      ],
+      "relatedInitiatives": [
+        "INIT-010",
+        "INIT-029"
+      ],
+      "status": "research",
+      "evidence": [
+        "echelon-knowledge-store: research phase; finding to keep Markdown with front matter and compile it (README.md)",
+        "echelon-knowledge-store research/portfolio-integration/requirements.md"
+      ],
+      "outstandingDecisions": [
+        "Stable schema not yet established (schemas experimental)"
+      ],
+      "risks": [
+        "Building a second portfolio authority inside the Knowledge Store"
+      ],
+      "nextActions": [
+        "Implement portfolio record ingestion as a read-only experiment",
+        "Define compiled task projections (KSI-* requirements)"
+      ],
+      "completionCriteria": [
+        "Agents retrieve portfolio slices through the Knowledge Store with measured benefit"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": false
+    },
+    {
+      "id": "INIT-010",
+      "name": "Portfolio governance",
+      "description": "Maintain repository purposes, boundaries, dependencies and initiative relationships so that agents and people can discover them.",
+      "origin": "Initiative register baseline 2026-11-25; registry portfolio directory.",
+      "rationale": "As repositories and agents multiply, undocumented boundaries cause duplication and drift.",
+      "problem": "No complete, verified inventory of repositories, systems and initiatives existed.",
+      "intendedOutcomes": [
+        "Complete public repository inventory",
+        "Repository manifests generating central projections",
+        "Praxis registry-maintenance requirements"
+      ],
+      "successCriteria": [
+        "Percentage of repositories registered and verified (metrics M-01, M-02)",
+        "Stale registry entries (M-08) below 10%"
+      ],
+      "repositories": [
+        "echelon-registry",
+        "praxis",
+        "echelon-organization-administration",
+        "project-administration"
+      ],
+      "systems": [
+        "praxis",
+        "project-administration"
+      ],
+      "dependencies": [],
+      "relatedInitiatives": [
+        "INIT-029",
+        "INIT-009",
+        "INIT-013"
+      ],
+      "status": "active",
+      "evidence": [
+        "echelon-registry portfolio/repositories.json and portfolio/initiatives.json (2026-11-25)",
+        "echelon-registry spec/repository-manifest.md",
+        "praxis requirements/REGISTRY-MAINTENANCE.md"
+      ],
+      "outstandingDecisions": [
+        "Adoption of echelon.repository/v1 manifests in each repository",
+        "Registration of unregistered systems (Vitium, EDF, Causa, Specula)"
+      ],
+      "risks": [
+        "Central inventory becomes stale if manifests are not adopted"
+      ],
+      "nextActions": [
+        "Pilot .echelon/repository.json in three repositories",
+        "Register Vitium as a system (GAP-02)"
+      ],
+      "completionCriteria": [
+        "All active repositories have manifests and central entries are generated"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": false
+    },
+    {
+      "id": "INIT-011",
+      "name": "Consumer medical records (HelixNote)",
+      "description": "Research and design HelixNote, a ledger-first system for personal health events, evidence and reasoning.",
+      "origin": "Initiative register baseline 2026-11-25.",
+      "rationale": "Individuals lack a trustworthy, evidence-preserving record of their own health history.",
+      "problem": "Health information is fragmented across providers and documents.",
+      "intendedOutcomes": [
+        "Validated roadmap and subscription assumptions"
+      ],
+      "successCriteria": [
+        "Roadmap and pricing assumptions validated or rejected with evidence"
+      ],
+      "repositories": [
+        "helix-note-application",
+        "helix-note-website"
+      ],
+      "systems": [
+        "helix-note"
+      ],
+      "dependencies": [
+        "INIT-008",
+        "INIT-001"
+      ],
+      "relatedInitiatives": [
+        "INIT-029"
+      ],
+      "status": "research",
+      "evidence": [
+        "helix-note-website: live static marketing site",
+        "Organization administration quality inventory 2026-10-05: HelixNote application tests and CI findings"
+      ],
+      "outstandingDecisions": [
+        "Founder time allocation to HelixNote relative to other initiatives",
+        "Personal health data handling and regulatory applicability"
+      ],
+      "risks": [
+        "Health data is highly sensitive; privacy and security obligations before any real user data",
+        "Main branch CI failing as of 2026-10-05 quality inventory"
+      ],
+      "nextActions": [
+        "Validate roadmap and subscription assumptions",
+        "Decide time allocation"
+      ],
+      "completionCriteria": [
+        "Decision to proceed, pause or stop recorded with evidence"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-012",
+      "name": "Continuous availability, durable execution and cache readiness",
+      "description": "Make reliable, recoverable, cache-ready applications achievable with less application-specific engineering: durable command processing, continuous availability and deployment, cache-ready architecture, query consistency, system messaging and acknowledgment.",
+      "origin": "Owner issues #12 and #14 in organization administration and unbound#12; application-governance/availability-architecture/00-INDEX.md.",
+      "rationale": "Server-side transactional applications (Unbound first) need durable execution guarantees that no existing Echelon system provides by charter.",
+      "problem": "Reliability, recovery and caching are re-engineered per application, and durable command execution has no owner.",
+      "intendedOutcomes": [
+        "Owner decisions U-01..U-14 recorded",
+        "Durable command execution incubated in Unbound with extraction when a second consumer starts (ADR-EAR-004, proposed)"
+      ],
+      "successCriteria": [
+        "Managed-database benchmark completed after owner decisions"
+      ],
+      "repositories": [
+        "unbound",
+        "praxis",
+        "dokimos",
+        "echelon-registry",
+        "forma",
+        "limen",
+        "aegis",
+        "conditor",
+        "strata",
+        "ordo",
+        "echelon-organization-administration"
+      ],
+      "systems": [
+        "praxis",
+        "dokimos",
+        "forma",
+        "limen",
+        "aegis",
+        "conditor",
+        "strata",
+        "ordo"
+      ],
+      "dependencies": [
+        "INIT-005 (Unbound is the first consumer)"
+      ],
+      "relatedInitiatives": [
+        "INIT-005",
+        "INIT-018",
+        "INIT-001"
+      ],
+      "status": "research",
+      "evidence": [
+        "echelon-organization-administration application-governance/availability-architecture/ (research, architecture and requirements complete for review; all proposed, nothing implemented, 2026-11-25)",
+        "echelon-registry spec/ecosystem-distribution-readiness.md (planned, unowned capabilities)"
+      ],
+      "outstandingDecisions": [
+        "Owner decisions U-01..U-14 (availability-architecture/19-UNRESOLVED-DECISIONS.md)"
+      ],
+      "risks": [
+        "Incubating a shared capability inside one product may delay extraction"
+      ],
+      "nextActions": [
+        "Owner decisions U-01..U-14, then managed-database benchmark"
+      ],
+      "completionCriteria": [
+        "Decisions recorded and capabilities owned or explicitly incubated"
+      ],
+      "lastReview": "2026-11-26",
+      "provisional": true
+    },
+    {
+      "id": "INIT-013",
+      "name": "Repository operating system and engineering governance",
+      "description": "Make research, engineering, decisions and handoffs durable through Praxis, Ordo, Conditor and Project Administration.",
+      "origin": "Praxis and Ordo charters; registry systems-v2.json.",
+      "rationale": "Agent sessions are disposable; repository state must carry continuity and evidence.",
+      "problem": "Work and decisions were lost with conversation history.",
+      "intendedOutcomes": [
+        "Durable work protocol with provenance and telemetry",
+        "Governed environment bootstrap from manifests"
+      ],
+      "successCriteria": [
+        "Repositories pin current Praxis and pass validation",
+        "Verified completion enabled where adopted"
+      ],
+      "repositories": [
+        "praxis",
+        "ordo",
+        "conditor",
+        "project-administration",
+        "ros-worker-daemon",
+        "framework-templates"
+      ],
+      "systems": [
+        "praxis",
+        "ordo",
+        "conditor",
+        "project-administration",
+        "ros-worker-daemon",
+        "framework-templates"
+      ],
+      "dependencies": [],
+      "relatedInitiatives": [
+        "INIT-010",
+        "INIT-015",
+        "INIT-016"
+      ],
+      "status": "active",
+      "evidence": [
+        "praxis v3.25.0 release record in the registry",
+        "ordo v1.20.0",
+        "conditor tag v0.10.29 (registry release record 0.10.19)"
+      ],
+      "outstandingDecisions": [
+        "Mandatory merge gating via repository rulesets (owner decision pending per the assurance integration assessment)"
+      ],
+      "risks": [
+        "Version drift: ros.json rosVersion differs from .echelon/ros.json installedVersion in most repositories"
+      ],
+      "nextActions": [
+        "Reconcile legacy rosVersion fields",
+        "Adopt registry-maintenance requirements RM-*"
+      ],
+      "completionCriteria": [
+        "Every active repository on a supported Praxis version with validation in CI"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-014",
+      "name": "Autonomous engineering agent research",
+      "description": "Measure how autonomous agents build software correctly and cheaply: constrained construction, continuity, cost of accepted functionality.",
+      "origin": "cohort-based-engineering program; CONSTRUCT-010 study; software-engineering and AI-Engineering research repositories.",
+      "rationale": "Claims about agent productivity need controlled evidence.",
+      "problem": "Agent-built software is evaluated anecdotally.",
+      "intendedOutcomes": [
+        "Controlled experiments with preregistration",
+        "Methods adopted into Praxis/Ordo only on evidence"
+      ],
+      "successCriteria": [
+        "Experiments with recorded effect sizes and limitations"
+      ],
+      "repositories": [
+        "cohort-based-engineering",
+        "construct-010-trials",
+        "software-engineering",
+        "ai-engineering",
+        "percepta",
+        "specula"
+      ],
+      "systems": [
+        "percepta"
+      ],
+      "dependencies": [
+        "INIT-013"
+      ],
+      "relatedInitiatives": [
+        "INIT-013",
+        "INIT-022"
+      ],
+      "status": "research",
+      "evidence": [
+        "cohort-based-engineering program/CURRENT-STATE.md (2026-10-23 cross-repository capability status)"
+      ],
+      "outstandingDecisions": [
+        "Independent roles needed before preregistration freeze (software-engineering HANDOFF.md)"
+      ],
+      "risks": [
+        "Single-experiment evidence; causal confidence limited (cohort-based-engineering README.md)",
+        "Dormant research repositories (AI-Engineering, software-engineering)"
+      ],
+      "nextActions": [
+        "Decide which dormant research programs continue (ABN-01)"
+      ],
+      "completionCriteria": [
+        "Findings adopted into Praxis/Ordo requirements or explicitly rejected"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-015",
+      "name": "Continuous verification and quality evidence",
+      "description": "Measure code quality longitudinally, gate regressions, verify completion claims independently, and report defects across repositories.",
+      "origin": "Dokimos charter; Vitium requirements.",
+      "rationale": "Completion claims by agents need independent verification.",
+      "problem": "Quality regressions and unverified completion claims reach main branches.",
+      "intendedOutcomes": [
+        "Dokimos quality gate in CI across repositories",
+        "Independent verification of Praxis completion",
+        "Cross-repository defect reporting"
+      ],
+      "successCriteria": [
+        "Share of repositories running Dokimos in CI",
+        "Verified completion enabled in at least one repository"
+      ],
+      "repositories": [
+        "dokimos",
+        "praxis",
+        "vitium",
+        "tutela"
+      ],
+      "systems": [
+        "dokimos",
+        "praxis",
+        "tutela"
+      ],
+      "dependencies": [],
+      "relatedInitiatives": [
+        "INIT-003",
+        "INIT-013"
+      ],
+      "status": "active",
+      "evidence": [
+        "dokimos-v0.11.1",
+        "vitium: proposed requirements baseline (92 requirements), report form; machine intake not deployed"
+      ],
+      "outstandingDecisions": [
+        "Register Vitium as a system (GAP-02)",
+        "Baseline acceptance needs a second approver (assurance integration assessment)"
+      ],
+      "risks": [
+        "Only a minority of applications run Dokimos in CI (2026-10-05 quality inventory: none of the inspected applications)"
+      ],
+      "nextActions": [
+        "Adopt Dokimos gate in active applications",
+        "Register Vitium"
+      ],
+      "completionCriteria": [
+        "Dokimos gate and verified completion active in all core systems"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-016",
+      "name": "Software supply-chain assurance and distribution",
+      "description": "Distribute Echelon systems as immutable, digest-addressed, attested releases resolved from a registry catalog.",
+      "origin": "Registry distribution catalog; Conditor; Armamentarium.",
+      "rationale": "Reproducible, attested distribution is the basis for supply-chain claims.",
+      "problem": "Hand-maintained version pins drift across repositories.",
+      "intendedOutcomes": [
+        "Catalog-resolved release sets",
+        "Build provenance attestations",
+        "Published supply-chain practices"
+      ],
+      "successCriteria": [
+        "Pins generated from the registry channel",
+        "Release attestations verified at install"
+      ],
+      "repositories": [
+        "conditor",
+        "echelon-registry",
+        "armamentarium",
+        "praxis"
+      ],
+      "systems": [
+        "conditor",
+        "praxis"
+      ],
+      "dependencies": [
+        "INIT-013"
+      ],
+      "relatedInitiatives": [
+        "INIT-001",
+        "INIT-013"
+      ],
+      "status": "active",
+      "evidence": [
+        "echelon-registry profiles, snapshots, resolved release sets; distribution-conformance CI",
+        "praxis native-release workflow uses build provenance attestation (assurance integration assessment)"
+      ],
+      "outstandingDecisions": [
+        "Whether Conditor already owns kit composition (armamentarium requirements/component-inventory.md) (DUP-04)"
+      ],
+      "risks": [
+        "Registry release records lag repository tags (conditor 0.10.19 vs v0.10.29; forma 1.0.1 vs v1.1.0)"
+      ],
+      "nextActions": [
+        "Resolve Armamentarium/Conditor boundary",
+        "Publish supply-chain practices summary"
+      ],
+      "completionCriteria": [
+        "All core systems distributed through catalog-resolved, attested releases"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-017",
+      "name": "WebAssembly-first browser architecture",
+      "description": "Browser applications run F# compiled to WebAssembly behind Limen\u0027s explicit capability boundary, with no application-authored JavaScript.",
+      "origin": "Limen and Iter charters; SEC-UI-002.",
+      "rationale": "Keeps browser authority explicit and application logic in a typed language.",
+      "problem": "Application JavaScript and ad-hoc browser access are hard to verify.",
+      "intendedOutcomes": [
+        "Limen kernel stable",
+        "Typed web primitives (Iter)",
+        "Applications adopt Limen routing and capability packs"
+      ],
+      "successCriteria": [
+        "Comparative evidence (speed, defects, tokens) recorded (Limen README states not yet established)"
+      ],
+      "repositories": [
+        "limen",
+        "iter",
+        "arca",
+        "fides"
+      ],
+      "systems": [
+        "limen",
+        "limen-fsharp",
+        "iter",
+        "arca",
+        "fides"
+      ],
+      "dependencies": [
+        "INIT-018"
+      ],
+      "relatedInitiatives": [
+        "INIT-008",
+        "INIT-018",
+        "INIT-001"
+      ],
+      "status": "active",
+      "evidence": [
+        "limen v0.9.1; limen-fsharp 0.9.0 release records"
+      ],
+      "outstandingDecisions": [
+        "F# protocol types are a handwritten mirror of the TypeScript protocol (Limen HANDOFF.md)"
+      ],
+      "risks": [
+        "Comparative benefit unproven"
+      ],
+      "nextActions": [
+        "Seek comparative evidence per Limen roadmap"
+      ],
+      "completionCriteria": [
+        "Comparative evidence recorded and the architecture confirmed or revised"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-018",
+      "name": "F# standardization and shared application foundations",
+      "description": "F# as the default application language, with shared libraries for faults (Aegis), data (Arca), identity (Fides), database access (Strata) and time (planned Chrona.Time).",
+      "origin": "Secure Construction Standard SEC-LANG-001; registry plannedCapabilities (QDI-079).",
+      "rationale": "Shared foundations avoid each application re-implementing infrastructure.",
+      "problem": "Applications re-implemented storage, identity and fault handling.",
+      "intendedOutcomes": [
+        "Released, pinned foundation libraries",
+        "Planned capabilities implemented by their planned owners"
+      ],
+      "successCriteria": [
+        "Planned capabilities time-primitives and ledger implemented or re-assigned"
+      ],
+      "repositories": [
+        "aegis",
+        "arca",
+        "fides",
+        "strata",
+        "chrona",
+        "summa"
+      ],
+      "systems": [
+        "aegis",
+        "arca",
+        "fides",
+        "strata",
+        "chrona",
+        "summa",
+        "summa-contracts"
+      ],
+      "dependencies": [],
+      "relatedInitiatives": [
+        "INIT-017",
+        "INIT-001",
+        "INIT-025"
+      ],
+      "status": "active",
+      "evidence": [
+        "registry releases: aegis 2.0.2, arca 0.7.0, fides 0.2.0, strata 0.1.1, summa-contracts 0.1.0"
+      ],
+      "outstandingDecisions": [
+        "Strata scope expansion to data virtualization (STRATA-DIV-001, proposed 2026-11-23)",
+        "Vigila and Aegis each persist to GitHub directly while Arca is the shared data layer (DUP-06)"
+      ],
+      "risks": [
+        "Foundation scope creep (Strata)"
+      ],
+      "nextActions": [
+        "Decide Strata virtualization scope",
+        "Build Chrona.Time"
+      ],
+      "completionCriteria": [
+        "Every planned capability has an implemented owner or a recorded re-assignment"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-019",
+      "name": "Clarity decision-quality framework",
+      "description": "A decision-quality method (claims, evidence, confidence, reassessment, decision posture) with training and a supporting service.",
+      "origin": "clarity-framework, decision-posture and clarity-framework-training repositories; clarity-service registry entry.",
+      "rationale": "Decision failures are frequently failures of calibration and reassessment.",
+      "problem": "Decisions are made without explicit evidence, confidence and reassessment triggers.",
+      "intendedOutcomes": [
+        "A single, consistent Clarity definition",
+        "Evidence for the method\u0027s effect"
+      ],
+      "successCriteria": [
+        "Clarity\u0027s single definition settled and public claims consistent with evidence"
+      ],
+      "repositories": [
+        "clarity-framework",
+        "clarity-service",
+        "decision-posture",
+        "clarity-framework-training"
+      ],
+      "systems": [
+        "clarity-service"
+      ],
+      "dependencies": [
+        "INIT-020"
+      ],
+      "relatedInitiatives": [
+        "INIT-007",
+        "INIT-020"
+      ],
+      "status": "research",
+      "evidence": [
+        "decision-posture public site; clarity-framework-training public site",
+        "clarity-service: 23 tests passing locally (2026-10-05 quality inventory); no CI"
+      ],
+      "outstandingDecisions": [
+        "Consolidation of Clarity as reasoning calibration with decision posture as one module (decision-posture research-execution-package)"
+      ],
+      "risks": [
+        "An audit found the Decision Constitution overpromises safety (decision-posture docs)",
+        "clarity-service has no CI"
+      ],
+      "nextActions": [
+        "Settle Clarity\u0027s single definition",
+        "Remove unsupported outcome claims from public materials"
+      ],
+      "completionCriteria": [
+        "Public materials consistent with evidence"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-020",
+      "name": "Echelon Diagnostic Framework (EDF)",
+      "description": "A diagnostic grammar that makes system diagnoses explicit enough to challenge, validated by preregistered experiments.",
+      "origin": "echelon-diagnostic-framework repository.",
+      "rationale": "Diagnoses that cannot be challenged cannot be validated.",
+      "problem": "Organizational diagnoses are implicit and unfalsifiable.",
+      "intendedOutcomes": [
+        "Confirmatory validation (EX-EDF-001)",
+        "Specification promoted only on evidence"
+      ],
+      "successCriteria": [
+        "Confirmatory experiment executed and published, whatever the result"
+      ],
+      "repositories": [
+        "echelon-diagnostic-framework",
+        "framework-engineering"
+      ],
+      "systems": [],
+      "dependencies": [
+        "INIT-019"
+      ],
+      "relatedInitiatives": [
+        "INIT-007",
+        "INIT-019",
+        "INIT-021"
+      ],
+      "status": "research",
+      "evidence": [
+        "echelon-diagnostic-framework: v0.3 frozen specification, v1.0 draft candidate"
+      ],
+      "outstandingDecisions": [
+        "Freeze analyzer/evaluator bindings before EX-EDF-001",
+        "Publication of internal validation results (requires a disclosure decision, OD-GOV-013)",
+        "EDF distribution class and registry registration (GAP-03)"
+      ],
+      "risks": [
+        "Negative results not yet reflected on public pages"
+      ],
+      "nextActions": [
+        "Decide publication of the internal EDF validation result",
+        "Register EDF\u0027s classification (framework bundle vs system)"
+      ],
+      "completionCriteria": [
+        "Specification promoted or revised based on confirmatory evidence"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-021",
+      "name": "Causa causal investigation workspace",
+      "description": "A workspace for causal investigations (what happened, evidence, hypotheses, relations), built during the Indy Init hackathon; EDF is its intended first specialization.",
+      "origin": "Indy Init hackathon planning and rehearsals.",
+      "rationale": "Tests AI-built software under Echelon governance on a real product.",
+      "problem": "Root-cause investigations lose evidence and reasoning.",
+      "intendedOutcomes": [
+        "Reusable Root-Cause Investigator",
+        "Accepted rehearsal builds"
+      ],
+      "successCriteria": [
+        "Remaining product slices completed and acceptance evidence recorded"
+      ],
+      "repositories": [
+        "causa",
+        "causa-data",
+        "indy-init",
+        "indy-init-rehearsal-001",
+        "gate-proof-r10",
+        "causa-testing-repo",
+        "causa-write-test"
+      ],
+      "systems": [],
+      "dependencies": [
+        "INIT-013",
+        "INIT-017",
+        "INIT-008"
+      ],
+      "relatedInitiatives": [
+        "INIT-020",
+        "INIT-014"
+      ],
+      "status": "active",
+      "evidence": [
+        "causa-data causa-storage-v1.1.0 tag",
+        "indy-init-rehearsal-001 evidence/MISSION-RESULT.md (61/82 scoped requirements verified)"
+      ],
+      "outstandingDecisions": [
+        "Durable product name (Causa OQ-001)",
+        "Deployment target (RQR-005)",
+        "Owner-approved test deploy key in a public site vs POL-ORG-TRN-001 \u00A711 (OD-GOV-014)"
+      ],
+      "risks": [
+        "Four repositories hold Causa test data (DUP-07)",
+        "Causa is not registered as a system"
+      ],
+      "nextActions": [
+        "Consolidate Causa test-data repositories",
+        "Reconcile the test deploy key exception with the transparency policy"
+      ],
+      "completionCriteria": [
+        "Causa released with acceptance evidence"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-022",
+      "name": "Specula autonomous engineering observer",
+      "description": "An independent, read-only observer of autonomous software engineering in public GitHub repositories.",
+      "origin": "Specula repository (Indy Init origin).",
+      "rationale": "Observing agent work independently supports accountability claims.",
+      "problem": "Agent activity in repositories is hard to inspect.",
+      "intendedOutcomes": [
+        "Deployed observer site"
+      ],
+      "successCriteria": [
+        "Observer used to review at least one autonomous engineering run"
+      ],
+      "repositories": [
+        "specula"
+      ],
+      "systems": [],
+      "dependencies": [
+        "INIT-017"
+      ],
+      "relatedInitiatives": [
+        "INIT-014",
+        "INIT-013"
+      ],
+      "status": "active",
+      "evidence": [
+        "specula: deployed site"
+      ],
+      "outstandingDecisions": [],
+      "risks": [
+        "Cannot see agent private reasoning or uncommitted actions (Specula requirements/CAPABILITIES.md)",
+        "Not registered as a system"
+      ],
+      "nextActions": [
+        "Decide registration and continued investment"
+      ],
+      "completionCriteria": [
+        "Decision recorded"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-023",
+      "name": "Signal survey and assessment engine",
+      "description": "A deterministic, URL-first survey and assessment engine in F#/WebAssembly, also used as a framework-evaluation pilot.",
+      "origin": "Signal repository and registry entry.",
+      "rationale": "Assessment instruments need deterministic, privacy-preserving delivery.",
+      "problem": "Survey tools mix respondent data and logic without determinism.",
+      "intendedOutcomes": [
+        "Administrator import, authoring, flow and reporting"
+      ],
+      "successCriteria": [
+        "Requirement groups implemented (114 of 183 missing as of 2026-10-07)"
+      ],
+      "repositories": [
+        "signal"
+      ],
+      "systems": [
+        "signal"
+      ],
+      "dependencies": [
+        "INIT-017",
+        "INIT-018"
+      ],
+      "relatedInitiatives": [
+        "INIT-017"
+      ],
+      "status": "active",
+      "evidence": [
+        "signal HANDOFF.md (2026-10-07 requirement-group status)"
+      ],
+      "outstandingDecisions": [
+        "Where invitation links are minted (Signal HANDOFF.md)"
+      ],
+      "risks": [],
+      "nextActions": [
+        "Administrator import UI and storage"
+      ],
+      "completionCriteria": [
+        "Requirement groups complete with acceptance evidence"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-024",
+      "name": "Mercatus commercial intelligence",
+      "description": "Evidence-driven commercial intelligence and execution: sales and marketing as explicit state, evidence and hypotheses. Successor to the earlier sales-and-marketing repository.",
+      "origin": "Mercatus requirements (LEGACY-MARKETING-OS.md).",
+      "rationale": "Commercialization of Echelon offerings needs evidence-driven execution.",
+      "problem": "Sales and marketing activity is untracked and hypothesis-free.",
+      "intendedOutcomes": [
+        "PRD-25 vertical slice"
+      ],
+      "successCriteria": [
+        "Vertical slice running on Limen and Forma"
+      ],
+      "repositories": [
+        "mercatus",
+        "sales-and-marketing"
+      ],
+      "systems": [
+        "mercatus"
+      ],
+      "dependencies": [
+        "INIT-017",
+        "INIT-008"
+      ],
+      "relatedInitiatives": [
+        "INIT-027"
+      ],
+      "status": "active",
+      "evidence": [
+        "mercatus HANDOFF.md; context/CURRENT-STATE.md"
+      ],
+      "outstandingDecisions": [
+        "Personal-data placement (WI-0037)"
+      ],
+      "risks": [
+        "All 15 workflows blocked by modernization gate (Mercatus CURRENT-STATE.md)",
+        "Personal data in Git"
+      ],
+      "nextActions": [
+        "Tier 3 command handling and store port"
+      ],
+      "completionCriteria": [
+        "Vertical slice accepted"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-025",
+      "name": "Business operations systems",
+      "description": "Echelon\u0027s own operational systems: time (Chrona), invoicing and ledger (Summa), follow-ups (Vigila).",
+      "origin": "Registry systems-v2.json; QDI-079 planned capabilities.",
+      "rationale": "Running the business on Echelon systems dogfoods the foundations.",
+      "problem": "Business operations relied on legacy or manual tools.",
+      "intendedOutcomes": [
+        "Chrona production completion",
+        "Summa ledger capabilities",
+        "Vigila v1"
+      ],
+      "successCriteria": [
+        "Chrona 44 scenarios passing",
+        "Summa ledger implemented (planned capability)"
+      ],
+      "repositories": [
+        "chrona",
+        "summa",
+        "vigila",
+        "time-tracking-application"
+      ],
+      "systems": [
+        "chrona",
+        "summa",
+        "summa-contracts",
+        "vigila"
+      ],
+      "dependencies": [
+        "INIT-018"
+      ],
+      "relatedInitiatives": [
+        "INIT-018"
+      ],
+      "status": "active",
+      "evidence": [
+        "chrona, vigila, summa repositories; registry plannedCapabilities"
+      ],
+      "outstandingDecisions": [
+        "Summa purpose mismatch between README (hub) and HANDOFF (ledger) (DRF-04)"
+      ],
+      "risks": [
+        "Summa financial state in memory only (Summa CURRENT-STATE.md)"
+      ],
+      "nextActions": [
+        "Correct Summa README",
+        "Reach Chrona production completion gate"
+      ],
+      "completionCriteria": [
+        "Systems in daily use with evidence"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-026",
+      "name": "Research publication and methodology programs",
+      "description": "Evidence-faithful publication of research (Tekmerion) and the methodology programs it publishes (communication, visual and framework engineering).",
+      "origin": "Tekmerion (formerly Research Publisher); research repositories.",
+      "rationale": "Published, reproducible research is the basis for credibility.",
+      "problem": "Research results were scattered and not evidence-linked.",
+      "intendedOutcomes": [
+        "Tekmerion vertical slice",
+        "Methodology programs publishing with provenance"
+      ],
+      "successCriteria": [
+        "Tekmerion vertical slice exit criteria met"
+      ],
+      "repositories": [
+        "tekmerion",
+        "communication-engineering",
+        "visual-engineering",
+        "framework-engineering",
+        "ai-engineering"
+      ],
+      "systems": [
+        "tekmerion",
+        "communication-engineering",
+        "visual-engineering"
+      ],
+      "dependencies": [],
+      "relatedInitiatives": [
+        "INIT-029",
+        "INIT-020"
+      ],
+      "status": "active",
+      "evidence": [
+        "tekmerion v0.2.0 tag",
+        "communication-engineering v1.0.0",
+        "visual-engineering v1.0.1"
+      ],
+      "outstandingDecisions": [
+        "npm package rename (Tekmerion OQ-TEK-014)",
+        "Whether to productize communication preflight"
+      ],
+      "risks": [
+        "Research repositories share structure and duplicate knowledge-platform docs (DUP-08)"
+      ],
+      "nextActions": [
+        "Complete Tekmerion vertical slice"
+      ],
+      "completionCriteria": [
+        "Research corpus published through Tekmerion"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-027",
+      "name": "Commercial opportunity discovery",
+      "description": "Evaluate commercial offerings against observed needs and alternatives before investing; record rejected concepts and reasons.",
+      "origin": "Organization administration commercial investigation (working branch, 2026-11).",
+      "rationale": "Avoid building products without demonstrated demand.",
+      "problem": "Product ideas outnumber validated demand.",
+      "intendedOutcomes": [
+        "Ranked opportunity inventory with validation experiments and rejection criteria"
+      ],
+      "successCriteria": [
+        "Preregistered validation gates passed or failed"
+      ],
+      "repositories": [
+        "echelon-organization-administration"
+      ],
+      "systems": [],
+      "dependencies": [],
+      "relatedInitiatives": [
+        "INIT-024",
+        "INIT-028",
+        "INIT-019",
+        "INIT-020"
+      ],
+      "status": "research",
+      "evidence": [
+        "Internal commercial investigation (working branch, not yet reviewed for publication)"
+      ],
+      "outstandingDecisions": [
+        "Review the commercial investigation for adoption and publication (OD-GOV-015)"
+      ],
+      "risks": [
+        "Strategy research not reviewed; details remain internal until a publication decision"
+      ],
+      "nextActions": [
+        "Owner review of the commercial investigation"
+      ],
+      "completionCriteria": [
+        "Adopted strategy recorded and published per POL-ORG-TRN-001"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-028",
+      "name": "Professional services practice",
+      "description": "Echelon Foundry\u0027s advisory and diagnostic services practice, including the foodservice consulting web presence.",
+      "origin": "Organization administration business plan; echelon-foundry and echelon-culinary websites.",
+      "rationale": "Services fund and validate the methods before productization.",
+      "problem": "Methods need paying clients and outcome evidence.",
+      "intendedOutcomes": [
+        "Business plan reviewed",
+        "First engagements with measured outcomes"
+      ],
+      "successCriteria": [
+        "Engagement success measures recorded"
+      ],
+      "repositories": [
+        "echelon-organization-administration",
+        "echelon-foundry",
+        "echelon-culinary",
+        "echelon-engineering-system"
+      ],
+      "systems": [],
+      "dependencies": [
+        "INIT-019",
+        "INIT-020"
+      ],
+      "relatedInitiatives": [
+        "INIT-027"
+      ],
+      "status": "research",
+      "evidence": [
+        "echelon-organization-administration business-plan/ (draft)",
+        "echelon-foundry and echelon-culinary public websites"
+      ],
+      "outstandingDecisions": [
+        "Business plan adoption"
+      ],
+      "risks": [
+        "Founder dependence (business plan \u00A711.09)"
+      ],
+      "nextActions": [
+        "Review business plan"
+      ],
+      "completionCriteria": [
+        "Business plan adopted with validation experiments"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": true
+    },
+    {
+      "id": "INIT-029",
+      "name": "Organizational transparency and public trust",
+      "description": "Operate public by default, confidential by necessity, secure by construction and verifiable by evidence; publish the portfolio, policies and assurance status from authoritative records.",
+      "origin": "Mission brief 2026-11-25 (this register). Renumbered from INIT-012 on 2026-11-26: INIT-012 was already assigned to continuous availability (organization administration PR #16, merged first).",
+      "rationale": "Transparency can reduce procurement friction and build research credibility, but only when information is accurate, current and evidenced.",
+      "problem": "Echelon\u0027s governance, direction and assurance status were not discoverable as a coherent public record.",
+      "intendedOutcomes": [
+        "Adopted transparency, classification, disclosure and vulnerability disclosure policies",
+        "Public portfolio and trust center generated from authoritative records"
+      ],
+      "successCriteria": [
+        "Policies adopted",
+        "Public portfolio validates in CI",
+        "Trust center requirements reviewed before any build",
+        "No accidental disclosure incidents attributable to the publication pipeline"
+      ],
+      "repositories": [
+        "echelon-registry",
+        "echelon-organization-administration",
+        "echelon-due-diligence",
+        "echelon-assurance",
+        "praxis",
+        "echelon-knowledge-store"
+      ],
+      "systems": [
+        "praxis"
+      ],
+      "dependencies": [
+        "INIT-010",
+        "INIT-003"
+      ],
+      "relatedInitiatives": [
+        "INIT-002",
+        "INIT-003",
+        "INIT-010"
+      ],
+      "status": "active",
+      "evidence": [
+        "echelon-organization-administration policies/transparency, information-classification, disclosure, security/vulnerability-disclosure-policy.md (proposed 2026-11-25)",
+        "echelon-registry portfolio/governance/ (2026-11-25)"
+      ],
+      "outstandingDecisions": [
+        "OD-GOV-001 policy adoption",
+        "OD-GOV-002 assurance repository visibility",
+        "OD-GOV-012 accidental secret exposure response (restricted record)"
+      ],
+      "risks": [
+        "Transparency without accuracy reduces trust",
+        "Publication workload exceeds a one-person organization\u0027s capacity",
+        "Accidental disclosure in public repositories"
+      ],
+      "nextActions": [
+        "Owner review and adoption of the four policies",
+        "Enable secret scanning and push protection on public repositories (PUB-SG-01)",
+        "Add SECURITY.md to public repositories (VDP-T2)"
+      ],
+      "completionCriteria": [
+        "Policies adopted, safeguards P1 implemented, trust center information architecture approved"
+      ],
+      "lastReview": "2026-11-25",
+      "provisional": false
+    }
+  ]
+}
