@@ -4148,6 +4148,94 @@
       "lastVerified": "2026-11-25"
     },
     {
+      "id": "transitus",
+      "repository": "kemiller2002/transitus",
+      "displayName": "Transitus",
+      "visibility": "public",
+      "classification": "public",
+      "echelonRelation": "core-system",
+      "purpose": "Embeddable, AI-native F# data integration engine: declarative, versioned pipelines that ingest, preserve, transform, validate, reconcile and load data through authorized domain interfaces with lineage and evidence (PROJECT-CHARTER.md).",
+      "responsibilities": [
+        "Declarative pipeline specification and publish-time validator (docs/architecture/01-lifecycle-and-pipeline-specification.md)",
+        "Deterministic transformation library and generic validation/reconciliation primitives (docs/architecture/04, 06)",
+        "Adapter contracts (transport, format, destination) and a small standard adapter set (docs/architecture/03-adapter-architecture.md)",
+        "Raw input preservation, governed staging, record lineage and evidence packages (docs/architecture/02, 08)",
+        "Pipeline execution state machine on top of Echelon.Execution (docs/architecture/05-execution-model.md)"
+      ],
+      "nonResponsibilities": [
+        "Not a durable job queue or scheduler: consumes Echelon.Execution (docs/architecture/11-echelon-dependency-analysis.md)",
+        "Not schema governance: staging/lineage DDL is governed by Strata",
+        "Not a workflow designer: the admin UI uses Forma's portable workflow capability",
+        "Does not own domain accounting or business rules (stay in consumers such as Unbound)",
+        "Never writes systems of record directly; loads only through domain APIs",
+        "Not an observability platform, CDC platform or bidirectional sync engine"
+      ],
+      "intendedConsumers": [
+        "Unbound (first reference application)",
+        "Helix Note (patient-authorized and FHIR imports)",
+        "Summa (financial migration, bank feeds) (candidate)"
+      ],
+      "providedCapabilities": [
+        "Research, architecture and requirements (documented-only)"
+      ],
+      "plannedCapabilities": [
+        "Pipeline model and validator, transformation and check libraries, standard adapters (phase 1, docs/roadmap.md)",
+        "Execution engine, PostgreSQL storage, lineage and evidence (phase 2)"
+      ],
+      "systems": [],
+      "initiatives": [
+        "INIT-005",
+        "INIT-011",
+        "INIT-012",
+        "INIT-018"
+      ],
+      "dependencies": [
+        "Echelon.Execution (hard; incubating in unbound/execution, extraction proposed)",
+        "Strata (hard, DDL governance)",
+        "PostgreSQL (hard)",
+        "Praxis (hard)",
+        "Aegis (hard)",
+        "Forma, Limen, Iter, Folio (admin UI and reports, phase 4)",
+        "Vigila (optional)"
+      ],
+      "dependents": [
+        "Unbound (proposed)"
+      ],
+      "developmentStatus": "active",
+      "maturity": "requirements",
+      "lastCommit": "2026-11-26",
+      "authoritativeDocuments": [
+        "PROJECT-CHARTER.md",
+        "docs/architecture/README.md",
+        "requirements/REQUIREMENTS.md",
+        "docs/decisions/README.md",
+        "docs/open-questions.md",
+        "docs/roadmap.md"
+      ],
+      "outstandingDecisions": [
+        "Extraction of Echelon.Execution to a shared repository (OQ-01)",
+        "Strata DIV / Transitus adapter boundary (OQ-02)",
+        "Owner for runtime observability, GAP-05 (OQ-03)",
+        "Repository licence: MIT per charter vs portfolio PolyForm Noncommercial (OQ-12)"
+      ],
+      "knownLimitations": [
+        "No implementation; all performance figures are theoretical (docs/architecture/12-performance-and-economics.md)"
+      ],
+      "plannedDirection": "Phase 1 implements only the pipeline model, validator, pure transformation and check libraries and file adapters needed by Unbound release-1 scenarios (docs/roadmap.md).",
+      "lineage": {
+        "previousNames": [],
+        "supersedes": [],
+        "supersededBy": null
+      },
+      "evidence": [
+        "kemiller2002/transitus@claude/transitus-research-architecture-42a96z PROJECT-CHARTER.md",
+        "kemiller2002/transitus@claude/transitus-research-architecture-42a96z docs/architecture/11-echelon-dependency-analysis.md"
+      ],
+      "provisional": false,
+      "source": "central-seed",
+      "lastVerified": "2026-11-26"
+    },
+    {
       "id": "tutela",
       "repository": "kemiller2002/tutela",
       "displayName": "Tutela",
