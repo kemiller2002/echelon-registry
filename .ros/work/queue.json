@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 97,
+  "nextSeq": 98,
   "items": [
     {
       "id": "WI-0001",
@@ -2050,6 +2050,27 @@
       "createdByActor": {
         "kind": "agent",
         "id": "anthropic/claude",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0097",
+      "title": "Register Transitus (requirements-stage data integration engine) in the portfolio inventory",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-26T15:32:12.021Z",
+      "updatedAt": "2026-11-26T15:32:56.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
         "provider": "anthropic",
         "model": "unknown",
         "runtime": "claude-code"
