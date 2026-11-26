@@ -100,3 +100,4 @@
 | WI-0095 | Record the owner's approval of echelon-current 1.43.0 | complete |  | medium |
 | WI-0096 | Upgrade the registry's own toolchain to echelon-current 1.43.0 (Praxis 3.25.0 -> 3.26.0) | complete |  | medium |
 | WI-0097 | Register Transitus (requirements-stage data integration engine) in the portfolio inventory | complete |  | medium |
+| WI-0098 | Update Transitus inventory entry for owner-directed phase-1 scope | complete |  | medium |

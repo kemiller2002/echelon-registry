@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 98,
+  "nextSeq": 99,
   "items": [
     {
       "id": "WI-0001",
@@ -2067,6 +2067,27 @@
       "attachments": [],
       "createdAt": "2026-11-26T15:32:12.021Z",
       "updatedAt": "2026-11-26T15:32:56.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0098",
+      "title": "Update Transitus inventory entry for owner-directed phase-1 scope",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-26T18:22:41.233Z",
+      "updatedAt": "2026-11-26T18:22:55.000Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
