@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "echelon-registry",
-  "nextSeq": 97,
+  "nextSeq": 98,
   "items": [
     {
       "id": "WI-0001",
@@ -2050,6 +2050,27 @@
       "createdByActor": {
         "kind": "agent",
         "id": "anthropic/claude",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0097",
+      "title": "Record controlled file ingestion (INIT-030) as an unowned portfolio capability and project INIT-030",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "ready",
+      "attachments": [],
+      "createdAt": "2026-11-26T15:38:47.212Z",
+      "updatedAt": "2026-11-26T15:39:06Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
         "provider": "anthropic",
         "model": "unknown",
         "runtime": "claude-code"

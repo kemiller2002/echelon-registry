@@ -2,7 +2,7 @@
   "schema": "echelon.portfolio-initiatives/v1",
   "classification": "public",
   "sourceRecord": "kemiller2002/echelon-organization-administration:portfolio/initiatives.json",
-  "sourceDigest": "sha256:d08953aa358b571001a3565a9357915190a172a574f47d31a41eea0fc2bee3c9",
+  "sourceDigest": "sha256:a7edc3a75f4b4ec1704f5d7b5875698bf37e3e9d99b3c7603a20e95b93f0abd5",
   "initiatives": [
     {
       "id": "INIT-001",
@@ -1548,6 +1548,68 @@
       ],
       "lastReview": "2026-11-25",
       "provisional": false
+    },
+    {
+      "id": "INIT-030",
+      "name": "Controlled file ingestion and processing",
+      "description": "Make untrusted file and document intake safe, auditable and economical across Echelon applications: one ingestion boundary, purpose-specific allowlists, managed malware inspection, isolated parsing, object-storage custody with retention and legal hold, record-import integrity and AI used only as proposals.",
+      "origin": "Owner issue #20 (reusable security capability) referencing unbound#18; application-governance/file-ingestion/00-INDEX.md.",
+      "rationale": "Every application that accepts files repeats the same security, storage and integrity problems; Unbound is the first consumer with financial stakes.",
+      "problem": "No Echelon system or standard covers file ingestion; each application would invent its own controls.",
+      "intendedOutcomes": [
+        "Reusable EFI requirements adopted as an organizational standard",
+        "Unbound ingestion requirements (UNB-ING) traced to EFI",
+        "Ownership decided once a second application needs the capability"
+      ],
+      "successCriteria": [
+        "Owner decisions FIL-OD-01, -02, -04, -05, -10, -13, -14 recorded",
+        "Second consumer identified before extraction into a shared library"
+      ],
+      "repositories": [
+        "unbound",
+        "echelon-organization-administration",
+        "daf-landscape",
+        "echelon-registry"
+      ],
+      "systems": [
+        "forma",
+        "limen",
+        "aegis",
+        "strata",
+        "ordo",
+        "dokimos",
+        "conditor"
+      ],
+      "dependencies": [
+        "INIT-012 (durable command execution)",
+        "INIT-005 (Unbound is the first consumer)"
+      ],
+      "relatedInitiatives": [
+        "INIT-005",
+        "INIT-012",
+        "INIT-008"
+      ],
+      "status": "research",
+      "evidence": [
+        "echelon-organization-administration application-governance/file-ingestion/ (66 proposed EFI requirements, 2026-11-26)",
+        "unbound requirements/discovery/2026-11-26-file-ingestion/ (94 proposed UNB-ING requirements)",
+        "daf-landscape research/file-ingestion-and-straight-through-processing/ (industry evidence and economics)"
+      ],
+      "outstandingDecisions": [
+        "Unbound decisions FIL-OD-01 (cloud and scanner), FIL-OD-02 (object storage), FIL-OD-13 (sandbox primitive)"
+      ],
+      "risks": [
+        "Incubating in one product may hard-code DAF assumptions into the reusable layer",
+        "Cloud-native malware scanning differs by provider"
+      ],
+      "nextActions": [
+        "Owner decisions, then Unbound roadmap steps 1-4 (custody, sandbox, profiles, public datasets)"
+      ],
+      "completionCriteria": [
+        "Capability owned or explicitly incubated with an extraction trigger"
+      ],
+      "lastReview": "2026-11-26",
+      "provisional": true
     }
   ]
 }
