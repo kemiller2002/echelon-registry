@@ -95,4 +95,4 @@
 | WI-0092 | Upgrade the registry's own toolchain to echelon-current 1.42.0 (praxis 3.7.2->3.25.0, ordo 1.5.0->1.20.0) | complete |  | medium |
 | WI-0093 | INIT-012: record planned (not available) capabilities for durable command execution, system messaging and runtime telemetry; correct Vigila portfolio description | complete |  | medium |
 | WI-0094 | Register Praxis 3.26.0 and Arca 0.7.1 and propose echelon-current 1.43.0 | complete |  | medium |
-| WI-0095 | Record the owner's approval of echelon-current 1.43.0 | ready |  | medium |
+| WI-0095 | Record the owner's approval of echelon-current 1.43.0 | complete |  | medium |
