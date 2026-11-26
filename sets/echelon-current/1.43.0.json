@@ -286,7 +286,29 @@
       "state": "enabled"
     }
   ],
-  "status": "proposed",
+  "status": "approved",
+  "approval": {
+    "by": "kemiller2002",
+    "at": "2026-11-26T00:12:00Z",
+    "statement": [
+      "I approve"
+    ],
+    "decision": "Owner instruction in this session on 2026-11-26, answering the session's request to approve echelon-current 1.43.0. The owner had asked on 2026-11-25 to \"Release what you need to adopt the echelon theme and do any house cleaning you need to do\"; the session released Praxis 3.26.0 (Praxis web and hub pages on Forma 1.0.1 with the Echelon theme 1.1.0) and Arca 0.7.1 (packages rebuilt against Aegis 2.0.2 instead of 1.0.0, public API unchanged), proposed this set, and said it would ask for approval once REG-RU-007 passed. The owner answered \"I approve\". The exact minute is approximate: the answer arrived shortly after 00:11Z. The set selects exactly that move: Praxis 3.25.0 -> 3.26.0 and Arca 0.7.0 -> 0.7.1, nothing else",
+    "recordedBy": "anthropic/claude-code, on the owner's explicit instruction (\"I approve\", 2026-11-26, approving echelon-current 1.43.0); recorded after REG-RU-007 passed in CI against released Conditor 0.10.30 on this exact set and Conditor qualified it (conditor#145); no VER-003 exception applies",
+    "recordedAt": "2026-11-26T00:19:02Z",
+    "evidence": [
+      {
+        "kind": "reg-ru-007",
+        "url": "https://github.com/kemiller2002/echelon-registry/actions/runs/45723040108/job/139599033955",
+        "description": "REG-RU-007 against the latest released Conditor, v0.10.30, on this exact set; distribution conformance on all five platforms (echelon-registry#121)"
+      },
+      {
+        "kind": "conditor-qualification",
+        "url": "https://github.com/kemiller2002/conditor/pull/145",
+        "description": "Conditor echelon-current 1.43.0 kickoff-set qualification (WebScaffoldTests.runKickoffSet1430 over the vendored 1.43.0 linux-x64 set, sha256 4851c24d...; Praxis 3.26.0 qualified and exercised from the real release), CI 38/38 green on head 335388ed, merged as 36781a9 and released as v0.10.30"
+      }
+    ]
+  },
   "assessments": [
     {
       "systemId": "praxis",
