@@ -1,14 +1,14 @@
 {
   "schemaVersion": 4,
   "project": "echelon-registry",
-  "manifestSha256": "80425ef62c9415329f413a9d8c999e44903449d573d8c0cf8605a72b46bf4c73",
+  "manifestSha256": "60a3e9602c17c9df77c3f8ac4e97f5933fbc6d9018ad6f5dee140502b0239b34",
   "manifest": {
     "schemaVersion": 1,
     "name": "echelon-registry",
     "registryAuthority": {
       "kind": "resolved-release-set",
       "path": ".conditor/authority/resolved-release-set.json",
-      "sha256": "6be3bc97fbdd314abc4c712c2b1b47c1a18487995d9e1b9db445b4d141a8ee8a"
+      "sha256": "4851c24d52cf3a7ef6dd2ccec26ef7a97c769dd06076b51dfede387c5a8cf8c9"
     },
     "components": [
       {
@@ -18,7 +18,7 @@
       },
       {
         "id": "praxis",
-        "version": "3.25.0",
+        "version": "3.26.0",
         "required": true
       }
     ],
@@ -39,12 +39,12 @@
     },
     {
       "id": "praxis",
-      "version": "3.25.0",
+      "version": "3.26.0",
       "distribution": "host-tool",
       "package": "praxis",
-      "descriptorSha256": "a6a854d426d865133e7d1440e2ca80245dbf425aecdf1aafdb7ffddf5bd4487a",
+      "descriptorSha256": "5cb1f058f06dde4ff975e0c559b74a564abda5a78aadac1d4d3fd8f6e3eaefa7",
       "authority": "embedded-component-descriptor",
-      "sourceReference": "host:praxis@3.25.0"
+      "sourceReference": "host:praxis@3.26.0"
     }
   ],
   "requirements": [],
